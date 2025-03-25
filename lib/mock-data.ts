@@ -1,7 +1,6 @@
 import type { GuideData } from "./types"
 
 // Equipment related types
-export type EquipmentType = "summon" | "chara" | "weapon"
 export type Equipment = {
   id: string
   name: string

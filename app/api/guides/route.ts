@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import type { GuideData, EquipmentFilterCondition } from "@/lib/types"
 import { mockGuides, availableTags, availableWeapons, availableSummons } from "@/lib/mock-data"
 
 export async function GET(request: Request) {
@@ -7,8 +8,8 @@ export async function GET(request: Request) {
   const tags = searchParams.getAll("tags")
   const timeRange = searchParams.get("timeRange")?.split(",").map(Number) || [0, 30]
   const dateRange = searchParams.get("dateRange")?.split(",") || []
-  const weaponConditions = JSON.parse(searchParams.get("weaponConditions") || "[]")
-  const summonConditions = JSON.parse(searchParams.get("summonConditions") || "[]")
+  const weaponConditions = JSON.parse(searchParams.get("weaponConditions") || "[]") as EquipmentFilterCondition[]
+  const summonConditions = JSON.parse(searchParams.get("summonConditions") || "[]") as EquipmentFilterCondition[]
   const sortField = searchParams.get("sortField") || "date"
   const sortDirection = searchParams.get("sortDirection") || "desc"
 

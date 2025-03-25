@@ -10,20 +10,11 @@ import { Slider } from "@/components/ui/slider"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { DateRangePicker } from "@/components/date-range-picker"
-import type { GuideData } from "@/lib/types"
+import type { GuideData, EquipmentFilterCondition } from "@/lib/types"
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import { GuideList } from "@/components/guide-list"
 
-type WeaponCondition = {
-  type: "include" | "exclude"
-  weapon: string
-  count: number
-}
 
-type SummonCondition = {
-  type: "include" | "exclude"
-  summon: string
-}
 
 export function BrowseGuides() {
   // Filter states
@@ -37,8 +28,8 @@ export function BrowseGuides() {
     from: undefined,
     to: undefined,
   })
-  const [selectedWeaponConditions, setSelectedWeaponConditions] = useState<WeaponCondition[]>([])
-  const [selectedSummonConditions, setSelectedSummonConditions] = useState<SummonCondition[]>([])
+  const [selectedWeaponConditions, setSelectedWeaponConditions] = useState<EquipmentFilterCondition[]>([])
+  const [selectedSummonConditions, setSelectedSummonConditions] = useState<EquipmentFilterCondition[]>([])
 
   // Sorting states
   const [sortField, setSortField] = useState<"time" | "date">("date")
@@ -85,12 +76,12 @@ export function BrowseGuides() {
   const addWeaponCondition = () => {
     setSelectedWeaponConditions([
       ...selectedWeaponConditions,
-      { type: "include", weapon: availableWeapons[0], count: 1 },
+      { type: "weapon", id: availableWeapons[0], include: true, count: 1 },
     ])
   }
 
   // Update weapon condition
-  const updateWeaponCondition = (index: number, field: keyof WeaponCondition, value: any) => {
+  const updateWeaponCondition = (index: number, field: keyof EquipmentFilterCondition, value: any) => {
     const updatedConditions = [...selectedWeaponConditions]
     updatedConditions[index] = { ...updatedConditions[index], [field]: value }
     setSelectedWeaponConditions(updatedConditions)
@@ -103,11 +94,14 @@ export function BrowseGuides() {
 
   // Add summon condition
   const addSummonCondition = () => {
-    setSelectedSummonConditions([...selectedSummonConditions, { type: "include", summon: availableSummons[0] }])
+    setSelectedSummonConditions([
+      ...selectedSummonConditions,
+      { type: "summon", id: availableSummons[0], include: true, count: 1 },
+    ])
   }
 
   // Update summon condition
-  const updateSummonCondition = (index: number, field: keyof SummonCondition, value: any) => {
+  const updateSummonCondition = (index: number, field: keyof EquipmentFilterCondition, value: any) => {
     const updatedConditions = [...selectedSummonConditions]
     updatedConditions[index] = { ...updatedConditions[index], [field]: value }
     setSelectedSummonConditions(updatedConditions)
@@ -328,8 +322,8 @@ export function BrowseGuides() {
                         className="flex items-center gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
                       >
                         <Select
-                          value={condition.type}
-                          onValueChange={(value) => updateWeaponCondition(index, "type", value)}
+                          value={condition.include ? "include" : "exclude"}
+                          onValueChange={(value) => updateWeaponCondition(index, "include", value === "include")}
                         >
                           <SelectTrigger className="w-24 h-8">
                             <SelectValue placeholder="类型" />
@@ -343,12 +337,12 @@ export function BrowseGuides() {
                         <div className="flex-1">
                           <EquipmentSelectorModal
                             type="weapon"
-                            buttonLabel={condition.weapon || "选择武器"}
-                            onSelect={(equipment) => updateWeaponCondition(index, "weapon", equipment.name)}
+                            buttonLabel={condition.id || "选择武器"}
+                            onSelect={(equipment) => updateWeaponCondition(index, "id", equipment.id)}
                           />
                         </div>
 
-                        {condition.type === "include" && (
+                        {condition.include && (
                           <Select
                             value={condition.count.toString()}
                             onValueChange={(value) => updateWeaponCondition(index, "count", Number.parseInt(value))}
@@ -407,8 +401,8 @@ export function BrowseGuides() {
                         className="flex items-center gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
                       >
                         <Select
-                          value={condition.type}
-                          onValueChange={(value) => updateSummonCondition(index, "type", value)}
+                          value={condition.include ? "include" : "exclude"}
+                          onValueChange={(value) => updateSummonCondition(index, "include", value === "include")}
                         >
                           <SelectTrigger className="w-24 h-8">
                             <SelectValue placeholder="类型" />
@@ -422,8 +416,8 @@ export function BrowseGuides() {
                         <div className="flex-1">
                           <EquipmentSelectorModal
                             type="summon"
-                            buttonLabel={condition.summon || "选择召唤石"}
-                            onSelect={(equipment) => updateSummonCondition(index, "summon", equipment.name)}
+                            buttonLabel={condition.id || "选择召唤石"}
+                            onSelect={(equipment) => updateSummonCondition(index, "id", equipment.id)}
                           />
                         </div>
 

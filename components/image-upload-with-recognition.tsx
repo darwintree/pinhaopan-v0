@@ -9,16 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import { Switch } from "@/components/ui/switch"
 import { Rnd } from "react-rnd"
-
-type EquipmentType = "chara" | "weapon" | "summon"
-
-interface Rectangle {
-  id: number
-  x: number
-  y: number
-  width: number
-  height: number
-}
+import type { Rectangle, EquipmentType } from "@/lib/utils"
+import { detectRectangles } from "@/lib/utils"
 
 interface ImageUploadWithRecognitionProps {
   type: EquipmentType
@@ -55,51 +47,20 @@ export function ImageUploadWithRecognition({
   const [containerScale, setContainerScale] = useState(1)
 
   // Process image with OpenCV
-  const processImageWithOpenCV = (imageUrl: string) => {
-    // Simulate OpenCV processing
-    console.log(`Processing ${type} image with OpenCV:`, imageUrl)
+  const processImageWithOpenCV = async (imageUrl: string) => {
+    try {
+      // 使用 mock 数据模拟矩形检测
+      const result = await detectRectangles(imageUrl, type)
+      setRectangles(result.rectangles)
+      setImageSize(result.imageSize)
 
-    // Simulate detection of equipment areas
-    setTimeout(() => {
-      // Generate mock rectangles based on type
-      let mockRectangles: Rectangle[] = []
-
-      if (type === "chara") {
-        mockRectangles = [
-          { id: 0, x: 50, y: 50, width: 100, height: 100 },
-          { id: 1, x: 200, y: 50, width: 100, height: 100 },
-          { id: 2, x: 350, y: 50, width: 100, height: 100 },
-          { id: 3, x: 50, y: 200, width: 100, height: 100 },
-          { id: 4, x: 200, y: 200, width: 100, height: 100 },
-        ]
-      } else if (type === "weapon") {
-        mockRectangles = [
-          { id: 0, x: 50, y: 50, width: 80, height: 80 },
-          { id: 1, x: 150, y: 50, width: 80, height: 80 },
-          { id: 2, x: 250, y: 50, width: 80, height: 80 },
-          { id: 3, x: 350, y: 50, width: 80, height: 80 },
-          { id: 4, x: 450, y: 50, width: 80, height: 80 },
-          { id: 5, x: 50, y: 150, width: 80, height: 80 },
-          { id: 6, x: 150, y: 150, width: 80, height: 80 },
-          { id: 7, x: 250, y: 150, width: 80, height: 80 },
-          { id: 8, x: 350, y: 150, width: 80, height: 80 },
-        ]
-      } else if (type === "summon") {
-        mockRectangles = [
-          { id: 0, x: 100, y: 50, width: 100, height: 100 },
-          { id: 1, x: 300, y: 50, width: 100, height: 100 },
-          { id: 2, x: 100, y: 200, width: 100, height: 100 },
-          { id: 3, x: 300, y: 200, width: 100, height: 100 },
-        ]
-      }
-
-      setRectangles(mockRectangles)
-
-      // If auto-recognize is enabled, proceed to recognition
+      // 如果启用了自动识别，继续识别过程
       if (autoRecognize) {
         recognizeEquipment()
       }
-    }, 1000)
+    } catch (error) {
+      console.error("Failed to process image:", error)
+    }
   }
 
   // Calculate container scale when image loads

@@ -11,9 +11,10 @@ import type { GuideData } from "@/lib/types"
 
 interface GuideListProps {
   guides: GuideData[]
+  loading: boolean
 }
 
-export function GuideList({ guides }: GuideListProps) {
+export function GuideList({ guides, loading }: GuideListProps) {
   // Sorting states
   const [sortField, setSortField] = useState<"time" | "date">("date")
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
@@ -101,9 +102,26 @@ export function GuideList({ guides }: GuideListProps) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {sortedGuides.map((guide) => (
-              <GuideListItem key={guide.id} guide={guide} />
-            ))}
+            {loading ? (
+              <TableRow>
+                <TableCell colSpan={6} className="h-24 text-center">
+                  <div className="flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                    <span className="ml-2">加载中...</span>
+                  </div>
+                </TableCell>
+              </TableRow>
+            ) : sortedGuides.length === 0 ? (
+              <TableRow>
+                <TableCell colSpan={6} className="h-24 text-center text-muted-foreground">
+                  暂无数据
+                </TableCell>
+              </TableRow>
+            ) : (
+              sortedGuides.map((guide) => (
+                <GuideListItem key={guide.id} guide={guide} />
+              ))
+            )}
           </TableBody>
         </Table>
       </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ChevronDown, ChevronUp, Filter, Clock, Calendar, Sword, Search, X, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -11,7 +11,6 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { DateRangePicker } from "@/components/date-range-picker"
 import type { GuideData } from "@/lib/types"
-import { mockGuides } from "@/lib/mock-data"
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import { GuideList } from "@/components/guide-list"
 
@@ -38,23 +37,49 @@ export function BrowseGuides() {
     from: undefined,
     to: undefined,
   })
-  const [selectedWeapons, setSelectedWeapons] = useState<string[]>([])
-  const [selectedSummons, setSelectedSummons] = useState<string[]>([])
-
-  // Advanced filter states for weapons and summons
-  interface WeaponCondition {
-    type: "include" | "exclude"
-    weapon: string
-    count: number
-  }
-
-  interface SummonCondition {
-    type: "include" | "exclude"
-    summon: string
-  }
-
   const [selectedWeaponConditions, setSelectedWeaponConditions] = useState<WeaponCondition[]>([])
   const [selectedSummonConditions, setSelectedSummonConditions] = useState<SummonCondition[]>([])
+
+  // Sorting states
+  const [sortField, setSortField] = useState<"time" | "date">("date")
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
+
+  // Data states
+  const [guides, setGuides] = useState<GuideData[]>([])
+  const [availableTags, setAvailableTags] = useState<string[]>([])
+  const [availableWeapons, setAvailableWeapons] = useState<string[]>([])
+  const [availableSummons, setAvailableSummons] = useState<string[]>([])
+  const [loading, setLoading] = useState(false)
+
+  // Filter count
+  const filterCount = [
+    searchTerm !== "",
+    selectedTags.length > 0,
+    timeRange[0] !== 0 || timeRange[1] !== 30,
+    dateRange.from !== undefined || dateRange.to !== undefined,
+    selectedWeaponConditions.length > 0,
+    selectedSummonConditions.length > 0,
+  ].filter(Boolean).length
+
+  // Handle sort change
+  const handleSort = (field: "time" | "date") => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc")
+    } else {
+      setSortField(field)
+      setSortDirection("asc")
+    }
+  }
+
+  // Reset filters
+  const resetFilters = () => {
+    setSearchTerm("")
+    setSelectedTags([])
+    setTimeRange([0, 30])
+    setDateRange({ from: undefined, to: undefined })
+    setSelectedWeaponConditions([])
+    setSelectedSummonConditions([])
+  }
 
   // Add weapon condition
   const addWeaponCondition = () => {
@@ -93,51 +118,50 @@ export function BrowseGuides() {
     setSelectedSummonConditions(selectedSummonConditions.filter((_, i) => i !== index))
   }
 
-  // Sorting states
-  const [sortField, setSortField] = useState<"time" | "date">("date")
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
+  // Fetch guides data from API
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true)
+      try {
+        const params = new URLSearchParams({
+          search: searchTerm,
+          ...selectedTags.map(tag => ["tags", tag]),
+          timeRange: timeRange.join(","),
+          dateRange: [
+            dateRange.from?.toISOString() || "",
+            dateRange.to?.toISOString() || "",
+          ].join(","),
+          weaponConditions: JSON.stringify(selectedWeaponConditions),
+          summonConditions: JSON.stringify(selectedSummonConditions),
+          sortField,
+          sortDirection,
+        })
 
-  // Filtered and sorted guides
-  const [guides, setGuides] = useState<GuideData[]>(mockGuides)
-
-  // Filter count
-  const filterCount = [
-    searchTerm !== "",
-    selectedTags.length > 0,
-    timeRange[0] !== 0 || timeRange[1] !== 30,
-    dateRange.from !== undefined || dateRange.to !== undefined,
-    selectedWeaponConditions.length > 0,
-    selectedSummonConditions.length > 0,
-  ].filter(Boolean).length
-
-  // Handle sort change
-  const handleSort = (field: "time" | "date") => {
-    if (sortField === field) {
-      setSortDirection(sortDirection === "asc" ? "desc" : "asc")
-    } else {
-      setSortField(field)
-      setSortDirection("asc")
+        const response = await fetch(`/api/guides?${params}`)
+        const data = await response.json()
+        
+        setGuides(data.guides)
+        setAvailableTags(data.availableTags)
+        setAvailableWeapons(data.availableWeapons)
+        setAvailableSummons(data.availableSummons)
+      } catch (error) {
+        console.error("Failed to fetch guides data:", error)
+      } finally {
+        setLoading(false)
+      }
     }
-  }
 
-  // Reset filters
-  const resetFilters = () => {
-    setSearchTerm("")
-    setSelectedTags([])
-    setTimeRange([0, 30])
-    setDateRange({ from: undefined, to: undefined })
-    setSelectedWeapons([])
-    setSelectedSummons([])
-    setSelectedWeaponConditions([])
-    setSelectedSummonConditions([])
-  }
-
-  // Available tags for filtering
-  const availableTags = ["速刷", "新手向", "无氪", "高难度", "稳定", "高伤害", "自动化"]
-
-  // Available weapons and summons for filtering
-  const availableWeapons = ["光剑", "暗刀", "水弓", "火杖", "土枪", "风拳"]
-  const availableSummons = ["巴哈姆特", "路西法", "宙斯", "提亚马特", "欧罗巴"]
+    fetchData()
+  }, [
+    searchTerm,
+    selectedTags,
+    timeRange,
+    dateRange,
+    selectedWeaponConditions,
+    selectedSummonConditions,
+    sortField,
+    sortDirection,
+  ])
 
   return (
     <div className="space-y-6">
@@ -239,7 +263,13 @@ export function BrowseGuides() {
                     {timeRange[0]} - {timeRange[1]}
                   </span>
                 </div>
-                <Slider defaultValue={[0, 30]} max={30} step={1} value={timeRange} onValueChange={setTimeRange} />
+                <Slider 
+                  defaultValue={[0, 30]} 
+                  max={30} 
+                  step={1} 
+                  value={timeRange} 
+                  onValueChange={(value) => setTimeRange(value as [number, number])} 
+                />
               </div>
 
               <div className="space-y-2">
@@ -247,7 +277,10 @@ export function BrowseGuides() {
                   <Calendar className="h-4 w-4" />
                   发布时间
                 </Label>
-                <DateRangePicker date={dateRange} setDate={setDateRange} />
+                <DateRangePicker 
+                  date={dateRange} 
+                  setDate={(range) => setDateRange(range as { from: Date | undefined; to: Date | undefined })} 
+                />
               </div>
             </CardContent>
           )}
@@ -422,7 +455,7 @@ export function BrowseGuides() {
       </div>
 
       {/* Guides table */}
-      <GuideList guides={guides} />
+      <GuideList guides={guides} loading={loading} />
     </div>
   )
 }

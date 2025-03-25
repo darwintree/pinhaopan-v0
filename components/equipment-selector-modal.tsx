@@ -7,98 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Search, Filter, X } from "lucide-react"
-
-// Mock data for equipment
-const mockEquipment = {
-  summon: [
-    { id: "s1", name: "巴哈姆特", element: "dark", category: "main", image: "/placeholder.svg?height=80&width=80" },
-    { id: "s2", name: "路西法", element: "dark", category: "sub", image: "/placeholder.svg?height=80&width=80" },
-    { id: "s3", name: "宙斯", element: "light", category: "main", image: "/placeholder.svg?height=80&width=80" },
-    { id: "s4", name: "提亚马特", element: "wind", category: "main", image: "/placeholder.svg?height=80&width=80" },
-    { id: "s5", name: "欧罗巴", element: "water", category: "main", image: "/placeholder.svg?height=80&width=80" },
-    { id: "s6", name: "阿格尼", element: "fire", category: "main", image: "/placeholder.svg?height=80&width=80" },
-    { id: "s7", name: "泰坦", element: "earth", category: "main", image: "/placeholder.svg?height=80&width=80" },
-    { id: "s8", name: "西芙", element: "water", category: "sub", image: "/placeholder.svg?height=80&width=80" },
-  ],
-  chara: [
-    { id: "c1", name: "角色1", element: "fire", category: "attacker", image: "/placeholder.svg?height=80&width=80" },
-    { id: "c2", name: "角色2", element: "water", category: "defender", image: "/placeholder.svg?height=80&width=80" },
-    { id: "c3", name: "角色3", element: "earth", category: "healer", image: "/placeholder.svg?height=80&width=80" },
-    { id: "c4", name: "角色4", element: "wind", category: "attacker", image: "/placeholder.svg?height=80&width=80" },
-    { id: "c5", name: "角色5", element: "light", category: "support", image: "/placeholder.svg?height=80&width=80" },
-    { id: "c6", name: "角色6", element: "dark", category: "attacker", image: "/placeholder.svg?height=80&width=80" },
-  ],
-  weapon: [
-    { id: "w1", name: "光剑", element: "light", category: "sword", image: "/placeholder.svg?height=80&width=80" },
-    { id: "w2", name: "暗刀", element: "dark", category: "dagger", image: "/placeholder.svg?height=80&width=80" },
-    { id: "w3", name: "水弓", element: "water", category: "bow", image: "/placeholder.svg?height=80&width=80" },
-    { id: "w4", name: "火杖", element: "fire", category: "staff", image: "/placeholder.svg?height=80&width=80" },
-    { id: "w5", name: "土枪", element: "earth", category: "spear", image: "/placeholder.svg?height=80&width=80" },
-    { id: "w6", name: "风拳", element: "wind", category: "fist", image: "/placeholder.svg?height=80&width=80" },
-    { id: "w7", name: "光杖", element: "light", category: "staff", image: "/placeholder.svg?height=80&width=80" },
-    { id: "w8", name: "暗枪", element: "dark", category: "spear", image: "/placeholder.svg?height=80&width=80" },
-    { id: "w9", name: "水刀", element: "water", category: "dagger", image: "/placeholder.svg?height=80&width=80" },
-  ],
-}
-
-// Element and category options for each equipment type
-const filterOptions = {
-  summon: {
-    elements: ["fire", "water", "earth", "wind", "light", "dark"],
-    categories: ["main", "sub"],
-  },
-  chara: {
-    elements: ["fire", "water", "earth", "wind", "light", "dark"],
-    categories: ["attacker", "defender", "healer", "support"],
-  },
-  weapon: {
-    elements: ["fire", "water", "earth", "wind", "light", "dark"],
-    categories: ["sword", "dagger", "bow", "staff", "spear", "fist", "gun", "harp"],
-  },
-}
-
-// Element name translations
-const elementNames = {
-  fire: "火",
-  water: "水",
-  earth: "土",
-  wind: "风",
-  light: "光",
-  dark: "暗",
-}
-
-// Category name translations
-const categoryNames = {
-  // Summon categories
-  main: "主召唤石",
-  sub: "副召唤石",
-
-  // Character categories
-  attacker: "攻击手",
-  defender: "防御手",
-  healer: "治疗师",
-  support: "辅助",
-
-  // Weapon categories
-  sword: "剑",
-  dagger: "短剑",
-  bow: "弓",
-  staff: "杖",
-  spear: "枪",
-  fist: "拳",
-  gun: "铳",
-  harp: "竖琴",
-}
-
-// Type definitions
-type EquipmentType = "summon" | "chara" | "weapon"
-type Equipment = {
-  id: string
-  name: string
-  element: string
-  category: string
-  image: string
-}
+import type { EquipmentType, Equipment } from "@/lib/mock-data"
 
 interface EquipmentSelectorModalProps {
   type: EquipmentType
@@ -118,6 +27,13 @@ export function EquipmentSelectorModal({
   const [elementFilter, setElementFilter] = useState<string>("all")
   const [categoryFilter, setCategoryFilter] = useState<string>("all")
   const [filteredEquipment, setFilteredEquipment] = useState<Equipment[]>([])
+  const [filterOptions, setFilterOptions] = useState<{
+    elements: string[]
+    categories: string[]
+  }>({ elements: [], categories: [] })
+  const [elementNames, setElementNames] = useState<Record<string, string>>({})
+  const [categoryNames, setCategoryNames] = useState<Record<string, string>>({})
+  const [loading, setLoading] = useState(false)
 
   // Set the title based on equipment type
   const getTitle = () => {
@@ -147,27 +63,32 @@ export function EquipmentSelectorModal({
     }
   }
 
-  // Filter equipment based on search term and filters
+  // Fetch equipment data from API
   useEffect(() => {
-    const equipment = mockEquipment[type]
-    let filtered = [...equipment]
-
-    // Apply search filter
-    if (searchTerm) {
-      filtered = filtered.filter((item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    const fetchData = async () => {
+      setLoading(true)
+      try {
+        const params = new URLSearchParams({
+          type,
+          search: searchTerm,
+          element: elementFilter,
+          category: categoryFilter,
+        })
+        const response = await fetch(`/api/equipment?${params}`)
+        const data = await response.json()
+        
+        setFilteredEquipment(data.equipment)
+        setFilterOptions(data.filterOptions)
+        setElementNames(data.elementNames)
+        setCategoryNames(data.categoryNames)
+      } catch (error) {
+        console.error("Failed to fetch equipment data:", error)
+      } finally {
+        setLoading(false)
+      }
     }
 
-    // Apply element filter
-    if (elementFilter !== "all") {
-      filtered = filtered.filter((item) => item.element === elementFilter)
-    }
-
-    // Apply category filter
-    if (categoryFilter !== "all") {
-      filtered = filtered.filter((item) => item.category === categoryFilter)
-    }
-
-    setFilteredEquipment(filtered)
+    fetchData()
   }, [type, searchTerm, elementFilter, categoryFilter])
 
   // Handle equipment selection
@@ -224,9 +145,9 @@ export function EquipmentSelectorModal({
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">全部属性</SelectItem>
-                {filterOptions[type].elements.map((element) => (
+                {filterOptions.elements.map((element) => (
                   <SelectItem key={element} value={element}>
-                    {elementNames[element as keyof typeof elementNames] || element}
+                    {elementNames[element] || element}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -243,9 +164,9 @@ export function EquipmentSelectorModal({
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">全部类别</SelectItem>
-                {filterOptions[type].categories.map((category) => (
+                {filterOptions.categories.map((category) => (
                   <SelectItem key={category} value={category}>
-                    {categoryNames[category as keyof typeof categoryNames] || category}
+                    {categoryNames[category] || category}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -255,7 +176,9 @@ export function EquipmentSelectorModal({
 
         <div className="overflow-y-auto flex-1 pr-2 -mr-2">
           <div className="grid grid-cols-4 gap-3">
-            {filteredEquipment.length > 0 ? (
+            {loading ? (
+              <div className="col-span-4 py-8 text-center text-muted-foreground">加载中...</div>
+            ) : filteredEquipment.length > 0 ? (
               filteredEquipment.map((item) => (
                 <button
                   key={item.id}
@@ -272,7 +195,7 @@ export function EquipmentSelectorModal({
                   <span className="text-xs font-medium text-center line-clamp-2">{item.name}</span>
                   <div className="flex items-center gap-1 mt-1">
                     <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-slate-200 dark:bg-slate-700">
-                      {elementNames[item.element as keyof typeof elementNames] || item.element}
+                      {elementNames[item.element] || item.element}
                     </span>
                   </div>
                 </button>

@@ -167,3 +167,38 @@ export const mockGuides: GuideData[] = [
   },
 ]
 
+// Mock recognition results
+export const mockRecognitionResults = {
+  weapon: {
+    // 模拟不同位置的武器识别结果
+    positions: [
+      { id: 0, name: "光剑", confidence: 0.95 },
+      { id: 1, name: "暗刀", confidence: 0.92 },
+      { id: 2, name: "水弓", confidence: 0.88 },
+      { id: 3, name: "火杖", confidence: 0.85 },
+      { id: 4, name: "土枪", confidence: 0.90 },
+      { id: 5, name: "风拳", confidence: 0.87 },
+      { id: 6, name: "光杖", confidence: 0.86 },
+      { id: 7, name: "暗枪", confidence: 0.89 },
+      { id: 8, name: "水刀", confidence: 0.91 },
+    ],
+  },
+  chara: {
+    positions: [
+      { id: 0, name: "角色1", confidence: 0.95 },
+      { id: 1, name: "角色2", confidence: 0.92 },
+      { id: 2, name: "角色3", confidence: 0.88 },
+      { id: 3, name: "角色4", confidence: 0.85 },
+      { id: 4, name: "角色5", confidence: 0.90 },
+    ],
+  },
+  summon: {
+    positions: [
+      { id: 0, name: "巴哈姆特", confidence: 0.95 },
+      { id: 1, name: "路西法", confidence: 0.92 },
+      { id: 2, name: "宙斯", confidence: 0.88 },
+      { id: 3, name: "提亚马特", confidence: 0.85 },
+    ],
+  },
+}
+

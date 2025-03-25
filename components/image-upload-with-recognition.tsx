@@ -41,6 +41,8 @@ export function ImageUploadWithRecognition({
   const [rectangles, setRectangles] = useState<Rectangle[]>([])
   const [activeRectangle, setActiveRectangle] = useState<number | null>(null)
   const [hoveredRectangle, setHoveredRectangle] = useState<number | null>(null)
+  const [recognizedEquipment, setRecognizedEquipment] = useState<Record<number, string>>({})
+  const [showResults, setShowResults] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
   const [imageSize, setImageSize] = useState({ width: 800, height: 450 })
@@ -80,15 +82,35 @@ export function ImageUploadWithRecognition({
   }, [images])
 
   // Recognize equipment
-  const recognizeEquipment = () => {
-    console.log(`Recognizing ${type} with rectangles:`, rectangles)
+  const recognizeEquipment = async () => {
+    try {
+      setShowResults(true)
+      const response = await fetch("/api/equipment/recognize", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type,
+          rectangles,
+        }),
+      })
 
-    // Simulate API call for recognition
-    // In a real implementation, you would send the rectangles to your backend
-    setTimeout(() => {
-      console.log(`${type} recognition complete`)
-      // Here you would update the recognition results
-    }, 1000)
+      if (!response.ok) {
+        throw new Error("Recognition failed")
+      }
+
+      const data = await response.json()
+      
+      // 更新识别结果
+      const newRecognizedEquipment: Record<number, string> = {}
+      data.results.forEach((result: { id: number; name: string }) => {
+        newRecognizedEquipment[result.id] = result.name
+      })
+      setRecognizedEquipment(newRecognizedEquipment)
+    } catch (error) {
+      console.error("Failed to recognize equipment:", error)
+    }
   }
 
   // Get placeholder size based on type
@@ -137,16 +159,7 @@ export function ImageUploadWithRecognition({
 
   // Get default selection label based on type and index
   const getDefaultSelectionLabel = (index: number) => {
-    switch (type) {
-      case "chara":
-        return `角色${index + 1}`
-      case "weapon":
-        return type === "weapon" && index === 0 ? "光剑" : type === "weapon" && index === 1 ? "暗刀" : "水弓"
-      case "summon":
-        return type === "summon" && index === 0 ? "巴哈姆特" : type === "summon" && index === 1 ? "路西法" : "宙斯"
-      default:
-        return `Item ${index + 1}`
-    }
+    return recognizedEquipment[index] || `未识别${title}${index + 1}`
   }
 
   const placeholderSize = getPlaceholderSize()
@@ -295,89 +308,115 @@ export function ImageUploadWithRecognition({
               >
                 <X className="h-4 w-4" />
               </button>
+            </div>
 
-              {!autoRecognize && rectangles.length > 0 && (
-                <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center bg-black/50 text-white p-2 rounded">
-                  <div className="flex items-center gap-1 text-xs">
-                    <Move className="h-3 w-3" />
-                    <span>拖动矩形框调整位置，拖动边角调整大小</span>
-                  </div>
-                  <Button size="sm" onClick={recognizeEquipment} className="h-7 text-xs">
-                    识别
-                  </Button>
-                </div>
-              )}
+            {/* 识别按钮 */}
+            <div className="flex justify-center mb-4">
+              <Button 
+                type="button" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  recognizeEquipment();
+                }} 
+                className="w-full"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="mr-2"
+                >
+                  <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                  <path d="M21 3v5h-5" />
+                  <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                  <path d="M3 21v-5h5" />
+                </svg>
+                开始识别
+              </Button>
             </div>
 
             {/* 自动识别结果 */}
-            <div className="space-y-2 pt-3 border-t border-dashed border-slate-200 dark:border-slate-700">
-              <div className="flex items-center justify-between">
-                <h4 className="text-sm font-medium">自动识别结果</h4>
-                <Button variant="ghost" size="sm" className="h-7 text-xs" onClick={recognizeEquipment}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-refresh-cw mr-1"
+            {showResults && (
+              <div className="space-y-2 pt-3 border-t border-dashed border-slate-200 dark:border-slate-700">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-sm font-medium">自动识别结果</h4>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    type="button"
+                    className="h-7 text-xs" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      recognizeEquipment();
+                    }}
                   >
-                    <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
-                    <path d="M21 3v5h-5" />
-                    <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
-                    <path d="M3 21v-5h5" />
-                  </svg>
-                  重新识别
-                </Button>
-              </div>
-              <div className={`grid grid-cols-${gridCols} gap-2`}>
-                {Array.from({ length: actualResultCount }).map((_, index) => (
-                  <div
-                    key={index}
-                    className={`flex flex-col items-center ${
-                      hoveredRectangle === index ? "bg-green-100 dark:bg-green-900/20 rounded-lg p-1" : "p-1"
-                    }`}
-                    onMouseEnter={() => setHoveredRectangle(index)}
-                    onMouseLeave={() => setHoveredRectangle(null)}
-                  >
-                    <div className={`${placeholderSize.className} bg-slate-200 dark:bg-slate-700 mb-1 overflow-hidden`}>
-                      <img
-                        src={`/placeholder.svg?height=${placeholderSize.height}&width=${placeholderSize.width}`}
-                        alt={type}
-                        className="w-full h-full object-cover"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-refresh-cw mr-1"
+                    >
+                      <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                      <path d="M21 3v5h-5" />
+                      <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                      <path d="M3 21v-5h5" />
+                    </svg>
+                    重新识别
+                  </Button>
+                </div>
+                <div className={`grid grid-cols-${gridCols} gap-2`}>
+                  {Array.from({ length: actualResultCount }).map((_, index) => (
+                    <div
+                      key={index}
+                      className={`flex flex-col items-center ${
+                        hoveredRectangle === index ? "bg-green-100 dark:bg-green-900/20 rounded-lg p-1" : "p-1"
+                      }`}
+                      onMouseEnter={() => setHoveredRectangle(index)}
+                      onMouseLeave={() => setHoveredRectangle(null)}
+                    >
+                      <div className={`${placeholderSize.className} bg-slate-200 dark:bg-slate-700 mb-1 overflow-hidden`}>
+                        <img
+                          src={`/placeholder.svg?height=${placeholderSize.height}&width=${placeholderSize.width}`}
+                          alt={type}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex items-center gap-1 mb-1">
+                        <div className="flex justify-center items-center w-5 h-5 rounded-full bg-slate-200 dark:bg-slate-700 text-xs font-medium">
+                          {index}
+                        </div>
+                        <span className="text-xs text-muted-foreground">{getDefaultSelectionLabel(index)}</span>
+                      </div>
+                      <EquipmentSelectorModal
+                        type={type}
+                        buttonLabel="手动选择"
+                        buttonVariant="ghost"
+                        onSelect={(equipment) => {
+                          setRecognizedEquipment(prev => ({
+                            ...prev,
+                            [index]: equipment.name
+                          }))
+                        }}
                       />
                     </div>
-                    <div className="flex items-center gap-1 mb-1">
-                      <div className="flex justify-center items-center w-5 h-5 rounded-full bg-slate-200 dark:bg-slate-700 text-xs font-medium">
-                        {index}
-                      </div>
-                      <Select defaultValue={getDefaultSelection(index)}>
-                        <SelectTrigger className="w-full h-7 text-xs">
-                          <SelectValue placeholder={`选择${title}`} />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value={getDefaultSelection(index)}>{getDefaultSelectionLabel(index)}</SelectItem>
-                          <SelectItem value="other">其他{title}</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <EquipmentSelectorModal
-                      type={type}
-                      buttonLabel="手动选择"
-                      buttonVariant="ghost"
-                      onSelect={(equipment) => {
-                        console.log(`Selected ${type}: ${equipment.name}`)
-                        // Here you would update the selection
-                      }}
-                    />
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </>
         )}
       </div>

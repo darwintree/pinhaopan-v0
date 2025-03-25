@@ -1,6 +1,8 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
+import cv from "@techstark/opencv-js"
+import { detectChara } from "./cv"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
@@ -76,9 +78,38 @@ export const mockRectangleDetection = (type: EquipmentType): RectangleDetectionR
 
 // 模拟矩形检测过程
 export const detectRectangles = async (imageUrl: string, type: EquipmentType): Promise<RectangleDetectionResult> => {
-  // 模拟 API 调用延迟
-  await new Promise((resolve) => setTimeout(resolve, 1000))
-  
+  console.log(type)
+  // imgUrl to HTMLImageElement
+  const imgSrc = new Image()
+  imgSrc.src = imageUrl
+  // wait for imgSrc to load
+  await new Promise((resolve) => {
+    imgSrc.onload = resolve
+  })
+  const img = cv.imread(imgSrc)
+  console.log(img)
+  switch (type) {
+    case "chara":
+      const charaBoxes = detectChara(img)
+      console.log(charaBoxes)
+      return {
+        rectangles: charaBoxes.map((box, index) => ({
+          ...box,
+          id: index,
+          width: box.w,
+          height: box.h
+        })),
+        imageSize: {
+          width: img.cols,
+          height: img.rows,
+        },
+      }
+    case "weapon":
+      break
+    case "summon":
+      break
+  }
+
   // 返回 mock 数据
   return mockRectangleDetection(type)
 }

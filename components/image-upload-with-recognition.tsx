@@ -316,6 +316,88 @@ export function ImageUploadWithRecognition({
               </button>
             </div>
 
+            {/* 矩形工具条 */}
+            <div className="flex items-center gap-2 mb-4 p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
+                <Button 
+                  type="button"
+                  size="sm"
+                  variant="outline"
+                  onClick={() => {
+                    if (containerRef.current && imageRef.current) {
+                      // 生成最大ID+1
+                      const maxId = Math.max(0, ...rectangles.map(r => r.id));
+                      const newRect: Rectangle = {
+                        id: maxId + 1,
+                        x: 50,
+                        y: 50,
+                        width: 100,
+                        height: 100
+                      };
+                      setRectangles([...rectangles, newRect]);
+                      setActiveRectangle(rectangles.length);
+                    }
+                  }}
+                  className="h-8"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="mr-1"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <line x1="12" y1="8" x2="12" y2="16" />
+                  <line x1="8" y1="12" x2="16" y2="12" />
+                </svg>
+                添加矩形
+              </Button>
+              
+              <Button 
+                size="sm"
+                variant={activeRectangle !== null ? "destructive" : "outline"}
+                disabled={activeRectangle === null}
+                onClick={() => {
+                  if (activeRectangle !== null) {
+                    const newRectangles = [...rectangles];
+                    newRectangles.splice(activeRectangle, 1);
+                    setRectangles(newRectangles);
+                    setActiveRectangle(null);
+                  }
+                }}
+                className="h-8"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="mr-1"
+                >
+                  <path d="M3 6h18" />
+                  <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+                  <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+                </svg>
+                {activeRectangle !== null ? `删除 ${rectangles[activeRectangle]?.id}` : "删除矩形"}
+              </Button>
+              
+              <span className="ml-auto text-xs text-slate-500">
+                {activeRectangle !== null ? 
+                  `当前选中: ID ${rectangles[activeRectangle]?.id} (共 ${rectangles.length} 个)` : 
+                  `点击矩形进行选择 (共 ${rectangles.length} 个)`}
+              </span>
+            </div>
+
             {/* 识别按钮 */}
             <div className="flex justify-center mb-4">
               <Button 

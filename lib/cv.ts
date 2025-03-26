@@ -11,12 +11,12 @@ function createCharaMask(image: cv.Mat): cv.Mat {
   // 金色的 HSV 范围
   const colorRanges = [
     {
-      lower: cv.matFromArray(1, 3, cv.CV_8UC1, [96, 225, 40]),
-      upper: cv.matFromArray(1, 3, cv.CV_8UC1, [98, 255, 80])
+      lower: cv.matFromArray(1, 3, cv.CV_8UC1, [96, 160, 40]),
+      upper: cv.matFromArray(1, 3, cv.CV_8UC1, [101, 255, 80])
     },
     {
-      lower: cv.matFromArray(1, 3, cv.CV_8UC1, [60, 20, 1]),
-      upper: cv.matFromArray(1, 3, cv.CV_8UC1, [100, 50, 25])
+      lower: cv.matFromArray(1, 3, cv.CV_8UC1, [60, 1, 1]),
+      upper: cv.matFromArray(1, 3, cv.CV_8UC1, [100, 80, 25])
     }
   ];
   const bgr = new cv.Mat();

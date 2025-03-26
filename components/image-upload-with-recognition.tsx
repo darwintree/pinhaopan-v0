@@ -72,10 +72,16 @@ export function ImageUploadWithRecognition({
       img.onload = () => {
         setImageSize({ width: img.width, height: img.height })
 
-        // Calculate scale based on container width
-        const containerWidth = containerRef.current?.clientWidth || 800
-        const scale = containerWidth / img.width
-        setContainerScale(scale)
+        // 设置容器高度与图像成比例
+        if (containerRef.current) {
+          const containerWidth = containerRef.current.clientWidth || 800
+          const aspectRatio = img.height / img.width
+          containerRef.current.style.height = `${containerWidth * aspectRatio}px`
+          
+          // 计算缩放比例
+          const scale = containerWidth / img.width
+          setContainerScale(scale)
+        }
       }
       img.src = images[0]
     }
@@ -230,14 +236,14 @@ export function ImageUploadWithRecognition({
           <>
             <div
               ref={containerRef}
-              className="relative aspect-video rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 mb-4"
+              className="relative rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 mb-4"
             >
               {/* Image */}
               <img
                 ref={imageRef}
                 src={images[0] || "/placeholder.svg"}
                 alt={`${title} screenshot`}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
 
               {/* Resizable rectangles */}

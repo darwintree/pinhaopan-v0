@@ -312,3 +312,33 @@ export function detectSummon(image: cv.Mat): Box[] {
   return detectGrid(image, 100, 200, 3);
 }
 
+function get_orb() {
+  const orb = new cv.ORB(
+    200, // nfeatures
+    undefined, // scaleFactor
+    undefined, // nlevels
+    undefined, // edgeThreshold
+    undefined, // firstLevel
+    undefined, // WTA_K
+    cv.ORB_HARRIS_SCORE // scoreType
+  );
+
+  return orb;
+}
+
+export function getDes(image: cv.Mat, des: cv.Mat) {
+  const keypoints = new cv.KeyPointVector();
+  const mask = new cv.Mat();
+  get_orb().detectAndCompute(image, mask, keypoints, des);
+  keypoints.delete();
+  mask.delete();
+}
+
+export function serializeDes(des: cv.Mat): { content: string, shape: number } {
+  const shape = des.rows;
+  const buffer = new Uint8Array(des.data);
+  const content = btoa(String.fromCharCode.apply(null, [...buffer]));
+  return { content, shape };
+}
+
+

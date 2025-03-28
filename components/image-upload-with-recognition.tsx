@@ -89,53 +89,128 @@ export function ImageUploadWithRecognition({
     }
   }, [images])
 
-  // Recognize equipment
+  // 根据类型和宽高比对矩形进行分组
+  const groupRectanglesByTypeAndAspectRatio = (
+    rectangles: Rectangle[], 
+    type: EquipmentType
+  ): Record<DetectEquipmentType, Rectangle[]> => {
+    const groups: Record<DetectEquipmentType, Rectangle[]> = {
+      "chara": [],
+      "weapon/normal": [],
+      "weapon/main": [],
+      "summon/party_sub": [],
+      "summon/party_main": []
+    };
+    
+    rectangles.forEach(rect => {
+      const aspectRatio = rect.width / rect.height;
+      
+      if (type === "chara") {
+        groups["chara"].push(rect);
+      } else if (type === "weapon") {
+        if (aspectRatio >= 1) { // 宽 > 高
+          groups["weapon/normal"].push(rect);
+        } else { // 宽 < 高
+          groups["weapon/main"].push(rect);
+        }
+      } else if (type === "summon") {
+        if (aspectRatio >= 1) { // 宽 > 高
+          groups["summon/party_sub"].push(rect);
+        } else { // 宽 < 高
+          groups["summon/party_main"].push(rect);
+        }
+      }
+    });
+    
+    return groups;
+  };
+
+  // 处理一组矩形的识别请求
+  const processRectangleGroup = async (
+    imageUrl: string,
+    groupType: DetectEquipmentType,
+    groupRectangles: Rectangle[]
+  ): Promise<{
+    results: {id: string, confidence: number}[][];
+    originalIndices: number[];
+  }> => {
+    // 获取该组的图像描述符
+    const contents = await getImageDescriptorsFromImageAndRectangles(
+      imageUrl, 
+      groupRectangles, 
+      groupType
+    );
+    
+    // 记录原始索引
+    const originalIndices = groupRectangles.map(
+      rect => rectangles.findIndex(r => r === rect)
+    );
+    
+    const payload = {
+      type: groupType,
+      contents,
+    };
+    
+    console.log(`Sending request for ${groupType} with payload:`, payload);
+    const response = await fetch("/api/equipment/recognize", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      console.error(`Recognition failed for ${groupType}`, await response.json());
+      throw new Error(`Recognition failed for ${groupType}`);
+    }
+
+    const results = await response.json() as {id: string, confidence: number}[][];
+    return { results, originalIndices };
+  };
+
+  // 识别设备主函数
   const recognizeEquipment = async () => {
     try {
-      setIsRecognizing(true)
+      setIsRecognizing(true);
       if (!imageRef.current) {
-        throw new Error("Image not found")
-      }
-      // get sub image from image and rectangles
-      const contents = await getImageDescriptorsFromImageAndRectangles(imageRef.current.src, rectangles, "weapon/normal")
-
-      const payload = {
-        type: "weapon/normal" as const,
-        contents,
-      }
-      console.log("Sending request with payload:", payload);
-      const response = await fetch("/api/equipment/recognize", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      })
-
-      if (!response.ok) {
-        console.error("Recognition failed", await response.json())
-        throw new Error("Recognition failed")
-      }
-
-      const data = await response.json() as {id: string, confidence: number}[][]
-
-      if (data.length !== rectangles.length) {
-        throw new Error("Recognition result count mismatch")
+        throw new Error("Image not found");
       }
       
-      // 更新识别结果
-      const newRecognizedEquipment: Record<number, {id: string, confidence: number}[]> = {}
-      data.forEach((results, index) => {
-        newRecognizedEquipment[index] = results
-      })
-      setRecognizedEquipment(newRecognizedEquipment)
-      setShowResults(true)
+      // 按类型和宽高比分组矩形
+      const rectangleGroups = groupRectanglesByTypeAndAspectRatio(rectangles, type);
+      
+      // 结果容器
+      const recognizedResults: Record<number, {id: string, confidence: number}[]> = {};
+      
+      // 处理每个非空组并收集结果
+      const processPromises = Object.entries(rectangleGroups)
+        .filter(([_, groupRects]) => groupRects.length > 0)
+        .map(async ([groupType, groupRects]) => {
+          const { results, originalIndices } = await processRectangleGroup(
+            imageRef.current!.src,
+            groupType as DetectEquipmentType,
+            groupRects
+          );
+          
+          // 将结果映射回原始索引
+          results.forEach((result, idx) => {
+            recognizedResults[originalIndices[idx]] = result;
+          });
+        });
+      
+      // 等待所有处理完成
+      await Promise.all(processPromises);
+      
+      // 更新状态
+      setRecognizedEquipment(recognizedResults);
+      setShowResults(true);
     } catch (error) {
-      console.error("Failed to recognize equipment:", error)
+      console.error("Failed to recognize equipment:", error);
     } finally {
-      setIsRecognizing(false)
+      setIsRecognizing(false);
     }
-  }
+  };
 
   // Get placeholder size based on type
   const getPlaceholderSize = () => {

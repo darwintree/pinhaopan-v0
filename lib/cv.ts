@@ -313,17 +313,27 @@ export function detectSummon(image: cv.Mat): Box[] {
 }
 
 function get_orb() {
-  const orb = new cv.ORB(
-    200, // nfeatures
-    undefined, // scaleFactor
-    undefined, // nlevels
-    undefined, // edgeThreshold
-    undefined, // firstLevel
-    undefined, // WTA_K
-    cv.ORB_HARRIS_SCORE // scoreType
-  );
+  // const orb = new cv.ORB(
+  //   200, // nfeatures
+  //   1.2, // scaleFactor
+  //   8, // nlevels
+  //   31, // edgeThreshold
+  //   0, // firstLevel
+  //   2, // WTA_K
+  //   0, // scoreType
+  //   31,
+  //   20
+  // );
+  const orb = new cv.ORB(200);
+  console.log("orb initialized")
 
   return orb;
+}
+
+export function getDesBase64(image: cv.Mat) {
+  const des = new cv.Mat();
+  getDes(image, des);
+  return serializeDes(des);
 }
 
 export function getDes(image: cv.Mat, des: cv.Mat) {
@@ -334,11 +344,9 @@ export function getDes(image: cv.Mat, des: cv.Mat) {
   mask.delete();
 }
 
-export function serializeDes(des: cv.Mat): { content: string, shape: number } {
-  const shape = des.rows;
+export function serializeDes(des: cv.Mat): string {
   const buffer = new Uint8Array(des.data);
   const content = btoa(String.fromCharCode.apply(null, [...buffer]));
-  return { content, shape };
+  return content;
 }
-
 

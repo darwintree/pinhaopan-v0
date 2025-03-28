@@ -43,3 +43,9 @@ export function getEquipmentImage(id: string, type: EquipmentType) {
   return `/equipment/${type}/${id}.png`
 }
 
+export type DetectEquipmentType = "weapon/main" | "weapon/normal" | "summon/party_main" | "summon/party_sub" | "chara"
+
+export interface EquipmentDetectResults {
+  id: string
+  confidence: number
+}[]

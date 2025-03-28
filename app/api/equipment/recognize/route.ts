@@ -1,38 +1,70 @@
 import { NextResponse } from "next/server"
-import { mockRecognitionResults } from "@/lib/mock-data"
+import { DetectEquipmentType, EquipmentDetectResults } from "@/lib/types"
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
-    const { type, rectangles } = body
+    let body;
+    try {
+      body = await request.json()
+      // console.log("Parsed request body:", body);
+    } catch (error) {
+      console.error("Failed to parse request body:", error);
+      return NextResponse.json(
+        { error: "Invalid JSON in request body" },
+        { status: 400 }
+      )
+    }
 
-    if (!type || !rectangles) {
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json(
+        { error: "Request body must be an object" },
+        { status: 400 }
+      )
+    }
+
+    console.log("Type:", body.type);
+    // console.log("Contents:", body.contents);
+    const { type, contents } = body as { type: DetectEquipmentType, contents: string[] }
+
+    if (!type || !contents) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
       )
     }
 
-    // 模拟API延迟
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    console.log("Request URL:", `${process.env.DETECT_API_BASE_URL}/detect/${type}`);
+    console.log("Request body content length:", contents.length);
+    
+    const response = await fetch(`${process.env.DETECT_API_BASE_URL}/detect/${type}`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ contents }),
+    });
+    
+    console.log("Response status:", response.status);
 
-    // 返回mock识别结果
-    const results = mockRecognitionResults[type as keyof typeof mockRecognitionResults]
-    if (!results) {
+    if (!response.ok) {
       return NextResponse.json(
-        { error: "Invalid equipment type" },
-        { status: 400 }
+        { error: await response.json() },
+        { status: 500 }
       )
     }
 
-    return NextResponse.json({
-      success: true,
-      results: results.positions,
-    })
+    const results = await response.json() as EquipmentDetectResults[]
+
+    console.log("Results:", results);
+
+    return NextResponse.json(
+      results,
+    )
+
   } catch (error) {
     console.error("Recognition error:", error)
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Internal server error:" + error },
       { status: 500 }
     )
   }

@@ -9,8 +9,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import { Switch } from "@/components/ui/switch"
 import { Rnd } from "react-rnd"
+import type { DetectEquipmentType, EquipmentDetectResults } from "@/lib/types"
 import type { Rectangle, EquipmentType } from "@/lib/utils"
-import { detectRectangles } from "@/lib/utils"
+import { detectRectangles, getImageDescriptorsFromImageAndRectangles } from "@/lib/utils"
 
 interface ImageUploadWithRecognitionProps {
   type: EquipmentType
@@ -90,30 +91,42 @@ export function ImageUploadWithRecognition({
   // Recognize equipment
   const recognizeEquipment = async () => {
     try {
-      setShowResults(true)
+      if (!imageRef.current) {
+        throw new Error("Image not found")
+      }
+      console.log("Rectangles:", rectangles)
+      console.log("begin getImageDescriptorsFromImageAndRectangles")
+      // get sub image from image and rectangles
+      const contents = await getImageDescriptorsFromImageAndRectangles(imageRef.current.src, rectangles, "weapon/normal")
+      console.log("Contents:", contents)
+
+      const payload = {
+        type: "weapon/normal" as const,
+        contents,
+      }
+      console.log("Sending request with payload:", payload);
       const response = await fetch("/api/equipment/recognize", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          type,
-          rectangles,
-        }),
+        body: JSON.stringify(payload),
       })
 
       if (!response.ok) {
+        console.error("Recognition failed", await response.json())
         throw new Error("Recognition failed")
       }
 
-      const data = await response.json()
+      const data = await response.json() as EquipmentDetectResults[]
       
       // 更新识别结果
       const newRecognizedEquipment: Record<number, string> = {}
-      data.results.forEach((result: { id: number; name: string }) => {
-        newRecognizedEquipment[result.id] = result.name
+      data.forEach((result: { id: string; confidence: number }, index: number) => {
+        newRecognizedEquipment[index] = result.id
       })
       setRecognizedEquipment(newRecognizedEquipment)
+      setShowResults(true)
     } catch (error) {
       console.error("Failed to recognize equipment:", error)
     }

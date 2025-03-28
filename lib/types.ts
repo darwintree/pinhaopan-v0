@@ -29,7 +29,8 @@ export interface EquipmentData {
 // 根据id和type可以取得的详细数据
 export interface DetailedEquipmentData extends EquipmentData {
   name: string
-  category: string
+  categories: string[]
+  element: string
 }
 
 export interface EquipmentFilterCondition extends EquipmentData {

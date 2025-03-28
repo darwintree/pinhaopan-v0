@@ -11,7 +11,7 @@ import { Switch } from "@/components/ui/switch"
 import { Rnd } from "react-rnd"
 import type { DetectEquipmentType, EquipmentDetectResults } from "@/lib/types"
 import type { Rectangle, EquipmentType } from "@/lib/utils"
-import { detectRectangles, getImageDescriptorsFromImageAndRectangles } from "@/lib/utils"
+import { detectRectangles, getImageDescriptorsFromImageAndRectangles, getPhotoUrl } from "@/lib/utils"
 
 interface ImageUploadWithRecognitionProps {
   type: EquipmentType
@@ -615,11 +615,19 @@ export function ImageUploadWithRecognition({
                       onMouseLeave={() => setHoveredRectangle(null)}
                     >
                       <div className={`${placeholderSize.className} bg-slate-200 dark:bg-slate-700 mb-1 overflow-hidden`}>
-                        <img
-                          src={`/placeholder.svg?height=${placeholderSize.height}&width=${placeholderSize.width}`}
-                          alt={type}
-                          className="w-full h-full object-cover"
-                        />
+                        {recognizedEquipment[index]?.length > 0 ? (
+                          <img
+                            src={getPhotoUrl(recognizedEquipment[index][0].id)}
+                            alt={recognizedEquipment[index][0].id}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <img
+                            src={`/placeholder.svg?height=${placeholderSize.height}&width=${placeholderSize.width}`}
+                            alt={type}
+                            className="w-full h-full object-cover"
+                          />
+                        )}
                       </div>
                       <div className="flex items-center gap-1 mb-1">
                         <div className="flex justify-center items-center w-5 h-5 rounded-full bg-slate-200 dark:bg-slate-700 text-xs font-medium">

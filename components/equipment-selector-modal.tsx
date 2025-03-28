@@ -190,13 +190,13 @@ export function EquipmentSelectorModal({
         </div>
 
         <div className="overflow-y-auto flex-1 pr-2 -mr-2">
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
             {loading ? (
-              <div key="loading" className="col-span-4 py-8 text-center text-muted-foreground">加载中...</div>
+              <div key="loading" className="col-span-full py-8 text-center text-muted-foreground">加载中...</div>
             ) : error ? (
-              <div key="error" className="col-span-4 py-8 text-center text-red-500">加载失败: {error.message}</div>
+              <div key="error" className="col-span-full py-8 text-center text-red-500">加载失败: {error.message}</div>
             ) : categoryFilter === "" ? (
-              <div key="no-category" className="col-span-4 py-8 text-center text-muted-foreground">
+              <div key="no-category" className="col-span-full py-8 text-center text-muted-foreground">
                 请选择类别以查看装备
               </div>
             ) : filteredEquipment.length > 0 ? (
@@ -206,13 +206,21 @@ export function EquipmentSelectorModal({
                   className="flex flex-col items-center p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                   onClick={() => handleSelect(item)}
                 >
-                  <div className="w-16 h-16 mb-2 rounded overflow-hidden bg-slate-200 dark:bg-slate-700">
+                  <div className="w-full relative pb-[100%] mb-2 rounded overflow-hidden bg-slate-200 dark:bg-slate-700">
                     <img
                       src={getPhotoUrl(item.id, type)}
                       alt={item.name}
-                      className="w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-contain"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = "/placeholder.svg"
+                      }}
+                      onLoad={(e) => {
+                        const img = e.target as HTMLImageElement;
+                        const container = img.parentElement;
+                        if (container) {
+                          const ratio = (img.naturalHeight / img.naturalWidth) * 100;
+                          container.style.paddingBottom = `${ratio}%`;
+                        }
                       }}
                     />
                   </div>
@@ -228,7 +236,7 @@ export function EquipmentSelectorModal({
                 </button>
               ))
             ) : (
-              <div key="empty" className="col-span-4 py-8 text-center text-muted-foreground">没有找到符合条件的{getTitle()}</div>
+              <div key="empty" className="col-span-full py-8 text-center text-muted-foreground">没有找到符合条件的{getTitle()}</div>
             )}
           </div>
         </div>

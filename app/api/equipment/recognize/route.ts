@@ -6,7 +6,6 @@ export async function POST(request: Request) {
     let body;
     try {
       body = await request.json()
-      // console.log("Parsed request body:", body);
     } catch (error) {
       console.error("Failed to parse request body:", error);
       return NextResponse.json(

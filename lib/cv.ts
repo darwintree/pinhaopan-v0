@@ -325,7 +325,6 @@ function get_orb() {
   //   20
   // );
   const orb = new cv.ORB(200);
-  console.log("orb initialized")
 
   return orb;
 }

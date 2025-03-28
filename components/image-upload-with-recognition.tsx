@@ -96,11 +96,8 @@ export function ImageUploadWithRecognition({
       if (!imageRef.current) {
         throw new Error("Image not found")
       }
-      console.log("Rectangles:", rectangles)
-      console.log("begin getImageDescriptorsFromImageAndRectangles")
       // get sub image from image and rectangles
       const contents = await getImageDescriptorsFromImageAndRectangles(imageRef.current.src, rectangles, "weapon/normal")
-      console.log("Contents:", contents)
 
       const payload = {
         type: "weapon/normal" as const,

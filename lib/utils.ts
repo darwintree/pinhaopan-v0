@@ -93,7 +93,6 @@ export const getImageDescriptorsFromImageAndRectangles = async (imageUrl: string
       cv.resize(subImage, subImage, new cv.Size(shouldWidth, shouldHeight))
       try {
         const content = getDesBase64(subImage)
-        console.log("content:", content)
         contents.push(content)
       } finally {
         subImage.delete()

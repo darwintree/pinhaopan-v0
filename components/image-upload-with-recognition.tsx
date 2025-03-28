@@ -42,8 +42,9 @@ export function ImageUploadWithRecognition({
   const [rectangles, setRectangles] = useState<Rectangle[]>([])
   const [activeRectangle, setActiveRectangle] = useState<number | null>(null)
   const [hoveredRectangle, setHoveredRectangle] = useState<number | null>(null)
-  const [recognizedEquipment, setRecognizedEquipment] = useState<Record<number, string>>({})
+  const [recognizedEquipment, setRecognizedEquipment] = useState<Record<number, {id: string, confidence: number}[]>>({})
   const [showResults, setShowResults] = useState(false)
+  const [isRecognizing, setIsRecognizing] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
   const [imageSize, setImageSize] = useState({ width: 800, height: 450 })
@@ -91,6 +92,7 @@ export function ImageUploadWithRecognition({
   // Recognize equipment
   const recognizeEquipment = async () => {
     try {
+      setIsRecognizing(true)
       if (!imageRef.current) {
         throw new Error("Image not found")
       }
@@ -118,17 +120,23 @@ export function ImageUploadWithRecognition({
         throw new Error("Recognition failed")
       }
 
-      const data = await response.json() as EquipmentDetectResults[]
+      const data = await response.json() as {id: string, confidence: number}[][]
+
+      if (data.length !== rectangles.length) {
+        throw new Error("Recognition result count mismatch")
+      }
       
       // 更新识别结果
-      const newRecognizedEquipment: Record<number, string> = {}
-      data.forEach((result: { id: string; confidence: number }, index: number) => {
-        newRecognizedEquipment[index] = result.id
+      const newRecognizedEquipment: Record<number, {id: string, confidence: number}[]> = {}
+      data.forEach((results, index) => {
+        newRecognizedEquipment[index] = results
       })
       setRecognizedEquipment(newRecognizedEquipment)
       setShowResults(true)
     } catch (error) {
       console.error("Failed to recognize equipment:", error)
+    } finally {
+      setIsRecognizing(false)
     }
   }
 
@@ -143,22 +151,6 @@ export function ImageUploadWithRecognition({
         return { width: 48, height: 48, className: "w-12 h-12 rounded" }
       default:
         return { width: 40, height: 40, className: "w-10 h-10 rounded" }
-    }
-  }
-
-  // Get actual result count based on type
-  const getActualResultCount = () => {
-    if (resultCount) return resultCount
-
-    switch (type) {
-      case "chara":
-        return 5
-      case "weapon":
-        return 9
-      case "summon":
-        return 4
-      default:
-        return 5
     }
   }
 
@@ -178,11 +170,14 @@ export function ImageUploadWithRecognition({
 
   // Get default selection label based on type and index
   const getDefaultSelectionLabel = (index: number) => {
-    return recognizedEquipment[index] || `未识别${title}${index + 1}`
+    const results = recognizedEquipment[index]
+    if (!results || results.length === 0) {
+      return `未识别${title}${index + 1}`
+    }
+    return results[0].id
   }
 
   const placeholderSize = getPlaceholderSize()
-  const actualResultCount = getActualResultCount()
 
   return (
     <div className="space-y-4">
@@ -421,25 +416,54 @@ export function ImageUploadWithRecognition({
                   recognizeEquipment();
                 }} 
                 className="w-full"
+                disabled={isRecognizing}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="mr-2"
-                >
-                  <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
-                  <path d="M21 3v5h-5" />
-                  <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
-                  <path d="M3 21v-5h5" />
-                </svg>
-                开始识别
+                {isRecognizing ? (
+                  <>
+                    <svg
+                      className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    识别中...
+                  </>
+                ) : (
+                  <>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="mr-2"
+                    >
+                      <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                      <path d="M21 3v5h-5" />
+                      <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                      <path d="M3 21v-5h5" />
+                    </svg>
+                    开始识别
+                  </>
+                )}
               </Button>
             </div>
 
@@ -458,29 +482,58 @@ export function ImageUploadWithRecognition({
                       e.stopPropagation();
                       recognizeEquipment();
                     }}
+                    disabled={isRecognizing}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-refresh-cw mr-1"
-                    >
-                      <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
-                      <path d="M21 3v5h-5" />
-                      <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
-                      <path d="M3 21v-5h5" />
-                    </svg>
-                    重新识别
+                    {isRecognizing ? (
+                      <>
+                        <svg
+                          className="animate-spin mr-1 h-3 w-3"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        识别中
+                      </>
+                    ) : (
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="lucide lucide-refresh-cw mr-1"
+                        >
+                          <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                          <path d="M21 3v5h-5" />
+                          <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                          <path d="M3 21v-5h5" />
+                        </svg>
+                        重新识别
+                      </>
+                    )}
                   </Button>
                 </div>
                 <div className={`grid grid-cols-${gridCols} gap-2`}>
-                  {Array.from({ length: actualResultCount }).map((_, index) => (
+                  {Array.from({ length: rectangles.length }).map((_, index) => (
                     <div
                       key={index}
                       className={`flex flex-col items-center ${
@@ -509,7 +562,7 @@ export function ImageUploadWithRecognition({
                         onSelect={(equipment) => {
                           setRecognizedEquipment(prev => ({
                             ...prev,
-                            [index]: equipment.name
+                            [index]: [{ id: equipment.name, confidence: 100 }]
                           }))
                         }}
                       />

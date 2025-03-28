@@ -53,14 +53,29 @@ export function ImageUploadWithRecognition({
   // Process image with OpenCV
   const processImageWithOpenCV = async (imageUrl: string) => {
     try {
-      // 使用 mock 数据模拟矩形检测
+      
       const result = await detectRectangles(imageUrl, type)
       setRectangles(result.rectangles)
       setImageSize(result.imageSize)
 
       // 如果启用了自动识别，继续识别过程
       if (autoRecognize) {
-        recognizeEquipment()
+        // 重置显示结果状态
+        setShowResults(false)
+        // 等待识别完成
+        if (!imageRef.current) {
+          // 等待imageRef.current被设置
+          await new Promise(resolve => {
+            const checkImageRef = () => {
+              if (imageRef.current) {
+                console.log("imageRef.current is set")
+                resolve(true);
+              }
+            }
+            checkImageRef()
+          })
+        }
+        await recognizeEquipment(result.rectangles)
       }
     } catch (error) {
       console.error("Failed to process image:", error)
@@ -127,6 +142,7 @@ export function ImageUploadWithRecognition({
 
   // 处理一组矩形的识别请求
   const processRectangleGroup = async (
+    rectangles: Rectangle[],
     imageUrl: string,
     groupType: DetectEquipmentType,
     groupRectangles: Rectangle[]
@@ -170,15 +186,17 @@ export function ImageUploadWithRecognition({
   };
 
   // 识别设备主函数
-  const recognizeEquipment = async () => {
+  const recognizeEquipment = async (autoRectangles?: Rectangle[]) => {
     try {
       setIsRecognizing(true);
       if (!imageRef.current) {
         throw new Error("Image not found");
       }
+
+      const usingRectangles = autoRectangles || rectangles
       
       // 按类型和宽高比分组矩形
-      const rectangleGroups = groupRectanglesByTypeAndAspectRatio(rectangles, type);
+      const rectangleGroups = groupRectanglesByTypeAndAspectRatio(usingRectangles, type);
       
       // 结果容器
       const recognizedResults: Record<number, {id: string, confidence: number}[]> = {};
@@ -188,6 +206,7 @@ export function ImageUploadWithRecognition({
         .filter(([_, groupRects]) => groupRects.length > 0)
         .map(async ([groupType, groupRects]) => {
           const { results, originalIndices } = await processRectangleGroup(
+            usingRectangles,
             imageRef.current!.src,
             groupType as DetectEquipmentType,
             groupRects
@@ -202,11 +221,17 @@ export function ImageUploadWithRecognition({
       // 等待所有处理完成
       await Promise.all(processPromises);
       
-      // 更新状态
+      // 更新状态和显示结果（仅在实际有结果时）
       setRecognizedEquipment(recognizedResults);
-      setShowResults(true);
+      
+      // 只在有识别结果时显示结果区域
+      if (Object.keys(recognizedResults).length > 0) {
+        setShowResults(true);
+      }
     } catch (error) {
       console.error("Failed to recognize equipment:", error);
+      // 发生错误时不显示结果
+      setShowResults(false);
     } finally {
       setIsRecognizing(false);
     }

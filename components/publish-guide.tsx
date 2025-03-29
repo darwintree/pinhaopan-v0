@@ -57,7 +57,7 @@ export function PublishGuide() {
 
   // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    // e.preventDefault()
     setIsPending(true)
 
     // Simulate API call
@@ -206,8 +206,6 @@ export function PublishGuide() {
                 autoRecognize={autoRecognize}
                 setAutoRecognize={setAutoRecognize}
                 infoText="上传一张包含所有角色的图片，系统将自动识别"
-                gridCols={5}
-                resultCount={5}
               />
 
               {/* 武器上传 */}
@@ -238,8 +236,6 @@ export function PublishGuide() {
                 autoRecognize={autoRecognize}
                 setAutoRecognize={setAutoRecognize}
                 infoText="上传一张包含所有武器的图片，系统将自动识别"
-                gridCols={3}
-                resultCount={9}
               />
 
               {/* 召唤石上传 */}
@@ -271,8 +267,6 @@ export function PublishGuide() {
                 autoRecognize={autoRecognize}
                 setAutoRecognize={setAutoRecognize}
                 infoText="上传一张包含所有召唤石的图片，系统将自动识别"
-                gridCols={2}
-                resultCount={4}
               />
             </div>
           </CardContent>

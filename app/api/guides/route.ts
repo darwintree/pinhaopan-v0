@@ -19,7 +19,7 @@ export async function GET(request: Request) {
   // Apply search filter
   if (searchTerm) {
     filtered = filtered.filter((guide) => 
-      guide.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      guide.quest.toLowerCase().includes(searchTerm.toLowerCase()) ||
       guide.description.toLowerCase().includes(searchTerm.toLowerCase())
     )
   }
@@ -69,7 +69,7 @@ export async function GET(request: Request) {
   if (charaConditions.length > 0) {
     filtered = filtered.filter((guide) => {
       return charaConditions.every((condition) => {
-        const hasChara = guide.team.includes(condition.id)
+        const hasChara = guide.charas.includes(condition.id)
         return condition.include ? hasChara : !hasChara
       })
     })

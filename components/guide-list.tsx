@@ -136,11 +136,11 @@ interface GuideListItemProps {
 function GuideListItem({ guide }: GuideListItemProps) {
   return (
     <TableRow className="cursor-pointer hover:bg-slate-100/50 dark:hover:bg-slate-800/50">
-      <TableCell className="font-medium">{guide.name}</TableCell>
+      <TableCell className="font-medium">{guide.quest}</TableCell>
       <TableCell>{guide.time} 分钟</TableCell>
       <TableCell className="hidden md:table-cell">
         <div className="flex -space-x-2">
-          {guide.team.map((character, i) => (
+          {guide.charas.map((character, i) => (
             <div
               key={i}
               className="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 ring-2 ring-white dark:ring-slate-900"

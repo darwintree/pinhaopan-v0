@@ -14,6 +14,7 @@ import type { GuideData, EquipmentFilterCondition } from "@/lib/types"
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import { GuideList } from "@/components/guide-list"
 import { EquipmentSelector } from "@/components/equipment-selector"
+import { QuestSelector } from "@/components/quest-selector"
 
 
 
@@ -44,6 +45,7 @@ export function BrowseGuides() {
   const [availableSummons, setAvailableSummons] = useState<string[]>([])
   const [availableCharas, setAvailableCharas] = useState<string[]>([])
   const [loading, setLoading] = useState(false)
+  const [selectedQuest, setSelectedQuest] = useState<string>("")
 
   // Filter count
   const filterCount = [
@@ -143,6 +145,7 @@ export function BrowseGuides() {
       setLoading(true)
       try {
         const params = new URLSearchParams({
+          quest: selectedQuest,
           search: searchTerm,
           ...selectedTags.map(tag => ["tags", tag]),
           timeRange: timeRange.join(","),
@@ -174,6 +177,7 @@ export function BrowseGuides() {
 
     fetchData()
   }, [
+    selectedQuest,
     searchTerm,
     selectedTags,
     timeRange,
@@ -187,6 +191,11 @@ export function BrowseGuides() {
 
   return (
     <div className="space-y-6">
+      <QuestSelector
+        selectedQuest={selectedQuest}
+        onQuestSelect={setSelectedQuest}
+      />
+
       {/* Filter section */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">

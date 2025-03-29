@@ -13,6 +13,8 @@ import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { ImageUploadWithRecognition } from "@/components/image-upload-with-recognition"
+import { QuestSelector } from "@/components/quest-selector"
+import { useQuestList } from "@/hooks/use-quest-list"
 
 export function PublishGuide() {
   // Form states
@@ -31,6 +33,10 @@ export function PublishGuide() {
   const [autoRecognize, setAutoRecognize] = useState(false)
 
   const [isPending, setIsPending] = useState(false)
+
+  const [selectedQuest, setSelectedQuest] = useState<string>("")
+
+  const { questList } = useQuestList()
 
   // Handle tag input
   const handleTagInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -80,6 +86,11 @@ export function PublishGuide() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto">
+      <QuestSelector
+        selectedQuest={selectedQuest}
+        onQuestSelect={setSelectedQuest}
+      />
+
       <Card className="backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
         <CardContent className="p-6">
           <h2 className="text-2xl font-bold mb-6">攻略基本信息</h2>
@@ -87,14 +98,16 @@ export function PublishGuide() {
           <div className="space-y-6">
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="name">副本名称</Label>
-                <Input
-                  id="name"
-                  placeholder="输入副本名称"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
+                <Label>已选副本</Label>
+                <div className="p-3 rounded-md bg-slate-100/50 dark:bg-slate-800/50">
+                  {selectedQuest ? (
+                    <span className="font-medium">
+                      {questList.find(quest => quest.quest === selectedQuest)?.name}
+                    </span>
+                  ) : (
+                    <span className="text-muted-foreground">请先选择副本</span>
+                  )}
+                </div>
               </div>
 
               <div className="space-y-2">

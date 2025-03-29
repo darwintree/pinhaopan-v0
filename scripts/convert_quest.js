@@ -6,7 +6,8 @@ const questDir = path.join(__dirname, 'quest');
 const PICK_FIELDS = [
   "quest_id",
   "quest_name",
-  "bg_image"
+  "bg_image",
+  "category",
 ];
 
 // 读取目录下所有文件
@@ -26,8 +27,9 @@ jsonFiles.forEach(file => {
         const questData = {};
         for (const field of PICK_FIELDS) {
             questData[field] = quest[field];
-        }
-        result.push(questData);
+      }
+      questData["category"] = file.replace(".json", "");
+      result.push(questData);
     }
 });
 

@@ -140,14 +140,21 @@ export function PublishGuide() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="description">攻略描述</Label>
+              <Label htmlFor="description">备注</Label>
               <Textarea
                 id="description"
-                placeholder="详细描述攻略内容、打法要点等..."
+                placeholder="配置简要备注（不超过50字）"
                 className="min-h-[120px]"
                 value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                onChange={(e) => {
+                  if (e.target.value.length <= 50) {
+                    setDescription(e.target.value)
+                  }
+                }}
               />
+              <div className="text-sm text-muted-foreground text-right">
+                {description.length}/50
+              </div>
             </div>
 
             <div className="space-y-2">

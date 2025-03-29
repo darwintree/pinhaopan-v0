@@ -15,6 +15,7 @@ import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import { GuideList } from "@/components/guide-list"
 import { EquipmentSelector } from "@/components/equipment-selector"
 import { QuestSelector } from "@/components/quest-selector"
+import { TagSelector } from "@/components/tag-selector"
 
 
 
@@ -49,7 +50,6 @@ export function BrowseGuides() {
 
   // Filter count
   const filterCount = [
-    searchTerm !== "",
     selectedTags.length > 0,
     timeRange[0] !== 0 || timeRange[1] !== 30,
     dateRange.from !== undefined || dateRange.to !== undefined,
@@ -70,7 +70,6 @@ export function BrowseGuides() {
 
   // Reset filters
   const resetFilters = () => {
-    setSearchTerm("")
     setSelectedTags([])
     setTimeRange([0, 30])
     setDateRange({ from: undefined, to: undefined })
@@ -146,7 +145,6 @@ export function BrowseGuides() {
       try {
         const params = new URLSearchParams({
           quest: selectedQuest,
-          search: searchTerm,
           ...selectedTags.map(tag => ["tags", tag]),
           timeRange: timeRange.join(","),
           dateRange: [
@@ -178,7 +176,6 @@ export function BrowseGuides() {
     fetchData()
   }, [
     selectedQuest,
-    searchTerm,
     selectedTags,
     timeRange,
     dateRange,
@@ -223,49 +220,18 @@ export function BrowseGuides() {
             className="flex items-center justify-between p-4 cursor-pointer"
             onClick={() => setBasicFilterOpen(!basicFilterOpen)}
           >
-            <h3 className="font-medium">基本筛选</h3>
+            <h3 className="font-medium">标签筛选</h3>
             <Button variant="ghost" size="sm">
               {basicFilterOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
             </Button>
           </div>
 
           {basicFilterOpen && (
-            <CardContent className="p-4 pt-0 grid gap-4 md:grid-cols-2">
-              <div className="space-y-2">
-                <Label htmlFor="search">副本名称/关键词</Label>
-                <div className="relative">
-                  <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    id="search"
-                    placeholder="搜索副本名称或关键词..."
-                    className="pl-8"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label>标签</Label>
-                <div className="flex flex-wrap gap-2">
-                  {availableTags.map((tag) => (
-                    <Badge
-                      key={tag}
-                      variant={selectedTags.includes(tag) ? "default" : "outline"}
-                      className="cursor-pointer"
-                      onClick={() => {
-                        if (selectedTags.includes(tag)) {
-                          setSelectedTags(selectedTags.filter((t) => t !== tag))
-                        } else {
-                          setSelectedTags([...selectedTags, tag])
-                        }
-                      }}
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
+            <CardContent className="p-4 pt-0">
+              <TagSelector 
+                selectedTags={selectedTags}
+                onTagSelect={setSelectedTags}
+              />
             </CardContent>
           )}
         </Card>

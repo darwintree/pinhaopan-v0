@@ -13,8 +13,9 @@ export type Equipment = {
 export const availableTags = ["速刷", "新手向", "无氪", "高难度", "稳定", "高伤害", "自动化"]
 
 // Available weapons and summons for filtering
-export const availableWeapons = ["光剑", "暗刀", "水弓", "火杖", "土枪", "风拳"]
-export const availableSummons = ["巴哈姆特", "路西法", "宙斯", "提亚马特", "欧罗巴"]
+export const availableWeapons = ["weapon1", "weapon2", "weapon3"]
+export const availableSummons = ["summon1", "summon2", "summon3"]
+export const availableCharas = ["chara1", "chara2", "chara3"]
 
 // Mock equipment data
 export const mockEquipment = {

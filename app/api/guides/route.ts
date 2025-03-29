@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import type { GuideData, EquipmentFilterCondition } from "@/lib/types"
-import { mockGuides, availableTags, availableWeapons, availableSummons } from "@/lib/mock-data"
+import { mockGuides, availableTags, availableWeapons, availableSummons, availableCharas } from "@/lib/mock-data"
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
@@ -10,6 +10,7 @@ export async function GET(request: Request) {
   const dateRange = searchParams.get("dateRange")?.split(",") || []
   const weaponConditions = JSON.parse(searchParams.get("weaponConditions") || "[]") as EquipmentFilterCondition[]
   const summonConditions = JSON.parse(searchParams.get("summonConditions") || "[]") as EquipmentFilterCondition[]
+  const charaConditions = JSON.parse(searchParams.get("charaConditions") || "[]") as EquipmentFilterCondition[]
   const sortField = searchParams.get("sortField") || "date"
   const sortDirection = searchParams.get("sortDirection") || "desc"
 
@@ -47,13 +48,9 @@ export async function GET(request: Request) {
   // Apply weapon conditions
   if (weaponConditions.length > 0) {
     filtered = filtered.filter((guide) => {
-      return weaponConditions.every((condition: any) => {
-        const count = guide.weapons.filter(w => w === condition.weapon).length
-        if (condition.type === "include") {
-          return count >= condition.count
-        } else {
-          return count === 0
-        }
+      return weaponConditions.every((condition) => {
+        const count = guide.weapons.filter(w => w === condition.id).length
+        return condition.include ? count >= condition.count : count === 0
       })
     })
   }
@@ -61,9 +58,19 @@ export async function GET(request: Request) {
   // Apply summon conditions
   if (summonConditions.length > 0) {
     filtered = filtered.filter((guide) => {
-      return summonConditions.every((condition: any) => {
-        const hasSummon = guide.summons.includes(condition.summon)
-        return condition.type === "include" ? hasSummon : !hasSummon
+      return summonConditions.every((condition) => {
+        const hasSummon = guide.summons.includes(condition.id)
+        return condition.include ? hasSummon : !hasSummon
+      })
+    })
+  }
+
+  // Apply chara conditions
+  if (charaConditions.length > 0) {
+    filtered = filtered.filter((guide) => {
+      return charaConditions.every((condition) => {
+        const hasChara = guide.team.includes(condition.id)
+        return condition.include ? hasChara : !hasChara
       })
     })
   }
@@ -84,5 +91,6 @@ export async function GET(request: Request) {
     availableTags,
     availableWeapons,
     availableSummons,
+    availableCharas,
   })
 } 

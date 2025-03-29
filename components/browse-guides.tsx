@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ChevronDown, ChevronUp, Filter, Clock, Calendar, Sword, Search, X, Plus } from "lucide-react"
+import { ChevronDown, ChevronUp, Filter, Clock, Calendar, Sword, Search, X, Plus, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -13,6 +13,7 @@ import { DateRangePicker } from "@/components/date-range-picker"
 import type { GuideData, EquipmentFilterCondition } from "@/lib/types"
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import { GuideList } from "@/components/guide-list"
+import { EquipmentSelector } from "@/components/equipment-selector"
 
 
 
@@ -30,6 +31,7 @@ export function BrowseGuides() {
   })
   const [selectedWeaponConditions, setSelectedWeaponConditions] = useState<EquipmentFilterCondition[]>([])
   const [selectedSummonConditions, setSelectedSummonConditions] = useState<EquipmentFilterCondition[]>([])
+  const [selectedCharaConditions, setSelectedCharaConditions] = useState<EquipmentFilterCondition[]>([])
 
   // Sorting states
   const [sortField, setSortField] = useState<"time" | "date">("date")
@@ -40,6 +42,7 @@ export function BrowseGuides() {
   const [availableTags, setAvailableTags] = useState<string[]>([])
   const [availableWeapons, setAvailableWeapons] = useState<string[]>([])
   const [availableSummons, setAvailableSummons] = useState<string[]>([])
+  const [availableCharas, setAvailableCharas] = useState<string[]>([])
   const [loading, setLoading] = useState(false)
 
   // Filter count
@@ -50,6 +53,7 @@ export function BrowseGuides() {
     dateRange.from !== undefined || dateRange.to !== undefined,
     selectedWeaponConditions.length > 0,
     selectedSummonConditions.length > 0,
+    selectedCharaConditions.length > 0,
   ].filter(Boolean).length
 
   // Handle sort change
@@ -70,6 +74,7 @@ export function BrowseGuides() {
     setDateRange({ from: undefined, to: undefined })
     setSelectedWeaponConditions([])
     setSelectedSummonConditions([])
+    setSelectedCharaConditions([])
   }
 
   // Add weapon condition
@@ -112,6 +117,26 @@ export function BrowseGuides() {
     setSelectedSummonConditions(selectedSummonConditions.filter((_, i) => i !== index))
   }
 
+  // Add chara condition
+  const addCharaCondition = () => {
+    setSelectedCharaConditions([
+      ...selectedCharaConditions,
+      { type: "chara", id: availableCharas[0], include: true, count: 1 },
+    ])
+  }
+
+  // Update chara condition
+  const updateCharaCondition = (index: number, field: keyof EquipmentFilterCondition, value: any) => {
+    const updatedConditions = [...selectedCharaConditions]
+    updatedConditions[index] = { ...updatedConditions[index], [field]: value }
+    setSelectedCharaConditions(updatedConditions)
+  }
+
+  // Remove chara condition
+  const removeCharaCondition = (index: number) => {
+    setSelectedCharaConditions(selectedCharaConditions.filter((_, i) => i !== index))
+  }
+
   // Fetch guides data from API
   useEffect(() => {
     const fetchData = async () => {
@@ -127,6 +152,7 @@ export function BrowseGuides() {
           ].join(","),
           weaponConditions: JSON.stringify(selectedWeaponConditions),
           summonConditions: JSON.stringify(selectedSummonConditions),
+          charaConditions: JSON.stringify(selectedCharaConditions),
           sortField,
           sortDirection,
         })
@@ -138,6 +164,7 @@ export function BrowseGuides() {
         setAvailableTags(data.availableTags)
         setAvailableWeapons(data.availableWeapons)
         setAvailableSummons(data.availableSummons)
+        setAvailableCharas(data.availableCharas)
       } catch (error) {
         console.error("Failed to fetch guides data:", error)
       } finally {
@@ -153,6 +180,7 @@ export function BrowseGuides() {
     dateRange,
     selectedWeaponConditions,
     selectedSummonConditions,
+    selectedCharaConditions,
     sortField,
     sortDirection,
   ])
@@ -315,39 +343,54 @@ export function BrowseGuides() {
                 {selectedWeaponConditions.length === 0 ? (
                   <div className="text-sm text-muted-foreground italic">点击"添加条件"按钮来创建武器筛选条件</div>
                 ) : (
-                  <div className="space-y-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {selectedWeaponConditions.map((condition, index) => (
                       <div
                         key={index}
-                        className="flex items-center gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
+                        className="flex flex-col gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
                       >
-                        <Select
-                          value={condition.include ? "include" : "exclude"}
-                          onValueChange={(value) => updateWeaponCondition(index, "include", value === "include")}
-                        >
-                          <SelectTrigger className="w-24 h-8">
-                            <SelectValue placeholder="类型" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="include">包含</SelectItem>
-                            <SelectItem value="exclude">排除</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <div className="flex items-center gap-2">
+                          <Select
+                            value={condition.include ? "include" : "exclude"}
+                            onValueChange={(value) => updateWeaponCondition(index, "include", value === "include")}
+                          >
+                            <SelectTrigger className="w-24 h-8">
+                              <SelectValue placeholder="类型" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="include">包含</SelectItem>
+                              <SelectItem value="exclude">排除</SelectItem>
+                            </SelectContent>
+                          </Select>
 
-                        <div className="flex-1">
-                          <EquipmentSelectorModal
-                            type="weapon"
-                            buttonLabel={condition.id || "选择武器"}
-                            onSelect={(equipment) => updateWeaponCondition(index, "id", equipment.id)}
-                          />
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => removeWeaponCondition(index)}
+                            className="h-8 w-8 ml-auto"
+                          >
+                            <X className="h-4 w-4" />
+                          </Button>
                         </div>
+
+                        <EquipmentSelector
+                          index={index + 1}
+                          type="weapon"
+                          label={condition.include ? `需要${condition.count}把` : "排除"}
+                          rectangle={{ width: 160, height: 100 }}
+                          recognizedEquipment={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
+                          onEquipmentSelect={(equipment) => updateWeaponCondition(index, "id", equipment.id)}
+                          isHovered={false}
+                          onMouseEnter={() => {}}
+                          onMouseLeave={() => {}}
+                        />
 
                         {condition.include && (
                           <Select
                             value={condition.count.toString()}
                             onValueChange={(value) => updateWeaponCondition(index, "count", Number.parseInt(value))}
                           >
-                            <SelectTrigger className="w-20 h-8">
+                            <SelectTrigger className="w-full h-8">
                               <SelectValue placeholder="数量" />
                             </SelectTrigger>
                             <SelectContent>
@@ -359,15 +402,6 @@ export function BrowseGuides() {
                             </SelectContent>
                           </Select>
                         )}
-
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          onClick={() => removeWeaponCondition(index)}
-                          className="h-8 w-8 ml-auto"
-                        >
-                          <X className="h-4 w-4" />
-                        </Button>
                       </div>
                     ))}
                   </div>
@@ -394,41 +428,115 @@ export function BrowseGuides() {
                 {selectedSummonConditions.length === 0 ? (
                   <div className="text-sm text-muted-foreground italic">点击"添加条件"按钮来创建召唤石筛选条件</div>
                 ) : (
-                  <div className="space-y-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {selectedSummonConditions.map((condition, index) => (
                       <div
                         key={index}
-                        className="flex items-center gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
+                        className="flex flex-col gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
                       >
-                        <Select
-                          value={condition.include ? "include" : "exclude"}
-                          onValueChange={(value) => updateSummonCondition(index, "include", value === "include")}
-                        >
-                          <SelectTrigger className="w-24 h-8">
-                            <SelectValue placeholder="类型" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="include">包含</SelectItem>
-                            <SelectItem value="exclude">排除</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <div className="flex items-center gap-2">
+                          <Select
+                            value={condition.include ? "include" : "exclude"}
+                            onValueChange={(value) => updateSummonCondition(index, "include", value === "include")}
+                          >
+                            <SelectTrigger className="w-24 h-8">
+                              <SelectValue placeholder="类型" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="include">包含</SelectItem>
+                              <SelectItem value="exclude">排除</SelectItem>
+                            </SelectContent>
+                          </Select>
 
-                        <div className="flex-1">
-                          <EquipmentSelectorModal
-                            type="summon"
-                            buttonLabel={condition.id || "选择召唤石"}
-                            onSelect={(equipment) => updateSummonCondition(index, "id", equipment.id)}
-                          />
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => removeSummonCondition(index)}
+                            className="h-8 w-8 ml-auto"
+                          >
+                            <X className="h-4 w-4" />
+                          </Button>
                         </div>
 
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          onClick={() => removeSummonCondition(index)}
-                          className="h-8 w-8 ml-auto"
-                        >
-                          <X className="h-4 w-4" />
-                        </Button>
+                        <EquipmentSelector
+                          index={index + 1}
+                          type="summon"
+                          label={condition.include ? "需要" : "排除"}
+                          rectangle={{ width: 160, height: 100 }}
+                          recognizedEquipment={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
+                          onEquipmentSelect={(equipment) => updateSummonCondition(index, "id", equipment.id)}
+                          isHovered={false}
+                          onMouseEnter={() => {}}
+                          onMouseLeave={() => {}}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Chara conditions */}
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <Label className="flex items-center gap-2">
+                    <Users className="h-4 w-4" />
+                    角色条件
+                    {selectedCharaConditions.length > 0 && (
+                      <Badge variant="secondary" className="ml-1">
+                        {selectedCharaConditions.length}
+                      </Badge>
+                    )}
+                  </Label>
+                  <Button variant="outline" size="sm" onClick={() => addCharaCondition()} className="h-8">
+                    <Plus className="h-3.5 w-3.5 mr-1" />
+                    添加条件
+                  </Button>
+                </div>
+
+                {selectedCharaConditions.length === 0 ? (
+                  <div className="text-sm text-muted-foreground italic">点击"添加条件"按钮来创建角色筛选条件</div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {selectedCharaConditions.map((condition, index) => (
+                      <div
+                        key={index}
+                        className="flex flex-col gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
+                      >
+                        <div className="flex items-center gap-2">
+                          <Select
+                            value={condition.include ? "include" : "exclude"}
+                            onValueChange={(value) => updateCharaCondition(index, "include", value === "include")}
+                          >
+                            <SelectTrigger className="w-24 h-8">
+                              <SelectValue placeholder="类型" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="include">包含</SelectItem>
+                              <SelectItem value="exclude">排除</SelectItem>
+                            </SelectContent>
+                          </Select>
+
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => removeCharaCondition(index)}
+                            className="h-8 w-8 ml-auto"
+                          >
+                            <X className="h-4 w-4" />
+                          </Button>
+                        </div>
+
+                        <EquipmentSelector
+                          index={index + 1}
+                          type="chara"
+                          label={condition.include ? "需要" : "排除"}
+                          rectangle={{ width: 160, height: 100 }}
+                          recognizedEquipment={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
+                          onEquipmentSelect={(equipment) => updateCharaCondition(index, "id", equipment.id)}
+                          isHovered={false}
+                          onMouseEnter={() => {}}
+                          onMouseLeave={() => {}}
+                        />
                       </div>
                     ))}
                   </div>
@@ -441,6 +549,7 @@ export function BrowseGuides() {
                 <ul className="list-disc list-inside mt-1">
                   <li>包含3把光剑 + 排除暗刀 = 必须有3把光剑且不能有暗刀</li>
                   <li>包含巴哈姆特 + 排除路西法 = 必须有巴哈姆特且不能有路西法</li>
+                  <li>包含水狗 + 排除火狐 = 必须有水狗且不能有火狐</li>
                 </ul>
               </div>
             </CardContent>

@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Search, Filter, X } from "lucide-react"
-import { useEquipmentsList } from "@/hooks/useEquipmentsList"
+import { useEquipmentsList } from "@/hooks/use-equipments-list"
 import type { DetailedEquipmentData, EquipmentType } from "@/lib/types"
 import { getPhotoUrl } from "@/lib/utils"
 

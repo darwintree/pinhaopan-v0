@@ -15,6 +15,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { ImageUploadWithRecognition } from "@/components/image-upload-with-recognition"
 import { QuestSelector } from "@/components/quest-selector"
 import { useQuestList } from "@/hooks/use-quest-list"
+import { TagSelector } from "@/components/tag-selector"
 
 export function PublishGuide() {
   // Form states
@@ -150,29 +151,7 @@ export function PublishGuide() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="tags">标签</Label>
-              <div className="flex flex-wrap gap-2 mb-2">
-                {tags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="gap-1">
-                    {tag}
-                    <button
-                      type="button"
-                      onClick={() => removeTag(tag)}
-                      className="ml-1 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 size-4 inline-flex items-center justify-center"
-                    >
-                      <X className="size-3" />
-                      <span className="sr-only">移除</span>
-                    </button>
-                  </Badge>
-                ))}
-              </div>
-              <Input
-                id="tags"
-                placeholder="输入标签并按回车添加"
-                value={tagInput}
-                onChange={(e) => setTagInput(e.target.value)}
-                onKeyDown={handleTagInput}
-              />
+              <TagSelector selectedTags={tags} onTagSelect={setTags} />
             </div>
           </div>
         </CardContent>

@@ -24,7 +24,6 @@ export function BrowseGuides() {
   const [basicFilterOpen, setBasicFilterOpen] = useState(true)
   const [timeFilterOpen, setTimeFilterOpen] = useState(false)
   const [configFilterOpen, setConfigFilterOpen] = useState(false)
-  const [searchTerm, setSearchTerm] = useState("")
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [timeRange, setTimeRange] = useState<[number, number]>([0, 30])
   const [dateRange, setDateRange] = useState<{ from: Date | undefined; to: Date | undefined }>({
@@ -143,22 +142,43 @@ export function BrowseGuides() {
     const fetchData = async () => {
       setLoading(true)
       try {
-        const params = new URLSearchParams({
-          quest: selectedQuest,
-          ...selectedTags.map(tag => ["tags", tag]),
-          timeRange: timeRange.join(","),
-          dateRange: [
-            dateRange.from?.toISOString() || "",
-            dateRange.to?.toISOString() || "",
-          ].join(","),
-          weaponConditions: JSON.stringify(selectedWeaponConditions),
-          summonConditions: JSON.stringify(selectedSummonConditions),
-          charaConditions: JSON.stringify(selectedCharaConditions),
-          sortField,
-          sortDirection,
+        const params = new URLSearchParams()
+        
+        // 添加搜索条件
+        if (selectedQuest) {
+          params.append("quest", selectedQuest)
+        }
+        
+        // 添加标签
+        selectedTags.forEach(tag => {
+          params.append("tags", tag)
         })
+        
+        // 添加时间范围
+        params.append("timeRange", timeRange.join(","))
+        
+        // 添加日期范围
+        if (dateRange.from || dateRange.to) {
+          const dateRangeStr = [
+            dateRange.from?.toISOString() || "",
+            dateRange.to?.toISOString() || ""
+          ].join(",")
+          params.append("dateRange", dateRangeStr)
+        }
+        
+        // 添加排序条件
+        params.append("sortField", sortField)
+        params.append("sortDirection", sortDirection)
+
+        // 暂时保留这些参数，虽然后端现在不处理
+        params.append("weaponConditions", JSON.stringify(selectedWeaponConditions))
+        params.append("summonConditions", JSON.stringify(selectedSummonConditions))
+        params.append("charaConditions", JSON.stringify(selectedCharaConditions))
 
         const response = await fetch(`/api/guides?${params}`)
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
         const data = await response.json()
         
         setGuides(data.guides)
@@ -168,6 +188,7 @@ export function BrowseGuides() {
         setAvailableCharas(data.availableCharas)
       } catch (error) {
         console.error("Failed to fetch guides data:", error)
+        // 可以添加错误提示UI
       } finally {
         setLoading(false)
       }

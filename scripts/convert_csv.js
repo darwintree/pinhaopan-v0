@@ -78,7 +78,7 @@ async function processFile(inputFile) {
 
 // 处理所有文件
 async function processAllFiles() {
-    const inputDir = './scripts';
+    const inputDir = './scripts/equipments';
     const files = fs.readdirSync(inputDir);
     const csvFiles = files.filter(file => file.endsWith('.csv'));
     

@@ -7,6 +7,24 @@ export interface Box {
   h: number;
 }
 
+// 先确认 (a.y, a.y+h) 与 (b.y, b.y+h) 是否存在重叠部分
+// 如果不存在，则返回 b.y-a.y
+// 如果存在，则返回 b.x-a.x
+function compareBox(a: Box, b: Box) {
+  // 检查y轴是否有重叠
+  const aYRange = { start: a.y, end: a.y + a.h };
+  const bYRange = { start: b.y, end: b.y + b.h };
+  
+  // 如果a的结束位置小于b的开始位置，或者a的开始位置大于b的结束位置，则没有重叠
+  const hasYOverlap = !(aYRange.end < bYRange.start || aYRange.start > bYRange.end);
+  
+  if (!hasYOverlap) {
+    return a.y - b.y; // 按y轴位置排序
+  }
+  
+  return a.x - b.x; // y轴重叠时按x轴位置排序
+}
+
 function createCharaMask(image: cv.Mat): cv.Mat {
   // 金色的 HSV 范围
   const colorRanges = [
@@ -89,7 +107,7 @@ export function detectChara(image: cv.Mat): Box[] {
   hierarchy.delete();
 
   // 对框进行排序
-  return equipmentBoxes.sort((a, b) => a.x - b.x);
+  return equipmentBoxes.sort(compareBox);
 }
 
 function createWeaponMask(image: cv.Mat): cv.Mat {
@@ -170,13 +188,7 @@ export function detectWeapon(image: cv.Mat): Box[] {
   hierarchy.delete();
 
   // 对框进行排序
-  return equipmentBoxes.sort((a, b) => {
-    // 首先按y坐标排序，然后按x坐标排序
-    if (a.y !== b.y) {
-      return a.y - b.y;
-    }
-    return a.x - b.x;
-  });
+  return equipmentBoxes.sort(compareBox);
 }
 
 function filterContours(
@@ -305,7 +317,7 @@ export function detectGrid(
   contours.delete();
   hierarchy.delete();
 
-  return mergedBoxes;
+  return mergedBoxes.sort(compareBox);
 }
 
 export function detectSummon(image: cv.Mat): Box[] {

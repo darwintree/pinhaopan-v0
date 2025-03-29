@@ -3,7 +3,7 @@ import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import { getPhotoUrl } from "@/lib/utils"
 import { EquipmentType, DetailedEquipmentData } from "@/lib/types"
 
-interface RecognitionItemProps {
+interface EquipmentSelectorProps {
   index: number
   width?: number
   height?: number
@@ -17,7 +17,7 @@ interface RecognitionItemProps {
   onMouseLeave: () => void
 }
 
-export function RecognitionItem({
+export function EquipmentSelector({
   index,
   width = 80,
   height,
@@ -29,7 +29,7 @@ export function RecognitionItem({
   isHovered,
   onMouseEnter,
   onMouseLeave,
-}: RecognitionItemProps) {
+}: EquipmentSelectorProps) {
   const handleEquipmentSelect = (equipment: DetailedEquipmentData) => {
     onEquipmentSelect(equipment)
   }

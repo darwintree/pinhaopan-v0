@@ -3,7 +3,7 @@ import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import type { EquipmentType, DetailedEquipmentData } from "@/lib/types"
 import { getPhotoUrl } from "@/lib/utils"
 import { useMemo } from "react"
-import { RecognitionItem } from "@/components/recognition-item"
+import { EquipmentSelector } from "@/components/equipment-selector"
 
 interface RecognitionResultsProps {
   type: EquipmentType
@@ -65,7 +65,7 @@ export function RecognitionResults({
   }, [rectangles])
 
   const renderItem = (index: number) => (
-    <RecognitionItem
+    <EquipmentSelector
       key={index}
       index={index}
       rectangle={rectangles[index]}

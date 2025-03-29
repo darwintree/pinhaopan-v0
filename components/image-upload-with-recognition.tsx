@@ -31,8 +31,6 @@ export function ImageUploadWithRecognition({
   autoRecognize,
   setAutoRecognize,
   infoText = "上传一张包含所有内容的图片，系统将自动识别",
-  gridCols = 3,
-  resultCount = 9,
 }: ImageUploadWithRecognitionProps) {
   // Rectangle detection states
   const [rectangles, setRectangles] = useState<Rectangle[]>([])
@@ -304,10 +302,9 @@ export function ImageUploadWithRecognition({
                 onEquipmentSelect={(index, equipment) => {
                   setRecognizedEquipment(prev => ({
                     ...prev,
-                    [index]: [{ id: equipment.name, confidence: 100 }]
+                    [index]: [{ id: equipment.id, confidence: 100 }]
                   }))
                 }}
-                gridCols={gridCols}
                 isRecognizing={isRecognizing}
                 onRetry={() => recognizeEquipment()}
               />

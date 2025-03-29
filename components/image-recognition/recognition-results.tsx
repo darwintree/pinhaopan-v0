@@ -1,16 +1,17 @@
 import { Button } from "@/components/ui/button"
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
-import type { EquipmentType } from "@/lib/types"
+import type { EquipmentType, DetailedEquipmentData } from "@/lib/types"
 import { getPhotoUrl } from "@/lib/utils"
+import { useMemo } from "react"
+import { RecognitionItem } from "@/components/recognition-item"
 
 interface RecognitionResultsProps {
   type: EquipmentType
-  rectangles: { id: number }[]
+  rectangles: { id: number, width: number, height: number }[]
   recognizedEquipment: Record<number, { id: string; confidence: number }[]>
   hoveredRectangle: number | null
   onHoveredRectangleChange: (index: number | null) => void
-  onEquipmentSelect: (index: number, equipment: { name: string }) => void
-  gridCols?: number
+  onEquipmentSelect: (index: number, equipment: DetailedEquipmentData) => void
   isRecognizing?: boolean
   onRetry?: () => void
 }
@@ -22,7 +23,6 @@ export function RecognitionResults({
   hoveredRectangle,
   onHoveredRectangleChange,
   onEquipmentSelect,
-  gridCols = 3,
   isRecognizing = false,
   onRetry,
 }: RecognitionResultsProps) {
@@ -49,6 +49,82 @@ export function RecognitionResults({
   }
 
   const placeholderSize = getPlaceholderSize()
+
+  const { mainGroup, otherGroup } = useMemo(() => {
+    const grouped = rectangles.reduce((acc, rect, index) => {
+      const aspectRatio = rect.width / rect.height
+      if (aspectRatio < 1) {
+        acc.mainGroup.push(index)
+      } else {
+        acc.otherGroup.push(index)
+      }
+      return acc
+    }, { mainGroup: [] as number[], otherGroup: [] as number[] })
+
+    return grouped
+  }, [rectangles])
+
+  const renderItem = (index: number) => (
+    <RecognitionItem
+      key={index}
+      index={index}
+      rectangle={rectangles[index]}
+      recognizedEquipment={recognizedEquipment[index]}
+      type={type}
+      label={getDefaultSelectionLabel(index)}
+      onEquipmentSelect={(equipment) => onEquipmentSelect(index, equipment)}
+      isHovered={hoveredRectangle === index}
+      onMouseEnter={() => onHoveredRectangleChange(index)}
+      onMouseLeave={() => onHoveredRectangleChange(null)}
+    />
+  )
+
+  const renderResults = () => {
+    switch (type) {
+      case "chara":
+        return (
+          <div className="flex flex-row gap-2 overflow-x-auto pb-2">
+            {rectangles.map((_, index) => renderItem(index))}
+          </div>
+        )
+      case "summon":
+        return (
+          <div className="flex flex-row gap-4">
+            {mainGroup.length > 0 && (
+              <div className="flex flex-col gap-2">
+                {mainGroup.map(index => renderItem(index))}
+              </div>
+            )}
+            {otherGroup.length > 0 && (
+              <div className="grid grid-cols-2 gap-2">
+                {otherGroup.map(index => renderItem(index))}
+              </div>
+            )}
+          </div>
+        )
+      case "weapon":
+        return (
+          <div className="flex flex-row gap-4">
+            {mainGroup.length > 0 && (
+              <div className="flex flex-col gap-2">
+                {mainGroup.map(index => renderItem(index))}
+              </div>
+            )}
+            {otherGroup.length > 0 && (
+              <div className="grid grid-cols-3 gap-2">
+                {otherGroup.map(index => renderItem(index))}
+              </div>
+            )}
+          </div>
+        )
+      default:
+        return (
+          <div className="grid grid-cols-3 gap-2">
+            {rectangles.map((_, index) => renderItem(index))}
+          </div>
+        )
+    }
+  }
 
   return (
     <div className="space-y-2 pt-3 border-t border-dashed border-slate-200 dark:border-slate-700">
@@ -112,46 +188,7 @@ export function RecognitionResults({
           </Button>
         )}
       </div>
-      <div className={`grid grid-cols-${gridCols} gap-2`}>
-        {rectangles.map((_, index) => (
-          <div
-            key={index}
-            className={`flex flex-col items-center ${
-              hoveredRectangle === index ? "bg-green-100 dark:bg-green-900/20 rounded-lg p-1" : "p-1"
-            }`}
-            onMouseEnter={() => onHoveredRectangleChange(index)}
-            onMouseLeave={() => onHoveredRectangleChange(null)}
-          >
-            <div className={`${placeholderSize.className} bg-slate-200 dark:bg-slate-700 mb-1 overflow-hidden`}>
-              {recognizedEquipment[index]?.length > 0 ? (
-                <img
-                  src={getPhotoUrl(recognizedEquipment[index][0].id)}
-                  alt={recognizedEquipment[index][0].id}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <img
-                  src={`/placeholder.svg?height=${placeholderSize.height}&width=${placeholderSize.width}`}
-                  alt={type}
-                  className="w-full h-full object-cover"
-                />
-              )}
-            </div>
-            <div className="flex items-center gap-1 mb-1">
-              <div className="flex justify-center items-center w-5 h-5 rounded-full bg-slate-200 dark:bg-slate-700 text-xs font-medium">
-                {index}
-              </div>
-              <span className="text-xs text-muted-foreground">{getDefaultSelectionLabel(index)}</span>
-            </div>
-            <EquipmentSelectorModal
-              type={type}
-              buttonLabel="手动选择"
-              buttonVariant="ghost"
-              onSelect={(equipment) => onEquipmentSelect(index, equipment)}
-            />
-          </div>
-        ))}
-      </div>
+      {renderResults()}
     </div>
   )
 } 

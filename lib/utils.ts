@@ -134,5 +134,5 @@ export function getPhotoUrl(id: string, equipmentType?: EquipmentType) {
         return `${baseUrl}/summon/party_sub/party_sub_${id}.jpg`
     }
   }
-  throw new Error(`Unknown photo id: ${id}`)
+  return `${baseUrl}/placeholder.svg`
 }

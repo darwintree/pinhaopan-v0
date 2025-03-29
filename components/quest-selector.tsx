@@ -62,6 +62,7 @@ export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorPro
         <div className="flex items-center gap-2">
           {selectedQuest && (
             <Button
+              type="button"
               variant="ghost"
               size="sm"
               onClick={(e) => {
@@ -73,7 +74,7 @@ export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorPro
               清除选择
             </Button>
           )}
-          <Button variant="ghost" size="sm">
+          <Button type="button" variant="ghost" size="sm">
             {filterOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
           </Button>
         </div>
@@ -99,6 +100,7 @@ export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorPro
 
             {selectedCategory !== "all" && (
               <Button
+                type="button"
                 variant="ghost"
                 size="sm"
                 onClick={() => setSelectedCategory("all")}
@@ -114,6 +116,7 @@ export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorPro
             {(selectedCategory === "all" ? questList : questList.filter(quest => quest.category === selectedCategory))
               .map((quest) => (
                 <Button
+                  type="button"
                   key={quest.quest}
                   variant={selectedQuest === quest.quest ? "default" : "outline"}
                   className="w-full justify-start"

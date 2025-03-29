@@ -20,6 +20,7 @@ interface ImageUploadWithRecognitionProps {
   infoText?: string
   gridCols?: number
   resultCount?: number
+  onRecognitionResults?: React.Dispatch<React.SetStateAction<Record<number, {id: string, confidence: number}[]>>>
 }
 
 export function ImageUploadWithRecognition({
@@ -31,6 +32,7 @@ export function ImageUploadWithRecognition({
   autoRecognize,
   setAutoRecognize,
   infoText = "上传一张包含所有内容的图片，系统将自动识别",
+  onRecognitionResults,
 }: ImageUploadWithRecognitionProps) {
   // Rectangle detection states
   const [rectangles, setRectangles] = useState<Rectangle[]>([])
@@ -212,6 +214,7 @@ export function ImageUploadWithRecognition({
       
       if (Object.keys(recognizedResults).length > 0) {
         setRecognizedEquipment(recognizedResults)
+        onRecognitionResults?.(recognizedResults)
         setShowResults(true)
       } else {
         console.warn("No results were recognized successfully")

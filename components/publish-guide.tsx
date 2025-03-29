@@ -16,7 +16,7 @@ import { ImageUploadWithRecognition } from "@/components/image-upload-with-recog
 import { QuestSelector } from "@/components/quest-selector"
 import { useQuestList } from "@/hooks/use-quest-list"
 import { TagSelector } from "@/components/tag-selector"
-
+import { GuidePostData } from "@/lib/types"
 export function PublishGuide() {
   // Form states
   const [name, setName] = useState("")
@@ -39,6 +39,11 @@ export function PublishGuide() {
 
   const { questList } = useQuestList()
 
+  // Recognition results states
+  const [charaResults, setCharaResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
+  const [weaponResults, setWeaponResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
+  const [summonResults, setSummonResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
+
   // Handle tag input
   const handleTagInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && tagInput.trim() !== "") {
@@ -56,33 +61,103 @@ export function PublishGuide() {
   }
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
-    // e.preventDefault()
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
     setIsPending(true)
 
-    // Simulate API call
-    setTimeout(() => {
-      // Here you would typically send the data to your backend
-      console.log({
-        name,
+    try {
+      // Validate required fields
+      if (!selectedQuest) {
+        throw new Error("请选择副本")
+      }
+
+      if (teamImages.length === 0) {
+        throw new Error("请上传角色图片")
+      }
+
+      if (weaponImages.length === 0) {
+        throw new Error("请上传武器图片")
+      }
+
+      if (summonImages.length === 0) {
+        throw new Error("请上传召唤石图片")
+      }
+
+      // Get recognized equipment IDs
+      const charas = Object.values(charaResults)
+        .map(results => results[0])
+        .filter(Boolean)
+        .map(result => ({
+          id: result.id,
+          type: "chara" as const
+        }))
+      const weapons = Object.values(weaponResults)
+        .map(results => results[0])
+        .filter(Boolean)
+        .map(result => ({
+          id: result.id,
+          type: "weapon" as const
+        }))
+      const summons = Object.values(summonResults)
+        .map(results => results[0])
+        .filter(Boolean)
+        .map(result => ({
+          id: result.id,
+          type: "summon" as const
+        }))
+
+      // Prepare the data
+      const postData: GuidePostData = {
+        quest: selectedQuest,
         time,
         description,
         tags,
-        teamImages,
-        weaponImages,
-        summonImages,
+        charas,
+        charasBase64: teamImages[0],
+        weapons,
+        weaponsBase64: weaponImages[0],
+        summons,
+        summonsBase64: summonImages[0],
+      }
+
+      console.log(postData)
+
+      // Send the data to the API
+      const response = await fetch("/api/guides/publish", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
       })
 
-      // Reset form
-      setName("")
-      setTime(5)
-      setDescription("")
-      setTags([])
-      setTeamImages([])
-      setWeaponImages([])
-      setSummonImages([])
+      if (!response.ok) {
+        const error = await response.json()
+        throw new Error(error.error || "发布失败")
+      }
+
+      // Reset form on success
+      // setName("")
+      // setTime(5)
+      // setDescription("")
+      // setTags([])
+      // setTeamImages([])
+      // setWeaponImages([])
+      // setSummonImages([])
+      // setSelectedQuest("")
+      // setCharaResults({})
+      // setWeaponResults({})
+      // setSummonResults({})
+
+      // Show success message
+      alert("攻略发布成功！")
+
+    } catch (error) {
+      // Show error message
+      alert(error instanceof Error ? error.message : "发布失败，请重试")
+    } finally {
       setIsPending(false)
-    }, 1500)
+    }
   }
 
   return (
@@ -206,6 +281,7 @@ export function PublishGuide() {
                 autoRecognize={autoRecognize}
                 setAutoRecognize={setAutoRecognize}
                 infoText="上传一张包含所有角色的图片，系统将自动识别"
+                onRecognitionResults={setCharaResults}
               />
 
               {/* 武器上传 */}
@@ -236,6 +312,7 @@ export function PublishGuide() {
                 autoRecognize={autoRecognize}
                 setAutoRecognize={setAutoRecognize}
                 infoText="上传一张包含所有武器的图片，系统将自动识别"
+                onRecognitionResults={setWeaponResults}
               />
 
               {/* 召唤石上传 */}
@@ -267,6 +344,7 @@ export function PublishGuide() {
                 autoRecognize={autoRecognize}
                 setAutoRecognize={setAutoRecognize}
                 infoText="上传一张包含所有召唤石的图片，系统将自动识别"
+                onRecognitionResults={setSummonResults}
               />
             </div>
           </CardContent>

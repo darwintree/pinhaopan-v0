@@ -16,11 +16,11 @@ export interface GuidePostData {
   quest: string  // 副本id
   time?: number  // 通关时间(可选)
   charas: EquipmentData[]  // 角色
-  charasBase64: string[]  // 角色图片base64 宽度不超过600px 高度不超过600px, 否则按比例缩放
+  charasBase64: string  // 角色图片base64 宽度不超过600px 高度不超过600px, 否则按比例缩放
   weapons: EquipmentData[]  // 武器
-  weaponsBase64: string[]  // 武器图片base64 宽度不超过600px 高度不超过600px, 否则按比例缩放
+  weaponsBase64: string  // 武器图片base64 宽度不超过600px 高度不超过600px, 否则按比例缩放
   summons: EquipmentData[]  // 召唤
-  summonsBase64: string[]  // 召唤图片base64 宽度不超过600px 高度不超过600px, 否则按比例缩放
+  summonsBase64: string  // 召唤图片base64 宽度不超过600px 高度不超过600px, 否则按比例缩放
   tags: string[]  // 检查是否在tagList内
   description: string  // 备注
 }

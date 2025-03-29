@@ -7,7 +7,12 @@ if (!process.env.MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
 }
 
+if (!process.env.MONGODB_DB) {
+  throw new Error('Invalid/Missing environment variable: "MONGODB_DB"')
+}
+
 const uri = process.env.MONGODB_URI
+const dbName = process.env.MONGODB_DB
 const storagePath = process.env.LOCAL_STORAGE_PATH
 const options = {}
 
@@ -87,7 +92,7 @@ export async function saveGuide(data: GuidePostData): Promise<string> {
 
   // 生成唯一ID
   const guideId = new ObjectId().toString()
-  const db = (await clientPromise).db("gbf")
+  const db = (await clientPromise).db(dbName)
   const session = client.startSession()
 
   try {
@@ -148,7 +153,7 @@ export async function getGuides(query: {
   dateRange?: [Date, Date]
   sort?: { field: "time" | "date"; direction: "asc" | "desc" }
 } = {}) {
-  const db = (await clientPromise).db("gbf")
+  const db = (await clientPromise).db(dbName)
   const filter: any = {}
 
   if (query.quest) {
@@ -179,13 +184,13 @@ export async function getGuides(query: {
 
 // 获取单个攻略
 export async function getGuide(id: string) {
-  const db = (await clientPromise).db("gbf")
+  const db = (await clientPromise).db(dbName)
   return db.collection("guides").findOne({ id })
 }
 
 // 删除攻略
 export async function deleteGuide(id: string) {
-  const db = (await clientPromise).db("gbf")
+  const db = (await clientPromise).db(dbName)
   const session = client.startSession()
 
   try {

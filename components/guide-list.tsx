@@ -1,13 +1,16 @@
 "use client"
 
 import { useState } from "react"
-import { ArrowUpDown, ArrowDown, ArrowUp } from "lucide-react"
+import { ArrowUpDown, ArrowDown, ArrowUp, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import type { GuideData } from "@/lib/types"
+import { getGuidePhotoUrl } from "@/lib/asset"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { VisuallyHidden } from "@/components/ui/visually-hidden"
 
 interface GuideListProps {
   guides: GuideData[]
@@ -83,7 +86,8 @@ export function GuideList({ guides, loading }: GuideListProps) {
                 </div>
               </TableHead>
               <TableHead className="hidden md:table-cell">队伍配置</TableHead>
-              <TableHead className="hidden md:table-cell">武器/召唤石</TableHead>
+              <TableHead className="hidden md:table-cell">武器</TableHead>
+              <TableHead className="hidden md:table-cell">召唤石</TableHead>
               <TableHead>
                 <div className="flex items-center cursor-pointer" onClick={() => handleSort("date")}>
                   发布时间
@@ -133,53 +137,103 @@ interface GuideListItemProps {
   guide: GuideData
 }
 
+interface EquipmentImageProps {
+  guideId: string
+  type: "chara" | "weapon" | "summon"
+  alt: string
+}
+
+function EquipmentImage({ guideId, type, alt }: EquipmentImageProps) {
+  const [showModal, setShowModal] = useState(false)
+  const [showPopover, setShowPopover] = useState(false)
+  const imageUrl = getGuidePhotoUrl(guideId, type)
+
+  const handleImageClick = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setShowModal(true)
+    setShowPopover(false) // 关闭预览
+  }
+
+  return (
+    <>
+      <Popover open={showPopover} onOpenChange={setShowPopover}>
+        <PopoverTrigger asChild>
+          <div 
+            className="cursor-zoom-in"
+            onMouseEnter={() => setShowPopover(true)}
+            onMouseLeave={() => setShowPopover(false)}
+          >
+            <img 
+              src={imageUrl}
+              alt={alt}
+              className="h-12 w-auto rounded transition-transform hover:scale-105"
+              onClick={handleImageClick}
+            />
+          </div>
+        </PopoverTrigger>
+        <PopoverContent 
+          className="p-0 border-none shadow-xl" 
+          side="top"
+          onMouseEnter={() => setShowPopover(true)}
+          onMouseLeave={() => setShowPopover(false)}
+        >
+          <img 
+            src={imageUrl}
+            alt={alt}
+            className="max-h-[300px] w-auto rounded cursor-zoom-in"
+            onClick={handleImageClick}
+          />
+        </PopoverContent>
+      </Popover>
+
+      <Dialog open={showModal} onOpenChange={setShowModal}>
+        <DialogContent className="max-w-[95vw] w-fit p-0 [&>button]:text-white [&>button]:hover:bg-transparent [&>button]:focus-visible:ring-0">
+          <DialogTitle asChild>
+            <VisuallyHidden>
+              {`${type.charAt(0).toUpperCase() + type.slice(1)} Image Preview`}
+            </VisuallyHidden>
+          </DialogTitle>
+          <img 
+            src={imageUrl}
+            alt={alt}
+            className="max-h-[90vh] w-auto rounded"
+          />
+        </DialogContent>
+      </Dialog>
+    </>
+  )
+}
+
 function GuideListItem({ guide }: GuideListItemProps) {
   return (
     <TableRow className="cursor-pointer hover:bg-slate-100/50 dark:hover:bg-slate-800/50">
       <TableCell className="font-medium">{guide.quest}</TableCell>
       <TableCell>{guide.time} 分钟</TableCell>
       <TableCell className="hidden md:table-cell">
-        <div className="flex -space-x-2">
-          {guide.charas.map((character, i) => (
-            <div
-              key={i}
-              className="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 ring-2 ring-white dark:ring-slate-900"
-              title={character}
-            />
-          ))}
+        <div className="flex items-center">
+          <EquipmentImage 
+            guideId={guide.id}
+            type="chara"
+            alt="Team composition"
+          />
         </div>
       </TableCell>
       <TableCell className="hidden md:table-cell">
-        <div className="flex items-center gap-1">
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" size="sm">
-                武器
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-2">
-              <div className="grid grid-cols-3 gap-1">
-                {guide.weapons.map((weapon, i) => (
-                  <div key={i} className="h-10 w-10 rounded bg-slate-200 dark:bg-slate-700" title={weapon} />
-                ))}
-              </div>
-            </PopoverContent>
-          </Popover>
-
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" size="sm">
-                召唤石
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-2">
-              <div className="grid grid-cols-2 gap-1">
-                {guide.summons.map((summon, i) => (
-                  <div key={i} className="h-12 w-12 rounded bg-slate-200 dark:bg-slate-700" title={summon} />
-                ))}
-              </div>
-            </PopoverContent>
-          </Popover>
+        <div className="flex items-center">
+          <EquipmentImage 
+            guideId={guide.id}
+            type="weapon"
+            alt="Weapons"
+          />
+        </div>
+      </TableCell>
+      <TableCell className="hidden md:table-cell">
+        <div className="flex items-center">
+          <EquipmentImage 
+            guideId={guide.id}
+            type="summon"
+            alt="Summons"
+          />
         </div>
       </TableCell>
       <TableCell>{new Date(guide.date).toLocaleDateString()}</TableCell>

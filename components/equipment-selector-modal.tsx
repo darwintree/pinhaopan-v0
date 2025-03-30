@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Search, Filter, X } from "lucide-react"
 import { useEquipmentsList } from "@/hooks/use-equipments-list"
 import type { DetailedEquipmentData, EquipmentType } from "@/lib/types"
-import { getPhotoUrl } from "@/lib/utils"
+import { getEquipmentPhotoUrl } from "@/lib/asset"
 
 interface EquipmentSelectorModalProps {
   type: EquipmentType
@@ -208,7 +208,7 @@ export function EquipmentSelectorModal({
                 >
                   <div className="w-full relative pb-[100%] mb-2 rounded overflow-hidden bg-slate-200 dark:bg-slate-700">
                     <img
-                      src={getPhotoUrl(item.id, type)}
+                      src={getEquipmentPhotoUrl(item.id, type)}
                       alt={item.name}
                       className="absolute inset-0 w-full h-full object-contain"
                       onError={(e) => {

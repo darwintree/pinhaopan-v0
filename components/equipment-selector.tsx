@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
-import { getPhotoUrl } from "@/lib/utils"
+import { getEquipmentPhotoUrl } from "@/lib/asset"
 import { EquipmentType, DetailedEquipmentData } from "@/lib/types"
 
 interface EquipmentSelectorProps {
@@ -54,7 +54,7 @@ export function EquipmentSelector({
       >
         {recognizedEquipment && recognizedEquipment.length > 0 ? (
           <img
-            src={getPhotoUrl(recognizedEquipment[0]?.id, type)}
+            src={getEquipmentPhotoUrl(recognizedEquipment[0]?.id, type)}
             alt={recognizedEquipment[0]?.id}
             className="absolute inset-0 w-full h-full object-contain"
           />

@@ -1,0 +1,72 @@
+[
+    {
+        "name": "FA",
+        "description": "开启FA",
+        "categories": [
+            "常用",
+            "操作方式"
+        ],
+        "color": "orange"
+    },
+    {
+        "name": "纯FA",
+        "description": "进入副本，直接开启FA，不需要额外手动操作",
+        "categories": [
+            "常用",
+            "操作方式"
+        ],
+        "color": "orange"
+    },
+    {
+        "name": "按键修正FA",
+        "description": "进入副本开启FA前需要手动按键，如领域技能或使用特定召唤",
+        "categories": [
+            "常用",
+            "操作方式"
+        ],
+        "color": "orange"
+    },
+    {
+        "name": "手操",
+        "description": "手动操作攻略副本",
+        "categories": [
+            "常用",
+            "操作方式"
+        ],
+        "color": "purple"
+    },
+    {
+        "name": "高难",
+        "description": "高难副本攻略，相比攻略速度更重视通过率的配置，如极法、天元、天元2",
+        "categories": [
+            "副本类型"
+        ],
+        "color": "red"
+    },
+    {
+        "name": "割草",
+        "description": "割草副本攻略，相比攻略速度更重视通关速度的配置",
+        "categories": [
+            "副本类型"
+        ],
+        "color": "green"
+    },
+    {
+        "name": "老王",
+        "description": "老王武器盘",
+        "categories": [
+            "常用",
+            "武器盘"
+        ],
+        "color": "#50C878"
+    },
+    {
+        "name": "方阵",
+        "description": "方阵武器盘",
+        "categories": [
+            "常用",
+            "武器盘"
+        ],
+        "color": "pink"
+    }
+]

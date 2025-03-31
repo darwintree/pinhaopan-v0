@@ -14,6 +14,7 @@ import { VisuallyHidden } from "@/components/ui/visually-hidden"
 import { useRouter } from "next/navigation"
 import { useQuestList } from "@/hooks/use-quest-list"
 import React from "react"
+import { useTagList } from "@/hooks/use-tag-list"
 
 interface GuideListProps {
   guides: GuideData[]
@@ -258,6 +259,7 @@ function EquipmentImage({ guideId, type, alt, size = "normal" }: EquipmentImageP
 function GuideListItem({ guide }: GuideListItemProps) {
   const router = useRouter()
   const { questList } = useQuestList()
+  const { tagList } = useTagList()
   
   // 查找对应的quest信息
   const questInfo = questList.find(q => q.quest === guide.quest)
@@ -265,6 +267,14 @@ function GuideListItem({ guide }: GuideListItemProps) {
   // 使用quest信息，如果找不到则使用默认值
   const questName = questInfo?.name || guide.quest
   const questImageUrl = getQuestPhotoUrl(questInfo?.image)
+
+  // 过滤出在标签列表中的标签，并获取它们的颜色信息
+  const validTags = guide.tags.filter(tag => 
+    tagList.some(t => t.name === tag)
+  ).map(tag => ({
+    name: tag,
+    color: tagList.find(t => t.name === tag)?.color || ""
+  }));
 
   return (
     <TableRow 
@@ -349,9 +359,18 @@ function GuideListItem({ guide }: GuideListItemProps) {
       {/* 标签 - 桌面端 */}
       <TableCell className="hidden md:table-cell">
         <div className="flex flex-wrap gap-1">
-          {guide.tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs">
-              {tag}
+          {validTags.map((tag) => (
+            <Badge 
+              key={tag.name} 
+              variant="outline" 
+              className="text-xs"
+              style={{
+                borderColor: tag.color,
+                color: tag.color,
+                backgroundColor: tag.color ? `${tag.color}20` : undefined
+              }}
+            >
+              {tag.name}
             </Badge>
           ))}
         </div>

@@ -50,22 +50,36 @@ export function GuideList({ guides, loading }: GuideListProps) {
     <div className="rounded-lg backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-700/50 shadow-sm overflow-hidden">
       <div className="p-4 flex items-center justify-between">
         <h2 className="text-xl font-semibold">攻略列表</h2>
-        <Select
-          defaultValue={sortField}
-          onValueChange={(value) => {
-            setSortField(value as "time" | "date")
-            // Reset sort direction when changing fields
-            setSortDirection("desc")
-          }}
-        >
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="排序方式" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="date">按发布时间</SelectItem>
-            <SelectItem value="time">按消耗时间</SelectItem>
-          </SelectContent>
-        </Select>
+        <div className="flex items-center space-x-2">
+          <Select
+            defaultValue={sortField}
+            onValueChange={(value) => {
+              setSortField(value as "time" | "date")
+              // Reset sort direction when changing fields
+              setSortDirection("desc")
+            }}
+          >
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="排序方式" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="date">按发布时间</SelectItem>
+              <SelectItem value="time">按消耗时间</SelectItem>
+            </SelectContent>
+          </Select>
+          <Button 
+            variant="outline" 
+            size="icon" 
+            onClick={() => setSortDirection(sortDirection === "asc" ? "desc" : "asc")}
+            className="h-10 w-10 bg-white/60 dark:bg-slate-800/60"
+          >
+            {sortDirection === "asc" ? (
+              <ArrowUp className="h-4 w-4" />
+            ) : (
+              <ArrowDown className="h-4 w-4" />
+            )}
+          </Button>
+        </div>
       </div>
 
       <div className="overflow-x-auto">
@@ -73,24 +87,26 @@ export function GuideList({ guides, loading }: GuideListProps) {
           <TableHeader>
             <TableRow>
               <TableHead>副本</TableHead>
+              <TableHead className="hidden md:table-cell">队伍配置</TableHead>
+              <TableHead className="hidden md:table-cell">武器</TableHead>
+              <TableHead className="hidden md:table-cell">召唤石</TableHead>
+              {/* 移动端装备合并表头 */}
+              <TableHead className="md:hidden p-1 text-center">装备</TableHead>
               <TableHead>
                 <div className="flex items-center cursor-pointer" onClick={() => handleSort("time")}>
                   消耗时间
                   {sortField === "time" ? (
                     sortDirection === "asc" ? (
-                      <ArrowUp className="ml-1 h-4 w-4" />
+                      <ArrowUp className="ml-1 h-4 w-4 hidden md:inline" />
                     ) : (
-                      <ArrowDown className="ml-1 h-4 w-4" />
+                      <ArrowDown className="ml-1 h-4 w-4 hidden md:inline" />
                     )
                   ) : (
-                    <ArrowUpDown className="ml-1 h-4 w-4 opacity-50" />
+                    <ArrowUpDown className="ml-1 h-4 w-4 opacity-50 hidden md:inline" />
                   )}
                 </div>
               </TableHead>
-              <TableHead className="hidden md:table-cell">队伍配置</TableHead>
-              <TableHead className="hidden md:table-cell">武器</TableHead>
-              <TableHead className="hidden md:table-cell">召唤石</TableHead>
-              <TableHead>
+              <TableHead className="hidden md:table-cell">
                 <div className="flex items-center cursor-pointer" onClick={() => handleSort("date")}>
                   发布时间
                   {sortField === "date" ? (
@@ -110,7 +126,7 @@ export function GuideList({ guides, loading }: GuideListProps) {
           <TableBody>
             {loading ? (
               <TableRow>
-                <TableCell colSpan={6} className="h-24 text-center">
+                <TableCell colSpan={7} className="h-24 text-center">
                   <div className="flex items-center justify-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
                     <span className="ml-2">加载中...</span>
@@ -119,7 +135,7 @@ export function GuideList({ guides, loading }: GuideListProps) {
               </TableRow>
             ) : sortedGuides.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="h-24 text-center text-muted-foreground">
+                <TableCell colSpan={7} className="h-24 text-center text-muted-foreground">
                   暂无数据
                 </TableCell>
               </TableRow>
@@ -143,9 +159,10 @@ interface EquipmentImageProps {
   guideId: string
   type: "chara" | "weapon" | "summon"
   alt: string
+  size?: "normal" | "small"
 }
 
-function EquipmentImage({ guideId, type, alt }: EquipmentImageProps) {
+function EquipmentImage({ guideId, type, alt, size = "normal" }: EquipmentImageProps) {
   const [showModal, setShowModal] = useState(false)
   const [showPopover, setShowPopover] = useState(false)
   const imageUrl = getGuidePhotoUrl(guideId, type)
@@ -168,7 +185,7 @@ function EquipmentImage({ guideId, type, alt }: EquipmentImageProps) {
             <img 
               src={imageUrl}
               alt={alt}
-              className="h-12 w-auto rounded transition-transform hover:scale-105"
+              className={`${size === "small" ? "h-8" : "h-12"} w-auto rounded transition-transform hover:scale-105`}
               onClick={handleImageClick}
             />
           </div>
@@ -222,6 +239,7 @@ function GuideListItem({ guide }: GuideListItemProps) {
       className="cursor-pointer hover:bg-slate-100/50 dark:hover:bg-slate-800/50"
       onClick={() => router.push(`/guide/${guide.id}`)}
     >
+      {/* 副本 */}
       <TableCell className="font-medium">
         <div className="flex items-center">
           <img 
@@ -232,7 +250,8 @@ function GuideListItem({ guide }: GuideListItemProps) {
           <span className="ml-2 hidden md:inline">{questName}</span>
         </div>
       </TableCell>
-      <TableCell>{guide.time} 分钟</TableCell>
+      
+      {/* 角色 - 桌面端 */}
       <TableCell className="hidden md:table-cell">
         <div className="flex items-center">
           <EquipmentImage 
@@ -242,6 +261,8 @@ function GuideListItem({ guide }: GuideListItemProps) {
           />
         </div>
       </TableCell>
+      
+      {/* 武器 - 桌面端 */}
       <TableCell className="hidden md:table-cell">
         <div className="flex items-center">
           <EquipmentImage 
@@ -251,6 +272,8 @@ function GuideListItem({ guide }: GuideListItemProps) {
           />
         </div>
       </TableCell>
+      
+      {/* 召唤石 - 桌面端 */}
       <TableCell className="hidden md:table-cell">
         <div className="flex items-center">
           <EquipmentImage 
@@ -260,7 +283,38 @@ function GuideListItem({ guide }: GuideListItemProps) {
           />
         </div>
       </TableCell>
-      <TableCell>{new Date(guide.date).toLocaleDateString()}</TableCell>
+      
+      {/* 装备合并 - 移动端 */}
+      <TableCell className="md:hidden p-1">
+        <div className="flex items-center justify-center space-x-1">
+          <EquipmentImage 
+            guideId={guide.id}
+            type="chara"
+            alt="Team composition"
+            size="small"
+          />
+          <EquipmentImage 
+            guideId={guide.id}
+            type="weapon"
+            alt="Weapons"
+            size="small"
+          />
+          <EquipmentImage 
+            guideId={guide.id}
+            type="summon"
+            alt="Summons"
+            size="small"
+          />
+        </div>
+      </TableCell>
+      
+      {/* 消耗时间 */}
+      <TableCell>{guide.time} 分钟</TableCell>
+      
+      {/* 发布时间 - 桌面端 */}
+      <TableCell className="hidden md:table-cell">{new Date(guide.date).toLocaleDateString()}</TableCell>
+      
+      {/* 标签 - 桌面端 */}
       <TableCell className="hidden md:table-cell">
         <div className="flex flex-wrap gap-1">
           {guide.tags.map((tag) => (

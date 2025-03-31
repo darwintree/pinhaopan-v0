@@ -11,6 +11,7 @@ import type { GuideData } from "@/lib/types"
 import { getGuidePhotoUrl } from "@/lib/asset"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { VisuallyHidden } from "@/components/ui/visually-hidden"
+import { useRouter } from "next/navigation"
 
 interface GuideListProps {
   guides: GuideData[]
@@ -205,8 +206,13 @@ function EquipmentImage({ guideId, type, alt }: EquipmentImageProps) {
 }
 
 function GuideListItem({ guide }: GuideListItemProps) {
+  const router = useRouter()
+
   return (
-    <TableRow className="cursor-pointer hover:bg-slate-100/50 dark:hover:bg-slate-800/50">
+    <TableRow 
+      className="cursor-pointer hover:bg-slate-100/50 dark:hover:bg-slate-800/50"
+      onClick={() => router.push(`/guide/${guide.id}`)}
+    >
       <TableCell className="font-medium">{guide.quest}</TableCell>
       <TableCell>{guide.time} 分钟</TableCell>
       <TableCell className="hidden md:table-cell">

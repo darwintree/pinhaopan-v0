@@ -8,10 +8,11 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import type { GuideData } from "@/lib/types"
-import { getGuidePhotoUrl } from "@/lib/asset"
+import { getGuidePhotoUrl, getQuestPhotoUrl } from "@/lib/asset"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { VisuallyHidden } from "@/components/ui/visually-hidden"
 import { useRouter } from "next/navigation"
+import { useQuestList } from "@/hooks/use-quest-list"
 
 interface GuideListProps {
   guides: GuideData[]
@@ -71,7 +72,7 @@ export function GuideList({ guides, loading }: GuideListProps) {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>副本名称</TableHead>
+              <TableHead>副本</TableHead>
               <TableHead>
                 <div className="flex items-center cursor-pointer" onClick={() => handleSort("time")}>
                   消耗时间
@@ -207,13 +208,30 @@ function EquipmentImage({ guideId, type, alt }: EquipmentImageProps) {
 
 function GuideListItem({ guide }: GuideListItemProps) {
   const router = useRouter()
+  const { questList } = useQuestList()
+  
+  // 查找对应的quest信息
+  const questInfo = questList.find(q => q.quest === guide.quest)
+  
+  // 使用quest信息，如果找不到则使用默认值
+  const questName = questInfo?.name || guide.quest
+  const questImageUrl = getQuestPhotoUrl(questInfo?.image)
 
   return (
     <TableRow 
       className="cursor-pointer hover:bg-slate-100/50 dark:hover:bg-slate-800/50"
       onClick={() => router.push(`/guide/${guide.id}`)}
     >
-      <TableCell className="font-medium">{guide.quest}</TableCell>
+      <TableCell className="font-medium">
+        <div className="flex items-center">
+          <img 
+            src={questImageUrl}
+            alt={questName}
+            className="h-8 w-auto rounded transition-transform hover:scale-105"
+          />
+          <span className="ml-2 hidden md:inline">{questName}</span>
+        </div>
+      </TableCell>
       <TableCell>{guide.time} 分钟</TableCell>
       <TableCell className="hidden md:table-cell">
         <div className="flex items-center">

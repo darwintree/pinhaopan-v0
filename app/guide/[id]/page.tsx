@@ -6,7 +6,7 @@ import { ArrowLeft, Share, Link, Copy } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { getGuidePhotoUrl } from "@/lib/asset"
+import { getGuidePhotoUrl, getQuestPhotoUrl } from "@/lib/asset"
 import type { GuideData } from "@/lib/types"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { VisuallyHidden } from "@/components/ui/visually-hidden"
@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/tooltip"
 import { useToast } from "@/components/ui/use-toast"
 import { useTagList } from "@/hooks/use-tag-list"
+import { useQuestList } from "@/hooks/use-quest-list"
 import { cn } from "@/lib/utils"
 
 export default function GuidePage() {
@@ -31,9 +32,10 @@ export default function GuidePage() {
     open: boolean
   }>({ type: "chara", open: false })
   const { tagList, loading: tagsLoading } = useTagList()
+  const { questList, loading: questLoading } = useQuestList()
 
   // 整体加载状态
-  const isLoading = loading || tagsLoading
+  const isLoading = loading || tagsLoading || questLoading
 
   useEffect(() => {
     const fetchGuide = async () => {
@@ -144,7 +146,26 @@ export default function GuidePage() {
             {/* 标题和基本信息行 */}
             <div className="flex flex-col md:flex-row justify-between">
               <div>
-                <h1 className="text-2xl font-semibold">{guide.quest}</h1>
+                {guide && (
+                  <div className="flex items-center mb-2">
+                    {questList.length > 0 && (() => {
+                      const questInfo = questList.find(q => q.quest === guide.quest)
+                      const questName = questInfo?.name || guide.quest
+                      const questImageUrl = getQuestPhotoUrl(questInfo?.image)
+                      
+                      return (
+                        <>
+                          <img
+                            src={questImageUrl}
+                            alt={questName}
+                            className="h-12 w-auto rounded mr-3"
+                          />
+                          <h1 className="text-2xl font-semibold">{questName}</h1>
+                        </>
+                      )
+                    })()}
+                  </div>
+                )}
                 {validTags.length > 0 && (
                   <div className="flex flex-wrap gap-1 mt-1">
                     {validTags.map((tag) => (

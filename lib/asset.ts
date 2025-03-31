@@ -5,6 +5,14 @@ export function getGuidePhotoUrl(guideId: string, equipmentType: EquipmentType) 
   return `${baseUrl}/${equipmentType}s/${guideId}_${equipmentType}s.png`
 }
 
+export function getQuestPhotoUrl(questImg: string | undefined) {
+  const baseUrl = process.env.NEXT_PUBLIC_ASSETS_BASE_URL
+  if (!questImg) {
+    return `${process.env.NEXT_PUBLIC_ASSETS_BASE_URL}/placeholder.svg`
+  }
+  return `${baseUrl}/quest/${questImg}.png`
+}
+
 export function getEquipmentPhotoUrl(id: string, equipmentType?: EquipmentType) {
   const baseUrl = process.env.NEXT_PUBLIC_ASSETS_BASE_URL
   if (!baseUrl) {

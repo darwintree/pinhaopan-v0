@@ -10,8 +10,10 @@ interface RecognitionResultsProps {
   rectangles: { id: number, width: number, height: number }[]
   recognizedEquipment: Record<number, { id: string; confidence: number }[]>
   hoveredRectangle: number | null
+  activeRectangle: number | null
   onHoveredRectangleChange: (index: number | null) => void
   onEquipmentSelect: (index: number, equipment: DetailedEquipmentData) => void
+  onDeleteItem?: (index: number) => void
   isRecognizing?: boolean
   onRetry?: () => void
 }
@@ -21,8 +23,10 @@ export function RecognitionResults({
   rectangles,
   recognizedEquipment,
   hoveredRectangle,
+  activeRectangle,
   onHoveredRectangleChange,
   onEquipmentSelect,
+  onDeleteItem,
   isRecognizing = false,
   onRetry,
 }: RecognitionResultsProps) {
@@ -67,19 +71,32 @@ export function RecognitionResults({
   const renderItem = (index: number) => (
     <EquipmentSelector
       key={index}
-      index={index}
+      index={rectangles[index].id}
       rectangle={rectangles[index]}
       recognizedEquipment={recognizedEquipment[index]}
       type={type}
       label={getDefaultSelectionLabel(index)}
       onEquipmentSelect={(equipment) => onEquipmentSelect(index, equipment)}
       isHovered={hoveredRectangle === index}
+      isActive={activeRectangle === index}
       onMouseEnter={() => onHoveredRectangleChange(index)}
       onMouseLeave={() => onHoveredRectangleChange(null)}
+      onDelete={onDeleteItem ? () => onDeleteItem(index) : undefined}
     />
   )
 
   const renderResults = () => {
+    // 如果没有检测到矩形，显示提示信息
+    if (rectangles.length === 0) {
+      return (
+        <div className="flex items-center justify-center h-20 bg-slate-50 dark:bg-slate-800/50 rounded-md">
+          <p className="text-sm text-slate-500">
+            {isRecognizing ? "识别中..." : "未检测到内容，请添加矩形或点击识别"}
+          </p>
+        </div>
+      )
+    }
+
     switch (type) {
       case "chara":
         return (
@@ -129,7 +146,7 @@ export function RecognitionResults({
   return (
     <div className="space-y-2 pt-3 border-t border-dashed border-slate-200 dark:border-slate-700">
       <div className="flex items-center justify-between">
-        <h4 className="text-sm font-medium">自动识别结果</h4>
+        <h4 className="text-sm font-medium">列表</h4>
         {onRetry && (
           <Button
             variant="ghost"

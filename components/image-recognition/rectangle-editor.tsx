@@ -103,6 +103,19 @@ export function RectangleEditor({
                   <div className="absolute -top-5 -left-0 bg-white dark:bg-slate-800 text-black dark:text-white px-1 text-xs rounded">
                     {rect.id}
                   </div>
+                  {activeRectangle === index && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onDeleteRectangle(index)
+                      }}
+                      className="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-white rounded-full p-1 shadow-md z-10 transition-colors"
+                      title="删除矩形"
+                    >
+                      <X className="h-3.5 w-3.5" />
+                    </button>
+                  )}
                   <div className="drag-handle absolute inset-0 flex items-center justify-center">
                     <Move className="h-4 w-4 text-white opacity-50 pointer-events-none" />
                   </div>
@@ -128,9 +141,8 @@ export function RectangleEditor({
           size="sm"
           variant="outline"
           onClick={() => {
-            const maxId = Math.max(0, ...rectangles.map(r => r.id))
             const newRect: Rectangle = {
-              id: maxId + 1,
+              id: 999999,
               x: 50,
               y: 50,
               width: 100,

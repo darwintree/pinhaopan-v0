@@ -41,17 +41,112 @@ export function ImageUploadWithRecognition({
   const [activeRectangle, setActiveRectangle] = useState<number | null>(null)
   const [hoveredRectangle, setHoveredRectangle] = useState<number | null>(null)
   const [recognizedEquipments, setRecognizedEquipments] = useState<Record<number, {id: string, confidence: number}[]>>({})
-  const [showResults, setShowResults] = useState(false)
   const [isRecognizing, setIsRecognizing] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
   const [imageSize, setImageSize] = useState({ width: 800, height: 450 })
   const [containerScale, setContainerScale] = useState(1)
 
+  // 比较两个矩形的空间位置
+  const compareRectangles = (a: Rectangle, b: Rectangle) => {
+    // 检查y轴是否有重叠
+    const aYRange = { start: a.y, end: a.y + a.height };
+    const bYRange = { start: b.y, end: b.y + b.height };
+    
+    // 如果a的结束位置小于b的开始位置，或者a的开始位置大于b的结束位置，则没有重叠
+    const hasYOverlap = !(aYRange.end < bYRange.start || aYRange.start > bYRange.end);
+    
+    if (!hasYOverlap) {
+      return a.y - b.y; // 按y轴位置排序
+    }
+    
+    return a.x - b.x; // y轴重叠时按x轴位置排序
+  }
+  
+  // 重新排序矩形并更新id
+  const rearrangeRectangles = (rects: Rectangle[]) => {
+    if (rects.length === 0) return;
+    
+    // 创建一个矩形副本，保留原始索引和id
+    const indexedRects = rects.map((rect, index) => ({ 
+      ...rect, 
+      originalIndex: index,
+      originalId: rect.id 
+    }));
+    
+    // 按空间位置排序
+    indexedRects.sort((a, b) => compareRectangles(a, b));
+    
+    // 创建新的已排序矩形数组，重新分配id
+    const newRectangles = indexedRects.map((rect, index) => ({
+      ...rect,
+      id: index + 1
+    }));
+    
+    // 重新映射识别结果
+    const newRecognizedEquipments: Record<number, {id: string, confidence: number}[]> = {};
+    indexedRects.forEach((rect, newIndex) => {
+      const originalIndex = rect.originalIndex;
+      if (recognizedEquipments[originalIndex]) {
+        newRecognizedEquipments[newIndex] = recognizedEquipments[originalIndex];
+      }
+    });
+    
+    // 更新矩形数组
+    setRectangles(newRectangles);
+    
+    // 更新识别结果（如果有变化）
+    if (Object.keys(newRecognizedEquipments).length > 0) {
+      setRecognizedEquipments(newRecognizedEquipments);
+      onRecognitionResults?.(newRecognizedEquipments);
+    }
+    
+    // 如果当前有选中的矩形，更新选中的索引
+    if (activeRectangle !== null) {
+      // 查找当前活动矩形在重新排序后的新索引
+      const activeOriginalIndex = activeRectangle;
+      const newActiveIndex = indexedRects.findIndex(rect => rect.originalIndex === activeOriginalIndex);
+      
+      if (newActiveIndex !== -1 && newActiveIndex !== activeRectangle) {
+        setActiveRectangle(newActiveIndex);
+      }
+    }
+    
+    // 如果当前有悬停的矩形，更新悬停的索引
+    if (hoveredRectangle !== null) {
+      // 查找当前悬停矩形在重新排序后的新索引
+      const hoveredOriginalIndex = hoveredRectangle;
+      const newHoveredIndex = indexedRects.findIndex(rect => rect.originalIndex === hoveredOriginalIndex);
+      
+      if (newHoveredIndex !== -1 && newHoveredIndex !== hoveredRectangle) {
+        setHoveredRectangle(newHoveredIndex);
+      }
+    }
+  }
+
   // 处理删除矩形
   const handleDeleteRectangle = (index: number) => {
     const newRectangles = [...rectangles]
     newRectangles.splice(index, 1)
+    
+    // 先更新矩形数组
+    setRectangles(newRectangles)
+    
+    // 如果删除的是当前激活的矩形，重置激活状态
+    if (activeRectangle === index) {
+      setActiveRectangle(null)
+    } else if (activeRectangle !== null && activeRectangle > index) {
+      // 如果删除的矩形在当前激活矩形之前，需要更新激活矩形的索引
+      setActiveRectangle(activeRectangle - 1)
+    }
+    
+    // 如果删除的是当前悬停的矩形，重置悬停状态
+    if (hoveredRectangle === index) {
+      setHoveredRectangle(null)
+    } else if (hoveredRectangle !== null && hoveredRectangle > index) {
+      // 如果删除的矩形在当前悬停矩形之前，需要更新悬停矩形的索引
+      setHoveredRectangle(hoveredRectangle - 1)
+    }
     
     // 重新映射识别结果
     const newRecognizedEquipments: Record<number, {id: string, confidence: number}[]> = {}
@@ -64,21 +159,36 @@ export function ImageUploadWithRecognition({
       }
     })
     
-    setRectangles(newRectangles)
+    // 更新识别结果
     setRecognizedEquipments(newRecognizedEquipments)
     onRecognitionResults?.(newRecognizedEquipments)
-    setActiveRectangle(null)
+    
+    // 如果剩余矩形数量大于0，执行重新排序
+    if (newRectangles.length > 0) {
+      // 使用setTimeout确保状态更新完成后再执行排序
+      setTimeout(() => rearrangeRectangles(newRectangles), 0)
+    }
   }
 
   // Process image with OpenCV
   const processImageWithOpenCV = async (imageUrl: string) => {
     try {
       const result = await detectRectangles(imageUrl, type)
-      setRectangles(result.rectangles)
+      
+      // 对检测到的矩形进行排序和重新分配ID
+      const sortedRectangles = [...result.rectangles];
+      sortedRectangles.sort(compareRectangles);
+      
+      // 重新分配ID
+      const newRectangles = sortedRectangles.map((rect, index) => ({
+        ...rect,
+        id: index + 1
+      }));
+      
+      setRectangles(newRectangles)
       setImageSize(result.imageSize)
 
       if (autoRecognize) {
-        setShowResults(false)
         // 等待图片加载完成
         await new Promise<void>((resolve) => {
           if (imageRef.current) {
@@ -88,7 +198,7 @@ export function ImageUploadWithRecognition({
             resolve()
           }
         })
-        await recognizeEquipment(result.rectangles)
+        await recognizeEquipment(newRectangles)
       }
     } catch (error) {
       console.error("Failed to process image:", error)
@@ -239,14 +349,11 @@ export function ImageUploadWithRecognition({
       if (Object.keys(recognizedResults).length > 0) {
         setRecognizedEquipments(recognizedResults)
         onRecognitionResults?.(recognizedResults)
-        setShowResults(true)
       } else {
         console.warn("No results were recognized successfully")
-        setShowResults(false)
       }
     } catch (error) {
       console.error("Failed to recognize equipment:", error)
-      setShowResults(false)
     } finally {
       setIsRecognizing(false)
     }
@@ -306,7 +413,13 @@ export function ImageUploadWithRecognition({
                 containerScale={containerScale}
                 activeRectangle={activeRectangle}
                 hoveredRectangle={hoveredRectangle}
-                onRectanglesChange={setRectangles}
+                onRectanglesChange={(newRects) => {
+                  setRectangles(newRects);
+                  if (newRects.length > 0) {
+                    // 使用setTimeout确保状态更新完成后再执行排序
+                    setTimeout(() => rearrangeRectangles(newRects), 0);
+                  }
+                }}
                 onActiveRectangleChange={setActiveRectangle}
                 onHoveredRectangleChange={setHoveredRectangle}
                 onImageRemove={() => {
@@ -321,24 +434,24 @@ export function ImageUploadWithRecognition({
               />
             </div>
 
-            {/* 识别结果 */}
-            {showResults && (
-              <RecognitionResults
-                type={type}
-                rectangles={rectangles}
-                recognizedEquipment={recognizedEquipments}
-                hoveredRectangle={hoveredRectangle}
-                onHoveredRectangleChange={setHoveredRectangle}
-                onEquipmentSelect={(index, equipment) => {
-                  setRecognizedEquipments(prev => ({
-                    ...prev,
-                    [index]: [{ id: equipment.id, confidence: 100 }]
-                  }))
-                }}
-                isRecognizing={isRecognizing}
-                onRetry={() => recognizeEquipment()}
-              />
-            )}
+            {/* 列表 */}
+            <RecognitionResults
+              type={type}
+              rectangles={rectangles}
+              recognizedEquipment={recognizedEquipments}
+              hoveredRectangle={hoveredRectangle}
+              activeRectangle={activeRectangle}
+              onHoveredRectangleChange={setHoveredRectangle}
+              onEquipmentSelect={(index, equipment) => {
+                setRecognizedEquipments(prev => ({
+                  ...prev,
+                  [index]: [{ id: equipment.id, confidence: 100 }]
+                }))
+              }}
+              onDeleteItem={handleDeleteRectangle}
+              isRecognizing={isRecognizing}
+              onRetry={() => recognizeEquipment()}
+            />
           </>
         )}
       </div>

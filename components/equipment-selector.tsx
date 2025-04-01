@@ -2,6 +2,7 @@ import { useState } from "react"
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import { getEquipmentPhotoUrl } from "@/lib/asset"
 import { EquipmentType, DetailedEquipmentData } from "@/lib/types"
+import { X } from "lucide-react"
 
 interface EquipmentSelectorProps {
   index: number
@@ -13,8 +14,10 @@ interface EquipmentSelectorProps {
   label: string
   onEquipmentSelect: (equipment: DetailedEquipmentData) => void
   isHovered: boolean
+  isActive?: boolean
   onMouseEnter: () => void
   onMouseLeave: () => void
+  onDelete?: () => void
 }
 
 export function EquipmentSelector({
@@ -27,8 +30,10 @@ export function EquipmentSelector({
   label,
   onEquipmentSelect,
   isHovered,
+  isActive = false,
   onMouseEnter,
   onMouseLeave,
+  onDelete,
 }: EquipmentSelectorProps) {
   const handleEquipmentSelect = (equipment: DetailedEquipmentData) => {
     onEquipmentSelect(equipment)
@@ -40,6 +45,7 @@ export function EquipmentSelector({
   return (
     <div
       className={`flex flex-col items-center ${
+        isActive ? "bg-blue-100 dark:bg-blue-900/30 rounded-lg p-1" : 
         isHovered ? "bg-green-100 dark:bg-green-900/20 rounded-lg p-1" : "p-1"
       }`}
       onMouseEnter={onMouseEnter}
@@ -64,6 +70,20 @@ export function EquipmentSelector({
             alt={type}
             className="absolute inset-0 w-full h-full object-contain"
           />
+        )}
+        
+        {onDelete && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation()
+              onDelete()
+            }}
+            className="absolute top-0 right-0 bg-red-500/90 text-white p-0.5 rounded-bl-md hover:bg-red-600"
+            title="删除"
+          >
+            <X className="h-3 w-3" />
+          </button>
         )}
       </div>
       <div className="flex items-center gap-1 mb-1">

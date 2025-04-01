@@ -15,6 +15,7 @@ interface RectangleEditorProps {
   onActiveRectangleChange: (index: number | null) => void
   onHoveredRectangleChange: (index: number | null) => void
   onImageRemove: () => void
+  onDeleteRectangle: (index: number) => void
   isRecognizing?: boolean
   onRecognize?: () => void
 }
@@ -30,6 +31,7 @@ export function RectangleEditor({
   onActiveRectangleChange,
   onHoveredRectangleChange,
   onImageRemove,
+  onDeleteRectangle,
   isRecognizing = false,
   onRecognize,
 }: RectangleEditorProps) {
@@ -164,10 +166,7 @@ export function RectangleEditor({
           disabled={activeRectangle === null}
           onClick={() => {
             if (activeRectangle !== null) {
-              const newRectangles = [...rectangles]
-              newRectangles.splice(activeRectangle, 1)
-              onRectanglesChange(newRectangles)
-              onActiveRectangleChange(null)
+              onDeleteRectangle(activeRectangle)
             }
           }}
           className="h-8"

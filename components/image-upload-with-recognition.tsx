@@ -8,6 +8,8 @@ import { detectRectangles, getImageDescriptorsFromImageAndRectangles } from "@/l
 import { UploadArea } from "./image-recognition/upload-area"
 import { RectangleEditor } from "./image-recognition/rectangle-editor"
 import { RecognitionResults } from "./image-recognition/recognition-results"
+import { Rnd } from "react-rnd"
+import { Button } from "@/components/ui/button"
 
 interface ImageUploadWithRecognitionProps {
   type: EquipmentType
@@ -38,13 +40,35 @@ export function ImageUploadWithRecognition({
   const [rectangles, setRectangles] = useState<Rectangle[]>([])
   const [activeRectangle, setActiveRectangle] = useState<number | null>(null)
   const [hoveredRectangle, setHoveredRectangle] = useState<number | null>(null)
-  const [recognizedEquipment, setRecognizedEquipment] = useState<Record<number, {id: string, confidence: number}[]>>({})
+  const [recognizedEquipments, setRecognizedEquipments] = useState<Record<number, {id: string, confidence: number}[]>>({})
   const [showResults, setShowResults] = useState(false)
   const [isRecognizing, setIsRecognizing] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
   const [imageSize, setImageSize] = useState({ width: 800, height: 450 })
   const [containerScale, setContainerScale] = useState(1)
+
+  // 处理删除矩形
+  const handleDeleteRectangle = (index: number) => {
+    const newRectangles = [...rectangles]
+    newRectangles.splice(index, 1)
+    
+    // 重新映射识别结果
+    const newRecognizedEquipments: Record<number, {id: string, confidence: number}[]> = {}
+    Object.entries(recognizedEquipments).forEach(([key, value]) => {
+      const keyNum = parseInt(key)
+      if (keyNum < index) {
+        newRecognizedEquipments[keyNum] = value
+      } else if (keyNum > index) {
+        newRecognizedEquipments[keyNum - 1] = value
+      }
+    })
+    
+    setRectangles(newRectangles)
+    setRecognizedEquipments(newRecognizedEquipments)
+    onRecognitionResults?.(newRecognizedEquipments)
+    setActiveRectangle(null)
+  }
 
   // Process image with OpenCV
   const processImageWithOpenCV = async (imageUrl: string) => {
@@ -213,7 +237,7 @@ export function ImageUploadWithRecognition({
       await Promise.all(processPromises)
       
       if (Object.keys(recognizedResults).length > 0) {
-        setRecognizedEquipment(recognizedResults)
+        setRecognizedEquipments(recognizedResults)
         onRecognitionResults?.(recognizedResults)
         setShowResults(true)
       } else {
@@ -288,7 +312,10 @@ export function ImageUploadWithRecognition({
                 onImageRemove={() => {
                   setImages([])
                   setRectangles([])
+                  setRecognizedEquipments({})
+                  onRecognitionResults?.({})
                 }}
+                onDeleteRectangle={handleDeleteRectangle}
                 isRecognizing={isRecognizing}
                 onRecognize={() => recognizeEquipment()}
               />
@@ -299,11 +326,11 @@ export function ImageUploadWithRecognition({
               <RecognitionResults
                 type={type}
                 rectangles={rectangles}
-                recognizedEquipment={recognizedEquipment}
+                recognizedEquipment={recognizedEquipments}
                 hoveredRectangle={hoveredRectangle}
                 onHoveredRectangleChange={setHoveredRectangle}
                 onEquipmentSelect={(index, equipment) => {
-                  setRecognizedEquipment(prev => ({
+                  setRecognizedEquipments(prev => ({
                     ...prev,
                     [index]: [{ id: equipment.id, confidence: 100 }]
                   }))

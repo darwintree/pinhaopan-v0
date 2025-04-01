@@ -20,7 +20,7 @@ import { GuidePostData } from "@/lib/types"
 export function PublishGuide() {
   // Form states
   const [name, setName] = useState("")
-  const [time, setTime] = useState(5)
+  const [time, setTime] = useState(300) // 时间以秒为单位存储
   const [description, setDescription] = useState("")
   const [tagInput, setTagInput] = useState("")
   const [tags, setTags] = useState<string[]>([])
@@ -189,28 +189,68 @@ export function PublishGuide() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="time" className="flex items-center gap-2">
-                    消耗时间 (分钟)
+                    消耗时间
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="h-4 w-4 text-muted-foreground" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>完成副本所需的大致时间</p>
+                          <p>完成副本所需的时间（分:秒）</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
                   </Label>
-                  <span className="text-sm text-muted-foreground">{time} 分钟</span>
+                  <span className="text-sm text-muted-foreground">
+                    {Math.floor(time / 60)}分{time % 60}秒
+                  </span>
                 </div>
-                <Slider
-                  id="time"
-                  min={1}
-                  max={30}
-                  step={1}
-                  value={[time]}
-                  onValueChange={(value) => setTime(value[0])}
-                />
+                <div className="flex gap-2">
+                  <div className="flex-1">
+                    <Label htmlFor="minutes" className="text-xs text-muted-foreground">分钟</Label>
+                    <div className="flex items-center">
+                      <Input
+                        id="minutes"
+                        type="number"
+                        min={0}
+                        max={59}
+                        value={Math.floor(time / 60)}
+                        onChange={(e) => {
+                          const min = parseInt(e.target.value) || 0;
+                          setTime((min * 60) + (time % 60));
+                        }}
+                        className="text-center"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <Label htmlFor="seconds" className="text-xs text-muted-foreground">秒</Label>
+                    <div className="flex items-center">
+                      <Input
+                        id="seconds"
+                        type="number"
+                        min={0}
+                        max={59}
+                        value={time % 60}
+                        onChange={(e) => {
+                          const sec = parseInt(e.target.value) || 0;
+                          setTime(Math.floor(time / 60) * 60 + sec);
+                        }}
+                        className="text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-2">
+                  <Slider
+                    id="time-slider"
+                    min={0}
+                    max={3600}
+                    step={1}
+                    value={[time]}
+                    onValueChange={(value) => setTime(value[0])}
+                  />
+                </div>
               </div>
             </div>
 

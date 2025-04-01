@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { ChevronDown, ChevronUp, Filter, Clock, Calendar, Sword, Search, X, Plus, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -25,7 +25,9 @@ export function BrowseGuides() {
   const [timeFilterOpen, setTimeFilterOpen] = useState(false)
   const [configFilterOpen, setConfigFilterOpen] = useState(false)
   const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const [timeRange, setTimeRange] = useState<[number, number]>([0, 30])
+  const [timeRange, setTimeRange] = useState<[number, number]>([0, 600]) // 以秒为单位存储，初始值0-10分钟
+  const [debouncedTimeRange, setDebouncedTimeRange] = useState<[number, number]>([0, 600]) // 防抖后的时间范围
+  const [timeScale, setTimeScale] = useState<"small" | "medium" | "large">("small") // 时间范围尺度
   const [dateRange, setDateRange] = useState<{ from: Date | undefined; to: Date | undefined }>({
     from: undefined,
     to: undefined,
@@ -50,7 +52,7 @@ export function BrowseGuides() {
   // Filter count
   const filterCount = [
     selectedTags.length > 0,
-    timeRange[0] !== 0 || timeRange[1] !== 30,
+    timeRange[0] !== 0 || timeRange[1] !== 600,
     dateRange.from !== undefined || dateRange.to !== undefined,
     selectedWeaponConditions.length > 0,
     selectedSummonConditions.length > 0,
@@ -70,7 +72,8 @@ export function BrowseGuides() {
   // Reset filters
   const resetFilters = () => {
     setSelectedTags([])
-    setTimeRange([0, 30])
+    setTimeRange([0, 600]) // 重置为0-10分钟（秒为单位）
+    setTimeScale("small")
     setDateRange({ from: undefined, to: undefined })
     setSelectedWeaponConditions([])
     setSelectedSummonConditions([])
@@ -137,6 +140,36 @@ export function BrowseGuides() {
     setSelectedCharaConditions(selectedCharaConditions.filter((_, i) => i !== index))
   }
 
+  // 根据当前选择的时间尺度获取最大时间值和步进值
+  const getTimeScaleConfig = () => {
+    switch (timeScale) {
+      case "small": // 0-10分钟，精度5秒
+        return { max: 600, step: 5 }
+      case "medium": // 0-30分钟，精度30秒
+        return { max: 1800, step: 30 }
+      case "large": // 0-90分钟，精度1分钟
+        return { max: 5400, step: 60 }
+    }
+  }
+
+  // 格式化时间显示（秒->分:秒）
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60)
+    const secs = seconds % 60
+    return `${mins}:${secs.toString().padStart(2, '0')}`
+  }
+
+  // 防抖处理时间范围变化
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedTimeRange(timeRange);
+    }, 500); // 500ms 防抖延迟
+    
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [timeRange]);
+
   // Fetch guides data from API
   useEffect(() => {
     const fetchData = async () => {
@@ -154,8 +187,8 @@ export function BrowseGuides() {
           params.append("tags", tag)
         })
         
-        // 添加时间范围
-        params.append("timeRange", timeRange.join(","))
+        // 添加时间范围（使用防抖后的值）
+        params.append("timeRange", debouncedTimeRange.join(","))
         
         // 添加日期范围
         if (dateRange.from || dateRange.to) {
@@ -198,7 +231,7 @@ export function BrowseGuides() {
   }, [
     selectedQuest,
     selectedTags,
-    timeRange,
+    debouncedTimeRange, // 使用防抖后的时间范围触发API请求
     dateRange,
     selectedWeaponConditions,
     selectedSummonConditions,
@@ -275,16 +308,35 @@ export function BrowseGuides() {
                 <div className="flex items-center justify-between">
                   <Label className="flex items-center gap-2">
                     <Clock className="h-4 w-4" />
-                    消耗时间 (分钟)
+                    消耗时间
                   </Label>
-                  <span className="text-sm text-muted-foreground">
-                    {timeRange[0]} - {timeRange[1]}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-muted-foreground">
+                      {formatTime(timeRange[0])} - {formatTime(timeRange[1])}
+                    </span>
+                    <Select
+                      value={timeScale}
+                      onValueChange={(value) => {
+                        setTimeScale(value as "small" | "medium" | "large")
+                        // 切换时间尺度时，重置范围到该尺度的默认值
+                        const { max } = getTimeScaleConfig()
+                        setTimeRange([0, max])
+                      }}
+                    >
+                      <SelectTrigger className="w-[110px] h-8">
+                        <SelectValue placeholder="时间范围" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="small">0-10分钟</SelectItem>
+                        <SelectItem value="medium">0-30分钟</SelectItem>
+                        <SelectItem value="large">0-90分钟</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
                 <Slider 
-                  defaultValue={[0, 30]} 
-                  max={30} 
-                  step={1} 
+                  max={getTimeScaleConfig().max} 
+                  step={getTimeScaleConfig().step} 
                   value={timeRange} 
                   onValueChange={(value) => setTimeRange(value as [number, number])} 
                 />

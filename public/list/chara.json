@@ -1,0 +1,8291 @@
+[
+  {
+    "ID": "3020018000",
+    "name_chs": "萝莎米娅",
+    "name_jp": "ロザミア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3020017000",
+    "name_chs": "泽黑库",
+    "name_jp": "ゼヘク",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3020016000",
+    "name_chs": "玛丽",
+    "name_jp": "マリー",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3020013000",
+    "name_chs": "维鲁达",
+    "name_jp": "ウェルダー",
+    "category[]": "主线;活动",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3020012000",
+    "name_chs": "茉莉",
+    "name_jp": "ジャスミン",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3020009000",
+    "name_chs": "黑泽",
+    "name_jp": "ヘイゼン",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3020008000",
+    "name_chs": "安娜",
+    "name_jp": "アンナ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3020006000",
+    "name_chs": "法拉",
+    "name_jp": "ファラ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030005000",
+    "name_chs": "卡塔莉娜",
+    "name_jp": "カタリナ",
+    "category[]": "主线",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030006000",
+    "name_chs": "伊欧",
+    "name_jp": "イオ",
+    "category[]": "主线",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030007000",
+    "name_chs": "欧根",
+    "name_jp": "オイゲン",
+    "category[]": "主线",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030008000",
+    "name_chs": "拉卡姆",
+    "name_jp": "ラカム",
+    "category[]": "主线",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030009000",
+    "name_chs": "该努",
+    "name_jp": "ガイーヌ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030004000",
+    "name_chs": "赫尔纳",
+    "name_jp": "ヘルナル",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030003000",
+    "name_chs": "阿雷克",
+    "name_jp": "アレク",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040005000",
+    "name_chs": "灰夫人",
+    "name_jp": "レディ?グレイ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040004000",
+    "name_chs": "蕾?芬耶",
+    "name_jp": "レ?フィーエ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040003000",
+    "name_chs": "聂查瓦尔皮利",
+    "name_jp": "ネツァワルピリ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030011000",
+    "name_chs": "阿比",
+    "name_jp": "アビー",
+    "category[]": "活动;特典",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030000000",
+    "name_chs": "诺伊修",
+    "name_jp": "ノイシュ",
+    "category[]": "活动;特典",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030010000",
+    "name_chs": "萝赛塔",
+    "name_jp": "ロゼッタ",
+    "category[]": "主线",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020014000",
+    "name_chs": "理查德",
+    "name_jp": "リチャード",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030002000",
+    "name_chs": "米歇拉",
+    "name_jp": "マイシェラ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030001000",
+    "name_chs": "特蕾丝",
+    "name_jp": "テレーズ",
+    "category[]": "活动",
+    "element": "水",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040007000",
+    "name_chs": "莉莉",
+    "name_jp": "リリィ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020002000",
+    "name_chs": "艾希欧",
+    "name_jp": "エシオ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030012000",
+    "name_chs": "安洁",
+    "name_jp": "アンジェ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040002000",
+    "name_chs": "阿雷提亚",
+    "name_jp": "アレーティア",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020010000",
+    "name_chs": "威尔",
+    "name_jp": "ウィル",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030013000",
+    "name_chs": "拉姆丽妲",
+    "name_jp": "ラムレッダ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040000000",
+    "name_chs": "高文",
+    "name_jp": "ガウェイン",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020019000",
+    "name_chs": "斯坦",
+    "name_jp": "スタン",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030015000",
+    "name_chs": "阿莉莎",
+    "name_jp": "アリーザ",
+    "category[]": "活动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030014000",
+    "name_chs": "乌拉姆奴兰",
+    "name_jp": "ウラムヌラン",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040006000",
+    "name_chs": "尤艾尔",
+    "name_jp": "ユエル",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020004000",
+    "name_chs": "加拉多",
+    "name_jp": "ガラドア",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030017000",
+    "name_chs": "妲奴亚",
+    "name_jp": "ダヌア",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030016000",
+    "name_chs": "杰西卡",
+    "name_jp": "ジェシカ",
+    "category[]": "活动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040001000",
+    "name_chs": "阿尔泰尔",
+    "name_jp": "アルタイル",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020000000",
+    "name_chs": "莱安",
+    "name_jp": "ライアン",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030018000",
+    "name_chs": "斯黛拉",
+    "name_jp": "スーテラ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040008000",
+    "name_chs": "萨鲁楠",
+    "name_jp": "サルナーン",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020007000",
+    "name_chs": "波蕾米亚",
+    "name_jp": "ボレミア",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030021000",
+    "name_chs": "莎拉",
+    "name_jp": "サラ",
+    "category[]": "活动",
+    "element": "土",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030020000",
+    "name_chs": "索利茲",
+    "name_jp": "ソリッズ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040009000",
+    "name_chs": "卡莉奥斯特萝",
+    "name_jp": "カリオストロ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030022000",
+    "name_chs": "仁",
+    "name_jp": "ジン",
+    "category[]": "活动",
+    "element": "土",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020011000",
+    "name_chs": "佩特拉",
+    "name_jp": "ペトラ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030023000",
+    "name_chs": "艾尔莫特",
+    "name_jp": "エルモート",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040010000",
+    "name_chs": "夏洛特",
+    "name_jp": "シャルロッテ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020020000",
+    "name_chs": "菲泽",
+    "name_jp": "フェザー",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030019000",
+    "name_chs": "维拉",
+    "name_jp": "ヴィーラ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040011000",
+    "name_chs": "玛姬莎",
+    "name_jp": "マギサ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020001000",
+    "name_chs": "赫丽雅",
+    "name_jp": "ヘリヤ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030026000",
+    "name_chs": "瑟蕾菲拉",
+    "name_jp": "セレフィラ",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030025000",
+    "name_chs": "艾尔塔",
+    "name_jp": "エルタ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040012000",
+    "name_chs": "美黛拉",
+    "name_jp": "メーテラ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030024000",
+    "name_chs": "齐哈尔",
+    "name_jp": "キハール",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020021000",
+    "name_chs": "安娜",
+    "name_jp": "アンナ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030027000",
+    "name_chs": "爱塞克雷因",
+    "name_jp": "エゼクレイン",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040013000",
+    "name_chs": "塞鲁艾尔",
+    "name_jp": "セルエル",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020022000",
+    "name_chs": "维鲁达",
+    "name_jp": "ウェルダー",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030030000",
+    "name_chs": "杰西卡",
+    "name_jp": "ジェシカ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030029000",
+    "name_chs": "卡塔莉娜",
+    "name_jp": "カタリナ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030028000",
+    "name_chs": "希格",
+    "name_jp": "シグ",
+    "category[]": "活动",
+    "element": "水",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040014000",
+    "name_chs": "蕾?芬耶",
+    "name_jp": "レ?フィーエ",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020023000",
+    "name_chs": "玛丽",
+    "name_jp": "マリー",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030032000",
+    "name_chs": "菲莉",
+    "name_jp": "フェリ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030031000",
+    "name_chs": "赫尔纳",
+    "name_jp": "ヘルナル",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040015000",
+    "name_chs": "伊欧",
+    "name_jp": "イオ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020015000",
+    "name_chs": "塔尼娅",
+    "name_jp": "ターニャ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030035000",
+    "name_chs": "菲娜",
+    "name_jp": "フィーナ",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030034000",
+    "name_chs": "缇娜",
+    "name_jp": "ティナ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030033000",
+    "name_chs": "卢修斯",
+    "name_jp": "ルシウス",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040016000",
+    "name_chs": "刻耳柏洛斯",
+    "name_jp": "ケルベロス",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020024000",
+    "name_chs": "达尔塔",
+    "name_jp": "ダエッタ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030036000",
+    "name_chs": "阿露希亚",
+    "name_jp": "アルシャ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040017000",
+    "name_chs": "艾奇尔巴",
+    "name_jp": "アギエルバ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040018000",
+    "name_chs": "克里斯蒂娜",
+    "name_jp": "クリスティーナ",
+    "category[]": "特殊",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020005000",
+    "name_chs": "德利弗多",
+    "name_jp": "デリフォード",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030038000",
+    "name_chs": "尤利",
+    "name_jp": "ユーリ",
+    "category[]": "活动",
+    "element": "土",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030037000",
+    "name_chs": "法拉",
+    "name_jp": "ファラ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040019000",
+    "name_chs": "阿露露梅娅",
+    "name_jp": "アルルメイヤ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030041000",
+    "name_chs": "涩谷凛",
+    "name_jp": "渋谷凛",
+    "category[]": "联动",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030040000",
+    "name_chs": "岛村卯月",
+    "name_jp": "島村卯月",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030042000",
+    "name_chs": "安洁",
+    "name_jp": "アンジェ",
+    "category[]": "万圣节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040020000",
+    "name_chs": "夏洛特",
+    "name_jp": "シャルロッテ",
+    "category[]": "万圣节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020025000",
+    "name_chs": "艾尔梅拉乌拉",
+    "name_jp": "エルメラウラ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030044000",
+    "name_chs": "阿斯特尔",
+    "name_jp": "アステール",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030043000",
+    "name_chs": "米姆露梅莫璐",
+    "name_jp": "ミムルメモル",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040021000",
+    "name_chs": "蕾娜",
+    "name_jp": "レナ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020026000",
+    "name_chs": "雷欧诺拉",
+    "name_jp": "レオノーラ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030045000",
+    "name_chs": "玛丽亚",
+    "name_jp": "マライア",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030039000",
+    "name_chs": "诺亚",
+    "name_jp": "ノア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040022000",
+    "name_chs": "梅路",
+    "name_jp": "メルゥ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020027000",
+    "name_chs": "加鲁马",
+    "name_jp": "ガルマ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030047000",
+    "name_chs": "维恩",
+    "name_jp": "ヴェイン",
+    "category[]": "活动",
+    "element": "水",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030046000",
+    "name_chs": "卡莲",
+    "name_jp": "カレン",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040024000",
+    "name_chs": "索菲亚",
+    "name_jp": "ソフィア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040023000",
+    "name_chs": "兰斯洛特",
+    "name_jp": "ランスロット",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020028000",
+    "name_chs": "维鲁达",
+    "name_jp": "ウェルダー",
+    "category[]": "圣诞节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030048000",
+    "name_chs": "拉卡姆",
+    "name_jp": "ラカム",
+    "category[]": "圣诞节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040026000",
+    "name_chs": "萝赛塔",
+    "name_jp": "ロゼッタ",
+    "category[]": "圣诞节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040039000",
+    "name_chs": "艾瑟尔",
+    "name_jp": "エッセル",
+    "category[]": "十天众",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040038000",
+    "name_chs": "妮欧",
+    "name_jp": "ニオ",
+    "category[]": "十天众",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040037000",
+    "name_chs": "奥克托",
+    "name_jp": "オクトー",
+    "category[]": "十天众",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040036000",
+    "name_chs": "希耶提",
+    "name_jp": "シエテ",
+    "category[]": "十天众",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040035000",
+    "name_chs": "希斯",
+    "name_jp": "シス",
+    "category[]": "十天众",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040034000",
+    "name_chs": "芬芙",
+    "name_jp": "フュンフ",
+    "category[]": "十天众",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040033000",
+    "name_chs": "卡托尔",
+    "name_jp": "カトル",
+    "category[]": "十天众",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040032000",
+    "name_chs": "萨拉萨",
+    "name_jp": "サラーサ",
+    "category[]": "十天众",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040031000",
+    "name_chs": "索恩",
+    "name_jp": "ソーン",
+    "category[]": "十天众",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040030000",
+    "name_chs": "乌诺",
+    "name_jp": "ウーノ",
+    "category[]": "十天众",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020029000",
+    "name_chs": "斯夫拉马尔",
+    "name_jp": "スフラマール",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030050000",
+    "name_chs": "约翰",
+    "name_jp": "ヨハン",
+    "category[]": "活动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030049000",
+    "name_chs": "萝莎米娅",
+    "name_jp": "ロザミア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040029000",
+    "name_chs": "巴萨拉卡",
+    "name_jp": "バザラガ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040028000",
+    "name_chs": "泽塔",
+    "name_jp": "ゼタ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040027000",
+    "name_chs": "阿妮拉",
+    "name_jp": "アニラ",
+    "category[]": "神将",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030052000",
+    "name_chs": "本田未央",
+    "name_jp": "本田未央",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030051000",
+    "name_chs": "城崎美嘉",
+    "name_jp": "城ヶ崎美嘉",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020030000",
+    "name_chs": "尤达拉哈",
+    "name_jp": "ヨダルラーハ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030053000",
+    "name_chs": "巴塔殴达",
+    "name_jp": "バウタオーダ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040040000",
+    "name_chs": "贞德",
+    "name_jp": "ジャンヌダルク",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030054000",
+    "name_chs": "莉塔",
+    "name_jp": "リタ",
+    "category[]": "特典",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020031000",
+    "name_chs": "罗艾因",
+    "name_jp": "ローアイン",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030056000",
+    "name_chs": "波蕾米亚",
+    "name_jp": "ボレミア",
+    "category[]": "活动",
+    "element": "土",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030055000",
+    "name_chs": "法斯蒂瓦",
+    "name_jp": "ファスティバ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040041000",
+    "name_chs": "莎拉",
+    "name_jp": "サラ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040025000",
+    "name_chs": "齐格飞",
+    "name_jp": "ジークフリート",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030058000",
+    "name_chs": "多萝西",
+    "name_jp": "ドロシー",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030057000",
+    "name_chs": "克劳迪娅",
+    "name_jp": "クラウディア",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040042000",
+    "name_chs": "卡露梅莉娜",
+    "name_jp": "カルメリーナ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020032000",
+    "name_chs": "库姆尤",
+    "name_jp": "クムユ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030060000",
+    "name_chs": "泽黑库",
+    "name_jp": "ゼヘク",
+    "category[]": "活动",
+    "element": "暗",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030059000",
+    "name_chs": "扎扎",
+    "name_jp": "ザザ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040043000",
+    "name_chs": "维拉",
+    "name_jp": "ヴィーラ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020033000",
+    "name_chs": "诺卢塞露",
+    "name_jp": "ノルセル",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030061000",
+    "name_chs": "艾洁丽",
+    "name_jp": "エジェリー",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040044000",
+    "name_chs": "苏丝雅",
+    "name_jp": "ソシエ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020034000",
+    "name_chs": "巴洛瓦",
+    "name_jp": "バロワ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030063000",
+    "name_chs": "萨娅",
+    "name_jp": "サーヤ",
+    "category[]": "活动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030062000",
+    "name_chs": "特蕾丝",
+    "name_jp": "テレーズ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040045000",
+    "name_chs": "阿尔贝尔",
+    "name_jp": "アルベール",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020035000",
+    "name_chs": "库鲁尼",
+    "name_jp": "クルーニ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030064000",
+    "name_chs": "米拉奥尔",
+    "name_jp": "ミラオル",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040046000",
+    "name_chs": "克拉莉丝",
+    "name_jp": "クラリス",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020036000",
+    "name_chs": "卡鲁巴",
+    "name_jp": "カルバ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030067000",
+    "name_chs": "希尔",
+    "name_jp": "スィール",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030066000",
+    "name_chs": "黑泽",
+    "name_jp": "ヘイゼン",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040047000",
+    "name_chs": "佩特拉",
+    "name_jp": "ペトラ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030071000",
+    "name_chs": "双叶杏",
+    "name_jp": "双葉杏",
+    "category[]": "联动",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030070000",
+    "name_chs": "前川未来",
+    "name_jp": "前川みく",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030069000",
+    "name_chs": "川岛瑞树",
+    "name_jp": "川島瑞樹",
+    "category[]": "联动",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020037000",
+    "name_chs": "万查",
+    "name_jp": "ヴァンツァ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030075000",
+    "name_chs": "J·J",
+    "name_jp": "Ｊ?Ｊ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040048000",
+    "name_chs": "萨鲁楠",
+    "name_jp": "サルナーン",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030065000",
+    "name_chs": "阿米拉",
+    "name_jp": "アーミラ",
+    "category[]": "特典",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020038000",
+    "name_chs": "伊帕兹",
+    "name_jp": "イッパツ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030077000",
+    "name_chs": "罗密欧",
+    "name_jp": "ロミオ",
+    "category[]": "活动",
+    "element": "水",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030076000",
+    "name_chs": "扎莉莉亚欧",
+    "name_jp": "ザーリリャオー",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040049000",
+    "name_chs": "席尔瓦",
+    "name_jp": "シルヴァ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030072000",
+    "name_chs": "莉夏",
+    "name_jp": "リーシャ",
+    "category[]": "主线",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020039000",
+    "name_chs": "菲拉索皮拉",
+    "name_jp": "フィラソピラ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030068000",
+    "name_chs": "玛丽",
+    "name_jp": "マリー",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040050000",
+    "name_chs": "帕西瓦尔",
+    "name_jp": "パーシヴァル",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020040000",
+    "name_chs": "杰艾尔",
+    "name_jp": "ジョエル",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030079000",
+    "name_chs": "萝伯美",
+    "name_jp": "ロボミ",
+    "category[]": "活动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030078000",
+    "name_chs": "菲泽",
+    "name_jp": "フェザー",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040051000",
+    "name_chs": "阿米拉",
+    "name_jp": "アーミラ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030082000",
+    "name_chs": "索菲",
+    "name_jp": "ソフィ",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030081000",
+    "name_chs": "尤利·罗威尔",
+    "name_jp": "ユーリ?ローウェル",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030080000",
+    "name_chs": "米拉·麦克斯威尔",
+    "name_jp": "ミラ＝マクスウェル",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030084000",
+    "name_chs": "塔尼娅",
+    "name_jp": "ターニャ",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030083000",
+    "name_chs": "艾尔莫特",
+    "name_jp": "エルモート",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040052000",
+    "name_chs": "冈达葛萨",
+    "name_jp": "ガンダゴウザ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020041000",
+    "name_chs": "罗艾因",
+    "name_jp": "ローアイン",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030086000",
+    "name_chs": "仁",
+    "name_jp": "ジン",
+    "category[]": "活动",
+    "element": "土",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030085000",
+    "name_chs": "欧根",
+    "name_jp": "オイゲン",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040054000",
+    "name_chs": "卡塔莉娜",
+    "name_jp": "カタリナ",
+    "category[]": "限定",
+    "element": "水",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040053000",
+    "name_chs": "维拉",
+    "name_jp": "ヴィーラ",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030087000",
+    "name_chs": "莉夏",
+    "name_jp": "リーシャ",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040055000",
+    "name_chs": "妲奴亚",
+    "name_jp": "ダヌア",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030091000",
+    "name_chs": "斯夫拉马尔",
+    "name_jp": "スフラマール",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040056000",
+    "name_chs": "泽塔",
+    "name_jp": "ゼタ",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030090000",
+    "name_chs": "白坂小梅",
+    "name_jp": "白坂小梅",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030089000",
+    "name_chs": "三村加奈子",
+    "name_jp": "三村かな子",
+    "category[]": "联动",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030088000",
+    "name_chs": "城崎莉嘉",
+    "name_jp": "城ヶ崎莉嘉",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020043000",
+    "name_chs": "卡鲁提拉",
+    "name_jp": "カルテイラ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030093000",
+    "name_chs": "贝丝",
+    "name_jp": "ベス",
+    "category[]": "活动",
+    "element": "可变化",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030092000",
+    "name_chs": "威尔",
+    "name_jp": "ウィル",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040057000",
+    "name_chs": "斑比",
+    "name_jp": "ヴァンピィ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030074000",
+    "name_chs": "西兰",
+    "name_jp": "セイラン",
+    "category[]": "活动;特典",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030073000",
+    "name_chs": "企小鹅",
+    "name_jp": "ペンギー",
+    "category[]": "活动;特典",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020044000",
+    "name_chs": "丹特",
+    "name_jp": "ダーント",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030094000",
+    "name_chs": "加拉多",
+    "name_jp": "ガラドア",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040058000",
+    "name_chs": "安丽特",
+    "name_jp": "アンリエット",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040059000",
+    "name_chs": "拉卡姆",
+    "name_jp": "ラカム",
+    "category[]": "限定",
+    "element": "火",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020045000",
+    "name_chs": "帕维多斯",
+    "name_jp": "パヴィーダ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030096000",
+    "name_chs": "诺伊修",
+    "name_jp": "ノイシュ",
+    "category[]": "活动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030095000",
+    "name_chs": "安娜",
+    "name_jp": "アンナ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040060000",
+    "name_chs": "赫尔艾斯",
+    "name_jp": "ヘルエス",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030099000",
+    "name_chs": "柏木翼",
+    "name_jp": "柏木翼",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030098000",
+    "name_chs": "樱庭薰",
+    "name_jp": "桜庭薫",
+    "category[]": "联动",
+    "element": "水",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030097000",
+    "name_chs": "天道辉",
+    "name_jp": "天道輝",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030100000",
+    "name_chs": "迷你哥布",
+    "name_jp": "ミニゴブ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040061000",
+    "name_chs": "菲娜",
+    "name_jp": "フィーナ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030101000",
+    "name_chs": "菲莉",
+    "name_jp": "フェリ",
+    "category[]": "万圣节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040062000",
+    "name_chs": "卡莉奥斯特萝",
+    "name_jp": "カリオストロ",
+    "category[]": "万圣节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020046000",
+    "name_chs": "艾尔罗拜斯",
+    "name_jp": "エアロバイス",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030103000",
+    "name_chs": "法拉",
+    "name_jp": "ファラ",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030102000",
+    "name_chs": "茉莉",
+    "name_jp": "ジャスミン",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040063000",
+    "name_chs": "娜尔梅亚",
+    "name_jp": "ナルメア",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030105000",
+    "name_chs": "春丽",
+    "name_jp": "春麗",
+    "category[]": "联动",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030104000",
+    "name_chs": "隆",
+    "name_jp": "リュウ",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020047000",
+    "name_chs": "库姆尤",
+    "name_jp": "クムユ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030106000",
+    "name_chs": "希格",
+    "name_jp": "シグ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040064000",
+    "name_chs": "尤达拉哈",
+    "name_jp": "ヨダルラーハ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030108000",
+    "name_chs": "兰斯洛特",
+    "name_jp": "ランスロット",
+    "category[]": "活动",
+    "element": "水",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040065000",
+    "name_chs": "伊欧",
+    "name_jp": "イオ",
+    "category[]": "限定",
+    "element": "光",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020048000",
+    "name_chs": "布里吉尔",
+    "name_jp": "ブリジール",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030107000",
+    "name_chs": "维恩",
+    "name_jp": "ヴェイン",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040066000",
+    "name_chs": "莉露露",
+    "name_jp": "リルル",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030109000",
+    "name_chs": "法斯蒂瓦",
+    "name_jp": "ファスティバ",
+    "category[]": "圣诞节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040067000",
+    "name_chs": "克拉莉丝",
+    "name_jp": "クラリス",
+    "category[]": "圣诞节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030110000",
+    "name_chs": "阿妮拉",
+    "name_jp": "アニラ",
+    "category[]": "活动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040068000",
+    "name_chs": "萝赛塔",
+    "name_jp": "ロゼッタ",
+    "category[]": "限定",
+    "element": "风",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030112000",
+    "name_chs": "斯卡尔",
+    "name_jp": "スカル",
+    "category[]": "活动",
+    "element": "土",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030111000",
+    "name_chs": "雅雅",
+    "name_jp": "ヤイア",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040071000",
+    "name_chs": "安琪拉",
+    "name_jp": "アンチラ",
+    "category[]": "神将",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040070000",
+    "name_chs": "贝阿朵丽丝",
+    "name_jp": "ベアトリクス",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040069000",
+    "name_chs": "尤斯缇斯",
+    "name_jp": "ユーステス",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020049000",
+    "name_chs": "弗雷赛尔",
+    "name_jp": "フレッセル",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030113000",
+    "name_chs": "斯黛拉",
+    "name_jp": "スーテラ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040072000",
+    "name_chs": "美黛拉",
+    "name_jp": "メーテラ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030115000",
+    "name_chs": "白蛇娜卡",
+    "name_jp": "白蛇のナーガ",
+    "category[]": "联动",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030114000",
+    "name_chs": "莉娜因巴斯",
+    "name_jp": "リナ＝インバース",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020050000",
+    "name_chs": "露娜露",
+    "name_jp": "ルナール",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030117000",
+    "name_chs": "索利茲",
+    "name_jp": "ソリッズ",
+    "category[]": "活动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030116000",
+    "name_chs": "达尔塔",
+    "name_jp": "ダエッタ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040073000",
+    "name_chs": "菲莉",
+    "name_jp": "フェリ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020051000",
+    "name_chs": "娜娜",
+    "name_jp": "ネネ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030118000",
+    "name_chs": "萨比尔巴拉",
+    "name_jp": "サビルバラ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040074000",
+    "name_chs": "凯瑟琳",
+    "name_jp": "キャサリン",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040077000",
+    "name_chs": "欧根",
+    "name_jp": "オイゲン",
+    "category[]": "限定",
+    "element": "土",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020052000",
+    "name_chs": "拉姆丽妲",
+    "name_jp": "ラムレッダ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030119000",
+    "name_chs": "莱安",
+    "name_jp": "ライアン",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040076000",
+    "name_chs": "亚欧伊多斯",
+    "name_jp": "アオイドス",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040075000",
+    "name_chs": "扎哈梅丽娜",
+    "name_jp": "ザルハメリナ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030121000",
+    "name_chs": "十时爱梨",
+    "name_jp": "十時愛梨",
+    "category[]": "联动",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030120000",
+    "name_chs": "舆水幸子",
+    "name_jp": "輿水幸子",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030122000",
+    "name_chs": "红色幸运",
+    "name_jp": "レッドラック",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040079000",
+    "name_chs": "哈蕾泽娜",
+    "name_jp": "ハレゼナ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030123000",
+    "name_chs": "罗艾因",
+    "name_jp": "ローアイン",
+    "category[]": "活动",
+    "element": "水",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020053000",
+    "name_chs": "阿里斯特拉",
+    "name_jp": "アリステラ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030124000",
+    "name_chs": "萧",
+    "name_jp": "シャオ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040080000",
+    "name_chs": "贞德",
+    "name_jp": "ジャンヌダルク",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040078000",
+    "name_chs": "佐伊",
+    "name_jp": "ゾーイ",
+    "category[]": "特典",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030126000",
+    "name_chs": "拉希德",
+    "name_jp": "ラシード",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030125000",
+    "name_chs": "神月卡琳",
+    "name_jp": "神月かりん",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020054000",
+    "name_chs": "威利托尔",
+    "name_jp": "ヴェリトール",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030127000",
+    "name_chs": "千",
+    "name_jp": "セン",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040081000",
+    "name_chs": "可露瓦",
+    "name_jp": "コルワ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040082000",
+    "name_chs": "黑骑士",
+    "name_jp": "黒騎士",
+    "category[]": "限定",
+    "element": "暗",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020055000",
+    "name_chs": "巴鲁鲁干",
+    "name_jp": "バルルガン",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030129000",
+    "name_chs": "斯坦",
+    "name_jp": "スタン",
+    "category[]": "活动",
+    "element": "暗",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030128000",
+    "name_chs": "艾希欧",
+    "name_jp": "エシオ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040083000",
+    "name_chs": "阿莉莎",
+    "name_jp": "アリーザ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030132000",
+    "name_chs": "杰米莉",
+    "name_jp": "ジェミニ?サンライズ",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030131000",
+    "name_chs": "艾莉卡·方婷",
+    "name_jp": "エリカ?フォンティーヌ",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030130000",
+    "name_chs": "真宫寺樱",
+    "name_jp": "真宮寺さくら",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020056000",
+    "name_chs": "赛罗尼姆",
+    "name_jp": "セロニム",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030133000",
+    "name_chs": "拉格娜",
+    "name_jp": "ラグナ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040084000",
+    "name_chs": "艾鲁",
+    "name_jp": "アイル",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020057000",
+    "name_chs": "罗丝涅",
+    "name_jp": "ロジーヌ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030135000",
+    "name_chs": "莫尔菲＆维特尔",
+    "name_jp": "モルフェとヴェトル",
+    "category[]": "活动",
+    "element": "水",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030134000",
+    "name_chs": "贾米尔",
+    "name_jp": "ジャミル",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040085000",
+    "name_chs": "涅莫涅",
+    "name_jp": "ネモネ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030138000",
+    "name_chs": "艾丽泽·卢塔斯",
+    "name_jp": "エリーゼ?ルタス",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030137000",
+    "name_chs": "缇娅·格兰兹",
+    "name_jp": "ティア?グランツ",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030136000",
+    "name_chs": "斯坦·艾尔隆",
+    "name_jp": "スタン?エルロン",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020058000",
+    "name_chs": "科瓦菲尔",
+    "name_jp": "コワフュール",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030139000",
+    "name_chs": "阿鲁梅达",
+    "name_jp": "アルメイダ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040086000",
+    "name_chs": "法尔提",
+    "name_jp": "フォルテ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020059000",
+    "name_chs": "库洛尔",
+    "name_jp": "クロエ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030141000",
+    "name_chs": "士郎",
+    "name_jp": "シロウ",
+    "category[]": "活动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030140000",
+    "name_chs": "约翰",
+    "name_jp": "ヨハン",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040087000",
+    "name_chs": "萝莎米娅",
+    "name_jp": "ロザミア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020060000",
+    "name_chs": "伊帕兹",
+    "name_jp": "イッパツ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030147000",
+    "name_chs": "莎拉",
+    "name_jp": "サラ",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040088000",
+    "name_chs": "英格威",
+    "name_jp": "イングヴェイ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030149000",
+    "name_chs": "J·J",
+    "name_jp": "Ｊ?Ｊ",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020061000",
+    "name_chs": "露娜露",
+    "name_jp": "ルナール",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030151000",
+    "name_chs": "仁",
+    "name_jp": "ジン",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030150000",
+    "name_chs": "戴安萨",
+    "name_jp": "ディアンサ",
+    "category[]": "特典",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040089000",
+    "name_chs": "娜尔梅亚",
+    "name_jp": "ナルメア",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030152000",
+    "name_chs": "库姆尤",
+    "name_jp": "クムユ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040090000",
+    "name_chs": "帕西瓦尔",
+    "name_jp": "パーシヴァル",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030142000",
+    "name_chs": "娜维",
+    "name_jp": "ナーヴェ",
+    "category[]": "特典;活动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040091000",
+    "name_chs": "赫尔艾斯",
+    "name_jp": "ヘルエス",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040092000",
+    "name_chs": "佐伊",
+    "name_jp": "ゾーイ",
+    "category[]": "限定",
+    "element": "暗",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020062000",
+    "name_chs": "凯拉娜",
+    "name_jp": "カイラナ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030154000",
+    "name_chs": "巴洛瓦",
+    "name_jp": "バロワ",
+    "category[]": "活动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030153000",
+    "name_chs": "企小鹅",
+    "name_jp": "ペンギー",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040093000",
+    "name_chs": "夏诺瓦",
+    "name_jp": "シャノワール",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020063000",
+    "name_chs": "多萝赛尔",
+    "name_jp": "ドロッセル",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030155000",
+    "name_chs": "库库鲁",
+    "name_jp": "ククル",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040095000",
+    "name_chs": "苏丝雅",
+    "name_jp": "ソシエ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040094000",
+    "name_chs": "斑特",
+    "name_jp": "ヴァイト",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030143000",
+    "name_chs": "奥古斯特",
+    "name_jp": "アウフスタ",
+    "category[]": "特典;活动",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020064000",
+    "name_chs": "科德利亚",
+    "name_jp": "コーデリア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030157000",
+    "name_chs": "帕里斯",
+    "name_jp": "パリス",
+    "category[]": "活动",
+    "element": "土",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030156000",
+    "name_chs": "丹特",
+    "name_jp": "ダーント",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040096000",
+    "name_chs": "朱丽叶",
+    "name_jp": "ジュリエット",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030144000",
+    "name_chs": "罗贝缇娜",
+    "name_jp": "ロベルティナ",
+    "category[]": "特典;活动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020066000",
+    "name_chs": "巴库拉",
+    "name_jp": "バクラ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030162000",
+    "name_chs": "神崎兰子",
+    "name_jp": "神崎蘭子",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030161000",
+    "name_chs": "赤城米莉亚",
+    "name_jp": "赤城みりあ",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030160000",
+    "name_chs": "安娜史塔西亚",
+    "name_jp": "アナスタシア",
+    "category[]": "联动",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030159000",
+    "name_chs": "杰西卡",
+    "name_jp": "ジェシカ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040098000",
+    "name_chs": "罗密欧",
+    "name_jp": "ロミオ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030163000",
+    "name_chs": "贝阿朵丽丝",
+    "name_jp": "ベアトリクス",
+    "category[]": "万圣节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040099000",
+    "name_chs": "尤斯缇斯",
+    "name_jp": "ユーステス",
+    "category[]": "万圣节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030164000",
+    "name_chs": "艾琳",
+    "name_jp": "エリン",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040101000",
+    "name_chs": "莉夏",
+    "name_jp": "リーシャ",
+    "category[]": "限定",
+    "element": "风",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040100000",
+    "name_chs": "伊休米尔",
+    "name_jp": "イシュミール",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030165000",
+    "name_chs": "莉莉",
+    "name_jp": "リリィ",
+    "category[]": "活动",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030166000",
+    "name_chs": "米姆露梅莫璐＆树墩",
+    "name_jp": "ミムルメモル＆切り株",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040102000",
+    "name_chs": "梅丽莎贝尔",
+    "name_jp": "メリッサベル",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020070000",
+    "name_chs": "兰德尔",
+    "name_jp": "ランドル",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030168000",
+    "name_chs": "帕西瓦尔",
+    "name_jp": "パーシヴァル",
+    "category[]": "活动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030167000",
+    "name_chs": "塔尼娅",
+    "name_jp": "ターニャ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040103000",
+    "name_chs": "安苏莉娅",
+    "name_jp": "アンスリア",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030169000",
+    "name_chs": "千",
+    "name_jp": "セン",
+    "category[]": "圣诞节",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040104000",
+    "name_chs": "阿露露梅娅",
+    "name_jp": "アルルメイヤ",
+    "category[]": "圣诞节",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030145000",
+    "name_chs": "帕梅拉",
+    "name_jp": "パメラ",
+    "category[]": "特典;活动",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030170000",
+    "name_chs": "安琪拉",
+    "name_jp": "アンチラ",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040106000",
+    "name_chs": "路西欧",
+    "name_jp": "ルシオ",
+    "category[]": "限定",
+    "element": "光",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030172000",
+    "name_chs": "缪恩",
+    "name_jp": "ミュオン",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030171000",
+    "name_chs": "卢修斯",
+    "name_jp": "ルシウス",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040107000",
+    "name_chs": "玛琪拉",
+    "name_jp": "マキラ",
+    "category[]": "神将",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040105000",
+    "name_chs": "优希斯",
+    "name_jp": "ユイシス",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030146000",
+    "name_chs": "塞希尔",
+    "name_jp": "セシール",
+    "category[]": "特典;活动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030174000",
+    "name_chs": "娜可露露",
+    "name_jp": "ナコルル",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030173000",
+    "name_chs": "覇王丸",
+    "name_jp": "覇王丸",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030175000",
+    "name_chs": "赫丽雅",
+    "name_jp": "ヘリヤ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040108000",
+    "name_chs": "马尔基雷斯",
+    "name_jp": "マルキアレス",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030177000",
+    "name_chs": "阿尔贝尔",
+    "name_jp": "アルベール",
+    "category[]": "活动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030176000",
+    "name_chs": "麦姆",
+    "name_jp": "マイム",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040109000",
+    "name_chs": "拉丝缇娜",
+    "name_jp": "ラスティナ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030178000",
+    "name_chs": "仁",
+    "name_jp": "ジン",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040110000",
+    "name_chs": "贝阿朵丽丝",
+    "name_jp": "ベアトリクス",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030180000",
+    "name_chs": "露娜",
+    "name_jp": "ルナ",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030179000",
+    "name_chs": "亚丽莎",
+    "name_jp": "アリサ",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030181000",
+    "name_chs": "泰尔",
+    "name_jp": "タイアー",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040112000",
+    "name_chs": "泽塔",
+    "name_jp": "ゼタ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040111000",
+    "name_chs": "欧姬丝",
+    "name_jp": "オーキス",
+    "category[]": "限定",
+    "element": "暗",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030182000",
+    "name_chs": "露莉亚",
+    "name_jp": "ルリア",
+    "category[]": "活动",
+    "element": "可变化",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030183000",
+    "name_chs": "威利托尔",
+    "name_jp": "ヴェリトール",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040113000",
+    "name_chs": "蕾?芬耶",
+    "name_jp": "レ?フィーエ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030185000",
+    "name_chs": "路德米利亚",
+    "name_jp": "ルドミリア",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040116000",
+    "name_chs": "卡塔哔娜与维拉",
+    "name_jp": "キャタピラとヴィーラ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "Another",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040115000",
+    "name_chs": "斯特姆",
+    "name_jp": "スツルム",
+    "category[]": "限定",
+    "element": "火",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030187000",
+    "name_chs": "斯黛拉",
+    "name_jp": "スーテラ",
+    "category[]": "活动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030186000",
+    "name_chs": "拉姆丽妲",
+    "name_jp": "ラムレッダ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040117000",
+    "name_chs": "维恩",
+    "name_jp": "ヴェイン",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030189000",
+    "name_chs": "卡莉奥斯特萝",
+    "name_jp": "カリオストロ",
+    "category[]": "活动",
+    "element": "暗",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030188000",
+    "name_chs": "德利弗多",
+    "name_jp": "デリフォード",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040120000",
+    "name_chs": "卡莉奥斯特萝",
+    "name_jp": "カリオストロ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040119000",
+    "name_chs": "德朗克",
+    "name_jp": "ドランク",
+    "category[]": "限定",
+    "element": "水",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040118000",
+    "name_chs": "卡塔莉娜",
+    "name_jp": "カタリナ",
+    "category[]": "特典",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030190000",
+    "name_chs": "布列迪塔",
+    "name_jp": "プレデター",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040121000",
+    "name_chs": "克拉莉丝",
+    "name_jp": "クラリス",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030184000",
+    "name_chs": "该隐",
+    "name_jp": "カイン",
+    "category[]": "主线",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030192000",
+    "name_chs": "夏洛特",
+    "name_jp": "シャルロッテ",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030191000",
+    "name_chs": "塞瓦斯蒂安",
+    "name_jp": "セワスチアン",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040122000",
+    "name_chs": "斯卡哈",
+    "name_jp": "スカーサハ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "81",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030194000",
+    "name_chs": "一之濑志希",
+    "name_jp": "一ノ瀬志希",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030193000",
+    "name_chs": "新田美波",
+    "name_jp": "新田美波",
+    "category[]": "联动",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030195000",
+    "name_chs": "贞德",
+    "name_jp": "ジャンヌダルク",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040124000",
+    "name_chs": "巴塔殴达",
+    "name_jp": "バウタオーダ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040123000",
+    "name_chs": "美杜莎",
+    "name_jp": "メドゥーサ",
+    "category[]": "特典",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030197000",
+    "name_chs": "维鲁达",
+    "name_jp": "ウェルダー",
+    "category[]": "活动",
+    "element": "土",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030196000",
+    "name_chs": "贾米尔",
+    "name_jp": "ジャミル",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040125000",
+    "name_chs": "尤格多拉希尔",
+    "name_jp": "ユグドラシル",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040127000",
+    "name_chs": "可露瓦",
+    "name_jp": "コルワ",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030200000",
+    "name_chs": "卡莲",
+    "name_jp": "カレン",
+    "category[]": "活动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030199000",
+    "name_chs": "艾鲁",
+    "name_jp": "アイル",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030198000",
+    "name_chs": "夏洛特",
+    "name_jp": "シャルロッテ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040126000",
+    "name_chs": "伊休米尔",
+    "name_jp": "イシュミール",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040128000",
+    "name_chs": "齐格飞",
+    "name_jp": "ジークフリート",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030202000",
+    "name_chs": "库洛尔",
+    "name_jp": "クロエ",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030201000",
+    "name_chs": "冈达葛萨",
+    "name_jp": "ガンダゴウザ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040129000",
+    "name_chs": "戴安萨",
+    "name_jp": "ディアンサ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030204000",
+    "name_chs": "古蕾娅",
+    "name_jp": "グレア",
+    "category[]": "活动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030203000",
+    "name_chs": "炎狱老师艾尔莫特",
+    "name_jp": "炎獄先生エルモート",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040130000",
+    "name_chs": "古蕾娅",
+    "name_jp": "グレア",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030206000",
+    "name_chs": "山姥切国广",
+    "name_jp": "山姥切国広",
+    "category[]": "联动",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030205000",
+    "name_chs": "和泉守兼定",
+    "name_jp": "和泉守兼定",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040131000",
+    "name_chs": "三日月宗近",
+    "name_jp": "三日月宗近",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030207000",
+    "name_chs": "欧文",
+    "name_jp": "オーウェン",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040132000",
+    "name_chs": "安",
+    "name_jp": "アン",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040133000",
+    "name_chs": "妮娜多拉贡",
+    "name_jp": "ニーナ?ドランゴ",
+    "category[]": "特典",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030210000",
+    "name_chs": "爱塞克雷因",
+    "name_jp": "エゼクレイン",
+    "category[]": "活动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030209000",
+    "name_chs": "萨娅",
+    "name_jp": "サーヤ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040134000",
+    "name_chs": "女仆 多萝西＆克劳迪娅",
+    "name_jp": "サーヴァンツ ドロシー＆クラウディア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040136000",
+    "name_chs": "木之本樱",
+    "name_jp": "木之本桜",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030221000",
+    "name_chs": "斑比",
+    "name_jp": "ヴァンピィ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040137000",
+    "name_chs": "阿萨谢尔",
+    "name_jp": "アザゼル",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030220000",
+    "name_chs": "米姆露梅莫璐＆南瓜",
+    "name_jp": "ミムルメモル＆パンプキン",
+    "category[]": "万圣节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040135000",
+    "name_chs": "妲奴亚",
+    "name_jp": "ダヌア",
+    "category[]": "万圣节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030223000",
+    "name_chs": "尤艾尔",
+    "name_jp": "ユエル",
+    "category[]": "活动",
+    "element": "水",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030222000",
+    "name_chs": "卡鲁提拉",
+    "name_jp": "カルテイラ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040138000",
+    "name_chs": "尤艾尔",
+    "name_jp": "ユエル",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030224000",
+    "name_chs": "米琳",
+    "name_jp": "ミリン",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040141000",
+    "name_chs": "维拉",
+    "name_jp": "ヴィーラ",
+    "category[]": "限定",
+    "element": "光",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030208000",
+    "name_chs": "莱茵哈撒",
+    "name_jp": "ラインハルザ",
+    "category[]": "主线",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030226000",
+    "name_chs": "亚瑟",
+    "name_jp": "アーサー",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030225000",
+    "name_chs": "索菲亚",
+    "name_jp": "ソフィア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040140000",
+    "name_chs": "兰斯洛特",
+    "name_jp": "ランスロット",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030227000",
+    "name_chs": "三笠",
+    "name_jp": "ミカサ",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040142000",
+    "name_chs": "利威尔",
+    "name_jp": "リヴァイ",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030228000",
+    "name_chs": "菲娜",
+    "name_jp": "フィーナ",
+    "category[]": "圣诞节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040143000",
+    "name_chs": "玛丽",
+    "name_jp": "マリー",
+    "category[]": "圣诞节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030229000",
+    "name_chs": "玛琪拉",
+    "name_jp": "マキラ",
+    "category[]": "活动",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040144000",
+    "name_chs": "夏利欧斯17世",
+    "name_jp": "シャリオス17世",
+    "category[]": "特典",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040145000",
+    "name_chs": "奥莉薇尔",
+    "name_jp": "オリヴィエ",
+    "category[]": "限定",
+    "element": "暗",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030231000",
+    "name_chs": "泽塔",
+    "name_jp": "ゼタ",
+    "category[]": "活动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030230000",
+    "name_chs": "卡鲁巴",
+    "name_jp": "カルバ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040148000",
+    "name_chs": "伊尔莎",
+    "name_jp": "イルザ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040147000",
+    "name_chs": "瓦姬拉",
+    "name_jp": "ヴァジラ",
+    "category[]": "神将",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040146000",
+    "name_chs": "巴萨拉卡",
+    "name_jp": "バザラガ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030232000",
+    "name_chs": "伊帕兹",
+    "name_jp": "イッパツ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040149000",
+    "name_chs": "特蕾丝",
+    "name_jp": "テレーズ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030234000",
+    "name_chs": "兰德尔",
+    "name_jp": "ランドル",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030233000",
+    "name_chs": "佐伊",
+    "name_jp": "ゾーイ",
+    "category[]": "活动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040150000",
+    "name_chs": "佐伊",
+    "name_jp": "ゾーイ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030236000",
+    "name_chs": "缇娜",
+    "name_jp": "ティナ",
+    "category[]": "情人节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030235000",
+    "name_chs": "娜尔梅亚",
+    "name_jp": "ナルメア",
+    "category[]": "情人节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040151000",
+    "name_chs": "美杜莎",
+    "name_jp": "メドゥーサ",
+    "category[]": "情人节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030237000",
+    "name_chs": "聂查瓦尔皮利",
+    "name_jp": "ネツァワルピリ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040153000",
+    "name_chs": "圣德芬",
+    "name_jp": "サンダルフォン",
+    "category[]": "活动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040152000",
+    "name_chs": "提亚玛特",
+    "name_jp": "ティアマト",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040154000",
+    "name_chs": "贞德",
+    "name_jp": "ジャンヌダルク",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040156000",
+    "name_chs": "士郎",
+    "name_jp": "シロウ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040155000",
+    "name_chs": "萝伯美",
+    "name_jp": "ロボミ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040157000",
+    "name_chs": "江户川柯南",
+    "name_jp": "江戸川コナン",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030238000",
+    "name_chs": "安室透",
+    "name_jp": "安室透",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030239000",
+    "name_chs": "巴洛瓦",
+    "name_jp": "バロワ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040158000",
+    "name_chs": "布洛蒂亚",
+    "name_jp": "ブローディア",
+    "category[]": "限定",
+    "element": "土",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030242000",
+    "name_chs": "阿莉莎",
+    "name_jp": "アリーザ",
+    "category[]": "活动",
+    "element": "水",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030240000",
+    "name_chs": "卡露梅莉娜",
+    "name_jp": "カルメリーナ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040159000",
+    "name_chs": "库库鲁",
+    "name_jp": "ククル",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030241000",
+    "name_chs": "蕾欧娜",
+    "name_jp": "レオナ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040170000",
+    "name_chs": "索利茲",
+    "name_jp": "ソリッズ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020071000",
+    "name_chs": "斯平纳",
+    "name_jp": "スピナー",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3040172000",
+    "name_chs": "露娜露",
+    "name_jp": "ルナール",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040171000",
+    "name_chs": "该隐",
+    "name_jp": "カイン",
+    "category[]": "限定",
+    "element": "土",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030243000",
+    "name_chs": "万查",
+    "name_jp": "ヴァンツァ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040174000",
+    "name_chs": "沃夫＆蕾妮",
+    "name_jp": "ウーフとレニー",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040173000",
+    "name_chs": "Joker",
+    "name_jp": "ジョーカー",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030244000",
+    "name_chs": "艾尔塔",
+    "name_jp": "エルタ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040175000",
+    "name_chs": "瑟蕾菲拉",
+    "name_jp": "セレフィラ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030245000",
+    "name_chs": "优希斯",
+    "name_jp": "ユイシス",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040176000",
+    "name_chs": "萝赛塔",
+    "name_jp": "ロゼッタ",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030247000",
+    "name_chs": "莉露露",
+    "name_jp": "リルル",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030246000",
+    "name_chs": "奥莉薇尔",
+    "name_jp": "オリヴィエ",
+    "category[]": "活动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040178000",
+    "name_chs": "诺伊修",
+    "name_jp": "ノイシュ",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040177000",
+    "name_chs": "伊尔莎",
+    "name_jp": "イルザ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030249000",
+    "name_chs": "阿露露梅娅",
+    "name_jp": "アルルメイヤ",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030248000",
+    "name_chs": "法拉",
+    "name_jp": "ファラ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040185000",
+    "name_chs": "松浦果南＆黑泽黛雅＆小原鞠莉",
+    "name_jp": "松浦果南＆黒澤ダイヤ＆小原鞠莉",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040184000",
+    "name_chs": "津岛善子＆国木田花丸＆黑泽露比",
+    "name_jp": "津島善子＆国木田花丸＆黒澤ルビィ",
+    "category[]": "联动",
+    "element": "土",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040183000",
+    "name_chs": "樱内梨子＆高海千歌＆渡边曜",
+    "name_jp": "桜内梨子＆高海千歌＆渡辺 曜",
+    "category[]": "联动",
+    "element": "水",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030250000",
+    "name_chs": "阿鲁梅达",
+    "name_jp": "アルメイダ",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040179000",
+    "name_chs": "古蕾娅",
+    "name_jp": "グレア",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030251000",
+    "name_chs": "凯拉娜",
+    "name_jp": "カイラナ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040181000",
+    "name_chs": "芙莉亚",
+    "name_jp": "フォリア",
+    "category[]": "限定",
+    "element": "水",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040180000",
+    "name_chs": "翼",
+    "name_jp": "ツバサ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030252000",
+    "name_chs": "罗艾因小队",
+    "name_jp": "チーム?ローアイン",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040182000",
+    "name_chs": "小芙",
+    "name_jp": "フーちゃん",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "Another",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030253000",
+    "name_chs": "尤利",
+    "name_jp": "ユーリ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040187000",
+    "name_chs": "席尔瓦",
+    "name_jp": "シルヴァ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040188000",
+    "name_chs": "光之美少女 黑天使＆白天使",
+    "name_jp": "プリキュア キュアブラック＆キュアホワイト",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030254000",
+    "name_chs": "菲泽",
+    "name_jp": "フェザー",
+    "category[]": "万圣节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040190000",
+    "name_chs": "欧罗巴",
+    "name_jp": "エウロペ",
+    "category[]": "限定",
+    "element": "水",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040189000",
+    "name_chs": "灰夫人",
+    "name_jp": "レディ?グレイ",
+    "category[]": "万圣节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040186000",
+    "name_chs": "莫妮卡",
+    "name_jp": "モニカ",
+    "category[]": "特殊",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030255000",
+    "name_chs": "小鸡班 亚瑟＆莫德雷德",
+    "name_jp": "ひよこ班 アーサー＆モルドレッド",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040192000",
+    "name_chs": "阿古罗瓦尔",
+    "name_jp": "アグロヴァル",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040191000",
+    "name_chs": "白龙的双骑士 兰斯洛特＆维恩",
+    "name_jp": "白竜の双騎士 ランスロット＆ヴェイン",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030256000",
+    "name_chs": "罗丝涅",
+    "name_jp": "ロジーヌ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040199000",
+    "name_chs": "尤里乌斯",
+    "name_jp": "ユリウス",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040193000",
+    "name_chs": "雷维翁姐妹 麦姆＆米姆＆梅姆",
+    "name_jp": "レヴィオン姉妹 マイム＆ミイム＆メイム",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030258000",
+    "name_chs": "萨比尔巴拉",
+    "name_jp": "サビルバラ",
+    "category[]": "活动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030257000",
+    "name_chs": "拉丝缇娜",
+    "name_jp": "ラスティナ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040194000",
+    "name_chs": "夏洛特",
+    "name_jp": "シャルロッテ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040201000",
+    "name_chs": "可可萝",
+    "name_jp": "コッコロ",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040200000",
+    "name_chs": "佩可莉露",
+    "name_jp": "ペコリーヌ",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030259000",
+    "name_chs": "雅雅",
+    "name_jp": "ヤイア",
+    "category[]": "圣诞节",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040195000",
+    "name_chs": "美黛拉",
+    "name_jp": "メーテラ",
+    "category[]": "圣诞节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040196000",
+    "name_chs": "湿婆",
+    "name_jp": "シヴァ",
+    "category[]": "限定",
+    "element": "火",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030262000",
+    "name_chs": "卡西乌斯",
+    "name_jp": "カシウス",
+    "category[]": "活动",
+    "element": "暗",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030261000",
+    "name_chs": "贝阿朵丽丝",
+    "name_jp": "ベアトリクス",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040202000",
+    "name_chs": "雅典娜",
+    "name_jp": "アテナ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040198000",
+    "name_chs": "尤斯缇斯",
+    "name_jp": "ユーステス",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040197000",
+    "name_chs": "库碧拉",
+    "name_jp": "クビラ",
+    "category[]": "神将",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030263000",
+    "name_chs": "斯卡尔",
+    "name_jp": "スカル",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040203000",
+    "name_chs": "塔尼娅",
+    "name_jp": "ターニャ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020072000",
+    "name_chs": "猫",
+    "name_jp": "猫",
+    "category[]": "活动",
+    "element": "可变化",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3030264000",
+    "name_chs": "凯瑟琳",
+    "name_jp": "キャサリン",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040205000",
+    "name_chs": "丹特＆福莱海特",
+    "name_jp": "ダーント＆フライハイト",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040204000",
+    "name_chs": "千",
+    "name_jp": "セン",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040207000",
+    "name_chs": "梅丽莎贝尔",
+    "name_jp": "メリッサベル",
+    "category[]": "情人节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040206000",
+    "name_chs": "克拉莉丝",
+    "name_jp": "クラリス",
+    "category[]": "情人节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030265000",
+    "name_chs": "米琳",
+    "name_jp": "ミリン",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040208000",
+    "name_chs": "赫尔艾斯",
+    "name_jp": "ヘルエス",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040209000",
+    "name_chs": "菲莉",
+    "name_jp": "フェリ",
+    "category[]": "限定",
+    "element": "暗",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040166000",
+    "name_chs": "卡兹里拉",
+    "name_jp": "カッツェリーラ",
+    "category[]": "十贤者",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040167000",
+    "name_chs": "阿拉南",
+    "name_jp": "アラナン",
+    "category[]": "十贤者",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040168000",
+    "name_chs": "哈泽丽拉",
+    "name_jp": "ハーゼリーラ",
+    "category[]": "十贤者",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040162000",
+    "name_chs": "盖森伯格",
+    "name_jp": "ガイゼンボーガ",
+    "category[]": "十贤者",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040165000",
+    "name_chs": "洛贝利亚",
+    "name_jp": "ロベリア",
+    "category[]": "十贤者",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040161000",
+    "name_chs": "芙劳",
+    "name_jp": "フラウ",
+    "category[]": "十贤者",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040163000",
+    "name_chs": "埃斯塔利奥拉",
+    "name_jp": "エスタリオラ",
+    "category[]": "十贤者",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040169000",
+    "name_chs": "尼娅",
+    "name_jp": "ニーア",
+    "category[]": "十贤者",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040164000",
+    "name_chs": "凯姆",
+    "name_jp": "カイム",
+    "category[]": "十贤者",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040160000",
+    "name_chs": "玛利亚·特蕾莎",
+    "name_jp": "マリア?テレサ",
+    "category[]": "十贤者",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040210000",
+    "name_chs": "尤艾尔",
+    "name_jp": "ユエル",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030266000",
+    "name_chs": "可露瓦",
+    "name_jp": "コルワ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "Another",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040211000",
+    "name_chs": "维拉",
+    "name_jp": "ヴィーラ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "Another",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040213000",
+    "name_chs": "玛裘拉·玛利乌斯",
+    "name_jp": "マキュラ?マリウス",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040212000",
+    "name_chs": "格里姆尼尔",
+    "name_jp": "グリームニル",
+    "category[]": "限定",
+    "element": "风",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030267000",
+    "name_chs": "理查德",
+    "name_jp": "リチャード",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040214000",
+    "name_chs": "美杜莎",
+    "name_jp": "メドゥーサ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030268000",
+    "name_chs": "阿斯特尔",
+    "name_jp": "アステール",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040215000",
+    "name_chs": "巴尔",
+    "name_jp": "バアル",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040216000",
+    "name_chs": "凯露",
+    "name_jp": "キャル",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030269000",
+    "name_chs": "高贵的骑士 布里吉尔＆科德利亚",
+    "name_jp": "ノーブルナイツ ブリジール＆コーデリア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040218000",
+    "name_chs": "战争三女神",
+    "name_jp": "バイヴカハ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040217000",
+    "name_chs": "法斯蒂瓦",
+    "name_jp": "ファスティバ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040221000",
+    "name_chs": "红月华莲",
+    "name_jp": "紅月カレン",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040220000",
+    "name_chs": "枢木朱雀",
+    "name_jp": "枢木スザク",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040219000",
+    "name_chs": "鲁路修·兰佩洛基",
+    "name_jp": "ルルーシュ?ランペルージ",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030270000",
+    "name_chs": "菲拉索皮拉",
+    "name_jp": "フィラソピラ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040222000",
+    "name_chs": "克璐璐",
+    "name_jp": "コルル",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040223000",
+    "name_chs": "哈鲁特&马鲁特",
+    "name_jp": "ハールート?マールート",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040224000",
+    "name_chs": "圣德芬",
+    "name_jp": "サンダルフォン",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030271000",
+    "name_chs": "星期五小姐",
+    "name_jp": "フライデー",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040225000",
+    "name_chs": "卡莉奥斯特萝",
+    "name_jp": "カリオストロ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030272000",
+    "name_chs": "白龙的双骑士 兰斯洛特＆维恩",
+    "name_jp": "白竜の双騎士 ランスロット＆ヴェイン",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040226000",
+    "name_chs": "欧罗巴",
+    "name_jp": "エウロペ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040227000",
+    "name_chs": "杰西卡",
+    "name_jp": "ジェシカ",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030273000",
+    "name_chs": "卡西乌斯",
+    "name_jp": "カシウス",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040228000",
+    "name_chs": "安苏莉娅",
+    "name_jp": "アンスリア",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040231000",
+    "name_chs": "绚濑绘里＆矢泽妮可＆东条希",
+    "name_jp": "絢瀬絵里＆矢澤にこ＆東條 希",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040230000",
+    "name_chs": "园田海未＆高坂穗乃果＆南小鸟",
+    "name_jp": "園田海未＆高坂穂乃果＆南ことり",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040229000",
+    "name_chs": "星空凛＆小泉花阳＆西木野真姬",
+    "name_jp": "星空 凛＆小泉花陽＆西木野真姫",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "SS",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030274000",
+    "name_chs": "蕾欧娜",
+    "name_jp": "レオナ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040232000",
+    "name_chs": "布洛蒂亚",
+    "name_jp": "ブローディア",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040234000",
+    "name_chs": "塔维娜",
+    "name_jp": "タヴィーナ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040233000",
+    "name_chs": "勇者与公主 斯坦＆阿莉莎",
+    "name_jp": "勇者と姫君 スタン＆アリーザ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040236000",
+    "name_chs": "莎拉",
+    "name_jp": "サラ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040235000",
+    "name_chs": "科罗萨斯",
+    "name_jp": "コロッサス",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030275000",
+    "name_chs": "科瓦菲尔",
+    "name_jp": "コワフュール",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040237000",
+    "name_chs": "齐格飞",
+    "name_jp": "ジークフリート",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040238000",
+    "name_chs": "莫妮卡",
+    "name_jp": "モニカ",
+    "category[]": "限定",
+    "element": "风",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030276000",
+    "name_chs": "扎扎",
+    "name_jp": "ザザ",
+    "category[]": "万圣节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040240000",
+    "name_chs": "哈蕾泽娜",
+    "name_jp": "ハレゼナ",
+    "category[]": "万圣节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040239000",
+    "name_chs": "真红与冥暗 泽塔&巴萨拉卡",
+    "name_jp": "真紅と冥闇 ゼタ＆バザラガ",
+    "category[]": "万圣节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040241000",
+    "name_chs": "苏丝雅",
+    "name_jp": "ソシエ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040242000",
+    "name_chs": "蔻",
+    "name_jp": "コウ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030277000",
+    "name_chs": "容",
+    "name_jp": "ヨウ",
+    "category[]": "活动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040244000",
+    "name_chs": "志鸟",
+    "name_jp": "シトリ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040245000",
+    "name_chs": "贞德",
+    "name_jp": "ジャンヌダルク",
+    "category[]": "限定",
+    "element": "光",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030278000",
+    "name_chs": "库鲁尼",
+    "name_jp": "クルーニ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040247000",
+    "name_chs": "玛姬莎",
+    "name_jp": "マギサ",
+    "category[]": "圣诞节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040246000",
+    "name_chs": "缪恩",
+    "name_jp": "ミュオン",
+    "category[]": "圣诞节",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040248000",
+    "name_chs": "扭蛋平",
+    "name_jp": "ガチャピン",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040250000",
+    "name_chs": "塞鲁艾尔",
+    "name_jp": "セルエル",
+    "category[]": "圣诞节",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040249000",
+    "name_chs": "娜尔梅亚",
+    "name_jp": "ナルメア",
+    "category[]": "圣诞节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040243000",
+    "name_chs": "维拉",
+    "name_jp": "ヴィーラ",
+    "category[]": "特典",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030279000",
+    "name_chs": "库碧拉",
+    "name_jp": "クビラ",
+    "category[]": "活动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040251000",
+    "name_chs": "赫莱尔·本·夏蕾姆",
+    "name_jp": "ヘレル?ベン?シャレム",
+    "category[]": "限定",
+    "element": "暗",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030280000",
+    "name_chs": "乔伊",
+    "name_jp": "ジョイ",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040252000",
+    "name_chs": "碧卡拉",
+    "name_jp": "ビカラ",
+    "category[]": "神将",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040253000",
+    "name_chs": "优希斯",
+    "name_jp": "ユイシス",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040254000",
+    "name_chs": "卢修斯",
+    "name_jp": "ルシウス",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040255000",
+    "name_chs": "诺亚",
+    "name_jp": "ノア",
+    "category[]": "限定",
+    "element": "光",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040256000",
+    "name_chs": "妲奴亚",
+    "name_jp": "ダヌア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040257000",
+    "name_chs": "仁",
+    "name_jp": "ジン",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040258000",
+    "name_chs": "伊尔莎",
+    "name_jp": "イルザ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040259000",
+    "name_chs": "尤达拉哈",
+    "name_jp": "ヨダルラーハ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040260000",
+    "name_chs": "斯卡哈",
+    "name_jp": "スカーサハ",
+    "category[]": "情人节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040261000",
+    "name_chs": "格里姆尼尔",
+    "name_jp": "グリームニル",
+    "category[]": "情人节",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040262000",
+    "name_chs": "希斯",
+    "name_jp": "シス",
+    "category[]": "活动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040263000",
+    "name_chs": "莉夏",
+    "name_jp": "リーシャ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040264000",
+    "name_chs": "飞龙与吸血公主 斑比&贝丝",
+    "name_jp": "飛竜と吸血姫 ヴァンピィ＆ベス",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040265000",
+    "name_chs": "零",
+    "name_jp": "レイ",
+    "category[]": "限定",
+    "element": "暗",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040266000",
+    "name_chs": "缇娜",
+    "name_jp": "ティナ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040267000",
+    "name_chs": "无限",
+    "name_jp": "ムゲン",
+    "category[]": "限定",
+    "element": "火",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040268000",
+    "name_chs": "斯特姆",
+    "name_jp": "スツルム",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040269000",
+    "name_chs": "德朗克",
+    "name_jp": "ドランク",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040271000",
+    "name_chs": "赫丽雅",
+    "name_jp": "ヘリヤ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040272000",
+    "name_chs": "阿吽之破弓 米拉奥尔&扎莉莉亚欧",
+    "name_jp": "阿吽の破弓 ミラオル＆ザーリリャオー",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040274000",
+    "name_chs": "莱茵哈撒",
+    "name_jp": "ラインハルザ",
+    "category[]": "限定",
+    "element": "火",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040273000",
+    "name_chs": "秋罗",
+    "name_jp": "シュラ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040275000",
+    "name_chs": "涩谷凛&岛村卯月&本田未央",
+    "name_jp": "渋谷凛&島村卯月&本田未央",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040277000",
+    "name_chs": "伊尔诺特",
+    "name_jp": "イルノート",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040278000",
+    "name_chs": "布列迪塔",
+    "name_jp": "プレデター",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040276000",
+    "name_chs": "高垣枫",
+    "name_jp": "高垣楓",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040279000",
+    "name_chs": "帕西瓦尔",
+    "name_jp": "パーシヴァル",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040280000",
+    "name_chs": "萨缇洛斯",
+    "name_jp": "サテュロス",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040281000",
+    "name_chs": "诺伊修",
+    "name_jp": "ノイシュ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040282000",
+    "name_chs": "企小鹅",
+    "name_jp": "ペンギー",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040270000",
+    "name_chs": "埃尔斯特之要 黑骑士&欧尔姬丝",
+    "name_jp": "エルステの要 黒騎士&オルキス",
+    "category[]": "特典",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040284000",
+    "name_chs": "阿比",
+    "name_jp": "アビー",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040283000",
+    "name_chs": "克璐璐",
+    "name_jp": "コルル",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040285000",
+    "name_chs": "蕾欧娜",
+    "name_jp": "レオナ",
+    "category[]": "限定",
+    "element": "土",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040287000",
+    "name_chs": "阿米拉",
+    "name_jp": "アーミラ",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040286000",
+    "name_chs": "路西欧",
+    "name_jp": "ルシオ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030290000",
+    "name_chs": "梅格",
+    "name_jp": "メグ",
+    "category[]": "活动",
+    "element": "暗",
+    "tag[]": "SS",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3030300000",
+    "name_chs": "泰尔",
+    "name_jp": "タイアー",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040289000",
+    "name_chs": "萝莎米娅",
+    "name_jp": "ロザミア",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040288000",
+    "name_chs": "阿妮拉",
+    "name_jp": "アニラ",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030310000",
+    "name_chs": "菲莉",
+    "name_jp": "フェリ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040290000",
+    "name_chs": "阿尔贝尔",
+    "name_jp": "アルベール",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040291000",
+    "name_chs": "席尔瓦",
+    "name_jp": "シルヴァ",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040292000",
+    "name_chs": "米姆露梅莫璐",
+    "name_jp": "ミムルメモル",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040293000",
+    "name_chs": "朱丽叶",
+    "name_jp": "ジュリエット",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030320000",
+    "name_chs": "杰艾尔",
+    "name_jp": "ジョエル",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040294000",
+    "name_chs": "龙崎阳羽",
+    "name_jp": "竜ヶ崎ヒイロ",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040295000",
+    "name_chs": "天宫美森",
+    "name_jp": "天宮ミモリ",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040296000",
+    "name_chs": "戴安萨",
+    "name_jp": "ディアンサ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040297000",
+    "name_chs": "金骑士",
+    "name_jp": "黄金の騎士",
+    "category[]": "限定",
+    "element": "土",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040298000",
+    "name_chs": "高文",
+    "name_jp": "ガウェイン",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040299000",
+    "name_chs": "芙罗伦斯",
+    "name_jp": "フロレンス",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030321000",
+    "name_chs": "沃夫＆蕾妮",
+    "name_jp": "ウーフとレニー",
+    "category[]": "万圣节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3040301000",
+    "name_chs": "萝赛塔",
+    "name_jp": "ロゼッタ",
+    "category[]": "万圣节",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040300000",
+    "name_chs": "阿萨谢尔",
+    "name_jp": "アザゼル",
+    "category[]": "万圣节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040302000",
+    "name_chs": "米蕾耶＆莉赛特",
+    "name_jp": "ミレイユ＆リゼット",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040303000",
+    "name_chs": "斯黛拉",
+    "name_jp": "スーテラ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040304000",
+    "name_chs": "菲泽",
+    "name_jp": "フェザー",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040305000",
+    "name_chs": "菲奥莉托",
+    "name_jp": "フィオリト",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040306000",
+    "name_chs": "涅莫涅",
+    "name_jp": "ネモネ",
+    "category[]": "圣诞节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040307000",
+    "name_chs": "米琳",
+    "name_jp": "ミリン",
+    "category[]": "圣诞节",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040308000",
+    "name_chs": "灶门炭治郎&灶门祢豆子&我妻善逸&嘴平伊之助",
+    "name_jp": "竈門炭治郎&竈門禰??豆子&我妻善逸&嘴平伊之助",
+    "category[]": "联动",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040309000",
+    "name_chs": "炼狱杏寿郎",
+    "name_jp": "煉??獄杏寿郎",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040310000",
+    "name_chs": "蝴蝶忍",
+    "name_jp": "胡蝶しのぶ",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040311000",
+    "name_chs": "莉莉",
+    "name_jp": "リリィ",
+    "category[]": "圣诞节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3030322000",
+    "name_chs": "斯平纳",
+    "name_jp": "スピナー",
+    "category[]": "圣诞节",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SR"
+  },
+  {
+    "ID": "3020073000",
+    "name_chs": "碧卡拉",
+    "name_jp": "ビカラ",
+    "category[]": "活动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3040312000",
+    "name_chs": "圣德芬",
+    "name_jp": "サンダルフォン",
+    "category[]": "限定",
+    "element": "土",
+    "tag[]": "月中;Another",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040313000",
+    "name_chs": "夏托拉",
+    "name_jp": "シャトラ",
+    "category[]": "神将",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040314000",
+    "name_chs": "菲琳",
+    "name_jp": "フィルレイン",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040315000",
+    "name_chs": "士郎",
+    "name_jp": "シロウ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040316000",
+    "name_chs": "泽黑库",
+    "name_jp": "ゼヘク",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040317000",
+    "name_chs": "米歇拉",
+    "name_jp": "マイシェラ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040318000",
+    "name_chs": "奈克塔尔",
+    "name_jp": "ネクタル",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040319000",
+    "name_chs": "拉姆丽妲",
+    "name_jp": "ラムレッダ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040320000",
+    "name_chs": "卡莉奥斯特萝",
+    "name_jp": "カリオストロ",
+    "category[]": "限定",
+    "element": "光",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040321000",
+    "name_chs": "莫妮卡",
+    "name_jp": "モニカ",
+    "category[]": "情人节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040322000",
+    "name_chs": "阿古罗瓦尔",
+    "name_jp": "アグロヴァル",
+    "category[]": "情人节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040323000",
+    "name_chs": "泽塔",
+    "name_jp": "ゼタ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040324000",
+    "name_chs": "巴萨拉卡",
+    "name_jp": "バザラガ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040325000",
+    "name_chs": "同期组 法拉&尤利",
+    "name_jp": "同期組 ファラ＆ユーリ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040326000",
+    "name_chs": "卡西乌斯",
+    "name_jp": "カシウス",
+    "category[]": "活动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040327000",
+    "name_chs": "艾萨克",
+    "name_jp": "アイザック",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040328000",
+    "name_chs": "贝阿朵丽丝",
+    "name_jp": "ベアトリクス",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040329000",
+    "name_chs": "库碧拉",
+    "name_jp": "クビラ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040330000",
+    "name_chs": "安琪拉",
+    "name_jp": "アンチラ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040331000",
+    "name_chs": "波波波~波·波~波波",
+    "name_jp": "ボボボーボ?ボーボボ",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040332000",
+    "name_chs": "哪吒",
+    "name_jp": "ナタク",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040333000",
+    "name_chs": "紫苑",
+    "name_jp": "シオン",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040334000",
+    "name_chs": "阿尔贝尔",
+    "name_jp": "アルベール",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040335000",
+    "name_chs": "娜尔梅亚",
+    "name_jp": "ナルメア",
+    "category[]": "限定",
+    "element": "风",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040336000",
+    "name_chs": "托路",
+    "name_jp": "トルー",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040337000",
+    "name_chs": "缇可",
+    "name_jp": "ティコ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040338000",
+    "name_chs": "翔",
+    "name_jp": "ショウ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040339000",
+    "name_chs": "米兰达",
+    "name_jp": "ミランダ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040340000",
+    "name_chs": "蕾娜",
+    "name_jp": "レナ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040341000",
+    "name_chs": "涅槃",
+    "name_jp": "ネハン",
+    "category[]": "限定",
+    "element": "光",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040342000",
+    "name_chs": "英格威",
+    "name_jp": "イングヴェイ",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040343000",
+    "name_chs": "伊休米尔",
+    "name_jp": "イシュミール",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040344000",
+    "name_chs": "齐格飞",
+    "name_jp": "ジークフリート",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040345000",
+    "name_chs": "伊尔诺特",
+    "name_jp": "イルノート",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040346000",
+    "name_chs": "梅格",
+    "name_jp": "メグ",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040347000",
+    "name_chs": "美黛拉",
+    "name_jp": "メーテラ",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040348000",
+    "name_chs": "波塞冬",
+    "name_jp": "ポセイドン",
+    "category[]": "限定",
+    "element": "水",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040349000",
+    "name_chs": "扎哈梅丽娜",
+    "name_jp": "ザルハメリナ",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040350000",
+    "name_chs": "塔维娜",
+    "name_jp": "タヴィーナ",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040351000",
+    "name_chs": "赫莱尔·本·夏蕾姆",
+    "name_jp": "ヘレル?ベン?シャレム",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040352000",
+    "name_chs": "湿婆",
+    "name_jp": "シヴァ",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040354000",
+    "name_chs": "诺伊修",
+    "name_jp": "ノイシュ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040355000",
+    "name_chs": "古蕾娅",
+    "name_jp": "グレア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040356000",
+    "name_chs": "艾尔莫特",
+    "name_jp": "エルモート",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040357000",
+    "name_chs": "巫妖",
+    "name_jp": "リッチ",
+    "category[]": "限定",
+    "element": "暗",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040358000",
+    "name_chs": "亚瑟",
+    "name_jp": "アーサー",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040359000",
+    "name_chs": "梓",
+    "name_jp": "アズサ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040362000",
+    "name_chs": "真选组 土方十四郎＆冲田总悟",
+    "name_jp": "真選組 土方十四郎＆沖田総悟",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040361000",
+    "name_chs": "库库鲁",
+    "name_jp": "ククル",
+    "category[]": "万圣节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040360000",
+    "name_chs": "维恩",
+    "name_jp": "ヴェイン",
+    "category[]": "万圣节",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040363000",
+    "name_chs": "万事屋 坂田银时&志村新八&神乐",
+    "name_jp": "万事屋銀ちゃん 坂田銀時&志村新八&神楽",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040364000",
+    "name_chs": "露娜露",
+    "name_jp": "ルナール",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "Another",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040365000",
+    "name_chs": "厄倪俄",
+    "name_jp": "エニュオ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040366000",
+    "name_chs": "本杰明",
+    "name_jp": "ベンジャミン",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "Another",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040367000",
+    "name_chs": "阿露露梅娅",
+    "name_jp": "アルルメイヤ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040368000",
+    "name_chs": "兰德尔",
+    "name_jp": "ランドル",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040369000",
+    "name_chs": "安苏莉娅",
+    "name_jp": "アンスリア",
+    "category[]": "圣诞节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040370000",
+    "name_chs": "哆啦A梦",
+    "name_jp": "ドラえもん",
+    "category[]": "联动",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040371000",
+    "name_chs": "大雄",
+    "name_jp": "のび太",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040372000",
+    "name_chs": "玛琪拉",
+    "name_jp": "マキラ",
+    "category[]": "圣诞节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040373000",
+    "name_chs": "阿尔泰尔",
+    "name_jp": "アルタイル",
+    "category[]": "圣诞节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020074000",
+    "name_chs": "夏托拉",
+    "name_jp": "シャトラ",
+    "category[]": "活动",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3040374000",
+    "name_chs": "兰斯洛特",
+    "name_jp": "ランスロット",
+    "category[]": "限定",
+    "element": "水",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040375000",
+    "name_chs": "萨缇洛斯",
+    "name_jp": "サテュロス",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040376000",
+    "name_chs": "菲迪埃尔",
+    "name_jp": "フェディエル",
+    "category[]": "限定",
+    "element": "暗",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040377000",
+    "name_chs": "辛妲拉",
+    "name_jp": "シンダラ",
+    "category[]": "神将",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040378000",
+    "name_chs": "伊维亚",
+    "name_jp": "イーウィヤ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040379000",
+    "name_chs": "库皮坦",
+    "name_jp": "クピタン",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040380000",
+    "name_chs": "尤格多拉希尔",
+    "name_jp": "ユグドラシル",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040381000",
+    "name_chs": "威尔纳斯",
+    "name_jp": "ウィルナス",
+    "category[]": "限定",
+    "element": "火",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040382000",
+    "name_chs": "伊帕兹",
+    "name_jp": "イッパツ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040383000",
+    "name_chs": "莉露露",
+    "name_jp": "リルル",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040353000",
+    "name_chs": "特别周&无声铃鹿&东海帝王",
+    "name_jp": "スペシャルウィーク＆サイレンススズカ＆トウカイテイオー",
+    "category[]": "联动",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040384000",
+    "name_chs": "卡西乌斯",
+    "name_jp": "カシウス",
+    "category[]": "情人节",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040385000",
+    "name_chs": "维拉",
+    "name_jp": "ヴィーラ",
+    "category[]": "情人节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040386000",
+    "name_chs": "法斯蒂瓦",
+    "name_jp": "ファスティバ",
+    "category[]": "情人节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040387000",
+    "name_chs": "弗雷",
+    "name_jp": "フレイ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040388000",
+    "name_chs": "希尔芙",
+    "name_jp": "シルフ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040389000",
+    "name_chs": "美杜莎",
+    "name_jp": "メドゥーサ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040390000",
+    "name_chs": "尤妮",
+    "name_jp": "ユニ",
+    "category[]": "限定",
+    "element": "光",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040391000",
+    "name_chs": "席尔瓦",
+    "name_jp": "シルヴァ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040392000",
+    "name_chs": "娜尔梅亚",
+    "name_jp": "ナルメア",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040393000",
+    "name_chs": "容",
+    "name_jp": "ヨウ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040394000",
+    "name_chs": "拉格娜",
+    "name_jp": "ラグナ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040396000",
+    "name_chs": "讴歌自由的男子汉们 斯卡尔&巴鲁鲁干",
+    "name_jp": "自由を謳う漢達 スカル＆バルルガン",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040397000",
+    "name_chs": "索菲亚",
+    "name_jp": "ソフィア",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040399000",
+    "name_chs": "莉莉婕特",
+    "name_jp": "リリゼット",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040400000",
+    "name_chs": "普利修",
+    "name_jp": "プリッシュ",
+    "category[]": "联动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040398000",
+    "name_chs": "五郎八",
+    "name_jp": "イロハ",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040401000",
+    "name_chs": "玛娜玛尔",
+    "name_jp": "マナマル",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040402000",
+    "name_chs": "安娜",
+    "name_jp": "アンナ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040403000",
+    "name_chs": "艾蕾娅",
+    "name_jp": "エイレア",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040404000",
+    "name_chs": "贾米尔",
+    "name_jp": "ジャミル",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040405000",
+    "name_chs": "伽莱翁",
+    "name_jp": "ガレヲン",
+    "category[]": "限定",
+    "element": "土",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040406000",
+    "name_chs": "格温",
+    "name_jp": "グウィン",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040407000",
+    "name_chs": "瓦姬拉",
+    "name_jp": "ヴァジラ",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040408000",
+    "name_chs": "碧卡拉",
+    "name_jp": "ビカラ",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040409000",
+    "name_chs": "米琳",
+    "name_jp": "ミリン",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040410000",
+    "name_chs": "紫苑",
+    "name_jp": "シオン",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040411000",
+    "name_chs": "尤斯缇斯",
+    "name_jp": "ユーステス",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040412000",
+    "name_chs": "玛姬莎",
+    "name_jp": "マギサ",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040413000",
+    "name_chs": "克拉莉丝",
+    "name_jp": "クラリス",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040414000",
+    "name_chs": "缇可",
+    "name_jp": "ティコ",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040415000",
+    "name_chs": "斯特姆",
+    "name_jp": "スツルム",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040419000",
+    "name_chs": "瓦姆杜斯",
+    "name_jp": "ワムデュス",
+    "category[]": "限定",
+    "element": "水",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040420000",
+    "name_chs": "贞德",
+    "name_jp": "ジャンヌダルク",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040421000",
+    "name_chs": "艾丽卡",
+    "name_jp": "エリカ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040422000",
+    "name_chs": "安德森",
+    "name_jp": "アンダーソン",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040416000",
+    "name_chs": "路飞",
+    "name_jp": "ルフィ",
+    "category[]": "联动",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040418000",
+    "name_chs": "娜美&罗宾",
+    "name_jp": "ナミ＆ロビン",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040423000",
+    "name_chs": "杰西卡",
+    "name_jp": "ジェシカ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040424000",
+    "name_chs": "波曼",
+    "name_jp": "ボーマン",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "Another",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040417000",
+    "name_chs": "索隆&山治",
+    "name_jp": "ゾロ&サンジ",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040425000",
+    "name_chs": "帕西瓦尔",
+    "name_jp": "パーシヴァル",
+    "category[]": "限定",
+    "element": "火",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040426000",
+    "name_chs": "征于霸道的主从 阿古罗瓦尔&托",
+    "name_jp": "覇道を征く主従 アグロヴァル＆トー",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040427000",
+    "name_chs": "巫妖",
+    "name_jp": "リッチ",
+    "category[]": "万圣节",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040428000",
+    "name_chs": "无限",
+    "name_jp": "ムゲン",
+    "category[]": "万圣节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040429000",
+    "name_chs": "芙罗伦斯",
+    "name_jp": "フロレンス",
+    "category[]": "万圣节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040430000",
+    "name_chs": "永远亲爱 尤艾尔&苏丝雅",
+    "name_jp": "永遠の親愛 ユエル&ソシエ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040431000",
+    "name_chs": "阿莉亚",
+    "name_jp": "アリア",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040432000",
+    "name_chs": "亚当",
+    "name_jp": "アダム",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040433000",
+    "name_chs": "特蕾丝",
+    "name_jp": "テレーズ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040434000",
+    "name_chs": "欧罗巴",
+    "name_jp": "エウロペ",
+    "category[]": "圣诞节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040435000",
+    "name_chs": "菲奥莉托",
+    "name_jp": "フィオリト",
+    "category[]": "圣诞节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040436000",
+    "name_chs": "该隐",
+    "name_jp": "カイン",
+    "category[]": "圣诞节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040437000",
+    "name_chs": "夏托拉",
+    "name_jp": "シャトラ",
+    "category[]": "圣诞节",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040438000",
+    "name_chs": "夏洛特",
+    "name_jp": "シャルロッテ",
+    "category[]": "限定",
+    "element": "风",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040439000",
+    "name_chs": "艾琳",
+    "name_jp": "エリン",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040440000",
+    "name_chs": "米迦勒",
+    "name_jp": "ミカエル",
+    "category[]": "限定",
+    "element": "火",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040441000",
+    "name_chs": "玛蔻拉",
+    "name_jp": "マコラ",
+    "category[]": "神将",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040442000",
+    "name_chs": "U·星期五小姐",
+    "name_jp": "Ｕ?フライデー",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "Another",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040443000",
+    "name_chs": "哈鲁特&马鲁特",
+    "name_jp": "ハールート?マールート",
+    "category[]": "限定",
+    "element": "暗",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040444000",
+    "name_chs": "艾米莉亚",
+    "name_jp": "エミリア",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040445000",
+    "name_chs": "桑德莉咏",
+    "name_jp": "サンドリヨン",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040446000",
+    "name_chs": "欧姬丝",
+    "name_jp": "オーキス",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040447000",
+    "name_chs": "圣德芬",
+    "name_jp": "サンダルフォン",
+    "category[]": "情人节",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040448000",
+    "name_chs": "千",
+    "name_jp": "セン",
+    "category[]": "情人节",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040449000",
+    "name_chs": "露·欧",
+    "name_jp": "ル?オー",
+    "category[]": "限定",
+    "element": "光",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040450000",
+    "name_chs": "赫卡忒",
+    "name_jp": "ヘカテー",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040451000",
+    "name_chs": "希耶提",
+    "name_jp": "シエテ",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "Another",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040452000",
+    "name_chs": "伊维亚",
+    "name_jp": "イーウィヤ",
+    "category[]": "限定",
+    "element": "风",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040453000",
+    "name_chs": "梓",
+    "name_jp": "アズサ",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040454000",
+    "name_chs": "莫妮卡",
+    "name_jp": "モニカ",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040455000",
+    "name_chs": "哪吒",
+    "name_jp": "ナタク",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040456000",
+    "name_chs": "伊尔莎",
+    "name_jp": "イルザ",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040457000",
+    "name_chs": "大耳狗&布丁狗",
+    "name_jp": "シナモロール＆ポムポムプリン",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040458000",
+    "name_chs": "雅雅",
+    "name_jp": "ヤイア",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040459000",
+    "name_chs": "茉莉",
+    "name_jp": "ジャスミン",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040460000",
+    "name_chs": "卡洛",
+    "name_jp": "カロ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040461000",
+    "name_chs": "坎妲缇",
+    "name_jp": "カンターテ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040462000",
+    "name_chs": "伊卡洛斯",
+    "name_jp": "イカロス",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040463000",
+    "name_chs": "莉莉",
+    "name_jp": "リリィ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040464000",
+    "name_chs": "多萝赛尔",
+    "name_jp": "ドロッセル",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040465000",
+    "name_chs": "可露瓦",
+    "name_jp": "コルワ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040466000",
+    "name_chs": "巴尔",
+    "name_jp": "バアル",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040467000",
+    "name_chs": "科斯莫斯",
+    "name_jp": "コスモス",
+    "category[]": "限定",
+    "element": "光",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040468000",
+    "name_chs": "库皮坦",
+    "name_jp": "クピタン",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040469000",
+    "name_chs": "芙莉亚",
+    "name_jp": "フォリア",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040470000",
+    "name_chs": "厄倪俄",
+    "name_jp": "エニュオ",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040471000",
+    "name_chs": "巴萨拉卡",
+    "name_jp": "バザラガ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040472000",
+    "name_chs": "菲迪埃尔",
+    "name_jp": "フェディエル",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040473000",
+    "name_chs": "尤里乌斯",
+    "name_jp": "ユリウス",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040474000",
+    "name_chs": "阿莉莎",
+    "name_jp": "アリーザ",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040475000",
+    "name_chs": "女仆 多萝西＆克劳迪娅",
+    "name_jp": "サーヴァンツ ドロシー＆クラウディア",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040476000",
+    "name_chs": "虎杖悠仁&伏黑惠",
+    "name_jp": "虎杖悠仁＆伏黒 恵",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040477000",
+    "name_chs": "钉崎野蔷薇&禅院真希",
+    "name_jp": "釘崎野薔薇＆禪院真希",
+    "category[]": "联动",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040478000",
+    "name_chs": "斑比",
+    "name_jp": "ヴァンピィ",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040479000",
+    "name_chs": "阿妮拉",
+    "name_jp": "アニラ",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040480000",
+    "name_chs": "塞鲁艾尔",
+    "name_jp": "セルエル",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040481000",
+    "name_chs": "拉加佐",
+    "name_jp": "ラガッツォ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040482000",
+    "name_chs": "梅格&玛丽佩",
+    "name_jp": "メグ＆まりっぺ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040483000",
+    "name_chs": "帕里斯",
+    "name_jp": "パリス",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040486000",
+    "name_chs": "辉夜",
+    "name_jp": "カグヤ",
+    "category[]": "限定",
+    "element": "风",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040484000",
+    "name_chs": "凯瑟琳",
+    "name_jp": "キャサリン",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040485000",
+    "name_chs": "齐格飞",
+    "name_jp": "ジークフリート",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "Another",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040487000",
+    "name_chs": "缇可",
+    "name_jp": "ティコ",
+    "category[]": "万圣节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040488000",
+    "name_chs": "碧卡拉",
+    "name_jp": "ビカラ",
+    "category[]": "万圣节",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040489000",
+    "name_chs": "丹特",
+    "name_jp": "ダーント",
+    "category[]": "万圣节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040490000",
+    "name_chs": "萨比尔巴拉",
+    "name_jp": "サビルバラ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040491000",
+    "name_chs": "空蝉",
+    "name_jp": "ウツセミ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040492000",
+    "name_chs": "加百列",
+    "name_jp": "ガブリエル",
+    "category[]": "限定",
+    "element": "水",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040493000",
+    "name_chs": "巴洛瓦&萨娅",
+    "name_jp": "バロワ&サーヤ",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040494000",
+    "name_chs": "波蕾米亚",
+    "name_jp": "ボレミア",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040495000",
+    "name_chs": "尤妮",
+    "name_jp": "ユニ",
+    "category[]": "圣诞节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040496000",
+    "name_chs": "伊尔诺特",
+    "name_jp": "イルノート",
+    "category[]": "圣诞节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040497000",
+    "name_chs": "赫莱尔·本·夏蕾姆",
+    "name_jp": "ヘレル?ベン?シャレム",
+    "category[]": "圣诞节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040498000",
+    "name_chs": "诺亚",
+    "name_jp": "ノア",
+    "category[]": "圣诞节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040499000",
+    "name_chs": "泽塔",
+    "name_jp": "ゼタ",
+    "category[]": "限定",
+    "element": "火",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040500000",
+    "name_chs": "罗艾因",
+    "name_jp": "ローアイン",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040501000",
+    "name_chs": "乌列尔",
+    "name_jp": "ウリエル",
+    "category[]": "限定",
+    "element": "土",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040502000",
+    "name_chs": "哈伊拉",
+    "name_jp": "ハイラ",
+    "category[]": "神将",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040503000",
+    "name_chs": "缇拉",
+    "name_jp": "ティラ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040507000",
+    "name_chs": "德利弗多",
+    "name_jp": "デリフォード",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040508000",
+    "name_chs": "奥莉薇尔",
+    "name_jp": "オリヴィエ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040509000",
+    "name_chs": "尤利",
+    "name_jp": "ユーリ",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040510000",
+    "name_chs": "罗贝缇娜",
+    "name_jp": "ロベルティナ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040511000",
+    "name_chs": "涅槃",
+    "name_jp": "ネハン",
+    "category[]": "情人节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040512000",
+    "name_chs": "辛妲拉",
+    "name_jp": "シンダラ",
+    "category[]": "情人节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040513000",
+    "name_chs": "理查德",
+    "name_jp": "リチャード",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040514000",
+    "name_chs": "萨布丽娜",
+    "name_jp": "サブリナ",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040515000",
+    "name_chs": "圣德芬",
+    "name_jp": "サンダルフォン",
+    "category[]": "限定",
+    "element": "光",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040516000",
+    "name_chs": "拉结尔",
+    "name_jp": "ラジエル",
+    "category[]": "活动",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040517000",
+    "name_chs": "梅嘉丝",
+    "name_jp": "メイガス",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040518000",
+    "name_chs": "荷鲁斯",
+    "name_jp": "ホルス",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040519000",
+    "name_chs": "菲妮",
+    "name_jp": "フェニー",
+    "category[]": "限定",
+    "element": "火",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040520000",
+    "name_chs": "蕾?芬耶",
+    "name_jp": "レ?フィーエ",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040521000",
+    "name_chs": "艾尔莫特",
+    "name_jp": "エルモート",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040522000",
+    "name_chs": "帕恰狗",
+    "name_jp": "ポチャッコ",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040523000",
+    "name_chs": "斯平纳",
+    "name_jp": "スピナー",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040524000",
+    "name_chs": "安",
+    "name_jp": "アン",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040525000",
+    "name_chs": "琪琪莉",
+    "name_jp": "チチリ",
+    "category[]": "四圣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040529000",
+    "name_chs": "克璐璐",
+    "name_jp": "コルル",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040530000",
+    "name_chs": "库洛尔",
+    "name_jp": "クロエ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040531000",
+    "name_chs": "翠",
+    "name_jp": "スイ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040532000",
+    "name_chs": "斑特",
+    "name_jp": "ヴァイト",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040533000",
+    "name_chs": "纱都",
+    "name_jp": "さと",
+    "category[]": "普通",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040534000",
+    "name_chs": "米琳",
+    "name_jp": "ミリン",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040528000",
+    "name_chs": "阿弥",
+    "name_jp": "アミ",
+    "category[]": "四圣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040535000",
+    "name_chs": "奈克塔尔",
+    "name_jp": "ネクタル",
+    "category[]": "普通",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040536000",
+    "name_chs": "欧罗罗伽亚",
+    "name_jp": "オロロジャイア",
+    "category[]": "限定",
+    "element": "暗",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040537000",
+    "name_chs": "泰芙努特",
+    "name_jp": "テフヌト",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040538000",
+    "name_chs": "拉结尔",
+    "name_jp": "ラジエル",
+    "category[]": "泳装浴衣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040539000",
+    "name_chs": "库库鲁",
+    "name_jp": "ククル",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040540000",
+    "name_chs": "哈蕾泽娜",
+    "name_jp": "ハレゼナ",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040541000",
+    "name_chs": "索恩",
+    "name_jp": "ソーン",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040542000",
+    "name_chs": "拉加佐",
+    "name_jp": "ラガッツォ",
+    "category[]": "泳装浴衣",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040543000",
+    "name_chs": "赫卡忒",
+    "name_jp": "ヘカテー",
+    "category[]": "泳装浴衣",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040527000",
+    "name_chs": "秀秀珂",
+    "name_jp": "シュシュク",
+    "category[]": "四圣",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040544000",
+    "name_chs": "伽莱翁",
+    "name_jp": "ガレヲン",
+    "category[]": "泳装浴衣",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040545000",
+    "name_chs": "阿古罗瓦尔",
+    "name_jp": "アグロヴァル",
+    "category[]": "泳装浴衣",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040546000",
+    "name_chs": "尼娅",
+    "name_jp": "ニーア",
+    "category[]": "泳装浴衣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040547000",
+    "name_chs": "美杜莎",
+    "name_jp": "メドゥーサ",
+    "category[]": "限定",
+    "element": "土",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040548000",
+    "name_chs": "塞瓦斯蒂安",
+    "name_jp": "セワスチアン",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040549000",
+    "name_chs": "诺瓦尔",
+    "name_jp": "ノワール",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040550000",
+    "name_chs": "娜维",
+    "name_jp": "ナーヴェ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040551000",
+    "name_chs": "维恩",
+    "name_jp": "ヴェイン",
+    "category[]": "限定",
+    "element": "风",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040552000",
+    "name_chs": "芙罗伦斯",
+    "name_jp": "フロレンス",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040526000",
+    "name_chs": "乌露琪",
+    "name_jp": "ウルキ",
+    "category[]": "四圣",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040553000",
+    "name_chs": "威尔纳斯",
+    "name_jp": "ウィルナス",
+    "category[]": "万圣节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040554000",
+    "name_chs": "萨缇洛斯",
+    "name_jp": "サテュロス",
+    "category[]": "万圣节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040555000",
+    "name_chs": "玛娜玛尔",
+    "name_jp": "マナマル",
+    "category[]": "万圣节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040556000",
+    "name_chs": "莉夏",
+    "name_jp": "リーシャ",
+    "category[]": "普通",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040557000",
+    "name_chs": "威尔",
+    "name_jp": "ウィル",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040558000",
+    "name_chs": "利姆鲁·特恩佩斯特",
+    "name_jp": "リムル＝テンペスト",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040559000",
+    "name_chs": "维鲁德拉·特恩佩斯特",
+    "name_jp": "ヴェルドラ＝テンペスト",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040560000",
+    "name_chs": "紫苑",
+    "name_jp": "シオン",
+    "category[]": "联动卡池",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040561000",
+    "name_chs": "迪亚波罗",
+    "name_jp": "ディアブロ",
+    "category[]": "联动卡池",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040562000",
+    "name_chs": "瓦姆杜斯",
+    "name_jp": "ワムデュス",
+    "category[]": "圣诞节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040563000",
+    "name_chs": "尤格多拉希尔",
+    "name_jp": "ユグドラシル",
+    "category[]": "圣诞节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040564000",
+    "name_chs": "佐伊",
+    "name_jp": "ゾーイ",
+    "category[]": "圣诞节",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040565000",
+    "name_chs": "卡托尔",
+    "name_jp": "カトル",
+    "category[]": "圣诞节",
+    "element": "火",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3020075000",
+    "name_chs": "哈伊拉",
+    "name_jp": "ハイラ",
+    "category[]": "活动",
+    "element": "水",
+    "tag[]": "",
+    "rarity": "R"
+  },
+  {
+    "ID": "3040566000",
+    "name_chs": "雅琪玛",
+    "name_jp": "ヤチマ",
+    "category[]": "限定",
+    "element": "水",
+    "tag[]": "月中",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040567000",
+    "name_chs": "阿雷提亚",
+    "name_jp": "アレーティア",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040568000",
+    "name_chs": "拉斐尔",
+    "name_jp": "ラファエル",
+    "category[]": "限定",
+    "element": "风",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040569000",
+    "name_chs": "茵妲拉",
+    "name_jp": "インダラ",
+    "category[]": "神将",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040570000",
+    "name_chs": "迷你哥布",
+    "name_jp": "ミニゴブ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040571000",
+    "name_chs": "蔻刻",
+    "name_jp": "コク",
+    "category[]": "活动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040572000",
+    "name_chs": "梅利甘斯",
+    "name_jp": "メレアガンス",
+    "category[]": "普通",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040573000",
+    "name_chs": "菲娜",
+    "name_jp": "フィーナ",
+    "category[]": "普通",
+    "element": "光",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040576000",
+    "name_chs": "樱咲刹那",
+    "name_jp": "桜咲刹那",
+    "category[]": "联动卡池",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040577000",
+    "name_chs": "杰克·拉坎",
+    "name_jp": "ジャック?ラカン",
+    "category[]": "联动卡池",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040574000",
+    "name_chs": "涅吉·史普林菲尔德",
+    "name_jp": "ネギ?スプリングフィールド",
+    "category[]": "联动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040575000",
+    "name_chs": "依文洁琳A.K.麦道威尔",
+    "name_jp": "エヴァンジェリン?Ａ?Ｋ?マクダウェル",
+    "category[]": "联动",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040578000",
+    "name_chs": "洛贝利亚",
+    "name_jp": "ロベリア",
+    "category[]": "情人节",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040579000",
+    "name_chs": "玛蔻拉",
+    "name_jp": "マコラ",
+    "category[]": "情人节",
+    "element": "土",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040580000",
+    "name_chs": "尤艾尔",
+    "name_jp": "ユエル",
+    "category[]": "限定",
+    "element": "火",
+    "tag[]": "月底",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040581000",
+    "name_chs": "月读",
+    "name_jp": "ツクヨミ",
+    "category[]": "普通",
+    "element": "暗",
+    "tag[]": "",
+    "rarity": "SSR"
+  },
+  {
+    "ID": "3040588000",
+    "name_chs": "乔伊",
+    "name_jp": "ジョイ",
+    "category[]": "活动",
+    "element": "风",
+    "tag[]": "",
+    "rarity": "SSR"
+  }
+]

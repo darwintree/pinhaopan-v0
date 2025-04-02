@@ -27,8 +27,9 @@ export async function saveGuide(data: GuidePostData): Promise<string> {
       throw new Error(errorData.message || '保存配置失败')
     }
 
-    const result = await response.json()
-    return result.id
+    const result = await response.text()
+    console.log(result)
+    return JSON.parse(result).id
   } catch (error) {
     console.error('保存配置失败:', error)
     console.log(data)

@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge"
 
 import cv from "@techstark/opencv-js"
 import { detectChara, detectWeapon, detectSummon, Box, getDesBase64 } from "./cv"
-import { DetectEquipmentType } from "./types"
+import { DetectEquipmentType, EquipmentType } from "./types"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -25,8 +25,6 @@ export interface RectangleDetectionResult {
     height: number
   }
 }
-
-export type EquipmentType = "chara" | "weapon" | "summon"
 
 // 模拟矩形检测过程
 export const detectRectangles = async (imageUrl: string, type: EquipmentType): Promise<RectangleDetectionResult> => {

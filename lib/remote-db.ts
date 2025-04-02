@@ -1,4 +1,4 @@
-import type { GuidePostData, GuideData, EquipmentFilterCondition } from "@/lib/types"
+import type { GuidePostData, GuideData, EquipmentFilterCondition } from "./types"
 
 // 设置远程服务器URL
 const API_BASE_URL = process.env.REMOTE_API_URL

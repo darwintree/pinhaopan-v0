@@ -1,4 +1,4 @@
-import { EquipmentType } from "./utils";
+import { EquipmentType } from "./types";
 
 export function getGuidePhotoUrl(guideId: string, equipmentType: EquipmentType) {
   const baseUrl = process.env.NEXT_PUBLIC_UPLOAD_IMG_BASE_URL

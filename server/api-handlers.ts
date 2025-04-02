@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express'
 import * as dbOperations from '../lib/db'
-import type { GuidePostData, EquipmentFilterCondition } from '@/lib/types'
+import type { GuidePostData, EquipmentFilterCondition } from '../lib/types'
 
 // 创建路由器
 export const guidesRouter = Router()

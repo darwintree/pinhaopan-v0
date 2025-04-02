@@ -1,5 +1,5 @@
 import { MongoClient, ObjectId } from "mongodb"
-import type { GuidePostData, GuideData, EquipmentFilterCondition, EquipmentData } from "@/lib/types"
+import type { GuidePostData, GuideData, EquipmentFilterCondition, EquipmentData } from "./types"
 import fs from "fs/promises"
 import path from "path"
 import { normalizeEquipmentId } from "./asset"

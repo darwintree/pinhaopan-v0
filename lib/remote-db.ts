@@ -31,6 +31,7 @@ export async function saveGuide(data: GuidePostData): Promise<string> {
     return result.id
   } catch (error) {
     console.error('保存配置失败:', error)
+    console.log(data)
     throw error
   }
 }

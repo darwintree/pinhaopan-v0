@@ -1,5 +1,5 @@
 import { MongoClient, ObjectId } from "mongodb"
-import type { GuidePostData, GuideData } from "@/lib/types"
+import type { GuidePostData, GuideData, EquipmentFilterCondition } from "@/lib/types"
 import fs from "fs/promises"
 import path from "path"
 
@@ -152,6 +152,9 @@ export async function getGuides(query: {
   timeRange?: [number, number]
   dateRange?: [Date, Date]
   sort?: { field: "time" | "date"; direction: "asc" | "desc" }
+  charaConditions?: EquipmentFilterCondition[]
+  weaponConditions?: EquipmentFilterCondition[]
+  summonConditions?: EquipmentFilterCondition[]
 } = {}) {
   const db = (await clientPromise).db(dbName)
   const filter: any = {}
@@ -170,6 +173,161 @@ export async function getGuides(query: {
 
   if (query.dateRange) {
     filter.date = { $gte: query.dateRange[0].getTime(), $lte: query.dateRange[1].getTime() }
+  }
+
+  // 处理武器筛选条件
+  if (query.weaponConditions?.length) {
+    const includeConditions = query.weaponConditions.filter(c => c.include)
+    const excludeConditions = query.weaponConditions.filter(c => !c.include)
+    
+    // 处理包含条件 - 使用 $all 和 $elemMatch 优化查询
+    if (includeConditions.length) {
+      const weaponMatches = includeConditions.map(condition => {
+        const weaponMatch: any = {}
+        
+        if (condition.count <= 1) {
+          // 基本武器ID匹配
+          const elementMatch: any = {
+            "weapons.id": condition.id
+          }
+          
+          // 添加properties筛选
+          if (condition.properties) {
+            // 处理等级筛选
+            if (condition.properties.lv !== undefined) {
+              elementMatch["weapons.properties.lv"] = condition.properties.lv
+            }
+            
+            // 处理技能筛选
+            if (condition.properties.u1) {
+              elementMatch["weapons.properties.u1"] = condition.properties.u1
+            }
+            if (condition.properties.u2) {
+              elementMatch["weapons.properties.u2"] = condition.properties.u2
+            }
+            if (condition.properties.u3) {
+              elementMatch["weapons.properties.u3"] = condition.properties.u3
+            }
+            
+            // 处理路西技能
+            if (condition.properties.luci2) {
+              elementMatch["weapons.properties.luci2"] = condition.properties.luci2
+            }
+            if (condition.properties.luci3) {
+              elementMatch["weapons.properties.luci3"] = condition.properties.luci3
+            }
+            
+            // 处理觉醒状态
+            if (condition.properties.awake) {
+              elementMatch["weapons.properties.awake"] = condition.properties.awake
+            }
+          }
+          
+          return elementMatch
+        } else {
+          // 需要多个相同武器时，使用聚合管道
+          // 创建匹配条件，包括 properties
+          const matchCondition: any = { $eq: ["$$this.id", condition.id] }
+          
+          // 如果有 properties，添加到匹配条件
+          if (condition.properties) {
+            if (condition.properties.lv !== undefined) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.lv", condition.properties.lv] })
+            }
+            
+            // 技能匹配
+            if (condition.properties.u1) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.u1", condition.properties.u1] })
+            }
+            if (condition.properties.u2) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.u2", condition.properties.u2] })
+            }
+            if (condition.properties.u3) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.u3", condition.properties.u3] })
+            }
+            
+            // 路西技能匹配
+            if (condition.properties.luci2) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.luci2", condition.properties.luci2] })
+            }
+            if (condition.properties.luci3) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.luci3", condition.properties.luci3] })
+            }
+            
+            // 觉醒状态匹配
+            if (condition.properties.awake) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.awake", condition.properties.awake] })
+            }
+          }
+          
+          return {
+            $expr: {
+              $gte: [
+                { $size: { $filter: {
+                  input: "$weapons",
+                  cond: matchCondition
+                }}},
+                condition.count
+              ]
+            }
+          }
+        }
+      })
+      
+      // 如果有多个包含条件，使用 $and 连接
+      if (weaponMatches.length > 1) {
+        filter.$and = filter.$and || []
+        filter.$and.push(...weaponMatches)
+      } else if (weaponMatches.length === 1) {
+        Object.assign(filter, weaponMatches[0])
+      }
+    }
+    
+    // 处理排除条件
+    if (excludeConditions.length) {
+      filter.$and = filter.$and || []
+      
+      // 为每个排除条件创建一个 $not 匹配
+      excludeConditions.forEach(condition => {
+        const excludeMatch: any = { $not: { $elemMatch: { id: condition.id } } }
+        
+        // 考虑 properties（如果指定了properties，则只排除具有特定properties的武器）
+        if (condition.properties && Object.keys(condition.properties).length > 0) {
+          excludeMatch.$not.$elemMatch = { id: condition.id }
+          
+          if (condition.properties.lv !== undefined) {
+            excludeMatch.$not.$elemMatch["properties.lv"] = condition.properties.lv
+          }
+          if (condition.properties.u1) {
+            excludeMatch.$not.$elemMatch["properties.u1"] = condition.properties.u1
+          }
+          if (condition.properties.u2) {
+            excludeMatch.$not.$elemMatch["properties.u2"] = condition.properties.u2
+          }
+          if (condition.properties.u3) {
+            excludeMatch.$not.$elemMatch["properties.u3"] = condition.properties.u3
+          }
+          if (condition.properties.luci2) {
+            excludeMatch.$not.$elemMatch["properties.luci2"] = condition.properties.luci2
+          }
+          if (condition.properties.luci3) {
+            excludeMatch.$not.$elemMatch["properties.luci3"] = condition.properties.luci3
+          }
+          if (condition.properties.awake) {
+            excludeMatch.$not.$elemMatch["properties.awake"] = condition.properties.awake
+          }
+        }
+        
+        filter.$and.push({ weapons: excludeMatch })
+      })
+    }
   }
 
   const sort: any = {}

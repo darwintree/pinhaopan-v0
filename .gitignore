@@ -26,7 +26,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/assets
-public/list
 scripts/**/*.csv
 scripts/quest/*.json
 public/uploads

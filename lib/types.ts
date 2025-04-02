@@ -11,7 +11,7 @@ export interface GuideData {
 }
 
 
-// 发布攻略时，需要提交的数据
+// 发布配置时，需要提交的数据
 export interface GuidePostData {
   quest: string  // 副本id
   time?: number  // 通关时间(可选)

@@ -95,7 +95,7 @@ function normalizeEquipments(equipmentsData: EquipmentData[]) {
   })
 }
 
-// 验证并保存攻略数据
+// 验证并保存配置数据
 export async function saveGuide(data: GuidePostData): Promise<string> {
   // 验证数据
   validateGuideData(data)
@@ -155,7 +155,7 @@ export async function saveGuide(data: GuidePostData): Promise<string> {
   }
 }
 
-// 获取攻略列表
+// 获取配置列表
 export async function getGuides(query: {
   quest?: string
   tags?: string[]
@@ -652,23 +652,23 @@ export async function getGuides(query: {
   return db.collection("guides").find(filter).sort(sort).toArray()
 }
 
-// 获取单个攻略
+// 获取单个配置
 export async function getGuide(id: string) {
   const db = (await clientPromise).db(dbName)
   return db.collection("guides").findOne({ id })
 }
 
-// 删除攻略
+// 删除配置
 export async function deleteGuide(id: string) {
   const db = (await clientPromise).db(dbName)
   const session = client.startSession()
 
   try {
     await session.withTransaction(async () => {
-      // 获取攻略数据
+      // 获取配置数据
       const guide = await db.collection("guides").findOne({ id }, { session })
       if (!guide) {
-        throw new Error("攻略不存在")
+        throw new Error("配置不存在")
       }
 
       // 删除数据库记录

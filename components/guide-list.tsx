@@ -51,7 +51,7 @@ export function GuideList({ guides, loading }: GuideListProps) {
   return (
     <div className="rounded-lg backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-700/50 shadow-sm overflow-hidden">
       <div className="p-4 flex items-center justify-between">
-        <h2 className="text-xl font-semibold">攻略列表</h2>
+        <h2 className="text-xl font-semibold">配置列表</h2>
         <div className="flex items-center space-x-2">
           <Select
             defaultValue={sortField}
@@ -351,7 +351,9 @@ function GuideListItem({ guide }: GuideListItemProps) {
       </TableCell>
       
       {/* 消耗时间 */}
-      <TableCell>{guide.time} 分钟</TableCell>
+      <TableCell>
+        {Math.floor(guide.time / 60)}:{(guide.time % 60).toString().padStart(2, '0')}
+      </TableCell>
       
       {/* 发布时间 - 桌面端 */}
       <TableCell className="hidden md:table-cell">{new Date(guide.date).toLocaleDateString()}</TableCell>

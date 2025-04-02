@@ -108,7 +108,7 @@ export const mockGuides: GuideData[] = [
     weapons: ["光剑", "光剑", "光剑", "光杖", "光杖", "光杖", "光弓", "光弓", "光弓"],
     summons: ["路西法", "宙斯", "巴哈姆特", "欧罗巴"],
     tags: ["速刷", "高伤害"],
-    description: "这是一个普罗米修斯HL的速刷攻略",
+    description: "这是一个普罗米修斯HL的速刷配置",
   },
   {
     id: "2",
@@ -119,7 +119,7 @@ export const mockGuides: GuideData[] = [
     weapons: ["水弓", "水弓", "水杖", "水杖", "水剑", "水剑"],
     summons: ["提亚马特", "欧罗巴"],
     tags: ["新手向", "稳定"],
-    description: "这是一个巴布萨HL的新手攻略",
+    description: "这是一个巴布萨HL的新手配置",
   },
   {
     id: "3",
@@ -130,7 +130,7 @@ export const mockGuides: GuideData[] = [
     weapons: ["暗刀", "暗刀", "暗刀", "暗杖", "暗杖", "暗杖"],
     summons: ["巴哈姆特", "路西法"],
     tags: ["高难度", "无氪"],
-    description: "这是一个路西法HL的高难度攻略",
+    description: "这是一个路西法HL的高难度配置",
   },
   {
     id: "4",
@@ -141,7 +141,7 @@ export const mockGuides: GuideData[] = [
     weapons: ["土枪", "土枪", "土枪", "土杖", "土杖"],
     summons: ["提亚马特", "宙斯"],
     tags: ["自动化", "稳定"],
-    description: "这是一个阿努比斯HL的自动化攻略",
+    description: "这是一个阿努比斯HL的自动化配置",
   },
   {
     id: "5",
@@ -152,7 +152,7 @@ export const mockGuides: GuideData[] = [
     weapons: ["风拳", "风拳", "风拳", "风弓", "风弓"],
     summons: ["宙斯", "欧罗巴"],
     tags: ["高难度", "高伤害"],
-    description: "这是一个修罗HL的高难度攻略",
+    description: "这是一个修罗HL的高难度配置",
   },
   {
     id: "6",
@@ -163,7 +163,7 @@ export const mockGuides: GuideData[] = [
     weapons: ["火杖", "火杖", "火杖", "火剑", "火剑"],
     summons: ["巴哈姆特", "提亚马特"],
     tags: ["速刷", "新手向"],
-    description: "这是一个赫克托尔HL的速刷攻略",
+    description: "这是一个赫克托尔HL的速刷配置",
   },
 ]
 

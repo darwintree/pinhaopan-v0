@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       const guideId = await saveGuide(body as GuidePostData)
       return NextResponse.json({
         success: true,
-        message: "攻略发布成功",
+        message: "配置发布成功",
         guideId
       })
     } catch (error) {

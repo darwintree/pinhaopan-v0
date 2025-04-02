@@ -58,7 +58,7 @@ export default function GuidePage() {
     navigator.clipboard.writeText(url)
     toast({
       title: "链接已复制",
-      description: "攻略链接已复制到剪贴板",
+      description: "配置链接已复制到剪贴板",
       duration: 2000,
     })
   }
@@ -106,7 +106,7 @@ export default function GuidePage() {
   if (!guide) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen gap-4">
-        <h1 className="text-2xl font-bold">未找到该攻略</h1>
+        <h1 className="text-2xl font-bold">未找到该配置</h1>
         <Button onClick={() => router.back()}>返回</Button>
       </div>
     )
@@ -134,7 +134,7 @@ export default function GuidePage() {
               </Button>
             </TooltipTrigger>
             <TooltipContent>
-              <p>复制攻略链接</p>
+              <p>复制配置链接</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -192,10 +192,10 @@ export default function GuidePage() {
               </div>
             </div>
 
-            {/* 攻略描述 */}
+            {/* 配置描述 */}
             {guide.description && (
               <div className="bg-slate-100/50 dark:bg-slate-800/50 p-3 rounded-md text-sm">
-                <h3 className="font-medium mb-1 text-muted-foreground">攻略说明</h3>
+                <h3 className="font-medium mb-1 text-muted-foreground">配置说明</h3>
                 <p>{guide.description}</p>
               </div>
             )}

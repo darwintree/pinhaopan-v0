@@ -150,7 +150,7 @@ export function PublishGuide() {
       // setSummonResults({})
 
       // Show success message
-      alert("攻略发布成功！")
+      alert("配置发布成功！")
 
     } catch (error) {
       // Show error message
@@ -169,7 +169,7 @@ export function PublishGuide() {
 
       <Card className="backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
         <CardContent className="p-6">
-          <h2 className="text-2xl font-bold mb-6">攻略基本信息</h2>
+          <h2 className="text-2xl font-bold mb-6">配置基本信息</h2>
 
           <div className="space-y-6">
             <div className="grid gap-4 md:grid-cols-2">
@@ -393,7 +393,7 @@ export function PublishGuide() {
 
       <div className="flex justify-center mt-8">
         <Button type="submit" size="lg" className="px-8 relative group">
-          <span className={isPending ? "invisible" : ""}>发布攻略</span>
+          <span className={isPending ? "invisible" : ""}>发布配置</span>
           {isPending && (
             <div className="absolute inset-0 flex items-center justify-center">
               <svg

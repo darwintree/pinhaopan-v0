@@ -17,7 +17,7 @@ interface GetGuidesQuery {
   summonConditions?: EquipmentFilterCondition[]
 }
 
-// 获取攻略列表
+// 获取配置列表
 guidesRouter.get('/', async (req: Request, res: Response) => {
   try {
     let query: GetGuidesQuery = {}
@@ -46,29 +46,29 @@ guidesRouter.get('/', async (req: Request, res: Response) => {
     const guides = await dbOperations.getGuides(formattedQuery)
     res.status(200).json(guides)
   } catch (error) {
-    const message = error instanceof Error ? error.message : '获取攻略列表失败'
+    const message = error instanceof Error ? error.message : '获取配置列表失败'
     res.status(500).json({ success: false, message })
   }
 })
 
-// 获取单个攻略
+// 获取单个配置
 guidesRouter.get('/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params
     const guide = await dbOperations.getGuide(id)
     
     if (!guide) {
-      return res.status(404).json({ success: false, message: '攻略不存在' })
+      return res.status(404).json({ success: false, message: '配置不存在' })
     }
     
     res.status(200).json(guide)
   } catch (error) {
-    const message = error instanceof Error ? error.message : '获取攻略失败'
+    const message = error instanceof Error ? error.message : '获取配置失败'
     res.status(500).json({ success: false, message })
   }
 })
 
-// 保存攻略
+// 保存配置
 guidesRouter.post('/', async (req: Request, res: Response) => {
   try {
     const guideData = req.body as GuidePostData
@@ -76,20 +76,20 @@ guidesRouter.post('/', async (req: Request, res: Response) => {
     
     res.status(201).json({ success: true, id: guideId })
   } catch (error) {
-    const message = error instanceof Error ? error.message : '保存攻略失败'
+    const message = error instanceof Error ? error.message : '保存配置失败'
     res.status(500).json({ success: false, message })
   }
 })
 
-// 删除攻略
+// 删除配置
 guidesRouter.delete('/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params
     await dbOperations.deleteGuide(id)
     
-    res.status(200).json({ success: true, message: '攻略已删除' })
+    res.status(200).json({ success: true, message: '配置已删除' })
   } catch (error) {
-    const message = error instanceof Error ? error.message : '删除攻略失败'
+    const message = error instanceof Error ? error.message : '删除配置失败'
     res.status(500).json({ success: false, message })
   }
 }) 

@@ -18,8 +18,8 @@ export default function Home() {
           <Tabs defaultValue="browse" className="w-full" onValueChange={setActiveTab}>
             <div className="flex justify-center mb-8">
               <TabsList className="grid w-full max-w-md grid-cols-2">
-                <TabsTrigger value="browse">浏览攻略</TabsTrigger>
-                <TabsTrigger value="publish">发布攻略</TabsTrigger>
+                <TabsTrigger value="browse">浏览配置</TabsTrigger>
+                <TabsTrigger value="publish">发布配置</TabsTrigger>
               </TabsList>
             </div>
 

@@ -13,7 +13,7 @@ const getHeaders = () => {
   return headers;
 };
 
-// 保存攻略数据
+// 保存配置数据
 export async function saveGuide(data: GuidePostData): Promise<string> {
   try {
     const response = await fetch(`${API_BASE_URL}/guides`, {
@@ -24,18 +24,18 @@ export async function saveGuide(data: GuidePostData): Promise<string> {
 
     if (!response.ok) {
       const errorData = await response.json()
-      throw new Error(errorData.message || '保存攻略失败')
+      throw new Error(errorData.message || '保存配置失败')
     }
 
     const result = await response.json()
     return result.id
   } catch (error) {
-    console.error('保存攻略失败:', error)
+    console.error('保存配置失败:', error)
     throw error
   }
 }
 
-// 获取攻略列表
+// 获取配置列表
 export async function getGuides(query: {
   quest?: string
   tags?: string[]
@@ -73,17 +73,17 @@ export async function getGuides(query: {
 
     if (!response.ok) {
       const errorData = await response.json()
-      throw new Error(errorData.message || '获取攻略列表失败')
+      throw new Error(errorData.message || '获取配置列表失败')
     }
 
     return await response.json()
   } catch (error) {
-    console.error('获取攻略列表失败:', error)
+    console.error('获取配置列表失败:', error)
     throw error
   }
 }
 
-// 获取单个攻略
+// 获取单个配置
 export async function getGuide(id: string) {
   try {
     const response = await fetch(`${API_BASE_URL}/guides/${id}`, {
@@ -93,17 +93,17 @@ export async function getGuide(id: string) {
 
     if (!response.ok) {
       const errorData = await response.json()
-      throw new Error(errorData.message || '获取攻略失败')
+      throw new Error(errorData.message || '获取配置失败')
     }
 
     return await response.json()
   } catch (error) {
-    console.error('获取攻略失败:', error)
+    console.error('获取配置失败:', error)
     throw error
   }
 }
 
-// 删除攻略
+// 删除配置
 export async function deleteGuide(id: string) {
   try {
     const response = await fetch(`${API_BASE_URL}/guides/${id}`, {
@@ -113,12 +113,12 @@ export async function deleteGuide(id: string) {
 
     if (!response.ok) {
       const errorData = await response.json()
-      throw new Error(errorData.message || '删除攻略失败')
+      throw new Error(errorData.message || '删除配置失败')
     }
 
     return true
   } catch (error) {
-    console.error('删除攻略失败:', error)
+    console.error('删除配置失败:', error)
     throw error
   }
 } 

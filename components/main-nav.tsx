@@ -8,7 +8,7 @@ export function MainNav() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <BookOpen className="h-6 w-6 text-primary" />
-          <span className="text-xl font-bold">游戏攻略分享</span>
+          <span className="text-xl font-bold">拼好盘</span>
         </div>
 
         <nav className="flex items-center gap-4">

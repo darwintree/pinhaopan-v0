@@ -3,8 +3,6 @@ import cors from 'cors'
 import { json, urlencoded } from 'body-parser'
 import { guidesRouter } from './api-handlers'
 import { apiKeyAuth } from './middleware/auth'
-import dotenv from 'dotenv';
-dotenv.config();
 
 console.log('MONGODB_URI:', process.env.MONGODB_URI);
 

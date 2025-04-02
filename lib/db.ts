@@ -340,6 +340,308 @@ export async function getGuides(query: {
     }
   }
 
+  // 处理召唤石筛选条件
+  if (query.summonConditions?.length) {
+    const includeConditions = query.summonConditions.filter(c => c.include)
+    const excludeConditions = query.summonConditions.filter(c => !c.include)
+    
+    // 处理包含条件
+    if (includeConditions.length) {
+      const summonMatches = includeConditions.map(condition => {
+        if (condition.count <= 1) {
+          // 基本召唤石ID匹配
+          const elementMatch: any = {
+            "summons.id": condition.id
+          }
+          
+          // 添加properties筛选
+          if (condition.properties) {
+            // 处理等级筛选
+            if (condition.properties.lv !== undefined) {
+              elementMatch["summons.properties.lv"] = condition.properties.lv
+            }
+            
+            // 处理技能筛选
+            if (condition.properties.u1) {
+              elementMatch["summons.properties.u1"] = condition.properties.u1
+            }
+            if (condition.properties.u2) {
+              elementMatch["summons.properties.u2"] = condition.properties.u2
+            }
+            if (condition.properties.u3) {
+              elementMatch["summons.properties.u3"] = condition.properties.u3
+            }
+            
+            // 处理路西技能
+            if (condition.properties.luci2) {
+              elementMatch["summons.properties.luci2"] = condition.properties.luci2
+            }
+            if (condition.properties.luci3) {
+              elementMatch["summons.properties.luci3"] = condition.properties.luci3
+            }
+            
+            // 处理觉醒状态
+            if (condition.properties.awake) {
+              elementMatch["summons.properties.awake"] = condition.properties.awake
+            }
+          }
+          
+          return elementMatch
+        } else {
+          // 需要多个相同召唤石时，使用聚合管道
+          const matchCondition: any = { $eq: ["$$this.id", condition.id] }
+          
+          // 如果有 properties，添加到匹配条件
+          if (condition.properties) {
+            if (condition.properties.lv !== undefined) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.lv", condition.properties.lv] })
+            }
+            
+            // 技能匹配
+            if (condition.properties.u1) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.u1", condition.properties.u1] })
+            }
+            if (condition.properties.u2) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.u2", condition.properties.u2] })
+            }
+            if (condition.properties.u3) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.u3", condition.properties.u3] })
+            }
+            
+            // 路西技能匹配
+            if (condition.properties.luci2) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.luci2", condition.properties.luci2] })
+            }
+            if (condition.properties.luci3) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.luci3", condition.properties.luci3] })
+            }
+            
+            // 觉醒状态匹配
+            if (condition.properties.awake) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.awake", condition.properties.awake] })
+            }
+          }
+          
+          return {
+            $expr: {
+              $gte: [
+                { $size: { $filter: {
+                  input: "$summons",
+                  cond: matchCondition
+                }}},
+                condition.count
+              ]
+            }
+          }
+        }
+      })
+      
+      // 如果有多个包含条件，使用 $and 连接
+      if (summonMatches.length > 1) {
+        filter.$and = filter.$and || []
+        filter.$and.push(...summonMatches)
+      } else if (summonMatches.length === 1) {
+        Object.assign(filter, summonMatches[0])
+      }
+    }
+    
+    // 处理排除条件
+    if (excludeConditions.length) {
+      filter.$and = filter.$and || []
+      
+      excludeConditions.forEach(condition => {
+        const excludeMatch: any = { $not: { $elemMatch: { id: condition.id } } }
+        
+        // 考虑 properties
+        if (condition.properties && Object.keys(condition.properties).length > 0) {
+          excludeMatch.$not.$elemMatch = { id: condition.id }
+          
+          if (condition.properties.lv !== undefined) {
+            excludeMatch.$not.$elemMatch["properties.lv"] = condition.properties.lv
+          }
+          if (condition.properties.u1) {
+            excludeMatch.$not.$elemMatch["properties.u1"] = condition.properties.u1
+          }
+          if (condition.properties.u2) {
+            excludeMatch.$not.$elemMatch["properties.u2"] = condition.properties.u2
+          }
+          if (condition.properties.u3) {
+            excludeMatch.$not.$elemMatch["properties.u3"] = condition.properties.u3
+          }
+          if (condition.properties.luci2) {
+            excludeMatch.$not.$elemMatch["properties.luci2"] = condition.properties.luci2
+          }
+          if (condition.properties.luci3) {
+            excludeMatch.$not.$elemMatch["properties.luci3"] = condition.properties.luci3
+          }
+          if (condition.properties.awake) {
+            excludeMatch.$not.$elemMatch["properties.awake"] = condition.properties.awake
+          }
+        }
+        
+        filter.$and.push({ summons: excludeMatch })
+      })
+    }
+  }
+
+  // 处理角色筛选条件
+  if (query.charaConditions?.length) {
+    const includeConditions = query.charaConditions.filter(c => c.include)
+    const excludeConditions = query.charaConditions.filter(c => !c.include)
+    
+    // 处理包含条件
+    if (includeConditions.length) {
+      const charaMatches = includeConditions.map(condition => {
+        if (condition.count <= 1) {
+          // 基本角色ID匹配
+          const elementMatch: any = {
+            "charas.id": condition.id
+          }
+          
+          // 添加properties筛选
+          if (condition.properties) {
+            // 处理等级筛选
+            if (condition.properties.lv !== undefined) {
+              elementMatch["charas.properties.lv"] = condition.properties.lv
+            }
+            
+            // 处理技能筛选
+            if (condition.properties.u1) {
+              elementMatch["charas.properties.u1"] = condition.properties.u1
+            }
+            if (condition.properties.u2) {
+              elementMatch["charas.properties.u2"] = condition.properties.u2
+            }
+            if (condition.properties.u3) {
+              elementMatch["charas.properties.u3"] = condition.properties.u3
+            }
+            
+            // 处理路西技能
+            if (condition.properties.luci2) {
+              elementMatch["charas.properties.luci2"] = condition.properties.luci2
+            }
+            if (condition.properties.luci3) {
+              elementMatch["charas.properties.luci3"] = condition.properties.luci3
+            }
+            
+            // 处理觉醒状态
+            if (condition.properties.awake) {
+              elementMatch["charas.properties.awake"] = condition.properties.awake
+            }
+          }
+          
+          return elementMatch
+        } else {
+          // 需要多个相同角色时，使用聚合管道
+          const matchCondition: any = { $eq: ["$$this.id", condition.id] }
+          
+          // 如果有 properties，添加到匹配条件
+          if (condition.properties) {
+            if (condition.properties.lv !== undefined) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.lv", condition.properties.lv] })
+            }
+            
+            // 技能匹配
+            if (condition.properties.u1) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.u1", condition.properties.u1] })
+            }
+            if (condition.properties.u2) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.u2", condition.properties.u2] })
+            }
+            if (condition.properties.u3) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.u3", condition.properties.u3] })
+            }
+            
+            // 路西技能匹配
+            if (condition.properties.luci2) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.luci2", condition.properties.luci2] })
+            }
+            if (condition.properties.luci3) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.luci3", condition.properties.luci3] })
+            }
+            
+            // 觉醒状态匹配
+            if (condition.properties.awake) {
+              matchCondition.$and = matchCondition.$and || []
+              matchCondition.$and.push({ $eq: ["$$this.properties.awake", condition.properties.awake] })
+            }
+          }
+          
+          return {
+            $expr: {
+              $gte: [
+                { $size: { $filter: {
+                  input: "$charas",
+                  cond: matchCondition
+                }}},
+                condition.count
+              ]
+            }
+          }
+        }
+      })
+      
+      // 如果有多个包含条件，使用 $and 连接
+      if (charaMatches.length > 1) {
+        filter.$and = filter.$and || []
+        filter.$and.push(...charaMatches)
+      } else if (charaMatches.length === 1) {
+        Object.assign(filter, charaMatches[0])
+      }
+    }
+    
+    // 处理排除条件
+    if (excludeConditions.length) {
+      filter.$and = filter.$and || []
+      
+      excludeConditions.forEach(condition => {
+        const excludeMatch: any = { $not: { $elemMatch: { id: condition.id } } }
+        
+        // 考虑 properties
+        if (condition.properties && Object.keys(condition.properties).length > 0) {
+          excludeMatch.$not.$elemMatch = { id: condition.id }
+          
+          if (condition.properties.lv !== undefined) {
+            excludeMatch.$not.$elemMatch["properties.lv"] = condition.properties.lv
+          }
+          if (condition.properties.u1) {
+            excludeMatch.$not.$elemMatch["properties.u1"] = condition.properties.u1
+          }
+          if (condition.properties.u2) {
+            excludeMatch.$not.$elemMatch["properties.u2"] = condition.properties.u2
+          }
+          if (condition.properties.u3) {
+            excludeMatch.$not.$elemMatch["properties.u3"] = condition.properties.u3
+          }
+          if (condition.properties.luci2) {
+            excludeMatch.$not.$elemMatch["properties.luci2"] = condition.properties.luci2
+          }
+          if (condition.properties.luci3) {
+            excludeMatch.$not.$elemMatch["properties.luci3"] = condition.properties.luci3
+          }
+          if (condition.properties.awake) {
+            excludeMatch.$not.$elemMatch["properties.awake"] = condition.properties.awake
+          }
+        }
+        
+        filter.$and.push({ charas: excludeMatch })
+      })
+    }
+  }
+
   const sort: any = {}
   if (query.sort) {
     sort[query.sort.field] = query.sort.direction === "asc" ? 1 : -1

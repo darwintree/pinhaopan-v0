@@ -203,10 +203,16 @@ export function BrowseGuides() {
         params.append("sortField", sortField)
         params.append("sortDirection", sortDirection)
 
-        // 暂时保留这些参数，虽然后端现在不处理
-        params.append("weaponConditions", JSON.stringify(selectedWeaponConditions))
-        params.append("summonConditions", JSON.stringify(selectedSummonConditions))
-        params.append("charaConditions", JSON.stringify(selectedCharaConditions))
+        // 添加装备条件
+        if (selectedWeaponConditions.length > 0) {
+          params.append("weaponConditions", JSON.stringify(selectedWeaponConditions))
+        }
+        if (selectedSummonConditions.length > 0) {
+          params.append("summonConditions", JSON.stringify(selectedSummonConditions))
+        }
+        if (selectedCharaConditions.length > 0) {
+          params.append("charaConditions", JSON.stringify(selectedCharaConditions))
+        }
 
         const response = await fetch(`/api/guides?${params}`)
         if (!response.ok) {
@@ -214,11 +220,15 @@ export function BrowseGuides() {
         }
         const data = await response.json()
         
+        if (!data.guides || !Array.isArray(data.guides)) {
+          throw new Error("Invalid response format: guides is missing or not an array")
+        }
+        
         setGuides(data.guides)
-        setAvailableTags(data.availableTags)
-        setAvailableWeapons(data.availableWeapons)
-        setAvailableSummons(data.availableSummons)
-        setAvailableCharas(data.availableCharas)
+        setAvailableTags(data.availableTags || [])
+        setAvailableWeapons(data.availableWeapons || [])
+        setAvailableSummons(data.availableSummons || [])
+        setAvailableCharas(data.availableCharas || [])
       } catch (error) {
         console.error("Failed to fetch guides data:", error)
         // 可以添加错误提示UI
@@ -231,7 +241,7 @@ export function BrowseGuides() {
   }, [
     selectedQuest,
     selectedTags,
-    debouncedTimeRange, // 使用防抖后的时间范围触发API请求
+    debouncedTimeRange,
     dateRange,
     selectedWeaponConditions,
     selectedSummonConditions,

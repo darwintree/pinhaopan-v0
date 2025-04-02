@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server"
-import type { GuideData, EquipmentFilterCondition } from "@/lib/types"
-import { availableTags, availableWeapons, availableSummons, availableCharas } from "@/lib/mock-data"
 import { getGuides } from "@/lib/db"
+import type { GuideQueryParams } from "@/lib/types"
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
@@ -18,8 +17,25 @@ export async function GET(request: Request) {
     parsedDateRange = [new Date(dateRange[0]), new Date(dateRange[1])]
   }
 
-  // 使用 db 接口获取数据
-  const guides = await getGuides({
+  // 处理装备条件
+  let weaponConditions, summonConditions, charaConditions
+  try {
+    weaponConditions = searchParams.get("weaponConditions") ? 
+      JSON.parse(searchParams.get("weaponConditions")!) : undefined
+    summonConditions = searchParams.get("summonConditions") ? 
+      JSON.parse(searchParams.get("summonConditions")!) : undefined
+    charaConditions = searchParams.get("charaConditions") ? 
+      JSON.parse(searchParams.get("charaConditions")!) : undefined
+  } catch (error) {
+    console.error("Failed to parse equipment conditions:", error)
+    return NextResponse.json(
+      { error: "Invalid equipment conditions format" },
+      { status: 400 }
+    )
+  }
+
+  // 构建查询参数
+  const queryParams: GuideQueryParams = {
     quest: quest || undefined,
     tags: tags.length > 0 ? tags : undefined,
     timeRange: [timeRange[0], timeRange[1]],
@@ -27,17 +43,20 @@ export async function GET(request: Request) {
     sort: {
       field: (sortField === "time" || sortField === "date") ? sortField : "date",
       direction: (sortDirection === "asc" || sortDirection === "desc") ? sortDirection : "desc"
-    }
-  })
+    },
+    weaponConditions,
+    summonConditions,
+    charaConditions
+  }
+  console.log(weaponConditions)
+
+  // 使用 db 接口获取数据
+  const guides = await getGuides(queryParams)
 
   // 暂时保留武器、召唤石和角色的过滤功能的接口，但实际不实现过滤
   // 后续可以在 db 层实现这些过滤功能
 
   return NextResponse.json({
     guides,
-    availableTags,
-    availableWeapons,
-    availableSummons,
-    availableCharas,
   })
 } 

@@ -65,3 +65,18 @@ export interface EquipmentDetectResults {
   id: string
   confidence: number
 }[]
+
+// API 查询参数类型
+export interface GuideQueryParams {
+  quest?: string
+  tags?: string[]
+  timeRange?: [number, number]
+  dateRange?: [Date, Date]
+  sort?: {
+    field: "time" | "date"
+    direction: "asc" | "desc"
+  }
+  weaponConditions?: EquipmentFilterCondition[]
+  summonConditions?: EquipmentFilterCondition[]
+  charaConditions?: EquipmentFilterCondition[]
+}

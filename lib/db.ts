@@ -1,7 +1,8 @@
 import { MongoClient, ObjectId } from "mongodb"
-import type { GuidePostData, GuideData, EquipmentFilterCondition } from "@/lib/types"
+import type { GuidePostData, GuideData, EquipmentFilterCondition, EquipmentData } from "@/lib/types"
 import fs from "fs/promises"
 import path from "path"
+import { normalizeEquipmentId } from "./asset"
 
 if (!process.env.MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
@@ -85,6 +86,15 @@ async function saveBase64Image(base64: string, type: string, id: string): Promis
   }
 }
 
+function normalizeEquipments(equipmentsData: EquipmentData[]) {
+  return equipmentsData.map(equipment => {
+    return {
+      ...equipment,
+      id: normalizeEquipmentId(equipment.id)
+    }
+  })
+}
+
 // 验证并保存攻略数据
 export async function saveGuide(data: GuidePostData): Promise<string> {
   // 验证数据
@@ -112,9 +122,9 @@ export async function saveGuide(data: GuidePostData): Promise<string> {
       quest: data.quest,
       time: data.time || 5,
       date: Date.now(),
-      charas: data.charas,
-      weapons: data.weapons,
-      summons: data.summons,
+      charas: normalizeEquipments(data.charas),
+      weapons: normalizeEquipments(data.weapons),
+      summons: normalizeEquipments(data.summons),
       tags: data.tags || [],
       description: data.description || "",
     }

@@ -77,3 +77,39 @@ DELETE /api/guides/:id
 ## 客户端集成
 
 客户端可以通过设置 `REMOTE_API_URL` 环境变量指向该服务器的地址。 
+
+## API Key验证
+
+系统使用API Key进行API访问验证。请按照以下步骤配置:
+
+### 服务器端配置
+
+在`server/.env`文件中添加以下配置:
+
+```
+API_KEY=your-secret-api-key-here
+```
+
+将`your-secret-api-key-here`替换为您自定义的复杂密钥。
+
+### 客户端配置
+
+在项目根目录的`.env.local`文件中添加以下配置:
+
+```
+REMOTE_API_KEY=your-secret-api-key-here
+```
+
+确保服务器端和客户端使用相同的API Key值。
+
+### 测试API Key验证
+
+可以使用curl命令测试API Key验证:
+
+```bash
+# 不带API Key的请求（应返回401错误）
+curl http://localhost:3001/api/guides
+
+# 带有API Key的请求
+curl -H "X-API-Key: your-secret-api-key-here" http://localhost:3001/api/guides
+``` 

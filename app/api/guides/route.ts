@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { getGuides } from "@/lib/db"
+import { getGuides } from "@/lib/remote-db"
 import type { GuideQueryParams } from "@/lib/types"
 
 export async function GET(request: Request) {

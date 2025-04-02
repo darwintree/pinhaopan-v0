@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import type { GuidePostData } from "@/lib/types"
-import { saveGuide } from "@/lib/db"
+import { saveGuide } from "@/lib/remote-db"
 
 export async function POST(request: Request) {
   try {

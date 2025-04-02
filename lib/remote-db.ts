@@ -1,16 +1,24 @@
 import type { GuidePostData, GuideData, EquipmentFilterCondition } from "@/lib/types"
 
 // 设置远程服务器URL
-const API_BASE_URL = process.env.REMOTE_API_URL || 'http://localhost:3001/api'
+const API_BASE_URL = process.env.REMOTE_API_URL
+const API_KEY = process.env.REMOTE_API_KEY
+
+// 构建请求头
+const getHeaders = () => {
+  const headers = {
+    'Content-Type': 'application/json',
+    'X-API-Key': API_KEY || '', // 添加API Key到请求头
+  };
+  return headers;
+};
 
 // 保存攻略数据
 export async function saveGuide(data: GuidePostData): Promise<string> {
   try {
     const response = await fetch(`${API_BASE_URL}/guides`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: getHeaders(),
       body: JSON.stringify(data),
     })
 
@@ -60,9 +68,7 @@ export async function getGuides(query: {
     
     const response = await fetch(url, {
       method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: getHeaders(),
     })
 
     if (!response.ok) {
@@ -82,9 +88,7 @@ export async function getGuide(id: string) {
   try {
     const response = await fetch(`${API_BASE_URL}/guides/${id}`, {
       method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: getHeaders(),
     })
 
     if (!response.ok) {
@@ -104,9 +108,7 @@ export async function deleteGuide(id: string) {
   try {
     const response = await fetch(`${API_BASE_URL}/guides/${id}`, {
       method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: getHeaders(),
     })
 
     if (!response.ok) {

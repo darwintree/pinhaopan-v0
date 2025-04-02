@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { getGuide } from "@/lib/db"
+import { getGuide } from "@/lib/remote-db"
 
 export async function GET(request: Request, props: { params: Promise<{ id: string }> }) {
   const params = await props.params;

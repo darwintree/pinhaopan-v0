@@ -69,7 +69,7 @@ async function saveBase64Image(base64: string, type: string, id: string): Promis
     const buffer = Buffer.from(base64Data, "base64")
 
     // 确保存储目录存在
-    const storageDir = path.join(process.cwd(), storagePath!, type)
+    const storageDir = path.join(storagePath!, type)
     await fs.mkdir(storageDir, { recursive: true })
 
     // 生成文件名并保存

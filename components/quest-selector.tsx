@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useQuestList } from "@/hooks/use-quest-list"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { getQuestPhotoUrl } from "@/lib/asset"
 
 interface QuestSelectorProps {
   selectedQuest?: string
@@ -125,7 +126,7 @@ export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorPro
                   <div className="flex items-center gap-2">
                     <div className="w-12 h-12 flex items-center justify-center overflow-hidden rounded">
                       <img
-                        src={`/assets/quest/${quest.image}.png`}
+                        src={getQuestPhotoUrl(quest.image)}
                         alt={quest.name}
                         className="w-auto h-auto max-w-full max-h-full object-contain"
                       />

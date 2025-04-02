@@ -45,7 +45,8 @@ export function RecognitionResults({
   }
 
   const getDefaultSelectionLabel = (index: number) => {
-    const results = recognizedEquipment[index]
+    const rectId = rectangles[index]?.id;
+    const results = rectId !== undefined ? recognizedEquipment[rectId] : undefined;
     if (!results || results.length === 0) {
       return `未识别${type}${index + 1}`
     }
@@ -68,22 +69,32 @@ export function RecognitionResults({
     return grouped
   }, [rectangles])
 
-  const renderItem = (index: number) => (
-    <EquipmentSelector
-      key={index}
-      index={rectangles[index].id}
-      rectangle={rectangles[index]}
-      recognizedEquipment={recognizedEquipment[index]}
-      type={type}
-      label={getDefaultSelectionLabel(index)}
-      onEquipmentSelect={(equipment) => onEquipmentSelect(index, equipment)}
-      isHovered={hoveredRectangle === index}
-      isActive={activeRectangle === index}
-      onMouseEnter={() => onHoveredRectangleChange(index)}
-      onMouseLeave={() => onHoveredRectangleChange(null)}
-      onDelete={onDeleteItem ? () => onDeleteItem(index) : undefined}
-    />
-  )
+  const getResultForRectangle = (rectangleId: number, recognizedEquipment: Record<number, {id: string, confidence: number}[]>) => {
+    return recognizedEquipment[rectangleId] || [];
+  }
+
+  const renderItem = (index: number) => {
+    const rect = rectangles[index];
+    const rectId = rect.id;
+    const results = getResultForRectangle(rectId, recognizedEquipment);
+    
+    return (
+      <EquipmentSelector
+        key={index}
+        index={rectId}
+        rectangle={rect}
+        recognizedEquipment={results}
+        type={type}
+        label={getDefaultSelectionLabel(index)}
+        onEquipmentSelect={(equipment) => onEquipmentSelect(index, equipment)}
+        isHovered={hoveredRectangle === index}
+        isActive={activeRectangle === index}
+        onMouseEnter={() => onHoveredRectangleChange(index)}
+        onMouseLeave={() => onHoveredRectangleChange(null)}
+        onDelete={onDeleteItem ? () => onDeleteItem(index) : undefined}
+      />
+    )
+  }
 
   const renderResults = () => {
     // 如果没有检测到矩形，显示提示信息

@@ -47,6 +47,7 @@ export function ImageUploadWithRecognition({
   const imageRef = useRef<HTMLImageElement>(null)
   const [imageSize, setImageSize] = useState({ width: 800, height: 450 })
   const [containerScale, setContainerScale] = useState(1)
+  const [nextRectId, setNextRectId] = useState(1)
 
   // 比较两个矩形的空间位置
   const compareRectangles = (a: Rectangle, b: Rectangle) => {
@@ -78,29 +79,14 @@ export function ImageUploadWithRecognition({
     // 按空间位置排序
     indexedRects.sort((a, b) => compareRectangles(a, b));
     
-    // 创建新的已排序矩形数组，重新分配id
+    // 创建新的已排序矩形数组，重新分配顺序ID（但保留原始唯一ID）
     const newRectangles = indexedRects.map((rect, index) => ({
       ...rect,
-      id: index + 1
+      id: rect.originalId // 保留原始ID
     }));
-    
-    // 重新映射识别结果
-    const newRecognizedEquipments: Record<number, {id: string, confidence: number}[]> = {};
-    indexedRects.forEach((rect, newIndex) => {
-      const originalIndex = rect.originalIndex;
-      if (recognizedEquipments[originalIndex]) {
-        newRecognizedEquipments[newIndex] = recognizedEquipments[originalIndex];
-      }
-    });
     
     // 更新矩形数组
     setRectangles(newRectangles);
-    
-    // 更新识别结果（如果有变化）
-    if (Object.keys(newRecognizedEquipments).length > 0) {
-      setRecognizedEquipments(newRecognizedEquipments);
-      onRecognitionResults?.(newRecognizedEquipments);
-    }
     
     // 如果当前有选中的矩形，更新选中的索引
     if (activeRectangle !== null) {
@@ -127,6 +113,9 @@ export function ImageUploadWithRecognition({
 
   // 处理删除矩形
   const handleDeleteRectangle = (index: number) => {
+    // 获取要删除的矩形ID
+    const rectId = rectangles[index]?.id;
+    
     const newRectangles = [...rectangles]
     newRectangles.splice(index, 1)
     
@@ -149,20 +138,15 @@ export function ImageUploadWithRecognition({
       setHoveredRectangle(hoveredRectangle - 1)
     }
     
-    // 重新映射识别结果
-    const newRecognizedEquipments: Record<number, {id: string, confidence: number}[]> = {}
-    Object.entries(recognizedEquipments).forEach(([key, value]) => {
-      const keyNum = parseInt(key)
-      if (keyNum < index) {
-        newRecognizedEquipments[keyNum] = value
-      } else if (keyNum > index) {
-        newRecognizedEquipments[keyNum - 1] = value
-      }
-    })
+    // 从识别结果中删除该矩形的结果
+    const newRecognizedEquipments = { ...recognizedEquipments };
+    if (rectId !== undefined) {
+      delete newRecognizedEquipments[rectId];
+    }
     
     // 更新识别结果
-    setRecognizedEquipments(newRecognizedEquipments)
-    onRecognitionResults?.(newRecognizedEquipments)
+    setRecognizedEquipments(newRecognizedEquipments);
+    onRecognitionResults?.(newRecognizedEquipments);
     
     // 如果剩余矩形数量大于0，执行重新排序
     if (newRectangles.length > 0) {
@@ -176,15 +160,21 @@ export function ImageUploadWithRecognition({
     try {
       const result = await detectRectangles(imageUrl, type)
       
-      // 对检测到的矩形进行排序和重新分配ID
+      // 对检测到的矩形进行排序
       const sortedRectangles = [...result.rectangles];
       sortedRectangles.sort(compareRectangles);
       
-      // 重新分配ID
-      const newRectangles = sortedRectangles.map((rect, index) => ({
-        ...rect,
-        id: index + 1
-      }));
+      // 分配唯一ID
+      const newRectangles = sortedRectangles.map((rect, index) => {
+        const uniqueId = nextRectId + index;
+        return {
+          ...rect,
+          id: uniqueId
+        };
+      });
+      
+      // 更新下一个可用ID
+      setNextRectId(nextRectId + newRectangles.length);
       
       setRectangles(newRectangles)
       setImageSize(result.imageSize)
@@ -277,7 +267,7 @@ export function ImageUploadWithRecognition({
     groupRectangles: Rectangle[]
   ): Promise<{
     results: {id: string, confidence: number}[][]
-    originalIndices: number[]
+    originalRectIds: number[]
   }> => {
     const contents = await getImageDescriptorsFromImageAndRectangles(
       imageUrl, 
@@ -285,9 +275,8 @@ export function ImageUploadWithRecognition({
       groupType
     )
     
-    const originalIndices = groupRectangles.map(
-      rect => rectangles.findIndex(r => r === rect)
-    )
+    // 记录每个矩形的唯一ID，而不是索引
+    const originalRectIds = groupRectangles.map(rect => rect.id);
     
     const payload = {
       type: groupType,
@@ -310,7 +299,7 @@ export function ImageUploadWithRecognition({
     }
 
     const results = await response.json() as {id: string, confidence: number}[][]
-    return { results, originalIndices }
+    return { results, originalRectIds }
   }
 
   // 识别设备主函数
@@ -329,7 +318,7 @@ export function ImageUploadWithRecognition({
         .filter(([_, groupRects]) => groupRects.length > 0)
         .map(async ([groupType, groupRects]) => {
           try {
-            const { results, originalIndices } = await processRectangleGroup(
+            const { results, originalRectIds } = await processRectangleGroup(
               usingRectangles,
               imageRef.current!.src,
               groupType as DetectEquipmentType,
@@ -337,7 +326,8 @@ export function ImageUploadWithRecognition({
             )
             
             results.forEach((result, idx) => {
-              recognizedResults[originalIndices[idx]] = result
+              // 使用矩形ID作为键，而不是索引
+              recognizedResults[originalRectIds[idx]] = result
             })
           } catch (error) {
             console.error(`Failed to process group ${groupType}:`, error)
@@ -432,6 +422,8 @@ export function ImageUploadWithRecognition({
                 onDeleteRectangle={handleDeleteRectangle}
                 isRecognizing={isRecognizing}
                 onRecognize={() => recognizeEquipment()}
+                nextRectId={nextRectId}
+                onNextRectIdChange={setNextRectId}
               />
             </div>
 
@@ -444,10 +436,18 @@ export function ImageUploadWithRecognition({
               activeRectangle={activeRectangle}
               onHoveredRectangleChange={setHoveredRectangle}
               onEquipmentSelect={(index, equipment) => {
-                setRecognizedEquipments(prev => ({
-                  ...prev,
-                  [index]: [{ id: equipment.id, confidence: 100 }]
-                }))
+                // 使用矩形ID而不是索引
+                const rectId = rectangles[index]?.id;
+                if (rectId !== undefined) {
+                  setRecognizedEquipments(prev => ({
+                    ...prev,
+                    [rectId]: [{ id: equipment.id, confidence: 100 }]
+                  }));
+                  onRecognitionResults?.({
+                    ...recognizedEquipments,
+                    [rectId]: [{ id: equipment.id, confidence: 100 }]
+                  });
+                }
               }}
               onDeleteItem={handleDeleteRectangle}
               isRecognizing={isRecognizing}

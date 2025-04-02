@@ -18,6 +18,8 @@ interface RectangleEditorProps {
   onDeleteRectangle: (index: number) => void
   isRecognizing?: boolean
   onRecognize?: () => void
+  nextRectId?: number
+  onNextRectIdChange?: (nextId: number) => void
 }
 
 export function RectangleEditor({
@@ -34,6 +36,8 @@ export function RectangleEditor({
   onDeleteRectangle,
   isRecognizing = false,
   onRecognize,
+  nextRectId = 9999,
+  onNextRectIdChange,
 }: RectangleEditorProps) {
   return (
     <div className="flex flex-col gap-4">
@@ -142,7 +146,7 @@ export function RectangleEditor({
           variant="outline"
           onClick={() => {
             const newRect: Rectangle = {
-              id: 999999,
+              id: nextRectId,
               x: 50,
               y: 50,
               width: 100,
@@ -150,6 +154,10 @@ export function RectangleEditor({
             }
             onRectanglesChange([...rectangles, newRect])
             onActiveRectangleChange(rectangles.length)
+            
+            if (onNextRectIdChange) {
+              onNextRectIdChange(nextRectId + 1)
+            }
           }}
           className="h-8"
         >

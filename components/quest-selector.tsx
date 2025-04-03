@@ -14,6 +14,7 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@/components/ui/dialog"
+import { VisuallyHidden } from "@/components/ui/visually-hidden"
 
 interface QuestSelectorProps {
   selectedQuest?: string
@@ -147,33 +148,23 @@ export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorPro
 
       {/* Quest选择Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="sm:max-w-[500px]">
-          <DialogHeader>
-            <DialogTitle className="flex items-center gap-2">
-              {currentCategory && (
-                <div className="w-8 h-8 flex items-center justify-center overflow-hidden rounded">
-                  <img
-                    src={getCategoryUrl(currentCategory)}
-                    alt={currentCategory}
-                    className="w-auto h-auto max-w-full max-h-full object-contain"
-                  />
-                </div>
-              )}
+        <DialogContent className="sm:max-w-[500px] p-2">
+          <DialogTitle asChild>
+            <VisuallyHidden>
               选择{currentCategory}副本
-            </DialogTitle>
-          </DialogHeader>
-          
-          <div className="grid gap-3 py-4 max-h-[60vh] overflow-y-auto">
+            </VisuallyHidden>
+          </DialogTitle>
+          <div className="grid gap-1 max-h-[80vh] overflow-y-auto">
             {filteredQuests.map((quest) => (
               <Button
                 key={quest.quest}
                 type="button"
                 variant={selectedQuest === quest.quest ? "default" : "outline"}
-                className="w-full justify-start"
+                className="w-full justify-start h-auto py-1"
                 onClick={() => handleQuestSelect(quest.quest)}
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-12 h-12 flex items-center justify-center overflow-hidden rounded">
+                  <div className="w-10 h-10 flex items-center justify-center overflow-hidden rounded">
                     <img
                       src={getQuestPhotoUrl(quest.image)}
                       alt={quest.name}
@@ -185,12 +176,6 @@ export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorPro
               </Button>
             ))}
           </div>
-          
-          <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => setIsModalOpen(false)}>
-              取消
-            </Button>
-          </DialogFooter>
         </DialogContent>
       </Dialog>
     </>

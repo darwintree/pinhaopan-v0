@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Search, Filter, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { Search, Filter, X, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react"
 import { useEquipmentsList } from "@/hooks/use-equipments-list"
 import type { DetailedEquipmentData, EquipmentType } from "@/lib/types"
 import { getEquipmentPhotoUrl } from "@/lib/asset"
@@ -274,6 +274,16 @@ export function EquipmentSelectorModal({
                   variant="outline"
                   size="icon"
                   className="h-8 w-8"
+                  onClick={() => goToPage(1)}
+                  disabled={currentPage === 1}
+                >
+                  <ChevronsLeft className="h-4 w-4" />
+                  <span className="sr-only">第一页</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-8 w-8"
                   onClick={() => goToPage(currentPage - 1)}
                   disabled={currentPage === 1}
                 >
@@ -292,6 +302,16 @@ export function EquipmentSelectorModal({
                 >
                   <ChevronRight className="h-4 w-4" />
                   <span className="sr-only">下一页</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-8 w-8"
+                  onClick={() => goToPage(totalPages)}
+                  disabled={currentPage === totalPages}
+                >
+                  <ChevronsRight className="h-4 w-4" />
+                  <span className="sr-only">最后一页</span>
                 </Button>
               </div>
             </div>

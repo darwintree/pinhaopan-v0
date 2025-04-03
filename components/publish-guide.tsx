@@ -17,6 +17,8 @@ import { QuestSelector } from "@/components/quest-selector"
 import { useQuestList } from "@/hooks/use-quest-list"
 import { TagSelector } from "@/components/tag-selector"
 import { GuidePostData } from "@/lib/types"
+import { resizeImageWithAspectRatio } from "@/lib/utils"
+
 export function PublishGuide() {
   // Form states
   const [name, setName] = useState("")
@@ -83,6 +85,11 @@ export function PublishGuide() {
         throw new Error("请上传召唤石图片")
       }
 
+      // 调整图片大小，保持宽高比
+      const resizedCharasBase64 = await resizeImageWithAspectRatio(teamImages[0])
+      const resizedWeaponsBase64 = await resizeImageWithAspectRatio(weaponImages[0])
+      const resizedSummonsBase64 = await resizeImageWithAspectRatio(summonImages[0])
+
       // Get recognized equipment IDs
       const charas = Object.values(charaResults)
         .map(results => results[0])
@@ -113,11 +120,11 @@ export function PublishGuide() {
         description,
         tags,
         charas,
-        charasBase64: teamImages[0],
+        charasBase64: resizedCharasBase64,
         weapons,
-        weaponsBase64: weaponImages[0],
+        weaponsBase64: resizedWeaponsBase64,
         summons,
-        summonsBase64: summonImages[0],
+        summonsBase64: resizedSummonsBase64,
       }
 
       console.log(postData)
@@ -137,17 +144,17 @@ export function PublishGuide() {
       }
 
       // Reset form on success
-      // setName("")
-      // setTime(5)
-      // setDescription("")
-      // setTags([])
-      // setTeamImages([])
-      // setWeaponImages([])
-      // setSummonImages([])
-      // setSelectedQuest("")
-      // setCharaResults({})
-      // setWeaponResults({})
-      // setSummonResults({})
+      setName("")
+      setTime(5)
+      setDescription("")
+      setTags([])
+      setTeamImages([])
+      setWeaponImages([])
+      setSummonImages([])
+      setSelectedQuest("")
+      setCharaResults({})
+      setWeaponResults({})
+      setSummonResults({})
 
       // Show success message
       alert("配置发布成功！")

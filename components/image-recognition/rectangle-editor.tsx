@@ -94,6 +94,9 @@ export function RectangleEditor({
                 onMouseEnter={() => onHoveredRectangleChange(index)}
                 onMouseLeave={() => onHoveredRectangleChange(null)}
                 onClick={() => onActiveRectangleChange(index)}
+                onTouchStart={() => onActiveRectangleChange(index)}
+                enableUserSelectHack={false}
+                disableDragging={activeRectangle !== index}
                 dragHandleClassName="drag-handle"
                 resizeHandleStyles={{
                   topLeft: { cursor: "nwse-resize" },
@@ -131,101 +134,104 @@ export function RectangleEditor({
           <button
             type="button"
             onClick={onImageRemove}
-            className="absolute top-2 right-2 rounded-full bg-red-500/90 p-1 text-white"
+            className="absolute top-2 right-2 rounded-full bg-red-500/90 p-1 text-white shadow-md"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
       </div>
 
-      {/* Rectangle toolbar */}
-      <div className="flex items-center gap-2 p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
-        <Button
-          type="button"
-          size="sm"
-          variant="outline"
-          onClick={() => {
-            const newRect: Rectangle = {
-              id: nextRectId,
-              x: 50,
-              y: 50,
-              width: 100,
-              height: 100
-            }
-            onRectanglesChange([...rectangles, newRect])
-            onActiveRectangleChange(rectangles.length)
-            
-            if (onNextRectIdChange) {
-              onNextRectIdChange(nextRectId + 1)
-            }
-          }}
-          className="h-8"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="mr-1"
+      {/* Rectangle toolbar - Responsive layout */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 p-3 bg-slate-100 dark:bg-slate-800 rounded-lg">
+        <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+          <Button
+            type="button"
+            size="sm"
+            variant="outline"
+            onClick={() => {
+              const newRect: Rectangle = {
+                id: nextRectId,
+                x: 50,
+                y: 50,
+                width: 100,
+                height: 100
+              }
+              onRectanglesChange([...rectangles, newRect])
+              onActiveRectangleChange(rectangles.length)
+              
+              if (onNextRectIdChange) {
+                onNextRectIdChange(nextRectId + 1)
+              }
+            }}
+            className="h-10 px-3 text-sm"
           >
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-            <line x1="12" y1="8" x2="12" y2="16" />
-            <line x1="8" y1="12" x2="16" y2="12" />
-          </svg>
-          添加矩形
-        </Button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="mr-1.5"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="12" y1="8" x2="12" y2="16" />
+              <line x1="8" y1="12" x2="16" y2="12" />
+            </svg>
+            添加矩形
+          </Button>
 
-        <Button
-          size="sm"
-          variant={activeRectangle !== null ? "destructive" : "outline"}
-          disabled={activeRectangle === null}
-          onClick={() => {
-            if (activeRectangle !== null) {
-              onDeleteRectangle(activeRectangle)
-            }
-          }}
-          className="h-8"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="mr-1"
+          <Button
+            type="button"
+            size="sm"
+            variant={activeRectangle !== null ? "destructive" : "outline"}
+            disabled={activeRectangle === null}
+            onClick={() => {
+              if (activeRectangle !== null) {
+                onDeleteRectangle(activeRectangle)
+              }
+            }}
+            className="h-10 px-3 text-sm"
           >
-            <path d="M3 6h18" />
-            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
-            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
-          </svg>
-          {activeRectangle !== null ? `删除 ${rectangles[activeRectangle]?.id}` : "删除矩形"}
-        </Button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="mr-1.5"
+            >
+              <path d="M3 6h18" />
+              <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+              <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+            </svg>
+            {activeRectangle !== null ? `删除 ${rectangles[activeRectangle]?.id}` : "删除矩形"}
+          </Button>
 
-        <Button
-          type="button"
-          size="sm"
-          variant="default"
-          onClick={onRecognize}
-          disabled={isRecognizing || !onRecognize}
-          className="h-8 ml-2"
-        >
-          {isRecognizing ? "识别中..." : "开始识别"}
-        </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant="default"
+            onClick={onRecognize}
+            disabled={isRecognizing || !onRecognize}
+            className="h-10 px-3 text-sm"
+          >
+            {isRecognizing ? "识别中..." : "开始识别"}
+          </Button>
+        </div>
 
-        <span className="ml-auto text-xs text-slate-500">
+        <div className="text-xs text-slate-500 mt-1 sm:mt-0 sm:ml-auto w-full sm:w-auto">
           {activeRectangle !== null
             ? `当前选中: ID ${rectangles[activeRectangle]?.id} (共 ${rectangles.length} 个)`
             : `点击矩形进行选择 (共 ${rectangles.length} 个)`}
-        </span>
+        </div>
       </div>
     </div>
   )

@@ -1,12 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-const questDir = path.join(__dirname, 'quest');
+const questDir = "./scripts/quest"
 
 const PICK_FIELDS = [
-  "quest_id",
+  "chapter_id",
+  // "quest_id",
   "quest_name",
-  "bg_image",
+  "thumbnail_image",
   "category",
 ];
 
@@ -34,7 +35,7 @@ jsonFiles.forEach(file => {
 });
 
 // 将结果写入新的 JSON 文件
-const outputFilePath = path.join(__dirname, '../public/list/quest.json');
+const outputFilePath = "./public/list/quest.json";
 fs.writeFileSync(outputFilePath, JSON.stringify(result, null, 2));
 
 console.log('转换完成，结果已保存到 quest.json');

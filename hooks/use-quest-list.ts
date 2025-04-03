@@ -8,9 +8,9 @@ export interface Quest {
 }
 
 interface RawQuest {
-  quest_id: string
+  chapter_id: string
   quest_name: string
-  bg_image: string
+  thumbnail_image: string
   category: string
 }
 
@@ -31,9 +31,9 @@ export function useQuestList() {
         }
         const jsonData = await response.json() as RawQuest[]
         setQuestList(jsonData.map(quest => ({
-          quest: quest.quest_id,
+          quest: quest.chapter_id,
           name: quest.quest_name,
-          image: quest.bg_image,
+          image: quest.thumbnail_image,
           category: quest.category
         })))
       } catch (err) {

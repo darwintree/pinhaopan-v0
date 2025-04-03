@@ -20,6 +20,7 @@ import { useToast } from "@/hooks/use-toast"
 import { useTagList } from "@/hooks/use-tag-list"
 import { useQuestList } from "@/hooks/use-quest-list"
 import { cn } from "@/lib/utils"
+import Giscus from "@giscus/react"
 
 export default function GuidePage() {
   const router = useRouter()
@@ -33,6 +34,33 @@ export default function GuidePage() {
   }>({ type: "chara", open: false })
   const { tagList, loading: tagsLoading } = useTagList()
   const { questList, loading: questLoading } = useQuestList()
+  const [theme, setTheme] = useState<string>("light")
+
+  // 检测并设置 Giscus 主题
+  useEffect(() => {
+    // 检查是否为暗色模式
+    const isDarkMode = document.documentElement.classList.contains("dark")
+    setTheme(isDarkMode ? "dark" : "light")
+
+    // 监听主题变化
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "class"
+        ) {
+          const isDarkMode = document.documentElement.classList.contains("dark")
+          setTheme(isDarkMode ? "dark" : "light")
+        }
+      })
+    })
+
+    observer.observe(document.documentElement, { attributes: true })
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
 
   // 整体加载状态
   const isLoading = loading || tagsLoading || questLoading
@@ -250,6 +278,30 @@ export default function GuidePage() {
           </div>
         </CardContent>
       </Card>
+
+      {/* 评论区 */}
+      <div className="mt-8 mb-6">
+        <h2 className="text-xl font-semibold mb-4">讨论</h2>
+        <Card className="backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
+          <CardContent className="p-4 md:p-6">
+            <Giscus
+              id="comments"
+              repo="GbfPhp/Panscus"
+              repoId="R_kgDOOTKTxw"
+              category="Announcements"
+              categoryId="DIC_kwDOOTKTx84Cou5o"
+              mapping="url"
+              strict="0"
+              reactionsEnabled="1"
+              emitMetadata="0"
+              inputPosition="bottom"
+              theme={theme}
+              lang="zh-CN"
+              loading="lazy"
+            />
+          </CardContent>
+        </Card>
+      </div>
 
       {/* 大图预览模态框 */}
       <Dialog open={showModal.open} onOpenChange={(open) => setShowModal({ ...showModal, open })}>

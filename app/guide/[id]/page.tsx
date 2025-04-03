@@ -211,7 +211,7 @@ export default function GuidePage() {
               <div className="flex flex-col md:flex-row md:items-end md:space-x-4 mt-2 md:mt-0 text-sm">
                 <div className="flex items-center">
                   <span className="text-muted-foreground mr-2">耗时:</span>
-                  <span className="font-medium">{Math.floor(guide.time / 60)}:{(guide.time % 60).toString().padStart(2, '0')}</span>
+                  <span className="font-medium">{guide.time ? `${Math.floor(guide.time / 60)}:${(guide.time % 60).toString().padStart(2, '0')}` : '未记录'}</span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-muted-foreground mr-2">发布:</span>

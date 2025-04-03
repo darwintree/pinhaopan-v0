@@ -1,7 +1,7 @@
 export interface GuideData {
   id: string
   quest: string
-  time: number
+  time?: number
   date: number
   charas: EquipmentData[]
   weapons: EquipmentData[]

@@ -1,5 +1,3 @@
-"use client"
-
 import { Move, X } from "lucide-react"
 import { Rnd } from "react-rnd"
 import { Button } from "@/components/ui/button"

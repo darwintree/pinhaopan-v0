@@ -1,5 +1,3 @@
-"use client"
-
 import type React from "react"
 import "@/app/globals.css"
 import { Inter } from "next/font/google"
@@ -40,3 +38,7 @@ export default function RootLayout({
 
 
 import './globals.css'
+
+export const metadata = {
+      generator: 'v0.dev'
+    };

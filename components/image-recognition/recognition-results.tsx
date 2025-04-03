@@ -1,5 +1,3 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import type { EquipmentType, DetailedEquipmentData } from "@/lib/types"

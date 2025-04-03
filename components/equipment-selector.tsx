@@ -1,4 +1,3 @@
-"use client"
 import { useState } from "react"
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import { getEquipmentPhotoUrl } from "@/lib/asset"

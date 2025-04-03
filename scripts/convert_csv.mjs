@@ -5,6 +5,7 @@ const PICK_FIELDS = [
     "ID",
     "name_chs", 
     "name_jp",
+    "series_name",
     "category[]",
     "category",
     "element",

@@ -40,6 +40,9 @@ function parseListToDetailedEquipmentData(list: any): DetailedEquipmentData[] {
     if (item["tag[]"]) {
       categories.push(...item["tag[]"].split(";"))
     }
+    if (item["series_name"]) {
+      categories.push(item["series_name"])
+    }
     const result = {
       id: item.ID,
       name: item.name_chs,

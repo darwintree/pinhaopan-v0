@@ -36,6 +36,23 @@
         "color": "purple"
     },
     {
+        "name": "奥义OFF",
+        "description": "全程不使用奥义",
+        "categories": [
+            "常用",
+            "操作方式"
+        ],
+        "color": "red"
+    },
+    {
+        "name": "SOLO",
+        "description": "单人攻略副本",
+        "categories": [
+            "操作方式"
+        ],
+        "color": "grey"
+    },
+    {
         "name": "高难",
         "description": "高难副本攻略，相比攻略速度更重视通过率的配置，如极法、天元、天元2",
         "categories": [

@@ -1,3 +1,4 @@
+"use client"
 import { BookOpen, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"

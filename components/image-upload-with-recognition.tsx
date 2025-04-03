@@ -34,7 +34,7 @@ export function ImageUploadWithRecognition({
   setImages,
   autoRecognize,
   setAutoRecognize,
-  infoText = "上传一张包含所有内容的图片，系统将自动识别",
+  infoText = "上传一张包含所有内容的图片，系统将自动识别主体",
   onRecognitionResults,
 }: ImageUploadWithRecognitionProps) {
   // Rectangle detection states
@@ -357,10 +357,10 @@ export function ImageUploadWithRecognition({
           {icon}
           {title}
         </h4>
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <span className="text-sm text-muted-foreground">自动识别</span>
           <Switch checked={autoRecognize} onCheckedChange={setAutoRecognize} />
-        </div>
+        </div> */}
       </div>
       <div
         className={`border-2 border-dashed rounded-lg transition-colors ${

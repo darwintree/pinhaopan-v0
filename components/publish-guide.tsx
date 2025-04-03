@@ -539,7 +539,7 @@ export function PublishGuide() {
                 setImages={setTeamImages}
                 autoRecognize={autoRecognize}
                 setAutoRecognize={setAutoRecognize}
-                infoText="上传一张包含所有角色的图片，系统将自动识别"
+                infoText="上传一张包含所有角色的图片，系统将自动识别主体"
                 onRecognitionResults={setCharaResults}
               />
 
@@ -570,7 +570,7 @@ export function PublishGuide() {
                 setImages={setWeaponImages}
                 autoRecognize={autoRecognize}
                 setAutoRecognize={setAutoRecognize}
-                infoText="上传一张包含所有武器的图片，系统将自动识别"
+                infoText="上传一张包含所有武器的图片，系统将自动识别主体"
                 onRecognitionResults={setWeaponResults}
               />
 
@@ -602,7 +602,7 @@ export function PublishGuide() {
                 setImages={setSummonImages}
                 autoRecognize={autoRecognize}
                 setAutoRecognize={setAutoRecognize}
-                infoText="上传一张包含所有召唤石的图片，系统将自动识别"
+                infoText="上传一张包含所有召唤石的图片，系统将自动识别主体"
                 onRecognitionResults={setSummonResults}
               />
             </div>

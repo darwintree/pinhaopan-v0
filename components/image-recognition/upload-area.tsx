@@ -38,7 +38,7 @@ export function UploadArea({ title, onImageUpload }: UploadAreaProps) {
       <label className="flex flex-col items-center justify-center cursor-pointer text-center">
         <Upload className="h-10 w-10 text-primary/60 mb-2" />
         <p className="text-sm font-medium mb-1">点击或拖拽上传{title}</p>
-        <p className="text-xs text-muted-foreground">支持PNG、JPG格式，系统将自动识别所有{title}</p>
+        <p className="text-xs text-muted-foreground">支持PNG、JPG格式，系统将自动识别主体{title}</p>
         <input
           type="file"
           className="hidden"

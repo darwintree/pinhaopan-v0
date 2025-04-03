@@ -16,7 +16,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { useToast } from "@/components/ui/use-toast"
+import { useToast } from "@/hooks/use-toast"
 import { useTagList } from "@/hooks/use-tag-list"
 import { useQuestList } from "@/hooks/use-quest-list"
 import { cn } from "@/lib/utils"
@@ -115,7 +115,7 @@ export default function GuidePage() {
   const validTags = getValidTags()
 
   return (
-    <div className="container mx-auto py-4 px-4">
+    <div className="container mx-auto py-4 px-4 max-w-5xl">
       <div className="flex justify-between items-center mb-4">
         <Button
           variant="ghost"
@@ -141,8 +141,8 @@ export default function GuidePage() {
       </div>
 
       <Card className="backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
-        <CardContent className="p-4">
-          <div className="flex flex-col space-y-4">
+        <CardContent className="p-4 md:p-6">
+          <div className="flex flex-col space-y-6">
             {/* 标题和基本信息行 */}
             <div className="flex flex-col md:flex-row justify-between">
               <div>
@@ -183,7 +183,7 @@ export default function GuidePage() {
               <div className="flex flex-col md:flex-row md:items-end md:space-x-4 mt-2 md:mt-0 text-sm">
                 <div className="flex items-center">
                   <span className="text-muted-foreground mr-2">耗时:</span>
-                  <span className="font-medium">{guide.time} 分钟</span>
+                  <span className="font-medium">{Math.floor(guide.time / 60)}:{(guide.time % 60).toString().padStart(2, '0')}</span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-muted-foreground mr-2">发布:</span>
@@ -200,51 +200,50 @@ export default function GuidePage() {
               </div>
             )}
 
-            {/* 配置图片区 - 移动端优化布局 */}
-            <div className="space-y-4">
-              {/* 队伍配置 - 单独一行 */}
+            {/* 配置图片区 - 桌面端优化为三列布局 */}
+            <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-6">
+              {/* 队伍配置 */}
               <div>
                 <h3 className="text-sm font-medium text-muted-foreground mb-2">队伍配置</h3>
                 <div 
-                  className="cursor-zoom-in"
+                  className="cursor-zoom-in h-full"
                   onClick={() => handleImageClick("chara")}
                 >
                   <img
                     src={getGuidePhotoUrl(guide.id, "chara")}
                     alt="Team composition"
-                    className="w-full h-auto rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
+                    className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
                   />
                 </div>
               </div>
               
-              {/* 武器和召唤石配置 - 并排一行 */}
-              <div className="grid grid-cols-2 gap-4 md:grid-cols-2">
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">武器配置</h3>
-                  <div 
-                    className="cursor-zoom-in"
-                    onClick={() => handleImageClick("weapon")}
-                  >
-                    <img
-                      src={getGuidePhotoUrl(guide.id, "weapon")}
-                      alt="Weapons"
-                      className="w-full h-auto rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
-                    />
-                  </div>
+              {/* 武器配置 */}
+              <div>
+                <h3 className="text-sm font-medium text-muted-foreground mb-2">武器配置</h3>
+                <div 
+                  className="cursor-zoom-in h-full"
+                  onClick={() => handleImageClick("weapon")}
+                >
+                  <img
+                    src={getGuidePhotoUrl(guide.id, "weapon")}
+                    alt="Weapons"
+                    className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
+                  />
                 </div>
-                
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">召唤石配置</h3>
-                  <div 
-                    className="cursor-zoom-in"
-                    onClick={() => handleImageClick("summon")}
-                  >
-                    <img
-                      src={getGuidePhotoUrl(guide.id, "summon")}
-                      alt="Summons"
-                      className="w-full h-auto rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
-                    />
-                  </div>
+              </div>
+              
+              {/* 召唤石配置 */}
+              <div>
+                <h3 className="text-sm font-medium text-muted-foreground mb-2">召唤石配置</h3>
+                <div 
+                  className="cursor-zoom-in h-full"
+                  onClick={() => handleImageClick("summon")}
+                >
+                  <img
+                    src={getGuidePhotoUrl(guide.id, "summon")}
+                    alt="Summons"
+                    className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
+                  />
                 </div>
               </div>
             </div>

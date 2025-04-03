@@ -194,8 +194,8 @@ export function PublishGuide() {
       />
 
       <Card className="backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
-        <CardContent className="p-6">
-          <h2 className="text-2xl font-bold mb-6">配置基本信息</h2>
+        <CardContent className="p-3 sm:p-4 md:p-6">
+          <h2 className="text-2xl font-bold mb-4 sm:mb-6">配置基本信息</h2>
 
           <div className="space-y-6">
             <div className="grid gap-4 md:grid-cols-2">
@@ -501,7 +501,7 @@ export function PublishGuide() {
       <div className="space-y-8">
         {/* Single upload card */}
         <Card className="backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm overflow-hidden">
-          <div className="bg-primary/10 p-3 border-b border-slate-200/50 dark:border-slate-700/50 flex items-center justify-between">
+          <div className="bg-primary/10 p-2 sm:p-3 border-b border-slate-200/50 dark:border-slate-700/50 flex items-center justify-between">
             <h3 className="text-lg font-medium flex items-center gap-2">
               <Upload className="h-5 w-5" />
               上传游戏截图
@@ -510,7 +510,7 @@ export function PublishGuide() {
               必填
             </Badge>
           </div>
-          <CardContent className="p-6">
+          <CardContent className="p-3 sm:p-4 md:p-6">
             <div className="space-y-6">
               {/* 角色上传 */}
               <ImageUploadWithRecognition

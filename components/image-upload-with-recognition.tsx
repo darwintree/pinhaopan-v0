@@ -351,7 +351,7 @@ export function ImageUploadWithRecognition({
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2 sm:space-y-4">
       <div className="flex items-center justify-between">
         <h4 className="text-sm font-medium flex items-center gap-2">
           {icon}
@@ -365,7 +365,7 @@ export function ImageUploadWithRecognition({
       <div
         className={`border-2 border-dashed rounded-lg transition-colors ${
           images.length > 0 ? "border-slate-300 dark:border-slate-700" : "border-primary/50 hover:border-primary"
-        } ${images.length === 0 ? "p-6" : "p-4"}`}
+        } ${images.length === 0 ? "p-3 sm:p-6" : "p-2 sm:p-4"}`}
         onDragOver={(e) => {
           e.preventDefault()
           e.stopPropagation()

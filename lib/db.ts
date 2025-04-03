@@ -120,7 +120,7 @@ export async function saveGuide(data: GuidePostData): Promise<string> {
     const guideDoc: GuideData = {
       id: guideId,
       quest: data.quest,
-      time: data.time || 5,
+      time: data.time,
       turn: data.turn,
       contribution: data.contribution,
       button: data.button,

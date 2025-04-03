@@ -10,8 +10,10 @@ interface GetGuidesQuery {
   quest?: string
   tags?: string[]
   timeRange?: [number, number]
+  turnRange?: [number, number]
+  contributionRange?: [number, number]
   dateRange?: [string, string] // ISO格式的字符串
-  sort?: { field: "time" | "date"; direction: "asc" | "desc" }
+  sort?: { field: "time" | "date" | "turn" | "contribution"; direction: "asc" | "desc" }
   charaConditions?: EquipmentFilterCondition[]
   weaponConditions?: EquipmentFilterCondition[]
   summonConditions?: EquipmentFilterCondition[]

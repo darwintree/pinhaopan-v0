@@ -212,7 +212,24 @@ export default function GuidePage() {
                 <div className="flex items-center">
                   <span className="text-muted-foreground mr-2">耗时:</span>
                   <span className="font-medium">{guide.time ? `${Math.floor(guide.time / 60)}:${(guide.time % 60).toString().padStart(2, '0')}` : '未记录'}</span>
+                  {guide.turn && (
+                    <span className="ml-1 font-medium">/{guide.turn}t</span>
+                  )}
                 </div>
+                {guide.contribution && (
+                  <div className="flex items-center">
+                    <span className="text-muted-foreground mr-2">贡献度:</span>
+                    <span className="font-medium">{guide.contribution}</span>
+                  </div>
+                )}
+                {guide.button && (
+                  <div className="flex items-center">
+                    <span className="text-muted-foreground mr-2">按键:</span>
+                    <span className="font-medium">
+                      {guide.button.skill}技/{guide.button.summon}召
+                    </span>
+                  </div>
+                )}
                 <div className="flex items-center">
                   <span className="text-muted-foreground mr-2">发布:</span>
                   <span className="font-medium">{new Date(guide.date).toLocaleDateString()}</span>

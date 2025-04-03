@@ -42,8 +42,10 @@ export async function getGuides(query: {
   quest?: string
   tags?: string[]
   timeRange?: [number, number]
+  turnRange?: [number, number]
+  contributionRange?: [number, number]
   dateRange?: [Date, Date]
-  sort?: { field: "time" | "date"; direction: "asc" | "desc" }
+  sort?: { field: "time" | "date" | "turn" | "contribution"; direction: "asc" | "desc" }
   charaConditions?: EquipmentFilterCondition[]
   weaponConditions?: EquipmentFilterCondition[]
   summonConditions?: EquipmentFilterCondition[]

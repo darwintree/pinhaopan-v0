@@ -163,6 +163,7 @@ export function GuideList({ guides, loading }: GuideListProps) {
                 </div>
               </TableHead>
               <TableHead className="hidden md:table-cell">标签</TableHead>
+              <TableHead className="hidden md:table-cell">备注</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -447,6 +448,7 @@ function GuideListItem({ guide }: GuideListItemProps) {
       {/* 消耗时间 */}
       <TableCell>
         {guide.time ? `${Math.floor(guide.time / 60)}:${(guide.time % 60).toString().padStart(2, '0')}` : '-'}
+        {guide.turn ? `/${guide.turn}t` : '/-'}
       </TableCell>
       
       {/* 发布时间 - 桌面端 */}
@@ -471,6 +473,9 @@ function GuideListItem({ guide }: GuideListItemProps) {
           ))}
         </div>
       </TableCell>
+      
+      {/* 描述 */}
+      <TableCell className="hidden md:table-cell">{guide.description}</TableCell>
     </TableRow>
   )
 }

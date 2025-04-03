@@ -24,6 +24,13 @@ export function PublishGuide() {
   const [name, setName] = useState("")
   const [time, setTime] = useState(300) // 时间以秒为单位存储
   const [isTimeEnabled, setIsTimeEnabled] = useState(false) // 时间是否启用
+  const [turn, setTurn] = useState(1) // 回合数
+  const [isTurnEnabled, setIsTurnEnabled] = useState(false) // 回合数是否启用
+  const [contribution, setContribution] = useState(0) // 贡献度
+  const [isContributionEnabled, setIsContributionEnabled] = useState(false) // 贡献度是否启用
+  const [buttonSkill, setButtonSkill] = useState(0) // 技能按键数
+  const [buttonSummon, setButtonSummon] = useState(0) // 召唤按键数
+  const [isButtonEnabled, setIsButtonEnabled] = useState(false) // 按键数是否启用
   const [description, setDescription] = useState("")
   const [tagInput, setTagInput] = useState("")
   const [tags, setTags] = useState<string[]>([])
@@ -118,6 +125,9 @@ export function PublishGuide() {
       const postData: GuidePostData = {
         quest: selectedQuest,
         ...(isTimeEnabled ? { time } : {}), // 仅在启用时添加time字段
+        ...(isTurnEnabled ? { turn } : {}), // 仅在启用时添加turn字段
+        ...(isContributionEnabled ? { contribution } : {}), // 仅在启用时添加contribution字段
+        ...(isButtonEnabled ? { button: { skill: buttonSkill, summon: buttonSummon } } : {}), // 仅在启用时添加button字段
         description,
         tags,
         charas,
@@ -148,6 +158,13 @@ export function PublishGuide() {
       setName("")
       setTime(0)
       setIsTimeEnabled(false)
+      setTurn(1)
+      setIsTurnEnabled(false)
+      setContribution(0)
+      setIsContributionEnabled(false)
+      setButtonSkill(0)
+      setButtonSummon(0)
+      setIsButtonEnabled(false)
       setDescription("")
       setTags([])
       setTeamImages([])
@@ -285,6 +302,175 @@ export function PublishGuide() {
                   </>
                 )}
               </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 mt-6">
+              {/* 回合数输入项 */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="turn" className="flex items-center gap-2">
+                    回合数
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Info className="h-4 w-4 text-muted-foreground" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>通关所需的回合数，可选</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Label>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-muted-foreground mr-2">
+                      {isTurnEnabled ? "已启用" : "未启用"}
+                    </span>
+                    <label 
+                      htmlFor="turnToggle" 
+                      className="relative inline-flex h-5 w-10 items-center rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer"
+                    >
+                      <input
+                        id="turnToggle"
+                        type="checkbox"
+                        className="peer sr-only"
+                        checked={isTurnEnabled}
+                        onChange={() => setIsTurnEnabled(!isTurnEnabled)}
+                      />
+                      <span className={`absolute mx-1 h-3 w-3 rounded-full bg-white transition-transform ${isTurnEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
+                    </label>
+                  </div>
+                </div>
+                {isTurnEnabled && (
+                  <>
+                    <div className="pt-2">
+                      <Input
+                        id="turn"
+                        type="number"
+                        min={1}
+                        value={turn}
+                        onChange={(e) => setTurn(parseInt(e.target.value) || 1)}
+                        className="text-center"
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* 贡献度输入项 */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="contribution" className="flex items-center gap-2">
+                    贡献度
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Info className="h-4 w-4 text-muted-foreground" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>战斗贡献度，可选</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Label>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-muted-foreground mr-2">
+                      {isContributionEnabled ? "已启用" : "未启用"}
+                    </span>
+                    <label 
+                      htmlFor="contributionToggle" 
+                      className="relative inline-flex h-5 w-10 items-center rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer"
+                    >
+                      <input
+                        id="contributionToggle"
+                        type="checkbox"
+                        className="peer sr-only"
+                        checked={isContributionEnabled}
+                        onChange={() => setIsContributionEnabled(!isContributionEnabled)}
+                      />
+                      <span className={`absolute mx-1 h-3 w-3 rounded-full bg-white transition-transform ${isContributionEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
+                    </label>
+                  </div>
+                </div>
+                {isContributionEnabled && (
+                  <>
+                    <div className="pt-2">
+                      <Input
+                        id="contribution"
+                        type="number"
+                        min={0}
+                        value={contribution}
+                        onChange={(e) => setContribution(parseInt(e.target.value) || 0)}
+                        className="text-center"
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+
+            {/* 按键数输入项 */}
+            <div className="mt-6">
+              <div className="flex items-center justify-between">
+                <Label htmlFor="button" className="flex items-center gap-2">
+                  按键数
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Info className="h-4 w-4 text-muted-foreground" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>战斗中使用的技能和召唤按键数量，可选</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </Label>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-muted-foreground mr-2">
+                    {isButtonEnabled ? "已启用" : "未启用"}
+                  </span>
+                  <label 
+                    htmlFor="buttonToggle" 
+                    className="relative inline-flex h-5 w-10 items-center rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer"
+                  >
+                    <input
+                      id="buttonToggle"
+                      type="checkbox"
+                      className="peer sr-only"
+                      checked={isButtonEnabled}
+                      onChange={() => setIsButtonEnabled(!isButtonEnabled)}
+                    />
+                    <span className={`absolute mx-1 h-3 w-3 rounded-full bg-white transition-transform ${isButtonEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
+                  </label>
+                </div>
+              </div>
+              {isButtonEnabled && (
+                <>
+                  <div className="grid gap-4 md:grid-cols-2 mt-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="buttonSkill" className="text-xs text-muted-foreground">技能按键数</Label>
+                      <Input
+                        id="buttonSkill"
+                        type="number"
+                        min={0}
+                        value={buttonSkill}
+                        onChange={(e) => setButtonSkill(parseInt(e.target.value) || 0)}
+                        className="text-center"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="buttonSummon" className="text-xs text-muted-foreground">召唤按键数</Label>
+                      <Input
+                        id="buttonSummon"
+                        type="number"
+                        min={0}
+                        value={buttonSummon}
+                        onChange={(e) => setButtonSummon(parseInt(e.target.value) || 0)}
+                        className="text-center"
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
 
             <div className="space-y-2">

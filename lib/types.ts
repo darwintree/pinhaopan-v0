@@ -1,7 +1,15 @@
+interface ButtonCount {
+  skill: number // 技能按键数
+  summon: number // 召唤按键数
+}
+
 export interface GuideData {
   id: string
   quest: string
   time?: number
+  turn?: number  // 回合数(可选)
+  contribution?: number  // 贡献度(可选)
+  button?: ButtonCount // 按键数
   date: number
   charas: EquipmentData[]
   weapons: EquipmentData[]
@@ -15,6 +23,9 @@ export interface GuideData {
 export interface GuidePostData {
   quest: string  // 副本id
   time?: number  // 通关时间(可选)
+  turn?: number  // 回合数(可选)
+  contribution?: number  // 贡献度(可选)
+  button?: ButtonCount // 按键数
   charas: EquipmentData[]  // 角色
   charasBase64: string  // 角色图片base64 宽度不超过600px 高度不超过600px, 否则按比例缩放
   weapons: EquipmentData[]  // 武器

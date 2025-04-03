@@ -121,6 +121,9 @@ export async function saveGuide(data: GuidePostData): Promise<string> {
       id: guideId,
       quest: data.quest,
       time: data.time || 5,
+      turn: data.turn,
+      contribution: data.contribution,
+      button: data.button,
       date: Date.now(),
       charas: normalizeEquipments(data.charas),
       weapons: normalizeEquipments(data.weapons),
@@ -160,8 +163,10 @@ export async function getGuides(query: {
   quest?: string
   tags?: string[]
   timeRange?: [number, number]
+  turnRange?: [number, number]
+  contributionRange?: [number, number]
   dateRange?: [Date, Date]
-  sort?: { field: "time" | "date"; direction: "asc" | "desc" }
+  sort?: { field: "time" | "date" | "turn" | "contribution"; direction: "asc" | "desc" }
   charaConditions?: EquipmentFilterCondition[]
   weaponConditions?: EquipmentFilterCondition[]
   summonConditions?: EquipmentFilterCondition[]
@@ -179,6 +184,14 @@ export async function getGuides(query: {
 
   if (query.timeRange) {
     filter.time = { $gte: query.timeRange[0], $lte: query.timeRange[1] }
+  }
+
+  if (query.turnRange) {
+    filter.turn = { $gte: query.turnRange[0], $lte: query.turnRange[1] }
+  }
+
+  if (query.contributionRange) {
+    filter.contribution = { $gte: query.contributionRange[0], $lte: query.contributionRange[1] }
   }
 
   if (query.dateRange) {

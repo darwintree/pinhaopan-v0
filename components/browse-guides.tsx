@@ -16,6 +16,7 @@ import { GuideList } from "@/components/guide-list"
 import { EquipmentSelector } from "@/components/equipment-selector"
 import { QuestSelector } from "@/components/quest-selector"
 import { TagSelector } from "@/components/tag-selector"
+import { ToggleInput } from "@/components/ui/toggle-input"
 
 
 
@@ -23,6 +24,7 @@ export function BrowseGuides() {
   // Filter states
   const [basicFilterOpen, setBasicFilterOpen] = useState(true)
   const [timeFilterOpen, setTimeFilterOpen] = useState(false)
+  const [timeFilterEnabled, setTimeFilterEnabled] = useState(false)
   const [configFilterOpen, setConfigFilterOpen] = useState(false)
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [timeRange, setTimeRange] = useState<[number, number]>([0, 600]) // 以秒为单位存储，初始值0-10分钟
@@ -52,7 +54,7 @@ export function BrowseGuides() {
   // Filter count
   const filterCount = [
     selectedTags.length > 0,
-    timeRange[0] !== 0 || timeRange[1] !== 600,
+    timeFilterEnabled && (timeRange[0] !== 0 || timeRange[1] !== 600),
     dateRange.from !== undefined || dateRange.to !== undefined,
     selectedWeaponConditions.length > 0,
     selectedSummonConditions.length > 0,
@@ -72,6 +74,7 @@ export function BrowseGuides() {
   // Reset filters
   const resetFilters = () => {
     setSelectedTags([])
+    setTimeFilterEnabled(false)
     setTimeRange([0, 600]) // 重置为0-10分钟（秒为单位）
     setTimeScale("small")
     setDateRange({ from: undefined, to: undefined })
@@ -187,8 +190,10 @@ export function BrowseGuides() {
           params.append("tags", tag)
         })
         
-        // 添加时间范围（使用防抖后的值）
-        params.append("timeRange", debouncedTimeRange.join(","))
+        // 添加时间范围（使用防抖后的值，只有在启用时才添加）
+        if (timeFilterEnabled) {
+          params.append("timeRange", debouncedTimeRange.join(","))
+        }
         
         // 添加日期范围
         if (dateRange.from || dateRange.to) {
@@ -248,6 +253,7 @@ export function BrowseGuides() {
     selectedCharaConditions,
     sortField,
     sortDirection,
+    timeFilterEnabled,
   ])
 
   return (
@@ -315,15 +321,20 @@ export function BrowseGuides() {
           {timeFilterOpen && (
             <CardContent className="p-4 pt-0 grid gap-4 md:grid-cols-2">
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <Label className="flex items-center gap-2">
-                    <Clock className="h-4 w-4" />
-                    消耗时间
-                  </Label>
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm text-muted-foreground">
-                      {formatTime(timeRange[0])} - {formatTime(timeRange[1])}
-                    </span>
+                <ToggleInput
+                  id="timeFilter"
+                  label="消耗时间"
+                  tooltipText="按完成副本所需时间筛选"
+                  enabled={timeFilterEnabled}
+                  onToggle={() => setTimeFilterEnabled(!timeFilterEnabled)}
+                >
+                  <div className="flex items-center justify-between mt-2">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4" />
+                      <span className="text-sm text-muted-foreground">
+                        {formatTime(timeRange[0])} - {formatTime(timeRange[1])}
+                      </span>
+                    </div>
                     <Select
                       value={timeScale}
                       onValueChange={(value) => {
@@ -343,13 +354,14 @@ export function BrowseGuides() {
                       </SelectContent>
                     </Select>
                   </div>
-                </div>
-                <Slider 
-                  max={getTimeScaleConfig().max} 
-                  step={getTimeScaleConfig().step} 
-                  value={timeRange} 
-                  onValueChange={(value) => setTimeRange(value as [number, number])} 
-                />
+                  <Slider 
+                    max={getTimeScaleConfig().max} 
+                    step={getTimeScaleConfig().step} 
+                    value={timeRange} 
+                    onValueChange={(value) => setTimeRange(value as [number, number])} 
+                    className="mt-2"
+                  />
+                </ToggleInput>
               </div>
 
               <div className="space-y-2">

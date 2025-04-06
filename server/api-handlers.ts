@@ -28,6 +28,7 @@ guidesRouter.get('/', async (req: Request, res: Response) => {
     if (req.query.query) {
       try {
         query = JSON.parse(req.query.query as string) as GetGuidesQuery
+        console.log("Receive query: ", query)
       } catch (error) {
         return res.status(400).json({ 
           success: false, 

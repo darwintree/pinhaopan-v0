@@ -6,10 +6,18 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const quest = searchParams.get("quest") || ""
   const tags = searchParams.getAll("tags")
-  const timeRange = searchParams.get("timeRange")?.split(",").map(Number) || [0, 30]
+  const timeRange = searchParams.get("timeRange")?.split(",").map(Number) || []
   const dateRange = searchParams.get("dateRange")?.split(",") || []
   const sortField = searchParams.get("sortField") || "date"
   const sortDirection = searchParams.get("sortDirection") || "desc"
+
+  let parsedTimeRange: [number, number] | undefined
+
+  if (timeRange.length == 2) {
+    parsedTimeRange = [
+      timeRange[0], timeRange[1]
+    ]
+  }
 
   // 准备日期范围
   let parsedDateRange: [Date, Date] | undefined
@@ -38,7 +46,7 @@ export async function GET(request: Request) {
   const queryParams: GuideQueryParams = {
     quest: quest || undefined,
     tags: tags.length > 0 ? tags : undefined,
-    timeRange: [timeRange[0], timeRange[1]],
+    timeRange: parsedTimeRange,
     dateRange: parsedDateRange,
     sort: {
       field: (sortField === "time" || sortField === "date") ? sortField : "date",
@@ -48,13 +56,9 @@ export async function GET(request: Request) {
     summonConditions,
     charaConditions
   }
-  console.log(weaponConditions)
 
   // 使用 db 接口获取数据
   const guides = await getGuides(queryParams)
-
-  // 暂时保留武器、召唤石和角色的过滤功能的接口，但实际不实现过滤
-  // 后续可以在 db 层实现这些过滤功能
 
   return NextResponse.json({
     guides,

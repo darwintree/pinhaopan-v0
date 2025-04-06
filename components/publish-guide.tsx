@@ -58,7 +58,36 @@ export function PublishGuide() {
   const [weaponResults, setWeaponResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
   const [summonResults, setSummonResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
 
-
+  // Image upload configurations
+  const uploadConfigs = [
+    {
+      type: "chara" as const,
+      title: "角色图片上传",
+      icon: <UsersIcon />,
+      images: teamImages,
+      setImages: setTeamImages,
+      infoText: "上传一张包含所有角色的图片，系统将自动识别主体",
+      onRecognitionResults: setCharaResults
+    },
+    {
+      type: "weapon" as const,
+      title: "武器图片上传",
+      icon: <SwordIcon />,
+      images: weaponImages,
+      setImages: setWeaponImages,
+      infoText: "上传一张包含所有武器的图片，系统将自动识别主体",
+      onRecognitionResults: setWeaponResults
+    },
+    {
+      type: "summon" as const,
+      title: "召唤石图片上传",
+      icon: <SparklesIcon />,
+      images: summonImages,
+      setImages: setSummonImages,
+      infoText: "上传一张包含所有召唤石的图片，系统将自动识别主体",
+      onRecognitionResults: setSummonResults
+    }
+  ]
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -380,44 +409,20 @@ export function PublishGuide() {
           </div>
           <CardContent className="p-3 sm:p-4 md:p-6">
             <div className="space-y-6">
-              {/* 角色上传 */}
-              <ImageUploadWithRecognition
-                type="chara"
-                title="角色图片上传"
-                icon={<UsersIcon />}
-                images={teamImages}
-                setImages={setTeamImages}
-                autoRecognize={autoRecognize}
-                setAutoRecognize={setAutoRecognize}
-                infoText="上传一张包含所有角色的图片，系统将自动识别主体"
-                onRecognitionResults={setCharaResults}
-              />
-
-              {/* 武器上传 */}
-              <ImageUploadWithRecognition
-                type="weapon"
-                title="武器图片上传"
-                icon={<SwordIcon />}
-                images={weaponImages}
-                setImages={setWeaponImages}
-                autoRecognize={autoRecognize}
-                setAutoRecognize={setAutoRecognize}
-                infoText="上传一张包含所有武器的图片，系统将自动识别主体"
-                onRecognitionResults={setWeaponResults}
-              />
-
-              {/* 召唤石上传 */}
-              <ImageUploadWithRecognition
-                type="summon"
-                title="召唤石图片上传"
-                icon={<SparklesIcon />}
-                images={summonImages}
-                setImages={setSummonImages}
-                autoRecognize={autoRecognize}
-                setAutoRecognize={setAutoRecognize}
-                infoText="上传一张包含所有召唤石的图片，系统将自动识别主体"
-                onRecognitionResults={setSummonResults}
-              />
+              {uploadConfigs.map((config) => (
+                <ImageUploadWithRecognition
+                  key={config.type}
+                  type={config.type}
+                  title={config.title}
+                  icon={config.icon}
+                  images={config.images}
+                  setImages={config.setImages}
+                  autoRecognize={autoRecognize}
+                  setAutoRecognize={setAutoRecognize}
+                  infoText={config.infoText}
+                  onRecognitionResults={config.onRecognitionResults}
+                />
+              ))}
             </div>
           </CardContent>
         </Card>

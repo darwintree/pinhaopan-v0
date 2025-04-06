@@ -18,6 +18,9 @@ import { useQuestList } from "@/hooks/use-quest-list"
 import { TagSelector } from "@/components/tag-selector"
 import { GuidePostData } from "@/lib/types"
 import { resizeImageWithAspectRatio } from "@/lib/utils"
+import { UsersIcon } from "@/components/icon/users-icon"
+import { SwordIcon } from "@/components/icon/sword-icon"
+import { SparklesIcon } from "@/components/icon/sparkles-icon"
 
 export function PublishGuide() {
   // Form states
@@ -54,21 +57,7 @@ export function PublishGuide() {
   const [weaponResults, setWeaponResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
   const [summonResults, setSummonResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
 
-  // Handle tag input
-  const handleTagInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && tagInput.trim() !== "") {
-      e.preventDefault()
-      if (!tags.includes(tagInput.trim())) {
-        setTags([...tags, tagInput.trim()])
-      }
-      setTagInput("")
-    }
-  }
 
-  // Remove tag
-  const removeTag = (tagToRemove: string) => {
-    setTags(tags.filter((tag) => tag !== tagToRemove))
-  }
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -516,25 +505,7 @@ export function PublishGuide() {
               <ImageUploadWithRecognition
                 type="chara"
                 title="角色图片上传"
-                icon={
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-users"
-                  >
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  </svg>
-                }
+                icon={<UsersIcon />}
                 images={teamImages}
                 setImages={setTeamImages}
                 autoRecognize={autoRecognize}
@@ -547,25 +518,7 @@ export function PublishGuide() {
               <ImageUploadWithRecognition
                 type="weapon"
                 title="武器图片上传"
-                icon={
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-sword"
-                  >
-                    <polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5" />
-                    <line x1="13" x2="19" y1="19" y2="13" />
-                    <line x1="16" x2="20" y1="16" y2="20" />
-                    <line x1="19" x2="21" y1="21" y2="19" />
-                  </svg>
-                }
+                icon={<SwordIcon />}
                 images={weaponImages}
                 setImages={setWeaponImages}
                 autoRecognize={autoRecognize}
@@ -578,26 +531,7 @@ export function PublishGuide() {
               <ImageUploadWithRecognition
                 type="summon"
                 title="召唤石图片上传"
-                icon={
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-sparkles"
-                  >
-                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
-                    <path d="M5 3v4" />
-                    <path d="M19 17v4" />
-                    <path d="M3 5h4" />
-                    <path d="M17 19h4" />
-                  </svg>
-                }
+                icon={<SparklesIcon />}
                 images={summonImages}
                 setImages={setSummonImages}
                 autoRecognize={autoRecognize}

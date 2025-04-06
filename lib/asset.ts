@@ -22,33 +22,28 @@ export function getQuestPhotoUrl(questImg: string | undefined) {
 }
 
 export function getEquipmentPhotoUrl(id: string, equipmentType?: EquipmentType) {
-  const baseUrl = process.env.NEXT_PUBLIC_ASSETS_BASE_URL
+  const baseUrl = process.env.NEXT_PUBLIC_OFFICIAL_ASSETS_BASE_URL
+  const normalizedId = normalizeEquipmentId(id)
   if (!baseUrl) {
-    throw new Error("ASSETS_BASE_URL is not set")
+    throw new Error("NEXT_OFFICIAL_ASSETS_BASE_URL is not set")
   }
   if (id.startsWith("f_")) {
-    return `${baseUrl}/chara/${id}.jpg`
+    return `${baseUrl}/assets/img/sp/gacha/assets/balloon_s/${id}_01.png`
   }
-  if (id.startsWith("party_main_")) {
-    return `${baseUrl}/summon/party_main/${id}.jpg`
+  if (id.startsWith("party_main_") || id.startsWith("party_sub_")) {
+    return `${baseUrl}/assets/img/sp/assets/summon/party_sub/${normalizedId}.jpg`
   }
-  if (id.startsWith("party_sub_")) {
-    return `${baseUrl}/summon/party_sub/${id}.jpg`
-  }
-  if (id.startsWith("ls_")) {
-    return `${baseUrl}/weapon/main/${id}.jpg`
-  }
-  if (id.startsWith("m_")) {
-    return `${baseUrl}/weapon/normal/${id}.jpg`
+  if (id.startsWith("ls_") || id.startsWith("m_")) {
+    return `${baseUrl}/assets/img/sp/assets/weapon/m/${normalizedId}.jpg`
   }
   if (equipmentType) {
     switch (equipmentType) {
       case "chara":
-        return `${baseUrl}/chara/f_${id}_01.jpg`
+        return `${baseUrl}/assets/img/sp/gacha/assets/balloon_s/${id}_01.png`
       case "weapon":
-        return `${baseUrl}/weapon/normal/m_${id}.jpg`
+        return `${baseUrl}/assets/img/sp/assets/weapon/m/${normalizedId}.jpg`
       case "summon":
-        return `${baseUrl}/summon/party_sub/party_sub_${id}.jpg`
+        return `${baseUrl}/assets/img/sp/assets/summon/party_sub/${normalizedId}.jpg`
     }
   }
   return `${baseUrl}/placeholder.svg`

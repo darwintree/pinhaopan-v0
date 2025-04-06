@@ -12,6 +12,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { ToggleInput } from "@/components/ui/toggle-input"
 import { ImageUploadWithRecognition } from "@/components/image-upload-with-recognition"
 import { QuestSelector } from "@/components/quest-selector"
 import { useQuestList } from "@/hooks/use-quest-list"
@@ -201,265 +202,143 @@ export function PublishGuide() {
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="time" className="flex items-center gap-2">
-                    消耗时间
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Info className="h-4 w-4 text-muted-foreground" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>完成副本所需的时间（分:秒），可选</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </Label>
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm text-muted-foreground mr-2">
-                      {isTimeEnabled ? "已启用" : "未启用"}
-                    </span>
-                    <label 
-                      htmlFor="timeToggle" 
-                      className="relative inline-flex h-5 w-10 items-center rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer"
-                    >
-                      <input
-                        id="timeToggle"
-                        type="checkbox"
-                        className="peer sr-only"
-                        checked={isTimeEnabled}
-                        onChange={() => setIsTimeEnabled(!isTimeEnabled)}
+              <ToggleInput
+                id="time"
+                label="消耗时间"
+                tooltipText="完成副本所需的时间（分:秒），可选"
+                enabled={isTimeEnabled}
+                onToggle={() => setIsTimeEnabled(!isTimeEnabled)}
+              >
+                <div className="flex items-center justify-end">
+                  <span className="text-sm text-muted-foreground">
+                    {Math.floor(time / 60)}分{time % 60}秒
+                  </span>
+                </div>
+                <div className="flex gap-2">
+                  <div className="flex-1">
+                    <Label htmlFor="minutes" className="text-xs text-muted-foreground">分钟</Label>
+                    <div className="flex items-center">
+                      <Input
+                        id="minutes"
+                        type="number"
+                        min={0}
+                        max={59}
+                        value={Math.floor(time / 60)}
+                        onChange={(e) => {
+                          const min = parseInt(e.target.value) || 0;
+                          setTime((min * 60) + (time % 60));
+                        }}
+                        className="text-center"
                       />
-                      <span className={`absolute mx-1 h-3 w-3 rounded-full bg-white transition-transform ${isTimeEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
-                    </label>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <Label htmlFor="seconds" className="text-xs text-muted-foreground">秒</Label>
+                    <div className="flex items-center">
+                      <Input
+                        id="seconds"
+                        type="number"
+                        min={0}
+                        max={59}
+                        value={time % 60}
+                        onChange={(e) => {
+                          const sec = parseInt(e.target.value) || 0;
+                          setTime(Math.floor(time / 60) * 60 + sec);
+                        }}
+                        className="text-center"
+                      />
+                    </div>
                   </div>
                 </div>
-                {isTimeEnabled && (
-                  <>
-                    <div className="flex items-center justify-end">
-                      <span className="text-sm text-muted-foreground">
-                        {Math.floor(time / 60)}分{time % 60}秒
-                      </span>
-                    </div>
-                    <div className="flex gap-2">
-                      <div className="flex-1">
-                        <Label htmlFor="minutes" className="text-xs text-muted-foreground">分钟</Label>
-                        <div className="flex items-center">
-                          <Input
-                            id="minutes"
-                            type="number"
-                            min={0}
-                            max={59}
-                            value={Math.floor(time / 60)}
-                            onChange={(e) => {
-                              const min = parseInt(e.target.value) || 0;
-                              setTime((min * 60) + (time % 60));
-                            }}
-                            className="text-center"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <Label htmlFor="seconds" className="text-xs text-muted-foreground">秒</Label>
-                        <div className="flex items-center">
-                          <Input
-                            id="seconds"
-                            type="number"
-                            min={0}
-                            max={59}
-                            value={time % 60}
-                            onChange={(e) => {
-                              const sec = parseInt(e.target.value) || 0;
-                              setTime(Math.floor(time / 60) * 60 + sec);
-                            }}
-                            className="text-center"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="pt-2">
-                      <Slider
-                        id="time-slider"
-                        min={0}
-                        max={3600}
-                        step={1}
-                        value={[time]}
-                        onValueChange={(value) => setTime(value[0])}
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+                <div className="pt-2">
+                  <Slider
+                    id="time-slider"
+                    min={0}
+                    max={3600}
+                    step={1}
+                    value={[time]}
+                    onValueChange={(value) => setTime(value[0])}
+                  />
+                </div>
+              </ToggleInput>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 mt-6">
               {/* 回合数输入项 */}
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="turn" className="flex items-center gap-2">
-                    回合数
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Info className="h-4 w-4 text-muted-foreground" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>通关所需的回合数，可选</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </Label>
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm text-muted-foreground mr-2">
-                      {isTurnEnabled ? "已启用" : "未启用"}
-                    </span>
-                    <label 
-                      htmlFor="turnToggle" 
-                      className="relative inline-flex h-5 w-10 items-center rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer"
-                    >
-                      <input
-                        id="turnToggle"
-                        type="checkbox"
-                        className="peer sr-only"
-                        checked={isTurnEnabled}
-                        onChange={() => setIsTurnEnabled(!isTurnEnabled)}
-                      />
-                      <span className={`absolute mx-1 h-3 w-3 rounded-full bg-white transition-transform ${isTurnEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
-                    </label>
-                  </div>
+              <ToggleInput
+                id="turn"
+                label="回合数"
+                tooltipText="通关所需的回合数，可选"
+                enabled={isTurnEnabled}
+                onToggle={() => setIsTurnEnabled(!isTurnEnabled)}
+              >
+                <div className="pt-2">
+                  <Input
+                    id="turn"
+                    type="number"
+                    min={1}
+                    value={turn}
+                    onChange={(e) => setTurn(parseInt(e.target.value) || 1)}
+                    className="text-center"
+                  />
                 </div>
-                {isTurnEnabled && (
-                  <>
-                    <div className="pt-2">
-                      <Input
-                        id="turn"
-                        type="number"
-                        min={1}
-                        value={turn}
-                        onChange={(e) => setTurn(parseInt(e.target.value) || 1)}
-                        className="text-center"
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+              </ToggleInput>
 
               {/* 贡献度输入项 */}
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="contribution" className="flex items-center gap-2">
-                    贡献度
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Info className="h-4 w-4 text-muted-foreground" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>战斗贡献度，可选</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </Label>
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm text-muted-foreground mr-2">
-                      {isContributionEnabled ? "已启用" : "未启用"}
-                    </span>
-                    <label 
-                      htmlFor="contributionToggle" 
-                      className="relative inline-flex h-5 w-10 items-center rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer"
-                    >
-                      <input
-                        id="contributionToggle"
-                        type="checkbox"
-                        className="peer sr-only"
-                        checked={isContributionEnabled}
-                        onChange={() => setIsContributionEnabled(!isContributionEnabled)}
-                      />
-                      <span className={`absolute mx-1 h-3 w-3 rounded-full bg-white transition-transform ${isContributionEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
-                    </label>
-                  </div>
+              <ToggleInput
+                id="contribution"
+                label="贡献度"
+                tooltipText="战斗贡献度，可选"
+                enabled={isContributionEnabled}
+                onToggle={() => setIsContributionEnabled(!isContributionEnabled)}
+              >
+                <div className="pt-2">
+                  <Input
+                    id="contribution"
+                    type="number"
+                    min={0}
+                    value={contribution}
+                    onChange={(e) => setContribution(parseInt(e.target.value) || 0)}
+                    className="text-center"
+                  />
                 </div>
-                {isContributionEnabled && (
-                  <>
-                    <div className="pt-2">
-                      <Input
-                        id="contribution"
-                        type="number"
-                        min={0}
-                        value={contribution}
-                        onChange={(e) => setContribution(parseInt(e.target.value) || 0)}
-                        className="text-center"
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+              </ToggleInput>
             </div>
 
             {/* 按键数输入项 */}
             <div className="mt-6">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="button" className="flex items-center gap-2">
-                  按键数
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Info className="h-4 w-4 text-muted-foreground" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>战斗中使用的技能和召唤按键数量，可选</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Label>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground mr-2">
-                    {isButtonEnabled ? "已启用" : "未启用"}
-                  </span>
-                  <label 
-                    htmlFor="buttonToggle" 
-                    className="relative inline-flex h-5 w-10 items-center rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer"
-                  >
-                    <input
-                      id="buttonToggle"
-                      type="checkbox"
-                      className="peer sr-only"
-                      checked={isButtonEnabled}
-                      onChange={() => setIsButtonEnabled(!isButtonEnabled)}
+              <ToggleInput
+                id="button"
+                label="按键数"
+                tooltipText="战斗中使用的技能和召唤按键数量，可选"
+                enabled={isButtonEnabled}
+                onToggle={() => setIsButtonEnabled(!isButtonEnabled)}
+              >
+                <div className="grid gap-4 md:grid-cols-2 mt-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="buttonSkill" className="text-xs text-muted-foreground">技能按键数</Label>
+                    <Input
+                      id="buttonSkill"
+                      type="number"
+                      min={0}
+                      value={buttonSkill}
+                      onChange={(e) => setButtonSkill(parseInt(e.target.value) || 0)}
+                      className="text-center"
                     />
-                    <span className={`absolute mx-1 h-3 w-3 rounded-full bg-white transition-transform ${isButtonEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
-                  </label>
-                </div>
-              </div>
-              {isButtonEnabled && (
-                <>
-                  <div className="grid gap-4 md:grid-cols-2 mt-2">
-                    <div className="space-y-2">
-                      <Label htmlFor="buttonSkill" className="text-xs text-muted-foreground">技能按键数</Label>
-                      <Input
-                        id="buttonSkill"
-                        type="number"
-                        min={0}
-                        value={buttonSkill}
-                        onChange={(e) => setButtonSkill(parseInt(e.target.value) || 0)}
-                        className="text-center"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="buttonSummon" className="text-xs text-muted-foreground">召唤按键数</Label>
-                      <Input
-                        id="buttonSummon"
-                        type="number"
-                        min={0}
-                        value={buttonSummon}
-                        onChange={(e) => setButtonSummon(parseInt(e.target.value) || 0)}
-                        className="text-center"
-                      />
-                    </div>
                   </div>
-                </>
-              )}
+                  <div className="space-y-2">
+                    <Label htmlFor="buttonSummon" className="text-xs text-muted-foreground">召唤按键数</Label>
+                    <Input
+                      id="buttonSummon"
+                      type="number"
+                      min={0}
+                      value={buttonSummon}
+                      onChange={(e) => setButtonSummon(parseInt(e.target.value) || 0)}
+                      className="text-center"
+                    />
+                  </div>
+                </div>
+              </ToggleInput>
             </div>
 
             <div className="space-y-2">

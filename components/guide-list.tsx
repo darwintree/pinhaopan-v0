@@ -8,7 +8,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import type { GuideData } from "@/lib/types"
-import { getGuidePhotoUrl, getQuestPhotoUrl } from "@/lib/asset"
+import { getGuidePhotoThumbUrl, getGuidePhotoUrl, getQuestPhotoUrl } from "@/lib/asset"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { VisuallyHidden } from "@/components/ui/visually-hidden"
 import { useRouter } from "next/navigation"
@@ -264,6 +264,7 @@ function EquipmentImage({ guideId, type, alt, size = "normal" }: EquipmentImageP
   const [showPopover, setShowPopover] = useState(false)
   const [preventNavigation, setPreventNavigation] = useState(false)
   const imageUrl = getGuidePhotoUrl(guideId, type)
+  const thumbImageUrl = getGuidePhotoThumbUrl(guideId, type)
   
   // 使用useEffect监听preventNavigation状态，自动重置
   useEffect(() => {
@@ -297,7 +298,7 @@ function EquipmentImage({ guideId, type, alt, size = "normal" }: EquipmentImageP
             onClick={(e) => e.stopPropagation()}
           >
             <img 
-              src={imageUrl}
+              src={thumbImageUrl}
               alt={alt}
               className={`${size === "small" ? "h-8" : "h-12"} w-auto rounded transition-transform hover:scale-105`}
               onClick={handleImageClick}

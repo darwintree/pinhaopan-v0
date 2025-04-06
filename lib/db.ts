@@ -2,6 +2,7 @@ import { MongoClient, ObjectId } from "mongodb"
 import type { GuidePostData, GuideData, EquipmentFilterCondition, EquipmentData } from "./types"
 import fs from "fs/promises"
 import path from "path"
+import sharp from "sharp"
 import { normalizeEquipmentId } from "./asset"
 
 if (!process.env.MONGODB_URI) {
@@ -68,16 +69,26 @@ async function saveBase64Image(base64: string, type: string, id: string): Promis
     const base64Data = base64.replace(/^data:image\/\w+;base64,/, "")
     const buffer = Buffer.from(base64Data, "base64")
 
-    // 确保存储目录存在
+    // 确保原始图片存储目录存在
     const storageDir = path.join(storagePath!, type)
     await fs.mkdir(storageDir, { recursive: true })
 
     // 生成文件名并保存
     const filename = `${id}_${type}.png`
+    const thumbFilename = `${id}_${type}_thumb.png`
     const filepath = path.join(storageDir, filename)
+    const thumbpath = path.join(storageDir, thumbFilename)
+
+    // 保存原始图片
     await fs.writeFile(filepath, buffer)
+    
+    // 生成并保存缩略图 (宽度设为200px并保持宽高比)
+    await sharp(buffer)
+      .resize({ width: 80, height: 80, fit: "inside" })
+      .toFile(thumbpath)
 
     console.log(`图片保存成功: ${filepath}`)
+    console.log(`缩略图保存成功: ${thumbpath}`)
 
     return `${storagePath}/${type}/${filename}`
   } catch (error) {

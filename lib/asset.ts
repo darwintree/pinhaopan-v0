@@ -5,6 +5,11 @@ export function getGuidePhotoUrl(guideId: string, equipmentType: EquipmentType) 
   return `${baseUrl}/${equipmentType}s/${guideId}_${equipmentType}s.png`
 }
 
+export function getGuidePhotoThumbUrl(guideId: string, equipmentType: EquipmentType) {
+  const baseUrl = process.env.NEXT_PUBLIC_UPLOAD_IMG_BASE_URL
+  return `${baseUrl}/${equipmentType}s/${guideId}_${equipmentType}s_thumb.png`
+}
+
 export function getCategoryUrl(categoryId: string | undefined) {
   const baseUrl = process.env.NEXT_PUBLIC_ASSETS_BASE_URL
   if (!categoryId) {

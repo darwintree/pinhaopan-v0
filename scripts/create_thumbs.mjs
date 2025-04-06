@@ -20,6 +20,9 @@ const processDirectory = (dirPath) => {
       // If it's a directory, process it recursively
       processDirectory(fullPath)
     } else if (file.toLowerCase().endsWith('.png')) {
+      if (file.toLowerCase().endsWith('_thumb.png')) {
+        continue
+      }
       // If it's a PNG file, generate thumbnail
       const fileNameWithoutExt = path.basename(file, '.png')
       const thumbFileName = `${fileNameWithoutExt}_thumb.png`
@@ -27,7 +30,11 @@ const processDirectory = (dirPath) => {
       
       // Generate thumbnail
       sharp(fullPath)
-        .resize(80, 80) // Resize to 200px width (maintaining aspect ratio)
+        .resize({
+          width: 80,
+          height: 80,
+          fit: "inside"
+        }) // Resize to 200px width (maintaining aspect ratio)
         .toFile(thumbPath)
         .then(() => console.log(`Created thumbnail: ${thumbPath}`))
         .catch(err => console.error(`Error creating thumbnail for ${fullPath}:`, err))

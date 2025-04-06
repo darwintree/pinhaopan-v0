@@ -111,8 +111,8 @@ export const getImageDescriptorsFromImageAndRectangles = async (imageUrl: string
  */
 export const resizeImageWithAspectRatio = async (
   base64Image: string,
-  maxWidth: number = 400, 
-  maxHeight: number = 400
+  maxWidth: number = 200, 
+  maxHeight: number = 200
 ): Promise<string> => {
   return new Promise((resolve, reject) => {
     const img = new Image();

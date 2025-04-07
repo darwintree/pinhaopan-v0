@@ -27,5 +27,6 @@ yarn-error.log*
 next-env.d.ts
 public/assets
 scripts/**/*.csv
+scripts/**/*.xlsx
 scripts/quest/*.json
 public/uploads

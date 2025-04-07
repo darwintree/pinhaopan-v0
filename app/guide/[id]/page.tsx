@@ -147,7 +147,7 @@ export default function GuidePage() {
       <div className="flex justify-between items-center mb-4">
         <Button
           variant="ghost"
-          onClick={() => router.back()}
+          onClick={() => router.push("/")}
           className="p-0 h-8"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />

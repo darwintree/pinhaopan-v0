@@ -1,16 +1,13 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { Switch } from "@/components/ui/switch"
-import type { DetectEquipmentType, EquipmentDetectResults } from "@/lib/types"
+import type { DetectEquipmentType } from "@/lib/types"
 import type { Rectangle } from "@/lib/utils"
 import type { EquipmentType } from "@/lib/types"
 import { detectRectangles, getImageDescriptorsFromImageAndRectangles } from "@/lib/utils"
 import { UploadArea } from "./image-recognition/upload-area"
 import { RectangleEditor } from "./image-recognition/rectangle-editor"
 import { RecognitionResults } from "./image-recognition/recognition-results"
-import { Rnd } from "react-rnd"
-import { Button } from "@/components/ui/button"
 
 interface ImageUploadWithRecognitionProps {
   type: EquipmentType

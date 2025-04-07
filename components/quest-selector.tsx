@@ -10,9 +10,7 @@ import { getQuestPhotoUrl, getCategoryUrl } from "@/lib/asset"
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
   DialogTitle,
-  DialogFooter,
 } from "@/components/ui/dialog"
 import { VisuallyHidden } from "@/components/ui/visually-hidden"
 

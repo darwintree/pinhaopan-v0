@@ -97,7 +97,7 @@ export function EquipmentImage({ guideId, type, alt, size = "normal" }: Equipmen
           <img 
             src={imageUrl}
             alt={alt}
-            className="max-h-[90vh] min-h-[300px] w-auto rounded object-contain"
+            className="max-h-[80vh] max-w-[75vw] min-w-[30vw] w-auto rounded object-contain"
             onClick={(e) => e.stopPropagation()}
           />
         </DialogContent>

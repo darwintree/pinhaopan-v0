@@ -343,7 +343,7 @@ function EquipmentImage({ guideId, type, alt, size = "normal" }: EquipmentImageP
           <img 
             src={imageUrl}
             alt={alt}
-            className="max-h-[90vh] w-auto rounded"
+            className="max-h-[90vh] min-h-[300px] w-auto rounded object-contain"
             onClick={(e) => e.stopPropagation()}
           />
         </DialogContent>

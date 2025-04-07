@@ -375,7 +375,7 @@ function GuideListItem({ guide }: GuideListItemProps) {
   return (
     <TableRow 
       className="cursor-pointer hover:bg-slate-100/50 dark:hover:bg-slate-800/50"
-      onClick={() => router.push(`/guide/${guide.id}`)}
+      onClick={() => window.open(`/guide/${guide.id}`, '_blank')}
     >
       {/* 副本 */}
       <TableCell className="font-medium">

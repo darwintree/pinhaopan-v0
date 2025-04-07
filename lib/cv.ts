@@ -168,10 +168,10 @@ export function detectWeapon(image: cv.Mat): Box[] {
   for (let i = 0; i < contours.size(); i++) {
     const contour = contours.get(i);
     const rect = cv.boundingRect(contour);
-    const { width: w, x, y } = rect;
+    const { width: w, height: h, x, y } = rect;
 
     // 使用宽度过滤
-    if (w > picWidth * 0.1 && w < picWidth * 0.3) {
+    if (w > picWidth * 0.1 && w < picWidth * 0.3 && h > w * 0.3) {
       equipmentBoxes.push({
         x: x,
         y: y,

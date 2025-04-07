@@ -337,7 +337,7 @@ export function ImageUploadWithRecognition({
     return recognizedResults
   }
 
-  // 识别单个equipment
+  // TODO: 识别单个equipment
   const recognizeSingleEquipment = async (rectIndex: number) => {
     try {
       setIsRecognizing(true)

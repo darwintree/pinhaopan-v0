@@ -299,7 +299,82 @@ export function ImageUploadWithRecognition({
     return { results, originalRectIds }
   }
 
-  // 识别设备主函数
+  // 识别设备主函数，提取为纯函数
+  const performEquipmentRecognition = async (
+    targetRectangles: Rectangle[],
+    imageUrl: string,
+    equipmentType: EquipmentType
+  ): Promise<Record<number, {id: string, confidence: number}[]>> => {
+    if (!imageUrl) {
+      throw new Error("Image URL not provided")
+    }
+
+    const rectangleGroups = groupRectanglesByTypeAndAspectRatio(targetRectangles, equipmentType)
+    const recognizedResults: Record<number, {id: string, confidence: number}[]> = {}
+    
+    const processPromises = Object.entries(rectangleGroups)
+      .filter(([_, groupRects]) => groupRects.length > 0)
+      .map(async ([groupType, groupRects]) => {
+        try {
+          const { results, originalRectIds } = await processRectangleGroup(
+            targetRectangles,
+            imageUrl,
+            groupType as DetectEquipmentType,
+            groupRects
+          )
+          
+          results.forEach((result, idx) => {
+            // 使用矩形ID作为键，而不是索引
+            recognizedResults[originalRectIds[idx]] = result
+          })
+        } catch (error) {
+          console.error(`Failed to process group ${groupType}:`, error)
+          // 继续处理其他组，而不是立即终止
+        }
+      })
+    
+    await Promise.all(processPromises)
+    return recognizedResults
+  }
+
+  // 识别单个equipment
+  const recognizeSingleEquipment = async (rectIndex: number) => {
+    try {
+      setIsRecognizing(true)
+      if (!imageRef.current) {
+        throw new Error("Image not found")
+      }
+      
+      // 获取单个矩形
+      const targetRect = rectangles[rectIndex]
+      if (!targetRect) {
+        throw new Error("Rectangle not found")
+      }
+      
+      // 只识别单个矩形
+      const results = await performEquipmentRecognition(
+        [targetRect],
+        imageRef.current.src,
+        type
+      )
+      
+      if (Object.keys(results).length > 0) {
+        // 合并新识别结果
+        const newRecognizedEquipments = {
+          ...recognizedEquipments,
+          ...results
+        }
+        setRecognizedEquipments(newRecognizedEquipments)
+        onRecognitionResults?.(newRecognizedEquipments)
+      }
+    } catch (error) {
+      console.error("Failed to recognize single equipment:", error)
+    } finally {
+      setIsRecognizing(false)
+    }
+  }
+
+  // 重构后的设备识别主函数
   const recognizeEquipment = async (autoRectangles?: Rectangle[]) => {
     try {
       setIsRecognizing(true)
@@ -308,31 +383,12 @@ export function ImageUploadWithRecognition({
       }
 
       const usingRectangles = autoRectangles || rectangles
-      const rectangleGroups = groupRectanglesByTypeAndAspectRatio(usingRectangles, type)
-      const recognizedResults: Record<number, {id: string, confidence: number}[]> = {}
       
-      const processPromises = Object.entries(rectangleGroups)
-        .filter(([_, groupRects]) => groupRects.length > 0)
-        .map(async ([groupType, groupRects]) => {
-          try {
-            const { results, originalRectIds } = await processRectangleGroup(
-              usingRectangles,
-              imageRef.current!.src,
-              groupType as DetectEquipmentType,
-              groupRects
-            )
-            
-            results.forEach((result, idx) => {
-              // 使用矩形ID作为键，而不是索引
-              recognizedResults[originalRectIds[idx]] = result
-            })
-          } catch (error) {
-            console.error(`Failed to process group ${groupType}:`, error)
-            // 继续处理其他组，而不是立即终止
-          }
-        })
-      
-      await Promise.all(processPromises)
+      const recognizedResults = await performEquipmentRecognition(
+        usingRectangles,
+        imageRef.current.src,
+        type
+      )
       
       if (Object.keys(recognizedResults).length > 0) {
         setRecognizedEquipments(recognizedResults)

@@ -68,7 +68,7 @@ const image_sizes: Record<DetectEquipmentType, [number, number]> = {
   "weapon/normal": [280, 160],
   "summon/party_main": [196, 340],
   "summon/party_sub": [184, 138],
-  "chara": [196, 408],
+  "chara": [78, 142],
 }
 
 export const getImageDescriptorsFromImageAndRectangles = async (imageUrl: string, rectangles: Rectangle[], equipmentDetectType: DetectEquipmentType) => {

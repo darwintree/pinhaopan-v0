@@ -33,7 +33,7 @@ export function getEquipmentPhotoUrl(id: string, equipmentType?: EquipmentType) 
     throw new Error("NEXT_OFFICIAL_ASSETS_BASE_URL is not set")
   }
   if (id.startsWith("f_")) {
-    return `${baseUrl}/assets/img/sp/gacha/assets/balloon_s/${id}_01.png`
+    return `${baseUrl}/assets/img/sp/assets/npc/m/${normalizedId}_01.jpg`
   }
   if (id.startsWith("party_main_") || id.startsWith("party_sub_")) {
     return `${baseUrl}/assets/img/sp/assets/summon/party_sub/${normalizedId}.jpg`
@@ -44,7 +44,7 @@ export function getEquipmentPhotoUrl(id: string, equipmentType?: EquipmentType) 
   if (equipmentType) {
     switch (equipmentType) {
       case "chara":
-        return `${baseUrl}/assets/img/sp/gacha/assets/balloon_s/${id}_01.png`
+        return `${baseUrl}/assets/img/sp/assets/npc/m/${normalizedId}_01.jpg`
       case "weapon":
         return `${baseUrl}/assets/img/sp/assets/weapon/m/${normalizedId}.jpg`
       case "summon":

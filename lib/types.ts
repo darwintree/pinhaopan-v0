@@ -1,3 +1,5 @@
+import type { Rectangle } from "./utils";
+
 interface ButtonCount {
   skill: number // 技能按键数
   summon: number // 召唤按键数
@@ -90,4 +92,22 @@ export interface GuideQueryParams {
   weaponConditions?: EquipmentFilterCondition[]
   summonConditions?: EquipmentFilterCondition[]
   charaConditions?: EquipmentFilterCondition[]
+}
+
+export type RectangleMode = "individual" | "mask";
+
+export interface MaskData {
+  position: { x: number; y: number };
+  size: { width: number; height: number };
+  aspectRatio: number;
+  presetRectangles: Rectangle[];
+  presetType: "grid3x3" | "weapon" | "summon" | "chara";
+}
+
+export interface ModeData {
+  individual: {
+    rectangles: Rectangle[];
+    recognizedEquipments: Record<number, {id: string, confidence: number}[]>;
+  };
+  mask: MaskData;
 }

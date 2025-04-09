@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react'
 import { DetailedEquipmentData } from '@/lib/types'
+import chara from '@/public/list/chara.json'
+import weapon from '@/public/list/weapon.json'
+import summon from '@/public/list/summon.json'
+
 
 export interface EquipmentsList {
   "chara": DetailedEquipmentData[],
@@ -94,17 +98,9 @@ export function useEquipmentsList() {
       try {
         setLoading(true)
         let data: EquipmentsList = {
-          chara: [],
-          weapon: [],
-          summon: [],
-        }
-        for (const type of ["chara", "weapon", "summon"]) {
-          const response = await fetch(`/list/${type}.json`)
-          if (!response.ok) {
-            throw new Error('Failed to fetch equipments')
-          }
-          const json_data = await response.json()
-          data[type as keyof EquipmentsList] = parseListToDetailedEquipmentData(json_data)
+          chara: parseListToDetailedEquipmentData(chara),
+          weapon: parseListToDetailedEquipmentData(weapon),
+          summon: parseListToDetailedEquipmentData(summon),
         }
         setEquipmentsList(data)
       } catch (err) {

@@ -7,6 +7,32 @@ export interface EquipmentsList {
   "summon": DetailedEquipmentData[],
 }
 
+const seriesNameToChineseMap = {
+  "[レヴァンスウェポン]": "[六属高难(机神)]",
+  "[マグナシリーズ]": "[方阵1.0]",
+  "[レガリアシリーズ]": "[方阵2.0]",
+  "[マグナ・リバースシリーズ]": "[方阵3.0]",
+  "[ワールドシリーズ]": "[世界琴]",
+  "[リミテッドシリーズ]": "[LM]",
+  "[エニアドシリーズ]": "[九柱神]",
+  "[アンセスタルシリーズ]": "[龙武(掉落)]",
+  "[ドラゴニックウェポン]": "[龙武(制作)]",
+  "[ドラゴニックウェポン・オリジン]": "[龙武·起源]",
+  "[アストラルウェポン]": "[巴布武]",
+  "[オメガウェポン]": "[U武]",
+  "[バハムートウェポン]": "[巴武]",
+  "[ルミナスシリーズ]": "[新石油(150金月)]",
+  "[スペリオルシリーズ]": "[石油武(100金月)]",
+  "[ヴィンテージシリーズ]": "[金月武(30金月)]",
+}
+
+function seriesNameToChinese(seriesName: string) {
+  if (seriesName in seriesNameToChineseMap) {
+    return seriesNameToChineseMap[seriesName as keyof typeof seriesNameToChineseMap]
+  }
+  return seriesName
+}
+
 function normalizeElement(element: string) {
   switch (element) {
     case "1":
@@ -41,7 +67,7 @@ function parseListToDetailedEquipmentData(list: any): DetailedEquipmentData[] {
       categories.push(...item["tag[]"].split(";"))
     }
     if (item["series_name"]) {
-      categories.push(item["series_name"])
+      categories.push(seriesNameToChinese(item["series_name"]))
     }
     const result = {
       id: item.ID,

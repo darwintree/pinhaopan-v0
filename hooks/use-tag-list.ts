@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-
+import tag from '@/public/list/tags.json'
 export interface Tag {
   name: string
   description: string
@@ -17,11 +17,7 @@ export function useTagList() {
     async function fetchTagList() {
       try {
         setLoading(true)
-        const response = await fetch('/list/tags.json')
-        if (!response.ok) {
-          throw new Error('Failed to fetch quest list')
-        }
-        const jsonData = await response.json() as Tag[]
+        const jsonData = tag as Tag[]
         setTagList(jsonData)
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Unknown error'))

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import quest from '@/public/list/quest.json'
 
 export interface Quest {
   quest: string
@@ -25,11 +26,7 @@ export function useQuestList() {
     async function fetchQuestList() {
       try {
         setLoading(true)
-        const response = await fetch('/list/quest.json')
-        if (!response.ok) {
-          throw new Error('Failed to fetch quest list')
-        }
-        const jsonData = await response.json() as RawQuest[]
+        const jsonData = quest as RawQuest[]
         setQuestList(jsonData.map(quest => ({
           quest: quest.chapter_id,
           name: quest.quest_name,

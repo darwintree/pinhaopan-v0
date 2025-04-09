@@ -1,8 +1,8 @@
 import type { GuidePostData, GuideData, EquipmentFilterCondition } from "./types"
 
 // 设置远程服务器URL
-const API_BASE_URL = process.env.REMOTE_API_URL
-const API_KEY = process.env.REMOTE_API_KEY
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY
 
 // 构建请求头
 const getHeaders = () => {

@@ -21,6 +21,7 @@ import { useTagList } from "@/hooks/use-tag-list"
 import { useQuestList } from "@/hooks/use-quest-list"
 import { cn } from "@/lib/utils"
 import Giscus from "@giscus/react"
+import { getGuide } from "@/lib/remote-db"
 
 export default function GuidePage() {
   const router = useRouter()
@@ -67,9 +68,13 @@ export default function GuidePage() {
 
   useEffect(() => {
     const fetchGuide = async () => {
+      if (!params.id) {
+        setLoading(false)
+        return
+      }
+      
       try {
-        const response = await fetch(`/api/guides/${params.id}`)
-        const data = await response.json()
+        const data = await getGuide(params.id as string)
         setGuide(data)
       } catch (error) {
         console.error("Failed to fetch guide:", error)

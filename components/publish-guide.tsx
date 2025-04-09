@@ -22,6 +22,7 @@ import { resizeImageWithAspectRatio } from "@/lib/utils"
 import { UsersIcon } from "@/components/icon/users-icon"
 import { SwordIcon } from "@/components/icon/sword-icon"
 import { SparklesIcon } from "@/components/icon/sparkles-icon"
+import { saveGuide } from "@/lib/remote-db"
 
 export function PublishGuide() {
   // Form states
@@ -159,19 +160,8 @@ export function PublishGuide() {
 
       console.log(postData)
 
-      // Send the data to the API
-      const response = await fetch("/api/guides/publish", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(postData),
-      })
-
-      if (!response.ok) {
-        const error = await response.json()
-        throw new Error(error.error || "发布失败")
-      }
+      // 使用remote-db的saveGuide函数替代直接调用API
+      const guideId = await saveGuide(postData)
 
       // Reset form on success
       setName("")

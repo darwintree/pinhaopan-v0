@@ -15,6 +15,7 @@ import { EquipmentSelector } from "@/components/equipment-selector"
 import { QuestSelector } from "@/components/quest-selector"
 import { TagSelector } from "@/components/tag-selector"
 import { ToggleInput } from "@/components/ui/toggle-input"
+import { getGuides } from "@/lib/remote-db"
 
 
 
@@ -173,65 +174,53 @@ export function BrowseGuides() {
 
   // Fetch guides data from API
   useEffect(() => {
-    const fetchData = async () => {
+    async function fetchData() {
       setLoading(true)
+      
       try {
-        const params = new URLSearchParams()
+        // 构建查询对象
+        const queryObj: any = {}
         
-        // 添加搜索条件
         if (selectedQuest) {
-          params.append("quest", selectedQuest)
+          queryObj.quest = selectedQuest
         }
         
-        // 添加标签
-        selectedTags.forEach(tag => {
-          params.append("tags", tag)
-        })
+        if (selectedTags.length > 0) {
+          queryObj.tags = selectedTags
+        }
         
-        // 添加时间范围（使用防抖后的值，只有在启用时才添加）
         if (timeFilterEnabled) {
-          params.append("timeRange", debouncedTimeRange.join(","))
+          queryObj.timeRange = debouncedTimeRange
         }
         
-        // 添加日期范围
-        if (dateRange.from || dateRange.to) {
-          const dateRangeStr = [
-            dateRange.from?.toISOString() || "",
-            dateRange.to?.toISOString() || ""
-          ].join(",")
-          params.append("dateRange", dateRangeStr)
+        if (dateRange.from && dateRange.to) {
+          queryObj.dateRange = [dateRange.from, dateRange.to]
         }
         
-        // 添加排序条件
-        params.append("sortField", sortField)
-        params.append("sortDirection", sortDirection)
-
-        // 添加装备条件
+        if (sortField) {
+          queryObj.sort = { field: sortField, direction: sortDirection }
+        }
+        
         if (selectedWeaponConditions.length > 0) {
-          params.append("weaponConditions", JSON.stringify(selectedWeaponConditions))
+          queryObj.weaponConditions = selectedWeaponConditions
         }
+        
         if (selectedSummonConditions.length > 0) {
-          params.append("summonConditions", JSON.stringify(selectedSummonConditions))
+          queryObj.summonConditions = selectedSummonConditions
         }
+        
         if (selectedCharaConditions.length > 0) {
-          params.append("charaConditions", JSON.stringify(selectedCharaConditions))
+          queryObj.charaConditions = selectedCharaConditions
         }
 
-        const response = await fetch(`/api/guides?${params}`)
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        const data = await response.json()
-        
-        if (!data.guides || !Array.isArray(data.guides)) {
+        // 调用remote-db的getGuides函数
+        const guides = await getGuides(queryObj)
+        console.log(guides)
+        if (!guides || !Array.isArray(guides)) {
           throw new Error("Invalid response format: guides is missing or not an array")
         }
         
-        setGuides(data.guides)
-        setAvailableTags(data.availableTags || [])
-        setAvailableWeapons(data.availableWeapons || [])
-        setAvailableSummons(data.availableSummons || [])
-        setAvailableCharas(data.availableCharas || [])
+        setGuides(guides)
       } catch (error) {
         console.error("Failed to fetch guides data:", error)
         // 可以添加错误提示UI

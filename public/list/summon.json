@@ -3,6 +3,7 @@
     "ID": "0",
     "name_chs": "字符串",
     "name_jp": "字符串",
+    "series_name": "字符串",
     "category": "字符串",
     "element": "0",
     "tag[]": "字符串",
@@ -14,7 +15,6 @@
     "name_jp": "ウィンドラビット",
     "category": "金币",
     "element": "4",
-    "tag[]": "",
     "rarity": "1"
   },
   {
@@ -23,7 +23,6 @@
     "name_jp": "エアグレイブ",
     "category": "金币",
     "element": "4",
-    "tag[]": "",
     "rarity": "1"
   },
   {
@@ -32,7 +31,6 @@
     "name_jp": "キラービー",
     "category": "金币",
     "element": "1",
-    "tag[]": "",
     "rarity": "1"
   },
   {
@@ -41,7 +39,6 @@
     "name_jp": "ゴブリン",
     "category": "金币",
     "element": "3",
-    "tag[]": "",
     "rarity": "1"
   },
   {
@@ -50,7 +47,6 @@
     "name_jp": "スケール",
     "category": "金币",
     "element": "4",
-    "tag[]": "",
     "rarity": "1"
   },
   {
@@ -59,7 +55,6 @@
     "name_jp": "スニッパー",
     "category": "金币",
     "element": "2",
-    "tag[]": "",
     "rarity": "1"
   },
   {
@@ -68,7 +63,6 @@
     "name_jp": "ミートミキサー",
     "category": "金币",
     "element": "2",
-    "tag[]": "",
     "rarity": "1"
   },
   {
@@ -77,16 +71,15 @@
     "name_jp": "ラウンドウルフ",
     "category": "金币",
     "element": "3",
-    "tag[]": "",
     "rarity": "1"
   },
   {
     "ID": "2010012000",
     "name_chs": "召唤石幻元",
     "name_jp": "サモンミラージュ",
+    "series_name": "[強化素材]",
     "category": "强化素材",
     "element": "5",
-    "tag[]": "",
     "rarity": "1"
   },
   {
@@ -95,7 +88,6 @@
     "name_jp": "ウルフリーダー",
     "category": "金币",
     "element": "3",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -104,7 +96,6 @@
     "name_jp": "エムダラビット",
     "category": "金币",
     "element": "4",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -113,7 +104,6 @@
     "name_jp": "ホーンバード",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -122,7 +112,6 @@
     "name_jp": "ラーヴァゴーレム",
     "category": "金币",
     "element": "1",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -131,7 +120,6 @@
     "name_jp": "ラヴァード",
     "category": "金币",
     "element": "1",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -140,7 +128,6 @@
     "name_jp": "風のエレメンタル",
     "category": "金币",
     "element": "4",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -149,7 +136,6 @@
     "name_jp": "スケルトン",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -158,7 +144,6 @@
     "name_jp": "雨切蜻蛉",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -167,7 +152,6 @@
     "name_jp": "ランページシェル",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -176,7 +160,6 @@
     "name_jp": "ミノタウロス",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -185,7 +168,6 @@
     "name_jp": "マンドラゴラ",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -194,7 +176,6 @@
     "name_jp": "スリーピィ",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -203,7 +184,6 @@
     "name_jp": "ジェリー",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -212,7 +192,6 @@
     "name_jp": "マイトフィッシュ",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -221,7 +200,6 @@
     "name_jp": "剣鮫",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -230,7 +208,6 @@
     "name_jp": "火のエレメンタル",
     "category": "金币",
     "element": "1",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -239,7 +216,6 @@
     "name_jp": "水のエレメンタル",
     "category": "金币",
     "element": "2",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -248,34 +224,33 @@
     "name_jp": "土のエレメンタル",
     "category": "金币",
     "element": "3",
-    "tag[]": "",
     "rarity": "2"
   },
   {
     "ID": "2020021000",
     "name_chs": "天使",
     "name_jp": "エンジェル",
+    "series_name": "[強化素材]",
     "category": "强化素材",
     "element": "5",
-    "tag[]": "",
     "rarity": "2"
   },
   {
     "ID": "2030000000",
     "name_chs": "提亚玛特",
     "name_jp": "ティアマト",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "4",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030001000",
     "name_chs": "科罗萨斯",
     "name_jp": "コロッサス",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "1",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -284,7 +259,6 @@
     "name_jp": "プロトバハムート",
     "category": "特殊",
     "element": "6",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -293,7 +267,6 @@
     "name_jp": "グリフォン",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -302,7 +275,6 @@
     "name_jp": "ゴーレム",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -311,7 +283,6 @@
     "name_jp": "ヒドラ",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -320,7 +291,6 @@
     "name_jp": "ワイバーン",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -329,7 +299,6 @@
     "name_jp": "マイコニド",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -338,7 +307,6 @@
     "name_jp": "ヘルハウンド",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -347,16 +315,15 @@
     "name_jp": "グレイブディガー",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030011000",
     "name_chs": "利维坦",
     "name_jp": "リヴァイアサン",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "2",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -365,22 +332,22 @@
     "name_jp": "機械兵・改",
     "category": "特典",
     "element": "1",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030015000",
     "name_chs": "尤格多拉希尔",
     "name_jp": "ユグドラシル",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "3",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030016000",
     "name_chs": "橄榄石宝石兽",
     "name_jp": "カーバンクル・ペリドット",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "特殊",
     "element": "4",
     "tag[]": "有用",
@@ -390,9 +357,9 @@
     "ID": "2030017000",
     "name_chs": "大天使",
     "name_jp": "アークエンジェル",
+    "series_name": "[強化素材]",
     "category": "强化素材",
     "element": "5",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -408,9 +375,9 @@
     "ID": "2030032000",
     "name_chs": "修瓦利耶",
     "name_jp": "シュヴァリエ",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "5",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -419,16 +386,15 @@
     "name_jp": "カクターマン",
     "category": "特典",
     "element": "2",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030041000",
     "name_chs": "塞勒斯特",
     "name_jp": "セレスト",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "6",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -444,108 +410,108 @@
     "ID": "2030062000",
     "name_chs": "岚龙的提亚玛特",
     "name_jp": "嵐竜のティアマト",
+    "series_name": "[マグナシリーズ]",
     "category": "特典",
     "element": "4",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030063000",
     "name_chs": "机炎的科罗萨斯",
     "name_jp": "機炎のコロッサス",
+    "series_name": "[マグナシリーズ]",
     "category": "特典",
     "element": "1",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030064000",
     "name_chs": "海神的利维坦",
     "name_jp": "海神のリヴァイアサン",
+    "series_name": "[マグナシリーズ]",
     "category": "特典",
     "element": "2",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030065000",
     "name_chs": "创树的尤格多拉希尔",
     "name_jp": "創樹のユグドラシル",
+    "series_name": "[マグナシリーズ]",
     "category": "特典",
     "element": "3",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030066000",
     "name_chs": "骑解的修瓦利耶",
     "name_jp": "騎解のシュヴァリエ",
+    "series_name": "[マグナシリーズ]",
     "category": "特典",
     "element": "5",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030067000",
     "name_chs": "黑雾的塞勒斯特",
     "name_jp": "黒霧のセレスト",
+    "series_name": "[マグナシリーズ]",
     "category": "特典",
     "element": "6",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030073000",
     "name_chs": "红玉宝石兽",
     "name_jp": "紅玉のカーバンクル",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "特典",
     "element": "1",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030074000",
     "name_chs": "蓝玉宝石兽",
     "name_jp": "藍玉のカーバンクル",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "特典",
     "element": "2",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030075000",
     "name_chs": "琥珀宝石兽",
     "name_jp": "琥珀のカーバンクル",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "特典",
     "element": "3",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030076000",
     "name_chs": "翠玉宝石兽",
     "name_jp": "翠玉のカーバンクル",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "特典",
     "element": "4",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030077000",
     "name_chs": "月白宝石兽",
     "name_jp": "月白のカーバンクル",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "特典",
     "element": "5",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2030078000",
     "name_chs": "黑玉宝石兽",
     "name_jp": "黒玉のカーバンクル",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "特典",
     "element": "6",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -563,7 +529,6 @@
     "name_jp": "サタン",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -572,7 +537,6 @@
     "name_jp": "マキュラ・マリウス",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -581,7 +545,6 @@
     "name_jp": "雷霆公",
     "category": "普通",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -590,7 +553,6 @@
     "name_jp": "Dエンジェル・オリヴィエ",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -599,7 +561,6 @@
     "name_jp": "ケイブバット",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -608,7 +569,6 @@
     "name_jp": "ウラザナ",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -617,7 +577,6 @@
     "name_jp": "ルーマシーグリフォン",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -635,7 +594,6 @@
     "name_jp": "氷竜ウィリヌス",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -644,7 +602,6 @@
     "name_jp": "風霊エルメンヒルデ",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -653,7 +610,6 @@
     "name_jp": "グラニ",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -671,13 +627,13 @@
     "name_jp": "メルトランサー",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "2"
   },
   {
     "ID": "2030021000",
     "name_chs": "海蓝石宝石兽",
     "name_jp": "カーバンクル・アクアマリン",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "普通",
     "element": "2",
     "tag[]": "有用",
@@ -689,7 +645,6 @@
     "name_jp": "ケツァルカトル",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -707,7 +662,6 @@
     "name_jp": "ランニングトーチ",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -716,7 +670,6 @@
     "name_jp": "スライム",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -725,7 +678,6 @@
     "name_jp": "火竜ヴレッザレク",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -734,13 +686,13 @@
     "name_jp": "ストーンゴーレム",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "3"
   },
   {
     "ID": "2040003000",
     "name_chs": "巴哈姆特",
     "name_jp": "バハムート",
+    "series_name": "[プロヴィデンスシリーズ]",
     "category": "贵族",
     "element": "6",
     "tag[]": "友召;属攻贵",
@@ -761,7 +713,6 @@
     "name_jp": "インプ",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -770,7 +721,6 @@
     "name_jp": "リッチ",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -788,7 +738,6 @@
     "name_jp": "ボーンネイル",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -797,7 +746,6 @@
     "name_jp": "トワイライトフライ",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -806,7 +754,6 @@
     "name_jp": "辺獄の亡者",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -815,7 +762,6 @@
     "name_jp": "ルインガーゴイル",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -824,7 +770,6 @@
     "name_jp": "ピクシー",
     "category": "普通",
     "element": "5",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -833,7 +778,6 @@
     "name_jp": "バアル",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -851,13 +795,13 @@
     "name_jp": "ロッド",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "2"
   },
   {
     "ID": "2030031000",
     "name_chs": "石榴石宝石兽",
     "name_jp": "カーバンクル・ガーネット",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "普通",
     "element": "1",
     "tag[]": "有用",
@@ -887,7 +831,6 @@
     "name_jp": "風鈴茸",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -896,7 +839,6 @@
     "name_jp": "スピリット",
     "category": "普通",
     "element": "5",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -905,7 +847,6 @@
     "name_jp": "クロウラー",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "2"
   },
   {
@@ -914,7 +855,6 @@
     "name_jp": "風竜イールシアス",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -923,7 +863,6 @@
     "name_jp": "カスケードジェリー",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -932,7 +871,6 @@
     "name_jp": "セイレーン",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -948,6 +886,7 @@
     "ID": "2040020000",
     "name_chs": "提亚玛特·玛格纳",
     "name_jp": "ティアマト・マグナ",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "4",
     "tag[]": "方阵;友召",
@@ -959,7 +898,6 @@
     "name_jp": "アテナ",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -975,6 +913,7 @@
     "ID": "2030039000",
     "name_chs": "玛瑙宝石兽",
     "name_jp": "カーバンクル・オニキス",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "普通",
     "element": "6",
     "tag[]": "有用",
@@ -986,7 +925,6 @@
     "name_jp": "アポロン",
     "category": "普通",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1020,6 +958,7 @@
     "ID": "2040027000",
     "name_chs": "尤格多拉希尔·玛格纳",
     "name_jp": "ユグドラシル・マグナ",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "3",
     "tag[]": "方阵;友召",
@@ -1029,6 +968,7 @@
     "ID": "2030042000",
     "name_chs": "蛋白石宝石兽",
     "name_jp": "カーバンクル・オパール",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "普通",
     "element": "5",
     "tag[]": "有用",
@@ -1040,7 +980,6 @@
     "name_jp": "オーディン",
     "category": "普通",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1056,6 +995,7 @@
     "ID": "2040028000",
     "name_chs": "利维坦·玛格纳",
     "name_jp": "リヴァイアサン・マグナ",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "2",
     "tag[]": "方阵;友召",
@@ -1067,7 +1007,6 @@
     "name_jp": "ケルベロス",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1076,7 +1015,6 @@
     "name_jp": "ミスラ",
     "category": "常规",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1094,7 +1032,6 @@
     "name_jp": "バジリスク",
     "category": "特殊",
     "element": "6",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -1103,7 +1040,6 @@
     "name_jp": "アニーリーフ",
     "category": "特殊",
     "element": "1",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -1112,7 +1048,6 @@
     "name_jp": "アナト",
     "category": "特殊",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1121,7 +1056,6 @@
     "name_jp": "キュベレー",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1137,6 +1071,7 @@
     "ID": "2040034000",
     "name_chs": "科罗萨斯·玛格纳",
     "name_jp": "コロッサス・マグナ",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "1",
     "tag[]": "方阵;友召",
@@ -1146,9 +1081,9 @@
     "ID": "2040038000",
     "name_chs": "布伦希尔德",
     "name_jp": "ブリュンヒルデ",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1166,7 +1101,6 @@
     "name_jp": "ナタク",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1175,7 +1109,6 @@
     "name_jp": "マルドゥーク",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1202,13 +1135,13 @@
     "name_jp": "マヒシャ",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040047000",
     "name_chs": "修瓦利耶·玛格纳",
     "name_jp": "シュヴァリエ・マグナ",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "5",
     "tag[]": "方阵;友召",
@@ -1220,7 +1153,6 @@
     "name_jp": "オケアノス",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1238,13 +1170,13 @@
     "name_jp": "フェンリル",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040046000",
     "name_chs": "塞勒斯特·玛格纳",
     "name_jp": "セレスト・マグナ",
+    "series_name": "[マグナシリーズ]",
     "category": "常规",
     "element": "6",
     "tag[]": "方阵;友召",
@@ -1263,6 +1195,7 @@
     "ID": "2040056000",
     "name_chs": "路西菲尔",
     "name_jp": "ルシフェル",
+    "series_name": "[プロヴィデンスシリーズ]",
     "category": "贵族",
     "element": "5",
     "tag[]": "友召;属攻贵",
@@ -1272,18 +1205,18 @@
     "ID": "2040057000",
     "name_chs": "[觉醒魔王]神崎兰子",
     "name_jp": "[覚醒魔王]神崎蘭子",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040058000",
     "name_chs": "诸星琪拉莉",
     "name_jp": "諸星きらり",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1292,7 +1225,6 @@
     "name_jp": "メドゥーサ",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1319,7 +1251,6 @@
     "name_jp": "フラム＝グラス",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1335,9 +1266,9 @@
     "ID": "2040065000",
     "name_chs": "至高秩序",
     "name_jp": "ジ・オーダー・グランデ",
+    "series_name": "[デュナミスシリーズ]",
     "category": "贵族",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1346,7 +1277,6 @@
     "name_jp": "サテュロス",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1364,7 +1294,6 @@
     "name_jp": "ガルーダ",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1373,7 +1302,6 @@
     "name_jp": "アワリティア",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1382,13 +1310,13 @@
     "name_jp": "[ラブリーナイト]きらり",
     "category": "联动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2030024000",
     "name_chs": "锆英石宝石兽",
     "name_jp": "カーバンクル・ジルコン",
+    "series_name": "[カーバンクルシリーズ]",
     "category": "普通",
     "element": "3",
     "tag[]": "有用",
@@ -1400,7 +1328,6 @@
     "name_jp": "ネプチューン",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1416,6 +1343,7 @@
     "ID": "2040080000",
     "name_chs": "宙斯",
     "name_jp": "ゼウス",
+    "series_name": "[オプティマスシリーズ]",
     "category": "普通",
     "element": "5",
     "tag[]": "老王",
@@ -1434,6 +1362,7 @@
     "ID": "2040084000",
     "name_chs": "泰坦",
     "name_jp": "ティターン",
+    "series_name": "[オプティマスシリーズ]",
     "category": "普通",
     "element": "3",
     "tag[]": "老王",
@@ -1452,6 +1381,7 @@
     "ID": "2040090000",
     "name_chs": "哈迪斯",
     "name_jp": "ハデス",
+    "series_name": "[オプティマスシリーズ]",
     "category": "普通",
     "element": "6",
     "tag[]": "老王",
@@ -1463,7 +1393,6 @@
     "name_jp": "ヴェセラゴ",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1472,13 +1401,13 @@
     "name_jp": "胎動する世界",
     "category": "特典",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040094000",
     "name_chs": "阿耆尼",
     "name_jp": "アグニス",
+    "series_name": "[オプティマスシリーズ]",
     "category": "普通",
     "element": "1",
     "tag[]": "老王",
@@ -1497,6 +1426,7 @@
     "ID": "2040096000",
     "name_chs": "皮埃尔",
     "name_jp": "ピエール",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "5",
     "tag[]": "SS",
@@ -1508,13 +1438,13 @@
     "name_jp": "オータム・マイコニド",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040098000",
     "name_chs": "仄费罗斯",
     "name_jp": "ゼピュロス",
+    "series_name": "[オプティマスシリーズ]",
     "category": "普通",
     "element": "4",
     "tag[]": "老王",
@@ -1533,6 +1463,7 @@
     "ID": "2040100000",
     "name_chs": "伐楼那",
     "name_jp": "ヴァルナ",
+    "series_name": "[オプティマスシリーズ]",
     "category": "普通",
     "element": "2",
     "tag[]": "老王",
@@ -1551,6 +1482,7 @@
     "ID": "2040114000",
     "name_chs": "辉夜",
     "name_jp": "カグヤ",
+    "series_name": "[デュナミスシリーズ]",
     "category": "贵族",
     "element": "2",
     "tag[]": "友召",
@@ -1560,9 +1492,9 @@
     "ID": "2040122000",
     "name_chs": "战争三女神",
     "name_jp": "バイヴカハ",
+    "series_name": "[エピックシリーズ]",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1571,7 +1503,6 @@
     "name_jp": "氷海の覇王",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1580,7 +1511,6 @@
     "name_jp": "ディアンサ",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -1589,7 +1519,6 @@
     "name_jp": "リナリア",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -1598,7 +1527,6 @@
     "name_jp": "ハリエ",
     "category": "活动",
     "element": "1",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -1607,7 +1535,6 @@
     "name_jp": "カンナ",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -1616,7 +1543,6 @@
     "name_jp": "ジオラ",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -1625,16 +1551,15 @@
     "name_jp": "ティクニウトリ・ショロトル",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040125000",
     "name_chs": "普罗米修斯",
     "name_jp": "プロメテウス",
+    "series_name": "[エピックシリーズ]",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1650,9 +1575,9 @@
     "ID": "2040130000",
     "name_chs": "吉尔伽美什",
     "name_jp": "ギルガメッシュ",
+    "series_name": "[エピックシリーズ]",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1661,16 +1586,15 @@
     "name_jp": "ドゥルジ",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040134000",
     "name_chs": "阿努比斯",
     "name_jp": "アヌビス",
+    "series_name": "[エピックシリーズ]",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1679,16 +1603,15 @@
     "name_jp": "イケロス",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040144000",
     "name_chs": "赫克托尔",
     "name_jp": "ヘクトル",
+    "series_name": "[エピックシリーズ]",
     "category": "普通",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1697,7 +1620,6 @@
     "name_jp": "イルルヤンカシュ",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1706,7 +1628,6 @@
     "name_jp": "拘束破りし黒銀の翼",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1715,7 +1636,6 @@
     "name_jp": "クイーンビー",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1724,7 +1644,6 @@
     "name_jp": "黄龍",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1733,7 +1652,6 @@
     "name_jp": "黒麒麟",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1742,16 +1660,15 @@
     "name_jp": "超鋼巨人・ゴッドギガンテス",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040160000",
     "name_chs": "海翁",
     "name_jp": "カー・オン",
+    "series_name": "[エピックシリーズ]",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1760,7 +1677,6 @@
     "name_jp": "ケット・シー",
     "category": "特典",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1769,7 +1685,6 @@
     "name_jp": "カツウォヌス",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1778,7 +1693,6 @@
     "name_jp": "守畏禍",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1787,7 +1701,6 @@
     "name_jp": "セスランス",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1796,16 +1709,15 @@
     "name_jp": "トレント",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040170000",
     "name_chs": "米莉亚",
     "name_jp": "ミリア",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1814,7 +1726,6 @@
     "name_jp": "テスカトリポカ",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1823,7 +1734,6 @@
     "name_jp": "ヴェローナ・ハート",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1832,7 +1742,6 @@
     "name_jp": "セト",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1841,7 +1750,6 @@
     "name_jp": "ゲルラ",
     "category": "活动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1850,7 +1758,6 @@
     "name_jp": "テュポーン",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1868,13 +1775,13 @@
     "name_jp": "ブルーオービット",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040185000",
     "name_chs": "湿婆",
     "name_jp": "シヴァ",
+    "series_name": "[ジェネシスシリーズ]",
     "category": "贵族",
     "element": "1",
     "tag[]": "友召;属攻贵",
@@ -1886,7 +1793,6 @@
     "name_jp": "トール",
     "category": "普通",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1895,13 +1801,13 @@
     "name_jp": "レヴィオンシスターズ",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040192000",
     "name_chs": "圣铃天使",
     "name_jp": "ベルエンジェル",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "5",
     "tag[]": "SS",
@@ -1913,7 +1819,6 @@
     "name_jp": "クレイゴーレム",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "3"
   },
   {
@@ -1922,7 +1827,6 @@
     "name_jp": "ローズクイーン",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1938,15 +1842,16 @@
     "ID": "2040199000",
     "name_chs": "炽天使的摇篮",
     "name_jp": "セラフィム・クレイドル",
+    "series_name": "[強化素材]",
     "category": "强化素材",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040205000",
     "name_chs": "神域守护·布洛蒂亚",
     "name_jp": "ゴッドガード・ブローディア",
+    "series_name": "[ジェネシスシリーズ]",
     "category": "贵族",
     "element": "3",
     "tag[]": "友召;属攻贵",
@@ -1958,7 +1863,6 @@
     "name_jp": "K・B・S・N",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1967,7 +1871,6 @@
     "name_jp": "美少女錬金術師",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1976,7 +1879,6 @@
     "name_jp": "ナハト",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1985,7 +1887,6 @@
     "name_jp": "リュミエールグルメ",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -1994,7 +1895,6 @@
     "name_jp": "アフロディーテ",
     "category": "普通",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2003,7 +1903,6 @@
     "name_jp": "フォレストレンジャー",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2012,7 +1911,6 @@
     "name_jp": "シャインホーク・ガルラ",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2021,13 +1919,13 @@
     "name_jp": "ンニ",
     "category": "活动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040225000",
     "name_chs": "欧罗巴",
     "name_jp": "エウロペ",
+    "series_name": "[ジェネシスシリーズ]",
     "category": "贵族",
     "element": "2",
     "tag[]": "友召;属攻贵",
@@ -2048,7 +1946,6 @@
     "name_jp": "ザオシェン",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2057,7 +1954,6 @@
     "name_jp": "シャローム",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2066,7 +1962,6 @@
     "name_jp": "アンクシャ",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2075,16 +1970,15 @@
     "name_jp": "俊秀の義剣士",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040234000",
     "name_chs": "小可",
     "name_jp": "ケロちゃん",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2093,7 +1987,6 @@
     "name_jp": "蒼紅之舞・竜胆",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2102,13 +1995,13 @@
     "name_jp": "スノウホワイト",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2030081000",
     "name_chs": "正义",
     "name_jp": "ジャスティス",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "2",
     "tag[]": "塔罗",
@@ -2118,6 +2011,7 @@
     "ID": "2030085000",
     "name_chs": "倒吊人",
     "name_jp": "ザ・ハングドマン",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "3",
     "tag[]": "塔罗",
@@ -2127,6 +2021,7 @@
     "ID": "2030089000",
     "name_chs": "死亡",
     "name_jp": "デス",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "6",
     "tag[]": "塔罗",
@@ -2136,6 +2031,7 @@
     "ID": "2030093000",
     "name_chs": "节制",
     "name_jp": "テンペランス",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "4",
     "tag[]": "塔罗",
@@ -2145,6 +2041,7 @@
     "ID": "2030097000",
     "name_chs": "恶魔",
     "name_jp": "ザ・デビル",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "1",
     "tag[]": "塔罗",
@@ -2154,6 +2051,7 @@
     "ID": "2030101000",
     "name_chs": "塔",
     "name_jp": "ザ・タワー",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "3",
     "tag[]": "塔罗",
@@ -2163,6 +2061,7 @@
     "ID": "2030105000",
     "name_chs": "星",
     "name_jp": "ザ・スター",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "5",
     "tag[]": "塔罗",
@@ -2172,6 +2071,7 @@
     "ID": "2030109000",
     "name_chs": "月",
     "name_jp": "ザ・ムーン",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "2",
     "tag[]": "塔罗",
@@ -2181,6 +2081,7 @@
     "ID": "2030113000",
     "name_chs": "太阳",
     "name_jp": "ザ・サン",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "1",
     "tag[]": "塔罗",
@@ -2190,6 +2091,7 @@
     "ID": "2030117000",
     "name_chs": "审判",
     "name_jp": "ジャッジメント",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "4",
     "tag[]": "塔罗",
@@ -2199,6 +2101,7 @@
     "ID": "2040236000",
     "name_chs": "正义",
     "name_jp": "ジャスティス",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "2",
     "tag[]": "塔罗",
@@ -2208,6 +2111,7 @@
     "ID": "2040237000",
     "name_chs": "倒吊人",
     "name_jp": "ザ・ハングドマン",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "3",
     "tag[]": "塔罗",
@@ -2217,6 +2121,7 @@
     "ID": "2040238000",
     "name_chs": "死亡",
     "name_jp": "デス",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "6",
     "tag[]": "塔罗",
@@ -2226,6 +2131,7 @@
     "ID": "2040239000",
     "name_chs": "节制",
     "name_jp": "テンペランス",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "4",
     "tag[]": "塔罗",
@@ -2235,6 +2141,7 @@
     "ID": "2040240000",
     "name_chs": "恶魔",
     "name_jp": "ザ・デビル",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "1",
     "tag[]": "塔罗",
@@ -2244,6 +2151,7 @@
     "ID": "2040241000",
     "name_chs": "塔",
     "name_jp": "ザ・タワー",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "3",
     "tag[]": "塔罗",
@@ -2253,6 +2161,7 @@
     "ID": "2040242000",
     "name_chs": "星",
     "name_jp": "ザ・スター",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "5",
     "tag[]": "塔罗",
@@ -2262,6 +2171,7 @@
     "ID": "2040243000",
     "name_chs": "月",
     "name_jp": "ザ・ムーン",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "2",
     "tag[]": "塔罗",
@@ -2271,6 +2181,7 @@
     "ID": "2040244000",
     "name_chs": "太阳",
     "name_jp": "ザ・サン",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "1",
     "tag[]": "塔罗",
@@ -2280,6 +2191,7 @@
     "ID": "2040245000",
     "name_chs": "审判",
     "name_jp": "ジャッジメント",
+    "series_name": "[アーカルムシリーズ]",
     "category": "塔罗",
     "element": "4",
     "tag[]": "塔罗",
@@ -2291,16 +2203,15 @@
     "name_jp": "アドラメレク",
     "category": "普通",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040255000",
     "name_chs": "艾伦",
     "name_jp": "エレン",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2309,13 +2220,13 @@
     "name_jp": "紅き穿光と黒き大鎌",
     "category": "活动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040261000",
     "name_chs": "格里姆尼尔",
     "name_jp": "グリームニル",
+    "series_name": "[ジェネシスシリーズ]",
     "category": "贵族",
     "element": "4",
     "tag[]": "友召;属攻贵",
@@ -2327,7 +2238,6 @@
     "name_jp": "ジョヤ",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2336,13 +2246,13 @@
     "name_jp": "ツクヨミ",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040275000",
     "name_chs": "哈鲁特&马鲁特",
     "name_jp": "ハールート・マールート",
+    "series_name": "[天司シリーズ]",
     "category": "贵族",
     "element": "5",
     "tag[]": "天司",
@@ -2361,6 +2271,7 @@
     "ID": "2040269000",
     "name_chs": "阿耆尼的余影",
     "name_jp": "アグニス・ディヴィジョン",
+    "series_name": "[オプティマス・ディヴィジョン]",
     "category": "活动",
     "element": "1",
     "tag[]": "老王;SS",
@@ -2370,6 +2281,7 @@
     "ID": "2040270000",
     "name_chs": "伐楼那的余影",
     "name_jp": "ヴァルナ・ディヴィジョン",
+    "series_name": "[オプティマス・ディヴィジョン]",
     "category": "活动",
     "element": "2",
     "tag[]": "老王;SS",
@@ -2379,6 +2291,7 @@
     "ID": "2040271000",
     "name_chs": "泰坦的余影",
     "name_jp": "ティターン・ディヴィジョン",
+    "series_name": "[オプティマス・ディヴィジョン]",
     "category": "活动",
     "element": "3",
     "tag[]": "老王;SS",
@@ -2388,6 +2301,7 @@
     "ID": "2040272000",
     "name_chs": "仄费罗斯的余影",
     "name_jp": "ゼピュロス・ディヴィジョン",
+    "series_name": "[オプティマス・ディヴィジョン]",
     "category": "活动",
     "element": "4",
     "tag[]": "老王;SS",
@@ -2397,6 +2311,7 @@
     "ID": "2040273000",
     "name_chs": "宙斯的余影",
     "name_jp": "ゼウス・ディヴィジョン",
+    "series_name": "[オプティマス・ディヴィジョン]",
     "category": "活动",
     "element": "5",
     "tag[]": "老王;SS",
@@ -2406,6 +2321,7 @@
     "ID": "2040274000",
     "name_chs": "哈迪斯的余影",
     "name_jp": "ハデス・ディヴィジョン",
+    "series_name": "[オプティマス・ディヴィジョン]",
     "category": "活动",
     "element": "6",
     "tag[]": "老王;SS",
@@ -2417,7 +2333,6 @@
     "name_jp": "兄弟砲ギガントブレイザー",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2426,13 +2341,13 @@
     "name_jp": "フレイ",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040203000",
     "name_chs": "乌列尔",
     "name_jp": "ウリエル",
+    "series_name": "[天司シリーズ]",
     "category": "贵族",
     "element": "3",
     "tag[]": "友召;属攻贵;天司",
@@ -2444,7 +2359,6 @@
     "name_jp": "古今独歩の大拳豪",
     "category": "活动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2453,7 +2367,6 @@
     "name_jp": "ゴリラ",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2462,22 +2375,22 @@
     "name_jp": "ルナール",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040288000",
     "name_chs": "摩尔加纳号",
     "name_jp": "モルガナカー",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040202000",
     "name_chs": "拉斐尔",
     "name_jp": "ラファエル",
+    "series_name": "[天司シリーズ]",
     "category": "贵族",
     "element": "4",
     "tag[]": "友召;属攻贵;天司",
@@ -2489,7 +2402,6 @@
     "name_jp": "ノビヨ",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2498,7 +2410,6 @@
     "name_jp": "ナリタ",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2507,25 +2418,24 @@
     "name_jp": "デンキンナギ",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040293000",
     "name_chs": "玛裘拉·玛利乌斯",
     "name_jp": "マキュラ・マリウス",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040294000",
     "name_chs": "杰夫提",
     "name_jp": "ジェフティ",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2534,7 +2444,6 @@
     "name_jp": "ケッタギア",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2543,7 +2452,6 @@
     "name_jp": "ハンサ",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2561,16 +2469,15 @@
     "name_jp": "坑道用大型掘削機",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040299000",
     "name_chs": "梅普鲁&米普鲁",
     "name_jp": "メップル&ミップル",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2579,13 +2486,13 @@
     "name_jp": "クッキング・ヴェイン",
     "category": "活动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040306000",
     "name_chs": "米迦勒",
     "name_jp": "ミカエル",
+    "series_name": "[天司シリーズ]",
     "category": "贵族",
     "element": "1",
     "tag[]": "友召;属攻贵;天司",
@@ -2606,16 +2513,15 @@
     "name_jp": "カラクラキル",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040303000",
     "name_chs": "公主骑士",
     "name_jp": "プリンセスナイト",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2633,13 +2539,13 @@
     "name_jp": "フラメクの契約者",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040311000",
     "name_chs": "加百列",
     "name_jp": "ガブリエル",
+    "series_name": "[天司シリーズ]",
     "category": "贵族",
     "element": "2",
     "tag[]": "友召;属攻贵;天司",
@@ -2669,7 +2575,6 @@
     "name_jp": "ビッグマーチ・オブ・ネコ",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2687,7 +2592,6 @@
     "name_jp": "神撃の竜",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2696,7 +2600,6 @@
     "name_jp": "ツッパリ魂",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2705,13 +2608,13 @@
     "name_jp": "魔鯛",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040327000",
     "name_chs": "沙利叶",
     "name_jp": "サリエル",
+    "series_name": "[天司シリーズ]",
     "category": "贵族",
     "element": "6",
     "tag[]": "友召;属攻贵;天司",
@@ -2723,7 +2626,6 @@
     "name_jp": "ゴルゴーン三姉妹",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2732,13 +2634,13 @@
     "name_jp": "レスラーより愛をこめて",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040330000",
     "name_chs": "梅塔特隆",
     "name_jp": "メタトロン",
+    "series_name": "[天司シリーズ]",
     "category": "贵族",
     "element": "5",
     "tag[]": "友召;属攻贵;天司",
@@ -2748,9 +2650,9 @@
     "ID": "2040331000",
     "name_chs": "C.C.",
     "name_jp": "C.C.",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2759,16 +2661,15 @@
     "name_jp": "RAINY DAY",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040333000",
     "name_chs": "尤格多拉希尔",
     "name_jp": "ユグドラシル",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2777,25 +2678,24 @@
     "name_jp": "ゴッド・アルバコア",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040335000",
     "name_chs": "萨缇洛斯",
     "name_jp": "サテュロス",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040336000",
     "name_chs": "蔷薇女王",
     "name_jp": "ローズクイーン",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2804,13 +2704,13 @@
     "name_jp": "ダンシング・マン",
     "category": "活动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040338000",
     "name_chs": "苏尔特",
     "name_jp": "スルト",
+    "series_name": "[クレストシリーズ]",
     "category": "普通",
     "element": "1",
     "tag[]": "刻印",
@@ -2822,13 +2722,13 @@
     "name_jp": "眠れる竜と獅子",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040340000",
     "name_chs": "龙吉公主",
     "name_jp": "竜吉公主",
+    "series_name": "[クレストシリーズ]",
     "category": "普通",
     "element": "2",
     "tag[]": "刻印",
@@ -2840,13 +2740,13 @@
     "name_jp": "蒼紅之舞・葉牡丹",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040342000",
     "name_chs": "土偶",
     "name_jp": "ドグー",
+    "series_name": "[クレストシリーズ]",
     "category": "普通",
     "element": "3",
     "tag[]": "刻印",
@@ -2858,13 +2758,13 @@
     "name_jp": "スカイキャリッジ☆ミ号",
     "category": "活动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040344000",
     "name_chs": "伊莱尔",
     "name_jp": "エッリル",
+    "series_name": "[クレストシリーズ]",
     "category": "普通",
     "element": "4",
     "tag[]": "刻印",
@@ -2874,9 +2774,9 @@
     "ID": "2040345000",
     "name_chs": "木克",
     "name_jp": "ムック",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2885,13 +2785,13 @@
     "name_jp": "プロトジョヤ",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040347000",
     "name_chs": "贝利尔",
     "name_jp": "ベリアル",
+    "series_name": "[プロヴィデンスシリーズ]",
     "category": "贵族",
     "element": "6",
     "tag[]": "友召;属攻贵",
@@ -2903,13 +2803,13 @@
     "name_jp": "大鎌を操りし漆黒",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040350000",
     "name_chs": "海姆达尔",
     "name_jp": "ヘイムダル",
+    "series_name": "[クレストシリーズ]",
     "category": "普通",
     "element": "5",
     "tag[]": "刻印",
@@ -2921,13 +2821,13 @@
     "name_jp": "空の安寧を守りし十天衆",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040352000",
     "name_chs": "奈亚拉托提普",
     "name_jp": "ナイアルラトホテップ",
+    "series_name": "[クレストシリーズ]",
     "category": "普通",
     "element": "6",
     "tag[]": "刻印",
@@ -2939,13 +2839,13 @@
     "name_jp": "疾風怒濤の傭兵コンビ",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040361000",
     "name_chs": "赤兔马",
     "name_jp": "セキトバ",
+    "series_name": "[ベルムシリーズ]",
     "category": "普通",
     "element": "1",
     "tag[]": "氪金黄龙",
@@ -2957,13 +2857,13 @@
     "name_jp": "一臂の力を揮う銀の軍師",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040363000",
     "name_chs": "卡律布狄斯",
     "name_jp": "カリュブディス",
+    "series_name": "[ベルムシリーズ]",
     "category": "普通",
     "element": "2",
     "tag[]": "氪金黄龙",
@@ -2975,7 +2875,6 @@
     "name_jp": "ゴールデンぴにゃこら太",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -2991,6 +2890,7 @@
     "ID": "2040366000",
     "name_chs": "猫头鹰",
     "name_jp": "オウルキャット",
+    "series_name": "[ベルムシリーズ]",
     "category": "普通",
     "element": "4",
     "tag[]": "氪金黄龙",
@@ -3011,13 +2911,13 @@
     "name_jp": "カキフライ",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040368000",
     "name_chs": "猛犸",
     "name_jp": "マンモス",
+    "series_name": "[ベルムシリーズ]",
     "category": "普通",
     "element": "3",
     "tag[]": "氪金黄龙",
@@ -3027,9 +2927,9 @@
     "ID": "2040369000",
     "name_chs": "雅典娜",
     "name_jp": "アテナ",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3038,7 +2938,6 @@
     "name_jp": "ゼノ・ウォフマナフ",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3047,25 +2946,24 @@
     "name_jp": "灼弩火罹",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040374000",
     "name_chs": "弗雷",
     "name_jp": "フレイ",
+    "series_name": "[浴衣]",
     "category": "季节限定",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040375000",
     "name_chs": "辉夜",
     "name_jp": "カグヤ",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3110,16 +3008,15 @@
     "name_jp": "結婚式",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040381000",
     "name_chs": "阿尔忒弥斯",
     "name_jp": "アルテミス",
+    "series_name": "[ベルムシリーズ]",
     "category": "普通",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3128,16 +3025,15 @@
     "name_jp": "ゼノ・サジタリウス",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040383000",
     "name_chs": "火神龙",
     "name_jp": "イグニスドラゴン",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3146,16 +3042,15 @@
     "name_jp": "竜騰虎闘の氷皇軍",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040385000",
     "name_chs": "吉尔尼特拉",
     "name_jp": "ジルニトラ",
+    "series_name": "[ベルムシリーズ]",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3164,7 +3059,6 @@
     "name_jp": "世界で一番カワイイ黄金像",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3173,25 +3067,24 @@
     "name_jp": "護りし者 クー・ケオロエワ",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040388000",
     "name_chs": "沙利叶",
     "name_jp": "サリエル",
+    "series_name": "[クリスマス]",
     "category": "季节限定",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040389000",
     "name_chs": "富冈义勇",
     "name_jp": "冨岡義勇",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3200,7 +3093,6 @@
     "name_jp": "ゼノ・コロゥ",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3209,16 +3101,15 @@
     "name_jp": "極鋼巨帝グランゴッドカイザー",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040392000",
     "name_chs": "野槌蛇",
     "name_jp": "ツチノコ",
+    "series_name": "[UMAシリーズ]",
     "category": "贵族",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3227,7 +3118,6 @@
     "name_jp": "ぼんやりピカピカの魔法",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3236,7 +3126,6 @@
     "name_jp": "月に降り立ちし三機神",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3245,7 +3134,6 @@
     "name_jp": "ゼノ・コキュートス",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3254,7 +3142,6 @@
     "name_jp": "十二神将水浴衣図",
     "category": "活动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3263,16 +3150,15 @@
     "name_jp": "偽りを裁く雷光",
     "category": "活动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040398000",
     "name_chs": "威尔纳斯",
     "name_jp": "ウィルナス",
+    "series_name": "[六竜シリーズ]",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3281,7 +3167,6 @@
     "name_jp": "ゼノ・ディアボロス",
     "category": "活动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3290,142 +3175,141 @@
     "name_jp": "宿命夜想曲･特攻隊",
     "category": "活动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040401000",
     "name_chs": "伽莱翁",
     "name_jp": "ガレヲン",
+    "series_name": "[六竜シリーズ]",
     "category": "普通",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040402000",
     "name_chs": "提亚玛特",
     "name_jp": "ティアマト",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040403000",
     "name_chs": "曼德拉草",
     "name_jp": "マンドラゴラ",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040405000",
     "name_chs": "桂小太郎&伊丽莎白",
     "name_jp": "桂小太郎&エリザベス",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040406000",
     "name_chs": "伊维亚",
     "name_jp": "イーウィヤ",
+    "series_name": "[六竜シリーズ]",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040407000",
     "name_chs": "静香&胖虎&小夫",
     "name_jp": "しずか＆ジャイアン＆スネ夫",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040408000",
     "name_chs": "别西卜",
     "name_jp": "ベルゼバブ",
+    "series_name": "[プロヴィデンスシリーズ]",
     "category": "贵族",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040404000",
     "name_chs": "黄金船&目白麦昆",
     "name_jp": "ゴールドシップ＆メジロマックイーン",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "3",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040409000",
     "name_chs": "露·欧",
     "name_jp": "ル・オー",
+    "series_name": "[六竜シリーズ]",
     "category": "普通",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040410000",
     "name_chs": "香托托II型",
     "name_jp": "シャントットII",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040411000",
     "name_chs": "贝利尔",
     "name_jp": "ベリアル",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040412000",
     "name_chs": "催眠菇",
     "name_jp": "スリーピィ",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040413000",
     "name_chs": "瓦姆杜斯",
     "name_jp": "ワムデュス",
+    "series_name": "[六竜シリーズ]",
     "category": "普通",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040414000",
     "name_chs": "乌索普&乔巴&弗兰奇&布鲁克&甚平",
     "name_jp": "ウソップ＆チョッパー＆フランキー＆ブルック＆ジンベエ",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040415000",
     "name_chs": "乌塔",
     "name_jp": "ウタ",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3434,70 +3318,69 @@
     "name_jp": "ヘカテー",
     "category": "普通",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040417000",
     "name_chs": "雅琪玛",
     "name_jp": "ヤチマ",
+    "series_name": "[プロヴィデンスシリーズ]",
     "category": "贵族",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040418000",
     "name_chs": "菲迪埃尔",
     "name_jp": "フェディエル",
+    "series_name": "[六竜シリーズ]",
     "category": "普通",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040419000",
     "name_chs": "三丽鸥伙伴☆",
     "name_jp": "サンリオキャラクターズ☆",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040420000",
     "name_chs": "刻耳柏洛斯",
     "name_jp": "ケルベロス",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040422000",
     "name_chs": "东堂葵",
     "name_jp": "東堂 葵",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040421000",
     "name_chs": "五条悟",
     "name_jp": "五条 悟",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040423000",
     "name_chs": "霸王龙",
     "name_jp": "ティラノサウルス",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3506,7 +3389,6 @@
     "name_jp": "ノワール",
     "category": "普通",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3515,34 +3397,33 @@
     "name_jp": "トゥナ＆シャーモン",
     "category": "活动",
     "element": "1",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040425000",
     "name_chs": "零零零",
     "name_jp": "トリプルゼロ",
+    "series_name": "[プロヴィデンスシリーズ]",
     "category": "贵族",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040428000",
     "name_chs": "玛尔斯",
     "name_jp": "マーズ",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040429000",
     "name_chs": "别西卜",
     "name_jp": "ベルゼバブ",
+    "series_name": "[水着]",
     "category": "季节限定",
     "element": "2",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3551,16 +3432,15 @@
     "name_jp": "蒼空の楔",
     "category": "活动",
     "element": "4",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040431000",
     "name_chs": "米莉姆·纳瓦",
     "name_jp": "ミリム・ナーヴァ",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
@@ -3569,25 +3449,24 @@
     "name_jp": "ゴッドラビットギガマックス",
     "category": "联动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040433000",
     "name_chs": "欧罗罗伽亚",
     "name_jp": "オロロジャイア",
+    "series_name": "[プロヴィデンスシリーズ]",
     "category": "贵族",
     "element": "6",
-    "tag[]": "",
     "rarity": "4"
   },
   {
     "ID": "2040434000",
     "name_chs": "神乐坂明日菜",
     "name_jp": "神楽坂明日菜",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "5",
-    "tag[]": "",
     "rarity": "4"
   }
 ]

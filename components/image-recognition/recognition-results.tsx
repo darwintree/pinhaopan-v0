@@ -15,6 +15,7 @@ interface RecognitionResultsProps {
   onEquipmentSelect: (index: number, equipment: DetailedEquipmentData) => void
   onDeleteItem?: (index: number) => void
   isRecognizing?: boolean
+  displayDeleteButton?: boolean
   onRetry?: () => void
 }
 
@@ -26,6 +27,7 @@ export function RecognitionResults({
   activeRectangle,
   onHoveredRectangleChange,
   onEquipmentSelect,
+  displayDeleteButton = true,
   onDeleteItem,
   isRecognizing = false,
   onRetry,
@@ -89,6 +91,7 @@ export function RecognitionResults({
         onEquipmentSelect={(equipment) => onEquipmentSelect(index, equipment)}
         isHovered={hoveredRectangle === index}
         isActive={activeRectangle === index}
+        displayDeleteButton={displayDeleteButton}
         onMouseEnter={() => onHoveredRectangleChange(index)}
         onMouseLeave={() => onHoveredRectangleChange(null)}
         onDelete={onDeleteItem ? () => onDeleteItem(index) : undefined}

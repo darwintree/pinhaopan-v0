@@ -745,6 +745,7 @@ export function ImageUploadWithRecognition({
               recognizedEquipment={recognizedEquipments}
               hoveredRectangle={hoveredRectangle}
               activeRectangle={activeRectangle}
+              displayDeleteButton={mode==="individual"}
               onHoveredRectangleChange={setHoveredRectangle}
               onEquipmentSelect={(index, equipment) => {
                 // 使用矩形ID而不是索引

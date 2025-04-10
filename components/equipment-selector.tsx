@@ -16,6 +16,7 @@ interface EquipmentSelectorProps {
   onEquipmentSelect: (equipment: DetailedEquipmentData) => void
   isHovered: boolean
   isActive?: boolean
+  displayDeleteButton?: boolean
   onMouseEnter: () => void
   onMouseLeave: () => void
   onDelete?: () => void
@@ -32,6 +33,7 @@ export function EquipmentSelector({
   onEquipmentSelect,
   isHovered,
   isActive = false,
+  displayDeleteButton = true,
   onMouseEnter,
   onMouseLeave,
   onDelete,
@@ -73,7 +75,7 @@ export function EquipmentSelector({
           />
         )}
         
-        {onDelete && (
+        {displayDeleteButton && onDelete && (
           <button
             type="button"
             onClick={(e) => {

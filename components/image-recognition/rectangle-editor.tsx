@@ -1,10 +1,14 @@
 import { Move, X } from "lucide-react"
 import { Rnd } from "react-rnd"
 import { Button } from "@/components/ui/button"
+import { Switch } from "@/components/ui/switch"
 import type { Rectangle } from "@/lib/utils"
+import type { RectangleMode } from "@/lib/types"
 import { RefObject } from "react"
 
 interface RectangleEditorProps {
+  mode: RectangleMode
+  onModeChange: (mode: RectangleMode) => void
   imageUrl: string
   imageRef: RefObject<HTMLImageElement>
   rectangles: Rectangle[]
@@ -23,6 +27,8 @@ interface RectangleEditorProps {
 }
 
 export function RectangleEditor({
+  mode,
+  onModeChange,
   imageUrl,
   imageRef,
   rectangles,
@@ -150,6 +156,15 @@ export function RectangleEditor({
       {/* Rectangle toolbar - Responsive layout */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-100 dark:bg-slate-800 rounded-lg">
         <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+          {/* 模式切换 */}
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-muted-foreground">蒙版模式</span>
+            <Switch 
+              checked={mode === "mask"} 
+              onCheckedChange={(checked) => onModeChange(checked ? "mask" : "individual")} 
+            />
+          </div>
+
           <Button
             type="button"
             size="sm"

@@ -3,12 +3,20 @@
 import { useState, useRef, useEffect } from "react"
 import type { DetectEquipmentType } from "@/lib/types"
 import type { Rectangle } from "@/lib/utils"
-import type { EquipmentType } from "@/lib/types"
+import type { EquipmentType, RectangleMode, ModeData, MaskData } from "@/lib/types"
 import { getImageDescriptorsFromImageAndRectangles } from "@/lib/cv-utils"
 import { detectRectangles } from "@/lib/cv-utils"
 import { UploadArea } from "./image-recognition/upload-area"
 import { RectangleEditor } from "./image-recognition/rectangle-editor"
 import { RecognitionResults } from "./image-recognition/recognition-results"
+import { MaskEditor } from "./image-recognition/mask-editor"
+import { Switch } from "./ui/switch"
+import { 
+  generatePresetRectangles as generateTemplateRectangles, 
+  getDefaultPresetType,
+  getPresetAspectRatio,
+  PresetType
+} from "@/lib/preset-templates"
 
 interface ImageUploadWithRecognitionProps {
   type: EquipmentType
@@ -35,6 +43,26 @@ export function ImageUploadWithRecognition({
   infoText = "上传一张包含所有内容的图片，系统将自动识别主体",
   onRecognitionResults,
 }: ImageUploadWithRecognitionProps) {
+  // 模式切换状态
+  const [mode, setMode] = useState<RectangleMode>("mask")
+  
+  // 模式数据缓存
+  const [modeData, setModeData] = useState<ModeData>({
+    individual: {
+      rectangles: [],
+      recognizedEquipments: {},
+    },
+    mask: {
+      position: { x: 50, y: 50 },
+      size: { 
+        width: 300, 
+        height: type === "chara" ? 300/getPresetAspectRatio(getDefaultPresetType(type)) : 169 
+      },
+      presetRectangles: [],
+      presetType: getDefaultPresetType(type)
+    }
+  })
+  
   // Rectangle detection states
   const [rectangles, setRectangles] = useState<Rectangle[]>([])
   const [activeRectangle, setActiveRectangle] = useState<number | null>(null)
@@ -153,6 +181,93 @@ export function ImageUploadWithRecognition({
     }
   }
 
+  // 处理模式切换
+  const handleModeChange = (newMode: RectangleMode) => {
+    // 保存当前模式的数据
+    if (mode === "individual") {
+      setModeData(prev => ({
+        ...prev,
+        individual: {
+          rectangles,
+          recognizedEquipments
+        }
+      }))
+    } else {
+      setModeData(prev => ({
+        ...prev,
+        mask: prev.mask
+      }))
+    }
+    
+    // 切换模式
+    setMode(newMode)
+    
+    // 加载新模式的数据
+    if (newMode === "individual") {
+      setRectangles(modeData.individual.rectangles)
+      setRecognizedEquipments(modeData.individual.recognizedEquipments)
+    } else {
+      // 如果蒙版模式的预设矩形为空，初始化它们
+      if (modeData.mask.presetRectangles.length === 0 && imageRef.current) {
+        const { width, height } = imageSize
+        
+        // 计算默认蒙版位置和大小
+        const presetType = getDefaultPresetType(type)
+        const aspectRatio = getPresetAspectRatio(presetType)
+        const maskWidth = width * 0.8
+        const maskHeight = maskWidth / aspectRatio
+        const maskX = (width - maskWidth) / 2
+        const maskY = (height - maskHeight) / 2
+        
+        // 创建默认的蒙版数据
+        const newMaskData: MaskData = {
+          position: { x: maskX, y: maskY },
+          size: { width: maskWidth, height: maskHeight },
+          presetType: presetType,
+          presetRectangles: []
+        }
+        
+        // 根据预设类型生成矩形
+        const presetRects = generatePresetRectangles(
+          newMaskData.presetType,
+          newMaskData.size.width,
+          newMaskData.size.height,
+          newMaskData.position
+        )
+        
+        // 更新蒙版数据
+        newMaskData.presetRectangles = presetRects
+        
+        setModeData(prev => ({
+          ...prev,
+          mask: newMaskData
+        }))
+      }
+    }
+    
+    // 重置选中状态
+    setActiveRectangle(null)
+    setHoveredRectangle(null)
+  }
+  
+  // 生成预设矩形的函数
+  const generatePresetRectangles = (
+    presetType: PresetType, 
+    width: number, 
+    height: number, 
+    position: { x: number; y: number }
+  ): Rectangle[] => {
+    return generateTemplateRectangles(presetType, width, height, position, type, nextRectId);
+  }
+
+  // 处理蒙版数据变化
+  const handleMaskDataChange = (newMaskData: MaskData) => {
+    setModeData(prev => ({
+      ...prev,
+      mask: newMaskData
+    }))
+  }
+
   // Process image with OpenCV
   const processImageWithOpenCV = async (imageUrl: string) => {
     try {
@@ -174,8 +289,18 @@ export function ImageUploadWithRecognition({
       // 更新下一个可用ID
       setNextRectId(nextRectId + newRectangles.length);
       
+      // 更新矩形和图片尺寸
       setRectangles(newRectangles)
       setImageSize(result.imageSize)
+      
+      // 同时更新individual模式的数据
+      setModeData(prev => ({
+        ...prev,
+        individual: {
+          rectangles: newRectangles,
+          recognizedEquipments: {}
+        }
+      }))
 
       if (autoRecognize) {
         // 等待图片加载完成
@@ -188,6 +313,43 @@ export function ImageUploadWithRecognition({
           }
         })
         await recognizeEquipment(newRectangles)
+      }
+      
+      // 初始化蒙版数据
+      if (imageRef.current) {
+        const { width, height } = result.imageSize
+        
+        // 计算默认蒙版位置和大小
+        const presetType = getDefaultPresetType(type)
+        const aspectRatio = getPresetAspectRatio(presetType)
+        const maskWidth = width * 0.8
+        const maskHeight = maskWidth / aspectRatio
+        const maskX = (width - maskWidth) / 2
+        const maskY = (height - maskHeight) / 2
+        
+        // 创建默认的蒙版数据
+        const newMaskData: MaskData = {
+          position: { x: maskX, y: maskY },
+          size: { width: maskWidth, height: maskHeight },
+          presetType: presetType,
+          presetRectangles: []
+        }
+        
+        // 根据预设类型生成矩形
+        const presetRects = generatePresetRectangles(
+          newMaskData.presetType,
+          newMaskData.size.width,
+          newMaskData.size.height,
+          newMaskData.position
+        )
+        
+        // 更新蒙版数据
+        newMaskData.presetRectangles = presetRects
+        
+        setModeData(prev => ({
+          ...prev,
+          mask: newMaskData
+        }))
       }
     } catch (error) {
       console.error("Failed to process image:", error)
@@ -375,7 +537,7 @@ export function ImageUploadWithRecognition({
     }
   }
 
-  // 重构后的设备识别主函数
+  // 重构后的设备识别主函数，支持两种模式
   const recognizeEquipment = async (autoRectangles?: Rectangle[]) => {
     try {
       setIsRecognizing(true)
@@ -383,7 +545,14 @@ export function ImageUploadWithRecognition({
         throw new Error("Image not found")
       }
 
-      const usingRectangles = autoRectangles || rectangles
+      // 根据当前模式选择要识别的矩形
+      let usingRectangles: Rectangle[]
+      
+      if (mode === "individual") {
+        usingRectangles = autoRectangles || rectangles
+      } else {
+        usingRectangles = modeData.mask.presetRectangles
+      }
       
       const recognizedResults = await performEquipmentRecognition(
         usingRectangles,
@@ -392,7 +561,36 @@ export function ImageUploadWithRecognition({
       )
       
       if (Object.keys(recognizedResults).length > 0) {
-        setRecognizedEquipments(recognizedResults)
+        if (mode === "individual") {
+          // 更新individual模式的识别结果
+          setRecognizedEquipments(recognizedResults)
+          
+          // 同时更新缓存
+          setModeData(prev => ({
+            ...prev,
+            individual: {
+              rectangles: prev.individual.rectangles,
+              recognizedEquipments: recognizedResults
+            }
+          }))
+        } else {
+          // 更新mask模式的识别结果
+          // 在蒙版模式下也需要更新recognizedEquipments状态
+          setRecognizedEquipments(recognizedResults)
+          
+          // 同时更新模式数据缓存
+          setModeData(prev => {
+            return {
+              ...prev,
+              mask: {
+                ...prev.mask,
+                presetRectangles: prev.mask.presetRectangles
+              }
+            }
+          })
+        }
+        
+        // 回调通知上层组件
         onRecognitionResults?.(recognizedResults)
       } else {
         console.warn("No results were recognized successfully")
@@ -411,10 +609,13 @@ export function ImageUploadWithRecognition({
           {icon}
           {title}
         </h4>
-        {/* <div className="flex items-center gap-2">
-          <span className="text-sm text-muted-foreground">自动识别</span>
-          <Switch checked={autoRecognize} onCheckedChange={setAutoRecognize} />
-        </div> */}
+        <div className="flex items-center gap-3">
+          {/* 自动识别开关 */}
+          {/* <div className="flex items-center gap-2">
+            <span className="text-sm text-muted-foreground">自动识别</span>
+            <Switch checked={autoRecognize} onCheckedChange={setAutoRecognize} />
+          </div> */}
+        </div>
       </div>
       <div
         className={`border-2 border-dashed rounded-lg transition-colors ${
@@ -451,56 +652,134 @@ export function ImageUploadWithRecognition({
         ) : (
           <>
             <div ref={containerRef}>
-              <RectangleEditor
-                imageUrl={images[0]}
-                imageRef={imageRef}
-                rectangles={rectangles}
-                containerScale={containerScale}
-                activeRectangle={activeRectangle}
-                hoveredRectangle={hoveredRectangle}
-                onRectanglesChange={(newRects) => {
-                  setRectangles(newRects);
-                  if (newRects.length > 0) {
-                    // 使用setTimeout确保状态更新完成后再执行排序
-                    setTimeout(() => rearrangeRectangles(newRects), 0);
-                  }
-                }}
-                onActiveRectangleChange={setActiveRectangle}
-                onHoveredRectangleChange={setHoveredRectangle}
-                onImageRemove={() => {
-                  setImages([])
-                  setRectangles([])
-                  setRecognizedEquipments({})
-                  onRecognitionResults?.({})
-                }}
-                onDeleteRectangle={handleDeleteRectangle}
-                isRecognizing={isRecognizing}
-                onRecognize={() => recognizeEquipment()}
-                nextRectId={nextRectId}
-                onNextRectIdChange={setNextRectId}
-              />
+              {mode === "individual" ? (
+                <RectangleEditor
+                  mode={mode}
+                  onModeChange={handleModeChange}
+                  imageUrl={images[0]}
+                  imageRef={imageRef}
+                  rectangles={rectangles}
+                  containerScale={containerScale}
+                  activeRectangle={activeRectangle}
+                  hoveredRectangle={hoveredRectangle}
+                  onRectanglesChange={(newRects) => {
+                    setRectangles(newRects);
+                    if (newRects.length > 0) {
+                      // 使用setTimeout确保状态更新完成后再执行排序
+                      setTimeout(() => rearrangeRectangles(newRects), 0);
+                    }
+                    console.log("newRects", newRects)
+                  }}
+                  onActiveRectangleChange={setActiveRectangle}
+                  onHoveredRectangleChange={setHoveredRectangle}
+                  onImageRemove={() => {
+                    setImages([])
+                    setRectangles([])
+                    setRecognizedEquipments({})
+                    onRecognitionResults?.({})
+                    
+                    // 重置模式数据
+                    setModeData({
+                      individual: {
+                        rectangles: [],
+                        recognizedEquipments: {}
+                      },
+                      mask: {
+                        position: { x: 50, y: 50 },
+                        size: { width: 300, height: type === "chara" ? 300/getPresetAspectRatio(getDefaultPresetType(type)) : 169 },
+                        presetRectangles: [],
+                        presetType: getDefaultPresetType(type)
+                      }
+                    })
+                  }}
+                  onDeleteRectangle={handleDeleteRectangle}
+                  isRecognizing={isRecognizing}
+                  onRecognize={() => recognizeEquipment()}
+                  nextRectId={nextRectId}
+                  onNextRectIdChange={setNextRectId}
+                />
+              ) : (
+                <MaskEditor
+                  mode={mode}
+                  onModeChange={handleModeChange}
+                  imageUrl={images[0]}
+                  imageRef={imageRef}
+                  maskData={modeData.mask}
+                  onMaskDataChange={handleMaskDataChange}
+                  containerScale={containerScale}
+                  hoveredRectangle={hoveredRectangle}
+                  activeRectangle={activeRectangle}
+                  onHoveredRectangleChange={setHoveredRectangle}
+                  onActiveRectangleChange={setActiveRectangle}
+                  onImageRemove={() => {
+                    setImages([])
+                    setRectangles([])
+                    setRecognizedEquipments({})
+                    onRecognitionResults?.({})
+                    
+                    // 重置模式数据
+                    setModeData({
+                      individual: {
+                        rectangles: [],
+                        recognizedEquipments: {}
+                      },
+                      mask: {
+                        position: { x: 50, y: 50 },
+                        size: { width: 300, height: type === "chara" ? 300/getPresetAspectRatio(getDefaultPresetType(type)) : 169 },
+                        presetRectangles: [],
+                        presetType: getDefaultPresetType(type)
+                      }
+                    })
+                  }}
+                  isRecognizing={isRecognizing}
+                  onRecognize={() => recognizeEquipment()}
+                  type={type}
+                />
+              )}
             </div>
 
             {/* 列表 */}
             <RecognitionResults
               type={type}
-              rectangles={rectangles}
+              rectangles={mode === "individual" ? rectangles : modeData.mask.presetRectangles}
               recognizedEquipment={recognizedEquipments}
               hoveredRectangle={hoveredRectangle}
               activeRectangle={activeRectangle}
               onHoveredRectangleChange={setHoveredRectangle}
               onEquipmentSelect={(index, equipment) => {
                 // 使用矩形ID而不是索引
-                const rectId = rectangles[index]?.id;
-                if (rectId !== undefined) {
-                  setRecognizedEquipments(prev => ({
-                    ...prev,
-                    [rectId]: [{ id: equipment.id, confidence: 100 }]
-                  }));
-                  onRecognitionResults?.({
+                const rect = mode === "individual" 
+                  ? rectangles[index] 
+                  : modeData.mask.presetRectangles[index];
+                
+                if (rect && rect.id !== undefined) {
+                  const updatedRecognized = {
                     ...recognizedEquipments,
-                    [rectId]: [{ id: equipment.id, confidence: 100 }]
-                  });
+                    [rect.id]: [{ id: equipment.id, confidence: 100 }]
+                  };
+                  
+                  setRecognizedEquipments(updatedRecognized);
+                  
+                  if (mode === "individual") {
+                    // 更新individual模式的缓存
+                    setModeData(prev => ({
+                      ...prev,
+                      individual: {
+                        ...prev.individual,
+                        recognizedEquipments: updatedRecognized
+                      }
+                    }));
+                  } else {
+                    // 更新mask模式的缓存
+                    setModeData(prev => ({
+                      ...prev,
+                      mask: {
+                        ...prev.mask
+                      }
+                    }));
+                  }
+                  
+                  onRecognitionResults?.(updatedRecognized);
                 }
               }}
               onDeleteItem={handleDeleteRectangle}

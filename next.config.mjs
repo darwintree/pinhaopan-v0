@@ -25,19 +25,6 @@ const nextConfig = {
     config.resolve.fallback = { fs: false, path: false, crypto: false };
     return config;
   },
-  async headers() {
-    return [
-      {
-        source: '/list/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=3600', // 缓存有效期为1小时
-          },
-        ],
-      },
-    ];
-  },
 };
 
 mergeConfig(nextConfig, userConfig)

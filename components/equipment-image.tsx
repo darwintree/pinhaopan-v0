@@ -52,6 +52,7 @@ export function EquipmentImage({ guideId, type, alt, size = "normal" }: Equipmen
             onClick={(e) => e.stopPropagation()}
           >
             <img 
+              loading="lazy"
               src={thumbImageUrl}
               alt={alt}
               className={`${size === "small" ? "h-8" : "h-12"} w-auto rounded transition-transform hover:scale-105`}

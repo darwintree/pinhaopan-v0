@@ -13,8 +13,8 @@ const program = new Command();
 program
   .version('1.0.0')
   .description('Download images based on the specified type')
-  .option('-t, --type <type>', 'Type of images to download (quest, character, weapon, summon)', 'summon')
-  .option('-d, --databaseDir <databaseDir>', 'Directory to store downloaded images', '/Users/conflux/Documents/code/pinhaopan-opencv/database')
+  .option('-t, --type <type>', 'Type of images to download (quest, character, weapon, summon)')
+  .option('-d, --databaseDir <databaseDir>', 'Directory to store downloaded images')
   .parse(process.argv);
 
 async function downloadImages(imageUrls, parentDir, concurrency = 5) {
@@ -219,6 +219,11 @@ async function downloadSummonPhotos(databaseDir) {
 
 async function main() {
   const { type, databaseDir } = program.opts();
+
+  if (!databaseDir) {
+    console.error('Database directory is required');
+    process.exit(1);
+  }
 
   switch (type) {
     case 'quest':

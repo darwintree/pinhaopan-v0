@@ -1,4 +1,4 @@
-import { parse } from 'csv-parse';
+import xlsx from 'node-xlsx';
 import fs from 'fs';
 
 const PICK_FIELDS = [
@@ -13,23 +13,43 @@ const PICK_FIELDS = [
     "rarity",
 ]
 
-// 将CSV转换为JSON的函数
-async function convertCsvToJson(inputFile, outputFile) {
+// 将XLSX转换为JSON的函数
+async function convertXlsxToJson(inputFile, outputFile) {
     const records = [];
     
-    // 创建读取流
-    const parser = fs
-        .createReadStream(inputFile)
-        .pipe(parse({
-            columns: true, // 这会使用第一行作为列名
-            skip_empty_lines: true
-        }));
-
-    // 读取每一行数据
-    for await (const record of parser) {
-        const filteredRecord = {}
+    // 解析xlsx文件
+    const workSheetsFromFile = xlsx.parse(inputFile);
+    
+    // 假设数据在第一个工作表
+    const worksheet = workSheetsFromFile[0];
+    const rows = worksheet.data;
+    
+    if (rows.length < 2) {
+        console.error('XLSX文件格式无效：缺少标题行或数据');
+        return;
+    }
+    
+    // 第一行是标题
+    const headers = rows[0];
+    
+    // 处理每一行数据
+    for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        // 跳过空行
+        if (!row || row.length === 0) continue;
+        
+        const record = {};
+        // 将每个单元格的值与标题匹配
+        for (let j = 0; j < headers.length; j++) {
+            record[headers[j]] = row[j];
+        }
+        
+        // 筛选所需字段
+        const filteredRecord = {};
         for (const field of PICK_FIELDS) {
-            filteredRecord[field] = record[field]
+            if (record[field] !== undefined) {
+                filteredRecord[field] = record[field].toString();
+            }
         }
         records.push(filteredRecord);
     }
@@ -52,7 +72,7 @@ function parseArgs() {
     }
     
     if (args.length !== 0) {
-        console.error('使用方法: node convert.js [<输入CSV文件> <输出JSON文件>]');
+        console.error('使用方法: node convert.js [<输入XLSX文件> <输出JSON文件>]');
         process.exit(1);
     }
     
@@ -71,19 +91,19 @@ async function processFile(inputFile) {
     const outputDir = './public/list';
     ensureDirectoryExists(outputDir);
     
-    const fileName = inputFile.split('/').pop().replace('.csv', '.json');
+    const fileName = inputFile.split('/').pop().replace('.xlsx', '.json');
     const outputFile = `${outputDir}/${fileName}`;
     
-    await convertCsvToJson(inputFile, outputFile);
+    await convertXlsxToJson(inputFile, outputFile);
 }
 
 // 处理所有文件
 async function processAllFiles() {
     const inputDir = './scripts/equipments';
     const files = fs.readdirSync(inputDir);
-    const csvFiles = files.filter(file => file.endsWith('.csv'));
+    const xlsxFiles = files.filter(file => file.endsWith('.xlsx'));
     
-    for (const file of csvFiles) {
+    for (const file of xlsxFiles) {
         await processFile(`${inputDir}/${file}`);
     }
 }
@@ -92,7 +112,7 @@ async function processAllFiles() {
 const args = parseArgs();
 if (args) {
     // 处理单个指定文件
-    convertCsvToJson(args.input, args.output).catch(error => {
+    convertXlsxToJson(args.input, args.output).catch(error => {
         console.error('转换过程中发生错误:', error);
         process.exit(1);
     });

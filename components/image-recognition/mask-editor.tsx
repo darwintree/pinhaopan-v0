@@ -355,142 +355,161 @@ export function MaskEditor({
             className="w-full h-auto"
           />
           
+          {/* Four overlay divs for masking */}
+          <div
+            className="absolute pointer-events-none bg-black/50"
+            style={{
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: `${maskData.position.y * containerScale}px`,
+            }}
+          />
+          <div
+            className="absolute pointer-events-none bg-black/50"
+            style={{
+              top: `${(maskData.position.y + maskData.size.height) * containerScale}px`,
+              left: 0,
+              width: '100%',
+              height: `${Math.max(0, (imageRef.current?.naturalHeight ?? 0) - (maskData.position.y + maskData.size.height)) * containerScale}px`,
+            }}
+          />
+          <div
+            className="absolute pointer-events-none bg-black/50"
+            style={{
+              top: `${maskData.position.y * containerScale}px`,
+              left: 0,
+              width: `${maskData.position.x * containerScale}px`,
+              height: `${maskData.size.height * containerScale}px`,
+            }}
+          />
+          <div
+            className="absolute pointer-events-none bg-black/50"
+            style={{
+              top: `${maskData.position.y * containerScale}px`,
+              left: `${(maskData.position.x + maskData.size.width) * containerScale}px`,
+              width: `${Math.max(0, (imageRef.current?.naturalWidth ?? 0) - (maskData.position.x + maskData.size.width)) * containerScale}px`,
+              height: `${maskData.size.height * containerScale}px`,
+            }}
+          />
+
           {/* 蒙版和预设矩形 */}
           <div 
-            className="absolute inset-0 bg-black/50 pointer-events-none"
+            className="absolute bg-transparent cursor-move"
             style={{
-              width: '100%',
-              height: '100%'
+              left: `${maskData.position.x * containerScale}px`,
+              top: `${maskData.position.y * containerScale}px`,
+              width: `${maskData.size.width * containerScale}px`,
+              height: `${maskData.size.height * containerScale}px`,
+              border: '2px dashed rgba(255, 255, 255, 0.8)',
+              pointerEvents: 'auto',
+              touchAction: 'none'
             }}
+            onMouseDown={handleDragStart}
+            onTouchStart={handleDragStart}
           >
-            {/* 蒙版区域 */}
-            <div 
-              className="absolute bg-transparent cursor-move"
-              style={{
-                left: `${maskData.position.x * containerScale}px`,
-                top: `${maskData.position.y * containerScale}px`,
-                width: `${maskData.size.width * containerScale}px`,
-                height: `${maskData.size.height * containerScale}px`,
-                boxShadow: '0 0 0 9999px rgba(0, 0, 0, 0.5)',
-                border: '2px dashed rgba(255, 255, 255, 0.8)',
-                pointerEvents: 'auto',
-                touchAction: 'none'
-              }}
-              onMouseDown={handleDragStart}
-              onTouchStart={handleDragStart}
-            >
-              {/* 缩放控制点 */}
-              {[
-                // 'top',
-                'right',
-                'bottom',
-                // 'left'
-              ].map((edge) => {
-                // 根据边的位置确定控制点的样式和位置
-                const getEdgeStyle = (edge: string) => {
-                  const baseStyle = {
-                    backgroundColor: 'white',
-                    border: '2px solid #3b82f6',
-                    position: 'absolute' as const,
-                    zIndex: 10,
-                    borderRadius: '4px',
-                    transition: 'background-color 0.15s ease',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-                  };
-                  
-                  switch(edge) {
-                    case 'top':
-                      return {
-                        ...baseStyle,
-                        top: '-6px',
-                        left: '50%',
-                        width: '40px',
-                        height: '12px',
-                        transform: 'translateX(-50%)',
-                        cursor: 'ns-resize'
-                      };
-                    case 'right':
-                      return {
-                        ...baseStyle,
-                        top: '50%',
-                        right: '-6px',
-                        width: '12px',
-                        height: '40px',
-                        transform: 'translateY(-50%)',
-                        cursor: 'ew-resize'
-                      };
-                    case 'bottom':
-                      return {
-                        ...baseStyle,
-                        bottom: '-6px',
-                        left: '50%',
-                        width: '40px',
-                        height: '12px',
-                        transform: 'translateX(-50%)',
-                        cursor: 'ns-resize'
-                      };
-                    case 'left':
-                      return {
-                        ...baseStyle,
-                        top: '50%',
-                        left: '-6px',
-                        width: '12px',
-                        height: '40px',
-                        transform: 'translateY(-50%)',
-                        cursor: 'ew-resize'
-                      };
-                    default:
-                      return baseStyle;
-                  }
+            {/* 缩放控制点 */}
+            {[
+              // 'top',
+              'right',
+              'bottom',
+              // 'left'
+            ].map((edge) => {
+              // 根据边的位置确定控制点的样式和位置
+              const getEdgeStyle = (edge: string) => {
+                const baseStyle = {
+                  backgroundColor: 'white',
+                  border: '2px solid #3b82f6',
+                  position: 'absolute' as const,
+                  zIndex: 10,
+                  borderRadius: '4px',
+                  transition: 'background-color 0.15s ease',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
                 };
                 
-                return (
-                  <div 
-                    key={edge}
-                    style={{
-                      ...getEdgeStyle(edge),
-                      touchAction: 'none'
-                    }}
-                    className="hover:bg-blue-100 active:bg-blue-200"
-                    onMouseDown={(e) => handleResizeStart(e, edge as "top" | "right" | "bottom" | "left")}
-                    onTouchStart={(e) => handleResizeStart(e, edge as "top" | "right" | "bottom" | "left")}
-                  />
-                );
-              })}
+                switch(edge) {
+                  case 'top':
+                    return {
+                      ...baseStyle,
+                      top: '-6px',
+                      left: '50%',
+                      width: '40px',
+                      height: '12px',
+                      transform: 'translateX(-50%)',
+                      cursor: 'ns-resize'
+                    };
+                  case 'right':
+                    return {
+                      ...baseStyle,
+                      top: '50%',
+                      right: '-6px',
+                      width: '12px',
+                      height: '40px',
+                      transform: 'translateY(-50%)',
+                      cursor: 'ew-resize'
+                    };
+                  case 'bottom':
+                    return {
+                      ...baseStyle,
+                      bottom: '-6px',
+                      left: '50%',
+                      width: '40px',
+                      height: '12px',
+                      transform: 'translateX(-50%)',
+                      cursor: 'ns-resize'
+                    };
+                  case 'left':
+                    return {
+                      ...baseStyle,
+                      top: '50%',
+                      left: '-6px',
+                      width: '12px',
+                      height: '40px',
+                      transform: 'translateY(-50%)',
+                      cursor: 'ew-resize'
+                    };
+                  default:
+                    return baseStyle;
+                }
+              };
               
-              {/* 预设矩形 */}
-              {maskData.presetRectangles.map((rect, index) => (
-                <div
-                  key={rect.id}
-                  className={`absolute border-2 pointer-events-auto ${
-                    activeRectangle === index
-                      ? "border-blue-500"
-                      : hoveredRectangle === index
-                        ? "border-green-500"
-                        : "border-yellow-300"
-                  }`}
+              return (
+                <div 
+                  key={edge}
                   style={{
-                    left: `${(rect.x - maskData.position.x) * containerScale}px`,
-                    top: `${(rect.y - maskData.position.y) * containerScale}px`,
-                    width: `${rect.width * containerScale}px`,
-                    height: `${rect.height * containerScale}px`
+                    ...getEdgeStyle(edge),
+                    touchAction: 'none'
                   }}
-                  onMouseEnter={() => onHoveredRectangleChange(index)}
-                  onMouseLeave={() => onHoveredRectangleChange(null)}
-                  onClick={() => onActiveRectangleChange(index)}
+                  className="hover:bg-blue-100 active:bg-blue-200"
+                  onMouseDown={(e) => handleResizeStart(e, edge as "top" | "right" | "bottom" | "left")}
+                  onTouchStart={(e) => handleResizeStart(e, edge as "top" | "right" | "bottom" | "left")}
                 />
-              ))}
-            </div>
+              );
+            })}
+            
+            {/* 预设矩形 */}
+            {maskData.presetRectangles.map((rect, index) => (
+              <div
+                key={rect.id}
+                className={`absolute border-2 pointer-events-auto ${
+                  activeRectangle === index
+                    ? "border-blue-500"
+                    : hoveredRectangle === index
+                      ? "border-green-500"
+                      : "border-yellow-300"
+                }`}
+                style={{
+                  left: `${(rect.x - maskData.position.x) * containerScale}px`,
+                  top: `${(rect.y - maskData.position.y) * containerScale}px`,
+                  width: `${rect.width * containerScale}px`,
+                  height: `${rect.height * containerScale}px`
+                }}
+                onMouseEnter={() => onHoveredRectangleChange(index)}
+                onMouseLeave={() => onHoveredRectangleChange(null)}
+                onClick={() => onActiveRectangleChange(index)}
+              />
+            ))}
           </div>
-          
-          {/* 删除图片按钮 */}
-          <button
-            type="button"
-            onClick={onImageRemove}
-            className="absolute top-2 right-2 rounded-full bg-red-500/90 p-1.5 sm:p-1 text-white shadow-md touch-manipulation"
-          >
-            <X className="h-5 w-5 sm:h-4 sm:w-4" />
-          </button>
         </div>
       </div>
       
@@ -567,6 +586,15 @@ export function MaskEditor({
           </Button>
         </div>
       </div>
+      
+      {/* 删除图片按钮 */}
+      <button
+        type="button"
+        onClick={onImageRemove}
+        className="absolute top-2 right-2 rounded-full bg-red-500/90 p-1.5 sm:p-1 text-white shadow-md touch-manipulation"
+      >
+        <X className="h-5 w-5 sm:h-4 sm:w-4" />
+      </button>
     </div>
   )
 } 

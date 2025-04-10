@@ -24,7 +24,7 @@ interface EquipmentSelectorProps {
 
 export function EquipmentSelector({
   index,
-  width = 80,
+  width = 60,
   height,
   rectangle,
   recognizedEquipment,

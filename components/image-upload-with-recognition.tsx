@@ -44,7 +44,7 @@ export function ImageUploadWithRecognition({
   onRecognitionResults,
 }: ImageUploadWithRecognitionProps) {
   // 模式切换状态
-  const [mode, setMode] = useState<RectangleMode>("mask")
+  const [mode, setMode] = useState<RectangleMode>("individual")
   
   // 模式数据缓存
   const [modeData, setModeData] = useState<ModeData>({

@@ -21,15 +21,17 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-  webpack: (config) => {
+  webpack: (config, { isServer, dev }) => {
     config.resolve.fallback = { fs: false, path: false, crypto: false };
-    config.optimization.splitChunks.cacheGroups = {
-      commons: {
-        test: /[\\/]node_modules[\\/]/,
-        name: "vendors",
-        chunks: "all",
-      },
-    };
+    if (!dev && config.optimization.splitChunks) {
+      config.optimization.splitChunks.cacheGroups = {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      };
+    }
     return config;
   },
 };

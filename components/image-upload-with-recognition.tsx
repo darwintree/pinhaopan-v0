@@ -553,51 +553,77 @@ export function ImageUploadWithRecognition({
       } else {
         usingRectangles = modeData.mask.presetRectangles
       }
-      
-      const recognizedResults = await performEquipmentRecognition(
-        usingRectangles,
-        imageRef.current.src,
-        type
-      )
-      
-      if (Object.keys(recognizedResults).length > 0) {
-        if (mode === "individual") {
-          // 更新individual模式的识别结果
-          setRecognizedEquipments(recognizedResults)
-          
-          // 同时更新缓存
-          setModeData(prev => ({
-            ...prev,
-            individual: {
-              rectangles: prev.individual.rectangles,
-              recognizedEquipments: recognizedResults
-            }
-          }))
-        } else {
-          // 更新mask模式的识别结果
-          // 在蒙版模式下也需要更新recognizedEquipments状态
-          setRecognizedEquipments(recognizedResults)
-          
-          // 同时更新模式数据缓存
-          setModeData(prev => {
-            return {
-              ...prev,
-              mask: {
-                ...prev.mask,
-                presetRectangles: prev.mask.presetRectangles
-              }
-            }
-          })
-        }
-        
-        // 回调通知上层组件
-        onRecognitionResults?.(recognizedResults)
-      } else {
-        console.warn("No results were recognized successfully")
+
+      const maxGroupLength = 3
+      const subGroups = []
+      for (let i = 0; i < usingRectangles.length; i += maxGroupLength) {
+        subGroups.push(usingRectangles.slice(i, i + maxGroupLength))
       }
+
+      // 如果没有子组，直接重置状态并返回
+      if (subGroups.length === 0) {
+        setIsRecognizing(false)
+        return
+      }
+
+      // 创建并发Promise数组，但不等待它们全部完成
+      const promises = subGroups.map(subGroup => {
+        // 返回一个Promise，但不在外部等待它完成
+        return (async () => {
+          try {
+            // 对每个子组并发执行识别
+            const subGroupResults = await performEquipmentRecognition(
+              subGroup,
+              imageRef.current!.src,
+              type
+            )
+            
+            // 如果该子组有结果
+            if (Object.keys(subGroupResults).length > 0) {
+              // 使用函数式更新确保并发安全
+              setRecognizedEquipments(prevRecognized => {
+                const updatedResults = {...prevRecognized, ...subGroupResults}
+                
+                // 同步更新模式数据
+                if (mode === "individual") {
+                  setModeData(prev => ({
+                    ...prev,
+                    individual: {
+                      rectangles: prev.individual.rectangles,
+                      recognizedEquipments: updatedResults
+                    }
+                  }))
+                } else {
+                  setModeData(prev => ({
+                    ...prev,
+                    mask: {
+                      ...prev.mask,
+                      presetRectangles: prev.mask.presetRectangles
+                    }
+                  }))
+                }
+                
+                // 通知上层组件
+                onRecognitionResults?.(updatedResults)
+                
+                return updatedResults
+              })
+            }
+            return true // 成功标记
+          } catch (error) {
+            console.error("Failed to recognize subgroup:", error)
+            return false // 失败标记
+          }
+        })()
+      })
+      
+      // 等待所有Promise完成后重置识别状态
+      // 使用Promise.all可以并发执行所有请求，但仍然等待所有请求完成后再重置状态
+      await Promise.all(promises).finally(() => {
+        setIsRecognizing(false)
+      })
     } catch (error) {
       console.error("Failed to recognize equipment:", error)
-    } finally {
       setIsRecognizing(false)
     }
   }

@@ -59,7 +59,7 @@ export const detectRectangles = async (imageUrl: string, type: EquipmentType): P
       const [shouldWidth, shouldHeight] = shouldSize
       cv.resize(subImage, subImage, new cv.Size(shouldWidth, shouldHeight))
       try {
-        const content = getDesBase64(subImage)
+        const content = getDesBase64(subImage, equipmentDetectType)
         contents.push(content)
       } finally {
         subImage.delete()

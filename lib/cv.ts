@@ -1,4 +1,5 @@
 import cv from "@techstark/opencv-js"
+import { DetectEquipmentType } from "./types";
 
 export interface Box {
   x: number;
@@ -324,33 +325,23 @@ export function detectSummon(image: cv.Mat): Box[] {
   return detectGrid(image, 100, 200, 3);
 }
 
-function get_orb() {
-  // const orb = new cv.ORB(
-  //   200, // nfeatures
-  //   1.2, // scaleFactor
-  //   8, // nlevels
-  //   31, // edgeThreshold
-  //   0, // firstLevel
-  //   2, // WTA_K
-  //   0, // scoreType
-  //   31,
-  //   20
-  // );
-  const orb = new cv.ORB(200);
-
-  return orb;
+function get_orb(detectEquipmentType: DetectEquipmentType) {
+  if (detectEquipmentType === "chara") {
+    return new cv.ORB(500); // 角色检测需要更多的特征点
+  }
+  return new cv.ORB(200);
 }
 
-export function getDesBase64(image: cv.Mat) {
+export function getDesBase64(image: cv.Mat, detectEquipmentType: DetectEquipmentType) {
   const des = new cv.Mat();
-  getDes(image, des);
+  getDes(image, des, detectEquipmentType);
   return serializeDes(des);
 }
 
-export function getDes(image: cv.Mat, des: cv.Mat) {
+export function getDes(image: cv.Mat, des: cv.Mat, detectEquipmentType: DetectEquipmentType) {
   const keypoints = new cv.KeyPointVector();
   const mask = new cv.Mat();
-  get_orb().detectAndCompute(image, mask, keypoints, des);
+  get_orb(detectEquipmentType).detectAndCompute(image, mask, keypoints, des);
   keypoints.delete();
   mask.delete();
 }

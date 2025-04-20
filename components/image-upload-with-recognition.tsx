@@ -75,6 +75,11 @@ export function ImageUploadWithRecognition({
   const [containerScale, setContainerScale] = useState(1)
   const [nextRectId, setNextRectId] = useState(1)
 
+  // Add useEffect to sync results with parent
+  useEffect(() => {
+    onRecognitionResults?.(recognizedEquipments);
+  }, [recognizedEquipments, onRecognitionResults]);
+
   // 比较两个矩形的空间位置
   const compareRectangles = (a: Rectangle, b: Rectangle) => {
     // 检查y轴是否有重叠
@@ -437,19 +442,15 @@ export function ImageUploadWithRecognition({
     
     // 记录每个矩形的唯一ID，而不是索引
     const originalRectIds = groupRectangles.map(rect => rect.id);
+
     
-    const payload = {
-      type: groupType,
-      contents,
-    }
-    
-    console.log(`Sending request for ${groupType} with payload:`, payload)
-    const response = await fetch("/api/equipment/recognize", {
+    console.log(`Sending request for ${groupType}  to ${process.env.NEXT_PUBLIC_DETECT_API_BASE_URL}/detect/${groupType}`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_DETECT_API_BASE_URL}/detect/${groupType}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({ contents }),
     })
 
     if (!response.ok) {
@@ -602,9 +603,6 @@ export function ImageUploadWithRecognition({
                     }
                   }))
                 }
-                
-                // 通知上层组件
-                onRecognitionResults?.(updatedResults)
                 
                 return updatedResults
               })

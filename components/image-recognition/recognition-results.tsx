@@ -49,7 +49,7 @@ export function RecognitionResults({
   const getDefaultSelectionLabel = (index: number) => {
     const rectId = rectangles[index]?.id;
     const results = rectId !== undefined ? recognizedEquipment[rectId] : undefined;
-    if (!results || results.length === 0) {
+    if (!results || results.length === 0 || !results[0]) {
       return `未识别${type}${index + 1}`
     }
     return results[0].id

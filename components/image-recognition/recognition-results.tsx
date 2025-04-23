@@ -163,7 +163,7 @@ export function RecognitionResults({
         <h4 className="text-sm font-medium">列表</h4>
         {onRetry && (
           <Button
-            variant="ghost"
+            variant="secondary"
             size="sm"
             type="button"
             className="h-7 text-xs"

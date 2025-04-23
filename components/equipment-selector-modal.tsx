@@ -23,7 +23,7 @@ export function EquipmentSelectorModal({
   type,
   onSelect,
   buttonLabel,
-  buttonVariant = "outline",
+  buttonVariant = "default",
   priorityIds = [],
 }: EquipmentSelectorModalProps) {
   const [open, setOpen] = useState(false)
@@ -286,7 +286,7 @@ export function EquipmentSelectorModal({
                 <Button
                   variant="outline"
                   size="icon"
-                  className="h-8 w-8"
+                  className="h-8 w-8 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
                   onClick={() => goToPage(1)}
                   disabled={currentPage === 1}
                 >
@@ -296,7 +296,7 @@ export function EquipmentSelectorModal({
                 <Button
                   variant="outline"
                   size="icon"
-                  className="h-8 w-8"
+                  className="h-8 w-8 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
                   onClick={() => goToPage(currentPage - 1)}
                   disabled={currentPage === 1}
                 >
@@ -309,7 +309,7 @@ export function EquipmentSelectorModal({
                 <Button
                   variant="outline"
                   size="icon"
-                  className="h-8 w-8"
+                  className="h-8 w-8 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
                   onClick={() => goToPage(currentPage + 1)}
                   disabled={currentPage === totalPages}
                 >
@@ -319,7 +319,7 @@ export function EquipmentSelectorModal({
                 <Button
                   variant="outline"
                   size="icon"
-                  className="h-8 w-8"
+                  className="h-8 w-8 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
                   onClick={() => goToPage(totalPages)}
                   disabled={currentPage === totalPages}
                 >

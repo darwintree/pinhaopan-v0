@@ -100,18 +100,18 @@ export function EquipmentSelector({
           </button>
         )}
       </div>
-      <div className="flex items-center gap-1 mb-1">
+      {/* <div className="flex items-center gap-1 mb-1">
         <div className="flex justify-center items-center w-5 h-5 rounded-full bg-slate-200 dark:bg-slate-700 text-xs font-medium">
           {index}
         </div>
         <span className="text-xs text-muted-foreground">
           {label}
         </span>
-      </div>
+      </div> */}
       <EquipmentSelectorModal
         type={type}
         buttonLabel="手动选择"
-        buttonVariant="ghost"
+        buttonVariant="secondary"
         onSelect={handleEquipmentSelect}
         priorityIds={priorityIds}
       />

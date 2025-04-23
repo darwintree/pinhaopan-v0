@@ -25,6 +25,12 @@ const nextConfig = {
     config.resolve.fallback = { fs: false, path: false, crypto: false };
     if (!dev && config.optimization.splitChunks) {
       config.optimization.splitChunks.cacheGroups = {
+        opencvGroup: {
+          test: /[\\/]node_modules[\\/]@techstark[\\/]opencv-js[\\/]/,
+          name: "opencv-chunk",
+          chunks: "all",
+          priority: 10,
+        },
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: "vendors",

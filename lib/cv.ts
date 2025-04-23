@@ -188,8 +188,11 @@ export function detectWeapon(image: cv.Mat): Box[] {
   contours.delete();
   hierarchy.delete();
 
+  const mergedBoxes = mergeOverlappingBoxes(equipmentBoxes);
+  // const mergedBoxes = equipmentBoxes
+
   // 对框进行排序
-  return equipmentBoxes.sort(compareBox);
+  return mergedBoxes.sort(compareBox);
 }
 
 function filterContours(
@@ -251,10 +254,15 @@ function mergeOverlappingBoxes(
 
       if (overlapRatio > overlapThreshold) {
         // 合并矩形
-        x1 = Math.min(x1, x2);
-        y1 = Math.min(y1, y2);
-        w1 = Math.max(x1 + w1, x2 + w2) - x1;
-        h1 = Math.max(y1 + h1, y2 + h2) - y1;
+        const new_x1 = Math.min(x1, x2);
+        const new_y1 = Math.min(y1, y2);
+        const new_w1 = Math.max(x1 + w1, x2 + w2) - new_x1;
+        const new_h1 = Math.max(y1 + h1, y2 + h2) - new_y1;
+
+        x1 = new_x1;
+        y1 = new_y1;
+        w1 = new_w1;
+        h1 = new_h1;
 
         boxesCopy.splice(i, 1);
       } else {

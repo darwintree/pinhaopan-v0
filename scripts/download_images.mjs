@@ -47,7 +47,7 @@ async function downloadImages(imageUrls, parentDir, concurrency = 5) {
     await Promise.all(promises);
     console.log("All images downloaded successfully.");
   } catch (error) {
-    console.error("Error downloading images:", error);
+    console.error("Error downloading images:", imageUrls);
   }
 }
 
@@ -121,6 +121,63 @@ async function downloadCharacterPhotos(databaseDir) {
         const extraPhotoIndexes = row["extra_img[]"].toString().split(";");
         photoIndexes.push(...extraPhotoIndexes);
       }
+      await downloadImages(
+        photoIndexes.map((index) => getCharacterPhotoUrl(characterId, index)),
+        `${databaseDir}/chara`
+      );
+    } catch (error) {
+      console.error(`Error processing character `, error);
+      console.log(record);
+      throw error;
+    }
+  }
+}
+
+async function downloadSkinPhotos(databaseDir) {
+  // 读取 xlsx 文件
+  const workSheetsFromFile = xlsx.parse("./scripts/equipments/skin.xlsx");
+  const data = workSheetsFromFile[0].data; // 获取第一个工作表的数据
+
+  // 跳过表头
+  const headers = data[0];
+  const records = data.slice(1);
+
+  await downloadImages(
+    [
+      getCharacterPhotoUrl("3710154000", "01_1"),
+      getCharacterPhotoUrl("3710182000", "01_01"),
+      getCharacterPhotoUrl("3710183000", "01_01"),
+      getCharacterPhotoUrl("3710184000", "01_01"),
+    ],
+    `${databaseDir}/chara`
+  )
+
+  for (const record of records) {
+    try {
+      const row = {};
+      headers.forEach((header, index) => {
+        row[header] = record[index];
+      });
+
+      const characterId = row.ID;
+      if (characterId === "3710154000") {
+        continue;
+      }
+      if (characterId === "3710182000") {
+        continue;
+      }
+      if (characterId === "3710183000") {
+        continue;
+      }
+      if (characterId === "3710184000") {
+        continue;
+      }
+      try {
+        Number(characterId);
+      } catch (error) {
+        continue;
+      }
+      const photoIndexes = ["01"];
       await downloadImages(
         photoIndexes.map((index) => getCharacterPhotoUrl(characterId, index)),
         `${databaseDir}/chara`
@@ -237,6 +294,9 @@ async function main() {
       break;
     case 'summon':
       await downloadSummonPhotos(databaseDir);
+      break;
+    case 'skin':
+      await downloadSkinPhotos(databaseDir);
       break;
     default:
       console.error('Invalid type specified');

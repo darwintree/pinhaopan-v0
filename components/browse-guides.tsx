@@ -435,7 +435,7 @@ export function BrowseGuides() {
                           type="weapon"
                           label={condition.include ? `需要${condition.count}把` : "排除"}
                           rectangle={{ width: 160, height: 100 }}
-                          recognizedEquipment={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
+                          recognizedEquipments={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
                           onEquipmentSelect={(equipment) => updateWeaponCondition(index, "id", equipment.id)}
                           isHovered={false}
                           onMouseEnter={() => {}}
@@ -520,7 +520,7 @@ export function BrowseGuides() {
                           type="summon"
                           label={condition.include ? "需要" : "排除"}
                           rectangle={{ width: 160, height: 100 }}
-                          recognizedEquipment={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
+                          recognizedEquipments={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
                           onEquipmentSelect={(equipment) => updateSummonCondition(index, "id", equipment.id)}
                           isHovered={false}
                           onMouseEnter={() => {}}
@@ -588,7 +588,7 @@ export function BrowseGuides() {
                           type="chara"
                           label={condition.include ? "需要" : "排除"}
                           rectangle={{ width: 160, height: 100 }}
-                          recognizedEquipment={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
+                          recognizedEquipments={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
                           onEquipmentSelect={(equipment) => updateCharaCondition(index, "id", equipment.id)}
                           isHovered={false}
                           onMouseEnter={() => {}}

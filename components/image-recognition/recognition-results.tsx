@@ -85,7 +85,7 @@ export function RecognitionResults({
         key={index}
         index={rectId}
         rectangle={rect}
-        recognizedEquipment={results}
+        recognizedEquipments={results}
         type={type}
         label={getDefaultSelectionLabel(index)}
         onEquipmentSelect={(equipment) => onEquipmentSelect(index, equipment)}

@@ -1,7 +1,8 @@
 "use client"
 
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
-import { getEquipmentPhotoUrl } from "@/lib/asset"
+import { getSameCrewNonSkinIdList } from "@/hooks/use-crew-info"
+import { getEquipmentPhotoUrl, normalizeEquipmentId } from "@/lib/asset"
 import { EquipmentType, DetailedEquipmentData } from "@/lib/types"
 import { X } from "lucide-react"
 
@@ -10,7 +11,7 @@ interface EquipmentSelectorProps {
   width?: number
   height?: number
   rectangle: { width: number; height: number }
-  recognizedEquipment?: { id: string; confidence: number }[]
+  recognizedEquipments?: { id: string; confidence: number }[]
   type: EquipmentType
   label: string
   onEquipmentSelect: (equipment: DetailedEquipmentData) => void
@@ -27,7 +28,7 @@ export function EquipmentSelector({
   width = 60,
   height,
   rectangle,
-  recognizedEquipment,
+  recognizedEquipments,
   type,
   label,
   onEquipmentSelect,
@@ -45,6 +46,16 @@ export function EquipmentSelector({
   const aspectRatio = rectangle.height / rectangle.width
   const calculatedHeight = height || width * aspectRatio
 
+  let priorityIds = recognizedEquipments?.map(item => normalizeEquipmentId(item.id)) || []
+  if (type === "chara" && recognizedEquipments?.[0]?.id) {
+    priorityIds = priorityIds?.concat(
+      getSameCrewNonSkinIdList(
+        normalizeEquipmentId(recognizedEquipments[0].id
+        )
+      )
+    )
+  }
+
   return (
     <div
       className={`flex flex-col items-center ${
@@ -61,10 +72,10 @@ export function EquipmentSelector({
           height: `${calculatedHeight}px`
         }}
       >
-        {recognizedEquipment && recognizedEquipment.length > 0 ? (
+        {recognizedEquipments && recognizedEquipments.length > 0 ? (
           <img
-            src={getEquipmentPhotoUrl(recognizedEquipment[0]?.id, type)}
-            alt={recognizedEquipment[0]?.id}
+            src={getEquipmentPhotoUrl(recognizedEquipments[0]?.id, type)}
+            alt={recognizedEquipments[0]?.id}
             className="absolute inset-0 w-full h-full object-contain"
           />
         ) : (
@@ -102,6 +113,7 @@ export function EquipmentSelector({
         buttonLabel="手动选择"
         buttonVariant="ghost"
         onSelect={handleEquipmentSelect}
+        priorityIds={priorityIds}
       />
     </div>
   )

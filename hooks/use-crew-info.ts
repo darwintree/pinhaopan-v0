@@ -6,22 +6,28 @@ interface CrewInfoMap {
 }
 
 const crewInfoMap: CrewInfoMap = {}
-for (const chara of charaList) {
+for (const card of charaList) {
   // set default if no crew
-  if (!chara["character_id"]) {
-    crewInfoMap[chara.character_id] = [chara.ID]
-  } else {
-    crewInfoMap[chara.character_id].push(chara.ID)
+  const crewId = card["character_id"]
+  if (!crewId) {
+    continue
   }
-}
-for (const skin of skinList) {
-  if (!skin["character_id"]) {
-    crewInfoMap[skin.character_id] = [skin.ID]
-  } else {
-    crewInfoMap[skin.character_id].push(skin.ID)
+  if (!crewInfoMap[crewId]) {
+    crewInfoMap[crewId] = []
   }
+  crewInfoMap[crewId].push(card.ID)
 }
 
-const skinIdList = skinList.map((skin) => skin.ID)
 
-export { crewInfoMap, skinIdList }
+export const getSameCrewNonSkinIdList = (normalizedId: string) => {
+  const skin = (skinList as any[]).concat(charaList as any[]).find((skin) => skin.ID === normalizedId)
+  if (!skin) {
+    return []
+  }
+  return crewInfoMap[skin.character_id]
+}
+
+export const isSkin = (normalizedId: string) => {
+  const skin = skinList.find((skin) => skin.ID === normalizedId)
+  return skin !== undefined
+}

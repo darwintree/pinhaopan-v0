@@ -16,6 +16,7 @@ interface EquipmentSelectorModalProps {
   onSelect: (equipment: DetailedEquipmentData) => void
   buttonLabel?: string
   buttonVariant?: "default" | "outline" | "secondary" | "ghost" | "link" | "destructive"
+  priorityIds?: string[]
 }
 
 export function EquipmentSelectorModal({
@@ -23,6 +24,7 @@ export function EquipmentSelectorModal({
   onSelect,
   buttonLabel,
   buttonVariant = "outline",
+  priorityIds = [],
 }: EquipmentSelectorModalProps) {
   const [open, setOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
@@ -84,8 +86,19 @@ export function EquipmentSelectorModal({
   // 获取当前页面应该显示的装备
   const getPaginatedEquipment = () => {
     const filteredItems = getFilteredEquipment()
+    
+    // Sort items to prioritize those in priority_ids
+    const sortedItems = [...filteredItems].sort((a, b) => {
+      const aInPriority = priorityIds.includes(a.id)
+      const bInPriority = priorityIds.includes(b.id)
+      
+      if (aInPriority && !bInPriority) return -1
+      if (!aInPriority && bInPriority) return 1
+      return 0
+    })
+    
     const startIndex = (currentPage - 1) * itemsPerPage
-    return filteredItems.slice(startIndex, startIndex + itemsPerPage)
+    return sortedItems.slice(startIndex, startIndex + itemsPerPage)
   }
 
   // Get unique categories for the current equipment type

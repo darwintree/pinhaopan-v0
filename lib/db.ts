@@ -181,6 +181,8 @@ export async function getGuides(query: {
   charaConditions?: EquipmentFilterCondition[]
   weaponConditions?: EquipmentFilterCondition[]
   summonConditions?: EquipmentFilterCondition[]
+  page?: number
+  pageSize?: number
 } = {}) {
   const startTime = Date.now()
   const db = (await clientPromise).db(dbName)
@@ -669,20 +671,49 @@ export async function getGuides(query: {
 
   const sort: any = {}
   if (query.sort) {
-    sort[query.sort.field] = query.sort.direction === "asc" ? 1 : -1
+    const sortField = query.sort.field
+    // Add filter to ensure the sort field exists and is not null, unless it's the default 'date'
+    if (sortField !== 'date') { 
+      filter[sortField] = { $exists: true, $ne: null };
+    }
+    sort[sortField] = query.sort.direction === "asc" ? 1 : -1
   } else {
+    // Default sort by date descending (assume date always exists)
     sort.date = -1
   }
 
-  const result = await db.collection("guides").find(filter).sort(sort).toArray()
+  // 计算总数 (Count after applying existence filter for sort field)
+  const totalCount = await db.collection("guides").countDocuments(filter)
+  
+  // 应用分页
+  const page = query.page || 1
+  const pageSize = query.pageSize || 10
+  const skip = (page - 1) * pageSize
+  
+  const result = await db.collection("guides")
+    .find(filter) // Filter includes the existence check now
+    .sort(sort)
+    .skip(skip)
+    .limit(pageSize)
+    .toArray()
+    
   const endTime = Date.now()
   const queryTime = endTime - startTime
   console.log(`查询耗时: ${queryTime}ms`, { 
     条件: Object.keys(filter).length, 
-    结果数量: result.length 
+    结果数量: result.length,
+    总数量: totalCount,
+    页码: page,
+    每页大小: pageSize
   })
   
-  return result
+  return {
+    guides: result,
+    total: totalCount,
+    page,
+    pageSize,
+    totalPages: Math.ceil(totalCount / pageSize)
+  }
 }
 
 // 获取单个配置

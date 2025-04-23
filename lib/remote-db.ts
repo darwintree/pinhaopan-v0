@@ -37,6 +37,15 @@ export async function saveGuide(data: GuidePostData): Promise<string> {
   }
 }
 
+// 定义返回值类型
+export interface GuidesResponse {
+  guides: GuideData[]
+  total: number
+  page: number
+  pageSize: number
+  totalPages: number
+}
+
 // 获取配置列表
 export async function getGuides(query: {
   quest?: string
@@ -49,7 +58,9 @@ export async function getGuides(query: {
   charaConditions?: EquipmentFilterCondition[]
   weaponConditions?: EquipmentFilterCondition[]
   summonConditions?: EquipmentFilterCondition[]
-} = {}) {
+  page?: number
+  pageSize?: number
+} = {}): Promise<GuidesResponse> {
   try {
     // 将复杂查询转换为JSON字符串并编码为URL参数
     const queryParams = new URLSearchParams()

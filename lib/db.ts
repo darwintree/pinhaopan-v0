@@ -182,6 +182,7 @@ export async function getGuides(query: {
   weaponConditions?: EquipmentFilterCondition[]
   summonConditions?: EquipmentFilterCondition[]
 } = {}) {
+  const startTime = Date.now()
   const db = (await clientPromise).db(dbName)
   const filter: any = {}
 
@@ -673,7 +674,15 @@ export async function getGuides(query: {
     sort.date = -1
   }
 
-  return db.collection("guides").find(filter).sort(sort).toArray()
+  const result = await db.collection("guides").find(filter).sort(sort).toArray()
+  const endTime = Date.now()
+  const queryTime = endTime - startTime
+  console.log(`查询耗时: ${queryTime}ms`, { 
+    条件: Object.keys(filter).length, 
+    结果数量: result.length 
+  })
+  
+  return result
 }
 
 // 获取单个配置

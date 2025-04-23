@@ -1,7 +1,7 @@
 "use client"
 
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
-import { getSameCrewNonSkinIdList } from "@/hooks/use-crew-info"
+import { getSameCrewNonSkinIdList, isSkin } from "@/hooks/use-crew-info"
 import { getEquipmentPhotoUrl, normalizeEquipmentId } from "@/lib/asset"
 import { EquipmentType, DetailedEquipmentData } from "@/lib/types"
 import { X } from "lucide-react"
@@ -47,18 +47,20 @@ export function EquipmentSelector({
   const calculatedHeight = height || width * aspectRatio
 
   let priorityIds = recognizedEquipments?.map(item => normalizeEquipmentId(item.id)) || []
+  let equipmentIsSkin = false
   if (type === "chara" && recognizedEquipments?.[0]?.id) {
+    const normalizedId = normalizeEquipmentId(recognizedEquipments[0].id)
     priorityIds = priorityIds?.concat(
-      getSameCrewNonSkinIdList(
-        normalizeEquipmentId(recognizedEquipments[0].id
-        )
-      )
+      getSameCrewNonSkinIdList(normalizedId)
     )
+    equipmentIsSkin = isSkin(normalizedId)
   }
+
 
   return (
     <div
       className={`flex flex-col items-center ${
+        equipmentIsSkin ? "bg-red-100 dark:bg-red-900/30 rounded-lg p-1" :
         isActive ? "bg-blue-100 dark:bg-blue-900/30 rounded-lg p-1" : 
         isHovered ? "bg-green-100 dark:bg-green-900/20 rounded-lg p-1" : "p-1"
       }`}
@@ -110,8 +112,8 @@ export function EquipmentSelector({
       </div> */}
       <EquipmentSelectorModal
         type={type}
-        buttonLabel="手动选择"
-        buttonVariant="secondary"
+        buttonLabel={equipmentIsSkin ? "必须重选" : "手动选择"}
+        buttonVariant={equipmentIsSkin ? "default" : "outline"}
         onSelect={handleEquipmentSelect}
         priorityIds={priorityIds}
       />

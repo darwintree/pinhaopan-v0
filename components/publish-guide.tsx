@@ -23,6 +23,8 @@ import { UsersIcon } from "@/components/icon/users-icon"
 import { SwordIcon } from "@/components/icon/sword-icon"
 import { SparklesIcon } from "@/components/icon/sparkles-icon"
 import { saveGuide } from "@/lib/remote-db"
+import { isSkin } from "@/hooks/use-crew-info"
+import { normalizeEquipmentId } from "@/lib/asset"
 
 export function PublishGuide() {
   // Form states
@@ -126,6 +128,10 @@ export function PublishGuide() {
           id: result.id,
           type: "chara" as const
         }))
+      const hasCharaSkin = charas.some((chara) => isSkin(normalizeEquipmentId(chara.id)))
+      if (hasCharaSkin) {
+        throw new Error("角色列表中存在皮肤，请手动选择对应角色")
+      }
       const weapons = Object.values(weaponResults)
         .map(results => results[0])
         .filter(Boolean)

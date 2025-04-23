@@ -11,6 +11,7 @@ const PICK_FIELDS = [
     "element",
     "tag[]",
     "rarity",
+    "character_id",
 ]
 
 // 将XLSX转换为JSON的函数

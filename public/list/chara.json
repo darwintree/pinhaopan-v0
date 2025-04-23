@@ -5,7 +5,8 @@
     "name_jp": "ロザミア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1018"
   },
   {
     "ID": "3020017000",
@@ -13,7 +14,8 @@
     "name_jp": "ゼヘク",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1017"
   },
   {
     "ID": "3020016000",
@@ -21,7 +23,8 @@
     "name_jp": "マリー",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1016"
   },
   {
     "ID": "3020013000",
@@ -29,7 +32,8 @@
     "name_jp": "ウェルダー",
     "category[]": "主线;活动",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1013"
   },
   {
     "ID": "3020012000",
@@ -37,7 +41,8 @@
     "name_jp": "ジャスミン",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1012"
   },
   {
     "ID": "3020009000",
@@ -45,7 +50,8 @@
     "name_jp": "ヘイゼン",
     "category[]": "普通",
     "element": "风",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1009"
   },
   {
     "ID": "3020008000",
@@ -53,7 +59,8 @@
     "name_jp": "アンナ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1008"
   },
   {
     "ID": "3020006000",
@@ -61,7 +68,8 @@
     "name_jp": "ファラ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1006"
   },
   {
     "ID": "3030005000",
@@ -69,7 +77,8 @@
     "name_jp": "カタリナ",
     "category[]": "主线",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2005"
   },
   {
     "ID": "3030006000",
@@ -77,7 +86,8 @@
     "name_jp": "イオ",
     "category[]": "主线",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2006"
   },
   {
     "ID": "3030007000",
@@ -85,7 +95,8 @@
     "name_jp": "オイゲン",
     "category[]": "主线",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2007"
   },
   {
     "ID": "3030008000",
@@ -93,7 +104,8 @@
     "name_jp": "ラカム",
     "category[]": "主线",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2008"
   },
   {
     "ID": "3030009000",
@@ -101,7 +113,8 @@
     "name_jp": "ガイーヌ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2009"
   },
   {
     "ID": "3030004000",
@@ -109,7 +122,8 @@
     "name_jp": "ヘルナル",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2004"
   },
   {
     "ID": "3030003000",
@@ -117,7 +131,8 @@
     "name_jp": "アレク",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2003"
   },
   {
     "ID": "3040005000",
@@ -125,7 +140,8 @@
     "name_jp": "レディ・グレイ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3005"
   },
   {
     "ID": "3040004000",
@@ -133,7 +149,8 @@
     "name_jp": "レ・フィーエ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3004"
   },
   {
     "ID": "3040003000",
@@ -141,7 +158,8 @@
     "name_jp": "ネツァワルピリ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3003"
   },
   {
     "ID": "3030011000",
@@ -149,7 +167,8 @@
     "name_jp": "アビー",
     "category[]": "活动;特典",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2011"
   },
   {
     "ID": "3030000000",
@@ -157,7 +176,8 @@
     "name_jp": "ノイシュ",
     "category[]": "活动;特典",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2000"
   },
   {
     "ID": "3030010000",
@@ -165,7 +185,8 @@
     "name_jp": "ロゼッタ",
     "category[]": "主线",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2010"
   },
   {
     "ID": "3020014000",
@@ -173,7 +194,8 @@
     "name_jp": "リチャード",
     "category[]": "普通",
     "element": "水",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1014"
   },
   {
     "ID": "3030002000",
@@ -181,7 +203,8 @@
     "name_jp": "マイシェラ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2002"
   },
   {
     "ID": "3030001000",
@@ -190,7 +213,8 @@
     "category[]": "活动",
     "element": "水",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2001"
   },
   {
     "ID": "3040007000",
@@ -198,7 +222,8 @@
     "name_jp": "リリィ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3007"
   },
   {
     "ID": "3020002000",
@@ -206,7 +231,8 @@
     "name_jp": "エシオ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1002"
   },
   {
     "ID": "3030012000",
@@ -214,7 +240,8 @@
     "name_jp": "アンジェ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2012"
   },
   {
     "ID": "3040002000",
@@ -222,7 +249,8 @@
     "name_jp": "アレーティア",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3002"
   },
   {
     "ID": "3020010000",
@@ -230,7 +258,8 @@
     "name_jp": "ウィル",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1010"
   },
   {
     "ID": "3030013000",
@@ -238,7 +267,8 @@
     "name_jp": "ラムレッダ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2013"
   },
   {
     "ID": "3040000000",
@@ -246,7 +276,8 @@
     "name_jp": "ガウェイン",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3000"
   },
   {
     "ID": "3020019000",
@@ -254,7 +285,8 @@
     "name_jp": "スタン",
     "category[]": "普通",
     "element": "风",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1019"
   },
   {
     "ID": "3030015000",
@@ -263,7 +295,8 @@
     "category[]": "活动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2015"
   },
   {
     "ID": "3030014000",
@@ -271,7 +304,8 @@
     "name_jp": "ウラムヌラン",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2014"
   },
   {
     "ID": "3040006000",
@@ -279,7 +313,8 @@
     "name_jp": "ユエル",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3006"
   },
   {
     "ID": "3020004000",
@@ -287,7 +322,8 @@
     "name_jp": "ガラドア",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1004"
   },
   {
     "ID": "3030017000",
@@ -295,7 +331,8 @@
     "name_jp": "ダヌア",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2017"
   },
   {
     "ID": "3030016000",
@@ -304,7 +341,8 @@
     "category[]": "活动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2016"
   },
   {
     "ID": "3040001000",
@@ -312,7 +350,8 @@
     "name_jp": "アルタイル",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3001"
   },
   {
     "ID": "3020000000",
@@ -320,7 +359,8 @@
     "name_jp": "ライアン",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1000"
   },
   {
     "ID": "3030018000",
@@ -328,7 +368,8 @@
     "name_jp": "スーテラ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2018"
   },
   {
     "ID": "3040008000",
@@ -336,7 +377,8 @@
     "name_jp": "サルナーン",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3008"
   },
   {
     "ID": "3020007000",
@@ -344,7 +386,8 @@
     "name_jp": "ボレミア",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1007"
   },
   {
     "ID": "3030021000",
@@ -353,7 +396,8 @@
     "category[]": "活动",
     "element": "土",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2021"
   },
   {
     "ID": "3030020000",
@@ -361,7 +405,8 @@
     "name_jp": "ソリッズ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2020"
   },
   {
     "ID": "3040009000",
@@ -369,7 +414,8 @@
     "name_jp": "カリオストロ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3009"
   },
   {
     "ID": "3030022000",
@@ -378,7 +424,8 @@
     "category[]": "活动",
     "element": "土",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2022"
   },
   {
     "ID": "3020011000",
@@ -386,7 +433,8 @@
     "name_jp": "ペトラ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1011"
   },
   {
     "ID": "3030023000",
@@ -394,7 +442,8 @@
     "name_jp": "エルモート",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2023"
   },
   {
     "ID": "3040010000",
@@ -402,7 +451,8 @@
     "name_jp": "シャルロッテ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3010"
   },
   {
     "ID": "3020020000",
@@ -410,7 +460,8 @@
     "name_jp": "フェザー",
     "category[]": "普通",
     "element": "光",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1020"
   },
   {
     "ID": "3030019000",
@@ -418,7 +469,8 @@
     "name_jp": "ヴィーラ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2019"
   },
   {
     "ID": "3040011000",
@@ -426,7 +478,8 @@
     "name_jp": "マギサ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3011"
   },
   {
     "ID": "3020001000",
@@ -434,7 +487,8 @@
     "name_jp": "ヘリヤ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1001"
   },
   {
     "ID": "3030026000",
@@ -443,7 +497,8 @@
     "category[]": "活动",
     "element": "风",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2026"
   },
   {
     "ID": "3030025000",
@@ -451,7 +506,8 @@
     "name_jp": "エルタ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2025"
   },
   {
     "ID": "3040012000",
@@ -459,7 +515,8 @@
     "name_jp": "メーテラ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3012"
   },
   {
     "ID": "3030024000",
@@ -467,7 +524,8 @@
     "name_jp": "キハール",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2024"
   },
   {
     "ID": "3020021000",
@@ -475,7 +533,8 @@
     "name_jp": "アンナ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1008"
   },
   {
     "ID": "3030027000",
@@ -483,7 +542,8 @@
     "name_jp": "エゼクレイン",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2027"
   },
   {
     "ID": "3040013000",
@@ -491,7 +551,8 @@
     "name_jp": "セルエル",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3013"
   },
   {
     "ID": "3020022000",
@@ -499,7 +560,8 @@
     "name_jp": "ウェルダー",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1013"
   },
   {
     "ID": "3030030000",
@@ -507,7 +569,8 @@
     "name_jp": "ジェシカ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2016"
   },
   {
     "ID": "3030029000",
@@ -515,7 +578,8 @@
     "name_jp": "カタリナ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2005"
   },
   {
     "ID": "3030028000",
@@ -524,7 +588,8 @@
     "category[]": "活动",
     "element": "水",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2028"
   },
   {
     "ID": "3040014000",
@@ -532,7 +597,8 @@
     "name_jp": "レ・フィーエ",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3004"
   },
   {
     "ID": "3020023000",
@@ -540,7 +606,8 @@
     "name_jp": "マリー",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1016"
   },
   {
     "ID": "3030032000",
@@ -548,7 +615,8 @@
     "name_jp": "フェリ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2029"
   },
   {
     "ID": "3030031000",
@@ -556,7 +624,8 @@
     "name_jp": "ヘルナル",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2004"
   },
   {
     "ID": "3040015000",
@@ -564,7 +633,8 @@
     "name_jp": "イオ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2006"
   },
   {
     "ID": "3020015000",
@@ -572,7 +642,8 @@
     "name_jp": "ターニャ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1015"
   },
   {
     "ID": "3030035000",
@@ -581,7 +652,8 @@
     "category[]": "活动",
     "element": "风",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2032"
   },
   {
     "ID": "3030034000",
@@ -589,7 +661,8 @@
     "name_jp": "ティナ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2031"
   },
   {
     "ID": "3030033000",
@@ -597,7 +670,8 @@
     "name_jp": "ルシウス",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2030"
   },
   {
     "ID": "3040016000",
@@ -605,7 +679,8 @@
     "name_jp": "ケルベロス",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3014"
   },
   {
     "ID": "3020024000",
@@ -613,7 +688,8 @@
     "name_jp": "ダエッタ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1021"
   },
   {
     "ID": "3030036000",
@@ -621,7 +697,8 @@
     "name_jp": "アルシャ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2033"
   },
   {
     "ID": "3040017000",
@@ -629,7 +706,8 @@
     "name_jp": "アギエルバ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3015"
   },
   {
     "ID": "3040018000",
@@ -637,7 +715,8 @@
     "name_jp": "クリスティーナ",
     "category[]": "特殊",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3016"
   },
   {
     "ID": "3020005000",
@@ -645,7 +724,8 @@
     "name_jp": "デリフォード",
     "category[]": "普通",
     "element": "水",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1005"
   },
   {
     "ID": "3030038000",
@@ -654,7 +734,8 @@
     "category[]": "活动",
     "element": "土",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2034"
   },
   {
     "ID": "3030037000",
@@ -662,7 +743,8 @@
     "name_jp": "ファラ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1006"
   },
   {
     "ID": "3040019000",
@@ -670,7 +752,8 @@
     "name_jp": "アルルメイヤ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3017"
   },
   {
     "ID": "3030041000",
@@ -678,7 +761,8 @@
     "name_jp": "渋谷凛",
     "category[]": "联动",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2037"
   },
   {
     "ID": "3030040000",
@@ -686,7 +770,8 @@
     "name_jp": "島村卯月",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2036"
   },
   {
     "ID": "3030042000",
@@ -694,7 +779,8 @@
     "name_jp": "アンジェ",
     "category[]": "万圣节",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2012"
   },
   {
     "ID": "3040020000",
@@ -702,7 +788,8 @@
     "name_jp": "シャルロッテ",
     "category[]": "万圣节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3010"
   },
   {
     "ID": "3020025000",
@@ -710,7 +797,8 @@
     "name_jp": "エルメラウラ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1022"
   },
   {
     "ID": "3030044000",
@@ -719,7 +807,8 @@
     "category[]": "活动",
     "element": "风",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2039"
   },
   {
     "ID": "3030043000",
@@ -727,7 +816,8 @@
     "name_jp": "ミムルメモル",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2038"
   },
   {
     "ID": "3040021000",
@@ -735,7 +825,8 @@
     "name_jp": "レナ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3018"
   },
   {
     "ID": "3020026000",
@@ -743,7 +834,8 @@
     "name_jp": "レオノーラ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1023"
   },
   {
     "ID": "3030045000",
@@ -751,7 +843,8 @@
     "name_jp": "マライア",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2040"
   },
   {
     "ID": "3030039000",
@@ -759,7 +852,8 @@
     "name_jp": "ノア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2035"
   },
   {
     "ID": "3040022000",
@@ -767,7 +861,8 @@
     "name_jp": "メルゥ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3019"
   },
   {
     "ID": "3020027000",
@@ -775,7 +870,8 @@
     "name_jp": "ガルマ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1024"
   },
   {
     "ID": "3030047000",
@@ -784,7 +880,8 @@
     "category[]": "活动",
     "element": "水",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2042"
   },
   {
     "ID": "3030046000",
@@ -792,7 +889,8 @@
     "name_jp": "カレン",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2041"
   },
   {
     "ID": "3040024000",
@@ -800,7 +898,8 @@
     "name_jp": "ソフィア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3021"
   },
   {
     "ID": "3040023000",
@@ -808,7 +907,8 @@
     "name_jp": "ランスロット",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3020"
   },
   {
     "ID": "3020028000",
@@ -816,7 +916,8 @@
     "name_jp": "ウェルダー",
     "category[]": "圣诞节",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1013"
   },
   {
     "ID": "3030048000",
@@ -824,7 +925,8 @@
     "name_jp": "ラカム",
     "category[]": "圣诞节",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2008"
   },
   {
     "ID": "3040026000",
@@ -832,7 +934,8 @@
     "name_jp": "ロゼッタ",
     "category[]": "圣诞节",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2010"
   },
   {
     "ID": "3040039000",
@@ -840,7 +943,8 @@
     "name_jp": "エッセル",
     "category[]": "十天众",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4010"
   },
   {
     "ID": "3040038000",
@@ -848,7 +952,8 @@
     "name_jp": "ニオ",
     "category[]": "十天众",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4009"
   },
   {
     "ID": "3040037000",
@@ -856,7 +961,8 @@
     "name_jp": "オクトー",
     "category[]": "十天众",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4008"
   },
   {
     "ID": "3040036000",
@@ -864,7 +970,8 @@
     "name_jp": "シエテ",
     "category[]": "十天众",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4007"
   },
   {
     "ID": "3040035000",
@@ -872,7 +979,8 @@
     "name_jp": "シス",
     "category[]": "十天众",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4006"
   },
   {
     "ID": "3040034000",
@@ -880,7 +988,8 @@
     "name_jp": "フュンフ",
     "category[]": "十天众",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4005"
   },
   {
     "ID": "3040033000",
@@ -888,7 +997,8 @@
     "name_jp": "カトル",
     "category[]": "十天众",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4004"
   },
   {
     "ID": "3040032000",
@@ -896,7 +1006,8 @@
     "name_jp": "サラーサ",
     "category[]": "十天众",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4003"
   },
   {
     "ID": "3040031000",
@@ -904,7 +1015,8 @@
     "name_jp": "ソーン",
     "category[]": "十天众",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4002"
   },
   {
     "ID": "3040030000",
@@ -912,7 +1024,8 @@
     "name_jp": "ウーノ",
     "category[]": "十天众",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4001"
   },
   {
     "ID": "3020029000",
@@ -920,7 +1033,8 @@
     "name_jp": "スフラマール",
     "category[]": "普通",
     "element": "水",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1025"
   },
   {
     "ID": "3030050000",
@@ -929,7 +1043,8 @@
     "category[]": "活动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2043"
   },
   {
     "ID": "3030049000",
@@ -937,7 +1052,8 @@
     "name_jp": "ロザミア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1018"
   },
   {
     "ID": "3040029000",
@@ -945,7 +1061,8 @@
     "name_jp": "バザラガ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3025"
   },
   {
     "ID": "3040028000",
@@ -953,7 +1070,8 @@
     "name_jp": "ゼタ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3024"
   },
   {
     "ID": "3040027000",
@@ -961,7 +1079,8 @@
     "name_jp": "アニラ",
     "category[]": "神将",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3023"
   },
   {
     "ID": "3030052000",
@@ -969,7 +1088,8 @@
     "name_jp": "本田未央",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2045"
   },
   {
     "ID": "3030051000",
@@ -977,7 +1097,8 @@
     "name_jp": "城ヶ崎美嘉",
     "category[]": "联动",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2044"
   },
   {
     "ID": "3020030000",
@@ -985,7 +1106,8 @@
     "name_jp": "ヨダルラーハ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1026"
   },
   {
     "ID": "3030053000",
@@ -993,7 +1115,8 @@
     "name_jp": "バウタオーダ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2046"
   },
   {
     "ID": "3040040000",
@@ -1001,7 +1124,8 @@
     "name_jp": "ジャンヌダルク",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3036"
   },
   {
     "ID": "3030054000",
@@ -1009,7 +1133,8 @@
     "name_jp": "リタ",
     "category[]": "特典",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2047"
   },
   {
     "ID": "3020031000",
@@ -1017,7 +1142,8 @@
     "name_jp": "ローアイン",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1027"
   },
   {
     "ID": "3030056000",
@@ -1026,7 +1152,8 @@
     "category[]": "活动",
     "element": "土",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1007"
   },
   {
     "ID": "3030055000",
@@ -1034,7 +1161,8 @@
     "name_jp": "ファスティバ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2048"
   },
   {
     "ID": "3040041000",
@@ -1042,7 +1170,8 @@
     "name_jp": "サラ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2021"
   },
   {
     "ID": "3040025000",
@@ -1050,7 +1179,8 @@
     "name_jp": "ジークフリート",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3022"
   },
   {
     "ID": "3030058000",
@@ -1058,7 +1188,8 @@
     "name_jp": "ドロシー",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2050"
   },
   {
     "ID": "3030057000",
@@ -1066,7 +1197,8 @@
     "name_jp": "クラウディア",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2049"
   },
   {
     "ID": "3040042000",
@@ -1074,7 +1206,8 @@
     "name_jp": "カルメリーナ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3037"
   },
   {
     "ID": "3020032000",
@@ -1082,7 +1215,8 @@
     "name_jp": "クムユ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1028"
   },
   {
     "ID": "3030060000",
@@ -1091,7 +1225,8 @@
     "category[]": "活动",
     "element": "暗",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1017"
   },
   {
     "ID": "3030059000",
@@ -1099,7 +1234,8 @@
     "name_jp": "ザザ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2051"
   },
   {
     "ID": "3040043000",
@@ -1107,7 +1243,8 @@
     "name_jp": "ヴィーラ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2019"
   },
   {
     "ID": "3020033000",
@@ -1115,7 +1252,8 @@
     "name_jp": "ノルセル",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1029"
   },
   {
     "ID": "3030061000",
@@ -1123,7 +1261,8 @@
     "name_jp": "エジェリー",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2052"
   },
   {
     "ID": "3040044000",
@@ -1131,7 +1270,8 @@
     "name_jp": "ソシエ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3038"
   },
   {
     "ID": "3020034000",
@@ -1139,7 +1279,8 @@
     "name_jp": "バロワ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1030"
   },
   {
     "ID": "3030063000",
@@ -1148,7 +1289,8 @@
     "category[]": "活动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2053"
   },
   {
     "ID": "3030062000",
@@ -1156,7 +1298,8 @@
     "name_jp": "テレーズ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2001"
   },
   {
     "ID": "3040045000",
@@ -1164,7 +1307,8 @@
     "name_jp": "アルベール",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3039"
   },
   {
     "ID": "3020035000",
@@ -1172,7 +1316,8 @@
     "name_jp": "クルーニ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1031"
   },
   {
     "ID": "3030064000",
@@ -1180,7 +1325,8 @@
     "name_jp": "ミラオル",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2054"
   },
   {
     "ID": "3040046000",
@@ -1188,7 +1334,8 @@
     "name_jp": "クラリス",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3040"
   },
   {
     "ID": "3020036000",
@@ -1196,7 +1343,8 @@
     "name_jp": "カルバ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1032"
   },
   {
     "ID": "3030067000",
@@ -1204,7 +1352,8 @@
     "name_jp": "スィール",
     "category[]": "活动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2056"
   },
   {
     "ID": "3030066000",
@@ -1212,7 +1361,8 @@
     "name_jp": "ヘイゼン",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1009"
   },
   {
     "ID": "3040047000",
@@ -1220,7 +1370,8 @@
     "name_jp": "ペトラ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1011"
   },
   {
     "ID": "3030071000",
@@ -1228,7 +1379,8 @@
     "name_jp": "双葉杏",
     "category[]": "联动",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2060"
   },
   {
     "ID": "3030070000",
@@ -1236,7 +1388,8 @@
     "name_jp": "前川みく",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2059"
   },
   {
     "ID": "3030069000",
@@ -1244,7 +1397,8 @@
     "name_jp": "川島瑞樹",
     "category[]": "联动",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2058"
   },
   {
     "ID": "3020037000",
@@ -1252,7 +1406,8 @@
     "name_jp": "ヴァンツァ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1033"
   },
   {
     "ID": "3030075000",
@@ -1260,7 +1415,8 @@
     "name_jp": "Ｊ・Ｊ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2064"
   },
   {
     "ID": "3040048000",
@@ -1268,7 +1424,8 @@
     "name_jp": "サルナーン",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3008"
   },
   {
     "ID": "3030065000",
@@ -1276,7 +1433,8 @@
     "name_jp": "アーミラ",
     "category[]": "特典",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2055"
   },
   {
     "ID": "3020038000",
@@ -1284,7 +1442,8 @@
     "name_jp": "イッパツ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1034"
   },
   {
     "ID": "3030077000",
@@ -1293,7 +1452,8 @@
     "category[]": "活动",
     "element": "水",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2066"
   },
   {
     "ID": "3030076000",
@@ -1301,7 +1461,8 @@
     "name_jp": "ザーリリャオー",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2065"
   },
   {
     "ID": "3040049000",
@@ -1309,7 +1470,8 @@
     "name_jp": "シルヴァ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3041"
   },
   {
     "ID": "3030072000",
@@ -1317,7 +1479,8 @@
     "name_jp": "リーシャ",
     "category[]": "主线",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2061"
   },
   {
     "ID": "3020039000",
@@ -1325,7 +1488,8 @@
     "name_jp": "フィラソピラ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1035"
   },
   {
     "ID": "3030068000",
@@ -1333,7 +1497,8 @@
     "name_jp": "マリー",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1016"
   },
   {
     "ID": "3040050000",
@@ -1341,7 +1506,8 @@
     "name_jp": "パーシヴァル",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3042"
   },
   {
     "ID": "3020040000",
@@ -1349,7 +1515,8 @@
     "name_jp": "ジョエル",
     "category[]": "普通",
     "element": "水",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1036"
   },
   {
     "ID": "3030079000",
@@ -1358,7 +1525,8 @@
     "category[]": "活动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2067"
   },
   {
     "ID": "3030078000",
@@ -1366,7 +1534,8 @@
     "name_jp": "フェザー",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1020"
   },
   {
     "ID": "3040051000",
@@ -1374,7 +1543,8 @@
     "name_jp": "アーミラ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2055"
   },
   {
     "ID": "3030082000",
@@ -1383,7 +1553,8 @@
     "category[]": "联动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2070"
   },
   {
     "ID": "3030081000",
@@ -1392,7 +1563,8 @@
     "category[]": "联动",
     "element": "暗",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2069"
   },
   {
     "ID": "3030080000",
@@ -1401,7 +1573,8 @@
     "category[]": "联动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2068"
   },
   {
     "ID": "3030084000",
@@ -1409,7 +1582,8 @@
     "name_jp": "ターニャ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1015"
   },
   {
     "ID": "3030083000",
@@ -1417,7 +1591,8 @@
     "name_jp": "エルモート",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2023"
   },
   {
     "ID": "3040052000",
@@ -1425,7 +1600,8 @@
     "name_jp": "ガンダゴウザ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3043"
   },
   {
     "ID": "3020041000",
@@ -1433,7 +1609,8 @@
     "name_jp": "ローアイン",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1027"
   },
   {
     "ID": "3030086000",
@@ -1442,7 +1619,8 @@
     "category[]": "活动",
     "element": "土",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2022"
   },
   {
     "ID": "3030085000",
@@ -1450,7 +1628,8 @@
     "name_jp": "オイゲン",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2007"
   },
   {
     "ID": "3040054000",
@@ -1459,7 +1638,8 @@
     "category[]": "限定",
     "element": "水",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2005"
   },
   {
     "ID": "3040053000",
@@ -1467,7 +1647,8 @@
     "name_jp": "ヴィーラ",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2019"
   },
   {
     "ID": "3030087000",
@@ -1475,7 +1656,8 @@
     "name_jp": "リーシャ",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2061"
   },
   {
     "ID": "3040055000",
@@ -1483,7 +1665,8 @@
     "name_jp": "ダヌア",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2017"
   },
   {
     "ID": "3030091000",
@@ -1491,7 +1674,8 @@
     "name_jp": "スフラマール",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1025"
   },
   {
     "ID": "3040056000",
@@ -1499,7 +1683,8 @@
     "name_jp": "ゼタ",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3024"
   },
   {
     "ID": "3030090000",
@@ -1507,7 +1692,8 @@
     "name_jp": "白坂小梅",
     "category[]": "联动",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2073"
   },
   {
     "ID": "3030089000",
@@ -1515,7 +1701,8 @@
     "name_jp": "三村かな子",
     "category[]": "联动",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2072"
   },
   {
     "ID": "3030088000",
@@ -1523,7 +1710,8 @@
     "name_jp": "城ヶ崎莉嘉",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2071"
   },
   {
     "ID": "3020043000",
@@ -1531,7 +1719,8 @@
     "name_jp": "カルテイラ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1037"
   },
   {
     "ID": "3030093000",
@@ -1540,7 +1729,8 @@
     "category[]": "活动",
     "element": "可变化",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2074"
   },
   {
     "ID": "3030092000",
@@ -1548,7 +1738,8 @@
     "name_jp": "ウィル",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1010"
   },
   {
     "ID": "3040057000",
@@ -1556,7 +1747,8 @@
     "name_jp": "ヴァンピィ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3044"
   },
   {
     "ID": "3030074000",
@@ -1564,7 +1756,8 @@
     "name_jp": "セイラン",
     "category[]": "活动;特典",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2063"
   },
   {
     "ID": "3030073000",
@@ -1572,7 +1765,8 @@
     "name_jp": "ペンギー",
     "category[]": "活动;特典",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2062"
   },
   {
     "ID": "3020044000",
@@ -1580,7 +1774,8 @@
     "name_jp": "ダーント",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1038"
   },
   {
     "ID": "3030094000",
@@ -1588,7 +1783,8 @@
     "name_jp": "ガラドア",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1004"
   },
   {
     "ID": "3040058000",
@@ -1596,7 +1792,8 @@
     "name_jp": "アンリエット",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3045"
   },
   {
     "ID": "3040059000",
@@ -1605,7 +1802,8 @@
     "category[]": "限定",
     "element": "火",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2008"
   },
   {
     "ID": "3020045000",
@@ -1613,7 +1811,8 @@
     "name_jp": "パヴィーダ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1039"
   },
   {
     "ID": "3030096000",
@@ -1622,7 +1821,8 @@
     "category[]": "活动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2000"
   },
   {
     "ID": "3030095000",
@@ -1630,7 +1830,8 @@
     "name_jp": "アンナ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1008"
   },
   {
     "ID": "3040060000",
@@ -1638,7 +1839,8 @@
     "name_jp": "ヘルエス",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3046"
   },
   {
     "ID": "3030099000",
@@ -1647,7 +1849,8 @@
     "category[]": "联动",
     "element": "风",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2077"
   },
   {
     "ID": "3030098000",
@@ -1656,7 +1859,8 @@
     "category[]": "联动",
     "element": "水",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2076"
   },
   {
     "ID": "3030097000",
@@ -1665,7 +1869,8 @@
     "category[]": "联动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2075"
   },
   {
     "ID": "3030100000",
@@ -1673,7 +1878,8 @@
     "name_jp": "ミニゴブ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2078"
   },
   {
     "ID": "3040061000",
@@ -1681,7 +1887,8 @@
     "name_jp": "フィーナ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2032"
   },
   {
     "ID": "3030101000",
@@ -1689,7 +1896,8 @@
     "name_jp": "フェリ",
     "category[]": "万圣节",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2029"
   },
   {
     "ID": "3040062000",
@@ -1697,7 +1905,8 @@
     "name_jp": "カリオストロ",
     "category[]": "万圣节",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3009"
   },
   {
     "ID": "3020046000",
@@ -1705,7 +1914,8 @@
     "name_jp": "エアロバイス",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1040"
   },
   {
     "ID": "3030103000",
@@ -1713,7 +1923,8 @@
     "name_jp": "ファラ",
     "category[]": "活动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1006"
   },
   {
     "ID": "3030102000",
@@ -1721,7 +1932,8 @@
     "name_jp": "ジャスミン",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1012"
   },
   {
     "ID": "3040063000",
@@ -1729,7 +1941,8 @@
     "name_jp": "ナルメア",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3047"
   },
   {
     "ID": "3030105000",
@@ -1737,7 +1950,8 @@
     "name_jp": "春麗",
     "category[]": "联动",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2080"
   },
   {
     "ID": "3030104000",
@@ -1745,7 +1959,8 @@
     "name_jp": "リュウ",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2079"
   },
   {
     "ID": "3020047000",
@@ -1753,7 +1968,8 @@
     "name_jp": "クムユ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1028"
   },
   {
     "ID": "3030106000",
@@ -1761,7 +1977,8 @@
     "name_jp": "シグ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2028"
   },
   {
     "ID": "3040064000",
@@ -1769,7 +1986,8 @@
     "name_jp": "ヨダルラーハ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1026"
   },
   {
     "ID": "3030108000",
@@ -1778,7 +1996,8 @@
     "category[]": "活动",
     "element": "水",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3020"
   },
   {
     "ID": "3040065000",
@@ -1787,7 +2006,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2006"
   },
   {
     "ID": "3020048000",
@@ -1795,7 +2015,8 @@
     "name_jp": "ブリジール",
     "category[]": "普通",
     "element": "水",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1041"
   },
   {
     "ID": "3030107000",
@@ -1803,7 +2024,8 @@
     "name_jp": "ヴェイン",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2042"
   },
   {
     "ID": "3040066000",
@@ -1811,7 +2033,8 @@
     "name_jp": "リルル",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3048"
   },
   {
     "ID": "3030109000",
@@ -1819,7 +2042,8 @@
     "name_jp": "ファスティバ",
     "category[]": "圣诞节",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2048"
   },
   {
     "ID": "3040067000",
@@ -1827,7 +2051,8 @@
     "name_jp": "クラリス",
     "category[]": "圣诞节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3040"
   },
   {
     "ID": "3030110000",
@@ -1835,7 +2060,8 @@
     "name_jp": "アニラ",
     "category[]": "活动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3023"
   },
   {
     "ID": "3040068000",
@@ -1844,7 +2070,8 @@
     "category[]": "限定",
     "element": "风",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2010"
   },
   {
     "ID": "3030112000",
@@ -1853,7 +2080,8 @@
     "category[]": "活动",
     "element": "土",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2082"
   },
   {
     "ID": "3030111000",
@@ -1861,7 +2089,8 @@
     "name_jp": "ヤイア",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2081"
   },
   {
     "ID": "3040071000",
@@ -1869,7 +2098,8 @@
     "name_jp": "アンチラ",
     "category[]": "神将",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3051"
   },
   {
     "ID": "3040070000",
@@ -1877,7 +2107,8 @@
     "name_jp": "ベアトリクス",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3050"
   },
   {
     "ID": "3040069000",
@@ -1885,7 +2116,8 @@
     "name_jp": "ユーステス",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3049"
   },
   {
     "ID": "3020049000",
@@ -1893,7 +2125,8 @@
     "name_jp": "フレッセル",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1042"
   },
   {
     "ID": "3030113000",
@@ -1901,7 +2134,8 @@
     "name_jp": "スーテラ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2018"
   },
   {
     "ID": "3040072000",
@@ -1909,7 +2143,8 @@
     "name_jp": "メーテラ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3012"
   },
   {
     "ID": "3030115000",
@@ -1917,7 +2152,8 @@
     "name_jp": "白蛇のナーガ",
     "category[]": "联动",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2084"
   },
   {
     "ID": "3030114000",
@@ -1925,7 +2161,8 @@
     "name_jp": "リナ＝インバース",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2083"
   },
   {
     "ID": "3020050000",
@@ -1933,7 +2170,8 @@
     "name_jp": "ルナール",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1043"
   },
   {
     "ID": "3030117000",
@@ -1942,7 +2180,8 @@
     "category[]": "活动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2020"
   },
   {
     "ID": "3030116000",
@@ -1950,7 +2189,8 @@
     "name_jp": "ダエッタ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1021"
   },
   {
     "ID": "3040073000",
@@ -1958,7 +2198,8 @@
     "name_jp": "フェリ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2029"
   },
   {
     "ID": "3020051000",
@@ -1966,7 +2207,8 @@
     "name_jp": "ネネ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1044"
   },
   {
     "ID": "3030118000",
@@ -1974,7 +2216,8 @@
     "name_jp": "サビルバラ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2085"
   },
   {
     "ID": "3040074000",
@@ -1982,7 +2225,8 @@
     "name_jp": "キャサリン",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3052"
   },
   {
     "ID": "3040077000",
@@ -1991,7 +2235,8 @@
     "category[]": "限定",
     "element": "土",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2007"
   },
   {
     "ID": "3020052000",
@@ -1999,7 +2244,8 @@
     "name_jp": "ラムレッダ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "2013"
   },
   {
     "ID": "3030119000",
@@ -2007,7 +2253,8 @@
     "name_jp": "ライアン",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1000"
   },
   {
     "ID": "3040076000",
@@ -2015,7 +2262,8 @@
     "name_jp": "アオイドス",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3054"
   },
   {
     "ID": "3040075000",
@@ -2023,7 +2271,8 @@
     "name_jp": "ザルハメリナ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3053"
   },
   {
     "ID": "3030121000",
@@ -2031,7 +2280,8 @@
     "name_jp": "十時愛梨",
     "category[]": "联动",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2087"
   },
   {
     "ID": "3030120000",
@@ -2039,7 +2289,8 @@
     "name_jp": "輿水幸子",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2086"
   },
   {
     "ID": "3030122000",
@@ -2047,7 +2298,8 @@
     "name_jp": "レッドラック",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2088"
   },
   {
     "ID": "3040079000",
@@ -2055,7 +2307,8 @@
     "name_jp": "ハレゼナ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3056"
   },
   {
     "ID": "3030123000",
@@ -2064,7 +2317,8 @@
     "category[]": "活动",
     "element": "水",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1027"
   },
   {
     "ID": "3020053000",
@@ -2072,7 +2326,8 @@
     "name_jp": "アリステラ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1045"
   },
   {
     "ID": "3030124000",
@@ -2080,7 +2335,8 @@
     "name_jp": "シャオ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2089"
   },
   {
     "ID": "3040080000",
@@ -2088,7 +2344,8 @@
     "name_jp": "ジャンヌダルク",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3036"
   },
   {
     "ID": "3040078000",
@@ -2096,7 +2353,8 @@
     "name_jp": "ゾーイ",
     "category[]": "特典",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3055"
   },
   {
     "ID": "3030126000",
@@ -2104,7 +2362,8 @@
     "name_jp": "ラシード",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2091"
   },
   {
     "ID": "3030125000",
@@ -2112,7 +2371,8 @@
     "name_jp": "神月かりん",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2090"
   },
   {
     "ID": "3020054000",
@@ -2120,7 +2380,8 @@
     "name_jp": "ヴェリトール",
     "category[]": "普通",
     "element": "光",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1046"
   },
   {
     "ID": "3030127000",
@@ -2128,7 +2389,8 @@
     "name_jp": "セン",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2092"
   },
   {
     "ID": "3040081000",
@@ -2136,7 +2398,8 @@
     "name_jp": "コルワ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3058"
   },
   {
     "ID": "3040082000",
@@ -2145,7 +2408,8 @@
     "category[]": "限定",
     "element": "暗",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3059"
   },
   {
     "ID": "3020055000",
@@ -2153,7 +2417,8 @@
     "name_jp": "バルルガン",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1047"
   },
   {
     "ID": "3030129000",
@@ -2162,7 +2427,8 @@
     "category[]": "活动",
     "element": "暗",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1019"
   },
   {
     "ID": "3030128000",
@@ -2170,7 +2436,8 @@
     "name_jp": "エシオ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1002"
   },
   {
     "ID": "3040083000",
@@ -2178,7 +2445,8 @@
     "name_jp": "アリーザ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2015"
   },
   {
     "ID": "3030132000",
@@ -2186,7 +2454,8 @@
     "name_jp": "ジェミニ・サンライズ",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2095"
   },
   {
     "ID": "3030131000",
@@ -2194,7 +2463,8 @@
     "name_jp": "エリカ・フォンティーヌ",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2094"
   },
   {
     "ID": "3030130000",
@@ -2202,7 +2472,8 @@
     "name_jp": "真宮寺さくら",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2093"
   },
   {
     "ID": "3020056000",
@@ -2210,7 +2481,8 @@
     "name_jp": "セロニム",
     "category[]": "普通",
     "element": "风",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1048"
   },
   {
     "ID": "3030133000",
@@ -2218,7 +2490,8 @@
     "name_jp": "ラグナ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2096"
   },
   {
     "ID": "3040084000",
@@ -2226,7 +2499,8 @@
     "name_jp": "アイル",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3060"
   },
   {
     "ID": "3020057000",
@@ -2234,7 +2508,8 @@
     "name_jp": "ロジーヌ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1049"
   },
   {
     "ID": "3030135000",
@@ -2243,7 +2518,8 @@
     "category[]": "活动",
     "element": "水",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2098"
   },
   {
     "ID": "3030134000",
@@ -2251,7 +2527,8 @@
     "name_jp": "ジャミル",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2097"
   },
   {
     "ID": "3040085000",
@@ -2259,7 +2536,8 @@
     "name_jp": "ネモネ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3061"
   },
   {
     "ID": "3030138000",
@@ -2268,7 +2546,8 @@
     "category[]": "联动",
     "element": "暗",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2101"
   },
   {
     "ID": "3030137000",
@@ -2277,7 +2556,8 @@
     "category[]": "联动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2100"
   },
   {
     "ID": "3030136000",
@@ -2286,7 +2566,8 @@
     "category[]": "联动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2099"
   },
   {
     "ID": "3020058000",
@@ -2294,7 +2575,8 @@
     "name_jp": "コワフュール",
     "category[]": "普通",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1050"
   },
   {
     "ID": "3030139000",
@@ -2302,7 +2584,8 @@
     "name_jp": "アルメイダ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2102"
   },
   {
     "ID": "3040086000",
@@ -2310,7 +2593,8 @@
     "name_jp": "フォルテ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3062"
   },
   {
     "ID": "3020059000",
@@ -2318,7 +2602,8 @@
     "name_jp": "クロエ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1051"
   },
   {
     "ID": "3030141000",
@@ -2327,7 +2612,8 @@
     "category[]": "活动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2103"
   },
   {
     "ID": "3030140000",
@@ -2335,7 +2621,8 @@
     "name_jp": "ヨハン",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2043"
   },
   {
     "ID": "3040087000",
@@ -2343,7 +2630,8 @@
     "name_jp": "ロザミア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1018"
   },
   {
     "ID": "3020060000",
@@ -2351,7 +2639,8 @@
     "name_jp": "イッパツ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1034"
   },
   {
     "ID": "3030147000",
@@ -2359,7 +2648,8 @@
     "name_jp": "サラ",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2021"
   },
   {
     "ID": "3040088000",
@@ -2367,7 +2657,8 @@
     "name_jp": "イングヴェイ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3063"
   },
   {
     "ID": "3030149000",
@@ -2375,7 +2666,8 @@
     "name_jp": "Ｊ・Ｊ",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2064"
   },
   {
     "ID": "3020061000",
@@ -2383,7 +2675,8 @@
     "name_jp": "ルナール",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1043"
   },
   {
     "ID": "3030151000",
@@ -2391,7 +2684,8 @@
     "name_jp": "ジン",
     "category[]": "活动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2022"
   },
   {
     "ID": "3030150000",
@@ -2399,7 +2693,8 @@
     "name_jp": "ディアンサ",
     "category[]": "特典",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2109"
   },
   {
     "ID": "3040089000",
@@ -2407,7 +2702,8 @@
     "name_jp": "ナルメア",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3047"
   },
   {
     "ID": "3030152000",
@@ -2415,7 +2711,8 @@
     "name_jp": "クムユ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1028"
   },
   {
     "ID": "3040090000",
@@ -2423,7 +2720,8 @@
     "name_jp": "パーシヴァル",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3042"
   },
   {
     "ID": "3030142000",
@@ -2431,7 +2729,8 @@
     "name_jp": "ナーヴェ",
     "category[]": "特典;活动",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2104"
   },
   {
     "ID": "3040091000",
@@ -2439,7 +2738,8 @@
     "name_jp": "ヘルエス",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3046"
   },
   {
     "ID": "3040092000",
@@ -2448,7 +2748,8 @@
     "category[]": "限定",
     "element": "暗",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3055"
   },
   {
     "ID": "3020062000",
@@ -2456,7 +2757,8 @@
     "name_jp": "カイラナ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1052"
   },
   {
     "ID": "3030154000",
@@ -2464,7 +2766,8 @@
     "name_jp": "バロワ",
     "category[]": "活动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1030"
   },
   {
     "ID": "3030153000",
@@ -2472,7 +2775,8 @@
     "name_jp": "ペンギー",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2062"
   },
   {
     "ID": "3040093000",
@@ -2480,7 +2784,8 @@
     "name_jp": "シャノワール",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3064"
   },
   {
     "ID": "3020063000",
@@ -2488,7 +2793,8 @@
     "name_jp": "ドロッセル",
     "category[]": "普通",
     "element": "火",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1053"
   },
   {
     "ID": "3030155000",
@@ -2496,7 +2802,8 @@
     "name_jp": "ククル",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2110"
   },
   {
     "ID": "3040095000",
@@ -2504,7 +2811,8 @@
     "name_jp": "ソシエ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3038"
   },
   {
     "ID": "3040094000",
@@ -2512,7 +2820,8 @@
     "name_jp": "ヴァイト",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3065"
   },
   {
     "ID": "3030143000",
@@ -2520,7 +2829,8 @@
     "name_jp": "アウフスタ",
     "category[]": "特典;活动",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2105"
   },
   {
     "ID": "3020064000",
@@ -2528,7 +2838,8 @@
     "name_jp": "コーデリア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1054"
   },
   {
     "ID": "3030157000",
@@ -2537,7 +2848,8 @@
     "category[]": "活动",
     "element": "土",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2112"
   },
   {
     "ID": "3030156000",
@@ -2545,7 +2857,8 @@
     "name_jp": "ダーント",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1038"
   },
   {
     "ID": "3040096000",
@@ -2553,7 +2866,8 @@
     "name_jp": "ジュリエット",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3066"
   },
   {
     "ID": "3030144000",
@@ -2561,7 +2875,8 @@
     "name_jp": "ロベルティナ",
     "category[]": "特典;活动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2106"
   },
   {
     "ID": "3020066000",
@@ -2569,7 +2884,8 @@
     "name_jp": "バクラ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1056"
   },
   {
     "ID": "3030162000",
@@ -2577,7 +2893,8 @@
     "name_jp": "神崎蘭子",
     "category[]": "联动",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2115"
   },
   {
     "ID": "3030161000",
@@ -2585,7 +2902,8 @@
     "name_jp": "赤城みりあ",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2114"
   },
   {
     "ID": "3030160000",
@@ -2593,7 +2911,8 @@
     "name_jp": "アナスタシア",
     "category[]": "联动",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2113"
   },
   {
     "ID": "3030159000",
@@ -2601,7 +2920,8 @@
     "name_jp": "ジェシカ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2016"
   },
   {
     "ID": "3040098000",
@@ -2609,7 +2929,8 @@
     "name_jp": "ロミオ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2066"
   },
   {
     "ID": "3030163000",
@@ -2617,7 +2938,8 @@
     "name_jp": "ベアトリクス",
     "category[]": "万圣节",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3050"
   },
   {
     "ID": "3040099000",
@@ -2625,7 +2947,8 @@
     "name_jp": "ユーステス",
     "category[]": "万圣节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3049"
   },
   {
     "ID": "3030164000",
@@ -2633,7 +2956,8 @@
     "name_jp": "エリン",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2117"
   },
   {
     "ID": "3040101000",
@@ -2642,7 +2966,8 @@
     "category[]": "限定",
     "element": "风",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2061"
   },
   {
     "ID": "3040100000",
@@ -2650,7 +2975,8 @@
     "name_jp": "イシュミール",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3067"
   },
   {
     "ID": "3030165000",
@@ -2658,7 +2984,8 @@
     "name_jp": "リリィ",
     "category[]": "活动",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3007"
   },
   {
     "ID": "3030166000",
@@ -2666,7 +2993,8 @@
     "name_jp": "ミムルメモル＆切り株",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2038"
   },
   {
     "ID": "3040102000",
@@ -2674,7 +3002,8 @@
     "name_jp": "メリッサベル",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3069"
   },
   {
     "ID": "3020070000",
@@ -2682,7 +3011,8 @@
     "name_jp": "ランドル",
     "category[]": "普通",
     "element": "水",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1059"
   },
   {
     "ID": "3030168000",
@@ -2691,7 +3021,8 @@
     "category[]": "活动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3042"
   },
   {
     "ID": "3030167000",
@@ -2699,7 +3030,8 @@
     "name_jp": "ターニャ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1015"
   },
   {
     "ID": "3040103000",
@@ -2707,7 +3039,8 @@
     "name_jp": "アンスリア",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3070"
   },
   {
     "ID": "3030169000",
@@ -2715,7 +3048,8 @@
     "name_jp": "セン",
     "category[]": "圣诞节",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2092"
   },
   {
     "ID": "3040104000",
@@ -2723,7 +3057,8 @@
     "name_jp": "アルルメイヤ",
     "category[]": "圣诞节",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3017"
   },
   {
     "ID": "3030145000",
@@ -2731,7 +3066,8 @@
     "name_jp": "パメラ",
     "category[]": "特典;活动",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2107"
   },
   {
     "ID": "3030170000",
@@ -2739,7 +3075,8 @@
     "name_jp": "アンチラ",
     "category[]": "活动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3051"
   },
   {
     "ID": "3040106000",
@@ -2748,7 +3085,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3072"
   },
   {
     "ID": "3030172000",
@@ -2757,7 +3095,8 @@
     "category[]": "活动",
     "element": "风",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2118"
   },
   {
     "ID": "3030171000",
@@ -2765,7 +3104,8 @@
     "name_jp": "ルシウス",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2030"
   },
   {
     "ID": "3040107000",
@@ -2773,7 +3113,8 @@
     "name_jp": "マキラ",
     "category[]": "神将",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3073"
   },
   {
     "ID": "3040105000",
@@ -2781,7 +3122,8 @@
     "name_jp": "ユイシス",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3071"
   },
   {
     "ID": "3030146000",
@@ -2789,7 +3131,8 @@
     "name_jp": "セシール",
     "category[]": "特典;活动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2108"
   },
   {
     "ID": "3030174000",
@@ -2797,7 +3140,8 @@
     "name_jp": "ナコルル",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2120"
   },
   {
     "ID": "3030173000",
@@ -2805,7 +3149,8 @@
     "name_jp": "覇王丸",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2119"
   },
   {
     "ID": "3030175000",
@@ -2813,7 +3158,8 @@
     "name_jp": "ヘリヤ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1001"
   },
   {
     "ID": "3040108000",
@@ -2821,7 +3167,8 @@
     "name_jp": "マルキアレス",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3074"
   },
   {
     "ID": "3030177000",
@@ -2830,7 +3177,8 @@
     "category[]": "活动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3039"
   },
   {
     "ID": "3030176000",
@@ -2838,7 +3186,8 @@
     "name_jp": "マイム",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2121"
   },
   {
     "ID": "3040109000",
@@ -2846,7 +3195,8 @@
     "name_jp": "ラスティナ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3075"
   },
   {
     "ID": "3030178000",
@@ -2854,7 +3204,8 @@
     "name_jp": "ジン",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2022"
   },
   {
     "ID": "3040110000",
@@ -2862,7 +3213,8 @@
     "name_jp": "ベアトリクス",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3050"
   },
   {
     "ID": "3030180000",
@@ -2871,7 +3223,8 @@
     "category[]": "联动",
     "element": "暗",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2123"
   },
   {
     "ID": "3030179000",
@@ -2880,7 +3233,8 @@
     "category[]": "联动",
     "element": "风",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2122"
   },
   {
     "ID": "3030181000",
@@ -2888,7 +3242,8 @@
     "name_jp": "タイアー",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2057"
   },
   {
     "ID": "3040112000",
@@ -2896,7 +3251,8 @@
     "name_jp": "ゼタ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3024"
   },
   {
     "ID": "3040111000",
@@ -2905,7 +3261,8 @@
     "category[]": "限定",
     "element": "暗",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3076"
   },
   {
     "ID": "3030182000",
@@ -2914,7 +3271,8 @@
     "category[]": "活动",
     "element": "可变化",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2124"
   },
   {
     "ID": "3030183000",
@@ -2922,7 +3280,8 @@
     "name_jp": "ヴェリトール",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1046"
   },
   {
     "ID": "3040113000",
@@ -2930,7 +3289,8 @@
     "name_jp": "レ・フィーエ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3004"
   },
   {
     "ID": "3030185000",
@@ -2938,7 +3298,8 @@
     "name_jp": "ルドミリア",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2126"
   },
   {
     "ID": "3040116000",
@@ -2946,7 +3307,8 @@
     "name_jp": "キャタピラとヴィーラ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2019"
   },
   {
     "ID": "3040115000",
@@ -2955,7 +3317,8 @@
     "category[]": "限定",
     "element": "火",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3078"
   },
   {
     "ID": "3030187000",
@@ -2964,7 +3327,8 @@
     "category[]": "活动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2018"
   },
   {
     "ID": "3030186000",
@@ -2972,7 +3336,8 @@
     "name_jp": "ラムレッダ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2013"
   },
   {
     "ID": "3040117000",
@@ -2980,7 +3345,8 @@
     "name_jp": "ヴェイン",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2042"
   },
   {
     "ID": "3030189000",
@@ -2989,7 +3355,8 @@
     "category[]": "活动",
     "element": "暗",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3009"
   },
   {
     "ID": "3030188000",
@@ -2997,7 +3364,8 @@
     "name_jp": "デリフォード",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1005"
   },
   {
     "ID": "3040120000",
@@ -3005,7 +3373,8 @@
     "name_jp": "カリオストロ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3009"
   },
   {
     "ID": "3040119000",
@@ -3014,7 +3383,8 @@
     "category[]": "限定",
     "element": "水",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3079"
   },
   {
     "ID": "3040118000",
@@ -3022,7 +3392,8 @@
     "name_jp": "カタリナ",
     "category[]": "特典",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2005"
   },
   {
     "ID": "3030190000",
@@ -3030,7 +3401,8 @@
     "name_jp": "プレデター",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2127"
   },
   {
     "ID": "3040121000",
@@ -3038,7 +3410,8 @@
     "name_jp": "クラリス",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3040"
   },
   {
     "ID": "3030184000",
@@ -3046,7 +3419,8 @@
     "name_jp": "カイン",
     "category[]": "主线",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2125"
   },
   {
     "ID": "3030192000",
@@ -3054,7 +3428,8 @@
     "name_jp": "シャルロッテ",
     "category[]": "活动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3010"
   },
   {
     "ID": "3030191000",
@@ -3062,7 +3437,8 @@
     "name_jp": "セワスチアン",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2128"
   },
   {
     "ID": "3040122000",
@@ -3070,7 +3446,8 @@
     "name_jp": "スカーサハ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3080"
   },
   {
     "ID": "3030194000",
@@ -3078,7 +3455,8 @@
     "name_jp": "一ノ瀬志希",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "0"
   },
   {
     "ID": "3030193000",
@@ -3086,7 +3464,8 @@
     "name_jp": "新田美波",
     "category[]": "联动",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "0"
   },
   {
     "ID": "3030195000",
@@ -3094,7 +3473,8 @@
     "name_jp": "ジャンヌダルク",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3036"
   },
   {
     "ID": "3040124000",
@@ -3102,7 +3482,8 @@
     "name_jp": "バウタオーダ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2046"
   },
   {
     "ID": "3040123000",
@@ -3110,7 +3491,8 @@
     "name_jp": "メドゥーサ",
     "category[]": "特典",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3081"
   },
   {
     "ID": "3030197000",
@@ -3119,7 +3501,8 @@
     "category[]": "活动",
     "element": "土",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1013"
   },
   {
     "ID": "3030196000",
@@ -3127,7 +3510,8 @@
     "name_jp": "ジャミル",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2097"
   },
   {
     "ID": "3040125000",
@@ -3135,7 +3519,8 @@
     "name_jp": "ユグドラシル",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3082"
   },
   {
     "ID": "3040127000",
@@ -3143,7 +3528,8 @@
     "name_jp": "コルワ",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3058"
   },
   {
     "ID": "3030200000",
@@ -3151,7 +3537,8 @@
     "name_jp": "カレン",
     "category[]": "活动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2041"
   },
   {
     "ID": "3030199000",
@@ -3159,7 +3546,8 @@
     "name_jp": "アイル",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3060"
   },
   {
     "ID": "3030198000",
@@ -3167,7 +3555,8 @@
     "name_jp": "シャルロッテ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3010"
   },
   {
     "ID": "3040126000",
@@ -3175,7 +3564,8 @@
     "name_jp": "イシュミール",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3067"
   },
   {
     "ID": "3040128000",
@@ -3183,7 +3573,8 @@
     "name_jp": "ジークフリート",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3022"
   },
   {
     "ID": "3030202000",
@@ -3191,7 +3582,8 @@
     "name_jp": "クロエ",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1051"
   },
   {
     "ID": "3030201000",
@@ -3199,7 +3591,8 @@
     "name_jp": "ガンダゴウザ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3043"
   },
   {
     "ID": "3040129000",
@@ -3207,7 +3600,8 @@
     "name_jp": "ディアンサ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2109"
   },
   {
     "ID": "3030204000",
@@ -3216,7 +3610,8 @@
     "category[]": "活动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2131"
   },
   {
     "ID": "3030203000",
@@ -3224,7 +3619,8 @@
     "name_jp": "炎獄先生エルモート",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2023"
   },
   {
     "ID": "3040130000",
@@ -3232,7 +3628,8 @@
     "name_jp": "グレア",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2131"
   },
   {
     "ID": "3030206000",
@@ -3240,7 +3637,8 @@
     "name_jp": "山姥切国広",
     "category[]": "联动",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "0"
   },
   {
     "ID": "3030205000",
@@ -3248,7 +3646,8 @@
     "name_jp": "和泉守兼定",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "0"
   },
   {
     "ID": "3040131000",
@@ -3256,7 +3655,8 @@
     "name_jp": "三日月宗近",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3030207000",
@@ -3264,7 +3664,8 @@
     "name_jp": "オーウェン",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2134"
   },
   {
     "ID": "3040132000",
@@ -3272,7 +3673,8 @@
     "name_jp": "アン",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3084"
   },
   {
     "ID": "3040133000",
@@ -3280,7 +3682,8 @@
     "name_jp": "ニーナ・ドランゴ",
     "category[]": "特典",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3085"
   },
   {
     "ID": "3030210000",
@@ -3289,7 +3692,8 @@
     "category[]": "活动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2027"
   },
   {
     "ID": "3030209000",
@@ -3297,7 +3701,8 @@
     "name_jp": "サーヤ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2053"
   },
   {
     "ID": "3040134000",
@@ -3305,7 +3710,8 @@
     "name_jp": "サーヴァンツ ドロシー＆クラウディア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3091"
   },
   {
     "ID": "3040136000",
@@ -3313,7 +3719,8 @@
     "name_jp": "木之本桜",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3086"
   },
   {
     "ID": "3030221000",
@@ -3321,7 +3728,8 @@
     "name_jp": "ヴァンピィ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3044"
   },
   {
     "ID": "3040137000",
@@ -3329,7 +3737,8 @@
     "name_jp": "アザゼル",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3087"
   },
   {
     "ID": "3030220000",
@@ -3337,7 +3746,8 @@
     "name_jp": "ミムルメモル＆パンプキン",
     "category[]": "万圣节",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2038"
   },
   {
     "ID": "3040135000",
@@ -3345,7 +3755,8 @@
     "name_jp": "ダヌア",
     "category[]": "万圣节",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2017"
   },
   {
     "ID": "3030223000",
@@ -3354,7 +3765,8 @@
     "category[]": "活动",
     "element": "水",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3006"
   },
   {
     "ID": "3030222000",
@@ -3362,7 +3774,8 @@
     "name_jp": "カルテイラ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1037"
   },
   {
     "ID": "3040138000",
@@ -3370,7 +3783,8 @@
     "name_jp": "ユエル",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3006"
   },
   {
     "ID": "3030224000",
@@ -3378,7 +3792,8 @@
     "name_jp": "ミリン",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2136"
   },
   {
     "ID": "3040141000",
@@ -3387,7 +3802,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2019"
   },
   {
     "ID": "3030208000",
@@ -3395,7 +3811,8 @@
     "name_jp": "ラインハルザ",
     "category[]": "主线",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2135"
   },
   {
     "ID": "3030226000",
@@ -3404,7 +3821,8 @@
     "category[]": "活动",
     "element": "风",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2137"
   },
   {
     "ID": "3030225000",
@@ -3412,7 +3830,8 @@
     "name_jp": "ソフィア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3021"
   },
   {
     "ID": "3040140000",
@@ -3420,7 +3839,8 @@
     "name_jp": "ランスロット",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3020"
   },
   {
     "ID": "3030227000",
@@ -3428,7 +3848,8 @@
     "name_jp": "ミカサ",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "0"
   },
   {
     "ID": "3040142000",
@@ -3436,7 +3857,8 @@
     "name_jp": "リヴァイ",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3030228000",
@@ -3444,7 +3866,8 @@
     "name_jp": "フィーナ",
     "category[]": "圣诞节",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2032"
   },
   {
     "ID": "3040143000",
@@ -3452,7 +3875,8 @@
     "name_jp": "マリー",
     "category[]": "圣诞节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1016"
   },
   {
     "ID": "3030229000",
@@ -3460,7 +3884,8 @@
     "name_jp": "マキラ",
     "category[]": "活动",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3073"
   },
   {
     "ID": "3040144000",
@@ -3468,7 +3893,8 @@
     "name_jp": "シャリオス17世",
     "category[]": "特典",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040145000",
@@ -3477,7 +3903,8 @@
     "category[]": "限定",
     "element": "暗",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3092"
   },
   {
     "ID": "3030231000",
@@ -3486,7 +3913,8 @@
     "category[]": "活动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3024"
   },
   {
     "ID": "3030230000",
@@ -3494,7 +3922,8 @@
     "name_jp": "カルバ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1032"
   },
   {
     "ID": "3040148000",
@@ -3502,7 +3931,8 @@
     "name_jp": "イルザ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3094"
   },
   {
     "ID": "3040147000",
@@ -3510,7 +3940,8 @@
     "name_jp": "ヴァジラ",
     "category[]": "神将",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3093"
   },
   {
     "ID": "3040146000",
@@ -3518,7 +3949,8 @@
     "name_jp": "バザラガ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3025"
   },
   {
     "ID": "3030232000",
@@ -3526,7 +3958,8 @@
     "name_jp": "イッパツ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1034"
   },
   {
     "ID": "3040149000",
@@ -3534,7 +3967,8 @@
     "name_jp": "テレーズ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2001"
   },
   {
     "ID": "3030234000",
@@ -3542,7 +3976,8 @@
     "name_jp": "ランドル",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1059"
   },
   {
     "ID": "3030233000",
@@ -3550,7 +3985,8 @@
     "name_jp": "ゾーイ",
     "category[]": "活动",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3055"
   },
   {
     "ID": "3040150000",
@@ -3558,7 +3994,8 @@
     "name_jp": "ゾーイ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3055"
   },
   {
     "ID": "3030236000",
@@ -3566,7 +4003,8 @@
     "name_jp": "ティナ",
     "category[]": "情人节",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2031"
   },
   {
     "ID": "3030235000",
@@ -3574,7 +4012,8 @@
     "name_jp": "ナルメア",
     "category[]": "情人节",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3047"
   },
   {
     "ID": "3040151000",
@@ -3582,7 +4021,8 @@
     "name_jp": "メドゥーサ",
     "category[]": "情人节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3081"
   },
   {
     "ID": "3030237000",
@@ -3590,7 +4030,8 @@
     "name_jp": "ネツァワルピリ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3003"
   },
   {
     "ID": "3040153000",
@@ -3599,7 +4040,8 @@
     "category[]": "活动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3096"
   },
   {
     "ID": "3040152000",
@@ -3607,7 +4049,8 @@
     "name_jp": "ティアマト",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3095"
   },
   {
     "ID": "3040154000",
@@ -3615,7 +4058,8 @@
     "name_jp": "ジャンヌダルク",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3036"
   },
   {
     "ID": "3040156000",
@@ -3623,7 +4067,8 @@
     "name_jp": "シロウ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2103"
   },
   {
     "ID": "3040155000",
@@ -3631,7 +4076,8 @@
     "name_jp": "ロボミ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2067"
   },
   {
     "ID": "3040157000",
@@ -3639,7 +4085,8 @@
     "name_jp": "江戸川コナン",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3030238000",
@@ -3647,7 +4094,8 @@
     "name_jp": "安室透",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "0"
   },
   {
     "ID": "3030239000",
@@ -3655,7 +4103,8 @@
     "name_jp": "バロワ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1030"
   },
   {
     "ID": "3040158000",
@@ -3664,7 +4113,8 @@
     "category[]": "限定",
     "element": "土",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3098"
   },
   {
     "ID": "3030242000",
@@ -3673,7 +4123,8 @@
     "category[]": "活动",
     "element": "水",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2015"
   },
   {
     "ID": "3030240000",
@@ -3681,7 +4132,8 @@
     "name_jp": "カルメリーナ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3037"
   },
   {
     "ID": "3040159000",
@@ -3689,7 +4141,8 @@
     "name_jp": "ククル",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2110"
   },
   {
     "ID": "3030241000",
@@ -3697,7 +4150,8 @@
     "name_jp": "レオナ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2140"
   },
   {
     "ID": "3040170000",
@@ -3705,7 +4159,8 @@
     "name_jp": "ソリッズ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2020"
   },
   {
     "ID": "3020071000",
@@ -3713,7 +4168,8 @@
     "name_jp": "スピナー",
     "category[]": "普通",
     "element": "风",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1060"
   },
   {
     "ID": "3040172000",
@@ -3721,7 +4177,8 @@
     "name_jp": "ルナール",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1043"
   },
   {
     "ID": "3040171000",
@@ -3730,7 +4187,8 @@
     "category[]": "限定",
     "element": "土",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2125"
   },
   {
     "ID": "3030243000",
@@ -3738,7 +4196,8 @@
     "name_jp": "ヴァンツァ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1033"
   },
   {
     "ID": "3040174000",
@@ -3746,7 +4205,8 @@
     "name_jp": "ウーフとレニー",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3110"
   },
   {
     "ID": "3040173000",
@@ -3754,7 +4214,8 @@
     "name_jp": "ジョーカー",
     "category[]": "联动",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3030244000",
@@ -3762,7 +4223,8 @@
     "name_jp": "エルタ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2025"
   },
   {
     "ID": "3040175000",
@@ -3770,7 +4232,8 @@
     "name_jp": "セレフィラ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2026"
   },
   {
     "ID": "3030245000",
@@ -3778,7 +4241,8 @@
     "name_jp": "ユイシス",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3071"
   },
   {
     "ID": "3040176000",
@@ -3786,7 +4250,8 @@
     "name_jp": "ロゼッタ",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2010"
   },
   {
     "ID": "3030247000",
@@ -3794,7 +4259,8 @@
     "name_jp": "リルル",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3048"
   },
   {
     "ID": "3030246000",
@@ -3802,7 +4268,8 @@
     "name_jp": "オリヴィエ",
     "category[]": "活动",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3092"
   },
   {
     "ID": "3040178000",
@@ -3810,7 +4277,8 @@
     "name_jp": "ノイシュ",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2000"
   },
   {
     "ID": "3040177000",
@@ -3818,7 +4286,8 @@
     "name_jp": "イルザ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3094"
   },
   {
     "ID": "3030249000",
@@ -3826,7 +4295,8 @@
     "name_jp": "アルルメイヤ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3017"
   },
   {
     "ID": "3030248000",
@@ -3834,7 +4304,8 @@
     "name_jp": "ファラ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1006"
   },
   {
     "ID": "3040185000",
@@ -3843,7 +4314,8 @@
     "category[]": "联动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040184000",
@@ -3852,7 +4324,8 @@
     "category[]": "联动",
     "element": "土",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040183000",
@@ -3861,7 +4334,8 @@
     "category[]": "联动",
     "element": "水",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3030250000",
@@ -3869,7 +4343,8 @@
     "name_jp": "アルメイダ",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2102"
   },
   {
     "ID": "3040179000",
@@ -3877,7 +4352,8 @@
     "name_jp": "グレア",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2131"
   },
   {
     "ID": "3030251000",
@@ -3885,7 +4361,8 @@
     "name_jp": "カイラナ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1052"
   },
   {
     "ID": "3040181000",
@@ -3894,7 +4371,8 @@
     "category[]": "限定",
     "element": "水",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3112"
   },
   {
     "ID": "3040180000",
@@ -3902,7 +4380,8 @@
     "name_jp": "ツバサ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3111"
   },
   {
     "ID": "3030252000",
@@ -3910,7 +4389,8 @@
     "name_jp": "チーム・ローアイン",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1027"
   },
   {
     "ID": "3040182000",
@@ -3918,7 +4398,8 @@
     "name_jp": "フーちゃん",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3113"
   },
   {
     "ID": "3030253000",
@@ -3926,7 +4407,8 @@
     "name_jp": "ユーリ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2034"
   },
   {
     "ID": "3040187000",
@@ -3934,7 +4416,8 @@
     "name_jp": "シルヴァ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3041"
   },
   {
     "ID": "3040188000",
@@ -3942,7 +4425,8 @@
     "name_jp": "プリキュア キュアブラック＆キュアホワイト",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3030254000",
@@ -3950,7 +4434,8 @@
     "name_jp": "フェザー",
     "category[]": "万圣节",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1020"
   },
   {
     "ID": "3040190000",
@@ -3959,7 +4444,8 @@
     "category[]": "限定",
     "element": "水",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3117"
   },
   {
     "ID": "3040189000",
@@ -3967,7 +4453,8 @@
     "name_jp": "レディ・グレイ",
     "category[]": "万圣节",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3005"
   },
   {
     "ID": "3040186000",
@@ -3975,7 +4462,8 @@
     "name_jp": "モニカ",
     "category[]": "特殊",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3121"
   },
   {
     "ID": "3030255000",
@@ -3983,7 +4471,8 @@
     "name_jp": "ひよこ班 アーサー＆モルドレッド",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2141"
   },
   {
     "ID": "3040192000",
@@ -3991,7 +4480,8 @@
     "name_jp": "アグロヴァル",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3119"
   },
   {
     "ID": "3040191000",
@@ -3999,7 +4489,8 @@
     "name_jp": "白竜の双騎士 ランスロット＆ヴェイン",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3118"
   },
   {
     "ID": "3030256000",
@@ -4007,7 +4498,8 @@
     "name_jp": "ロジーヌ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1049"
   },
   {
     "ID": "3040199000",
@@ -4015,7 +4507,8 @@
     "name_jp": "ユリウス",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3122"
   },
   {
     "ID": "3040193000",
@@ -4023,7 +4516,8 @@
     "name_jp": "レヴィオン姉妹 マイム＆ミイム＆メイム",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3123"
   },
   {
     "ID": "3030258000",
@@ -4031,7 +4525,8 @@
     "name_jp": "サビルバラ",
     "category[]": "活动",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2085"
   },
   {
     "ID": "3030257000",
@@ -4039,7 +4534,8 @@
     "name_jp": "ラスティナ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3075"
   },
   {
     "ID": "3040194000",
@@ -4047,7 +4543,8 @@
     "name_jp": "シャルロッテ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3010"
   },
   {
     "ID": "3040201000",
@@ -4056,7 +4553,8 @@
     "category[]": "联动",
     "element": "风",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040200000",
@@ -4065,7 +4563,8 @@
     "category[]": "联动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3030259000",
@@ -4073,7 +4572,8 @@
     "name_jp": "ヤイア",
     "category[]": "圣诞节",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2081"
   },
   {
     "ID": "3040195000",
@@ -4081,7 +4581,8 @@
     "name_jp": "メーテラ",
     "category[]": "圣诞节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3012"
   },
   {
     "ID": "3040196000",
@@ -4090,7 +4591,8 @@
     "category[]": "限定",
     "element": "火",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3126"
   },
   {
     "ID": "3030262000",
@@ -4099,7 +4601,8 @@
     "category[]": "活动",
     "element": "暗",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2142"
   },
   {
     "ID": "3030261000",
@@ -4107,7 +4610,8 @@
     "name_jp": "ベアトリクス",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3050"
   },
   {
     "ID": "3040202000",
@@ -4115,7 +4619,8 @@
     "name_jp": "アテナ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3128"
   },
   {
     "ID": "3040198000",
@@ -4123,7 +4628,8 @@
     "name_jp": "ユーステス",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3049"
   },
   {
     "ID": "3040197000",
@@ -4131,7 +4637,8 @@
     "name_jp": "クビラ",
     "category[]": "神将",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3127"
   },
   {
     "ID": "3030263000",
@@ -4139,7 +4646,8 @@
     "name_jp": "スカル",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2082"
   },
   {
     "ID": "3040203000",
@@ -4147,7 +4655,8 @@
     "name_jp": "ターニャ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1015"
   },
   {
     "ID": "3020072000",
@@ -4155,7 +4664,8 @@
     "name_jp": "猫",
     "category[]": "活动",
     "element": "可变化",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "1061"
   },
   {
     "ID": "3030264000",
@@ -4163,7 +4673,8 @@
     "name_jp": "キャサリン",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3052"
   },
   {
     "ID": "3040205000",
@@ -4171,7 +4682,8 @@
     "name_jp": "ダーント＆フライハイト",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1038"
   },
   {
     "ID": "3040204000",
@@ -4179,7 +4691,8 @@
     "name_jp": "セン",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2092"
   },
   {
     "ID": "3040207000",
@@ -4187,7 +4700,8 @@
     "name_jp": "メリッサベル",
     "category[]": "情人节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3069"
   },
   {
     "ID": "3040206000",
@@ -4195,7 +4709,8 @@
     "name_jp": "クラリス",
     "category[]": "情人节",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3040"
   },
   {
     "ID": "3030265000",
@@ -4203,7 +4718,8 @@
     "name_jp": "ミリン",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2136"
   },
   {
     "ID": "3040208000",
@@ -4211,7 +4727,8 @@
     "name_jp": "ヘルエス",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3046"
   },
   {
     "ID": "3040209000",
@@ -4220,7 +4737,8 @@
     "category[]": "限定",
     "element": "暗",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2029"
   },
   {
     "ID": "3040166000",
@@ -4228,7 +4746,8 @@
     "name_jp": "カッツェリーラ",
     "category[]": "十贤者",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3105"
   },
   {
     "ID": "3040167000",
@@ -4236,7 +4755,8 @@
     "name_jp": "アラナン",
     "category[]": "十贤者",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3106"
   },
   {
     "ID": "3040168000",
@@ -4244,7 +4764,8 @@
     "name_jp": "ハーゼリーラ",
     "category[]": "十贤者",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3107"
   },
   {
     "ID": "3040162000",
@@ -4252,7 +4773,8 @@
     "name_jp": "ガイゼンボーガ",
     "category[]": "十贤者",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3101"
   },
   {
     "ID": "3040165000",
@@ -4260,7 +4782,8 @@
     "name_jp": "ロベリア",
     "category[]": "十贤者",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3104"
   },
   {
     "ID": "3040161000",
@@ -4268,7 +4791,8 @@
     "name_jp": "フラウ",
     "category[]": "十贤者",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3100"
   },
   {
     "ID": "3040163000",
@@ -4276,7 +4800,8 @@
     "name_jp": "エスタリオラ",
     "category[]": "十贤者",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3102"
   },
   {
     "ID": "3040169000",
@@ -4284,7 +4809,8 @@
     "name_jp": "ニーア",
     "category[]": "十贤者",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3108"
   },
   {
     "ID": "3040164000",
@@ -4292,7 +4818,8 @@
     "name_jp": "カイム",
     "category[]": "十贤者",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3103"
   },
   {
     "ID": "3040160000",
@@ -4300,7 +4827,8 @@
     "name_jp": "マリア・テレサ",
     "category[]": "十贤者",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3099"
   },
   {
     "ID": "3040210000",
@@ -4308,7 +4836,8 @@
     "name_jp": "ユエル",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3006"
   },
   {
     "ID": "3030266000",
@@ -4316,7 +4845,8 @@
     "name_jp": "コルワ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3058"
   },
   {
     "ID": "3040211000",
@@ -4324,7 +4854,8 @@
     "name_jp": "ヴィーラ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2019"
   },
   {
     "ID": "3040213000",
@@ -4332,7 +4863,8 @@
     "name_jp": "マキュラ・マリウス",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3130"
   },
   {
     "ID": "3040212000",
@@ -4341,7 +4873,8 @@
     "category[]": "限定",
     "element": "风",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3129"
   },
   {
     "ID": "3030267000",
@@ -4349,7 +4882,8 @@
     "name_jp": "リチャード",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1014"
   },
   {
     "ID": "3040214000",
@@ -4357,7 +4891,8 @@
     "name_jp": "メドゥーサ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3081"
   },
   {
     "ID": "3030268000",
@@ -4365,7 +4900,8 @@
     "name_jp": "アステール",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2039"
   },
   {
     "ID": "3040215000",
@@ -4373,7 +4909,8 @@
     "name_jp": "バアル",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3131"
   },
   {
     "ID": "3040216000",
@@ -4382,7 +4919,8 @@
     "category[]": "联动",
     "element": "暗",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3030269000",
@@ -4390,7 +4928,8 @@
     "name_jp": "ノーブルナイツ ブリジール＆コーデリア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2143"
   },
   {
     "ID": "3040218000",
@@ -4398,7 +4937,8 @@
     "name_jp": "バイヴカハ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3133"
   },
   {
     "ID": "3040217000",
@@ -4406,7 +4946,8 @@
     "name_jp": "ファスティバ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2048"
   },
   {
     "ID": "3040221000",
@@ -4415,7 +4956,8 @@
     "category[]": "联动",
     "element": "火",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040220000",
@@ -4424,7 +4966,8 @@
     "category[]": "联动",
     "element": "风",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040219000",
@@ -4433,7 +4976,8 @@
     "category[]": "联动",
     "element": "暗",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3030270000",
@@ -4441,7 +4985,8 @@
     "name_jp": "フィラソピラ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1035"
   },
   {
     "ID": "3040222000",
@@ -4449,7 +4994,8 @@
     "name_jp": "コルル",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3137"
   },
   {
     "ID": "3040223000",
@@ -4457,7 +5003,8 @@
     "name_jp": "ハールート・マールート",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3138"
   },
   {
     "ID": "3040224000",
@@ -4465,7 +5012,8 @@
     "name_jp": "サンダルフォン",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3096"
   },
   {
     "ID": "3030271000",
@@ -4473,7 +5021,8 @@
     "name_jp": "フライデー",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2144"
   },
   {
     "ID": "3040225000",
@@ -4481,7 +5030,8 @@
     "name_jp": "カリオストロ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3009"
   },
   {
     "ID": "3030272000",
@@ -4489,7 +5039,8 @@
     "name_jp": "白竜の双騎士 ランスロット＆ヴェイン",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3118"
   },
   {
     "ID": "3040226000",
@@ -4497,7 +5048,8 @@
     "name_jp": "エウロペ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3117"
   },
   {
     "ID": "3040227000",
@@ -4505,7 +5057,8 @@
     "name_jp": "ジェシカ",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2016"
   },
   {
     "ID": "3030273000",
@@ -4513,7 +5066,8 @@
     "name_jp": "カシウス",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2142"
   },
   {
     "ID": "3040228000",
@@ -4521,7 +5075,8 @@
     "name_jp": "アンスリア",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3070"
   },
   {
     "ID": "3040231000",
@@ -4530,7 +5085,8 @@
     "category[]": "联动",
     "element": "暗",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040230000",
@@ -4539,7 +5095,8 @@
     "category[]": "联动",
     "element": "光",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040229000",
@@ -4548,7 +5105,8 @@
     "category[]": "联动",
     "element": "风",
     "tag[]": "SS",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3030274000",
@@ -4556,7 +5114,8 @@
     "name_jp": "レオナ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2140"
   },
   {
     "ID": "3040232000",
@@ -4564,7 +5123,8 @@
     "name_jp": "ブローディア",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3098"
   },
   {
     "ID": "3040234000",
@@ -4572,7 +5132,8 @@
     "name_jp": "タヴィーナ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3143"
   },
   {
     "ID": "3040233000",
@@ -4580,7 +5141,8 @@
     "name_jp": "勇者と姫君 スタン＆アリーザ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3142"
   },
   {
     "ID": "3040236000",
@@ -4588,7 +5150,8 @@
     "name_jp": "サラ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2021"
   },
   {
     "ID": "3040235000",
@@ -4596,7 +5159,8 @@
     "name_jp": "コロッサス",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3144"
   },
   {
     "ID": "3030275000",
@@ -4604,7 +5168,8 @@
     "name_jp": "コワフュール",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1050"
   },
   {
     "ID": "3040237000",
@@ -4612,7 +5177,8 @@
     "name_jp": "ジークフリート",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3022"
   },
   {
     "ID": "3040238000",
@@ -4621,7 +5187,8 @@
     "category[]": "限定",
     "element": "风",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3121"
   },
   {
     "ID": "3030276000",
@@ -4629,7 +5196,8 @@
     "name_jp": "ザザ",
     "category[]": "万圣节",
     "element": "土",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2051"
   },
   {
     "ID": "3040240000",
@@ -4637,7 +5205,8 @@
     "name_jp": "ハレゼナ",
     "category[]": "万圣节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3056"
   },
   {
     "ID": "3040239000",
@@ -4645,7 +5214,8 @@
     "name_jp": "真紅と冥闇 ゼタ＆バザラガ",
     "category[]": "万圣节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3145"
   },
   {
     "ID": "3040241000",
@@ -4653,7 +5223,8 @@
     "name_jp": "ソシエ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3038"
   },
   {
     "ID": "3040242000",
@@ -4661,7 +5232,8 @@
     "name_jp": "コウ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3146"
   },
   {
     "ID": "3030277000",
@@ -4669,7 +5241,8 @@
     "name_jp": "ヨウ",
     "category[]": "活动",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2145"
   },
   {
     "ID": "3040244000",
@@ -4677,7 +5250,8 @@
     "name_jp": "シトリ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3147"
   },
   {
     "ID": "3040245000",
@@ -4686,7 +5260,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3036"
   },
   {
     "ID": "3030278000",
@@ -4694,7 +5269,8 @@
     "name_jp": "クルーニ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1031"
   },
   {
     "ID": "3040247000",
@@ -4702,7 +5278,8 @@
     "name_jp": "マギサ",
     "category[]": "圣诞节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3011"
   },
   {
     "ID": "3040246000",
@@ -4710,7 +5287,8 @@
     "name_jp": "ミュオン",
     "category[]": "圣诞节",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2118"
   },
   {
     "ID": "3040248000",
@@ -4718,7 +5296,8 @@
     "name_jp": "ガチャピン",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3148"
   },
   {
     "ID": "3040250000",
@@ -4726,7 +5305,8 @@
     "name_jp": "セルエル",
     "category[]": "圣诞节",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3013"
   },
   {
     "ID": "3040249000",
@@ -4734,7 +5314,8 @@
     "name_jp": "ナルメア",
     "category[]": "圣诞节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3047"
   },
   {
     "ID": "3040243000",
@@ -4742,7 +5323,8 @@
     "name_jp": "ヴィーラ",
     "category[]": "特典",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2019"
   },
   {
     "ID": "3030279000",
@@ -4750,7 +5332,8 @@
     "name_jp": "クビラ",
     "category[]": "活动",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3127"
   },
   {
     "ID": "3040251000",
@@ -4759,7 +5342,8 @@
     "category[]": "限定",
     "element": "暗",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3149"
   },
   {
     "ID": "3030280000",
@@ -4767,7 +5351,8 @@
     "name_jp": "ジョイ",
     "category[]": "活动",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2146"
   },
   {
     "ID": "3040252000",
@@ -4775,7 +5360,8 @@
     "name_jp": "ビカラ",
     "category[]": "神将",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3150"
   },
   {
     "ID": "3040253000",
@@ -4783,7 +5369,8 @@
     "name_jp": "ユイシス",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3071"
   },
   {
     "ID": "3040254000",
@@ -4791,7 +5378,8 @@
     "name_jp": "ルシウス",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2030"
   },
   {
     "ID": "3040255000",
@@ -4800,7 +5388,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2035"
   },
   {
     "ID": "3040256000",
@@ -4808,7 +5397,8 @@
     "name_jp": "ダヌア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2017"
   },
   {
     "ID": "3040257000",
@@ -4816,7 +5406,8 @@
     "name_jp": "ジン",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2022"
   },
   {
     "ID": "3040258000",
@@ -4824,7 +5415,8 @@
     "name_jp": "イルザ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3094"
   },
   {
     "ID": "3040259000",
@@ -4832,7 +5424,8 @@
     "name_jp": "ヨダルラーハ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1026"
   },
   {
     "ID": "3040260000",
@@ -4840,7 +5433,8 @@
     "name_jp": "スカーサハ",
     "category[]": "情人节",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3080"
   },
   {
     "ID": "3040261000",
@@ -4848,7 +5442,8 @@
     "name_jp": "グリームニル",
     "category[]": "情人节",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3129"
   },
   {
     "ID": "3040262000",
@@ -4856,7 +5451,8 @@
     "name_jp": "シス",
     "category[]": "活动",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4006"
   },
   {
     "ID": "3040263000",
@@ -4864,7 +5460,8 @@
     "name_jp": "リーシャ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2061"
   },
   {
     "ID": "3040264000",
@@ -4872,7 +5469,8 @@
     "name_jp": "飛竜と吸血姫 ヴァンピィ＆ベス",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3151"
   },
   {
     "ID": "3040265000",
@@ -4881,7 +5479,8 @@
     "category[]": "限定",
     "element": "暗",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3152"
   },
   {
     "ID": "3040266000",
@@ -4889,7 +5488,8 @@
     "name_jp": "ティナ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2031"
   },
   {
     "ID": "3040267000",
@@ -4898,7 +5498,8 @@
     "category[]": "限定",
     "element": "火",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3153"
   },
   {
     "ID": "3040268000",
@@ -4906,7 +5507,8 @@
     "name_jp": "スツルム",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3078"
   },
   {
     "ID": "3040269000",
@@ -4914,7 +5516,8 @@
     "name_jp": "ドランク",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3079"
   },
   {
     "ID": "3040271000",
@@ -4922,7 +5525,8 @@
     "name_jp": "ヘリヤ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1001"
   },
   {
     "ID": "3040272000",
@@ -4930,7 +5534,8 @@
     "name_jp": "阿吽の破弓 ミラオル＆ザーリリャオー",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3155"
   },
   {
     "ID": "3040274000",
@@ -4939,7 +5544,8 @@
     "category[]": "限定",
     "element": "火",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2135"
   },
   {
     "ID": "3040273000",
@@ -4947,7 +5553,8 @@
     "name_jp": "シュラ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3156"
   },
   {
     "ID": "3040275000",
@@ -4955,7 +5562,8 @@
     "name_jp": "渋谷凛&島村卯月&本田未央",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040277000",
@@ -4963,7 +5571,8 @@
     "name_jp": "イルノート",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3159"
   },
   {
     "ID": "3040278000",
@@ -4971,7 +5580,8 @@
     "name_jp": "プレデター",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2127"
   },
   {
     "ID": "3040276000",
@@ -4979,7 +5589,8 @@
     "name_jp": "高垣楓",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040279000",
@@ -4987,7 +5598,8 @@
     "name_jp": "パーシヴァル",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3042"
   },
   {
     "ID": "3040280000",
@@ -4995,7 +5607,8 @@
     "name_jp": "サテュロス",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3160"
   },
   {
     "ID": "3040281000",
@@ -5003,7 +5616,8 @@
     "name_jp": "ノイシュ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2000"
   },
   {
     "ID": "3040282000",
@@ -5011,7 +5625,8 @@
     "name_jp": "ペンギー",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2062"
   },
   {
     "ID": "3040270000",
@@ -5019,7 +5634,8 @@
     "name_jp": "エルステの要 黒騎士&オルキス",
     "category[]": "特典",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040284000",
@@ -5027,7 +5643,8 @@
     "name_jp": "アビー",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2011"
   },
   {
     "ID": "3040283000",
@@ -5035,7 +5652,8 @@
     "name_jp": "コルル",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3137"
   },
   {
     "ID": "3040285000",
@@ -5044,7 +5662,8 @@
     "category[]": "限定",
     "element": "土",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2140"
   },
   {
     "ID": "3040287000",
@@ -5052,7 +5671,8 @@
     "name_jp": "アーミラ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2055"
   },
   {
     "ID": "3040286000",
@@ -5060,7 +5680,8 @@
     "name_jp": "ルシオ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3072"
   },
   {
     "ID": "3030290000",
@@ -5069,7 +5690,8 @@
     "category[]": "活动",
     "element": "暗",
     "tag[]": "SS",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2147"
   },
   {
     "ID": "3030300000",
@@ -5077,7 +5699,8 @@
     "name_jp": "タイアー",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2057"
   },
   {
     "ID": "3040289000",
@@ -5085,7 +5708,8 @@
     "name_jp": "ロザミア",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1018"
   },
   {
     "ID": "3040288000",
@@ -5093,7 +5717,8 @@
     "name_jp": "アニラ",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3023"
   },
   {
     "ID": "3030310000",
@@ -5101,7 +5726,8 @@
     "name_jp": "フェリ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "2029"
   },
   {
     "ID": "3040290000",
@@ -5109,7 +5735,8 @@
     "name_jp": "アルベール",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3039"
   },
   {
     "ID": "3040291000",
@@ -5117,7 +5744,8 @@
     "name_jp": "シルヴァ",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3041"
   },
   {
     "ID": "3040292000",
@@ -5125,7 +5753,8 @@
     "name_jp": "ミムルメモル",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2038"
   },
   {
     "ID": "3040293000",
@@ -5133,7 +5762,8 @@
     "name_jp": "ジュリエット",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3066"
   },
   {
     "ID": "3030320000",
@@ -5141,7 +5771,8 @@
     "name_jp": "ジョエル",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1036"
   },
   {
     "ID": "3040294000",
@@ -5149,7 +5780,8 @@
     "name_jp": "竜ヶ崎ヒイロ",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040295000",
@@ -5157,7 +5789,8 @@
     "name_jp": "天宮ミモリ",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040296000",
@@ -5165,7 +5798,8 @@
     "name_jp": "ディアンサ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2109"
   },
   {
     "ID": "3040297000",
@@ -5174,7 +5808,8 @@
     "category[]": "限定",
     "element": "土",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3163"
   },
   {
     "ID": "3040298000",
@@ -5182,7 +5817,8 @@
     "name_jp": "ガウェイン",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3000"
   },
   {
     "ID": "3040299000",
@@ -5190,7 +5826,8 @@
     "name_jp": "フロレンス",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3164"
   },
   {
     "ID": "3030321000",
@@ -5198,7 +5835,8 @@
     "name_jp": "ウーフとレニー",
     "category[]": "万圣节",
     "element": "暗",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "3110"
   },
   {
     "ID": "3040301000",
@@ -5206,7 +5844,8 @@
     "name_jp": "ロゼッタ",
     "category[]": "万圣节",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2010"
   },
   {
     "ID": "3040300000",
@@ -5214,7 +5853,8 @@
     "name_jp": "アザゼル",
     "category[]": "万圣节",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3087"
   },
   {
     "ID": "3040302000",
@@ -5222,7 +5862,8 @@
     "name_jp": "ミレイユ＆リゼット",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3165"
   },
   {
     "ID": "3040303000",
@@ -5230,7 +5871,8 @@
     "name_jp": "スーテラ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2018"
   },
   {
     "ID": "3040304000",
@@ -5238,7 +5880,8 @@
     "name_jp": "フェザー",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1020"
   },
   {
     "ID": "3040305000",
@@ -5246,7 +5889,8 @@
     "name_jp": "フィオリト",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3166"
   },
   {
     "ID": "3040306000",
@@ -5254,7 +5898,8 @@
     "name_jp": "ネモネ",
     "category[]": "圣诞节",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3061"
   },
   {
     "ID": "3040307000",
@@ -5262,7 +5907,8 @@
     "name_jp": "ミリン",
     "category[]": "圣诞节",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2136"
   },
   {
     "ID": "3040308000",
@@ -5270,7 +5916,8 @@
     "name_jp": "竈門炭治郎&竈門禰󠄀豆子&我妻善逸&嘴平伊之助",
     "category[]": "联动",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040309000",
@@ -5278,7 +5925,8 @@
     "name_jp": "煉󠄁獄杏寿郎",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040310000",
@@ -5286,7 +5934,8 @@
     "name_jp": "胡蝶しのぶ",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040311000",
@@ -5294,7 +5943,8 @@
     "name_jp": "リリィ",
     "category[]": "圣诞节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3007"
   },
   {
     "ID": "3030322000",
@@ -5302,7 +5952,8 @@
     "name_jp": "スピナー",
     "category[]": "圣诞节",
     "element": "风",
-    "rarity": "SR"
+    "rarity": "SR",
+    "character_id": "1060"
   },
   {
     "ID": "3020073000",
@@ -5310,7 +5961,8 @@
     "name_jp": "ビカラ",
     "category[]": "活动",
     "element": "暗",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "3150"
   },
   {
     "ID": "3040312000",
@@ -5319,7 +5971,8 @@
     "category[]": "限定",
     "element": "土",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3096"
   },
   {
     "ID": "3040313000",
@@ -5327,7 +5980,8 @@
     "name_jp": "シャトラ",
     "category[]": "神将",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3170"
   },
   {
     "ID": "3040314000",
@@ -5335,7 +5989,8 @@
     "name_jp": "フィルレイン",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3171"
   },
   {
     "ID": "3040315000",
@@ -5343,7 +5998,8 @@
     "name_jp": "シロウ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2103"
   },
   {
     "ID": "3040316000",
@@ -5351,7 +6007,8 @@
     "name_jp": "ゼヘク",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1017"
   },
   {
     "ID": "3040317000",
@@ -5359,7 +6016,8 @@
     "name_jp": "マイシェラ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2002"
   },
   {
     "ID": "3040318000",
@@ -5367,7 +6025,8 @@
     "name_jp": "ネクタル",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3172"
   },
   {
     "ID": "3040319000",
@@ -5375,7 +6034,8 @@
     "name_jp": "ラムレッダ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2013"
   },
   {
     "ID": "3040320000",
@@ -5384,7 +6044,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3009"
   },
   {
     "ID": "3040321000",
@@ -5392,7 +6053,8 @@
     "name_jp": "モニカ",
     "category[]": "情人节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3121"
   },
   {
     "ID": "3040322000",
@@ -5400,7 +6062,8 @@
     "name_jp": "アグロヴァル",
     "category[]": "情人节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3119"
   },
   {
     "ID": "3040323000",
@@ -5408,7 +6071,8 @@
     "name_jp": "ゼタ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3024"
   },
   {
     "ID": "3040324000",
@@ -5416,7 +6080,8 @@
     "name_jp": "バザラガ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3025"
   },
   {
     "ID": "3040325000",
@@ -5424,7 +6089,8 @@
     "name_jp": "同期組 ファラ＆ユーリ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3173"
   },
   {
     "ID": "3040326000",
@@ -5432,7 +6098,8 @@
     "name_jp": "カシウス",
     "category[]": "活动",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2142"
   },
   {
     "ID": "3040327000",
@@ -5440,7 +6107,8 @@
     "name_jp": "アイザック",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3174"
   },
   {
     "ID": "3040328000",
@@ -5448,7 +6116,8 @@
     "name_jp": "ベアトリクス",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3050"
   },
   {
     "ID": "3040329000",
@@ -5456,7 +6125,8 @@
     "name_jp": "クビラ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3127"
   },
   {
     "ID": "3040330000",
@@ -5464,7 +6134,8 @@
     "name_jp": "アンチラ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3051"
   },
   {
     "ID": "3040331000",
@@ -5472,7 +6143,8 @@
     "name_jp": "ボボボーボ・ボーボボ",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3175"
   },
   {
     "ID": "3040332000",
@@ -5480,7 +6152,8 @@
     "name_jp": "ナタク",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3176"
   },
   {
     "ID": "3040333000",
@@ -5488,7 +6161,8 @@
     "name_jp": "シオン",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3177"
   },
   {
     "ID": "3040334000",
@@ -5496,7 +6170,8 @@
     "name_jp": "アルベール",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3039"
   },
   {
     "ID": "3040335000",
@@ -5505,7 +6180,8 @@
     "category[]": "限定",
     "element": "风",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3047"
   },
   {
     "ID": "3040336000",
@@ -5513,7 +6189,8 @@
     "name_jp": "トルー",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3718"
   },
   {
     "ID": "3040337000",
@@ -5521,7 +6198,8 @@
     "name_jp": "ティコ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3179"
   },
   {
     "ID": "3040338000",
@@ -5529,7 +6207,8 @@
     "name_jp": "ショウ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3180"
   },
   {
     "ID": "3040339000",
@@ -5537,7 +6216,8 @@
     "name_jp": "ミランダ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3181"
   },
   {
     "ID": "3040340000",
@@ -5545,7 +6225,8 @@
     "name_jp": "レナ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3018"
   },
   {
     "ID": "3040341000",
@@ -5554,7 +6235,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3182"
   },
   {
     "ID": "3040342000",
@@ -5562,7 +6244,8 @@
     "name_jp": "イングヴェイ",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3063"
   },
   {
     "ID": "3040343000",
@@ -5570,7 +6253,8 @@
     "name_jp": "イシュミール",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3067"
   },
   {
     "ID": "3040344000",
@@ -5578,7 +6262,8 @@
     "name_jp": "ジークフリート",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3022"
   },
   {
     "ID": "3040345000",
@@ -5586,7 +6271,8 @@
     "name_jp": "イルノート",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3159"
   },
   {
     "ID": "3040346000",
@@ -5594,7 +6280,8 @@
     "name_jp": "メグ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2147"
   },
   {
     "ID": "3040347000",
@@ -5602,7 +6289,8 @@
     "name_jp": "メーテラ",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3012"
   },
   {
     "ID": "3040348000",
@@ -5611,7 +6299,8 @@
     "category[]": "限定",
     "element": "水",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3183"
   },
   {
     "ID": "3040349000",
@@ -5619,7 +6308,8 @@
     "name_jp": "ザルハメリナ",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3053"
   },
   {
     "ID": "3040350000",
@@ -5627,7 +6317,8 @@
     "name_jp": "タヴィーナ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3143"
   },
   {
     "ID": "3040351000",
@@ -5635,7 +6326,8 @@
     "name_jp": "ヘレル・ベン・シャレム",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3149"
   },
   {
     "ID": "3040352000",
@@ -5643,7 +6335,8 @@
     "name_jp": "シヴァ",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3126"
   },
   {
     "ID": "3040354000",
@@ -5651,7 +6344,8 @@
     "name_jp": "ノイシュ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2000"
   },
   {
     "ID": "3040355000",
@@ -5659,7 +6353,8 @@
     "name_jp": "グレア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2131"
   },
   {
     "ID": "3040356000",
@@ -5667,7 +6362,8 @@
     "name_jp": "エルモート",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2023"
   },
   {
     "ID": "3040357000",
@@ -5676,7 +6372,8 @@
     "category[]": "限定",
     "element": "暗",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3184"
   },
   {
     "ID": "3040358000",
@@ -5684,7 +6381,8 @@
     "name_jp": "アーサー",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2137"
   },
   {
     "ID": "3040359000",
@@ -5692,7 +6390,8 @@
     "name_jp": "アズサ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3185"
   },
   {
     "ID": "3040362000",
@@ -5700,7 +6399,8 @@
     "name_jp": "真選組 土方十四郎＆沖田総悟",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040361000",
@@ -5708,7 +6408,8 @@
     "name_jp": "ククル",
     "category[]": "万圣节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2110"
   },
   {
     "ID": "3040360000",
@@ -5716,7 +6417,8 @@
     "name_jp": "ヴェイン",
     "category[]": "万圣节",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2042"
   },
   {
     "ID": "3040363000",
@@ -5724,7 +6426,8 @@
     "name_jp": "万事屋銀ちゃん 坂田銀時&志村新八&神楽",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040364000",
@@ -5733,7 +6436,8 @@
     "category[]": "普通",
     "element": "光",
     "tag[]": "Another",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1043"
   },
   {
     "ID": "3040365000",
@@ -5741,7 +6445,8 @@
     "name_jp": "エニュオ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3188"
   },
   {
     "ID": "3040366000",
@@ -5750,7 +6455,8 @@
     "category[]": "普通",
     "element": "土",
     "tag[]": "Another",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3054"
   },
   {
     "ID": "3040367000",
@@ -5758,7 +6464,8 @@
     "name_jp": "アルルメイヤ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3017"
   },
   {
     "ID": "3040368000",
@@ -5766,7 +6473,8 @@
     "name_jp": "ランドル",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1059"
   },
   {
     "ID": "3040369000",
@@ -5774,7 +6482,8 @@
     "name_jp": "アンスリア",
     "category[]": "圣诞节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3070"
   },
   {
     "ID": "3040370000",
@@ -5782,7 +6491,8 @@
     "name_jp": "ドラえもん",
     "category[]": "联动",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040371000",
@@ -5790,7 +6500,8 @@
     "name_jp": "のび太",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040372000",
@@ -5798,7 +6509,8 @@
     "name_jp": "マキラ",
     "category[]": "圣诞节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3073"
   },
   {
     "ID": "3040373000",
@@ -5806,7 +6518,8 @@
     "name_jp": "アルタイル",
     "category[]": "圣诞节",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3001"
   },
   {
     "ID": "3020074000",
@@ -5814,7 +6527,8 @@
     "name_jp": "シャトラ",
     "category[]": "活动",
     "element": "土",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "3170"
   },
   {
     "ID": "3040374000",
@@ -5823,7 +6537,8 @@
     "category[]": "限定",
     "element": "水",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3020"
   },
   {
     "ID": "3040375000",
@@ -5831,7 +6546,8 @@
     "name_jp": "サテュロス",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3160"
   },
   {
     "ID": "3040376000",
@@ -5840,7 +6556,8 @@
     "category[]": "限定",
     "element": "暗",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3191"
   },
   {
     "ID": "3040377000",
@@ -5848,7 +6565,8 @@
     "name_jp": "シンダラ",
     "category[]": "神将",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3192"
   },
   {
     "ID": "3040378000",
@@ -5856,7 +6574,8 @@
     "name_jp": "イーウィヤ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3193"
   },
   {
     "ID": "3040379000",
@@ -5864,7 +6583,8 @@
     "name_jp": "クピタン",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3194"
   },
   {
     "ID": "3040380000",
@@ -5872,7 +6592,8 @@
     "name_jp": "ユグドラシル",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3082"
   },
   {
     "ID": "3040381000",
@@ -5881,7 +6602,8 @@
     "category[]": "限定",
     "element": "火",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3195"
   },
   {
     "ID": "3040382000",
@@ -5889,7 +6611,8 @@
     "name_jp": "イッパツ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1034"
   },
   {
     "ID": "3040383000",
@@ -5897,7 +6620,8 @@
     "name_jp": "リルル",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3048"
   },
   {
     "ID": "3040353000",
@@ -5905,7 +6629,8 @@
     "name_jp": "スペシャルウィーク＆サイレンススズカ＆トウカイテイオー",
     "category[]": "联动",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040384000",
@@ -5913,7 +6638,8 @@
     "name_jp": "カシウス",
     "category[]": "情人节",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2142"
   },
   {
     "ID": "3040385000",
@@ -5921,7 +6647,8 @@
     "name_jp": "ヴィーラ",
     "category[]": "情人节",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2019"
   },
   {
     "ID": "3040386000",
@@ -5929,7 +6656,8 @@
     "name_jp": "ファスティバ",
     "category[]": "情人节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2048"
   },
   {
     "ID": "3040387000",
@@ -5937,7 +6665,8 @@
     "name_jp": "フレイ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3197"
   },
   {
     "ID": "3040388000",
@@ -5945,7 +6674,8 @@
     "name_jp": "シルフ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3198"
   },
   {
     "ID": "3040389000",
@@ -5953,7 +6683,8 @@
     "name_jp": "メドゥーサ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3081"
   },
   {
     "ID": "3040390000",
@@ -5962,7 +6693,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3199"
   },
   {
     "ID": "3040391000",
@@ -5970,7 +6702,8 @@
     "name_jp": "シルヴァ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3041"
   },
   {
     "ID": "3040392000",
@@ -5978,7 +6711,8 @@
     "name_jp": "ナルメア",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3047"
   },
   {
     "ID": "3040393000",
@@ -5986,7 +6720,8 @@
     "name_jp": "ヨウ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2145"
   },
   {
     "ID": "3040394000",
@@ -5994,7 +6729,8 @@
     "name_jp": "ラグナ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2096"
   },
   {
     "ID": "3040396000",
@@ -6002,7 +6738,8 @@
     "name_jp": "自由を謳う漢達 スカル＆バルルガン",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3200"
   },
   {
     "ID": "3040397000",
@@ -6010,7 +6747,8 @@
     "name_jp": "ソフィア",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3021"
   },
   {
     "ID": "3040399000",
@@ -6018,7 +6756,8 @@
     "name_jp": "リリゼット",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040400000",
@@ -6026,7 +6765,8 @@
     "name_jp": "プリッシュ",
     "category[]": "联动",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3203"
   },
   {
     "ID": "3040398000",
@@ -6034,7 +6774,8 @@
     "name_jp": "イロハ",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040401000",
@@ -6042,7 +6783,8 @@
     "name_jp": "マナマル",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3204"
   },
   {
     "ID": "3040402000",
@@ -6050,7 +6792,8 @@
     "name_jp": "アンナ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1008"
   },
   {
     "ID": "3040403000",
@@ -6058,7 +6801,8 @@
     "name_jp": "エイレア",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3205"
   },
   {
     "ID": "3040404000",
@@ -6066,7 +6810,8 @@
     "name_jp": "ジャミル",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2097"
   },
   {
     "ID": "3040405000",
@@ -6075,7 +6820,8 @@
     "category[]": "限定",
     "element": "土",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3206"
   },
   {
     "ID": "3040406000",
@@ -6083,7 +6829,8 @@
     "name_jp": "グウィン",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3207"
   },
   {
     "ID": "3040407000",
@@ -6091,7 +6838,8 @@
     "name_jp": "ヴァジラ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3093"
   },
   {
     "ID": "3040408000",
@@ -6099,7 +6847,8 @@
     "name_jp": "ビカラ",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3150"
   },
   {
     "ID": "3040409000",
@@ -6107,7 +6856,8 @@
     "name_jp": "ミリン",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2136"
   },
   {
     "ID": "3040410000",
@@ -6115,7 +6865,8 @@
     "name_jp": "シオン",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3177"
   },
   {
     "ID": "3040411000",
@@ -6123,7 +6874,8 @@
     "name_jp": "ユーステス",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3049"
   },
   {
     "ID": "3040412000",
@@ -6131,7 +6883,8 @@
     "name_jp": "マギサ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3011"
   },
   {
     "ID": "3040413000",
@@ -6139,7 +6892,8 @@
     "name_jp": "クラリス",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3040"
   },
   {
     "ID": "3040414000",
@@ -6147,7 +6901,8 @@
     "name_jp": "ティコ",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3179"
   },
   {
     "ID": "3040415000",
@@ -6155,7 +6910,8 @@
     "name_jp": "スツルム",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3078"
   },
   {
     "ID": "3040419000",
@@ -6164,7 +6920,8 @@
     "category[]": "限定",
     "element": "水",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3211"
   },
   {
     "ID": "3040420000",
@@ -6172,7 +6929,8 @@
     "name_jp": "ジャンヌダルク",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3036"
   },
   {
     "ID": "3040421000",
@@ -6180,7 +6938,8 @@
     "name_jp": "エリカ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3212"
   },
   {
     "ID": "3040422000",
@@ -6188,7 +6947,8 @@
     "name_jp": "アンダーソン",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3213"
   },
   {
     "ID": "3040416000",
@@ -6196,7 +6956,8 @@
     "name_jp": "ルフィ",
     "category[]": "联动",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040418000",
@@ -6204,7 +6965,8 @@
     "name_jp": "ナミ＆ロビン",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040423000",
@@ -6212,7 +6974,8 @@
     "name_jp": "ジェシカ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2016"
   },
   {
     "ID": "3040424000",
@@ -6220,7 +6983,8 @@
     "name_jp": "ボーマン",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3060"
   },
   {
     "ID": "3040417000",
@@ -6228,7 +6992,8 @@
     "name_jp": "ゾロ&サンジ",
     "category[]": "联动",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040425000",
@@ -6237,7 +7002,8 @@
     "category[]": "限定",
     "element": "火",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3042"
   },
   {
     "ID": "3040426000",
@@ -6245,7 +7011,8 @@
     "name_jp": "覇道を征く主従 アグロヴァル＆トー",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3214"
   },
   {
     "ID": "3040427000",
@@ -6253,7 +7020,8 @@
     "name_jp": "リッチ",
     "category[]": "万圣节",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3184"
   },
   {
     "ID": "3040428000",
@@ -6261,7 +7029,8 @@
     "name_jp": "ムゲン",
     "category[]": "万圣节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3153"
   },
   {
     "ID": "3040429000",
@@ -6269,7 +7038,8 @@
     "name_jp": "フロレンス",
     "category[]": "万圣节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3164"
   },
   {
     "ID": "3040430000",
@@ -6277,7 +7047,8 @@
     "name_jp": "永遠の親愛 ユエル&ソシエ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3215"
   },
   {
     "ID": "3040431000",
@@ -6285,7 +7056,8 @@
     "name_jp": "アリア",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3163"
   },
   {
     "ID": "3040432000",
@@ -6293,7 +7065,8 @@
     "name_jp": "アダム",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3216"
   },
   {
     "ID": "3040433000",
@@ -6301,7 +7074,8 @@
     "name_jp": "テレーズ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2001"
   },
   {
     "ID": "3040434000",
@@ -6309,7 +7083,8 @@
     "name_jp": "エウロペ",
     "category[]": "圣诞节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3117"
   },
   {
     "ID": "3040435000",
@@ -6317,7 +7092,8 @@
     "name_jp": "フィオリト",
     "category[]": "圣诞节",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3166"
   },
   {
     "ID": "3040436000",
@@ -6325,7 +7101,8 @@
     "name_jp": "カイン",
     "category[]": "圣诞节",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2125"
   },
   {
     "ID": "3040437000",
@@ -6333,7 +7110,8 @@
     "name_jp": "シャトラ",
     "category[]": "圣诞节",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3170"
   },
   {
     "ID": "3040438000",
@@ -6342,7 +7120,8 @@
     "category[]": "限定",
     "element": "风",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3010"
   },
   {
     "ID": "3040439000",
@@ -6350,7 +7129,8 @@
     "name_jp": "エリン",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2117"
   },
   {
     "ID": "3040440000",
@@ -6359,7 +7139,8 @@
     "category[]": "限定",
     "element": "火",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3217"
   },
   {
     "ID": "3040441000",
@@ -6367,7 +7148,8 @@
     "name_jp": "マコラ",
     "category[]": "神将",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3218"
   },
   {
     "ID": "3040442000",
@@ -6375,7 +7157,8 @@
     "name_jp": "Ｕ・フライデー",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2144"
   },
   {
     "ID": "3040443000",
@@ -6384,7 +7167,8 @@
     "category[]": "限定",
     "element": "暗",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3138"
   },
   {
     "ID": "3040444000",
@@ -6392,7 +7176,8 @@
     "name_jp": "エミリア",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3219"
   },
   {
     "ID": "3040445000",
@@ -6400,7 +7185,8 @@
     "name_jp": "サンドリヨン",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3220"
   },
   {
     "ID": "3040446000",
@@ -6408,7 +7194,8 @@
     "name_jp": "オーキス",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3076"
   },
   {
     "ID": "3040447000",
@@ -6416,7 +7203,8 @@
     "name_jp": "サンダルフォン",
     "category[]": "情人节",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3096"
   },
   {
     "ID": "3040448000",
@@ -6424,7 +7212,8 @@
     "name_jp": "セン",
     "category[]": "情人节",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2092"
   },
   {
     "ID": "3040449000",
@@ -6433,7 +7222,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3221"
   },
   {
     "ID": "3040450000",
@@ -6441,7 +7231,8 @@
     "name_jp": "ヘカテー",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3222"
   },
   {
     "ID": "3040451000",
@@ -6449,7 +7240,8 @@
     "name_jp": "シエテ",
     "category[]": "活动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4007"
   },
   {
     "ID": "3040452000",
@@ -6458,7 +7250,8 @@
     "category[]": "限定",
     "element": "风",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3193"
   },
   {
     "ID": "3040453000",
@@ -6466,7 +7259,8 @@
     "name_jp": "アズサ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3185"
   },
   {
     "ID": "3040454000",
@@ -6474,7 +7268,8 @@
     "name_jp": "モニカ",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3121"
   },
   {
     "ID": "3040455000",
@@ -6482,7 +7277,8 @@
     "name_jp": "ナタク",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3176"
   },
   {
     "ID": "3040456000",
@@ -6490,7 +7286,8 @@
     "name_jp": "イルザ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3094"
   },
   {
     "ID": "3040457000",
@@ -6498,7 +7295,8 @@
     "name_jp": "シナモロール＆ポムポムプリン",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040458000",
@@ -6506,7 +7304,8 @@
     "name_jp": "ヤイア",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2081"
   },
   {
     "ID": "3040459000",
@@ -6514,7 +7313,8 @@
     "name_jp": "ジャスミン",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1012"
   },
   {
     "ID": "3040460000",
@@ -6522,7 +7322,8 @@
     "name_jp": "カロ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3224"
   },
   {
     "ID": "3040461000",
@@ -6530,7 +7331,8 @@
     "name_jp": "カンターテ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3225"
   },
   {
     "ID": "3040462000",
@@ -6538,7 +7340,8 @@
     "name_jp": "イカロス",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3226"
   },
   {
     "ID": "3040463000",
@@ -6546,7 +7349,8 @@
     "name_jp": "リリィ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3007"
   },
   {
     "ID": "3040464000",
@@ -6554,7 +7358,8 @@
     "name_jp": "ドロッセル",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1053"
   },
   {
     "ID": "3040465000",
@@ -6562,7 +7367,8 @@
     "name_jp": "コルワ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3058"
   },
   {
     "ID": "3040466000",
@@ -6570,7 +7376,8 @@
     "name_jp": "バアル",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3131"
   },
   {
     "ID": "3040467000",
@@ -6579,7 +7386,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3227"
   },
   {
     "ID": "3040468000",
@@ -6587,7 +7395,8 @@
     "name_jp": "クピタン",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3194"
   },
   {
     "ID": "3040469000",
@@ -6595,7 +7404,8 @@
     "name_jp": "フォリア",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3112"
   },
   {
     "ID": "3040470000",
@@ -6603,7 +7413,8 @@
     "name_jp": "エニュオ",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3188"
   },
   {
     "ID": "3040471000",
@@ -6611,7 +7422,8 @@
     "name_jp": "バザラガ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3025"
   },
   {
     "ID": "3040472000",
@@ -6619,7 +7431,8 @@
     "name_jp": "フェディエル",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3191"
   },
   {
     "ID": "3040473000",
@@ -6627,7 +7440,8 @@
     "name_jp": "ユリウス",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3122"
   },
   {
     "ID": "3040474000",
@@ -6635,7 +7449,8 @@
     "name_jp": "アリーザ",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2015"
   },
   {
     "ID": "3040475000",
@@ -6643,7 +7458,8 @@
     "name_jp": "サーヴァンツ ドロシー＆クラウディア",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3091"
   },
   {
     "ID": "3040476000",
@@ -6651,7 +7467,8 @@
     "name_jp": "虎杖悠仁＆伏黒 恵",
     "category[]": "联动",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040477000",
@@ -6659,7 +7476,8 @@
     "name_jp": "釘崎野薔薇＆禪院真希",
     "category[]": "联动",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040478000",
@@ -6667,7 +7485,8 @@
     "name_jp": "ヴァンピィ",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3044"
   },
   {
     "ID": "3040479000",
@@ -6675,7 +7494,8 @@
     "name_jp": "アニラ",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3023"
   },
   {
     "ID": "3040480000",
@@ -6683,7 +7503,8 @@
     "name_jp": "セルエル",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3013"
   },
   {
     "ID": "3040481000",
@@ -6691,7 +7512,8 @@
     "name_jp": "ラガッツォ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3230"
   },
   {
     "ID": "3040482000",
@@ -6699,7 +7521,8 @@
     "name_jp": "メグ＆まりっぺ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3231"
   },
   {
     "ID": "3040483000",
@@ -6707,7 +7530,8 @@
     "name_jp": "パリス",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2112"
   },
   {
     "ID": "3040486000",
@@ -6716,7 +7540,8 @@
     "category[]": "限定",
     "element": "风",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3232"
   },
   {
     "ID": "3040484000",
@@ -6724,7 +7549,8 @@
     "name_jp": "キャサリン",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3052"
   },
   {
     "ID": "3040485000",
@@ -6732,7 +7558,8 @@
     "name_jp": "ジークフリート",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3022"
   },
   {
     "ID": "3040487000",
@@ -6740,7 +7567,8 @@
     "name_jp": "ティコ",
     "category[]": "万圣节",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3179"
   },
   {
     "ID": "3040488000",
@@ -6748,7 +7576,8 @@
     "name_jp": "ビカラ",
     "category[]": "万圣节",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3150"
   },
   {
     "ID": "3040489000",
@@ -6756,7 +7585,8 @@
     "name_jp": "ダーント",
     "category[]": "万圣节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1038"
   },
   {
     "ID": "3040490000",
@@ -6764,7 +7594,8 @@
     "name_jp": "サビルバラ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2085"
   },
   {
     "ID": "3040491000",
@@ -6772,7 +7603,8 @@
     "name_jp": "ウツセミ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3233"
   },
   {
     "ID": "3040492000",
@@ -6781,7 +7613,8 @@
     "category[]": "限定",
     "element": "水",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3234"
   },
   {
     "ID": "3040493000",
@@ -6789,7 +7622,8 @@
     "name_jp": "バロワ&サーヤ",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3235"
   },
   {
     "ID": "3040494000",
@@ -6797,7 +7631,8 @@
     "name_jp": "ボレミア",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1007"
   },
   {
     "ID": "3040495000",
@@ -6805,7 +7640,8 @@
     "name_jp": "ユニ",
     "category[]": "圣诞节",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3199"
   },
   {
     "ID": "3040496000",
@@ -6813,7 +7649,8 @@
     "name_jp": "イルノート",
     "category[]": "圣诞节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3159"
   },
   {
     "ID": "3040497000",
@@ -6821,7 +7658,8 @@
     "name_jp": "ヘレル・ベン・シャレム",
     "category[]": "圣诞节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3149"
   },
   {
     "ID": "3040498000",
@@ -6829,7 +7667,8 @@
     "name_jp": "ノア",
     "category[]": "圣诞节",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2035"
   },
   {
     "ID": "3040499000",
@@ -6838,7 +7677,8 @@
     "category[]": "限定",
     "element": "火",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3024"
   },
   {
     "ID": "3040500000",
@@ -6846,7 +7686,8 @@
     "name_jp": "ローアイン",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1027"
   },
   {
     "ID": "3040501000",
@@ -6855,7 +7696,8 @@
     "category[]": "限定",
     "element": "土",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3236"
   },
   {
     "ID": "3040502000",
@@ -6863,7 +7705,8 @@
     "name_jp": "ハイラ",
     "category[]": "神将",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3237"
   },
   {
     "ID": "3040503000",
@@ -6871,7 +7714,8 @@
     "name_jp": "ティラ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3238"
   },
   {
     "ID": "3040507000",
@@ -6879,7 +7723,8 @@
     "name_jp": "デリフォード",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1005"
   },
   {
     "ID": "3040508000",
@@ -6887,7 +7732,8 @@
     "name_jp": "オリヴィエ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3092"
   },
   {
     "ID": "3040509000",
@@ -6895,7 +7741,8 @@
     "name_jp": "ユーリ",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2034"
   },
   {
     "ID": "3040510000",
@@ -6903,7 +7750,8 @@
     "name_jp": "ロベルティナ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2106"
   },
   {
     "ID": "3040511000",
@@ -6911,7 +7759,8 @@
     "name_jp": "ネハン",
     "category[]": "情人节",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3182"
   },
   {
     "ID": "3040512000",
@@ -6919,7 +7768,8 @@
     "name_jp": "シンダラ",
     "category[]": "情人节",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3192"
   },
   {
     "ID": "3040513000",
@@ -6927,7 +7777,8 @@
     "name_jp": "リチャード",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1014"
   },
   {
     "ID": "3040514000",
@@ -6935,7 +7786,8 @@
     "name_jp": "サブリナ",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3242"
   },
   {
     "ID": "3040515000",
@@ -6944,7 +7796,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3096"
   },
   {
     "ID": "3040516000",
@@ -6952,7 +7805,8 @@
     "name_jp": "ラジエル",
     "category[]": "活动",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3243"
   },
   {
     "ID": "3040517000",
@@ -6960,7 +7814,8 @@
     "name_jp": "メイガス",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3244"
   },
   {
     "ID": "3040518000",
@@ -6968,7 +7823,8 @@
     "name_jp": "ホルス",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3245"
   },
   {
     "ID": "3040519000",
@@ -6977,7 +7833,8 @@
     "category[]": "限定",
     "element": "火",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3246"
   },
   {
     "ID": "3040520000",
@@ -6985,7 +7842,8 @@
     "name_jp": "レ・フィーエ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3004"
   },
   {
     "ID": "3040521000",
@@ -6993,7 +7851,8 @@
     "name_jp": "エルモート",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2023"
   },
   {
     "ID": "3040522000",
@@ -7001,7 +7860,8 @@
     "name_jp": "ポチャッコ",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040523000",
@@ -7009,7 +7869,8 @@
     "name_jp": "スピナー",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1060"
   },
   {
     "ID": "3040524000",
@@ -7017,7 +7878,8 @@
     "name_jp": "アン",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3084"
   },
   {
     "ID": "3040525000",
@@ -7025,7 +7887,8 @@
     "name_jp": "チチリ",
     "category[]": "四圣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3248"
   },
   {
     "ID": "3040529000",
@@ -7033,7 +7896,8 @@
     "name_jp": "コルル",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3137"
   },
   {
     "ID": "3040530000",
@@ -7041,7 +7905,8 @@
     "name_jp": "クロエ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1051"
   },
   {
     "ID": "3040531000",
@@ -7049,7 +7914,8 @@
     "name_jp": "スイ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3252"
   },
   {
     "ID": "3040532000",
@@ -7057,7 +7923,8 @@
     "name_jp": "ヴァイト",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3065"
   },
   {
     "ID": "3040533000",
@@ -7065,7 +7932,8 @@
     "name_jp": "さと",
     "category[]": "普通",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3253"
   },
   {
     "ID": "3040534000",
@@ -7073,7 +7941,8 @@
     "name_jp": "ミリン",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2136"
   },
   {
     "ID": "3040528000",
@@ -7081,7 +7950,8 @@
     "name_jp": "アミ",
     "category[]": "四圣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3251"
   },
   {
     "ID": "3040535000",
@@ -7089,7 +7959,8 @@
     "name_jp": "ネクタル",
     "category[]": "普通",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3172"
   },
   {
     "ID": "3040536000",
@@ -7098,7 +7969,8 @@
     "category[]": "限定",
     "element": "暗",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3254"
   },
   {
     "ID": "3040537000",
@@ -7106,7 +7978,8 @@
     "name_jp": "テフヌト",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3255"
   },
   {
     "ID": "3040538000",
@@ -7114,7 +7987,8 @@
     "name_jp": "ラジエル",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3243"
   },
   {
     "ID": "3040539000",
@@ -7122,7 +7996,8 @@
     "name_jp": "ククル",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2110"
   },
   {
     "ID": "3040540000",
@@ -7130,7 +8005,8 @@
     "name_jp": "ハレゼナ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3056"
   },
   {
     "ID": "3040541000",
@@ -7138,7 +8014,8 @@
     "name_jp": "ソーン",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4002"
   },
   {
     "ID": "3040542000",
@@ -7146,7 +8023,8 @@
     "name_jp": "ラガッツォ",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3230"
   },
   {
     "ID": "3040543000",
@@ -7154,7 +8032,8 @@
     "name_jp": "ヘカテー",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3222"
   },
   {
     "ID": "3040527000",
@@ -7162,7 +8041,8 @@
     "name_jp": "シュシュク",
     "category[]": "四圣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3250"
   },
   {
     "ID": "3040544000",
@@ -7170,7 +8050,8 @@
     "name_jp": "ガレヲン",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3206"
   },
   {
     "ID": "3040545000",
@@ -7178,7 +8059,8 @@
     "name_jp": "アグロヴァル",
     "category[]": "泳装浴衣",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3119"
   },
   {
     "ID": "3040546000",
@@ -7186,7 +8068,8 @@
     "name_jp": "ニーア",
     "category[]": "泳装浴衣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3108"
   },
   {
     "ID": "3040547000",
@@ -7195,7 +8078,8 @@
     "category[]": "限定",
     "element": "土",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3081"
   },
   {
     "ID": "3040548000",
@@ -7203,7 +8087,8 @@
     "name_jp": "セワスチアン",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2128"
   },
   {
     "ID": "3040549000",
@@ -7211,7 +8096,8 @@
     "name_jp": "ノワール",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3256"
   },
   {
     "ID": "3040550000",
@@ -7219,7 +8105,8 @@
     "name_jp": "ナーヴェ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2104"
   },
   {
     "ID": "3040551000",
@@ -7228,7 +8115,8 @@
     "category[]": "限定",
     "element": "风",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2042"
   },
   {
     "ID": "3040552000",
@@ -7236,7 +8124,8 @@
     "name_jp": "フロレンス",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3164"
   },
   {
     "ID": "3040526000",
@@ -7244,7 +8133,8 @@
     "name_jp": "ウルキ",
     "category[]": "四圣",
     "element": "水",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3249"
   },
   {
     "ID": "3040553000",
@@ -7252,7 +8142,8 @@
     "name_jp": "ウィルナス",
     "category[]": "万圣节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3195"
   },
   {
     "ID": "3040554000",
@@ -7260,7 +8151,8 @@
     "name_jp": "サテュロス",
     "category[]": "万圣节",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3160"
   },
   {
     "ID": "3040555000",
@@ -7268,7 +8160,8 @@
     "name_jp": "マナマル",
     "category[]": "万圣节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3204"
   },
   {
     "ID": "3040556000",
@@ -7276,7 +8169,8 @@
     "name_jp": "リーシャ",
     "category[]": "普通",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2061"
   },
   {
     "ID": "3040557000",
@@ -7284,7 +8178,8 @@
     "name_jp": "ウィル",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "1010"
   },
   {
     "ID": "3040558000",
@@ -7292,7 +8187,8 @@
     "name_jp": "リムル＝テンペスト",
     "category[]": "联动",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040559000",
@@ -7300,7 +8196,8 @@
     "name_jp": "ヴェルドラ＝テンペスト",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040560000",
@@ -7308,7 +8205,8 @@
     "name_jp": "シオン",
     "category[]": "联动卡池",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040561000",
@@ -7316,7 +8214,8 @@
     "name_jp": "ディアブロ",
     "category[]": "联动卡池",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040562000",
@@ -7324,7 +8223,8 @@
     "name_jp": "ワムデュス",
     "category[]": "圣诞节",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3211"
   },
   {
     "ID": "3040563000",
@@ -7332,7 +8232,8 @@
     "name_jp": "ユグドラシル",
     "category[]": "圣诞节",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3082"
   },
   {
     "ID": "3040564000",
@@ -7340,7 +8241,8 @@
     "name_jp": "ゾーイ",
     "category[]": "圣诞节",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3055"
   },
   {
     "ID": "3040565000",
@@ -7348,7 +8250,8 @@
     "name_jp": "カトル",
     "category[]": "圣诞节",
     "element": "火",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4004"
   },
   {
     "ID": "3020075000",
@@ -7356,7 +8259,8 @@
     "name_jp": "ハイラ",
     "category[]": "活动",
     "element": "水",
-    "rarity": "R"
+    "rarity": "R",
+    "character_id": "3237"
   },
   {
     "ID": "3040566000",
@@ -7365,7 +8269,8 @@
     "category[]": "限定",
     "element": "水",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3261"
   },
   {
     "ID": "3040567000",
@@ -7373,7 +8278,8 @@
     "name_jp": "アレーティア",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3002"
   },
   {
     "ID": "3040568000",
@@ -7382,7 +8288,8 @@
     "category[]": "限定",
     "element": "风",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3262"
   },
   {
     "ID": "3040569000",
@@ -7390,7 +8297,8 @@
     "name_jp": "インダラ",
     "category[]": "神将",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3263"
   },
   {
     "ID": "3040570000",
@@ -7398,7 +8306,8 @@
     "name_jp": "ミニゴブ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2078"
   },
   {
     "ID": "3040571000",
@@ -7406,7 +8315,8 @@
     "name_jp": "コク",
     "category[]": "活动",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3264"
   },
   {
     "ID": "3040572000",
@@ -7414,7 +8324,8 @@
     "name_jp": "メレアガンス",
     "category[]": "普通",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3265"
   },
   {
     "ID": "3040573000",
@@ -7422,7 +8333,8 @@
     "name_jp": "フィーナ",
     "category[]": "普通",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2032"
   },
   {
     "ID": "3040576000",
@@ -7430,7 +8342,8 @@
     "name_jp": "桜咲刹那",
     "category[]": "联动卡池",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040577000",
@@ -7438,7 +8351,8 @@
     "name_jp": "ジャック・ラカン",
     "category[]": "联动卡池",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040574000",
@@ -7446,7 +8360,8 @@
     "name_jp": "ネギ・スプリングフィールド",
     "category[]": "联动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040575000",
@@ -7454,7 +8369,8 @@
     "name_jp": "エヴァンジェリン・Ａ・Ｋ・マクダウェル",
     "category[]": "联动",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "0"
   },
   {
     "ID": "3040578000",
@@ -7462,7 +8378,8 @@
     "name_jp": "ロベリア",
     "category[]": "情人节",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3104"
   },
   {
     "ID": "3040579000",
@@ -7470,7 +8387,8 @@
     "name_jp": "マコラ",
     "category[]": "情人节",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3218"
   },
   {
     "ID": "3040580000",
@@ -7479,7 +8397,8 @@
     "category[]": "限定",
     "element": "火",
     "tag[]": "月底",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3006"
   },
   {
     "ID": "3040581000",
@@ -7487,7 +8406,8 @@
     "name_jp": "ツクヨミ",
     "category[]": "普通",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3270"
   },
   {
     "ID": "3040588000",
@@ -7495,7 +8415,8 @@
     "name_jp": "ジョイ",
     "category[]": "活动",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "2146"
   },
   {
     "ID": "3040582000",
@@ -7504,7 +8425,8 @@
     "category[]": "限定",
     "element": "光",
     "tag[]": "月中",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3271"
   },
   {
     "ID": "3040583000",
@@ -7512,7 +8434,8 @@
     "name_jp": "ル・オー",
     "category[]": "泳装浴衣",
     "element": "土",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3221"
   },
   {
     "ID": "3040584000",
@@ -7520,7 +8443,8 @@
     "name_jp": "マキラ",
     "category[]": "泳装浴衣",
     "element": "风",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3073"
   },
   {
     "ID": "3040585000",
@@ -7528,7 +8452,8 @@
     "name_jp": "ビカラ",
     "category[]": "泳装浴衣",
     "element": "光",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "3150"
   },
   {
     "ID": "3040586000",
@@ -7536,6 +8461,7 @@
     "name_jp": "シエテ",
     "category[]": "泳装浴衣",
     "element": "暗",
-    "rarity": "SSR"
+    "rarity": "SSR",
+    "character_id": "4007"
   }
 ]

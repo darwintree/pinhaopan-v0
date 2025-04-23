@@ -1,0 +1,1585 @@
+[
+  {
+    "ID": "0",
+    "name_chs": "字符串",
+    "name_jp": "字符串",
+    "category": "字符串",
+    "character_id": "0"
+  },
+  {
+    "ID": "3710001000",
+    "name_chs": "水百合振袖",
+    "name_jp": "水百合振袖",
+    "category": "新春",
+    "character_id": "2005"
+  },
+  {
+    "ID": "3710002000",
+    "name_chs": "菊尘袴",
+    "name_jp": "菊塵袴",
+    "category": "新春",
+    "character_id": "2008"
+  },
+  {
+    "ID": "3710003000",
+    "name_chs": "暮色水仙振袖",
+    "name_jp": "暮色水仙振袖",
+    "category": "新春",
+    "character_id": "2006"
+  },
+  {
+    "ID": "3710004000",
+    "name_chs": "龙华艳衣",
+    "name_jp": "龍華艶衣",
+    "category": "周年",
+    "character_id": "2016"
+  },
+  {
+    "ID": "3710005000",
+    "name_chs": "缀鳞锁甲",
+    "name_jp": "ブリガンダイン",
+    "category": "周年",
+    "character_id": "2034"
+  },
+  {
+    "ID": "3710006000",
+    "name_chs": "棉花凉衣",
+    "name_jp": "わた花涼衣",
+    "category": "其他",
+    "character_id": "3023"
+  },
+  {
+    "ID": "3710007000",
+    "name_chs": "你与我的未来(维拉)",
+    "name_jp": "キミとボクのミライ",
+    "category": "其他",
+    "character_id": "2019"
+  },
+  {
+    "ID": "3710008000",
+    "name_chs": "你与我的未来(玛丽)",
+    "name_jp": "キミとボクのミライ",
+    "category": "其他",
+    "character_id": "1016"
+  },
+  {
+    "ID": "3710009000",
+    "name_chs": "凶恶铠甲(无面罩)",
+    "name_jp": "ベイルアーマー(トゥルーフェイス)",
+    "category": "活动",
+    "character_id": "3022"
+  },
+  {
+    "ID": "3710010000",
+    "name_chs": "凶恶铠甲(全面罩)",
+    "name_jp": "ベイルアーマー(フルフェイス)",
+    "category": "活动",
+    "character_id": "3022"
+  },
+  {
+    "ID": "3710011000",
+    "name_chs": "天空的道标",
+    "name_jp": "ソラのミチシルベ",
+    "category": "特典",
+    "character_id": "2029"
+  },
+  {
+    "ID": "3710012000",
+    "name_chs": "朱椿振袖",
+    "name_jp": "朱椿振袖",
+    "category": "新春",
+    "character_id": "2019"
+  },
+  {
+    "ID": "3710013000",
+    "name_chs": "幽天月花振袖",
+    "name_jp": "幽天月花振袖",
+    "category": "新春",
+    "character_id": "2029"
+  },
+  {
+    "ID": "3710014000",
+    "name_chs": "青藤袴",
+    "name_jp": "青藤袴",
+    "category": "新春",
+    "character_id": "2035"
+  },
+  {
+    "ID": "3710015000",
+    "name_chs": "莉娜因巴斯(咏唱省略)",
+    "name_jp": "リナ＝インバース（呪文詠唱なし）",
+    "category": "联动",
+    "character_id": "2083"
+  },
+  {
+    "ID": "3710016000",
+    "name_chs": "青春☆校服",
+    "name_jp": "セーシュン☆ユニフォーム",
+    "category": "周年",
+    "character_id": "3009"
+  },
+  {
+    "ID": "3710017000",
+    "name_chs": "埃尔斯特正装",
+    "name_jp": "アイルストフォーマル",
+    "category": "周年",
+    "character_id": "3013"
+  },
+  {
+    "ID": "3710018000",
+    "name_chs": "樱风春装",
+    "name_jp": "桜風春装",
+    "category": "其他",
+    "character_id": "3051"
+  },
+  {
+    "ID": "3710019000",
+    "name_chs": "对星晶兽战用铠甲",
+    "name_jp": "対星晶獣戦用鎧レリキラ",
+    "category": "活动",
+    "character_id": "3024"
+  },
+  {
+    "ID": "3710020000",
+    "name_chs": "皇家绀蓝胸甲",
+    "name_jp": "ロイヤルブルーキュイラス",
+    "category": "活动",
+    "character_id": "3020"
+  },
+  {
+    "ID": "3710021000",
+    "name_chs": "夜空之雫(杰西卡)",
+    "name_jp": "ヨゾラのシズク",
+    "category": "其他",
+    "character_id": "2016"
+  },
+  {
+    "ID": "3710022000",
+    "name_chs": "夜空之雫(阿莉莎)",
+    "name_jp": "ヨゾラのシズク",
+    "category": "特典",
+    "character_id": "2015"
+  },
+  {
+    "ID": "3710023000",
+    "name_jp": "漢前印褌",
+    "category": "特典",
+    "character_id": "2007"
+  },
+  {
+    "ID": "3710024000",
+    "name_chs": "阿尔比昂抹胸礼服",
+    "name_jp": "アルビオン・ローブデコルテ",
+    "category": "活动",
+    "character_id": "2019"
+  },
+  {
+    "ID": "3710025000",
+    "name_chs": "贵族晚礼服",
+    "name_jp": "ノーブルナイトドレス",
+    "category": "活动",
+    "character_id": "3044"
+  },
+  {
+    "ID": "3710026000",
+    "name_chs": "炎帝的群臣",
+    "name_jp": "炎帝の群臣",
+    "category": "活动",
+    "character_id": "3042"
+  },
+  {
+    "ID": "3710029000",
+    "name_chs": "梦幻可爱☆炼金术~",
+    "name_jp": "ゆめかわ☆アルケミー",
+    "category": "特典",
+    "character_id": "3009"
+  },
+  {
+    "ID": "3710033000",
+    "name_chs": "圣少女的战装束",
+    "name_jp": "聖乙女の戦装束",
+    "category": "活动",
+    "character_id": "3036"
+  },
+  {
+    "ID": "3710034000",
+    "name_chs": "埃尔斯特的王子",
+    "name_jp": "プリンスオブアルスター",
+    "category": "活动",
+    "character_id": "3013"
+  },
+  {
+    "ID": "3710032000",
+    "name_chs": "龙骑士(兰斯洛特)",
+    "name_jp": "The Dragon Knights",
+    "category": "活动",
+    "character_id": "3020"
+  },
+  {
+    "ID": "3710035000",
+    "name_chs": "圣夜胸衣",
+    "name_jp": "ホーリーナイトビスチェ",
+    "category": "圣诞节",
+    "character_id": "2005"
+  },
+  {
+    "ID": "3710036000",
+    "name_chs": "圣夜公主",
+    "name_jp": "ホーリーナイトプリンセス",
+    "category": "圣诞节",
+    "character_id": "2019"
+  },
+  {
+    "ID": "3710037000",
+    "name_jp": "浪漫艶黒袴",
+    "category": "新春",
+    "character_id": "2007"
+  },
+  {
+    "ID": "3710038000",
+    "name_jp": "深緋新春装",
+    "category": "新春",
+    "character_id": "2010"
+  },
+  {
+    "ID": "3710039000",
+    "name_jp": "蒼天羽振袖",
+    "category": "新春",
+    "character_id": "2061"
+  },
+  {
+    "ID": "3710030000",
+    "name_chs": "龙骑士(齐格飞)",
+    "name_jp": "The Dragon Knights",
+    "category": "活动",
+    "character_id": "3022"
+  },
+  {
+    "ID": "3710031000",
+    "name_chs": "龙骑士(维恩)",
+    "name_jp": "The Dragon Knights",
+    "category": "活动",
+    "character_id": "2042"
+  },
+  {
+    "ID": "3710040000",
+    "name_chs": "龙骑士(帕西瓦尔)",
+    "name_jp": "The Dragon Knights",
+    "category": "活动",
+    "character_id": "3042"
+  },
+  {
+    "ID": "3710041000",
+    "name_chs": "蝴蝶幻舞装",
+    "name_jp": "胡蝶幻舞装",
+    "category": "周年",
+    "character_id": "3047"
+  },
+  {
+    "ID": "3710042000",
+    "name_chs": "哥特炼金术",
+    "name_jp": "アルケミーゴシック",
+    "category": "活动",
+    "character_id": "3009"
+  },
+  {
+    "ID": "3710043000",
+    "name_jp": "鷲王翼装束",
+    "category": "活动",
+    "character_id": "3003"
+  },
+  {
+    "ID": "3710044000",
+    "name_chs": "卡塔莉娜桑",
+    "name_jp": "カタリナさん",
+    "category": "愚人节",
+    "character_id": "2005"
+  },
+  {
+    "ID": "3710045000",
+    "name_chs": "菲莉酱",
+    "name_jp": "フェリちゃん",
+    "category": "愚人节",
+    "character_id": "2029"
+  },
+  {
+    "ID": "3710046000",
+    "name_chs": "仁桑",
+    "name_jp": "ジンさん",
+    "category": "愚人节",
+    "character_id": "2022"
+  },
+  {
+    "ID": "3710047000",
+    "name_jp": "Luck Be a Lady",
+    "category": "其他",
+    "character_id": "2005"
+  },
+  {
+    "ID": "3710048000",
+    "name_chs": "来自宇宙的先攻",
+    "name_jp": "オフェンス・オブ・コスモス",
+    "category": "其他",
+    "character_id": "3055"
+  },
+  {
+    "ID": "3710050000",
+    "name_jp": "BachaRackam",
+    "category": "其他",
+    "character_id": "2008"
+  },
+  {
+    "ID": "3710051000",
+    "name_jp": "Rainbow Roller",
+    "category": "其他",
+    "character_id": "2006"
+  },
+  {
+    "ID": "3710049000",
+    "name_chs": "柔羽轻衣",
+    "name_jp": "柔羽軽衣",
+    "category": "其他",
+    "character_id": "3073"
+  },
+  {
+    "ID": "3710052000",
+    "name_jp": "Mr. Big Shot",
+    "category": "其他",
+    "character_id": "2007"
+  },
+  {
+    "ID": "3710053000",
+    "name_jp": "All Her Jazz",
+    "category": "其他",
+    "character_id": "2010"
+  },
+  {
+    "ID": "3710054000",
+    "name_chs": "战斗服装 对“水”战",
+    "name_jp": "バトルコスチューム対『水』戦",
+    "category": "联动",
+    "character_id": "3086"
+  },
+  {
+    "ID": "3710055000",
+    "name_chs": "战斗服装 对“雷”战",
+    "name_jp": "バトルコスチューム対『雷』戦",
+    "category": "联动",
+    "character_id": "3086"
+  },
+  {
+    "ID": "3710056000",
+    "name_chs": "赛车服(泽塔)",
+    "name_jp": "レーシングスーツ",
+    "category": "活动",
+    "character_id": "3024"
+  },
+  {
+    "ID": "3710057000",
+    "name_chs": "赛车服(贝阿朵丽丝)",
+    "name_jp": "レーシングスーツ",
+    "category": "活动",
+    "character_id": "3050"
+  },
+  {
+    "ID": "3710058000",
+    "name_chs": "可爱祝福炼金术师☆",
+    "name_jp": "ブレス・ザ・ぷりてぃアルケミスト☆",
+    "category": "圣诞节",
+    "character_id": "3009"
+  },
+  {
+    "ID": "3710059000",
+    "name_chs": "晚宴风格",
+    "name_jp": "アーベント・シュティール",
+    "category": "圣诞节",
+    "character_id": "3042"
+  },
+  {
+    "ID": "3710060000",
+    "name_chs": "苍天羽织袴",
+    "name_jp": "蒼天羽織袴",
+    "category": "新春",
+    "character_id": "3020"
+  },
+  {
+    "ID": "3710061000",
+    "name_chs": "振袖茜空千鸟舞",
+    "name_jp": "振袖茜空千鳥舞",
+    "category": "新春",
+    "character_id": "3024"
+  },
+  {
+    "ID": "3710062000",
+    "name_chs": "空色春华装",
+    "name_jp": "空色春華装",
+    "category": "新春",
+    "character_id": "3010"
+  },
+  {
+    "ID": "3710063000",
+    "name_chs": "军师正装",
+    "name_jp": "タクティシャンフォーマル",
+    "category": "周年",
+    "character_id": "3001"
+  },
+  {
+    "ID": "3710064000",
+    "name_chs": "埃尔斯特晚装",
+    "name_jp": "アイルストイブニング",
+    "category": "周年",
+    "character_id": "3046"
+  },
+  {
+    "ID": "3710065000",
+    "name_chs": "锁链与墙壁与兰斯洛特",
+    "name_jp": "鎖と壁とランスロット",
+    "category": "愚人节",
+    "character_id": "3020"
+  },
+  {
+    "ID": "3710066000",
+    "name_chs": "萝赛塔桑",
+    "name_jp": "ロゼッタさん",
+    "category": "愚人节",
+    "character_id": "2010"
+  },
+  {
+    "ID": "3710067000",
+    "name_chs": "雪橇奥斯特萝",
+    "name_jp": "ソリオストロ",
+    "category": "愚人节",
+    "character_id": "3009"
+  },
+  {
+    "ID": "3710068000",
+    "name_chs": "漆黑的断罪者",
+    "name_jp": "スクレ・オーンブルノワール",
+    "category": "活动",
+    "character_id": "4006"
+  },
+  {
+    "ID": "3710069000",
+    "name_chs": "黑蝶梦幻衣",
+    "name_jp": "黒蝶夢幻衣",
+    "category": "特典",
+    "character_id": "3047"
+  },
+  {
+    "ID": "3710070000",
+    "name_chs": "闭关赶稿服",
+    "name_jp": "館詰ウェア",
+    "category": "活动",
+    "character_id": "1043"
+  },
+  {
+    "ID": "3710071000",
+    "name_chs": "薰风晴衣",
+    "name_jp": "薫風晴衣",
+    "category": "其他",
+    "character_id": "3093"
+  },
+  {
+    "ID": "3710074000",
+    "name_chs": "十天众·夏日假期(希耶提)",
+    "name_jp": "エターナルズ・サマーバケーション",
+    "category": "夏日",
+    "character_id": "4007"
+  },
+  {
+    "ID": "3710072000",
+    "name_chs": "十天众·夏日假期(索恩)",
+    "name_jp": "エターナルズ・サマーバケーション",
+    "category": "夏日",
+    "character_id": "4002"
+  },
+  {
+    "ID": "3710073000",
+    "name_chs": "十天众·夏日假期(萨拉萨)",
+    "name_jp": "エターナルズ・サマーバケーション",
+    "category": "夏日",
+    "character_id": "4003"
+  },
+  {
+    "ID": "3710075000",
+    "name_chs": "心中的大哥",
+    "name_jp": "心のアニキ",
+    "category": "活动",
+    "character_id": "3042"
+  },
+  {
+    "ID": "3710076000",
+    "name_chs": "铳匠工装",
+    "name_jp": "ガンスミス・ワークウェア",
+    "category": "活动",
+    "character_id": "2110"
+  },
+  {
+    "ID": "3710077000",
+    "name_chs": "糖果女巫",
+    "name_jp": "スウィート・ウィッチ",
+    "category": "万圣节",
+    "character_id": "4005"
+  },
+  {
+    "ID": "3710078000",
+    "name_chs": "可爱围裙",
+    "name_jp": "キューティーエプロン",
+    "category": "活动",
+    "character_id": "2124"
+  },
+  {
+    "ID": "3710081000",
+    "name_chs": "苍色矜持",
+    "name_jp": "蒼き矜持",
+    "category": "特典",
+    "character_id": "3050"
+  },
+  {
+    "ID": "3710079000",
+    "name_chs": "圣诞风迷你裙",
+    "name_jp": "サンタライク・ミニドレス",
+    "category": "圣诞节",
+    "character_id": "2029"
+  },
+  {
+    "ID": "3710080000",
+    "name_chs": "圣诞八字胡",
+    "name_jp": "マスタッシュサンタ・スタイル",
+    "category": "圣诞节",
+    "character_id": "4001"
+  },
+  {
+    "ID": "3710082000",
+    "name_chs": "祈愿的净衣",
+    "name_jp": "祈願の浄衣",
+    "category": "活动",
+    "character_id": "3093"
+  },
+  {
+    "ID": "3710083000",
+    "name_chs": "活泼雪色",
+    "name_jp": "ホッピング・スノー",
+    "category": "活动",
+    "character_id": "2124"
+  },
+  {
+    "ID": "3710084000",
+    "name_chs": "晓天羽织袴",
+    "name_jp": "暁天羽織袴",
+    "category": "新春",
+    "character_id": "2042"
+  },
+  {
+    "ID": "3710085000",
+    "name_chs": "振袖苍空花时雨",
+    "name_jp": "振袖 蒼空花時雨",
+    "category": "新春",
+    "character_id": "3050"
+  },
+  {
+    "ID": "3710086000",
+    "name_chs": "鲸幕晴甲",
+    "name_jp": "鯨幕晴甲",
+    "category": "新春",
+    "character_id": "4008"
+  },
+  {
+    "ID": "3710087000",
+    "name_chs": "龙胆蓝",
+    "name_jp": "ゲンティアンブルー",
+    "category": "周年",
+    "character_id": "3041"
+  },
+  {
+    "ID": "3710088000",
+    "name_chs": "天司正装",
+    "name_jp": "プリマーチフォーマル",
+    "category": "周年",
+    "character_id": "3096"
+  },
+  {
+    "ID": "3710090000",
+    "name_chs": "圣少女的休憩",
+    "name_jp": "聖乙女の休息",
+    "category": "活动",
+    "character_id": "3036"
+  },
+  {
+    "ID": "3710091000",
+    "name_jp": "ブッ殺殺ぽんマン",
+    "category": "愚人节",
+    "character_id": "4004"
+  },
+  {
+    "ID": "3710092000",
+    "name_chs": "战斗露莉亚",
+    "name_jp": "バトル・ザ・ルリア",
+    "category": "愚人节",
+    "character_id": "2124"
+  },
+  {
+    "ID": "3710093000",
+    "name_chs": "齐君",
+    "name_jp": "ジー君",
+    "category": "愚人节",
+    "character_id": "3022"
+  },
+  {
+    "ID": "3710089000",
+    "name_chs": "约定的天司长",
+    "name_jp": "約束の天司長",
+    "category": "特典",
+    "character_id": "3096"
+  },
+  {
+    "ID": "3710096000",
+    "name_chs": "调停者的使命",
+    "name_jp": "調停者の使命",
+    "category": "活动",
+    "character_id": "3055"
+  },
+  {
+    "ID": "3710097000",
+    "name_chs": "彩虹酒吧制服",
+    "name_jp": "ユニフォーム・オブ・ラードゥガ",
+    "category": "活动",
+    "character_id": "2097"
+  },
+  {
+    "ID": "3710098000",
+    "name_chs": "假面·浅蓝",
+    "name_jp": "マスク・ブルクレー",
+    "category": "活动",
+    "character_id": "4006"
+  },
+  {
+    "ID": "3710105000",
+    "name_chs": "沙滩上的珍珠",
+    "name_jp": "パール・オブ・ビーチ",
+    "category": "活动",
+    "character_id": "2124"
+  },
+  {
+    "ID": "3710106000",
+    "name_chs": "夏日度假·双子(卡托尔)",
+    "name_jp": "サマーバカンス・ツインズ",
+    "category": "夏日",
+    "character_id": "4004"
+  },
+  {
+    "ID": "3710107000",
+    "name_chs": "夏日度假·双子(艾瑟尔)",
+    "name_jp": "サマーバカンス・ツインズ",
+    "category": "夏日",
+    "character_id": "4010"
+  },
+  {
+    "ID": "3710111000",
+    "name_chs": "沙漠旅者",
+    "name_jp": "サハラー・モサーフェル",
+    "category": "活动",
+    "character_id": "2015"
+  },
+  {
+    "ID": "3710112000",
+    "name_chs": "秧鸡",
+    "name_jp": "ヤンバルクイナ",
+    "category": "特典",
+    "character_id": "2109"
+  },
+  {
+    "ID": "3710115000",
+    "name_chs": "便装紫罗兰",
+    "name_jp": "ヴァイオレット・インコグニート",
+    "category": "活动",
+    "character_id": "4009"
+  },
+  {
+    "ID": "3710116000",
+    "name_chs": "黑龙骑士团制式甲胄(副团长用)",
+    "name_jp": "黒竜騎士団制式甲冑(副団長用)",
+    "category": "活动",
+    "character_id": "3020"
+  },
+  {
+    "ID": "3710117000",
+    "name_chs": "幕间的流星",
+    "name_jp": "幕間の流星",
+    "category": "活动",
+    "character_id": "2118"
+  },
+  {
+    "ID": "3710121000",
+    "name_chs": "扭蛋平·木克",
+    "name_jp": "ガチャピン・ムック",
+    "category": "活动",
+    "character_id": "3148"
+  },
+  {
+    "ID": "3710122000",
+    "name_chs": "完美·圣诞西服",
+    "name_jp": "パーフェクト・サンタスーツ",
+    "category": "圣诞节",
+    "character_id": "4007"
+  },
+  {
+    "ID": "3710123000",
+    "name_chs": "彩艳天缘振袖",
+    "name_jp": "彩艶天縁振袖",
+    "category": "新春",
+    "character_id": "4002"
+  },
+  {
+    "ID": "3710124000",
+    "name_chs": "雪解桃振袖",
+    "name_jp": "雪解桃振袖",
+    "category": "新春",
+    "character_id": "3007"
+  },
+  {
+    "ID": "3710125000",
+    "name_chs": "莊煌华丽装",
+    "name_jp": "荘煌華麗装",
+    "category": "新春",
+    "character_id": "3126"
+  },
+  {
+    "ID": "3710128000",
+    "name_chs": "闪向拂晓的冥刃",
+    "name_jp": "払暁に冥刃閃く",
+    "category": "活动",
+    "character_id": "3025"
+  },
+  {
+    "ID": "3710126000",
+    "name_chs": "蝴蝶双舞装",
+    "name_jp": "胡蝶双舞装",
+    "category": "特典",
+    "character_id": "3047"
+  },
+  {
+    "ID": "3710129000",
+    "name_chs": "少女的往昔幻影",
+    "name_jp": "在りし少女の幻",
+    "category": "特典",
+    "character_id": "2029"
+  },
+  {
+    "ID": "3710130000",
+    "name_chs": "威尔士军最高指挥官仪典用礼装",
+    "name_jp": "ウェールズ軍最高指揮官式典用礼装",
+    "category": "周年",
+    "character_id": "3119"
+  },
+  {
+    "ID": "3710131000",
+    "name_chs": "璀璨流光",
+    "name_jp": "ソレイユ・ブラン",
+    "category": "周年",
+    "character_id": "3040"
+  },
+  {
+    "ID": "3710135000",
+    "name_chs": "欢乐派对礼服",
+    "name_jp": "ジョイフルパーティードレス",
+    "category": "活动",
+    "character_id": "2032"
+  },
+  {
+    "ID": "3710132000",
+    "name_chs": "莫妮CAR",
+    "name_jp": "モニカモナCAR",
+    "category": "愚人节",
+    "character_id": "3121"
+  },
+  {
+    "ID": "3710133000",
+    "name_chs": "胡闹怪兽",
+    "name_jp": "やんちゃ怪獣",
+    "category": "愚人节",
+    "character_id": "3013"
+  },
+  {
+    "ID": "3710134000",
+    "name_chs": "萝伯美改(沙漠战士型)",
+    "name_jp": "ロボミ改(砂漠戦仕様)",
+    "category": "愚人节",
+    "character_id": "2067"
+  },
+  {
+    "ID": "3710127000",
+    "name_chs": "老当益壮",
+    "name_jp": "老當益壮",
+    "category": "特典",
+    "character_id": "2020"
+  },
+  {
+    "ID": "3710136000",
+    "name_chs": "司掌调停的苍蓝使徒",
+    "name_jp": "調停を司る蒼き使徒",
+    "category": "特典",
+    "character_id": "3055"
+  },
+  {
+    "ID": "3710137000",
+    "name_chs": "雨读之衣",
+    "name_jp": "雨読の衣",
+    "category": "活动",
+    "character_id": "3001"
+  },
+  {
+    "ID": "3710138000",
+    "name_chs": "至高的一杯",
+    "name_jp": "至高の一杯",
+    "category": "其他",
+    "character_id": "3096"
+  },
+  {
+    "ID": "3710139000",
+    "name_chs": "DOSSSS候补成员 希露伊多斯",
+    "name_jp": "DOSSSSサポートメンバー　シロイドス",
+    "category": "活动",
+    "character_id": "2124"
+  },
+  {
+    "ID": "3710140000",
+    "name_chs": "海滨的雌狮",
+    "name_jp": "シーサイド・ライオネス",
+    "category": "活动",
+    "character_id": "2140"
+  },
+  {
+    "ID": "3710143000",
+    "name_chs": "鼠季泳装",
+    "name_jp": "ネズ水着",
+    "category": "夏日",
+    "character_id": "3150"
+  },
+  {
+    "ID": "3710141000",
+    "name_chs": "在水边微笑的浓艳恋人",
+    "name_jp": "水辺で微笑みし濃艶なる恋人",
+    "category": "夏日",
+    "character_id": "3108"
+  },
+  {
+    "ID": "3710142000",
+    "name_chs": "教皇的晴天漫步",
+    "name_jp": "教皇の漫歩日和",
+    "category": "夏日",
+    "character_id": "3106"
+  },
+  {
+    "ID": "3710150000",
+    "name_chs": "小巷中的公主",
+    "name_jp": "路地裏の王女",
+    "category": "活动",
+    "character_id": "3066"
+  },
+  {
+    "ID": "3710151000",
+    "name_chs": "无双骑士",
+    "name_jp": "無双騎士",
+    "category": "活动",
+    "character_id": "3000"
+  },
+  {
+    "ID": "3710152000",
+    "name_chs": "糖果猎手",
+    "name_jp": "トリート・ハンターズ",
+    "category": "万圣节",
+    "character_id": "3103"
+  },
+  {
+    "ID": "3710154000",
+    "name_chs": "天才最可爱☆炼金术师",
+    "name_jp": "天才最カワ☆錬金術師",
+    "category": "活动",
+    "character_id": "3040"
+  },
+  {
+    "ID": "3710155000",
+    "name_chs": "精灵雅裙",
+    "name_jp": "トントゥズ・ガラドレス",
+    "category": "圣诞节",
+    "character_id": "4010"
+  },
+  {
+    "ID": "3710156000",
+    "name_chs": "超钢巨人·癸干忒斯",
+    "name_jp": "超鋼巨人ゴッドギガンテス",
+    "category": "活动",
+    "character_id": "2103"
+  },
+  {
+    "ID": "3710157000",
+    "name_jp": "福呼瑞相羽織袴",
+    "category": "新春",
+    "character_id": "2125"
+  },
+  {
+    "ID": "3710158000",
+    "name_chs": "白围近朱裙",
+    "name_jp": "朱交わりし白割烹",
+    "category": "新春",
+    "character_id": "3128"
+  },
+  {
+    "ID": "3710159000",
+    "name_jp": "瑞花繚乱振袖",
+    "category": "新春",
+    "character_id": "2017"
+  },
+  {
+    "ID": "3710164000",
+    "name_chs": "御灵状态",
+    "name_jp": "ミタマロシ",
+    "category": "其他",
+    "character_id": "3093"
+  },
+  {
+    "ID": "3710160000",
+    "name_chs": "忿怒的剑客",
+    "name_jp": "忿怒の剣客",
+    "category": "活动",
+    "character_id": "2030"
+  },
+  {
+    "ID": "3710161000",
+    "name_chs": "醉心翘蔻之日",
+    "name_jp": "ちよこなる日々",
+    "category": "情人节",
+    "character_id": "3149"
+  },
+  {
+    "ID": "3710094000",
+    "name_chs": "漆黑的英雄",
+    "name_jp": "漆黒の英雄",
+    "category": "签到",
+    "character_id": "3022"
+  },
+  {
+    "ID": "3710095000",
+    "name_chs": "异途·哥特炼金术",
+    "name_jp": "アストレイ・アルケミーゴシック",
+    "category": "签到",
+    "character_id": "3040"
+  },
+  {
+    "ID": "3710162000",
+    "name_chs": "高贵燕尾蝶",
+    "name_jp": "ノーブル・スワロウテイル",
+    "category": "周年",
+    "character_id": "3122"
+  },
+  {
+    "ID": "3710163000",
+    "name_chs": "白蔷薇的微笑",
+    "name_jp": "白薔薇の微笑み",
+    "category": "周年",
+    "character_id": "3071"
+  },
+  {
+    "ID": "3710165000",
+    "name_chs": "戴安塞法",
+    "name_jp": "ディアンサイファー",
+    "category": "愚人节",
+    "character_id": "2109"
+  },
+  {
+    "ID": "3710166000",
+    "name_chs": "无人机斯平纳",
+    "name_jp": "ドローンスピナー",
+    "category": "愚人节",
+    "character_id": "1060"
+  },
+  {
+    "ID": "3710167000",
+    "name_chs": "人气投票第1位 波波波~波·波~波波",
+    "name_jp": "人気投票第１位 ボボボーボ・ボーボボ",
+    "category": "联动",
+    "character_id": "3175"
+  },
+  {
+    "ID": "3710168000",
+    "name_chs": "人气投票第2位 波波波~波·波~波波",
+    "name_jp": "人気投票第２位 ボボボーボ・ボーボボ",
+    "category": "联动",
+    "character_id": "3175"
+  },
+  {
+    "ID": "3710169000",
+    "name_chs": "人气投票第3位 波波波~波·波~波波",
+    "name_jp": "人気投票第３位 ボボボーボ・ボーボボ",
+    "category": "联动",
+    "character_id": "3175"
+  },
+  {
+    "ID": "3710170000",
+    "name_chs": "人气投票第4位 波波波~波·波~波波",
+    "name_jp": "人気投票第４位 ボボボーボ・ボーボボ",
+    "category": "联动",
+    "character_id": "3175"
+  },
+  {
+    "ID": "3710171000",
+    "name_chs": "人气投票第5位 波波波~波·波~波波",
+    "name_jp": "人気投票第５位 ボボボーボ・ボーボボ",
+    "category": "联动",
+    "character_id": "3175"
+  },
+  {
+    "ID": "3710172000",
+    "name_jp": "走死走愛仏恥義理晴纏",
+    "category": "活动",
+    "character_id": "3111"
+  },
+  {
+    "ID": "3710099000",
+    "name_chs": "真红的战姬",
+    "name_jp": "真紅の戦姫",
+    "category": "签到",
+    "character_id": "3024"
+  },
+  {
+    "ID": "3710173000",
+    "name_chs": "光华与你",
+    "name_jp": "あなたと光華",
+    "category": "夏日",
+    "character_id": "3170"
+  },
+  {
+    "ID": "3710176000",
+    "name_chs": "活死人米姆露梅莫璐",
+    "name_jp": "ミムルメモル・オブ・ザ・デッド",
+    "category": "活动",
+    "character_id": "2038"
+  },
+  {
+    "ID": "3710174000",
+    "name_chs": "浪中傲立的俏美艳花",
+    "name_jp": "波上に力匂い立つ艶花",
+    "category": "夏日",
+    "character_id": "3100"
+  },
+  {
+    "ID": "3710175000",
+    "name_chs": "呼唤殃咎的潮涛之音",
+    "name_jp": "殃咎招く潮騒の調べ",
+    "category": "夏日",
+    "character_id": "3104"
+  },
+  {
+    "ID": "3710101000",
+    "name_chs": "荣冠的圣骑士",
+    "name_jp": "栄冠の聖騎士",
+    "category": "签到",
+    "character_id": "3010"
+  },
+  {
+    "ID": "3710177000",
+    "name_chs": "狮鸣之音",
+    "name_jp": "レヨン・スクリーケ",
+    "category": "万圣节",
+    "character_id": "4009"
+  },
+  {
+    "ID": "3710178000",
+    "name_chs": "圣月夜的白兔",
+    "name_jp": "聖月夜の白兎",
+    "category": "圣诞节",
+    "character_id": "3107"
+  },
+  {
+    "ID": "3710110000",
+    "name_chs": "先导的圣少女",
+    "name_jp": "先導の聖乙女",
+    "category": "签到",
+    "character_id": "3036"
+  },
+  {
+    "ID": "3710179000",
+    "name_chs": "清净洁白振袖",
+    "name_jp": "清浄潔白振袖",
+    "category": "新春",
+    "character_id": "3036"
+  },
+  {
+    "ID": "3710180000",
+    "name_jp": "謹賀絢爛",
+    "category": "新春",
+    "character_id": "3072"
+  },
+  {
+    "ID": "3710181000",
+    "name_chs": "浸映战迹的初旭",
+    "name_jp": "戦跡に滲む初旭",
+    "category": "新春",
+    "character_id": "3101"
+  },
+  {
+    "ID": "3710182000",
+    "name_chs": "奶白短毛",
+    "name_jp": "ミルキーショート",
+    "category": "活动",
+    "character_id": "1061"
+  },
+  {
+    "ID": "3710183000",
+    "name_chs": "贯穿漆黑的黄金之瞳",
+    "name_jp": "漆黒纏う黄金の瞳",
+    "category": "活动",
+    "character_id": "1061"
+  },
+  {
+    "ID": "3710184000",
+    "name_chs": "姜黄猫",
+    "name_jp": "ジンジャーキャット",
+    "category": "活动",
+    "character_id": "1061"
+  },
+  {
+    "ID": "3710185000",
+    "name_chs": "血色流风",
+    "name_jp": "ブラッディ・ストリーム",
+    "category": "周年",
+    "character_id": "3129"
+  },
+  {
+    "ID": "3710186000",
+    "name_chs": "威严紫灯花",
+    "name_jp": "ディグニティ・トリテレイア",
+    "category": "周年",
+    "character_id": "3098"
+  },
+  {
+    "ID": "3710102000",
+    "name_chs": "果敢的赤红甲胄",
+    "name_jp": "勇躍の赤き甲冑",
+    "category": "签到",
+    "character_id": "3000"
+  },
+  {
+    "ID": "3710187000",
+    "name_chs": "笨狗模式开启中",
+    "name_jp": "駄犬スイッチ作動中",
+    "category": "愚人节",
+    "character_id": "2042"
+  },
+  {
+    "ID": "3710188000",
+    "name_jp": "寅卯辰巳午神将",
+    "category": "愚人节",
+    "character_id": "4007"
+  },
+  {
+    "ID": "3710189000",
+    "name_chs": "鹿威库碧拉 ~外加钻头~",
+    "name_jp": "ししおどしクビラ～ドリルを添えて～",
+    "category": "愚人节",
+    "character_id": "3127"
+  },
+  {
+    "ID": "3710190000",
+    "name_chs": "摆脱咒缚的少女",
+    "name_jp": "呪縛から解かれし少女",
+    "category": "联动",
+    "character_id": "3203"
+  },
+  {
+    "ID": "3710120000",
+    "name_chs": "疾驰的炎雷",
+    "name_jp": "疾駆する炎雷",
+    "category": "签到",
+    "character_id": "2003"
+  },
+  {
+    "ID": "3710191000",
+    "name_chs": "行走睡袋",
+    "name_jp": "歩ける寝袋",
+    "category": "活动",
+    "character_id": "3192"
+  },
+  {
+    "ID": "3710192000",
+    "name_chs": "向苍茫的彼方献上花束",
+    "name_jp": "蒼き彼方へ花束を",
+    "category": "夏日",
+    "character_id": "3099"
+  },
+  {
+    "ID": "3710193000",
+    "name_chs": "微风吹拂治愈的延长音",
+    "name_jp": "そよ風吹く癒しのフェルマータ",
+    "category": "夏日",
+    "character_id": "3105"
+  },
+  {
+    "ID": "3710113000",
+    "name_chs": "幽兽为绊",
+    "name_jp": "幽獣との紲",
+    "category": "签到",
+    "character_id": "2029"
+  },
+  {
+    "ID": "3710100000",
+    "name_chs": "苍冰之双剑",
+    "name_jp": "蒼氷の双剣",
+    "category": "签到",
+    "character_id": "3020"
+  },
+  {
+    "ID": "3710195000",
+    "name_jp": "猛虎服装",
+    "category": "活动",
+    "character_id": "3192"
+  },
+  {
+    "ID": "3710196000",
+    "name_jp": "福願羽織袴番傘付",
+    "category": "新春",
+    "character_id": "2142"
+  },
+  {
+    "ID": "3710197000",
+    "name_jp": "怨情宥鎮錦振袖",
+    "category": "新春",
+    "character_id": "3191"
+  },
+  {
+    "ID": "3710198000",
+    "name_jp": "新春揚揚星友振袖",
+    "category": "新春",
+    "character_id": "3160"
+  },
+  {
+    "ID": "3710194000",
+    "name_chs": "在边狱唱着叹息之歌的恋人",
+    "name_jp": "辺獄にて嘆きの歌を歌う恋人",
+    "category": "特典",
+    "character_id": "3108"
+  },
+  {
+    "ID": "3710199000",
+    "name_chs": "游行领队",
+    "name_jp": "パレードマスター",
+    "category": "特典",
+    "character_id": "3150"
+  },
+  {
+    "ID": "3710200000",
+    "name_chs": "热情烹饪围裙",
+    "name_jp": "情熱調理前掛",
+    "category": "情人节",
+    "character_id": "3195"
+  },
+  {
+    "ID": "3710201000",
+    "name_jp": "一切衆生慈恵嘱目装",
+    "category": "周年",
+    "character_id": "3206"
+  },
+  {
+    "ID": "3710202000",
+    "name_jp": "水神を飾る祝祭の衣裳",
+    "category": "周年",
+    "character_id": "3183"
+  },
+  {
+    "ID": "3710119000",
+    "name_chs": "蝴蝶刃·无始无终之架势",
+    "name_jp": "胡蝶刃・無始無終の構え",
+    "category": "签到",
+    "character_id": "3047"
+  },
+  {
+    "ID": "3710204000",
+    "name_chs": "泽田",
+    "name_jp": "ゼ田",
+    "category": "愚人节",
+    "character_id": "3024"
+  },
+  {
+    "ID": "3710205000",
+    "name_chs": "尤妮CORN",
+    "name_jp": "ユニコーン",
+    "category": "愚人节",
+    "character_id": "3199"
+  },
+  {
+    "ID": "3710206000",
+    "name_jp": "薫風清淑乙女装",
+    "category": "活动",
+    "character_id": "3051"
+  },
+  {
+    "ID": "3710145000",
+    "name_chs": "风雅之华",
+    "name_jp": "グレイスフルール",
+    "category": "签到",
+    "character_id": "2012"
+  },
+  {
+    "ID": "3710207000",
+    "name_jp": "朧夜黒狐白霞",
+    "category": "夏日",
+    "character_id": "4006"
+  },
+  {
+    "ID": "3710208000",
+    "name_chs": "月下短夜·花菖蒲",
+    "name_jp": "月下の短夜、花菖蒲",
+    "category": "夏日",
+    "character_id": "3218"
+  },
+  {
+    "ID": "3710147000",
+    "name_chs": "闪剑的侠义剑士",
+    "name_jp": "閃剣の義侠騎士",
+    "category": "签到",
+    "character_id": "3071"
+  },
+  {
+    "ID": "3710209000",
+    "name_chs": "飓风之宣誓",
+    "name_jp": "颶風ノ宣誓",
+    "category": "特典",
+    "character_id": "3129"
+  },
+  {
+    "ID": "3710211000",
+    "name_chs": "吾乃骑空团员盖森伯格是也！",
+    "name_jp": "吾輩は騎空団員ガイゼンボーガ也",
+    "category": "其他",
+    "character_id": "3101"
+  },
+  {
+    "ID": "3710210000",
+    "name_chs": "深渊中的箱水母",
+    "name_jp": "キロネックス・イン・アビス",
+    "category": "万圣节",
+    "character_id": "3211"
+  },
+  {
+    "ID": "3710212000",
+    "name_chs": "静寂的圣翁",
+    "name_jp": "静謐なる聖翁",
+    "category": "圣诞节",
+    "character_id": "3102"
+  },
+  {
+    "ID": "3710108000",
+    "name_chs": "豪火之玉座",
+    "name_jp": "豪火の玉座",
+    "category": "签到",
+    "character_id": "3042"
+  },
+  {
+    "ID": "3710213000",
+    "name_chs": "时尚小兔兔",
+    "name_jp": "小粋なラブリーバニー",
+    "category": "活动",
+    "character_id": "3218"
+  },
+  {
+    "ID": "3710214000",
+    "name_jp": "来光背負いし剣豪",
+    "category": "新春",
+    "character_id": "3002"
+  },
+  {
+    "ID": "3710215000",
+    "name_jp": "謹賀開運招猫",
+    "category": "新春",
+    "character_id": "3193"
+  },
+  {
+    "ID": "3710216000",
+    "name_jp": "湿度高めの寝正月",
+    "category": "新春",
+    "character_id": "3184"
+  },
+  {
+    "ID": "3710217000",
+    "name_chs": "真心正装",
+    "name_jp": "シンセリティ・フォーマル",
+    "category": "情人节",
+    "character_id": "3221"
+  },
+  {
+    "ID": "3710221000",
+    "name_chs": "纯洁之花",
+    "name_jp": "イノセンスフラワー",
+    "category": "周年",
+    "character_id": "2124"
+  },
+  {
+    "ID": "3710222000",
+    "name_chs": "白龙会",
+    "name_jp": "ドラッヘンゲゼルシャフト",
+    "category": "周年",
+    "character_id": "3020"
+  },
+  {
+    "ID": "3710114000",
+    "name_chs": "苍白月光",
+    "name_jp": "ペイル・ムーンライト",
+    "category": "签到",
+    "character_id": "1015"
+  },
+  {
+    "ID": "3710218000",
+    "name_chs": "你与我的未来(卡托尔)",
+    "name_jp": "キミとボクのミライ",
+    "category": "特典",
+    "character_id": "4004"
+  },
+  {
+    "ID": "3710219000",
+    "name_chs": "你与我的未来(希斯)",
+    "name_jp": "キミとボクのミライ",
+    "category": "特典",
+    "character_id": "4006"
+  },
+  {
+    "ID": "3710220000",
+    "name_chs": "你与我的未来(希耶提)",
+    "name_jp": "キミとボクのミライ",
+    "category": "特典",
+    "character_id": "4007"
+  },
+  {
+    "ID": "3710223000",
+    "name_chs": "巴萨拉卡人",
+    "name_jp": "バザラガーマン",
+    "category": "愚人节",
+    "character_id": "3025"
+  },
+  {
+    "ID": "3710224000",
+    "name_chs": "星晶兽的冻茄",
+    "name_jp": "星の獣の冷蔵・ナス",
+    "category": "愚人节",
+    "character_id": "3128"
+  },
+  {
+    "ID": "3710146000",
+    "name_jp": "紫影の忠義者",
+    "category": "签到",
+    "character_id": "2097"
+  },
+  {
+    "ID": "3710225000",
+    "name_chs": "烈焰演唱会",
+    "name_jp": "ライブ・オブ・フレイム",
+    "category": "其他",
+    "character_id": "3024"
+  },
+  {
+    "ID": "3710226000",
+    "name_chs": "星与花之歌姬",
+    "name_jp": "星と花の歌姫",
+    "category": "特典",
+    "character_id": "3117"
+  },
+  {
+    "ID": "3710118000",
+    "name_jp": "白朱の射手",
+    "category": "签到",
+    "character_id": "2018"
+  },
+  {
+    "ID": "3710227000",
+    "name_jp": "夜宴の暁",
+    "category": "万圣节",
+    "character_id": "3072"
+  },
+  {
+    "ID": "3710149000",
+    "name_jp": "蒼電一閃",
+    "category": "签到",
+    "character_id": "1020"
+  },
+  {
+    "ID": "3710228000",
+    "name_jp": "聖夜の主演",
+    "category": "圣诞节",
+    "character_id": "3217"
+  },
+  {
+    "ID": "3710229000",
+    "name_chs": "贺正雅翔",
+    "name_jp": "賀正にして雅翔",
+    "category": "新春",
+    "character_id": "3042"
+  },
+  {
+    "ID": "3710230000",
+    "name_jp": "迎春羽翼振袖",
+    "category": "新春",
+    "character_id": "3245"
+  },
+  {
+    "ID": "3710231000",
+    "name_jp": "蒼空越えし響海の旋律",
+    "category": "新春",
+    "character_id": "4009"
+  },
+  {
+    "ID": "3710232000",
+    "name_chs": "再会与最爱的围裙",
+    "name_jp": "再会と最愛のエプロン",
+    "category": "情人节",
+    "character_id": "3246"
+  },
+  {
+    "ID": "3710233000",
+    "name_chs": "祈愿的六翼",
+    "name_jp": "祈りの六枚羽",
+    "category": "特典",
+    "character_id": "3096"
+  },
+  {
+    "ID": "3710234000",
+    "name_chs": "星屑之夜",
+    "name_jp": "スターダスト・イブニング",
+    "category": "周年",
+    "character_id": "3182"
+  },
+  {
+    "ID": "3710235000",
+    "name_chs": "魔法医偎于暮夜窗边",
+    "name_jp": "魔法医は夜窓に隣る",
+    "category": "周年",
+    "character_id": "3179"
+  },
+  {
+    "ID": "3710148000",
+    "name_chs": "武士绽放",
+    "name_jp": "サムライブルーマー",
+    "category": "签到",
+    "character_id": "2136"
+  },
+  {
+    "ID": "3710236000",
+    "name_chs": "美腿伊维亚",
+    "name_jp": "美脚イーウィヤ",
+    "category": "愚人节",
+    "character_id": "3193"
+  },
+  {
+    "ID": "3710237000",
+    "name_chs": "甚蜜之天丝",
+    "name_jp": "けんぴの天司",
+    "category": "愚人节",
+    "character_id": "3243"
+  },
+  {
+    "ID": "3710238000",
+    "name_chs": "除草机死亡",
+    "name_jp": "芝刈り機デス",
+    "category": "愚人节",
+    "character_id": "3108"
+  }
+]

@@ -223,7 +223,10 @@ export function BrowseGuides() {
         if (selectedTags.length > 0) queryObj.tags = selectedTags
         if (timeFilterEnabled) queryObj.timeRange = debouncedTimeRange
         if (dateRange?.from && dateRange?.to) {
-             queryObj.dateRange = [dateRange.from.getTime(), dateRange.to.getTime()]
+             queryObj.dateRange = [
+               dateRange.from.setHours(0, 0, 0, 0),
+               dateRange.to.setHours(23, 59, 59, 999)
+             ]
         }
         if (selectedWeaponConditions.length > 0) queryObj.weaponConditions = selectedWeaponConditions
         if (selectedSummonConditions.length > 0) queryObj.summonConditions = selectedSummonConditions

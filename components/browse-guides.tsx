@@ -187,11 +187,14 @@ export function BrowseGuides() {
   // Debounce time range changes
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDebouncedTimeRange(timeRange)
-      resetPage()
+      // 只有当值确实不同时才更新
+      if (timeRange[0] !== debouncedTimeRange[0] || timeRange[1] !== debouncedTimeRange[1]) {
+        setDebouncedTimeRange(timeRange)
+        resetPage()
+      }
     }, 500)
     return () => clearTimeout(timer)
-  }, [timeRange, resetPage])
+  }, [timeRange, debouncedTimeRange, resetPage])
 
   // Fetch guides data from API
   useEffect(() => {

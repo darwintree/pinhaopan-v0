@@ -2,7 +2,8 @@
 
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import { getSameCrewNonSkinIdList, isSkin } from "@/hooks/use-crew-info"
-import { getEquipmentPhotoUrl, normalizeEquipmentId } from "@/lib/asset"
+import { getEquipmentPhotoUrl } from "@/lib/asset-path"
+import { normalizeEquipmentId } from "@/lib/asset"
 import { EquipmentType, DetailedEquipmentData } from "@/lib/types"
 import { X } from "lucide-react"
 

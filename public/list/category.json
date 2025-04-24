@@ -1,0 +1,60 @@
+[
+  {
+    "category_id": "12011",
+    "official_image": "high_magna"
+  },
+  {
+    "category_id": "12021",
+    "official_image": "high_magnaII"
+  },
+  {
+    "category_id": "12022",
+    "official_image": "high_ennead_03"
+  },
+  {
+    "category_id": "12031",
+    "official_image": "high_malice"
+  },
+  {
+    "category_id": "12041",
+    "official_image": "high_lucilius"
+  },
+  {
+    "category_id": "12042",
+    "official_image": "high_magnaIII"
+  },
+  {
+    "category_id": "12051",
+    "official_image": "high_astral"
+  },
+  {
+    "category_id": "12061",
+    "official_image": "high_proto_bahamut"
+  },
+  {
+    "category_id": "12071",
+    "official_image": "high_lucilius_hl"
+  },
+  {
+    "category_id": "12072",
+    "official_image": "high_diaspora_2"
+  },
+  {
+    "category_id": "12073",
+    "official_image": "high_classv_2"
+  },
+  {
+    "category_id": "12081",
+    "official_image": "high_ultimate_bahamut"
+  },
+  {
+    "category_id": "12091",
+    "official_image": "high_ultimate_lucilius"
+  },
+  {
+    "category_id": "9999"
+  },
+  {
+    "category_id": "9990"
+  }
+]

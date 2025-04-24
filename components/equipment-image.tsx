@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { VisuallyHidden } from "@/components/ui/visually-hidden"
-import { getGuidePhotoUrl, getGuidePhotoThumbUrl } from "@/lib/asset"
+import { getGuidePhotoUrl, getGuidePhotoThumbUrl } from "@/lib/asset-path"
 
 interface EquipmentImageProps {
   guideId: string

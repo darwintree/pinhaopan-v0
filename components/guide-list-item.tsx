@@ -3,7 +3,7 @@
 import { TableCell, TableRow } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import type { GuideData } from "@/lib/types"
-import { getQuestPhotoUrl } from "@/lib/asset"
+import { getQuestPhotoUrl } from "@/lib/asset-path"
 import { useQuestList } from "@/hooks/use-quest-list"
 import React from "react"
 import { useTagList } from "@/hooks/use-tag-list"

@@ -400,5 +400,47 @@
     "quest_name": "250HL",
     "thumbnail_image": "9999",
     "category": "9999"
+  },
+  {
+    "chapter_id": "200010",
+    "quest_name": "火属性BOSS",
+    "thumbnail_image": "9990",
+    "category": "9990"
+  },
+  {
+    "chapter_id": "200020",
+    "quest_name": "水属性BOSS",
+    "thumbnail_image": "9990",
+    "category": "9990"
+  },
+  {
+    "chapter_id": "200030",
+    "quest_name": "土属性BOSS",
+    "thumbnail_image": "9990",
+    "category": "9990"
+  },
+  {
+    "chapter_id": "200040",
+    "quest_name": "风属性BOSS",
+    "thumbnail_image": "9990",
+    "category": "9990"
+  },
+  {
+    "chapter_id": "200050",
+    "quest_name": "光属性BOSS",
+    "thumbnail_image": "9990",
+    "category": "9990"
+  },
+  {
+    "chapter_id": "200060",
+    "quest_name": "暗属性BOSS",
+    "thumbnail_image": "9990",
+    "category": "9990"
+  },
+  {
+    "chapter_id": "200070",
+    "quest_name": "无属性BOSS",
+    "thumbnail_image": "9990",
+    "category": "9990"
   }
 ]

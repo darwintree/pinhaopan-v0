@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
 import type { EquipmentType, DetailedEquipmentData } from "@/lib/types"
-import { getEquipmentPhotoUrl } from "@/lib/asset"
 import { useMemo } from "react"
 import { EquipmentSelector } from "@/components/equipment-selector"
 

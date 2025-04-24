@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Search, Filter, X, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react"
 import { useEquipmentsList } from "@/hooks/use-equipments-list"
 import type { DetailedEquipmentData, EquipmentType } from "@/lib/types"
-import { getEquipmentPhotoUrl } from "@/lib/asset"
+import { getEquipmentPhotoUrl } from "@/lib/asset-path"
 
 interface EquipmentSelectorModalProps {
   type: EquipmentType

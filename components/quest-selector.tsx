@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useQuestList } from "@/hooks/use-quest-list"
-import { getQuestPhotoUrl, getCategoryUrl } from "@/lib/asset"
+import { getQuestPhotoUrl, getCategoryUrl } from "@/lib/asset-path"
 import {
   Dialog,
   DialogContent,

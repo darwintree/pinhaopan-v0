@@ -53,7 +53,7 @@ export async function getGuides(query: {
   timeRange?: [number, number]
   turnRange?: [number, number]
   contributionRange?: [number, number]
-  dateRange?: [Date, Date]
+  dateRange?: [number, number]
   sort?: { field: "time" | "date" | "turn" | "contribution"; direction: "asc" | "desc" }
   charaConditions?: EquipmentFilterCondition[]
   weaponConditions?: EquipmentFilterCondition[]
@@ -66,16 +66,7 @@ export async function getGuides(query: {
     const queryParams = new URLSearchParams()
     
     if (Object.keys(query).length > 0) {
-      // 处理日期范围转换为ISO字符串
-      const formattedQuery = { ...query }
-      if (query.dateRange) {
-        formattedQuery.dateRange = [
-          query.dateRange[0].toISOString(),
-          query.dateRange[1].toISOString()
-        ] as any
-      }
-      
-      queryParams.append('query', JSON.stringify(formattedQuery))
+      queryParams.append('query', JSON.stringify(query))
     }
     
     // 构建URL

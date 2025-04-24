@@ -176,7 +176,7 @@ export async function getGuides(query: {
   timeRange?: [number, number]
   turnRange?: [number, number]
   contributionRange?: [number, number]
-  dateRange?: [Date, Date]
+  dateRange?: [number, number]
   sort?: { field: "time" | "date" | "turn" | "contribution"; direction: "asc" | "desc" }
   charaConditions?: EquipmentFilterCondition[]
   weaponConditions?: EquipmentFilterCondition[]
@@ -209,7 +209,7 @@ export async function getGuides(query: {
   }
 
   if (query.dateRange) {
-    filter.date = { $gte: query.dateRange[0].getTime(), $lte: query.dateRange[1].getTime() }
+    filter.date = { $gte: query.dateRange[0], $lte: query.dateRange[1] }
   }
 
   // 处理武器筛选条件

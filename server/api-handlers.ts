@@ -12,7 +12,7 @@ interface GetGuidesQuery {
   timeRange?: [number, number]
   turnRange?: [number, number]
   contributionRange?: [number, number]
-  dateRange?: [string, string] // ISO格式的字符串
+  dateRange?: [number, number]
   sort?: { field: "time" | "date" | "turn" | "contribution"; direction: "asc" | "desc" }
   charaConditions?: EquipmentFilterCondition[]
   weaponConditions?: EquipmentFilterCondition[]
@@ -36,17 +36,9 @@ guidesRouter.get('/', async (req: Request, res: Response) => {
         })
       }
     }
+  
     
-    // 转换日期字符串为Date对象
-    const formattedQuery: any = { ...query }
-    if (query.dateRange) {
-      formattedQuery.dateRange = [
-        new Date(query.dateRange[0]),
-        new Date(query.dateRange[1])
-      ]
-    }
-    
-    const guides = await dbOperations.getGuides(formattedQuery)
+    const guides = await dbOperations.getGuides(query)
     res.status(200).json(guides)
   } catch (error) {
     const message = error instanceof Error ? error.message : '获取配置列表失败'

@@ -159,12 +159,12 @@ export function EquipmentSelectorModal({
           {buttonLabel || getDefaultButtonLabel()}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[600px] max-h-[80vh] overflow-hidden flex flex-col">
+      <DialogContent className="max-w-[calc(100%-2rem)] sm:max-w-[600px] max-h-[80vh] overflow-hidden flex flex-col">
         <DialogHeader>
           <DialogTitle>{getTitle()}</DialogTitle>
         </DialogHeader>
 
-        <div className="flex items-center gap-2 my-4">
+        {/* <div className="flex items-center gap-2 my-4">
           <div className="relative flex-1">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
@@ -187,7 +187,7 @@ export function EquipmentSelectorModal({
             <Filter className="h-4 w-4 text-muted-foreground" />
             <Label className="sr-only">筛选</Label>
           </div>
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-2 gap-2 mb-4">
           <div>
@@ -230,7 +230,7 @@ export function EquipmentSelectorModal({
         </div>
 
         <div className="overflow-y-auto flex-1 pr-2 -mr-2">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 gap-3">
             {loading ? (
               <div key="loading" className="col-span-full py-8 text-center text-muted-foreground">加载中...</div>
             ) : error ? (
@@ -261,14 +261,14 @@ export function EquipmentSelectorModal({
                     />
                   </div>
                   <span className="text-xs font-medium text-center line-clamp-2">{item.name}</span>
-                  <div className="flex items-center gap-1 mt-1">
+                  {/* <div className="flex items-center gap-1 mt-1">
                     <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-slate-200 dark:bg-slate-700">
                       {item.element}
                     </span>
                     <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-slate-200 dark:bg-slate-700">
                       {item.categories[0]}
                     </span>
-                  </div>
+                  </div> */}
                 </button>
               ))
             ) : (

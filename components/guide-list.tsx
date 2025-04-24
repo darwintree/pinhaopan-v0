@@ -27,7 +27,7 @@ export function GuideList({ guides, loading }: GuideListProps) {
               <TableHead className="hidden md:table-cell">武器</TableHead>
               <TableHead className="hidden md:table-cell">召唤石</TableHead>
               <TableHead className="md:hidden p-1 text-center">装备</TableHead>
-              <TableHead>消耗时间</TableHead>
+              <TableHead>耗时</TableHead>
               <TableHead className="hidden md:table-cell">发布时间</TableHead>
               <TableHead className="hidden md:table-cell">标签</TableHead>
               <TableHead className="hidden md:table-cell">备注</TableHead>

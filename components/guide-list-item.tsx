@@ -38,7 +38,7 @@ export function GuideListItem({ guide }: GuideListItemProps) {
             onClick={() => window.open(`/guide/${guide.id}`, '_blank')}
         >
             {/* 副本 */}
-            <TableCell className="font-medium">
+            <TableCell className="font-medium p-1">
                 <div className="flex items-center">
                     <img
                         src={questImageUrl}
@@ -83,7 +83,7 @@ export function GuideListItem({ guide }: GuideListItemProps) {
             </TableCell>
 
             {/* 装备合并 - 移动端 */}
-            <TableCell className="md:hidden p-1">
+            <TableCell className="p-1">
                 <div className="flex items-center justify-center space-x-1">
                     <EquipmentImage
                         guideId={guide.id}
@@ -107,7 +107,7 @@ export function GuideListItem({ guide }: GuideListItemProps) {
             </TableCell>
 
             {/* 消耗时间 */}
-            <TableCell>
+            <TableCell className="md:hidden p-1">
                 {guide.time ? `${Math.floor(guide.time / 60)}:${(guide.time % 60).toString().padStart(2, '0')}` : '-'}
                 {guide.turn ? `/${guide.turn}t` : '/-'}
             </TableCell>

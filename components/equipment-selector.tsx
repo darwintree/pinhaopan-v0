@@ -114,7 +114,7 @@ export function EquipmentSelector({
       <EquipmentSelectorModal
         type={type}
         buttonLabel={equipmentIsSkin ? "必须重选" : "手动选择"}
-        buttonVariant={equipmentIsSkin ? "default" : "outline"}
+        buttonVariant={equipmentIsSkin ? "default" : "secondary"}
         onSelect={handleEquipmentSelect}
         priorityIds={priorityIds}
       />

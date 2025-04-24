@@ -155,7 +155,7 @@ export function EquipmentSelectorModal({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant={buttonVariant} size="sm">
+        <Button variant={buttonVariant} size="xs">
           {buttonLabel || getDefaultButtonLabel()}
         </Button>
       </DialogTrigger>

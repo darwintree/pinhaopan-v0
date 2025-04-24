@@ -8,7 +8,7 @@ import Link from "next/link"
 export default function BrowsePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-2 py-4">
         <MainNav />
 
         <main className="mt-8">

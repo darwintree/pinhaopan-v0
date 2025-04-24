@@ -403,7 +403,7 @@ export function PublishGuide() {
               必填
             </Badge>
           </div>
-          <CardContent className="p-3 sm:p-4 md:p-6">
+          <CardContent className="px-1 py-3 sm:p-4 md:p-6">
             <div className="space-y-6">
               {uploadConfigs.map((config) => (
                 <ImageUploadWithRecognition

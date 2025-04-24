@@ -36,7 +36,11 @@ function createCharaMask(image: cv.Mat): cv.Mat {
     {
       lower: cv.matFromArray(1, 3, cv.CV_8UC1, [60, 1, 1]),
       upper: cv.matFromArray(1, 3, cv.CV_8UC1, [100, 80, 25])
-    }
+    },
+    {
+      lower: cv.matFromArray(1, 3, cv.CV_8UC1, [1, 1, 1]),
+      upper: cv.matFromArray(1, 3, cv.CV_8UC1, [180, 255, 25])
+    } // 黑色
   ];
   const bgr = new cv.Mat();
   cv.cvtColor(image, bgr, cv.COLOR_RGBA2BGR);
@@ -88,10 +92,13 @@ export function detectChara(image: cv.Mat): Box[] {
   for (let i = 0; i < contours.size(); i++) {
     const contour = contours.get(i);
     const rect = cv.boundingRect(contour);
-    const { width: w, x, y } = rect;
+    const { width: w, height: h, x, y } = rect;
 
     // 使用宽度过滤
     if (w > picWidth * 0.1 && w < picWidth * 0.3) {
+      if (w > 0.8 * h) {
+        continue;
+      }
       equipmentBoxes.push({
         x: x,
         y: y,
@@ -172,7 +179,7 @@ export function detectWeapon(image: cv.Mat): Box[] {
     const { width: w, height: h, x, y } = rect;
 
     // 使用宽度过滤
-    if (w > picWidth * 0.1 && w < picWidth * 0.3 && h > w * 0.3) {
+    if (w > picWidth * 0.1 && w < picWidth * 0.3) {
       equipmentBoxes.push({
         x: x,
         y: y,
@@ -188,8 +195,16 @@ export function detectWeapon(image: cv.Mat): Box[] {
   contours.delete();
   hierarchy.delete();
 
-  const mergedBoxes = mergeOverlappingBoxes(equipmentBoxes);
-  // const mergedBoxes = equipmentBoxes
+  let currentBoxes = equipmentBoxes;
+  let previousCount = currentBoxes.length;
+  while (true) {
+    currentBoxes = mergeOverlappingBoxes(currentBoxes, 0.01);
+    if (currentBoxes.length >= previousCount) {
+      break;
+    }
+    previousCount = currentBoxes.length;
+  }
+  const mergedBoxes = currentBoxes;
 
   // 对框进行排序
   return mergedBoxes.sort(compareBox);

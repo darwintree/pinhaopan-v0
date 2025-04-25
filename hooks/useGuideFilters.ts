@@ -207,4 +207,6 @@ export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
     },
     filterCount,
   }
-} 
+}
+
+export type UseGuideFiltersReturn = ReturnType<typeof useGuideFilters>; // Export the return type 

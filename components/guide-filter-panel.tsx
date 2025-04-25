@@ -5,11 +5,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { DateRangePicker } from "@/components/date-range-picker"
+import { DateRangePicker } from "@/components/selector/date-range-picker"
 import type { UseGuideFiltersReturn } from "@/hooks/useGuideFilters" // Import the hook return type
 import type { EquipmentFilterCondition } from "@/lib/types" // Keep this if needed by EquipmentSelector etc.
-import { EquipmentSelector } from "@/components/equipment-selector"
-import { TagSelector } from "@/components/tag-selector"
+import { EquipmentSelector } from "@/components/selector/equipment-selector"
+import { TagSelector } from "@/components/selector/tag-selector"
 import { ToggleInput } from "@/components/ui/toggle-input"
 
 // Helper functions moved here

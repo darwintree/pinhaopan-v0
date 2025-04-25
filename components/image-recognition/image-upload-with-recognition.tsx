@@ -6,11 +6,10 @@ import type { Rectangle } from "@/lib/utils"
 import type { EquipmentType, RectangleMode, ModeData, MaskData } from "@/lib/types"
 import { getImageDescriptorsFromImageAndRectangles } from "@/lib/cv-utils"
 import { detectRectangles } from "@/lib/cv-utils"
-import { UploadArea } from "./image-recognition/upload-area"
-import { RectangleEditor } from "./image-recognition/rectangle-editor"
-import { RecognitionResults } from "./image-recognition/recognition-results"
-import { MaskEditor } from "./image-recognition/mask-editor"
-import { Switch } from "./ui/switch"
+import { UploadArea } from "@/components/image-recognition/upload-area"
+import { RectangleEditor } from "@/components/image-recognition/rectangle-editor"
+import { RecognitionResults } from "@/components/image-recognition/recognition-results"
+import { MaskEditor } from "@/components/image-recognition/mask-editor"
 import { 
   generatePresetRectangles as generateTemplateRectangles, 
   getDefaultPresetType,

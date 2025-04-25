@@ -1,6 +1,6 @@
 "use client"
 
-import { EquipmentSelectorModal } from "@/components/equipment-selector-modal"
+import { EquipmentSelectorModal } from "@/components/selector/equipment-selector-modal"
 import { getSameCrewNonSkinIdList, isSkin } from "@/hooks/use-crew-info"
 import { getEquipmentPhotoUrl } from "@/lib/asset-path"
 import { normalizeEquipmentId } from "@/lib/asset"

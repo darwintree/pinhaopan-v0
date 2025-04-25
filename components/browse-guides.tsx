@@ -9,7 +9,6 @@ import { Slider } from "@/components/ui/slider"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { DateRangePicker } from "@/components/date-range-picker"
-import type { DateRange } from "react-day-picker"
 import type { GuideData, EquipmentFilterCondition } from "@/lib/types"
 import { GuideList } from "@/components/guide-list"
 import { EquipmentSelector } from "@/components/equipment-selector"
@@ -17,10 +16,11 @@ import { QuestSelector } from "@/components/quest-selector"
 import { TagSelector } from "@/components/tag-selector"
 import { ToggleInput } from "@/components/ui/toggle-input"
 import { getGuides, GuidesResponse } from "@/lib/remote-db"
+import { useGuideFilters } from "@/hooks/useGuideFilters"
 
 const PAGE_SIZE = 10
 
-// Helper functions moved outside or to the top for clarity and to fix linter error
+// Helper functions can remain or be moved to utils
 const getTimeScaleConfig: (scale: "small" | "medium" | "large") => { max: number, step: number } = (scale: "small" | "medium" | "large") => {
   switch (scale) {
     case "small": return { max: 600, step: 5 }
@@ -36,180 +36,46 @@ const formatTime = (seconds: number) => {
 }
 
 export function BrowseGuides() {
-  // Filter states
-  const [basicFilterOpen, setBasicFilterOpen] = useState(true)
-  const [timeFilterOpen, setTimeFilterOpen] = useState(false)
-  const [timeFilterEnabled, setTimeFilterEnabled] = useState(false)
-  const [configFilterOpen, setConfigFilterOpen] = useState(false)
-  const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const [timeRange, setTimeRange] = useState<[number, number]>([0, 600])
-  const [debouncedTimeRange, setDebouncedTimeRange] = useState<[number, number]>([0, 600])
-  const [timeScale, setTimeScale] = useState<"small" | "medium" | "large">("small")
-  const [dateRange, setDateRange] = useState<DateRange | undefined>(undefined)
-  const [selectedWeaponConditions, setSelectedWeaponConditions] = useState<EquipmentFilterCondition[]>([])
-  const [selectedSummonConditions, setSelectedSummonConditions] = useState<EquipmentFilterCondition[]>([])
-  const [selectedCharaConditions, setSelectedCharaConditions] = useState<EquipmentFilterCondition[]>([])
-  const [selectedQuest, setSelectedQuest] = useState<string>("")
-
-  // Sorting states
-  const [sortField, setSortField] = useState<"time" | "date" | "turn" | "contribution">("date")
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
-
-  // Data states
-  const [guides, setGuides] = useState<GuideData[]>([])
-  const [loading, setLoading] = useState(false)
-
-  // Pagination states
+  // --- Pagination and Sorting States (Remain in component for now) ---
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
   const [totalGuides, setTotalGuides] = useState(0)
+  const [sortField, setSortField] = useState<"time" | "date" | "turn" | "contribution">("date")
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
+  const [selectedQuest, setSelectedQuest] = useState<string>("") // Keep Quest selection separate for now
 
-  // --- Helper Functions ---
+  // --- Data states ---
+  const [guides, setGuides] = useState<GuideData[]>([])
+  const [loading, setLoading] = useState(false)
+
+  // --- Pagination Helper ---
   const resetPage = useCallback(() => {
     setCurrentPage(1)
   }, [])
 
-  // --- Filter/Sort Update Handlers (with page reset) ---
+  // --- Instantiate Filter Hook ---
+  const { filters, handlers, filterCount } = useGuideFilters({ resetPage })
+
+  // --- Quest Update Handler (Keep separate or integrate into filters?) ---
+  // For now, keeping it separate seems reasonable as it's at the top level.
   const handleQuestSelect = useCallback((quest: string) => {
     setSelectedQuest(quest)
     resetPage()
   }, [resetPage])
 
-  const handleTagSelect = useCallback((tags: string[]) => {
-    setSelectedTags(tags)
-    resetPage()
-  }, [resetPage])
-
-  const handleTimeFilterToggle = useCallback(() => {
-    setTimeFilterEnabled(prev => !prev)
-    resetPage()
-  }, [resetPage])
-
-  const handleTimeRangeChange = useCallback((value: [number, number]) => {
-    setTimeRange(value)
-  }, [])
-
-  const handleTimeScaleChange = useCallback((value: "small" | "medium" | "large") => {
-    setTimeScale(value)
-    const { max } = getTimeScaleConfig(value)
-    setTimeRange([0, max])
-  }, [])
-
+  // --- Sorting Update Handler (Remains) ---
   const handleSortChange = useCallback((field: "time" | "date" | "turn" | "contribution") => {
     if (sortField === field) {
       setSortDirection(prev => (prev === "asc" ? "desc" : "asc"))
     } else {
       setSortField(field)
-      setSortDirection("asc")
+      setSortDirection("asc") // Default to asc when changing field
     }
     resetPage()
   }, [sortField, resetPage])
 
-  const handleAddWeaponCondition = useCallback(() => {
-    setSelectedWeaponConditions(prev => [...prev, { type: "weapon", id: "", include: true, count: 1 }])
-    resetPage()
-  }, [resetPage])
-
-  const handleUpdateWeaponCondition = useCallback((index: number, field: keyof EquipmentFilterCondition, value: any) => {
-    setSelectedWeaponConditions(prev => {
-      const updated = [...prev]
-      updated[index] = { ...updated[index], [field]: value }
-      return updated
-    })
-    resetPage()
-  }, [resetPage])
-
-  const handleRemoveWeaponCondition = useCallback((index: number) => {
-    setSelectedWeaponConditions(prev => prev.filter((_, i) => i !== index))
-    resetPage()
-  }, [resetPage])
-
-   const handleAddSummonCondition = useCallback(() => {
-    setSelectedSummonConditions(prev => [...prev, { type: "summon", id: "", include: true, count: 1 }])
-    resetPage()
-  }, [resetPage])
-
-  const handleUpdateSummonCondition = useCallback((index: number, field: keyof EquipmentFilterCondition, value: any) => {
-    setSelectedSummonConditions(prev => {
-      const updated = [...prev]
-      updated[index] = { ...updated[index], [field]: value }
-      return updated
-    })
-    resetPage()
-  }, [resetPage])
-
-  const handleRemoveSummonCondition = useCallback((index: number) => {
-    setSelectedSummonConditions(prev => prev.filter((_, i) => i !== index))
-    resetPage()
-  }, [resetPage])
-
-  const handleAddCharaCondition = useCallback(() => {
-    setSelectedCharaConditions(prev => [...prev, { type: "chara", id: "", include: true, count: 1 }])
-    resetPage()
-  }, [resetPage])
-
-  const handleUpdateCharaCondition = useCallback((index: number, field: keyof EquipmentFilterCondition, value: any) => {
-    setSelectedCharaConditions(prev => {
-      const updated = [...prev]
-      updated[index] = { ...updated[index], [field]: value }
-      return updated
-    })
-    resetPage()
-  }, [resetPage])
-
-  const handleRemoveCharaCondition = useCallback((index: number) => {
-    setSelectedCharaConditions(prev => prev.filter((_, i) => i !== index))
-    resetPage()
-  }, [resetPage])
-
-  const handleResetFilters = useCallback(() => {
-    setSelectedTags([])
-    setTimeFilterEnabled(false)
-    setTimeRange([0, 600])
-    setTimeScale("small")
-    setDateRange(undefined)
-    setSelectedWeaponConditions([])
-    setSelectedSummonConditions([])
-    setSelectedCharaConditions([])
-    resetPage()
-  }, [resetPage])
-
-  // Filter count calculation
-  const filterCount = [
-    selectedTags.length > 0,
-    timeFilterEnabled && (timeRange[0] !== 0 || timeRange[1] !== getTimeScaleConfig(timeScale).max),
-    dateRange?.from !== undefined || dateRange?.to !== undefined,
-    selectedWeaponConditions.length > 0,
-    selectedSummonConditions.length > 0,
-    selectedCharaConditions.length > 0,
-  ].filter(Boolean).length
-
-  // Debounce time range changes
+  // Fetch guides data from API - Update dependencies
   useEffect(() => {
-    const timer = setTimeout(() => {
-      // 只有当值确实不同时才更新
-      if (timeRange[0] !== debouncedTimeRange[0] || timeRange[1] !== debouncedTimeRange[1]) {
-        setDebouncedTimeRange(timeRange)
-        resetPage()
-      }
-    }, 500)
-    return () => clearTimeout(timer)
-  }, [timeRange, debouncedTimeRange, resetPage])
-
-  // Fetch guides data from API
-  useEffect(() => {
-    // Reset page when dateRange changes
-    if (dateRange !== undefined) { // Add a check to avoid resetting on initial load if dateRange starts undefined
-        // Need a way to track if dateRange *actually* changed from a previous value
-        // This simple reset might trigger too often. 
-        // A more robust solution might involve useRef to store the previous dateRange.
-        // For now, let's proceed with this simpler reset.
-        // resetPage(); 
-        // Actually, resetting page should happen *before* fetching based on the new filter
-        // Let's remove the resetPage call from individual handlers and consolidate it here or rethink the flow.
-        // For now, let's keep resetPage in individual handlers as it's less complex to implement correctly immediately.
-    }
-
     async function fetchData() {
       setLoading(true)
       try {
@@ -219,18 +85,19 @@ export function BrowseGuides() {
           sort: { field: sortField, direction: sortDirection }
         }
 
+        // Use state/filters from component scope and hook
         if (selectedQuest) queryObj.quest = selectedQuest
-        if (selectedTags.length > 0) queryObj.tags = selectedTags
-        if (timeFilterEnabled) queryObj.timeRange = debouncedTimeRange
-        if (dateRange?.from && dateRange?.to) {
+        if (filters.selectedTags.length > 0) queryObj.tags = filters.selectedTags
+        if (filters.timeFilterEnabled) queryObj.timeRange = filters.debouncedTimeRange // Use debounced value
+        if (filters.dateRange?.from && filters.dateRange?.to) {
              queryObj.dateRange = [
-               dateRange.from.setHours(0, 0, 0, 0),
-               dateRange.to.setHours(23, 59, 59, 999)
+               filters.dateRange.from.setHours(0, 0, 0, 0),
+               filters.dateRange.to.setHours(23, 59, 59, 999)
              ]
         }
-        if (selectedWeaponConditions.length > 0) queryObj.weaponConditions = selectedWeaponConditions
-        if (selectedSummonConditions.length > 0) queryObj.summonConditions = selectedSummonConditions
-        if (selectedCharaConditions.length > 0) queryObj.charaConditions = selectedCharaConditions
+        if (filters.selectedWeaponConditions.length > 0) queryObj.weaponConditions = filters.selectedWeaponConditions
+        if (filters.selectedSummonConditions.length > 0) queryObj.summonConditions = filters.selectedSummonConditions
+        if (filters.selectedCharaConditions.length > 0) queryObj.charaConditions = filters.selectedCharaConditions
 
         const result: GuidesResponse = await getGuides(queryObj)
 
@@ -238,6 +105,13 @@ export function BrowseGuides() {
           setGuides(result.guides)
           setTotalGuides(result.total)
           setTotalPages(result.totalPages)
+           // Ensure currentPage is valid after fetch
+           if (result.page !== currentPage && currentPage > result.totalPages) {
+               setCurrentPage(result.totalPages > 0 ? result.totalPages : 1);
+           } else if (result.page !== currentPage) {
+              // This case might be less common, but sync if API confirms a different page
+              // setCurrentPage(result.page); // Decide if this sync is desired
+           }
         } else {
            console.error("Invalid API response format:", result)
            setGuides([])
@@ -258,19 +132,20 @@ export function BrowseGuides() {
     fetchData()
   }, [
     selectedQuest,
-    selectedTags,
-    debouncedTimeRange,
-    dateRange,
-    selectedWeaponConditions,
-    selectedSummonConditions,
-    selectedCharaConditions,
+    // Use values from the filters object in dependencies
+    filters.selectedTags,
+    filters.debouncedTimeRange,
+    filters.dateRange,
+    filters.selectedWeaponConditions,
+    filters.selectedSummonConditions,
+    filters.selectedCharaConditions,
+    filters.timeFilterEnabled, // Add this dependency
     sortField,
     sortDirection,
-    timeFilterEnabled,
-    currentPage,
+    currentPage, // Keep currentPage dependency
   ])
 
-  // Pagination handlers
+  // --- Pagination handlers (Remain) ---
   const handlePreviousPage = () => {
     setCurrentPage(prev => Math.max(1, prev - 1))
   }
@@ -286,7 +161,7 @@ export function BrowseGuides() {
     <div className="space-y-6">
       <QuestSelector
         selectedQuest={selectedQuest}
-        onQuestSelect={handleQuestSelect}
+        onQuestSelect={handleQuestSelect} // Keep using the component's handler
       />
       {/* Filter section */}
       <div className="space-y-4">
@@ -294,14 +169,16 @@ export function BrowseGuides() {
           <div className="flex items-center gap-2">
             <Filter className="h-5 w-5 text-muted-foreground" />
             <h2 className="text-xl font-semibold">筛选条件</h2>
+            {/* Use filterCount from hook */}
             {filterCount > 0 && (
               <Badge variant="secondary" className="ml-2">
                 {filterCount}
               </Badge>
             )}
           </div>
+          {/* Use filterCount and handler from hook */}
           {filterCount > 0 && (
-            <Button variant="ghost" size="sm" onClick={handleResetFilters}>
+            <Button variant="ghost" size="sm" onClick={handlers.handleResetFilters}>
               <X className="mr-2 h-4 w-4" />
               重置
             </Button>
@@ -311,18 +188,22 @@ export function BrowseGuides() {
         <Card className="overflow-hidden backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
           <div
             className="flex items-center justify-between p-4 cursor-pointer"
-            onClick={() => setBasicFilterOpen(!basicFilterOpen)}
+            // Use state and handler from hook
+            onClick={() => handlers.setBasicFilterOpen(!filters.basicFilterOpen)}
           >
             <h3 className="font-medium">标签筛选</h3>
             <Button variant="ghost" size="sm">
-              {basicFilterOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              {/* Use state from hook */}
+              {filters.basicFilterOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
             </Button>
           </div>
-          {basicFilterOpen && (
+          {/* Use state from hook */}
+          {filters.basicFilterOpen && (
             <CardContent className="p-4 pt-0">
               <TagSelector
-                selectedTags={selectedTags}
-                onTagSelect={handleTagSelect}
+                // Use state and handler from hook
+                selectedTags={filters.selectedTags}
+                onTagSelect={handlers.handleTagSelect}
               />
             </CardContent>
           )}
@@ -331,33 +212,39 @@ export function BrowseGuides() {
         <Card className="overflow-hidden backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
           <div
             className="flex items-center justify-between p-4 cursor-pointer"
-            onClick={() => setTimeFilterOpen(!timeFilterOpen)}
+            // Use state and handler from hook
+            onClick={() => handlers.setTimeFilterOpen(!filters.timeFilterOpen)}
           >
             <h3 className="font-medium">时间筛选</h3>
             <Button variant="ghost" size="sm">
-              {timeFilterOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              {/* Use state from hook */}
+              {filters.timeFilterOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
             </Button>
           </div>
-          {timeFilterOpen && (
+          {/* Use state from hook */}
+          {filters.timeFilterOpen && (
             <CardContent className="p-4 pt-0 grid gap-4 md:grid-cols-2">
               <div className="space-y-4">
                 <ToggleInput
                   id="timeFilter"
                   label="消耗时间"
                   tooltipText="按完成副本所需时间筛选"
-                  enabled={timeFilterEnabled}
-                  onToggle={handleTimeFilterToggle}
+                  // Use state and handler from hook
+                  enabled={filters.timeFilterEnabled}
+                  onToggle={handlers.handleTimeFilterToggle}
                 >
                   <div className="flex items-center justify-between mt-2">
                     <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4" />
                       <span className="text-sm text-muted-foreground">
-                        {formatTime(timeRange[0])} - {formatTime(timeRange[1])}
+                        {/* Use state from hook */}
+                        {formatTime(filters.timeRange[0])} - {formatTime(filters.timeRange[1])}
                       </span>
                     </div>
                     <Select
-                      value={timeScale}
-                      onValueChange={handleTimeScaleChange}
+                      // Use state and handler from hook
+                      value={filters.timeScale}
+                      onValueChange={handlers.handleTimeScaleChange}
                     >
                       <SelectTrigger className="w-[110px] h-8">
                         <SelectValue placeholder="时间范围" />
@@ -370,10 +257,11 @@ export function BrowseGuides() {
                     </Select>
                   </div>
                   <Slider
-                    max={getTimeScaleConfig(timeScale).max}
-                    step={getTimeScaleConfig(timeScale).step}
-                    value={timeRange}
-                    onValueChange={handleTimeRangeChange}
+                    // Use helper and state from hook
+                    max={getTimeScaleConfig(filters.timeScale).max}
+                    step={getTimeScaleConfig(filters.timeScale).step}
+                    value={filters.timeRange}
+                    onValueChange={handlers.handleTimeRangeChange} // Use the direct change handler
                     className="mt-2"
                   />
                 </ToggleInput>
@@ -384,8 +272,9 @@ export function BrowseGuides() {
                   发布时间
                 </Label>
                 <DateRangePicker
-                  date={dateRange}
-                  setDate={setDateRange}
+                  // Use state and handler from hook
+                  date={filters.dateRange}
+                  setDate={handlers.setDateRange} // Pass the setState from the hook
                 />
               </div>
             </CardContent>
@@ -395,14 +284,17 @@ export function BrowseGuides() {
         <Card className="overflow-hidden backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
           <div
             className="flex items-center justify-between p-4 cursor-pointer"
-            onClick={() => setConfigFilterOpen(!configFilterOpen)}
+            // Use state and handler from hook
+            onClick={() => handlers.setConfigFilterOpen(!filters.configFilterOpen)}
           >
             <h3 className="font-medium">配置筛选</h3>
             <Button variant="ghost" size="sm">
-              {configFilterOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              {/* Use state from hook */}
+              {filters.configFilterOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
             </Button>
           </div>
-          {configFilterOpen && (
+          {/* Use state from hook */}
+          {filters.configFilterOpen && (
             <CardContent className="p-4 pt-0 grid gap-4">
               {/* Weapon conditions */}
               <div className="space-y-4">
@@ -410,22 +302,26 @@ export function BrowseGuides() {
                   <Label className="flex items-center gap-2">
                     <Sword className="h-4 w-4" />
                     武器条件
-                    {selectedWeaponConditions.length > 0 && (
+                    {/* Use state from hook */}
+                    {filters.selectedWeaponConditions.length > 0 && (
                       <Badge variant="secondary" className="ml-1">
-                        {selectedWeaponConditions.length}
+                        {filters.selectedWeaponConditions.length}
                       </Badge>
                     )}
                   </Label>
-                  <Button variant="outline" size="sm" onClick={handleAddWeaponCondition} className="h-8">
+                  {/* Use handler from hook */}
+                  <Button variant="outline" size="sm" onClick={handlers.handleAddWeaponCondition} className="h-8">
                     <Plus className="h-3.5 w-3.5 mr-1" />
                     添加条件
                   </Button>
                 </div>
-                {selectedWeaponConditions.length === 0 ? (
+                 {/* Use state from hook */}
+                {filters.selectedWeaponConditions.length === 0 ? (
                   <div className="text-sm text-muted-foreground italic">点击"添加条件"按钮来创建武器筛选条件</div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {selectedWeaponConditions.map((condition, index) => (
+                    {/* Use state and handlers from hook */}
+                    {filters.selectedWeaponConditions.map((condition, index) => (
                       <div
                         key={index}
                         className="flex flex-col gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
@@ -433,7 +329,7 @@ export function BrowseGuides() {
                         <div className="flex items-center gap-2">
                           <Select
                             value={condition.include ? "include" : "exclude"}
-                            onValueChange={(value) => handleUpdateWeaponCondition(index, "include", value === "include")}
+                            onValueChange={(value) => handlers.handleUpdateWeaponCondition(index, "include", value === "include")}
                           >
                             <SelectTrigger className="w-24 h-8">
                               <SelectValue placeholder="类型" />
@@ -446,27 +342,27 @@ export function BrowseGuides() {
                           <Button
                             variant="ghost"
                             size="icon"
-                            onClick={() => handleRemoveWeaponCondition(index)}
+                            onClick={() => handlers.handleRemoveWeaponCondition(index)}
                             className="h-8 w-8 ml-auto"
                           >
                             <X className="h-4 w-4" />
                           </Button>
                         </div>
                         <EquipmentSelector
-                          index={index + 1}
+                          index={index + 1} // Keep index for display/key
                           type="weapon"
                           label={condition.include ? `需要${condition.count}把` : "排除"}
                           rectangle={{ width: 160, height: 100 }}
                           recognizedEquipments={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
-                          onEquipmentSelect={(equipment) => handleUpdateWeaponCondition(index, "id", equipment.id)}
+                          onEquipmentSelect={(equipment) => handlers.handleUpdateWeaponCondition(index, "id", equipment.id)}
                           isHovered={false}
                           onMouseEnter={() => {}}
                           onMouseLeave={() => {}}
                         />
                         {condition.include && (
                           <Select
-                            value={condition.count.toString()}
-                            onValueChange={(value) => handleUpdateWeaponCondition(index, "count", Number.parseInt(value))}
+                            value={condition.count.toString()} // Ensure value is string for Select
+                            onValueChange={(value) => handlers.handleUpdateWeaponCondition(index, "count", value)} // Pass string value, handler converts
                           >
                             <SelectTrigger className="w-full h-8">
                               <SelectValue placeholder="数量" />
@@ -490,22 +386,26 @@ export function BrowseGuides() {
                 <div className="flex items-center justify-between">
                   <Label>
                     召唤石条件
-                    {selectedSummonConditions.length > 0 && (
+                     {/* Use state from hook */}
+                    {filters.selectedSummonConditions.length > 0 && (
                       <Badge variant="secondary" className="ml-1">
-                        {selectedSummonConditions.length}
+                        {filters.selectedSummonConditions.length}
                       </Badge>
                     )}
                   </Label>
-                  <Button variant="outline" size="sm" onClick={handleAddSummonCondition} className="h-8">
+                   {/* Use handler from hook */}
+                  <Button variant="outline" size="sm" onClick={handlers.handleAddSummonCondition} className="h-8">
                     <Plus className="h-3.5 w-3.5 mr-1" />
                     添加条件
                   </Button>
                 </div>
-                {selectedSummonConditions.length === 0 ? (
+                 {/* Use state from hook */}
+                {filters.selectedSummonConditions.length === 0 ? (
                    <div className="text-sm text-muted-foreground italic">点击"添加条件"按钮来创建召唤石筛选条件</div>
                  ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {selectedSummonConditions.map((condition, index) => (
+                     {/* Use state and handlers from hook */}
+                    {filters.selectedSummonConditions.map((condition, index) => (
                       <div
                         key={index}
                         className="flex flex-col gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
@@ -513,7 +413,7 @@ export function BrowseGuides() {
                         <div className="flex items-center gap-2">
                           <Select
                             value={condition.include ? "include" : "exclude"}
-                            onValueChange={(value) => handleUpdateSummonCondition(index, "include", value === "include")}
+                            onValueChange={(value) => handlers.handleUpdateSummonCondition(index, "include", value === "include")}
                           >
                             <SelectTrigger className="w-24 h-8">
                               <SelectValue placeholder="类型" />
@@ -526,23 +426,24 @@ export function BrowseGuides() {
                           <Button
                             variant="ghost"
                             size="icon"
-                            onClick={() => handleRemoveSummonCondition(index)}
+                            onClick={() => handlers.handleRemoveSummonCondition(index)}
                             className="h-8 w-8 ml-auto"
                           >
                             <X className="h-4 w-4" />
                           </Button>
                         </div>
                         <EquipmentSelector
-                          index={index + 1}
-                          type="summon"
-                          label={condition.include ? "需要" : "排除"}
-                          rectangle={{ width: 160, height: 100 }}
-                          recognizedEquipments={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
-                          onEquipmentSelect={(equipment) => handleUpdateSummonCondition(index, "id", equipment.id)}
-                          isHovered={false}
-                          onMouseEnter={() => {}}
-                          onMouseLeave={() => {}}
+                           index={index + 1} // Keep index for display/key
+                           type="summon"
+                           label={condition.include ? "需要" : "排除"} // Simplified label for now
+                           rectangle={{ width: 160, height: 100 }}
+                           recognizedEquipments={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
+                           onEquipmentSelect={(equipment) => handlers.handleUpdateSummonCondition(index, "id", equipment.id)}
+                           isHovered={false}
+                           onMouseEnter={() => {}}
+                           onMouseLeave={() => {}}
                         />
+                         {/* Add count selector for summons if needed later */}
                          {/* {condition.include && ( ... count select UI ... )} */}
                       </div>
                     ))}
@@ -555,22 +456,26 @@ export function BrowseGuides() {
                   <Label className="flex items-center gap-2">
                     <Users className="h-4 w-4" />
                     角色条件
-                    {selectedCharaConditions.length > 0 && (
+                     {/* Use state from hook */}
+                    {filters.selectedCharaConditions.length > 0 && (
                       <Badge variant="secondary" className="ml-1">
-                        {selectedCharaConditions.length}
+                        {filters.selectedCharaConditions.length}
                       </Badge>
                     )}
                   </Label>
-                  <Button variant="outline" size="sm" onClick={handleAddCharaCondition} className="h-8">
+                   {/* Use handler from hook */}
+                  <Button variant="outline" size="sm" onClick={handlers.handleAddCharaCondition} className="h-8">
                     <Plus className="h-3.5 w-3.5 mr-1" />
                     添加条件
                   </Button>
                 </div>
-                {selectedCharaConditions.length === 0 ? (
+                 {/* Use state from hook */}
+                {filters.selectedCharaConditions.length === 0 ? (
                   <div className="text-sm text-muted-foreground italic">点击"添加条件"按钮来创建角色筛选条件</div>
                  ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {selectedCharaConditions.map((condition, index) => (
+                     {/* Use state and handlers from hook */}
+                    {filters.selectedCharaConditions.map((condition, index) => (
                       <div
                         key={index}
                         className="flex flex-col gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
@@ -578,7 +483,7 @@ export function BrowseGuides() {
                         <div className="flex items-center gap-2">
                           <Select
                             value={condition.include ? "include" : "exclude"}
-                            onValueChange={(value) => handleUpdateCharaCondition(index, "include", value === "include")}
+                            onValueChange={(value) => handlers.handleUpdateCharaCondition(index, "include", value === "include")}
                           >
                             <SelectTrigger className="w-24 h-8">
                               <SelectValue placeholder="类型" />
@@ -591,7 +496,7 @@ export function BrowseGuides() {
                           <Button
                             variant="ghost"
                             size="icon"
-                            onClick={() => handleRemoveCharaCondition(index)}
+                            onClick={() => handlers.handleRemoveCharaCondition(index)}
                             className="h-8 w-8 ml-auto"
                           >
                             <X className="h-4 w-4" />
@@ -603,18 +508,19 @@ export function BrowseGuides() {
                           label={condition.include ? "需要" : "排除"}
                           rectangle={{ width: 160, height: 100 }}
                           recognizedEquipments={condition.id ? [{ id: condition.id, confidence: 1 }] : undefined}
-                          onEquipmentSelect={(equipment) => handleUpdateCharaCondition(index, "id", equipment.id)}
+                          onEquipmentSelect={(equipment) => handlers.handleUpdateCharaCondition(index, "id", equipment.id)}
                           isHovered={false}
                           onMouseEnter={() => {}}
                           onMouseLeave={() => {}}
                         />
+                        {/* Add count selector for charas if needed later */}
                          {/* {condition.include && ( ... count select UI ... )} */}
                       </div>
                     ))}
                   </div>
                  )}
               </div>
-              {/* Condition explanation */}
+              {/* Condition explanation - No changes needed here */}
               <div className="text-xs text-muted-foreground bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md mt-2">
                 <p>所有条件使用AND逻辑（全部满足）。例如：</p>
                 <ul className="list-disc list-inside mt-1">
@@ -631,11 +537,11 @@ export function BrowseGuides() {
       <div className="rounded-lg backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-700/50 shadow-sm overflow-hidden">
         <div className="p-4 flex items-center justify-between">
           <h2 className="text-xl font-semibold">配置列表</h2>
-          {/* Sorting Controls Added Here */}
+          {/* Sorting Controls - Use component's state and handler */}
           <div className="flex items-center space-x-2">
             <Select
-              value={sortField} // Bind value to state
-              onValueChange={(value) => handleSortChange(value as "time" | "date" | "turn" | "contribution")} // Use existing handler
+              value={sortField}
+              onValueChange={(value) => handleSortChange(value as "time" | "date" | "turn" | "contribution")}
             >
               <SelectTrigger className="w-[130px] h-9">
                 <SelectValue placeholder="排序方式" />
@@ -650,7 +556,7 @@ export function BrowseGuides() {
             <Button
               variant="outline"
               size="icon"
-              onClick={() => handleSortChange(sortField)} // Call handler to toggle direction
+              onClick={() => handleSortChange(sortField)}
               className="h-9 w-9 bg-white/60 dark:bg-slate-800/60"
             >
               {sortDirection === "asc" ? (
@@ -662,12 +568,10 @@ export function BrowseGuides() {
             </Button>
           </div>
         </div>
-        
-        {/* GuideList - Pass simplified props */}
+
         <GuideList guides={guides} loading={loading} />
       </div>
 
-      {/* Pagination UI */}
       {!loading && totalGuides > 0 && (
          <div className="flex items-center justify-between px-4 py-3 border-t border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-900/40 rounded-b-lg">
           <div className="text-sm text-muted-foreground hidden sm:block">

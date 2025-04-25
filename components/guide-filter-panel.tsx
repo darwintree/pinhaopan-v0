@@ -53,7 +53,16 @@ const formatTime = (seconds: number) => {
 };
 
 // Define Props interface based on the hook's return type
-interface GuideFilterPanelProps extends UseGuideFiltersReturn {}
+// Remove specific open states, use unified isPanelOpen
+interface GuideFilterPanelProps extends Omit<UseGuideFiltersReturn, 'filters' | 'handlers'> {
+  filters: Omit<UseGuideFiltersReturn['filters'], 'basicFilterOpen' | 'timeFilterOpen' | 'configFilterOpen'> & {
+    isPanelOpen: boolean;
+  };
+  handlers: Omit<UseGuideFiltersReturn['handlers'], 'setBasicFilterOpen' | 'setTimeFilterOpen' | 'setConfigFilterOpen'> & {
+    setIsPanelOpen: (isOpen: boolean) => void;
+  };
+  filterCount: number;
+}
 
 export function GuideFilterPanel({
   filters,
@@ -108,11 +117,8 @@ export function GuideFilterPanel({
       <div
         className="flex items-center justify-between p-4 cursor-pointer border-b border-slate-200/50 dark:border-slate-700/50"
         onClick={() => {
-          // Reset all panel states and toggle main panel
-          const newState = !filters.basicFilterOpen;
-          handlers.setBasicFilterOpen(newState);
-          handlers.setTimeFilterOpen(newState);
-          handlers.setConfigFilterOpen(newState);
+          // Toggle unified panel state
+          handlers.setIsPanelOpen(!filters.isPanelOpen);
         }}
       >
         <div className="flex items-center gap-2">
@@ -131,16 +137,18 @@ export function GuideFilterPanel({
             <Button
               variant="ghost"
               size="sm"
-              onClick={handlers.handleResetFilters}
+              onClick={(e) => {
+                e.stopPropagation();
+                handlers.handleResetFilters();
+              }}
             >
               <X className="mr-2 h-4 w-4" />
               重置
             </Button>
           )}
           <Button variant="ghost" size="sm">
-            {filters.basicFilterOpen ||
-            filters.timeFilterOpen ||
-            filters.configFilterOpen ? (
+            {/* Use unified panel state for icon */}
+            {filters.isPanelOpen ? (
               <ChevronUp className="h-4 w-4" />
             ) : (
               <ChevronDown className="h-4 w-4" />
@@ -149,13 +157,8 @@ export function GuideFilterPanel({
         </div>
       </div>
 
-      {/* Summary panel - shown when collapsed */}
-      {!(
-        filters.basicFilterOpen ||
-        filters.timeFilterOpen ||
-        filters.configFilterOpen
-      ) &&
-        filterCount > 0 && (
+      {/* Summary panel - shown when collapsed (uses !isPanelOpen) */}
+      {!filters.isPanelOpen && filterCount > 0 && (
           <div className="p-4 flex flex-wrap gap-2">
             {filterSummary.map((summary, index) => (
               <Badge
@@ -169,10 +172,8 @@ export function GuideFilterPanel({
           </div>
         )}
 
-      {/* Filter content - shown when expanded */}
-      {(filters.basicFilterOpen ||
-        filters.timeFilterOpen ||
-        filters.configFilterOpen) && (
+      {/* Filter content - shown when expanded (uses isPanelOpen) */}
+      {filters.isPanelOpen && (
         <CardContent className="p-0">
           {/* Tag filter section */}
           <div className="p-4 border-b border-slate-200/50 dark:border-slate-700/50">

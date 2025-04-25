@@ -17,11 +17,10 @@ interface UseGuideFiltersProps {
 }
 
 export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
+  // Unified panel open state
+  const [isPanelOpen, setIsPanelOpen] = useState(true);
   // Filter states
-  const [basicFilterOpen, setBasicFilterOpen] = useState(true)
-  const [timeFilterOpen, setTimeFilterOpen] = useState(false)
   const [timeFilterEnabled, setTimeFilterEnabled] = useState(false)
-  const [configFilterOpen, setConfigFilterOpen] = useState(false)
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [timeRange, setTimeRange] = useState<[number, number]>([0, 600])
   const [debouncedTimeRange, setDebouncedTimeRange] = useState<[number, number]>([0, 600])
@@ -128,10 +127,7 @@ export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
     setSelectedWeaponConditions([])
     setSelectedSummonConditions([])
     setSelectedCharaConditions([])
-    // Reset open/close states as well? Or keep them as they are? Let's reset them.
-    setBasicFilterOpen(true);
-    setTimeFilterOpen(false);
-    setConfigFilterOpen(false);
+    // Reset panel open state? No, keep it as the user left it.
     resetPage()
   }, [resetPage])
 
@@ -172,10 +168,8 @@ export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
 
   return {
     filters: {
-      basicFilterOpen,
-      timeFilterOpen,
+      isPanelOpen, // Add new state
       timeFilterEnabled,
-      configFilterOpen,
       selectedTags,
       timeRange,
       debouncedTimeRange,
@@ -186,9 +180,7 @@ export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
       selectedCharaConditions,
     },
     handlers: {
-      setBasicFilterOpen,
-      setTimeFilterOpen,
-      setConfigFilterOpen,
+      setIsPanelOpen, // Add new handler
       handleTagSelect,
       handleTimeFilterToggle,
       handleTimeRangeChange,

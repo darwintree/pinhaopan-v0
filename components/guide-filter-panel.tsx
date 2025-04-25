@@ -1,3 +1,4 @@
+import React from 'react'; // Added for Fragment
 import {
   ChevronDown,
   ChevronUp,
@@ -29,6 +30,8 @@ import type { EquipmentFilterCondition } from "@/lib/types"; // Keep this if nee
 import { EquipmentSelector } from "@/components/selector/equipment-selector";
 import { TagSelector } from "@/components/selector/tag-selector";
 import { ToggleInput } from "@/components/ui/toggle-input";
+import { EquipmentConditionCard } from './equipment-condition-card'; // Import the new card component
+import { SparklesIcon } from '@/components/icon/sparkles-icon'; // Import the summon icon
 
 // Helper functions moved here
 const getTimeScaleConfig: (scale: "small" | "medium" | "large") => {
@@ -69,6 +72,46 @@ export function GuideFilterPanel({
   handlers,
   filterCount,
 }: GuideFilterPanelProps) {
+  // Define the configuration for condition sections
+  const conditionSectionsConfig = [
+    {
+      key: 'weapon',
+      title: '武器条件',
+      icon: Sword, // Lucide icon component
+      conditions: filters.selectedWeaponConditions,
+      addConditionHandler: handlers.handleAddWeaponCondition,
+      removeConditionHandler: handlers.handleRemoveWeaponCondition,
+      updateConditionHandler: handlers.handleUpdateWeaponCondition,
+      type: 'weapon' as const, // Ensure literal type
+      showCountSelector: true,
+      emptyStateMessage: '点击"添加条件"按钮来创建武器筛选条件'
+    },
+    {
+      key: 'summon',
+      title: '召唤石条件',
+      icon: SparklesIcon, // Use the imported SparklesIcon
+      conditions: filters.selectedSummonConditions,
+      addConditionHandler: handlers.handleAddSummonCondition,
+      removeConditionHandler: handlers.handleRemoveSummonCondition,
+      updateConditionHandler: handlers.handleUpdateSummonCondition,
+      type: 'summon' as const,
+      showCountSelector: false,
+      emptyStateMessage: '点击"添加条件"按钮来创建召唤石筛选条件'
+    },
+    {
+      key: 'chara',
+      title: '角色条件',
+      icon: Users, // Lucide icon component
+      conditions: filters.selectedCharaConditions,
+      addConditionHandler: handlers.handleAddCharaCondition,
+      removeConditionHandler: handlers.handleRemoveCharaCondition,
+      updateConditionHandler: handlers.handleUpdateCharaCondition,
+      type: 'chara' as const,
+      showCountSelector: false,
+      emptyStateMessage: '点击"添加条件"按钮来创建角色筛选条件'
+    }
+  ];
+
   // Helper to generate filter summary based on current filters
   const getFilterSummary = () => {
     const summaries: string[] = [];
@@ -256,324 +299,58 @@ export function GuideFilterPanel({
           <div className="p-4">
             <div className="mb-4">
               <h3 className="font-medium mb-3">配置筛选</h3>
-              {/* Weapon section */}
-              <div className="space-y-4 mb-4">
-                <div className="flex items-center justify-between">
-                  <Label className="flex items-center gap-2">
-                    <Sword className="h-4 w-4" />
-                    武器条件
-                    {/* Use state from props */}
-                    {filters.selectedWeaponConditions.length > 0 && (
-                      <Badge variant="secondary" className="ml-1">
-                        {filters.selectedWeaponConditions.length}
-                      </Badge>
-                    )}
-                  </Label>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={handlers.handleAddWeaponCondition}
-                    className="h-8"
-                  >
-                    <Plus className="h-3.5 w-3.5 mr-1" />
-                    添加条件
-                  </Button>
-                </div>
-                {/* Use state from props */}
-                {filters.selectedWeaponConditions.length === 0 ? (
-                  <div className="text-sm text-muted-foreground italic">
-                    点击"添加条件"按钮来创建武器筛选条件
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {/* Use state and handlers from props */}
-                    {/* Fixing linter errors: Added types for map params */}
-                    {filters.selectedWeaponConditions.map(
-                      (condition: EquipmentFilterCondition, index: number) => (
-                        <div
-                          key={index}
-                          className="flex flex-col gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
-                        >
-                          <div className="flex items-center gap-2">
-                            <Select
-                              value={condition.include ? "include" : "exclude"}
-                              onValueChange={(value) =>
-                                handlers.handleUpdateWeaponCondition(
-                                  index,
-                                  "include",
-                                  value === "include"
-                                )
-                              }
-                            >
-                              <SelectTrigger className="w-24 h-8">
-                                <SelectValue placeholder="类型" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="include">包含</SelectItem>
-                                <SelectItem value="exclude">排除</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              onClick={() =>
-                                handlers.handleRemoveWeaponCondition(index)
-                              }
-                              className="h-8 w-8 ml-auto"
-                            >
-                              <X className="h-4 w-4" />
-                            </Button>
-                          </div>
-                          <EquipmentSelector
-                            index={index + 1}
-                            type="weapon"
-                            label={
-                              condition.include
-                                ? `需要${condition.count}把`
-                                : "排除"
-                            }
-                            rectangle={{ width: 160, height: 100 }}
-                            recognizedEquipments={
-                              condition.id
-                                ? [{ id: condition.id, confidence: 1 }]
-                                : undefined
-                            }
-                            onEquipmentSelect={(equipment) =>
-                              handlers.handleUpdateWeaponCondition(
-                                index,
-                                "id",
-                                equipment.id
-                              )
-                            }
-                            isHovered={false}
-                            onMouseEnter={() => {}}
-                            onMouseLeave={() => {}}
+              {/* Map over the configuration array to render sections dynamically */}
+              {conditionSectionsConfig.map((section, sectionIndex) => (
+                <React.Fragment key={section.key}>
+                  <div className="space-y-4 mb-4">
+                    <div className="flex items-center justify-between">
+                      <Label className="flex items-center gap-2">
+                        <section.icon className="h-4 w-4" /> {/* Render the icon component */}
+                        {section.title}
+                        {section.conditions.length > 0 && (
+                          <Badge variant="secondary" className="ml-1">
+                            {section.conditions.length}
+                          </Badge>
+                        )}
+                      </Label>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={section.addConditionHandler}
+                        className="h-8"
+                      >
+                        <Plus className="h-3.5 w-3.5 mr-1" />
+                        添加条件
+                      </Button>
+                    </div>
+                    {section.conditions.length === 0 ? (
+                      <div className="text-sm text-muted-foreground italic">
+                        {section.emptyStateMessage}
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        {/* Use state and handlers from props */} 
+                        {/* Use the new EquipmentConditionCard component */}                       
+                        {section.conditions.map((condition: EquipmentFilterCondition, index: number) => (
+                          <EquipmentConditionCard
+                            key={`${section.key}-${index}`} // Use a more specific key
+                            condition={condition}
+                            index={index}
+                            type={section.type}
+                            showCountSelector={section.showCountSelector}
+                            onUpdate={section.updateConditionHandler} // Pass the correct update handler
+                            onRemove={section.removeConditionHandler} // Pass the correct remove handler
                           />
-                          {condition.include && (
-                            <Select
-                              value={condition.count.toString()}
-                              onValueChange={(value) =>
-                                handlers.handleUpdateWeaponCondition(
-                                  index,
-                                  "count",
-                                  value
-                                )
-                              }
-                            >
-                              <SelectTrigger className="w-full h-8">
-                                <SelectValue placeholder="数量" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                {Array.from({ length: 11 }, (_, i) => i).map(
-                                  (num) => (
-                                    <SelectItem
-                                      key={num}
-                                      value={num.toString()}
-                                    >
-                                      {num} 把
-                                    </SelectItem>
-                                  )
-                                )}
-                              </SelectContent>
-                            </Select>
-                          )}
-                        </div>
-                      )
+                        ))}
+                      </div>
                     )}
                   </div>
-                )}
-              </div>
-              <Separator className="my-4" />
-              {/* Summon section */}
-              <div className="space-y-4 mb-4">
-                <div className="flex items-center justify-between">
-                  <Label className="flex items-center gap-2">
-                    召唤石条件
-                    {/* Use state from props */}
-                    {filters.selectedSummonConditions.length > 0 && (
-                      <Badge variant="secondary" className="ml-1">
-                        {filters.selectedSummonConditions.length}
-                      </Badge>
-                    )}
-                  </Label>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={handlers.handleAddSummonCondition}
-                    className="h-8"
-                  >
-                    <Plus className="h-3.5 w-3.5 mr-1" />
-                    添加条件
-                  </Button>
-                </div>
-                {/* Use state from props */}
-                {filters.selectedSummonConditions.length === 0 ? (
-                  <div className="text-sm text-muted-foreground italic">
-                    点击"添加条件"按钮来创建召唤石筛选条件
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {/* Use state and handlers from props */}
-                    {/* Fixing linter errors: Added types for map params */}
-                    {filters.selectedSummonConditions.map(
-                      (condition: EquipmentFilterCondition, index: number) => (
-                        <div
-                          key={index}
-                          className="flex flex-col gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
-                        >
-                          <div className="flex items-center gap-2">
-                            <Select
-                              value={condition.include ? "include" : "exclude"}
-                              onValueChange={(value) =>
-                                handlers.handleUpdateSummonCondition(
-                                  index,
-                                  "include",
-                                  value === "include"
-                                )
-                              }
-                            >
-                              <SelectTrigger className="w-24 h-8">
-                                <SelectValue placeholder="类型" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="include">包含</SelectItem>
-                                <SelectItem value="exclude">排除</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              onClick={() =>
-                                handlers.handleRemoveSummonCondition(index)
-                              }
-                              className="h-8 w-8 ml-auto"
-                            >
-                              <X className="h-4 w-4" />
-                            </Button>
-                          </div>
-                          <EquipmentSelector
-                            index={index + 1}
-                            type="summon"
-                            label={condition.include ? "需要" : "排除"}
-                            rectangle={{ width: 160, height: 100 }}
-                            recognizedEquipments={
-                              condition.id
-                                ? [{ id: condition.id, confidence: 1 }]
-                                : undefined
-                            }
-                            onEquipmentSelect={(equipment) =>
-                              handlers.handleUpdateSummonCondition(
-                                index,
-                                "id",
-                                equipment.id
-                              )
-                            }
-                            isHovered={false}
-                            onMouseEnter={() => {}}
-                            onMouseLeave={() => {}}
-                          />
-                        </div>
-                      )
-                    )}
-                  </div>
-                )}
-              </div>
-              <Separator className="my-4" />
-              {/* Character section */}
-              <div className="space-y-4 mb-4">
-                <div className="flex items-center justify-between">
-                  <Label className="flex items-center gap-2">
-                    <Users className="h-4 w-4" />
-                    角色条件
-                    {/* Use state from props */}
-                    {filters.selectedCharaConditions.length > 0 && (
-                      <Badge variant="secondary" className="ml-1">
-                        {filters.selectedCharaConditions.length}
-                      </Badge>
-                    )}
-                  </Label>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={handlers.handleAddCharaCondition}
-                    className="h-8"
-                  >
-                    <Plus className="h-3.5 w-3.5 mr-1" />
-                    添加条件
-                  </Button>
-                </div>
-                {/* Use state from props */}
-                {filters.selectedCharaConditions.length === 0 ? (
-                  <div className="text-sm text-muted-foreground italic">
-                    点击"添加条件"按钮来创建角色筛选条件
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {/* Use state and handlers from props */}
-                    {/* Fixing linter errors: Added types for map params */}
-                    {filters.selectedCharaConditions.map(
-                      (condition: EquipmentFilterCondition, index: number) => (
-                        <div
-                          key={index}
-                          className="flex flex-col gap-2 bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md"
-                        >
-                          <div className="flex items-center gap-2">
-                            <Select
-                              value={condition.include ? "include" : "exclude"}
-                              onValueChange={(value) =>
-                                handlers.handleUpdateCharaCondition(
-                                  index,
-                                  "include",
-                                  value === "include"
-                                )
-                              }
-                            >
-                              <SelectTrigger className="w-24 h-8">
-                                <SelectValue placeholder="类型" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="include">包含</SelectItem>
-                                <SelectItem value="exclude">排除</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              onClick={() =>
-                                handlers.handleRemoveCharaCondition(index)
-                              }
-                              className="h-8 w-8 ml-auto"
-                            >
-                              <X className="h-4 w-4" />
-                            </Button>
-                          </div>
-                          <EquipmentSelector
-                            index={index + 1}
-                            type="chara"
-                            label={condition.include ? "需要" : "排除"}
-                            rectangle={{ width: 160, height: 100 }}
-                            recognizedEquipments={
-                              condition.id
-                                ? [{ id: condition.id, confidence: 1 }]
-                                : undefined
-                            }
-                            onEquipmentSelect={(equipment) =>
-                              handlers.handleUpdateCharaCondition(
-                                index,
-                                "id",
-                                equipment.id
-                              )
-                            }
-                            isHovered={false}
-                            onMouseEnter={() => {}}
-                            onMouseLeave={() => {}}
-                          />
-                        </div>
-                      )
-                    )}
-                  </div>
-                )}
-              </div>
+                  {/* Add Separator between sections, but not after the last one */}
+                  {sectionIndex < conditionSectionsConfig.length - 1 && (
+                    <Separator className="my-4" />
+                  )}
+                </React.Fragment>
+              ))}
             </div>
             {/* Condition explanation */}
             <div className="text-xs text-muted-foreground bg-slate-100/50 dark:bg-slate-800/50 p-2 rounded-md mt-2">

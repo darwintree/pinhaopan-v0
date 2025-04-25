@@ -1,4 +1,4 @@
-import React from 'react'; // Added for Fragment
+import React, { useState } from 'react'; // Added useState
 import {
   ChevronDown,
   ChevronUp,
@@ -26,12 +26,12 @@ import {
 } from "@/components/ui/select";
 import { DateRangePicker } from "@/components/selector/date-range-picker";
 import type { UseGuideFiltersReturn } from "@/hooks/useGuideFilters"; // Import the hook return type
-import type { EquipmentFilterCondition } from "@/lib/types"; // Keep this if needed by EquipmentSelector etc.
-import { EquipmentSelector } from "@/components/selector/equipment-selector";
+import type { EquipmentFilterCondition, DetailedEquipmentData, EquipmentType } from "@/lib/types"; // Keep this if needed by EquipmentSelector etc. Added DetailedEquipmentData, EquipmentType
 import { TagSelector } from "@/components/selector/tag-selector";
 import { ToggleInput } from "@/components/ui/toggle-input";
 import { EquipmentConditionCard } from './equipment-condition-card'; // Import the new card component
 import { SparklesIcon } from '@/components/icon/sparkles-icon'; // Import the summon icon
+import { EquipmentSelectorModal } from '@/components/selector/equipment-selector-modal'; // Import the modal
 
 // Helper functions moved here
 const getTimeScaleConfig: (scale: "small" | "medium" | "large") => {
@@ -72,6 +72,36 @@ export function GuideFilterPanel({
   handlers,
   filterCount,
 }: GuideFilterPanelProps) {
+  // State for the add condition modal
+  const [isAddConditionModalOpen, setIsAddConditionModalOpen] = useState(false);
+  const [addConditionModalType, setAddConditionModalType] = useState<EquipmentType | null>(null);
+
+  // Function to open the modal
+  const openAddConditionModal = (type: EquipmentType) => {
+    setAddConditionModalType(type);
+    setIsAddConditionModalOpen(true);
+  };
+
+  // Function to handle selection from the modal and add the condition
+  const handleAddNewCondition = (equipment: DetailedEquipmentData) => {
+    if (!addConditionModalType) return; // Should not happen, but safety check
+
+    switch (addConditionModalType) {
+      case 'weapon':
+        handlers.handleAddWeaponCondition(equipment);
+        break;
+      case 'summon':
+        handlers.handleAddSummonCondition(equipment);
+        break;
+      case 'chara':
+        handlers.handleAddCharaCondition(equipment);
+        break;
+      default:
+        console.error("Unknown type for adding condition:", addConditionModalType);
+    }
+    // No need to call setIsAddConditionModalOpen(false) here as onOpenChange in modal handles it
+  };
+
   // Define the configuration for condition sections
   const conditionSectionsConfig = [
     {
@@ -79,7 +109,7 @@ export function GuideFilterPanel({
       title: '武器条件',
       icon: Sword, // Lucide icon component
       conditions: filters.selectedWeaponConditions,
-      addConditionHandler: handlers.handleAddWeaponCondition,
+      addConditionHandler: () => openAddConditionModal('weapon'), // Use the modal opener
       removeConditionHandler: handlers.handleRemoveWeaponCondition,
       updateConditionHandler: handlers.handleUpdateWeaponCondition,
       type: 'weapon' as const, // Ensure literal type
@@ -91,7 +121,7 @@ export function GuideFilterPanel({
       title: '召唤石条件',
       icon: SparklesIcon, // Use the imported SparklesIcon
       conditions: filters.selectedSummonConditions,
-      addConditionHandler: handlers.handleAddSummonCondition,
+      addConditionHandler: () => openAddConditionModal('summon'), // Use the modal opener
       removeConditionHandler: handlers.handleRemoveSummonCondition,
       updateConditionHandler: handlers.handleUpdateSummonCondition,
       type: 'summon' as const,
@@ -103,7 +133,7 @@ export function GuideFilterPanel({
       title: '角色条件',
       icon: Users, // Lucide icon component
       conditions: filters.selectedCharaConditions,
-      addConditionHandler: handlers.handleAddCharaCondition,
+      addConditionHandler: () => openAddConditionModal('chara'), // Use the modal opener
       removeConditionHandler: handlers.handleRemoveCharaCondition,
       updateConditionHandler: handlers.handleUpdateCharaCondition,
       type: 'chara' as const,
@@ -365,6 +395,17 @@ export function GuideFilterPanel({
             </div>
           </div>
         </CardContent>
+      )}
+
+      {/* Add Condition Modal Instance */}
+      {addConditionModalType && (
+        <EquipmentSelectorModal
+          open={isAddConditionModalOpen}
+          onOpenChange={setIsAddConditionModalOpen}
+          type={addConditionModalType} 
+          onSelect={handleAddNewCondition}
+          priorityIds={[]}
+        />
       )}
     </Card>
   );

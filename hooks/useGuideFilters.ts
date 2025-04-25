@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react"
 import type { DateRange } from "react-day-picker"
-import type { EquipmentFilterCondition } from "@/lib/types"
+import type { EquipmentFilterCondition, DetailedEquipmentData, EquipmentType } from "@/lib/types"
 
 // Helper function (can be moved to a utils file later if needed)
 const getTimeScaleConfig = (scale: "small" | "medium" | "large"): { max: number, step: number } => {
@@ -54,8 +54,14 @@ export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
     // Since timeRange changes, the debounce effect will handle resetPage
   }, []) // No resetPage here directly, handled by debounce
 
-  const handleAddWeaponCondition = useCallback(() => {
-    setSelectedWeaponConditions(prev => [...prev, { type: "weapon", id: "", include: true, count: 1 }])
+  const handleAddWeaponCondition = useCallback((equipment: DetailedEquipmentData) => {
+    const newCondition: EquipmentFilterCondition = {
+      type: "weapon",
+      id: equipment.id,
+      include: true,
+      count: 1
+    };
+    setSelectedWeaponConditions(prev => [...prev, newCondition])
     resetPage()
   }, [resetPage])
 
@@ -76,8 +82,14 @@ export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
     resetPage()
   }, [resetPage])
 
-  const handleAddSummonCondition = useCallback(() => {
-    setSelectedSummonConditions(prev => [...prev, { type: "summon", id: "", include: true, count: 1 }])
+  const handleAddSummonCondition = useCallback((equipment: DetailedEquipmentData) => {
+    const newCondition: EquipmentFilterCondition = {
+      type: "summon",
+      id: equipment.id,
+      include: true,
+      count: 1 // Summons typically don't have count, but keep consistent for type
+    };
+    setSelectedSummonConditions(prev => [...prev, newCondition])
     resetPage()
   }, [resetPage])
 
@@ -97,8 +109,14 @@ export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
     resetPage()
   }, [resetPage])
 
-  const handleAddCharaCondition = useCallback(() => {
-    setSelectedCharaConditions(prev => [...prev, { type: "chara", id: "", include: true, count: 1 }])
+  const handleAddCharaCondition = useCallback((equipment: DetailedEquipmentData) => {
+    const newCondition: EquipmentFilterCondition = {
+      type: "chara",
+      id: equipment.id,
+      include: true,
+      count: 1 // Characters typically don't have count, but keep consistent for type
+    };
+    setSelectedCharaConditions(prev => [...prev, newCondition])
     resetPage()
   }, [resetPage])
 

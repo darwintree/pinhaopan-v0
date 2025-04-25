@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -14,19 +14,18 @@ import { getEquipmentPhotoUrl } from "@/lib/asset-path"
 interface EquipmentSelectorModalProps {
   type: EquipmentType
   onSelect: (equipment: DetailedEquipmentData) => void
-  buttonLabel?: string
-  buttonVariant?: "default" | "outline" | "secondary" | "ghost" | "link" | "destructive"
   priorityIds?: string[]
+  open: boolean
+  onOpenChange: (open: boolean) => void
 }
 
 export function EquipmentSelectorModal({
   type,
   onSelect,
-  buttonLabel,
-  buttonVariant = "default",
   priorityIds = [],
+  open,
+  onOpenChange,
 }: EquipmentSelectorModalProps) {
-  const [open, setOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
   const [categoryFilter, setCategoryFilter] = useState<string>("all")
   const [elementFilter, setElementFilter] = useState<string>("all")
@@ -44,20 +43,6 @@ export function EquipmentSelectorModal({
 
   // Set the title based on equipment type
   const getTitle = () => {
-    switch (type) {
-      case "summon":
-        return "选择召唤石"
-      case "chara":
-        return "选择角色"
-      case "weapon":
-        return "选择武器"
-      default:
-        return "选择装备"
-    }
-  }
-
-  // Get the default button label if not provided
-  const getDefaultButtonLabel = () => {
     switch (type) {
       case "summon":
         return "选择召唤石"
@@ -149,16 +134,11 @@ export function EquipmentSelectorModal({
   // Handle equipment selection
   const handleSelect = (equipment: DetailedEquipmentData) => {
     onSelect(equipment)
-    setOpen(false)
+    onOpenChange(false)
   }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button variant={buttonVariant} size="xs">
-          {buttonLabel || getDefaultButtonLabel()}
-        </Button>
-      </DialogTrigger>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-[calc(100%-2rem)] sm:max-w-[600px] max-h-[80vh] overflow-hidden flex flex-col">
         <DialogHeader>
           <DialogTitle>{getTitle()}</DialogTitle>

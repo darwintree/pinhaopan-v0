@@ -1,11 +1,13 @@
 "use client"
 
+import { useState } from "react";
 import { EquipmentSelectorModal } from "@/components/selector/equipment-selector-modal"
 import { getSameCrewNonSkinIdList, isSkin } from "@/hooks/use-crew-info"
 import { getEquipmentPhotoUrl } from "@/lib/asset-path"
 import { normalizeEquipmentId } from "@/lib/asset"
 import { EquipmentType, DetailedEquipmentData } from "@/lib/types"
 import { X } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 interface EquipmentSelectorProps {
   index: number
@@ -40,6 +42,8 @@ export function EquipmentSelector({
   onMouseLeave,
   onDelete,
 }: EquipmentSelectorProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleEquipmentSelect = (equipment: DetailedEquipmentData) => {
     onEquipmentSelect(equipment)
   }
@@ -111,10 +115,19 @@ export function EquipmentSelector({
           {label}
         </span>
       </div> */}
+      <Button 
+        type="button"
+        variant={equipmentIsSkin ? "default" : "secondary"} 
+        size="xs"
+        onClick={() => setIsModalOpen(true)}
+      >
+        {equipmentIsSkin ? "必须重选" : recognizedEquipments?.length ? "手动选择" : "未识别"}
+      </Button>
+
       <EquipmentSelectorModal
         type={type}
-        buttonLabel={equipmentIsSkin ? "必须重选" : recognizedEquipments?.length ? "手动选择" : "未识别"}
-        buttonVariant={equipmentIsSkin ? "default" : "secondary"}
+        open={isModalOpen}
+        onOpenChange={setIsModalOpen}
         onSelect={handleEquipmentSelect}
         priorityIds={priorityIds}
       />

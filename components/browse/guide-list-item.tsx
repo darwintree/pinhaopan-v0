@@ -78,7 +78,7 @@ export function GuideListItem({ guide, isAnyLightboxOpen, setIsAnyLightboxOpen }
             }}
         >
             {/* 副本 */}
-            <TableCell className="font-medium p-1">
+            <TableCell className="font-medium px-3 py-1">
                 <div className="flex items-center">
                     <img
                         src={questImageUrl}
@@ -129,7 +129,7 @@ export function GuideListItem({ guide, isAnyLightboxOpen, setIsAnyLightboxOpen }
             </TableCell>
 
             {/* 装备合并 - 移动端 */}
-            <TableCell className="md:hidden p-1">
+            <TableCell className="md:hidden px-3 py-1">
                 <div className="flex items-center justify-center space-x-1">
                     <EquipmentImage
                         guideId={guide.id}
@@ -139,27 +139,12 @@ export function GuideListItem({ guide, isAnyLightboxOpen, setIsAnyLightboxOpen }
                         index={0}
                         onImageClick={handleImageClick}
                     />
-                    <EquipmentImage
-                        guideId={guide.id}
-                        type="weapon"
-                        alt="Weapons"
-                        size="small"
-                        index={1}
-                        onImageClick={handleImageClick}
-                    />
-                    <EquipmentImage
-                        guideId={guide.id}
-                        type="summon"
-                        alt="Summons"
-                        size="small"
-                        index={2}
-                        onImageClick={handleImageClick}
-                    />
+                    <span className="text-sm text-muted-foreground">...</span>
                 </div>
             </TableCell>
 
             {/* 消耗时间 */}
-            <TableCell className="p-1">
+            <TableCell className="px-3 py-1">
                 {guide.time ? `${Math.floor(guide.time / 60)}:${(guide.time % 60).toString().padStart(2, '0')}` : '-'}
                 {guide.turn ? `/${guide.turn}t` : '/-'}
             </TableCell>

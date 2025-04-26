@@ -18,7 +18,7 @@ interface UseGuideFiltersProps {
 
 export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
   // Unified panel open state
-  const [isPanelOpen, setIsPanelOpen] = useState(true);
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
   // Filter states
   const [timeFilterEnabled, setTimeFilterEnabled] = useState(false)
   const [selectedTags, setSelectedTags] = useState<string[]>([])

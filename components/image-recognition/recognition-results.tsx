@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button"
-import { EquipmentSelectorModal } from "@/components/input/equipment-selector-modal"
 import type { EquipmentType, DetailedEquipmentData } from "@/lib/types"
 import { useMemo } from "react"
 import { EquipmentSelector } from "@/components/input/equipment-selector"

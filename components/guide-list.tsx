@@ -1,6 +1,5 @@
 "use client"
 
-import { ArrowUpDown, ArrowDown, ArrowUp } from "lucide-react"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import type { GuideData } from "@/lib/types"
 import React from "react"

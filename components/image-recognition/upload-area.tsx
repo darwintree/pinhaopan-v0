@@ -1,5 +1,4 @@
 import { Upload, ClipboardPaste } from "lucide-react"
-import type { EquipmentType } from "@/lib/types"
 import { Button } from "@/components/ui/button"
 
 interface UploadAreaProps {

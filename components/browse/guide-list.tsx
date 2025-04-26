@@ -3,7 +3,7 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import type { GuideData } from "@/lib/types"
 import React from "react"
-import { GuideListItem } from "@/components/guide-list-item"
+import { GuideListItem } from "@/components/browse/guide-list-item"
 
 interface GuideListProps {
   guides: GuideData[]

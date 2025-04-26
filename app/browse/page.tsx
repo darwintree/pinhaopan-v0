@@ -1,6 +1,6 @@
 "use client"
 
-import { BrowseGuides } from "@/components/browse-guides"
+import { BrowseGuides } from "@/components/browse/browse-guides"
 import { MainNav } from "@/components/main-nav"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"

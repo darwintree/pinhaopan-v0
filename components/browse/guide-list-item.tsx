@@ -7,7 +7,7 @@ import { getQuestPhotoUrl } from "@/lib/asset-path"
 import { useQuestList } from "@/hooks/use-quest-list"
 import React from "react"
 import { useTagList } from "@/hooks/use-tag-list"
-import { EquipmentImage } from "@/components/equipment-image"
+import { EquipmentImage } from "@/components/browse/equipment-image"
 
 interface GuideListItemProps {
     guide: GuideData

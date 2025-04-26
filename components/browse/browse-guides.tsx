@@ -5,11 +5,11 @@ import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, ArrowUp, ArrowD
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import type { GuideData, EquipmentFilterCondition } from "@/lib/types"
-import { GuideList } from "@/components/guide-list"
+import { GuideList } from "@/components/browse/guide-list"
 import { QuestSelector } from "@/components/input/quest-selector"
 import { getGuides, GuidesResponse } from "@/lib/remote-db"
 import { useGuideFilters } from "@/hooks/use-guide-filters"
-import { GuideFilterPanel } from "./guide-filter-panel"
+import { GuideFilterPanel } from "@/components/browse/guide-filter-panel"
 
 const PAGE_SIZE = 10
 

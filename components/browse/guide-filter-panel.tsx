@@ -29,7 +29,7 @@ import type { UseGuideFiltersReturn } from "@/hooks/use-guide-filters"; // Impor
 import type { EquipmentFilterCondition, DetailedEquipmentData, EquipmentType } from "@/lib/types"; // Keep this if needed by EquipmentSelector etc. Added DetailedEquipmentData, EquipmentType
 import { TagSelector } from "@/components/input/tag-selector";
 import { ToggleInput } from "@/components/ui/toggle-input";
-import { EquipmentConditionCard } from './equipment-condition-card'; // Import the new card component
+import { EquipmentConditionCard } from "@/components/browse/equipment-condition-card"; // Import the new card component
 import { SparklesIcon } from '@/components/icon/sparkles-icon'; // Import the summon icon
 import { EquipmentSelectorModal } from '@/components/input/equipment-selector-modal'; // Import the modal
 

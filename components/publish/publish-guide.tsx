@@ -14,65 +14,8 @@ import { SparklesIcon } from "@/components/icon/sparkles-icon"
 import { saveGuide } from "@/lib/remote-db"
 import { isSkin } from "@/hooks/use-crew-info"
 import { normalizeEquipmentId } from "@/lib/asset"
-import { GuideBasicInfoForm } from "./guide-basic-info-form"
-import { GuideImageUploader } from "./guide-image-uploader"
-
-// Define state interface for the form
-export interface FormState {
-  time: number
-  isTimeEnabled: boolean
-  turn: number
-  isTurnEnabled: boolean
-  contribution: number
-  isContributionEnabled: boolean
-  buttonSkill: number
-  buttonSummon: number
-  isButtonEnabled: boolean
-  description: string
-  tags: string[]
-}
-
-// Define action types for the reducer
-export type FormAction =
-  | { type: 'SET_FIELD'; field: keyof FormState; value: any }
-  | { type: 'TOGGLE_FIELD'; field: 'isTimeEnabled' | 'isTurnEnabled' | 'isContributionEnabled' | 'isButtonEnabled' }
-  | { type: 'SET_TAGS'; payload: string[] }
-  | { type: 'RESET_FORM' }
-
-// Define the initial state for the form
-const initialFormState: FormState = {
-  time: 300,
-  isTimeEnabled: false,
-  turn: 1,
-  isTurnEnabled: false,
-  contribution: 1000000,
-  isContributionEnabled: false,
-  buttonSkill: 0,
-  buttonSummon: 0,
-  isButtonEnabled: false,
-  description: "",
-  tags: [],
-}
-
-// Define the reducer function
-const formReducer = (state: FormState, action: FormAction): FormState => {
-  switch (action.type) {
-    case 'SET_FIELD':
-      // Handle description length limit specifically
-      if (action.field === 'description' && typeof action.value === 'string' && action.value.length > 50) {
-        return state // Do not update if description exceeds limit
-      }
-      return { ...state, [action.field]: action.value }
-    case 'TOGGLE_FIELD':
-      return { ...state, [action.field]: !state[action.field] }
-    case 'SET_TAGS':
-      return { ...state, tags: action.payload }
-    case 'RESET_FORM':
-      return initialFormState
-    default:
-      return state
-  }
-}
+import { formReducer, GuideBasicInfoForm, initialFormState } from "@/components/publish/guide-basic-info-form"
+import { GuideImageUploader } from "@/components/publish/guide-image-uploader"
 
 export function PublishGuide() {
   // Use reducer for form state

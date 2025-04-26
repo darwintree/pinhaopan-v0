@@ -1,7 +1,5 @@
 import type React from "react"
-import type { FormState, FormAction } from "./publish-guide" // Assuming types remain in publish-guide for now
 
-import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
@@ -216,4 +214,58 @@ export function GuideBasicInfoForm({
       </CardContent>
     </Card>
   )
-} 
+}// Define state interface for the form
+
+export interface FormState {
+  time: number
+  isTimeEnabled: boolean
+  turn: number
+  isTurnEnabled: boolean
+  contribution: number
+  isContributionEnabled: boolean
+  buttonSkill: number
+  buttonSummon: number
+  isButtonEnabled: boolean
+  description: string
+  tags: string[]
+}
+// Define action types for the reducer
+
+export type FormAction = { type: 'SET_FIELD'; field: keyof FormState; value: any}  |
+{ type: 'TOGGLE_FIELD'; field: 'isTimeEnabled' | 'isTurnEnabled' | 'isContributionEnabled' | 'isButtonEnabled'}  |
+{ type: 'SET_TAGS'; payload: string[]}  |
+{ type: 'RESET_FORM'} 
+// Define the initial state for the form
+export const initialFormState: FormState = {
+  time: 300,
+  isTimeEnabled: false,
+  turn: 1,
+  isTurnEnabled: false,
+  contribution: 1000000,
+  isContributionEnabled: false,
+  buttonSkill: 0,
+  buttonSummon: 0,
+  isButtonEnabled: false,
+  description: "",
+  tags: [],
+}
+// Define the reducer function
+export const formReducer = (state: FormState, action: FormAction): FormState => {
+  switch (action.type) {
+    case 'SET_FIELD':
+      // Handle description length limit specifically
+      if (action.field === 'description' && typeof action.value === 'string' && action.value.length > 50) {
+        return state // Do not update if description exceeds limit
+      }
+      return { ...state, [action.field]: action.value }
+    case 'TOGGLE_FIELD':
+      return { ...state, [action.field]: !state[action.field] }
+    case 'SET_TAGS':
+      return { ...state, tags: action.payload }
+    case 'RESET_FORM':
+      return initialFormState
+    default:
+      return state
+  }
+}
+ 

@@ -1,6 +1,6 @@
 "use client"
 
-import { PublishGuide } from "@/components/publish-guide"
+import { PublishGuide } from "@/components/publish/publish-guide"
 import { MainNav } from "@/components/main-nav"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"

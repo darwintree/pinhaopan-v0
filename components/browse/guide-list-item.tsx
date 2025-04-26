@@ -1,21 +1,30 @@
 "use client"
 
+import { useState } from "react"
 import { TableCell, TableRow } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import type { GuideData } from "@/lib/types"
-import { getQuestPhotoUrl } from "@/lib/asset-path"
+import { getQuestPhotoUrl, getGuidePhotoUrl, getGuidePhotoThumbUrl } from "@/lib/asset-path"
 import { useQuestList } from "@/hooks/use-quest-list"
 import React from "react"
 import { useTagList } from "@/hooks/use-tag-list"
 import { EquipmentImage } from "@/components/browse/equipment-image"
+import Lightbox from "yet-another-react-lightbox"
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
+import "yet-another-react-lightbox/styles.css"
+import "yet-another-react-lightbox/plugins/thumbnails.css"
 
 interface GuideListItemProps {
     guide: GuideData
+    isAnyLightboxOpen: boolean
+    setIsAnyLightboxOpen: (isOpen: boolean) => void
 }
 
-export function GuideListItem({ guide }: GuideListItemProps) {
+export function GuideListItem({ guide, isAnyLightboxOpen, setIsAnyLightboxOpen }: GuideListItemProps) {
     const { questList } = useQuestList()
     const { tagList } = useTagList()
+    const [lightboxOpen, setLightboxOpen] = useState(false)
+    const [lightboxIndex, setLightboxIndex] = useState(0)
 
     // 查找对应的quest信息
     const questInfo = questList.find(q => q.quest === guide.quest)
@@ -32,10 +41,41 @@ export function GuideListItem({ guide }: GuideListItemProps) {
         color: tagList.find(t => t.name === tag)?.color || ""
     }));
 
+    // Prepare lightbox slides with thumbnails
+    const charaImageUrl = getGuidePhotoUrl(guide.id, 'chara');
+    const weaponImageUrl = getGuidePhotoUrl(guide.id, 'weapon');
+    const summonImageUrl = getGuidePhotoUrl(guide.id, 'summon');
+    const charaThumbUrl = getGuidePhotoThumbUrl(guide.id, 'chara');
+    const weaponThumbUrl = getGuidePhotoThumbUrl(guide.id, 'weapon');
+    const summonThumbUrl = getGuidePhotoThumbUrl(guide.id, 'summon');
+    
+    const lightboxSlides = [
+      { src: charaImageUrl, alt: 'Team composition', thumbnail: charaThumbUrl },
+      { src: weaponImageUrl, alt: 'Weapons', thumbnail: weaponThumbUrl },
+      { src: summonImageUrl, alt: 'Summons', thumbnail: summonThumbUrl },
+    ];
+
+    // Event Handlers
+    const handleImageClick = (index: number) => {
+      setLightboxIndex(index);
+      setLightboxOpen(true);
+      setIsAnyLightboxOpen(true);
+    };
+
+    const handleLightboxClose = () => {
+      setLightboxOpen(false);
+      setIsAnyLightboxOpen(false);
+    };
+
     return (
+      <>
         <TableRow
-            className="cursor-pointer hover:bg-slate-100/50 dark:hover:bg-slate-800/50"
-            onClick={() => window.open(`/guide/${guide.id}`, '_blank')}
+            className={`cursor-pointer hover:bg-slate-100/50 dark:hover:bg-slate-800/50 ${isAnyLightboxOpen ? 'pointer-events-none opacity-50' : ''}`}
+            onClick={() => {
+                if (!isAnyLightboxOpen) { 
+                    window.open(`/guide/${guide.id}`, '_blank');
+                }
+            }}
         >
             {/* 副本 */}
             <TableCell className="font-medium p-1">
@@ -56,6 +96,8 @@ export function GuideListItem({ guide }: GuideListItemProps) {
                         guideId={guide.id}
                         type="chara"
                         alt="Team composition"
+                        index={0}
+                        onImageClick={handleImageClick}
                     />
                 </div>
             </TableCell>
@@ -67,6 +109,8 @@ export function GuideListItem({ guide }: GuideListItemProps) {
                         guideId={guide.id}
                         type="weapon"
                         alt="Weapons"
+                        index={1}
+                        onImageClick={handleImageClick}
                     />
                 </div>
             </TableCell>
@@ -78,6 +122,8 @@ export function GuideListItem({ guide }: GuideListItemProps) {
                         guideId={guide.id}
                         type="summon"
                         alt="Summons"
+                        index={2}
+                        onImageClick={handleImageClick}
                     />
                 </div>
             </TableCell>
@@ -90,18 +136,24 @@ export function GuideListItem({ guide }: GuideListItemProps) {
                         type="chara"
                         alt="Team composition"
                         size="small"
+                        index={0}
+                        onImageClick={handleImageClick}
                     />
                     <EquipmentImage
                         guideId={guide.id}
                         type="weapon"
                         alt="Weapons"
                         size="small"
+                        index={1}
+                        onImageClick={handleImageClick}
                     />
                     <EquipmentImage
                         guideId={guide.id}
                         type="summon"
                         alt="Summons"
                         size="small"
+                        index={2}
+                        onImageClick={handleImageClick}
                     />
                 </div>
             </TableCell>
@@ -138,5 +190,15 @@ export function GuideListItem({ guide }: GuideListItemProps) {
             {/* 描述 */}
             <TableCell className="hidden md:table-cell">{guide.description}</TableCell>
         </TableRow>
+        <Lightbox
+            open={lightboxOpen}
+            close={handleLightboxClose}
+            index={lightboxIndex}
+            slides={lightboxSlides}
+            plugins={[Thumbnails]}
+            styles={{ root: { "--yarl__color_backdrop": "rgba(0, 0, 0, 0.7)" } }}
+            controller={{ closeOnBackdropClick: true }}
+        />
+      </>
     )
 }

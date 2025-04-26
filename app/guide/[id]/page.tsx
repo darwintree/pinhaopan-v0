@@ -2,14 +2,12 @@
 
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { ArrowLeft, Share, Link, Copy } from "lucide-react"
+import { ArrowLeft, Link } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { getGuidePhotoUrl, getQuestPhotoUrl } from "@/lib/asset-path"
+import { getGuidePhotoUrl, getQuestPhotoUrl, getGuidePhotoThumbUrl } from "@/lib/asset-path"
 import type { GuideData } from "@/lib/types"
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
-import { VisuallyHidden } from "@/components/ui/visually-hidden"
 import { 
   Tooltip,
   TooltipContent,
@@ -19,9 +17,12 @@ import {
 import { useToast } from "@/hooks/use-toast"
 import { useTagList } from "@/hooks/use-tag-list"
 import { useQuestList } from "@/hooks/use-quest-list"
-import { cn } from "@/lib/utils"
 import Giscus from "@giscus/react"
 import { getGuide } from "@/lib/remote-db"
+import Lightbox from "yet-another-react-lightbox"
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
+import "yet-another-react-lightbox/styles.css"
+import "yet-another-react-lightbox/plugins/thumbnails.css"
 
 export default function GuidePage() {
   const router = useRouter()
@@ -29,21 +30,16 @@ export default function GuidePage() {
   const { toast } = useToast()
   const [guide, setGuide] = useState<GuideData | null>(null)
   const [loading, setLoading] = useState(true)
-  const [showModal, setShowModal] = useState<{
-    type: "chara" | "weapon" | "summon",
-    open: boolean
-  }>({ type: "chara", open: false })
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState(0)
   const { tagList, loading: tagsLoading } = useTagList()
   const { questList, loading: questLoading } = useQuestList()
   const [theme, setTheme] = useState<string>("light")
 
-  // 检测并设置 Giscus 主题
   useEffect(() => {
-    // 检查是否为暗色模式
     const isDarkMode = document.documentElement.classList.contains("dark")
     setTheme(isDarkMode ? "dark" : "light")
 
-    // 监听主题变化
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (
@@ -63,7 +59,6 @@ export default function GuidePage() {
     }
   }, [])
 
-  // 整体加载状态
   const isLoading = loading || tagsLoading || questLoading
 
   useEffect(() => {
@@ -96,14 +91,15 @@ export default function GuidePage() {
     })
   }
 
-  const handleImageClick = (type: "chara" | "weapon" | "summon") => {
-    setShowModal({
-      type,
-      open: true
-    })
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index)
+    setLightboxOpen(true)
   }
 
-  // 过滤并获取有效标签的颜色
+  const handleLightboxClose = () => {
+    setLightboxOpen(false)
+  }
+
   const getValidTags = () => {
     if (!guide || tagsLoading) return []
     
@@ -118,7 +114,6 @@ export default function GuidePage() {
       })
   }
 
-  // 根据颜色字符串创建内联样式
   const getTagStyle = (color: string) => {
     if (!color) return {}
     return {
@@ -126,6 +121,21 @@ export default function GuidePage() {
       color: '#ffffff',
       borderColor: 'transparent'
     }
+  }
+
+  let lightboxSlides: { src: string; alt: string; thumbnail: string }[] = [];
+  if (guide) {
+    const charaImageUrl = getGuidePhotoUrl(guide.id, 'chara');
+    const weaponImageUrl = getGuidePhotoUrl(guide.id, 'weapon');
+    const summonImageUrl = getGuidePhotoUrl(guide.id, 'summon');
+    const charaThumbUrl = getGuidePhotoThumbUrl(guide.id, 'chara'); 
+    const weaponThumbUrl = getGuidePhotoThumbUrl(guide.id, 'weapon');
+    const summonThumbUrl = getGuidePhotoThumbUrl(guide.id, 'summon');
+    lightboxSlides = [
+      { src: charaImageUrl, alt: 'Team composition', thumbnail: charaThumbUrl },
+      { src: weaponImageUrl, alt: 'Weapons', thumbnail: weaponThumbUrl },
+      { src: summonImageUrl, alt: 'Summons', thumbnail: summonThumbUrl },
+    ];
   }
 
   if (isLoading) {
@@ -173,185 +183,162 @@ export default function GuidePage() {
         </TooltipProvider>
       </div>
 
-      <Card className="backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
-        <CardContent className="p-4 md:p-6">
-          <div className="flex flex-col space-y-6">
-            {/* 标题和基本信息行 */}
-            <div className="flex flex-col md:flex-row justify-between">
-              <div>
-                {guide && (
-                  <div className="flex items-center mb-2">
-                    {questList.length > 0 && (() => {
-                      const questInfo = questList.find(q => q.quest === guide.quest)
-                      const questName = questInfo?.name || guide.quest
-                      const questImageUrl = getQuestPhotoUrl(questInfo?.image)
-                      
-                      return (
-                        <>
-                          <img
-                            src={questImageUrl}
-                            alt={questName}
-                            className="h-12 w-auto rounded mr-3"
-                          />
-                          <h1 className="text-2xl font-semibold">{questName}</h1>
-                        </>
-                      )
-                    })()}
-                  </div>
-                )}
-                {validTags.length > 0 && (
-                  <div className="flex flex-wrap gap-1 mt-1">
-                    {validTags.map((tag) => (
-                      <Badge 
-                        key={tag.name} 
-                        className="text-xs"
-                        style={getTagStyle(tag.color)}
-                      >
-                        {tag.name}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className="flex flex-col md:flex-row md:items-end md:space-x-4 mt-2 md:mt-0 text-sm">
-                <div className="flex items-center">
-                  <span className="text-muted-foreground mr-2">耗时:</span>
-                  <span className="font-medium">{guide.time ? `${Math.floor(guide.time / 60)}:${(guide.time % 60).toString().padStart(2, '0')}` : '未记录'}</span>
-                  {guide.turn && (
-                    <span className="ml-1 font-medium">/{guide.turn}t</span>
-                  )}
-                </div>
-                {guide.contribution && (
-                  <div className="flex items-center">
-                    <span className="text-muted-foreground mr-2">贡献度:</span>
-                    <span className="font-medium">{guide.contribution}</span>
-                  </div>
-                )}
-                {guide.button && (
-                  <div className="flex items-center">
-                    <span className="text-muted-foreground mr-2">按键:</span>
-                    <span className="font-medium">
-                      {guide.button.skill}技/{guide.button.summon}召
-                    </span>
-                  </div>
-                )}
-                <div className="flex items-center">
-                  <span className="text-muted-foreground mr-2">发布:</span>
-                  <span className="font-medium">{new Date(guide.date).toLocaleDateString()}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* 配置描述 */}
-            {guide.description && (
-              <div className="bg-slate-100/50 dark:bg-slate-800/50 p-3 rounded-md text-sm">
-                <h3 className="font-medium mb-1 text-muted-foreground">配置说明</h3>
-                <p>{guide.description}</p>
-              </div>
-            )}
-
-            {/* 配置图片区 - 桌面端优化为三列布局 */}
-            <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-6">
-              {/* 队伍配置 */}
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">队伍配置</h3>
-                <div 
-                  className="cursor-zoom-in h-full"
-                  onClick={() => handleImageClick("chara")}
-                >
-                  <img
-                    src={getGuidePhotoUrl(guide.id, "chara")}
-                    alt="Team composition"
-                    className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
-                  />
-                </div>
-              </div>
-              
-              {/* 武器配置 */}
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">武器配置</h3>
-                <div 
-                  className="cursor-zoom-in h-full"
-                  onClick={() => handleImageClick("weapon")}
-                >
-                  <img
-                    src={getGuidePhotoUrl(guide.id, "weapon")}
-                    alt="Weapons"
-                    className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
-                  />
-                </div>
-              </div>
-              
-              {/* 召唤石配置 */}
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">召唤石配置</h3>
-                <div 
-                  className="cursor-zoom-in h-full"
-                  onClick={() => handleImageClick("summon")}
-                >
-                  <img
-                    src={getGuidePhotoUrl(guide.id, "summon")}
-                    alt="Summons"
-                    className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* 评论区 */}
-      <div className="mt-8 mb-6">
-        <h2 className="text-xl font-semibold mb-4">讨论</h2>
+      {guide && (
         <Card className="backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
           <CardContent className="p-4 md:p-6">
-            <Giscus
-              id="comments"
-              repo="GbfPhp/Panscus"
-              repoId="R_kgDOOTKTxw"
-              category="Announcements"
-              categoryId="DIC_kwDOOTKTx84Cou5o"
-              mapping="url"
-              strict="0"
-              reactionsEnabled="1"
-              emitMetadata="0"
-              inputPosition="bottom"
-              theme={theme}
-              lang="zh-CN"
-              loading="lazy"
-            />
+            <div className="flex flex-col space-y-6">
+              <div className="flex flex-col md:flex-row justify-between">
+                <div>
+                  {questList.length > 0 && (() => {
+                    const questInfo = questList.find(q => q.quest === guide.quest)
+                    const questName = questInfo?.name || guide.quest
+                    const questImageUrl = getQuestPhotoUrl(questInfo?.image)
+                    
+                    return (
+                      <>
+                        <img
+                          src={questImageUrl}
+                          alt={questName}
+                          className="h-12 w-auto rounded mr-3"
+                        />
+                        <h1 className="text-2xl font-semibold">{questName}</h1>
+                      </>
+                    )
+                  })()}
+                  {validTags.length > 0 && (
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {validTags.map((tag) => (
+                        <Badge 
+                          key={tag.name} 
+                          className="text-xs"
+                          style={getTagStyle(tag.color)}
+                        >
+                          {tag.name}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="flex flex-col md:flex-row md:items-end md:space-x-4 mt-2 md:mt-0 text-sm">
+                  <div className="flex items-center">
+                    <span className="text-muted-foreground mr-2">耗时:</span>
+                    <span className="font-medium">{guide.time ? `${Math.floor(guide.time / 60)}:${(guide.time % 60).toString().padStart(2, '0')}` : '未记录'}</span>
+                    {guide.turn && (
+                      <span className="ml-1 font-medium">/{guide.turn}t</span>
+                    )}
+                  </div>
+                  {guide.contribution && (
+                    <div className="flex items-center">
+                      <span className="text-muted-foreground mr-2">贡献度:</span>
+                      <span className="font-medium">{guide.contribution}</span>
+                    </div>
+                  )}
+                  {guide.button && (
+                    <div className="flex items-center">
+                      <span className="text-muted-foreground mr-2">按键:</span>
+                      <span className="font-medium">
+                        {guide.button.skill}技/{guide.button.summon}召
+                      </span>
+                    </div>
+                  )}
+                  <div className="flex items-center">
+                    <span className="text-muted-foreground mr-2">发布:</span>
+                    <span className="font-medium">{new Date(guide.date).toLocaleDateString()}</span>
+                  </div>
+                </div>
+              </div>
+
+              {guide.description && (
+                <div className="bg-slate-100/50 dark:bg-slate-800/50 p-3 rounded-md text-sm">
+                  <h3 className="font-medium mb-1 text-muted-foreground">配置说明</h3>
+                  <p>{guide.description}</p>
+                </div>
+              )}
+
+              <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-6">
+                <div>
+                  <h3 className="text-sm font-medium text-muted-foreground mb-2">队伍配置</h3>
+                  <div 
+                    className="cursor-zoom-in h-full"
+                    onClick={() => openLightbox(0)}
+                  >
+                    <img
+                      src={getGuidePhotoUrl(guide.id, "chara")}
+                      alt="Team composition"
+                      className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-sm font-medium text-muted-foreground mb-2">武器配置</h3>
+                  <div 
+                    className="cursor-zoom-in h-full"
+                    onClick={() => openLightbox(1)}
+                  >
+                    <img
+                      src={getGuidePhotoUrl(guide.id, "weapon")}
+                      alt="Weapons"
+                      className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-sm font-medium text-muted-foreground mb-2">召唤石配置</h3>
+                  <div 
+                    className="cursor-zoom-in h-full"
+                    onClick={() => openLightbox(2)}
+                  >
+                    <img
+                      src={getGuidePhotoUrl(guide.id, "summon")}
+                      alt="Summons"
+                      className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </CardContent>
         </Card>
-      </div>
+      )}
 
-      {/* 大图预览模态框 */}
-      <Dialog open={showModal.open} onOpenChange={(open) => setShowModal({ ...showModal, open })}>
-        <DialogContent className="max-w-[95vw] w-fit p-0 [&>button]:text-white [&>button]:hover:bg-transparent [&>button]:focus-visible:ring-0">
-          <DialogTitle asChild>
-            <VisuallyHidden>
-              {showModal.type === "chara" 
-                ? "队伍配置"
-                : showModal.type === "weapon" 
-                  ? "武器配置" 
-                  : "召唤石配置"
-              }
-            </VisuallyHidden>
-          </DialogTitle>
-          {guide && (
-            <img 
-              src={getGuidePhotoUrl(guide.id, showModal.type)}
-              alt={showModal.type === "chara" 
-                ? "Team composition"
-                : showModal.type === "weapon" 
-                  ? "Weapons" 
-                  : "Summons"
-              }
-              className="max-h-[90vh] w-auto rounded"
-            />
-          )}
-        </DialogContent>
-      </Dialog>
+      {guide && (
+        <div className="mt-8 mb-6">
+          <h2 className="text-xl font-semibold mb-4">讨论</h2>
+          <Card className="backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
+            <CardContent className="p-4 md:p-6">
+              <Giscus
+                id="comments"
+                repo="GbfPhp/Panscus"
+                repoId="R_kgDOOTKTxw"
+                category="Announcements"
+                categoryId="DIC_kwDOOTKTx84Cou5o"
+                mapping="url"
+                strict="0"
+                reactionsEnabled="1"
+                emitMetadata="0"
+                inputPosition="bottom"
+                theme={theme}
+                lang="zh-CN"
+                loading="lazy"
+              />
+            </CardContent>
+          </Card>
+        </div>
+      )}
+
+      {guide && lightboxSlides.length > 0 && (
+        <Lightbox
+            open={lightboxOpen}
+            close={handleLightboxClose}
+            index={lightboxIndex}
+            slides={lightboxSlides}
+            plugins={[Thumbnails]}
+            styles={{ root: { "--yarl__color_backdrop": "rgba(0, 0, 0, 0.7)" } }}
+            controller={{ closeOnBackdropClick: true }}
+        />
+      )}
     </div>
   )
 } 

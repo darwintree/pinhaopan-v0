@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import type { GuideData } from "@/lib/types"
 import React from "react"
@@ -11,6 +12,8 @@ interface GuideListProps {
 }
 
 export function GuideList({ guides, loading }: GuideListProps) {
+  const [isAnyLightboxOpen, setIsAnyLightboxOpen] = useState(false)
+
   return (
     <div className="rounded-lg backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-700/50 shadow-sm overflow-hidden">
       <div className="p-4 flex items-center justify-between">
@@ -50,7 +53,12 @@ export function GuideList({ guides, loading }: GuideListProps) {
               </TableRow>
             ) : (
               guides.map((guide) => (
-                <GuideListItem key={guide.id} guide={guide} />
+                <GuideListItem 
+                  key={guide.id} 
+                  guide={guide} 
+                  isAnyLightboxOpen={isAnyLightboxOpen}
+                  setIsAnyLightboxOpen={setIsAnyLightboxOpen}
+                />
               ))
             )}
           </TableBody>

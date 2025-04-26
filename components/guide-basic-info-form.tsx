@@ -1,0 +1,208 @@
+import type React from "react"
+import type { FormState, FormAction } from "./publish-guide" // Assuming types remain in publish-guide for now
+
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Card, CardContent } from "@/components/ui/card"
+import { Slider } from "@/components/ui/slider"
+import { ToggleInput } from "@/components/ui/toggle-input"
+import { TagSelector } from "@/components/selector/tag-selector"
+
+interface GuideBasicInfoFormProps {
+  formState: FormState
+  dispatch: React.Dispatch<FormAction>
+  selectedQuest: string
+  questList: Array<{ quest: string; name: string }> // Consider defining a more specific type if available elsewhere
+}
+
+export function GuideBasicInfoForm({
+  formState,
+  dispatch,
+  selectedQuest,
+  questList,
+}: GuideBasicInfoFormProps) {
+  return (
+    <Card className="backdrop-blur-lg bg-white/40 dark:bg-slate-900/40 border-slate-200/50 dark:border-slate-700/50 shadow-sm">
+      <CardContent className="p-3 sm:p-4 md:p-6">
+        <h2 className="text-2xl font-bold mb-4 sm:mb-6">配置基本信息</h2>
+
+        <div className="space-y-6">
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2">
+              <Label>已选副本</Label>
+              <div className="p-3 rounded-md bg-slate-100/50 dark:bg-slate-800/50">
+                {selectedQuest ? (
+                  <span className="font-medium">
+                    {questList.find(quest => quest.quest === selectedQuest)?.name}
+                  </span>
+                ) : (
+                  <span className="text-muted-foreground">请先选择副本</span>
+                )}
+              </div>
+            </div>
+
+            <ToggleInput
+              id="time"
+              label="消耗时间"
+              tooltipText="完成副本所需的时间（分:秒），可选"
+              enabled={formState.isTimeEnabled}
+              onToggle={() => dispatch({ type: 'TOGGLE_FIELD', field: 'isTimeEnabled' })}
+            >
+              <div className="flex items-center justify-end">
+                <span className="text-sm text-muted-foreground">
+                  {Math.floor(formState.time / 60)}分{formState.time % 60}秒
+                </span>
+              </div>
+              <div className="flex gap-2">
+                <div className="flex-1">
+                  <Label htmlFor="minutes" className="text-xs text-muted-foreground">分钟</Label>
+                  <div className="flex items-center">
+                    <Input
+                      id="minutes"
+                      type="number"
+                      min={0}
+                      max={59}
+                      value={Math.floor(formState.time / 60)}
+                      onChange={(e) => {
+                        const min = parseInt(e.target.value) || 0;
+                        dispatch({ type: 'SET_FIELD', field: 'time', value: (min * 60) + (formState.time % 60) });
+                      }}
+                      className="text-center"
+                    />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <Label htmlFor="seconds" className="text-xs text-muted-foreground">秒</Label>
+                  <div className="flex items-center">
+                    <Input
+                      id="seconds"
+                      type="number"
+                      min={0}
+                      max={59}
+                      value={formState.time % 60}
+                      onChange={(e) => {
+                        const sec = parseInt(e.target.value) || 0;
+                        dispatch({ type: 'SET_FIELD', field: 'time', value: Math.floor(formState.time / 60) * 60 + sec });
+                      }}
+                      className="text-center"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="pt-2">
+                <Slider
+                  id="time-slider"
+                  min={0}
+                  max={3600}
+                  step={1}
+                  value={[formState.time]}
+                  onValueChange={(value) => dispatch({ type: 'SET_FIELD', field: 'time', value: value[0] })}
+                />
+              </div>
+            </ToggleInput>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 mt-6">
+            {/* 回合数输入项 */}
+            <ToggleInput
+              id="turn"
+              label="回合数"
+              tooltipText="通关所需的回合数，可选"
+              enabled={formState.isTurnEnabled}
+              onToggle={() => dispatch({ type: 'TOGGLE_FIELD', field: 'isTurnEnabled' })}
+            >
+              <div className="pt-2">
+                <Input
+                  id="turn"
+                  type="number"
+                  min={1}
+                  value={formState.turn}
+                  onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'turn', value: parseInt(e.target.value) || 1 })}
+                  className="text-center"
+                />
+              </div>
+            </ToggleInput>
+
+            {/* 贡献度输入项 */}
+            <ToggleInput
+              id="contribution"
+              label="贡献度"
+              tooltipText="战斗贡献度，可选"
+              enabled={formState.isContributionEnabled}
+              onToggle={() => dispatch({ type: 'TOGGLE_FIELD', field: 'isContributionEnabled' })}
+            >
+              <div className="pt-2">
+                <Input
+                  id="contribution"
+                  type="number"
+                  min={0}
+                  value={formState.contribution}
+                  onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'contribution', value: parseInt(e.target.value) || 0 })}
+                  className="text-center"
+                />
+              </div>
+            </ToggleInput>
+          </div>
+
+          {/* 按键数输入项 */}
+          <div className="mt-6">
+            <ToggleInput
+              id="button"
+              label="按键数"
+              tooltipText="战斗中使用的技能和召唤按键数量，可选"
+              enabled={formState.isButtonEnabled}
+              onToggle={() => dispatch({ type: 'TOGGLE_FIELD', field: 'isButtonEnabled' })}
+            >
+              <div className="grid gap-4 md:grid-cols-2 mt-2">
+                <div className="space-y-2">
+                  <Label htmlFor="buttonSkill" className="text-xs text-muted-foreground">技能按键数</Label>
+                  <Input
+                    id="buttonSkill"
+                    type="number"
+                    min={0}
+                    value={formState.buttonSkill}
+                    onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'buttonSkill', value: parseInt(e.target.value) || 0 })}
+                    className="text-center"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="buttonSummon" className="text-xs text-muted-foreground">召唤按键数</Label>
+                  <Input
+                    id="buttonSummon"
+                    type="number"
+                    min={0}
+                    value={formState.buttonSummon}
+                    onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'buttonSummon', value: parseInt(e.target.value) || 0 })}
+                    className="text-center"
+                  />
+                </div>
+              </div>
+            </ToggleInput>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="description">备注</Label>
+            <Textarea
+              id="description"
+              placeholder="配置简要备注（不超过50字）"
+              className="min-h-[120px]"
+              value={formState.description}
+              onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'description', value: e.target.value })}
+            />
+            <div className="text-sm text-muted-foreground text-right">
+              {formState.description.length}/50
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <TagSelector
+              selectedTags={formState.tags}
+              onTagSelect={(newTags) => dispatch({ type: 'SET_TAGS', payload: newTags })}
+            />
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  )
+} 

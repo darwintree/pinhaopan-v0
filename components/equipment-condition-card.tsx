@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
-import { EquipmentSelector } from "@/components/selector/equipment-selector";
+import { EquipmentSelector } from "@/components/input/equipment-selector";
 import type { EquipmentFilterCondition } from "@/lib/types"; // Import the type
 
 // Define Props interface

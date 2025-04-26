@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ImageUploadWithRecognition } from "@/components/image-recognition/image-upload-with-recognition"
-import { QuestSelector } from "@/components/selector/quest-selector"
+import { QuestSelector } from "@/components/input/quest-selector"
 import { useQuestList } from "@/hooks/use-quest-list"
 import { GuidePostData } from "@/lib/types"
 import { resizeImageWithAspectRatio } from "@/lib/utils"
@@ -49,7 +49,7 @@ const initialFormState: FormState = {
   isTimeEnabled: false,
   turn: 1,
   isTurnEnabled: false,
-  contribution: 0,
+  contribution: 1000000,
   isContributionEnabled: false,
   buttonSkill: 0,
   buttonSummon: 0,

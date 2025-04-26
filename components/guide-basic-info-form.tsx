@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
 import { ToggleInput } from "@/components/ui/toggle-input"
-import { TagSelector } from "@/components/selector/tag-selector"
+import { TagSelector } from "@/components/input/tag-selector"
 
 interface GuideBasicInfoFormProps {
   formState: FormState

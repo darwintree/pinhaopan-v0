@@ -24,14 +24,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { DateRangePicker } from "@/components/selector/date-range-picker";
+import { DateRangePicker } from "@/components/input/date-range-picker";
 import type { UseGuideFiltersReturn } from "@/hooks/use-guide-filters"; // Import the hook return type
 import type { EquipmentFilterCondition, DetailedEquipmentData, EquipmentType } from "@/lib/types"; // Keep this if needed by EquipmentSelector etc. Added DetailedEquipmentData, EquipmentType
-import { TagSelector } from "@/components/selector/tag-selector";
+import { TagSelector } from "@/components/input/tag-selector";
 import { ToggleInput } from "@/components/ui/toggle-input";
 import { EquipmentConditionCard } from './equipment-condition-card'; // Import the new card component
 import { SparklesIcon } from '@/components/icon/sparkles-icon'; // Import the summon icon
-import { EquipmentSelectorModal } from '@/components/selector/equipment-selector-modal'; // Import the modal
+import { EquipmentSelectorModal } from '@/components/input/equipment-selector-modal'; // Import the modal
 
 // Helper functions moved here
 const getTimeScaleConfig: (scale: "small" | "medium" | "large") => {

@@ -8,7 +8,7 @@ import type { GuideData, EquipmentFilterCondition } from "@/lib/types"
 import { GuideList } from "@/components/guide-list"
 import { QuestSelector } from "@/components/selector/quest-selector"
 import { getGuides, GuidesResponse } from "@/lib/remote-db"
-import { useGuideFilters } from "@/hooks/useGuideFilters"
+import { useGuideFilters } from "@/hooks/use-guide-filters"
 import { GuideFilterPanel } from "./guide-filter-panel"
 
 const PAGE_SIZE = 10

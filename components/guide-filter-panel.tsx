@@ -25,7 +25,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { DateRangePicker } from "@/components/selector/date-range-picker";
-import type { UseGuideFiltersReturn } from "@/hooks/useGuideFilters"; // Import the hook return type
+import type { UseGuideFiltersReturn } from "@/hooks/use-guide-filters"; // Import the hook return type
 import type { EquipmentFilterCondition, DetailedEquipmentData, EquipmentType } from "@/lib/types"; // Keep this if needed by EquipmentSelector etc. Added DetailedEquipmentData, EquipmentType
 import { TagSelector } from "@/components/selector/tag-selector";
 import { ToggleInput } from "@/components/ui/toggle-input";

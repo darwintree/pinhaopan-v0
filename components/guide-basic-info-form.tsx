@@ -9,6 +9,7 @@ import { Slider } from "@/components/ui/slider"
 import { ToggleInput } from "@/components/ui/toggle-input"
 import { TagSelector } from "@/components/input/tag-selector"
 import { ContributionInput } from "@/components/input/contribution-input"
+import { NumberInput } from "@/components/input/number-input"
 
 interface GuideBasicInfoFormProps {
   formState: FormState
@@ -59,34 +60,40 @@ export function GuideBasicInfoForm({
                 <div className="flex-1">
                   <Label htmlFor="minutes" className="text-xs text-muted-foreground">分钟</Label>
                   <div className="flex items-center">
-                    <Input
+                    <NumberInput
                       id="minutes"
-                      type="number"
+                      value={Math.floor(formState.time / 60)}
+                      onChange={(newValue) => {
+                        const min = newValue ?? 0;
+                        const currentSeconds = formState.time % 60;
+                        dispatch({ type: 'SET_FIELD', field: 'time', value: (min * 60) + currentSeconds });
+                      }}
                       min={0}
                       max={59}
-                      value={Math.floor(formState.time / 60)}
-                      onChange={(e) => {
-                        const min = parseInt(e.target.value) || 0;
-                        dispatch({ type: 'SET_FIELD', field: 'time', value: (min * 60) + (formState.time % 60) });
-                      }}
-                      className="text-center"
+                      placeholder="0"
+                      disabled={!formState.isTimeEnabled}
+                      inputClassName="text-center"
+                      allowDecimal={false}
                     />
                   </div>
                 </div>
                 <div className="flex-1">
                   <Label htmlFor="seconds" className="text-xs text-muted-foreground">秒</Label>
                   <div className="flex items-center">
-                    <Input
+                    <NumberInput
                       id="seconds"
-                      type="number"
+                      value={formState.time % 60}
+                      onChange={(newValue) => {
+                        const sec = newValue ?? 0;
+                        const currentMinutes = Math.floor(formState.time / 60);
+                        dispatch({ type: 'SET_FIELD', field: 'time', value: (currentMinutes * 60) + sec });
+                      }}
                       min={0}
                       max={59}
-                      value={formState.time % 60}
-                      onChange={(e) => {
-                        const sec = parseInt(e.target.value) || 0;
-                        dispatch({ type: 'SET_FIELD', field: 'time', value: Math.floor(formState.time / 60) * 60 + sec });
-                      }}
-                      className="text-center"
+                      placeholder="0"
+                      disabled={!formState.isTimeEnabled}
+                      inputClassName="text-center"
+                      allowDecimal={false}
                     />
                   </div>
                 </div>
@@ -114,13 +121,15 @@ export function GuideBasicInfoForm({
               onToggle={() => dispatch({ type: 'TOGGLE_FIELD', field: 'isTurnEnabled' })}
             >
               <div className="pt-2">
-                <Input
+                <NumberInput
                   id="turn"
-                  type="number"
-                  min={1}
                   value={formState.turn}
-                  onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'turn', value: parseInt(e.target.value) || 1 })}
-                  className="text-center"
+                  onChange={(newValue) => dispatch({ type: 'SET_FIELD', field: 'turn', value: newValue ?? 1 })}
+                  min={1}
+                  placeholder="1"
+                  disabled={!formState.isTurnEnabled}
+                  inputClassName="text-center"
+                  allowDecimal={false}
                 />
               </div>
             </ToggleInput>
@@ -155,24 +164,28 @@ export function GuideBasicInfoForm({
               <div className="grid gap-4 md:grid-cols-2 mt-2">
                 <div className="space-y-2">
                   <Label htmlFor="buttonSkill" className="text-xs text-muted-foreground">技能按键数</Label>
-                  <Input
+                  <NumberInput
                     id="buttonSkill"
-                    type="number"
-                    min={0}
                     value={formState.buttonSkill}
-                    onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'buttonSkill', value: parseInt(e.target.value) || 0 })}
-                    className="text-center"
+                    onChange={(newValue) => dispatch({ type: 'SET_FIELD', field: 'buttonSkill', value: newValue ?? 0 })}
+                    min={0}
+                    placeholder="0"
+                    disabled={!formState.isButtonEnabled}
+                    inputClassName="text-center"
+                    allowDecimal={false}
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="buttonSummon" className="text-xs text-muted-foreground">召唤按键数</Label>
-                  <Input
+                  <NumberInput
                     id="buttonSummon"
-                    type="number"
-                    min={0}
                     value={formState.buttonSummon}
-                    onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'buttonSummon', value: parseInt(e.target.value) || 0 })}
-                    className="text-center"
+                    onChange={(newValue) => dispatch({ type: 'SET_FIELD', field: 'buttonSummon', value: newValue ?? 0 })}
+                    min={0}
+                    placeholder="0"
+                    disabled={!formState.isButtonEnabled}
+                    inputClassName="text-center"
+                    allowDecimal={false}
                   />
                 </div>
               </div>

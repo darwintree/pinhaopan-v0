@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Info } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { NumberInput } from "./number-input"
 
 interface ContributionInputProps {
   id: string
@@ -29,42 +30,24 @@ export function ContributionInput({
   className,
   disabled = false, // Default to false
 }: ContributionInputProps) {
-  // Internal state for the displayed value (e.g., "100")
-  const [displayValue, setDisplayValue] = React.useState<string>("")
-
-  // Update display value when the actual value prop changes from outside
-  React.useEffect(() => {
-    if (value === 0) {
-      setDisplayValue("") // Show empty for 0
-    } else if (value % UNIT === 0) {
-      // Only update if it's a multiple of UNIT or 0 to avoid weird rounding displays
-      setDisplayValue((value / UNIT).toString())
+  // New handler to bridge NumberInput's onChange to ContributionInput's onChange
+  const handleNumberChange = (numericValue: number | null) => {
+    if (numericValue === null || isNaN(numericValue)) {
+      onChange(0) // Treat null/invalid as 0 contribution
     } else {
-       // If the initial value is not a multiple of UNIT, display it directly
-       // but this might be confusing. Consider rounding or clearing.
-       // For now, let's display the raw number divided by UNIT, potentially with decimals.
-       // Or maybe clear it to force user input in the correct format? Let's clear for now.
-       // setDisplayValue((value / UNIT).toFixed(2)); // Alternative: show decimals
-       setDisplayValue("") // Clear if not a clean multiple
-    }
-  }, [value])
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const rawInput = event.target.value
-    // Allow only numbers and potentially a single decimal point if we wanted fractions of '万'
-    const filteredInput = rawInput.replace(/[^0-9]/g, '') 
-    
-    setDisplayValue(filteredInput)
-
-    // Calculate the actual value and call onChange
-    const numericValue = parseInt(filteredInput, 10)
-    if (!isNaN(numericValue)) {
-      onChange(numericValue * UNIT)
-    } else if (filteredInput === "") {
-      // Handle empty input - treat as 0 contribution
-      onChange(0)
+      onChange(numericValue * UNIT) // Multiply by unit
     }
   }
+
+  // Calculate the value to pass to NumberInput (the displayed part)
+  const numberInputValue = React.useMemo(() => {
+    if (value === 0 || value === null || value === undefined || isNaN(value) || value % UNIT !== 0) {
+        // If value is 0, invalid, or not a clean multiple, display nothing in NumberInput
+        // Or potentially handle non-multiples? For now, clear it.
+      return null 
+    }
+    return value / UNIT
+  }, [value])
 
   return (
     <div className={cn("space-y-1", className)}>
@@ -86,16 +69,15 @@ export function ContributionInput({
         </Label>
       )}
       <div className="flex items-center gap-2">
-        <Input
+        <NumberInput
           id={id}
-          type="text" // Use text to allow empty string and control formatting
-          inputMode="numeric" // Hint for mobile keyboards
-          pattern="[0-9]*" // Basic pattern validation
-          value={displayValue}
-          onChange={handleInputChange}
-          className="text-center flex-1"
-          placeholder="0" // Placeholder when empty
-          disabled={disabled} // Pass disabled state
+          value={numberInputValue} // Pass the calculated value (e.g., 100)
+          onChange={handleNumberChange} // Use the new handler
+          inputClassName="text-center flex-1" // Pass specific class to input
+          placeholder="0"
+          disabled={disabled}
+          allowDecimal={false} // Contribution is likely whole numbers of '万'
+          showStepButtons={false}
         />
         <span className="text-sm text-muted-foreground">{UNIT_LABEL}</span>
       </div>

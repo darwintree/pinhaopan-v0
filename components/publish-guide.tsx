@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useReducer } from "react"
 import { Upload, X, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -26,21 +26,66 @@ import { saveGuide } from "@/lib/remote-db"
 import { isSkin } from "@/hooks/use-crew-info"
 import { normalizeEquipmentId } from "@/lib/asset"
 
+// Define state interface for the form
+interface FormState {
+  time: number
+  isTimeEnabled: boolean
+  turn: number
+  isTurnEnabled: boolean
+  contribution: number
+  isContributionEnabled: boolean
+  buttonSkill: number
+  buttonSummon: number
+  isButtonEnabled: boolean
+  description: string
+  tags: string[]
+}
+
+// Define action types for the reducer
+type FormAction =
+  | { type: 'SET_FIELD'; field: keyof FormState; value: any }
+  | { type: 'TOGGLE_FIELD'; field: 'isTimeEnabled' | 'isTurnEnabled' | 'isContributionEnabled' | 'isButtonEnabled' }
+  | { type: 'SET_TAGS'; payload: string[] }
+  | { type: 'RESET_FORM' }
+
+// Define the initial state for the form
+const initialFormState: FormState = {
+  time: 300,
+  isTimeEnabled: false,
+  turn: 1,
+  isTurnEnabled: false,
+  contribution: 0,
+  isContributionEnabled: false,
+  buttonSkill: 0,
+  buttonSummon: 0,
+  isButtonEnabled: false,
+  description: "",
+  tags: [],
+}
+
+// Define the reducer function
+const formReducer = (state: FormState, action: FormAction): FormState => {
+  switch (action.type) {
+    case 'SET_FIELD':
+      // Handle description length limit specifically
+      if (action.field === 'description' && typeof action.value === 'string' && action.value.length > 50) {
+        return state // Do not update if description exceeds limit
+      }
+      return { ...state, [action.field]: action.value }
+    case 'TOGGLE_FIELD':
+      return { ...state, [action.field]: !state[action.field] }
+    case 'SET_TAGS':
+      return { ...state, tags: action.payload }
+    case 'RESET_FORM':
+      return initialFormState
+    default:
+      return state
+  }
+}
+
 export function PublishGuide() {
-  // Form states
-  const [name, setName] = useState("")
-  const [time, setTime] = useState(300) // 时间以秒为单位存储
-  const [isTimeEnabled, setIsTimeEnabled] = useState(false) // 时间是否启用
-  const [turn, setTurn] = useState(1) // 回合数
-  const [isTurnEnabled, setIsTurnEnabled] = useState(false) // 回合数是否启用
-  const [contribution, setContribution] = useState(0) // 贡献度
-  const [isContributionEnabled, setIsContributionEnabled] = useState(false) // 贡献度是否启用
-  const [buttonSkill, setButtonSkill] = useState(0) // 技能按键数
-  const [buttonSummon, setButtonSummon] = useState(0) // 召唤按键数
-  const [isButtonEnabled, setIsButtonEnabled] = useState(false) // 按键数是否启用
-  const [description, setDescription] = useState("")
-  const [tagInput, setTagInput] = useState("")
-  const [tags, setTags] = useState<string[]>([])
+  // Use reducer for form state
+  const [formState, dispatch] = useReducer(formReducer, initialFormState);
 
   // Image upload states
   const [teamImages, setTeamImages] = useState<string[]>([])
@@ -150,12 +195,12 @@ export function PublishGuide() {
       // Prepare the data
       const postData: GuidePostData = {
         quest: selectedQuest,
-        ...(isTimeEnabled ? { time } : {}), // 仅在启用时添加time字段
-        ...(isTurnEnabled ? { turn } : {}), // 仅在启用时添加turn字段
-        ...(isContributionEnabled ? { contribution } : {}), // 仅在启用时添加contribution字段
-        ...(isButtonEnabled ? { button: { skill: buttonSkill, summon: buttonSummon } } : {}), // 仅在启用时添加button字段
-        description,
-        tags,
+        ...(formState.isTimeEnabled ? { time: formState.time } : {}),
+        ...(formState.isTurnEnabled ? { turn: formState.turn } : {}),
+        ...(formState.isContributionEnabled ? { contribution: formState.contribution } : {}),
+        ...(formState.isButtonEnabled ? { button: { skill: formState.buttonSkill, summon: formState.buttonSummon } } : {}),
+        description: formState.description,
+        tags: formState.tags,
         charas,
         charasBase64: resizedCharasBase64,
         weapons,
@@ -170,18 +215,7 @@ export function PublishGuide() {
       const guideId = await saveGuide(postData)
 
       // Reset form on success
-      setName("")
-      setTime(0)
-      setIsTimeEnabled(false)
-      setTurn(1)
-      setIsTurnEnabled(false)
-      setContribution(0)
-      setIsContributionEnabled(false)
-      setButtonSkill(0)
-      setButtonSummon(0)
-      setIsButtonEnabled(false)
-      setDescription("")
-      setTags([])
+      dispatch({ type: 'RESET_FORM' });
       setTeamImages([])
       setWeaponImages([])
       setSummonImages([])
@@ -231,12 +265,12 @@ export function PublishGuide() {
                 id="time"
                 label="消耗时间"
                 tooltipText="完成副本所需的时间（分:秒），可选"
-                enabled={isTimeEnabled}
-                onToggle={() => setIsTimeEnabled(!isTimeEnabled)}
+                enabled={formState.isTimeEnabled}
+                onToggle={() => dispatch({ type: 'TOGGLE_FIELD', field: 'isTimeEnabled' })}
               >
                 <div className="flex items-center justify-end">
                   <span className="text-sm text-muted-foreground">
-                    {Math.floor(time / 60)}分{time % 60}秒
+                    {Math.floor(formState.time / 60)}分{formState.time % 60}秒
                   </span>
                 </div>
                 <div className="flex gap-2">
@@ -248,10 +282,10 @@ export function PublishGuide() {
                         type="number"
                         min={0}
                         max={59}
-                        value={Math.floor(time / 60)}
+                        value={Math.floor(formState.time / 60)}
                         onChange={(e) => {
                           const min = parseInt(e.target.value) || 0;
-                          setTime((min * 60) + (time % 60));
+                          dispatch({ type: 'SET_FIELD', field: 'time', value: (min * 60) + (formState.time % 60) });
                         }}
                         className="text-center"
                       />
@@ -265,10 +299,10 @@ export function PublishGuide() {
                         type="number"
                         min={0}
                         max={59}
-                        value={time % 60}
+                        value={formState.time % 60}
                         onChange={(e) => {
                           const sec = parseInt(e.target.value) || 0;
-                          setTime(Math.floor(time / 60) * 60 + sec);
+                          dispatch({ type: 'SET_FIELD', field: 'time', value: Math.floor(formState.time / 60) * 60 + sec });
                         }}
                         className="text-center"
                       />
@@ -281,8 +315,8 @@ export function PublishGuide() {
                     min={0}
                     max={3600}
                     step={1}
-                    value={[time]}
-                    onValueChange={(value) => setTime(value[0])}
+                    value={[formState.time]}
+                    onValueChange={(value) => dispatch({ type: 'SET_FIELD', field: 'time', value: value[0] })}
                   />
                 </div>
               </ToggleInput>
@@ -294,16 +328,16 @@ export function PublishGuide() {
                 id="turn"
                 label="回合数"
                 tooltipText="通关所需的回合数，可选"
-                enabled={isTurnEnabled}
-                onToggle={() => setIsTurnEnabled(!isTurnEnabled)}
+                enabled={formState.isTurnEnabled}
+                onToggle={() => dispatch({ type: 'TOGGLE_FIELD', field: 'isTurnEnabled' })}
               >
                 <div className="pt-2">
                   <Input
                     id="turn"
                     type="number"
                     min={1}
-                    value={turn}
-                    onChange={(e) => setTurn(parseInt(e.target.value) || 1)}
+                    value={formState.turn}
+                    onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'turn', value: parseInt(e.target.value) || 1 })}
                     className="text-center"
                   />
                 </div>
@@ -314,16 +348,16 @@ export function PublishGuide() {
                 id="contribution"
                 label="贡献度"
                 tooltipText="战斗贡献度，可选"
-                enabled={isContributionEnabled}
-                onToggle={() => setIsContributionEnabled(!isContributionEnabled)}
+                enabled={formState.isContributionEnabled}
+                onToggle={() => dispatch({ type: 'TOGGLE_FIELD', field: 'isContributionEnabled' })}
               >
                 <div className="pt-2">
                   <Input
                     id="contribution"
                     type="number"
                     min={0}
-                    value={contribution}
-                    onChange={(e) => setContribution(parseInt(e.target.value) || 0)}
+                    value={formState.contribution}
+                    onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'contribution', value: parseInt(e.target.value) || 0 })}
                     className="text-center"
                   />
                 </div>
@@ -336,8 +370,8 @@ export function PublishGuide() {
                 id="button"
                 label="按键数"
                 tooltipText="战斗中使用的技能和召唤按键数量，可选"
-                enabled={isButtonEnabled}
-                onToggle={() => setIsButtonEnabled(!isButtonEnabled)}
+                enabled={formState.isButtonEnabled}
+                onToggle={() => dispatch({ type: 'TOGGLE_FIELD', field: 'isButtonEnabled' })}
               >
                 <div className="grid gap-4 md:grid-cols-2 mt-2">
                   <div className="space-y-2">
@@ -346,8 +380,8 @@ export function PublishGuide() {
                       id="buttonSkill"
                       type="number"
                       min={0}
-                      value={buttonSkill}
-                      onChange={(e) => setButtonSkill(parseInt(e.target.value) || 0)}
+                      value={formState.buttonSkill}
+                      onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'buttonSkill', value: parseInt(e.target.value) || 0 })}
                       className="text-center"
                     />
                   </div>
@@ -357,8 +391,8 @@ export function PublishGuide() {
                       id="buttonSummon"
                       type="number"
                       min={0}
-                      value={buttonSummon}
-                      onChange={(e) => setButtonSummon(parseInt(e.target.value) || 0)}
+                      value={formState.buttonSummon}
+                      onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'buttonSummon', value: parseInt(e.target.value) || 0 })}
                       className="text-center"
                     />
                   </div>
@@ -372,20 +406,19 @@ export function PublishGuide() {
                 id="description"
                 placeholder="配置简要备注（不超过50字）"
                 className="min-h-[120px]"
-                value={description}
-                onChange={(e) => {
-                  if (e.target.value.length <= 50) {
-                    setDescription(e.target.value)
-                  }
-                }}
+                value={formState.description}
+                onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'description', value: e.target.value })}
               />
               <div className="text-sm text-muted-foreground text-right">
-                {description.length}/50
+                {formState.description.length}/50
               </div>
             </div>
 
             <div className="space-y-2">
-              <TagSelector selectedTags={tags} onTagSelect={setTags} />
+              <TagSelector 
+                selectedTags={formState.tags} 
+                onTagSelect={(newTags) => dispatch({ type: 'SET_TAGS', payload: newTags })} 
+              />
             </div>
           </div>
         </CardContent>

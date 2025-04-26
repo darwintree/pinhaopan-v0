@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
 import { ToggleInput } from "@/components/ui/toggle-input"
 import { TagSelector } from "@/components/input/tag-selector"
+import { ContributionInput } from "@/components/input/contribution-input"
 
 interface GuideBasicInfoFormProps {
   formState: FormState
@@ -132,16 +133,13 @@ export function GuideBasicInfoForm({
               enabled={formState.isContributionEnabled}
               onToggle={() => dispatch({ type: 'TOGGLE_FIELD', field: 'isContributionEnabled' })}
             >
-              <div className="pt-2">
-                <Input
-                  id="contribution"
-                  type="number"
-                  min={0}
-                  value={formState.contribution}
-                  onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'contribution', value: parseInt(e.target.value) || 0 })}
-                  className="text-center"
-                />
-              </div>
+              <ContributionInput 
+                id="contribution-value" 
+                value={formState.contribution}
+                onChange={(newValue) => dispatch({ type: 'SET_FIELD', field: 'contribution', value: newValue })}
+                className="pt-2"
+                disabled={!formState.isContributionEnabled}
+              />
             </ToggleInput>
           </div>
 

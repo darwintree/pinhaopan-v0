@@ -337,6 +337,9 @@ export default function GuidePage() {
             plugins={[Thumbnails]}
             styles={{ root: { "--yarl__color_backdrop": "rgba(0, 0, 0, 0.7)" } }}
             controller={{ closeOnBackdropClick: true }}
+            render={{
+              iconClose: () => null,
+            }}
         />
       )}
     </div>

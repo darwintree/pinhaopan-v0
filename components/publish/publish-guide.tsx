@@ -6,8 +6,8 @@ import { useState, useReducer } from "react"
 import { Button } from "@/components/ui/button"
 import { QuestSelector } from "@/components/input/quest-selector"
 import { useQuestList } from "@/hooks/use-quest-list"
-import { GuidePostData } from "@/lib/types"
-import { resizeImageWithAspectRatio } from "@/lib/utils"
+import { GuidePostData, BoundingBox } from "@/lib/types"
+import { resizeImageWithAspectRatio, cropImage } from "@/lib/utils"
 import { UsersIcon } from "@/components/icon/users-icon"
 import { SwordIcon } from "@/components/icon/sword-icon"
 import { SparklesIcon } from "@/components/icon/sparkles-icon"
@@ -40,6 +40,11 @@ export function PublishGuide() {
   const [weaponResults, setWeaponResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
   const [summonResults, setSummonResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
 
+  // Bounding Box states
+  const [charaBoundingBox, setCharaBoundingBox] = useState<BoundingBox | null>(null);
+  const [weaponBoundingBox, setWeaponBoundingBox] = useState<BoundingBox | null>(null);
+  const [summonBoundingBox, setSummonBoundingBox] = useState<BoundingBox | null>(null);
+
   // Image upload configurations
   const uploadConfigs = [
     {
@@ -49,7 +54,8 @@ export function PublishGuide() {
       images: teamImages,
       setImages: setTeamImages,
       infoText: "上传一张包含所有角色的图片，系统将自动识别主体",
-      onRecognitionResults: setCharaResults
+      onRecognitionResults: setCharaResults,
+      onBoundingBoxChange: setCharaBoundingBox
     },
     {
       type: "weapon" as const,
@@ -58,7 +64,8 @@ export function PublishGuide() {
       images: weaponImages,
       setImages: setWeaponImages,
       infoText: "上传一张包含所有武器的图片，系统将自动识别主体",
-      onRecognitionResults: setWeaponResults
+      onRecognitionResults: setWeaponResults,
+      onBoundingBoxChange: setWeaponBoundingBox
     },
     {
       type: "summon" as const,
@@ -67,7 +74,8 @@ export function PublishGuide() {
       images: summonImages,
       setImages: setSummonImages,
       infoText: "上传一张包含所有召唤石的图片，系统将自动识别主体",
-      onRecognitionResults: setSummonResults
+      onRecognitionResults: setSummonResults,
+      onBoundingBoxChange: setSummonBoundingBox
     }
   ]
 
@@ -94,10 +102,26 @@ export function PublishGuide() {
         throw new Error("请上传召唤石图片")
       }
 
-      // 调整图片大小，保持宽高比
-      const resizedCharasBase64 = await resizeImageWithAspectRatio(teamImages[0])
-      const resizedWeaponsBase64 = await resizeImageWithAspectRatio(weaponImages[0])
-      const resizedSummonsBase64 = await resizeImageWithAspectRatio(summonImages[0])
+      // 1. Crop images if bounding box exists
+      let charaBase64ToResize = teamImages[0];
+      if (charaBoundingBox) {
+        charaBase64ToResize = await cropImage(charaBase64ToResize, charaBoundingBox);
+      }
+
+      let weaponBase64ToResize = weaponImages[0];
+      if (weaponBoundingBox) {
+        weaponBase64ToResize = await cropImage(weaponBase64ToResize, weaponBoundingBox);
+      }
+
+      let summonBase64ToResize = summonImages[0];
+      if (summonBoundingBox) {
+        summonBase64ToResize = await cropImage(summonBase64ToResize, summonBoundingBox);
+      }
+
+      // 2. Resize potentially cropped images
+      const resizedCharasBase64 = await resizeImageWithAspectRatio(charaBase64ToResize)
+      const resizedWeaponsBase64 = await resizeImageWithAspectRatio(weaponBase64ToResize)
+      const resizedSummonsBase64 = await resizeImageWithAspectRatio(summonBase64ToResize)
 
       // Get recognized equipment IDs
       const charas = Object.values(charaResults)
@@ -157,6 +181,9 @@ export function PublishGuide() {
       setCharaResults({})
       setWeaponResults({})
       setSummonResults({})
+      setCharaBoundingBox(null)
+      setWeaponBoundingBox(null)
+      setSummonBoundingBox(null)
 
       // Show success message
       alert("配置发布成功！")

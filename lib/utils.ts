@@ -1,20 +1,12 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
-import { DetectEquipmentType } from "./types"
+import type { DetectEquipmentType, BoundingBox, Rectangle } from "./types"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// 矩形检测相关接口
-export interface Rectangle {
-  id: number
-  x: number
-  y: number
-  width: number
-  height: number
-}
 
 export interface RectangleDetectionResult {
   rectangles: Rectangle[]
@@ -91,6 +83,67 @@ export const resizeImageWithAspectRatio = async (
       reject(new Error('Failed to load image'));
     };
     
+    img.src = base64Image;
+  });
+};
+
+/**
+ * Crops an image based on the provided bounding box.
+ * Clamps the bounding box to the image dimensions.
+ * @param base64Image The original base64 image string.
+ * @param bbox The bounding box { x, y, width, height }.
+ * @returns A promise resolving to the cropped base64 image string.
+ */
+export const cropImage = async (
+  base64Image: string,
+  bbox: BoundingBox
+): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      const originalWidth = img.naturalWidth;
+      const originalHeight = img.naturalHeight;
+
+      // Clamp the bounding box coordinates and dimensions
+      const sx = Math.max(0, bbox.x);
+      const sy = Math.max(0, bbox.y);
+      // Ensure width doesn't exceed image bounds from sx
+      const sWidth = Math.max(0, Math.min(bbox.width, originalWidth - sx));
+      // Ensure height doesn't exceed image bounds from sy
+      const sHeight = Math.max(0, Math.min(bbox.height, originalHeight - sy));
+
+      // If the resulting width or height is zero or negative, return the original image
+      if (sWidth <= 0 || sHeight <= 0) {
+        console.warn("Bounding box is outside the image or invalid. Returning original image.");
+        resolve(base64Image);
+        return;
+      }
+
+      const canvas = document.createElement('canvas');
+      canvas.width = sWidth;
+      canvas.height = sHeight;
+      const ctx = canvas.getContext('2d');
+
+      if (!ctx) {
+        reject(new Error('Failed to get canvas context for cropping'));
+        return;
+      }
+
+      // Draw the cropped portion onto the canvas
+      ctx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, sWidth, sHeight);
+
+      // Convert the canvas to base64
+      const format = base64Image.startsWith('data:image/png') ? 'image/png' : 'image/jpeg';
+      const quality = 0.9; // Adjust quality as needed for JPEG
+      const croppedBase64 = canvas.toDataURL(format, quality);
+
+      resolve(croppedBase64);
+    };
+
+    img.onerror = () => {
+      reject(new Error('Failed to load image for cropping'));
+    };
+
     img.src = base64Image;
   });
 };

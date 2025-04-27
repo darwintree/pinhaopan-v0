@@ -1,5 +1,14 @@
-import type { Rectangle } from "./utils";
-import type { PresetType } from "./preset-templates";
+// 预设类型
+export type PresetType = "weapon" | "summon" | "chara" | "weapon13";
+
+// 矩形检测相关接口
+export interface Rectangle {
+  id: number
+  x: number
+  y: number
+  width: number
+  height: number
+}
 
 interface ButtonCount {
   skill: number // 技能按键数
@@ -110,4 +119,12 @@ export interface ModeData {
     recognizedEquipments: Record<number, {id: string, confidence: number}[]>;
   };
   mask: MaskData;
+}
+
+// Define the BoundingBox type
+export interface BoundingBox {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
 }

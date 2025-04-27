@@ -4,6 +4,7 @@ import { Upload } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ImageUploadWithRecognition } from "@/components/image-recognition/image-upload-with-recognition"
+import { BoundingBox } from '@/lib/types'
 
 // Define a more specific type for uploadConfigs if possible
 interface UploadConfig {
@@ -14,6 +15,7 @@ interface UploadConfig {
   setImages: React.Dispatch<React.SetStateAction<string[]>>;
   infoText: string;
   onRecognitionResults: React.Dispatch<React.SetStateAction<Record<number, { id: string; confidence: number }[]>>>;
+  onBoundingBoxChange?: (bbox: BoundingBox | null) => void;
 }
 
 interface GuideImageUploaderProps {
@@ -52,6 +54,7 @@ export function GuideImageUploader({
               setAutoRecognize={setAutoRecognize}
               infoText={config.infoText}
               onRecognitionResults={config.onRecognitionResults}
+              onBoundingBoxChange={config.onBoundingBoxChange}
             />
           ))}
         </div>

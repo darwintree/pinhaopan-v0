@@ -1,9 +1,16 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import type { DetectEquipmentType } from "@/lib/types"
-import type { Rectangle } from "@/lib/utils"
-import type { EquipmentType, RectangleMode, ModeData, MaskData } from "@/lib/types"
+import type {
+  DetectEquipmentType,
+  Rectangle,
+  PresetType,
+  EquipmentType,
+  RectangleMode,
+  ModeData,
+  MaskData,
+  BoundingBox,
+} from "@/lib/types";
 import { getImageDescriptorsFromImageAndRectangles } from "@/lib/cv-utils"
 import { detectRectangles } from "@/lib/cv-utils"
 import { UploadArea } from "@/components/image-recognition/upload-area"
@@ -14,9 +21,9 @@ import {
   generatePresetRectangles as generateTemplateRectangles, 
   getDefaultPresetType,
   getPresetAspectRatio,
-  PresetType
 } from "@/lib/preset-templates"
 
+// Restore the interface definition
 interface ImageUploadWithRecognitionProps {
   type: EquipmentType
   title: string
@@ -29,7 +36,44 @@ interface ImageUploadWithRecognitionProps {
   gridCols?: number
   resultCount?: number
   onRecognitionResults?: React.Dispatch<React.SetStateAction<Record<number, {id: string, confidence: number}[]>>>
+  onBoundingBoxChange?: (bbox: BoundingBox | null) => void
 }
+
+// Helper function to calculate bounding box
+const calculateBoundingBox = (rects: Rectangle[]): BoundingBox | null => {
+  if (rects.length === 0) {
+    return null;
+  }
+
+  let minX = rects[0].x;
+  let minY = rects[0].y;
+  let maxX = rects[0].x + rects[0].width;
+  let maxY = rects[0].y + rects[0].height;
+  let minWidth = rects[0].width;
+  let minHeight = rects[0].height;
+
+  for (let i = 1; i < rects.length; i++) {
+    const rect = rects[i];
+    minX = Math.min(minX, rect.x);
+    minY = Math.min(minY, rect.y);
+    maxX = Math.max(maxX, rect.x + rect.width);
+    maxY = Math.max(maxY, rect.y + rect.height);
+    minWidth = Math.min(minWidth, rect.width);
+    minHeight = Math.min(minHeight, rect.height);
+  }
+
+  minX = Math.max(minX - minWidth*1.5, 0);
+  minY = Math.max(minY - minHeight, 0);
+  maxX = maxX + minWidth / 2
+  maxY = maxY + minHeight
+
+  return {
+    x: minX,
+    y: minY,
+    width: maxX - minX,
+    height: maxY - minY,
+  };
+};
 
 export function ImageUploadWithRecognition({
   type,
@@ -41,6 +85,7 @@ export function ImageUploadWithRecognition({
   setAutoRecognize,
   infoText = "上传一张包含所有内容的图片，系统将自动识别主体",
   onRecognitionResults,
+  onBoundingBoxChange, // Destructure new prop
 }: ImageUploadWithRecognitionProps) {
   // 模式切换状态
   const [mode, setMode] = useState<RectangleMode>("individual")
@@ -78,6 +123,13 @@ export function ImageUploadWithRecognition({
   useEffect(() => {
     onRecognitionResults?.(recognizedEquipments);
   }, [recognizedEquipments, onRecognitionResults]);
+
+  // Add useEffect to calculate and report bounding box
+  useEffect(() => {
+    const currentRectangles = mode === "individual" ? rectangles : modeData.mask.presetRectangles;
+    const bbox = calculateBoundingBox(currentRectangles);
+    onBoundingBoxChange?.(bbox);
+  }, [rectangles, modeData.mask.presetRectangles, mode, onBoundingBoxChange]);
 
   // 比较两个矩形的空间位置
   const compareRectangles = (a: Rectangle, b: Rectangle) => {

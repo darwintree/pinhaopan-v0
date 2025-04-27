@@ -1,10 +1,4 @@
-import type { Rectangle } from "./utils";
-import type { EquipmentType } from "./types";
-
-
-
-// 预设类型
-export type PresetType = "weapon" | "summon" | "chara" | "weapon13";
+import type { EquipmentType, PresetType, Rectangle } from "./types";
 
 // 设备类型到默认预设类型的映射
 export const DEFAULT_PRESET_TYPES: Record<EquipmentType, PresetType> = {

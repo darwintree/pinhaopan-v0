@@ -2,8 +2,7 @@ import { Move, X } from "lucide-react"
 import { Rnd } from "react-rnd"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
-import type { Rectangle } from "@/lib/utils"
-import type { RectangleMode } from "@/lib/types"
+import type { Rectangle, RectangleMode } from "@/lib/types"
 import { RefObject } from "react"
 
 interface RectangleEditorProps {

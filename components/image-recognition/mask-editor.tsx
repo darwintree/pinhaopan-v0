@@ -2,14 +2,12 @@ import { RefObject, useState, useEffect, useCallback } from "react"
 import { X, Move } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
-import type { Rectangle } from "@/lib/utils"
-import type { MaskData, EquipmentType, RectangleMode } from "@/lib/types"
+import type { MaskData, EquipmentType, RectangleMode, Rectangle, PresetType } from "@/lib/types"
 import { Select, SelectItem, SelectTrigger, SelectValue, SelectContent } from "@/components/ui/select"
 import { 
   generatePresetRectangles as generateTemplateRectangles,
   getPresetAspectRatio,
   AVAILABLE_PRESETS,
-  PresetType
 } from "@/lib/preset-templates"
 
 interface MaskEditorProps {

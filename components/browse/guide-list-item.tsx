@@ -93,7 +93,7 @@ export function GuideListItem({
             <img
               src={questImageUrl}
               alt={questName}
-              className="h-8 w-auto rounded transition-transform hover:scale-105"
+              className="h-12 w-auto rounded transition-transform hover:scale-105"
             />
             <span className="ml-2 hidden md:inline">{questName}</span>
           </div>

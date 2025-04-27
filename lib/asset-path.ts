@@ -4,12 +4,12 @@ import categoryList from "@/public/list/category.json";
 
 export function getGuidePhotoUrl(guideId: string, equipmentType: EquipmentType) {
   const baseUrl = process.env.NEXT_PUBLIC_UPLOAD_IMG_BASE_URL
-  return `${baseUrl}/${equipmentType}s/${guideId}_${equipmentType}s.png`
+  return `${baseUrl}/${equipmentType}s/${guideId}_${equipmentType}s.webp`
 }
 
 export function getGuidePhotoThumbUrl(guideId: string, equipmentType: EquipmentType) {
   const baseUrl = process.env.NEXT_PUBLIC_UPLOAD_IMG_BASE_URL
-  return `${baseUrl}/${equipmentType}s/${guideId}_${equipmentType}s_thumb.png`
+  return `${baseUrl}/${equipmentType}s/${guideId}_${equipmentType}s_thumb.webp`
 }
 
 export function getCategoryUrl(categoryId: string | undefined) {

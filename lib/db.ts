@@ -74,17 +74,21 @@ async function saveBase64Image(base64: string, type: string, id: string): Promis
     await fs.mkdir(storageDir, { recursive: true })
 
     // 生成文件名并保存
-    const filename = `${id}_${type}.png`
-    const thumbFilename = `${id}_${type}_thumb.png`
+    const filename = `${id}_${type}.webp`
+    const thumbFilename = `${id}_${type}_thumb.webp`
     const filepath = path.join(storageDir, filename)
     const thumbpath = path.join(storageDir, thumbFilename)
 
     // 保存原始图片
-    await fs.writeFile(filepath, buffer)
+    await sharp(buffer)
+      .resize({ width: 600, height: 600, fit: "inside" })
+      .toFormat("webp", { quality: 75 })
+      .toFile(filepath)
     
     // 生成并保存缩略图 (宽度设为200px并保持宽高比)
     await sharp(buffer)
-      .resize({ width: 80, height: 80, fit: "inside" })
+      .resize({ width: 200, height: 200, fit: "inside" })
+      .toFormat("webp", { quality: 60 })
       .toFile(thumbpath)
 
     console.log(`图片保存成功: ${filepath}`)

@@ -33,8 +33,8 @@ export const image_sizes: Record<DetectEquipmentType, [number, number]> = {
  */
 export const resizeImageWithAspectRatio = async (
   base64Image: string,
-  maxWidth: number = 300, 
-  maxHeight: number = 300
+  maxWidth: number = 600, 
+  maxHeight: number = 600
 ): Promise<string> => {
   return new Promise((resolve, reject) => {
     const img = new Image();

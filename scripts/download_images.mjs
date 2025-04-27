@@ -208,9 +208,6 @@ async function downloadWeaponPhotos(databaseDir) {
     if (row.rarity !== 4) {
       continue;
     }
-    if (!row.series_name) {
-      continue;
-    }
     const weaponId = row.ID;
     weaponIds.push(weaponId);
     if (row["uncap_img[]"]) {

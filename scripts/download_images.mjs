@@ -190,6 +190,36 @@ async function downloadSkinPhotos(databaseDir) {
   }
 }
 
+function weaponInPriority(seriesName, star5_date) {
+  const prioritySeries = [
+    "[極星器]",
+    "[六道神器]",
+    "[新世界の礎]",
+    "[終末の神器]",
+    "[アストラルウェポン]",
+    "[アンセスタルシリーズ]",
+    "[エニアドシリーズ]",
+    "[オールド・プライマルシリーズ]",
+    "[ドラゴニックウェポン]",
+    "[ドラゴニックウェポン・オリジン]",
+    "[マグナ・リバースシリーズ]",
+    "[マグナシリーズ]",
+    "[リミテッドシリーズ]",
+    "[ルミナスシリーズ]",
+    "[レヴァンスウェポン]",
+    "[レガリアシリーズ]",
+    "[ワールドシリーズ]",
+  ]
+  if (prioritySeries.includes(seriesName)) {
+    return true;
+  }
+  const lessPrioritySeries = ["[オメガウェポン]", "[バハムートウェポン]"]
+  if (lessPrioritySeries.includes(seriesName) && star5_date) {
+    return true;
+  }
+  return false;
+}
+
 async function downloadWeaponPhotos(databaseDir) {
   // 读取 xlsx 文件
   const workSheetsFromFile = xlsx.parse("./scripts/equipments/weapon.xlsx");
@@ -199,6 +229,7 @@ async function downloadWeaponPhotos(databaseDir) {
   const headers = data[0];
   const records = data.slice(1);
   const weaponIds = [];
+  const priorityWeaponIds = [];
   for (const record of records) {
     const row = {};
     headers.forEach((header, index) => {
@@ -208,12 +239,19 @@ async function downloadWeaponPhotos(databaseDir) {
     if (row.rarity !== 4) {
       continue;
     }
+    const isPriority = weaponInPriority(row.series_name, row.star5_date);
     const weaponId = row.ID;
     weaponIds.push(weaponId);
+    if (isPriority) {
+      priorityWeaponIds.push(weaponId);
+    }
     if (row["uncap_img[]"]) {
       console.log(row["uncap_img[]"])
       const extraPhotoIndexes = row["uncap_img[]"].toString().split(";");
       weaponIds.push(...extraPhotoIndexes.map((index) => `${weaponId}_0${index}`));
+      if (isPriority) {
+        priorityWeaponIds.push(...extraPhotoIndexes.map((index) => `${weaponId}_0${index}`));
+      }
     }
     console.log(`Adding ${row.series_name} ${row.name_jp}`);
   }
@@ -224,6 +262,14 @@ async function downloadWeaponPhotos(databaseDir) {
   await downloadImages(
     weaponIds.map((weaponId) => getWeaponNormalPhotoUrls(weaponId)),
     `${databaseDir}/weapon/normal`
+  );
+  await downloadImages(
+    priorityWeaponIds.map((weaponId) => getWeaponMainPhotoUrls(weaponId)),
+    `${databaseDir}/priority/weapon/main`
+  );
+  await downloadImages(
+    priorityWeaponIds.map((weaponId) => getWeaponNormalPhotoUrls(weaponId)),
+    `${databaseDir}/priority/weapon/normal`
   );
 }
 

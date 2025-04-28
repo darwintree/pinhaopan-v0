@@ -1,7 +1,7 @@
 import cv from "@techstark/opencv-js";
 import { Box, detectChara, detectWeapon, detectSummon, getDesBase64 } from "./cv";
-import { DetectEquipmentType, EquipmentType } from "./types";
-import { image_sizes, Rectangle, RectangleDetectionResult } from "./utils";
+import { DetectEquipmentType, EquipmentType, Rectangle } from "./types";
+import { image_sizes, RectangleDetectionResult } from "./utils";
 
 
 // 模拟矩形检测过程
@@ -40,7 +40,9 @@ export const detectRectangles = async (imageUrl: string, type: EquipmentType): P
       height: img.rows,
     },
   }
-};export const getImageDescriptorsFromImageAndRectangles = async (imageUrl: string, rectangles: Rectangle[], equipmentDetectType: DetectEquipmentType) => {
+};
+
+export const getImageDescriptorsFromImageAndRectangles = async (imageUrl: string, rectangles: Rectangle[], equipmentDetectType: DetectEquipmentType) => {
   const imgSrc = new Image()
   imgSrc.src = imageUrl
   await new Promise((resolve) => {

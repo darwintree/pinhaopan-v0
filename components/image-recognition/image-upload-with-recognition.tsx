@@ -11,8 +11,8 @@ import type {
   MaskData,
   BoundingBox,
 } from "@/lib/types";
-import { getImageDescriptorsFromImageAndRectangles } from "@/lib/cv-utils"
 import { detectRectangles } from "@/lib/cv-utils"
+import { performEquipmentRecognition } from "@/lib/recognition-utils"
 import { UploadArea } from "@/components/image-recognition/upload-area"
 import { RectangleEditor } from "@/components/image-recognition/rectangle-editor"
 import { RecognitionResults } from "@/components/image-recognition/recognition-results"
@@ -438,119 +438,6 @@ export function ImageUploadWithRecognition({
       }
     }
   }, [images])
-
-  // 根据类型和宽高比对矩形进行分组
-  const groupRectanglesByTypeAndAspectRatio = (
-    rectangles: Rectangle[], 
-    type: EquipmentType
-  ): Record<DetectEquipmentType, Rectangle[]> => {
-    const groups: Record<DetectEquipmentType, Rectangle[]> = {
-      "chara": [],
-      "weapon/normal": [],
-      "weapon/main": [],
-      "summon/party_sub": [],
-      "summon/party_main": []
-    }
-    
-    rectangles.forEach(rect => {
-      const aspectRatio = rect.width / rect.height
-      
-      if (type === "chara") {
-        groups["chara"].push(rect)
-      } else if (type === "weapon") {
-        if (aspectRatio >= 1) {
-          groups["weapon/normal"].push(rect)
-        } else {
-          groups["weapon/main"].push(rect)
-        }
-      } else if (type === "summon") {
-        if (aspectRatio >= 1) {
-          groups["summon/party_sub"].push(rect)
-        } else {
-          groups["summon/party_main"].push(rect)
-        }
-      }
-    })
-    
-    return groups
-  }
-
-  // 处理一组矩形的识别请求
-  const processRectangleGroup = async (
-    rectangles: Rectangle[],
-    imageUrl: string,
-    groupType: DetectEquipmentType,
-    groupRectangles: Rectangle[]
-  ): Promise<{
-    results: {id: string, confidence: number}[][]
-    originalRectIds: number[]
-  }> => {
-    const contents = await getImageDescriptorsFromImageAndRectangles(
-      imageUrl, 
-      groupRectangles, 
-      groupType
-    )
-    
-    // 记录每个矩形的唯一ID，而不是索引
-    const originalRectIds = groupRectangles.map(rect => rect.id);
-
-    
-    console.log(`Sending request for ${groupType}  to ${process.env.NEXT_PUBLIC_DETECT_API_BASE_URL}/detect/${groupType}`)
-    const response = await fetch(`${process.env.NEXT_PUBLIC_DETECT_API_BASE_URL}/detect/${groupType}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ contents }),
-    })
-
-    if (!response.ok) {
-      const errorData = await response.json()
-      console.error(`Recognition failed for ${groupType}:`, errorData)
-      throw new Error(`Recognition failed for ${groupType}: ${JSON.stringify(errorData)}`)
-    }
-
-    const results = await response.json() as {id: string, confidence: number}[][]
-    return { results, originalRectIds }
-  }
-
-  // 识别设备主函数，提取为纯函数
-  const performEquipmentRecognition = async (
-    targetRectangles: Rectangle[],
-    imageUrl: string,
-    equipmentType: EquipmentType
-  ): Promise<Record<number, {id: string, confidence: number}[]>> => {
-    if (!imageUrl) {
-      throw new Error("Image URL not provided")
-    }
-
-    const rectangleGroups = groupRectanglesByTypeAndAspectRatio(targetRectangles, equipmentType)
-    const recognizedResults: Record<number, {id: string, confidence: number}[]> = {}
-    
-    const processPromises = Object.entries(rectangleGroups)
-      .filter(([_, groupRects]) => groupRects.length > 0)
-      .map(async ([groupType, groupRects]) => {
-        try {
-          const { results, originalRectIds } = await processRectangleGroup(
-            targetRectangles,
-            imageUrl,
-            groupType as DetectEquipmentType,
-            groupRects
-          )
-          
-          results.forEach((result, idx) => {
-            // 使用矩形ID作为键，而不是索引
-            recognizedResults[originalRectIds[idx]] = result
-          })
-        } catch (error) {
-          console.error(`Failed to process group ${groupType}:`, error)
-          // 继续处理其他组，而不是立即终止
-        }
-      })
-    
-    await Promise.all(processPromises)
-    return recognizedResults
-  }
 
   // TODO: 识别单个equipment
   const recognizeSingleEquipment = async (rectIndex: number) => {

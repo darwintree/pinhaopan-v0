@@ -5,6 +5,30 @@ import type {
 } from "@/lib/types";
 import { getImageDescriptorsFromImageAndRectangles } from "@/lib/cv-utils";
 
+export function groupRectangles(rectangles: Rectangle[], equipmentType: EquipmentType, maxChunkSize: number = 3): {
+    rectangles: Rectangle[],
+    detectEquipmentType: DetectEquipmentType
+}[] {
+    const groups: {
+        rectangles: Rectangle[],
+        detectEquipmentType: DetectEquipmentType
+    }[] = []
+
+    const initialGroup = groupRectanglesByTypeAndAspectRatio(rectangles, equipmentType)
+    for (const [type, rects] of Object.entries(initialGroup)) {
+        if (rects.length === 0) {
+            continue
+        }
+        for (let i = 0; i < rects.length; i += maxChunkSize) {
+            groups.push({
+                rectangles: rects.slice(i, i + maxChunkSize),
+                detectEquipmentType: type as DetectEquipmentType
+            })
+        }
+    }
+    return groups
+}
+
 const groupRectanglesByTypeAndAspectRatio = (
   rectangles: Rectangle[],
   type: EquipmentType
@@ -44,43 +68,27 @@ const groupRectanglesByTypeAndAspectRatio = (
 export const performEquipmentRecognition = async (
   targetRectangles: Rectangle[],
   imageUrl: string,
-  equipmentType: EquipmentType
+  detectEquipmentType: DetectEquipmentType
 ): Promise<Record<number, { id: string; confidence: number }[]>> => {
   if (!imageUrl) {
     throw new Error("Image URL not provided");
   }
 
-  const rectangleGroups = groupRectanglesByTypeAndAspectRatio(
-    targetRectangles,
-    equipmentType
-  );
   const recognizedResults: Record<
     number,
     { id: string; confidence: number }[]
   > = {};
 
-  const processPromises = Object.entries(rectangleGroups)
-    .filter(([_, groupRects]) => groupRects.length > 0)
-    .map(async ([groupType, groupRects]) => {
-      try {
-        const { results, originalRectIds } = await processRectangleGroup(
-          targetRectangles,
-          imageUrl,
-          groupType as DetectEquipmentType,
-          groupRects
-        );
+  const { results, originalRectIds } = await processRectangleGroup(
+    imageUrl,
+    detectEquipmentType,
+    targetRectangles
+  );
 
-        results.forEach((result, idx) => {
-          // 使用矩形ID作为键，而不是索引
-          recognizedResults[originalRectIds[idx]] = result;
-        });
-      } catch (error) {
-        console.error(`Failed to process group ${groupType}:`, error);
-        // 继续处理其他组，而不是立即终止
-      }
-    });
+  results.forEach((result, idx) => {
+    recognizedResults[originalRectIds[idx]] = result;
+  });
 
-  await Promise.all(processPromises);
   return recognizedResults;
 };
 
@@ -125,7 +133,6 @@ const sendRecognitionRequest = async (
 
 // 处理一组矩形的识别请求
 const processRectangleGroup = async (
-  rectangles: Rectangle[], // 注意：这个参数现在未使用，但保留以防未来需要
   imageUrl: string,
   groupType: DetectEquipmentType,
   groupRectangles: Rectangle[]

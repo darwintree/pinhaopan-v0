@@ -12,7 +12,7 @@ import type {
   BoundingBox,
 } from "@/lib/types";
 import { detectRectangles } from "@/lib/cv-utils"
-import { performEquipmentRecognition } from "@/lib/recognition-utils"
+import { groupRectangles, performEquipmentRecognition } from "@/lib/recognition-utils"
 import { UploadArea } from "@/components/image-recognition/upload-area"
 import { RectangleEditor } from "@/components/image-recognition/rectangle-editor"
 import { RecognitionResults } from "@/components/image-recognition/recognition-results"
@@ -440,41 +440,41 @@ export function ImageUploadWithRecognition({
   }, [images])
 
   // TODO: 识别单个equipment
-  const recognizeSingleEquipment = async (rectIndex: number) => {
-    try {
-      setIsRecognizing(true)
-      if (!imageRef.current) {
-        throw new Error("Image not found")
-      }
+  // const recognizeSingleEquipment = async (rectIndex: number) => {
+  //   try {
+  //     setIsRecognizing(true)
+  //     if (!imageRef.current) {
+  //       throw new Error("Image not found")
+  //     }
       
-      // 获取单个矩形
-      const targetRect = rectangles[rectIndex]
-      if (!targetRect) {
-        throw new Error("Rectangle not found")
-      }
+  //     // 获取单个矩形
+  //     const targetRect = rectangles[rectIndex]
+  //     if (!targetRect) {
+  //       throw new Error("Rectangle not found")
+  //     }
       
-      // 只识别单个矩形
-      const results = await performEquipmentRecognition(
-        [targetRect],
-        imageRef.current.src,
-        type
-      )
+  //     // 只识别单个矩形
+  //     const results = await performEquipmentRecognition(
+  //       [targetRect],
+  //       imageRef.current.src,
+  //       type
+  //     )
       
-      if (Object.keys(results).length > 0) {
-        // 合并新识别结果
-        const newRecognizedEquipments = {
-          ...recognizedEquipments,
-          ...results
-        }
-        setRecognizedEquipments(newRecognizedEquipments)
-        onRecognitionResults?.(newRecognizedEquipments)
-      }
-    } catch (error) {
-      console.error("Failed to recognize single equipment:", error)
-    } finally {
-      setIsRecognizing(false)
-    }
-  }
+  //     if (Object.keys(results).length > 0) {
+  //       // 合并新识别结果
+  //       const newRecognizedEquipments = {
+  //         ...recognizedEquipments,
+  //         ...results
+  //       }
+  //       setRecognizedEquipments(newRecognizedEquipments)
+  //       onRecognitionResults?.(newRecognizedEquipments)
+  //     }
+  //   } catch (error) {
+  //     console.error("Failed to recognize single equipment:", error)
+  //   } finally {
+  //     setIsRecognizing(false)
+  //   }
+  // }
 
   // 重构后的设备识别主函数，支持两种模式
   const recognizeEquipment = async (autoRectangles?: Rectangle[]) => {
@@ -494,10 +494,7 @@ export function ImageUploadWithRecognition({
       }
 
       const maxGroupLength = 3
-      const subGroups = []
-      for (let i = 0; i < usingRectangles.length; i += maxGroupLength) {
-        subGroups.push(usingRectangles.slice(i, i + maxGroupLength))
-      }
+      const subGroups = groupRectangles(usingRectangles, type, maxGroupLength)
 
       // 如果没有子组，直接重置状态并返回
       if (subGroups.length === 0) {
@@ -512,9 +509,9 @@ export function ImageUploadWithRecognition({
           try {
             // 对每个子组并发执行识别
             const subGroupResults = await performEquipmentRecognition(
-              subGroup,
+              subGroup.rectangles,
               imageRef.current!.src,
-              type
+              subGroup.detectEquipmentType
             )
             
             // 如果该子组有结果

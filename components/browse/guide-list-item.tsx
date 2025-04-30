@@ -39,7 +39,7 @@ export function GuideListItem({
 
   // 使用quest信息，如果找不到则使用默认值
   const questName = questInfo?.name || guide.quest;
-  const questImageUrl = getQuestPhotoUrl(questInfo?.image);
+  const questImageUrl = getQuestPhotoUrl(questInfo?.image, questInfo?.customImage);
 
   // 过滤出在标签列表中的标签，并获取它们的颜色信息
   const validTags = guide.tags

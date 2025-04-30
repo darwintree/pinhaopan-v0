@@ -4,18 +4,18 @@ import quest from '@/public/list/quest.json'
 export interface Quest {
   quest: string
   name: string
-  image: string
+  image?: string
+  customImage?: string
   category: string
 }
 
 interface RawQuest {
   chapter_id: string
   quest_name: string
-  thumbnail_image: string
+  thumbnail_image?: string
+  custom_thumbnail_image?: string
   category: string
 }
-
-
 
 export function useQuestList() {
   const [questList, setQuestList] = useState<Quest[]>([])
@@ -31,6 +31,7 @@ export function useQuestList() {
           quest: quest.chapter_id,
           name: quest.quest_name,
           image: quest.thumbnail_image,
+          customImage: quest.custom_thumbnail_image,
           category: quest.category
         })))
       } catch (err) {

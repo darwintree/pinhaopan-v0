@@ -25,12 +25,16 @@ export function getCategoryUrl(categoryId: string | undefined) {
   return `${baseUrl}/category/${categoryId}.png`
 }
 
-export function getQuestPhotoUrl(questImg: string | undefined) {
+export function getQuestPhotoUrl(questImg: string | undefined, questCustomImg: string | undefined) {
   const baseUrl = process.env.NEXT_PUBLIC_ASSETS_BASE_URL
-  if (!questImg) {
+  if (!questImg && !questCustomImg) {
     return `${process.env.NEXT_PUBLIC_ASSETS_BASE_URL}/placeholder.svg`
   }
-  return `${baseUrl}/quest/${questImg}.png`
+  if (questCustomImg) {
+    return `${baseUrl}/quest/${questCustomImg}.png`
+  }
+  const officialAssetsBaseUrl = process.env.NEXT_PUBLIC_OFFICIAL_ASSETS_BASE_URL
+  return `${officialAssetsBaseUrl}/assets/img/sp/quest/assets/lobby/${questImg}.png`
 }
 
 export function getEquipmentPhotoUrl(id: string, equipmentType?: EquipmentType) {

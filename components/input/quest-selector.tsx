@@ -131,7 +131,7 @@ export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorPro
                 <div className="flex items-center gap-2">
                   <div className="w-12 h-12 flex items-center justify-center overflow-hidden rounded">
                     <img
-                      src={getQuestPhotoUrl(questList.find(q => q.quest === selectedQuest)?.image)}
+                      src={getQuestPhotoUrl(questList.find(q => q.quest === selectedQuest)?.image, questList.find(q => q.quest === selectedQuest)?.customImage)}
                       alt={questList.find(q => q.quest === selectedQuest)?.name}
                       className="w-auto h-auto max-w-full max-h-full object-contain"
                     />
@@ -164,7 +164,7 @@ export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorPro
                 <div className="flex items-center gap-2">
                   <div className="w-10 h-10 flex items-center justify-center overflow-hidden rounded">
                     <img
-                      src={getQuestPhotoUrl(quest.image)}
+                      src={getQuestPhotoUrl(quest.image, quest.customImage)}
                       alt={quest.name}
                       className="w-auto h-auto max-w-full max-h-full object-contain"
                     />

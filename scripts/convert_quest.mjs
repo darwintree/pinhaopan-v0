@@ -9,6 +9,7 @@ const PICK_FIELDS = [
   "quest_name",
   "thumbnail_image",
   "category",
+  "custom_thumbnail_image",
 ];
 
 // 读取目录下所有文件

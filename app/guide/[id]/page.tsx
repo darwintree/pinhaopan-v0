@@ -192,7 +192,7 @@ export default function GuidePage() {
                   {questList.length > 0 && (() => {
                     const questInfo = questList.find(q => q.quest === guide.quest)
                     const questName = questInfo?.name || guide.quest
-                    const questImageUrl = getQuestPhotoUrl(questInfo?.image)
+                    const questImageUrl = getQuestPhotoUrl(questInfo?.image, questInfo?.customImage)
                     
                     return (
                       <>

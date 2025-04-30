@@ -20,7 +20,7 @@ interface QuestSelectorProps {
 }
 
 export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorProps) {
-  const [filterOpen, setFilterOpen] = useState(true)
+  const [filterOpen, setFilterOpen] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentCategory, setCurrentCategory] = useState<string | null>(null)
   const { questList, loading, error } = useQuestList()
@@ -77,7 +77,7 @@ export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorPro
             <h2 className="text-xl font-semibold">选择副本</h2>
             {selectedQuest && (
               <Badge variant="secondary" className="ml-2">
-                已选择
+                {questList.find(q => q.quest === selectedQuest)?.name || selectedQuest}
               </Badge>
             )}
           </div>
@@ -162,7 +162,7 @@ export function QuestSelector({ selectedQuest, onQuestSelect }: QuestSelectorPro
                 onClick={() => handleQuestSelect(quest.quest)}
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 flex items-center justify-center overflow-hidden rounded">
+                  <div className="w-20 h-14 flex items-center justify-center overflow-hidden rounded">
                     <img
                       src={getQuestPhotoUrl(quest.image, quest.customImage)}
                       alt={quest.name}

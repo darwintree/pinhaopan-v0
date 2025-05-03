@@ -1,0 +1,41 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# UI 组件库
+
+本项目使用 [shadcn/ui](mdc:https:/ui.shadcn.com) 组件库，这是一个基于 Radix UI 原语和 Tailwind CSS 构建的可重用组件集合。
+
+## 核心组件
+
+UI 组件位于 [components/ui/](mdc:components/ui) 目录下，包括：
+
+- `Button` - 按钮组件
+- `Card` - 卡片容器组件
+- `Badge` - 标签徽章组件
+- `Tooltip` - 提示组件
+- 其他 UI 元素和表单控件
+
+## 样式系统
+
+项目样式基于 Tailwind CSS：
+
+- [tailwind.config.ts](mdc:tailwind.config.ts) - Tailwind 配置
+- [app/globals.css](mdc:app/globals.css) - 全局样式定义
+
+## 主题
+
+项目支持明/暗主题切换：
+
+- [components/theme-provider.tsx](mdc:components/theme-provider.tsx) - 主题提供者组件
+- [components/mode-toggle.tsx](mdc:components/mode-toggle.tsx) - 主题切换组件
+
+## 自定义组件
+
+除了基础 UI 组件外，项目还包含特定的功能组件：
+
+- [components/browse/](mdc:components/browse) - 攻略浏览相关组件
+- [components/publish/](mdc:components/publish) - 攻略发布相关组件
+- [components/image-recognition/](mdc:components/image-recognition) - 图像识别相关组件
+

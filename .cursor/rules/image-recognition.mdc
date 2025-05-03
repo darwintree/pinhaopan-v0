@@ -1,0 +1,37 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 图像识别系统
+
+本项目包含图像识别功能，用于自动识别游戏截图中的角色、武器和召唤石。
+
+## 核心文件
+
+- [lib/cv.ts](mdc:lib/cv.ts) - 计算机视觉核心函数，基于 OpenCV.js
+- [lib/cv-utils.ts](mdc:lib/cv-utils.ts) - 计算机视觉辅助工具函数
+- [lib/recognition-utils.ts](mdc:lib/recognition-utils.ts) - 装备识别工具函数
+
+## 识别流程
+
+1. 用户上传游戏截图
+2. 使用预设模板或手动框选识别区域
+3. 系统分析图像区域，提取特征
+4. 与数据库中的装备图像进行匹配
+5. 返回可能的装备列表，按匹配度排序
+
+## 组件
+
+主要的图像识别相关组件位于 [components/image-recognition/](mdc:components/image-recognition) 目录，包括：
+
+- 图像上传组件
+- 区域选择组件
+- 结果显示组件
+
+## 技术实现
+
+- 使用 @techstark/opencv-js 进行图像处理
+- 提供两种识别模式：单个区域识别和掩码模板识别
+- 支持批量处理多个识别区域
+

@@ -1,0 +1,54 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 服务器架构
+
+这个目录包含了应用程序的后端数据服务器实现，主要用于处理攻略（guides）数据的 CRUD 操作。
+
+## 主要文件
+
+- [index.ts](mdc:server/index.ts) - 服务器入口点，初始化 Express 服务器，配置中间件，注册路由
+- [api-handlers.ts](mdc:server/api-handlers.ts) - 实现 API 端点处理函数，包含攻略数据的增删改查逻辑
+- [middleware/auth.ts](mdc:server/middleware/auth.ts) - API 密钥认证中间件，保护 API 路由安全
+
+## 服务器配置
+
+服务器使用 [package.json](mdc:server/package.json) 管理依赖项，主要依赖包括:
+- Express.js - Web 服务器框架
+- MongoDB - 数据库连接器
+- TypeScript - 类型安全的 JavaScript 超集
+- CORS - 跨域资源共享
+- Body-parser - 请求体解析
+
+## API 端点
+
+服务器提供以下主要 API 端点:
+
+1. `GET /health` - 健康检查端点，不需要 API 密钥验证
+2. `GET /api/guides` - 获取攻略列表，支持复杂查询条件
+3. `GET /api/guides/:id` - 获取单个攻略详情
+4. `POST /api/guides` - 保存新的攻略数据
+5. `DELETE /api/guides/:id` - 删除指定攻略
+
+## 数据流
+
+1. 客户端发送请求到服务器 [index.ts](mdc:server/index.ts)
+2. 请求通过认证中间件 [middleware/auth.ts](mdc:server/middleware/auth.ts) 进行验证
+3. 认证通过后，请求路由到 [api-handlers.ts](mdc:server/api-handlers.ts) 中的相应处理函数
+4. 处理函数通过 `lib/db` 模块执行数据库操作
+5. 服务器返回响应给客户端
+
+## 环境配置
+
+服务器依赖以下环境变量:
+- `MONGODB_URI` - MongoDB 连接字符串
+- `SERVER_PORT` - 服务器监听端口（默认 3001）
+- `API_KEY` - 用于 API 验证的密钥
+
+## 部署
+
+服务器代码通过 `npm run build` 编译到 [dist/](mdc:server/dist) 目录，可以在生产环境中部署。
+
+

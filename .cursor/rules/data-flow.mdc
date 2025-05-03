@@ -1,0 +1,101 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 数据流
+
+这个项目使用以下数据流模式：
+
+## 攻略数据模型
+
+主要数据类型定义在 [lib/types.ts](mdc:lib/types.ts) 中，关键类型包括：
+
+- `GuideData` - 攻略数据模型，包含队伍配置、武器、召唤石等信息
+- `EquipmentData` - 装备数据模型（角色、武器、召唤石）
+- `GuideQueryParams` - 攻略查询参数
+- `GuidePostData` - 攻略发布数据，包含图片的 Base64 编码
+
+## 完整数据请求流程
+
+### 攻略数据获取流程
+
+1. **客户端 UI 层**：页面组件或自定义钩子发起数据请求
+   - 例如：[app/guide/[id]/page.tsx](mdc:app/guide/[id]/page.tsx) 中的攻略详情页面
+
+2. **前端数据层**：调用 [lib/remote-db.ts](mdc:lib/remote-db.ts) 中的函数
+   - 使用 `getGuide(id)` 或 `getGuides(params)` 函数
+   - 构建 API 请求URL和参数
+   - 添加 API Key 到请求头
+
+3. **HTTP 请求**：通过 fetch API 发送到服务器
+   - 请求发送到 `API_BASE_URL/guides` 或 `API_BASE_URL/guides/:id`
+
+4. **服务器路由层**：[server/index.ts](mdc:server/index.ts) 接收请求
+   - 通过中间件处理（CORS、JSON解析、API密钥验证）
+   - 路由到 `/api/guides` 端点
+
+5. **API 处理层**：[server/api-handlers.ts](mdc:server/api-handlers.ts) 处理请求
+   - `guidesRouter.get()` 处理 GET 请求
+   - 解析查询参数
+   - 调用数据库操作函数
+
+6. **数据库操作层**：[lib/db.ts](mdc:lib/db.ts) 执行数据库查询
+   - `getGuide(id)` 或 `getGuides(query)` 函数
+   - 构建 MongoDB 查询条件
+   - 执行数据库查询并返回结果
+
+7. **响应返回**：结果通过各层依次返回到客户端 UI
+
+### 攻略数据发布流程
+
+1. **客户端 UI 层**：用户填写表单并提交
+   - 例如：[app/publish/page.tsx](mdc:app/publish/page.tsx) 中的攻略发布页面
+   - 收集表单数据，包括文本信息和图片
+
+2. **前端数据层**：调用 [lib/remote-db.ts](mdc:lib/remote-db.ts) 中的函数
+   - 使用 `saveGuide(data)` 函数
+   - 将数据打包为 `GuidePostData` 类型
+   - 添加 API Key 到请求头
+
+3. **HTTP 请求**：通过 fetch API 发送 POST 请求到服务器
+   - 请求发送到 `API_BASE_URL/guides`
+   - 数据包含队伍配置和图片的 Base64 编码
+
+4. **服务器路由层**：[server/index.ts](mdc:server/index.ts) 接收请求
+   - 通过中间件处理（CORS、JSON解析、API密钥验证）
+   - 路由到 `/api/guides` 端点
+
+5. **API 处理层**：[server/api-handlers.ts](mdc:server/api-handlers.ts) 处理请求
+   - `guidesRouter.post()` 处理 POST 请求
+   - 将请求体解析为 `GuidePostData`
+   - 调用数据库保存函数
+
+6. **数据库操作层**：[lib/db.ts](mdc:lib/db.ts) 执行数据保存操作
+   - `saveGuide(data)` 函数
+   - 验证数据
+   - 保存图片到本地文件系统
+   - 将数据保存到 MongoDB 数据库
+
+7. **响应返回**：创建成功后返回新生成的 ID 到客户端
+
+## 数据获取工具
+
+数据通过以下方式获取：
+
+1. 自定义钩子：
+   - [use-quest-list.ts](mdc:hooks/use-quest-list.ts) - 获取任务列表
+   - [use-tag-list.ts](mdc:hooks/use-tag-list.ts) - 获取标签列表
+   - [use-guide-filters.ts](mdc:hooks/use-guide-filters.ts) - 获取和应用攻略筛选器
+
+2. 远程数据访问：
+   - [lib/remote-db.ts](mdc:lib/remote-db.ts) - 提供访问远程数据库的函数
+   - 主要函数包括 `getGuide(id)`, `getGuideList(params)`, `postGuide(data)`, `deleteGuide(id)`
+
+## 页面数据流
+
+- 攻略详情页面 ([app/guide/[id]/page.tsx](mdc:app/guide/[id]/page.tsx)) 从 `remote-db.ts` 获取单个攻略数据并显示
+- 攻略列表页面通过筛选条件获取攻略列表并显示
+- 发布页面捕获用户输入，处理表单数据，然后通过 `postGuide` 发送到服务器
+
+

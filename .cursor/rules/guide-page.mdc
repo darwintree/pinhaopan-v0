@@ -1,0 +1,33 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 攻略详情页面
+
+攻略详情页面 [app/guide/[id]/page.tsx](mdc:app/guide/[id]/page.tsx) 是一个客户端渲染组件，显示特定攻略的详细信息。
+
+## 组件功能
+
+- 通过 URL 参数 `id` 获取特定攻略数据
+- 显示攻略的队伍配置、武器、召唤石图片
+- 显示攻略的任务名称、标签、发布日期、完成时间等元数据
+- 提供图片放大功能，使用 `yet-another-react-lightbox` 库
+- 集成 `Giscus` 评论系统，使用户可以讨论攻略
+
+## 数据获取
+
+页面使用以下自定义钩子获取数据：
+
+- `useTagList` - 获取可用标签列表
+- `useQuestList` - 获取任务列表
+
+攻略数据通过 `getGuide(id)` 函数获取。
+
+## 主要依赖
+
+- Next.js 的 `useParams`, `useRouter` 用于导航和获取路由参数
+- `yet-another-react-lightbox` 用于图片查看功能
+- `Giscus` 用于评论系统
+- 自定义 UI 组件如 `Card`, `Badge`, `Button` 等
+

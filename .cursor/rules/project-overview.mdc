@@ -1,0 +1,85 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 项目概览
+
+这是一个名为"拼好盘"的 Next.js 应用程序，用于共享和浏览游戏《碧蓝幻想》(Granblue Fantasy) 的队伍配置和攻略。
+
+## 项目结构
+
+- [app/](mdc:app) - Next.js App Router 的主要目录
+  - [guide/[id]/page.tsx](mdc:app/guide/[id]/page.tsx) - 查看单个攻略配置的页面
+  - [browse/](mdc:app/browse) - 攻略列表浏览页面
+  - [publish/](mdc:app/publish) - 攻略发布页面
+
+- [lib/](mdc:lib) - 工具函数和类型定义
+  - [types.ts](mdc:lib/types.ts) - 主要类型定义
+  - [asset-path.ts](mdc:lib/asset-path.ts) - 资源路径工具
+  - [remote-db.ts](mdc:lib/remote-db.ts) - 远程数据库交互
+  - [db.ts](mdc:lib/db.ts) - 服务器端数据库操作
+
+- [components/](mdc:components) - React 组件
+  - [ui/](mdc:components/ui) - UI 组件
+  - [image-recognition/](mdc:components/image-recognition) - 图像识别相关组件
+  - [browse/](mdc:components/browse) - 浏览攻略相关组件
+  - [publish/](mdc:components/publish) - 发布攻略相关组件
+
+- [hooks/](mdc:hooks) - React 自定义钩子
+  - [use-guide-filters.ts](mdc:hooks/use-guide-filters.ts) - 攻略筛选钩子
+  - [use-quest-list.ts](mdc:hooks/use-quest-list.ts) - 任务列表钩子
+  - [use-tag-list.ts](mdc:hooks/use-tag-list.ts) - 标签列表钩子
+
+- [server/](mdc:server) - 后端数据服务器
+  - [index.ts](mdc:server/index.ts) - 服务器入口点
+  - [api-handlers.ts](mdc:server/api-handlers.ts) - API 端点处理函数
+  - [middleware/auth.ts](mdc:server/middleware/auth.ts) - API 密钥认证中间件
+
+## 技术栈
+
+### 前端
+- Next.js - React 框架
+- TypeScript - 类型安全的 JavaScript 超集
+- Tailwind CSS - 工具优先的 CSS 框架
+
+### 后端
+- Express.js - Node.js Web 框架
+- MongoDB - NoSQL 数据库
+- TypeScript - 类型安全的 JavaScript 超集
+
+## 系统架构
+
+该项目采用前后端分离架构：
+- 前端（Next.js）负责用户界面和交互
+- 后端（Express）提供 API 端点，处理数据存储和检索
+- 数据通过 RESTful API 在前后端之间传输
+
+## 数据流架构
+
+### 完整数据请求路径
+```
+客户端组件/页面 → hooks → lib/remote-db.ts → HTTP请求 → 
+server/index.ts → server/api-handlers.ts → lib/db.ts → MongoDB
+```
+
+1. **客户端**：React 组件或页面通过自定义钩子或直接调用发起请求
+2. **前端数据层**：[lib/remote-db.ts](mdc:lib/remote-db.ts) 处理 API 调用逻辑
+3. **HTTP 传输**：请求通过 fetch API 发送到服务器
+4. **服务器入口**：[server/index.ts](mdc:server/index.ts) 接收请求并应用中间件
+5. **API 处理**：[server/api-handlers.ts](mdc:server/api-handlers.ts) 处理路由和参数
+6. **数据库操作**：[lib/db.ts](mdc:lib/db.ts) 执行 MongoDB 查询和操作
+7. **响应返回**：数据按相反顺序流回客户端
+
+数据交互通过 [lib/types.ts](mdc:lib/types.ts) 中定义的类型保证前后端类型安全。
+
+### 主要数据操作
+
+- **读取操作**：浏览和查看攻略时，数据从服务器获取到客户端显示
+- **写入操作**：发布新攻略时，数据和图片从客户端提交到服务器存储
+- **删除操作**：删除攻略时，从数据库中移除记录并清理相关资源
+
+
+
+
+

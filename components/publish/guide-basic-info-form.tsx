@@ -203,7 +203,7 @@ export function GuideBasicInfoForm({
               value={formState.description}
               onChange={(e) => dispatch({ type: 'SET_FIELD', field: 'description', value: e.target.value })}
             />
-            <div className="text-sm text-muted-foreground text-right">
+            <div className={`text-sm text-right ${formState.description.length > 50 ? 'text-red-500' : 'text-muted-foreground'}`}>
               {formState.description.length}/50
             </div>
           </div>
@@ -318,10 +318,6 @@ export const initialFormState: FormState = {
 export const formReducer = (state: FormState, action: FormAction): FormState => {
   switch (action.type) {
     case 'SET_FIELD':
-      // Handle description length limit specifically
-      if (action.field === 'description' && typeof action.value === 'string' && action.value.length > 50) {
-        return state // Do not update if description exceeds limit
-      }
       return { ...state, [action.field]: action.value }
     case 'TOGGLE_FIELD':
       return { ...state, [action.field]: !state[action.field] }

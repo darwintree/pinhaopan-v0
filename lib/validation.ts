@@ -18,3 +18,10 @@ export function validateUrl(url: string): void {
     throw new Error('请输入有效的 URL (以 http:// 或 https:// 开头)');
   }
 }
+
+export function validateDescription(description: string): void {
+  const maxLength = 50;
+  if (description.length > maxLength) {
+    throw new Error(`备注不能超过${maxLength}个字符`);
+  }
+}

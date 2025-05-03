@@ -16,6 +16,7 @@ import { isSkin } from "@/hooks/use-crew-info"
 import { normalizeEquipmentId } from "@/lib/asset"
 import { formReducer, GuideBasicInfoForm, initialFormState } from "@/components/publish/guide-basic-info-form"
 import { GuideImageUploader } from "@/components/publish/guide-image-uploader"
+import { validateDescription } from "@/lib/validation"
 
 export function PublishGuide() {
   // Use reducer for form state
@@ -85,6 +86,7 @@ export function PublishGuide() {
     setIsPending(true)
 
     try {
+      validateDescription(formState.description)
       for (const linkError of formState.linkErrors) {
         if (linkError.trim() !== "") {
           throw new Error(linkError);

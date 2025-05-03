@@ -248,12 +248,32 @@ export default function GuidePage() {
                 </div>
               </div>
 
-              {guide.description && (
-                <div className="bg-slate-100/50 dark:bg-slate-800/50 p-3 rounded-md text-sm">
-                  <h3 className="font-medium mb-1 text-muted-foreground">配置说明</h3>
-                  <p>{guide.description}</p>
+              {/* Links Section */}
+              {guide.links && guide.links.length > 0 && (
+                <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/50">
+                  <h3 className="text-sm font-semibold mb-2 text-muted-foreground">相关链接:</h3>
+                  <ul className="space-y-1">
+                    {guide.links.map((link, index) => (
+                      <li key={index} className="flex items-center text-sm">
+                        <Link className="mr-2 h-3 w-3 text-primary flex-shrink-0" />
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline break-all"
+                        >
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
+
+              <div className="bg-slate-100/50 dark:bg-slate-800/50 p-3 rounded-md text-sm">
+                <h3 className="font-medium mb-1 text-muted-foreground">配置说明</h3>
+                <p>{guide.description}</p>
+              </div>
 
               <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-6">
                 <div>

@@ -85,6 +85,11 @@ export function PublishGuide() {
     setIsPending(true)
 
     try {
+      for (const linkError of formState.linkErrors) {
+        if (linkError.trim() !== "") {
+          throw new Error(linkError);
+        }
+      }
       // Validate required fields
       if (!selectedQuest) {
         throw new Error("请选择副本")
@@ -151,6 +156,9 @@ export function PublishGuide() {
         }))
 
       // Prepare the data
+
+      const filteredLinks = formState.links.filter(link => link.trim() !== ""); // Filter out empty links
+
       const postData: GuidePostData = {
         quest: selectedQuest,
         ...(formState.isTimeEnabled ? { time: formState.time } : {}),
@@ -159,6 +167,7 @@ export function PublishGuide() {
         ...(formState.isButtonEnabled ? { button: { skill: formState.buttonSkill, summon: formState.buttonSummon } } : {}),
         description: formState.description,
         tags: formState.tags,
+        ...(filteredLinks.length > 0 ? { links: filteredLinks } : {}), // Conditionally add links
         charas,
         charasBase64: resizedCharasBase64,
         weapons,

@@ -4,6 +4,7 @@ import fs from "fs/promises"
 import path from "path"
 import sharp from "sharp"
 import { normalizeEquipmentId } from "./asset"
+import { validateUrl } from "./validation"
 
 if (!process.env.MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
@@ -59,6 +60,11 @@ function validateGuideData(data: GuidePostData): void {
 
   if (!data.summons?.length || !data.summonsBase64?.length) {
     throw new Error("缺少必填字段: summons")
+  }
+  if (data.links?.length) {
+    for (const link of data.links) {
+      validateUrl(link)
+    }
   }
 }
 
@@ -145,6 +151,7 @@ export async function saveGuide(data: GuidePostData): Promise<string> {
       summons: normalizeEquipments(data.summons),
       tags: data.tags || [],
       description: data.description || "",
+      links: data.links || [],
     }
 
     // 插入数据

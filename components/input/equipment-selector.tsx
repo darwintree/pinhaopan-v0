@@ -10,13 +10,11 @@ import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface EquipmentSelectorProps {
-  index: number
   width?: number
   height?: number
   rectangle: { width: number; height: number }
   recognizedEquipments?: { id: string; confidence: number }[]
   type: EquipmentType
-  label: string
   onEquipmentSelect: (equipment: DetailedEquipmentData) => void
   isHovered: boolean
   isActive?: boolean
@@ -27,13 +25,11 @@ interface EquipmentSelectorProps {
 }
 
 export function EquipmentSelector({
-  index,
   width = 60,
   height,
   rectangle,
   recognizedEquipments,
   type,
-  label,
   onEquipmentSelect,
   isHovered,
   isActive = false,

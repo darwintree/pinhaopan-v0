@@ -44,17 +44,6 @@ export function RecognitionResults({
     }
   }
 
-  const getDefaultSelectionLabel = (index: number) => {
-    const rectId = rectangles[index]?.id;
-    const results = rectId !== undefined ? recognizedEquipment[rectId] : undefined;
-    if (!results || results.length === 0 || !results[0]) {
-      return `未识别${type}${index + 1}`
-    }
-    return results[0].id
-  }
-
-  const placeholderSize = getPlaceholderSize()
-
   const { mainGroup, otherGroup } = useMemo(() => {
     const grouped = rectangles.reduce((acc, rect, index) => {
       const aspectRatio = rect.width / rect.height
@@ -81,11 +70,9 @@ export function RecognitionResults({
     return (
       <EquipmentSelector
         key={index}
-        index={rectId}
         rectangle={rect}
         recognizedEquipments={results}
         type={type}
-        label={getDefaultSelectionLabel(index)}
         onEquipmentSelect={(equipment) => onEquipmentSelect(index, equipment)}
         isHovered={hoveredRectangle === index}
         isActive={activeRectangle === index}

@@ -72,13 +72,7 @@ export function EquipmentConditionCard({
       <EquipmentSelector
         // Pass a unique key if possible, or use index combined with type
         key={`${type}-${index}-${condition.id || 'new'}`}
-        index={index + 1} // Keep index 1-based for display if needed
         type={type}
-        label={
-          condition.include
-            ? showCountSelector ? `需要${condition.count}把` : '需要'
-            : "排除"
-        }
         rectangle={{ width: 160, height: 100 }}
         recognizedEquipments={
           condition.id

@@ -217,7 +217,7 @@ export function GuideBasicInfoForm({
 
           {/* Links Input Area */}
           <div className="space-y-2">
-            <Label>参考链接 (最多5个)</Label>
+            <Label>相关链接 (最多5个)</Label>
             <div className="space-y-2">
               {formState.links.map((link, index) => (
                 <div key={index} className="space-y-1">

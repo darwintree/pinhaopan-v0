@@ -10,6 +10,7 @@ import type {
   ModeData,
   MaskData,
   BoundingBox,
+  EquipmentData,
 } from "@/lib/types";
 import { detectRectangles } from "@/lib/cv-utils"
 import { groupRectangles, performEquipmentRecognition } from "@/lib/recognition-utils"
@@ -25,18 +26,18 @@ import {
 
 // Restore the interface definition
 interface ImageUploadWithRecognitionProps {
-  type: EquipmentType
-  title: string
-  icon: React.ReactNode
-  images: string[]
-  setImages: React.Dispatch<React.SetStateAction<string[]>>
-  autoRecognize: boolean
-  setAutoRecognize: React.Dispatch<React.SetStateAction<boolean>>
-  infoText?: string
-  gridCols?: number
-  resultCount?: number
-  onRecognitionResults?: React.Dispatch<React.SetStateAction<Record<number, {id: string, confidence: number}[]>>>
-  onBoundingBoxChange?: (bbox: BoundingBox | null) => void
+  type: EquipmentType;
+  title: string;
+  icon: React.ReactNode;
+  images: string[];
+  setImages: React.Dispatch<React.SetStateAction<string[]>>;
+  autoRecognize: boolean;
+  setAutoRecognize: React.Dispatch<React.SetStateAction<boolean>>;
+  infoText?: string;
+  onEquipmentsUpdate: React.Dispatch<
+    React.SetStateAction<Record<number, EquipmentData>>
+  >;
+  onBoundingBoxChange?: (bbox: BoundingBox | null) => void;
 }
 
 // Helper function to calculate bounding box
@@ -84,7 +85,7 @@ export function ImageUploadWithRecognition({
   autoRecognize,
   setAutoRecognize,
   infoText = "上传一张包含所有内容的图片，系统将自动识别主体",
-  onRecognitionResults,
+  onEquipmentsUpdate,
   onBoundingBoxChange, // Destructure new prop
 }: ImageUploadWithRecognitionProps) {
   // 模式切换状态
@@ -108,21 +109,42 @@ export function ImageUploadWithRecognition({
   })
   
   // Rectangle detection states
-  const [rectangles, setRectangles] = useState<Rectangle[]>([])
-  const [activeRectangle, setActiveRectangle] = useState<number | null>(null)
-  const [hoveredRectangle, setHoveredRectangle] = useState<number | null>(null)
-  const [recognizedEquipments, setRecognizedEquipments] = useState<Record<number, {id: string, confidence: number}[]>>({})
-  const [isRecognizing, setIsRecognizing] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const imageRef = useRef<HTMLImageElement>(null)
-  const [imageSize, setImageSize] = useState({ width: 800, height: 450 })
-  const [containerScale, setContainerScale] = useState(1)
-  const [nextRectId, setNextRectId] = useState(1)
+  const [rectangles, setRectangles] = useState<Rectangle[]>([]);
+  const [activeRectangle, setActiveRectangle] = useState<number | null>(null);
+  const [hoveredRectangle, setHoveredRectangle] = useState<number | null>(null);
+  const [recognizedEquipments, setRecognizedEquipments] = useState<
+    Record<number, { id: string; confidence: number }[]>
+    >({});
+  const [finalEquipments, setFinalEquipments] =
+    useState<Record<number, EquipmentData>>({});
+  const [isRecognizing, setIsRecognizing] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const [imageSize, setImageSize] = useState({ width: 800, height: 450 });
+  const [containerScale, setContainerScale] = useState(1);
+  const [nextRectId, setNextRectId] = useState(1);
 
   // Add useEffect to sync results with parent
   useEffect(() => {
-    onRecognitionResults?.(recognizedEquipments);
-  }, [recognizedEquipments, onRecognitionResults]);
+    console.log("equipments", finalEquipments);
+    onEquipmentsUpdate(finalEquipments);
+  }, [finalEquipments, onEquipmentsUpdate]);
+
+  useEffect(() => {
+    let updatedEquipments: Record<number, EquipmentData> = finalEquipments
+    for (const rectId in recognizedEquipments) {
+      const equipment = recognizedEquipments[rectId][0];
+      if (
+        equipment && !finalEquipments[rectId] // not ever set
+      ) {
+        updatedEquipments[rectId] = {
+          id: equipment.id,
+          type,
+        };
+      }
+    }
+    setFinalEquipments(updatedEquipments);
+  }, [recognizedEquipments]);
 
   // Add useEffect to calculate and report bounding box
   useEffect(() => {
@@ -228,8 +250,6 @@ export function ImageUploadWithRecognition({
     
     // 更新识别结果
     setRecognizedEquipments(newRecognizedEquipments);
-    onRecognitionResults?.(newRecognizedEquipments);
-    
     // 如果剩余矩形数量大于0，执行重新排序
     if (newRectangles.length > 0) {
       // 使用setTimeout确保状态更新完成后再执行排序
@@ -302,6 +322,7 @@ export function ImageUploadWithRecognition({
     }
     
     // 重置选中状态
+    setFinalEquipments({})
     setActiveRectangle(null)
     setHoveredRectangle(null)
   }
@@ -635,8 +656,6 @@ export function ImageUploadWithRecognition({
                     setImages([])
                     setRectangles([])
                     setRecognizedEquipments({})
-                    onRecognitionResults?.({})
-                    
                     // 重置模式数据
                     setModeData({
                       individual: {
@@ -674,8 +693,6 @@ export function ImageUploadWithRecognition({
                     setImages([])
                     setRectangles([])
                     setRecognizedEquipments({})
-                    onRecognitionResults?.({})
-                    
                     // 重置模式数据
                     setModeData({
                       individual: {
@@ -704,6 +721,7 @@ export function ImageUploadWithRecognition({
               recognizedEquipment={recognizedEquipments}
               hoveredRectangle={hoveredRectangle}
               activeRectangle={activeRectangle}
+              finalEquipments={finalEquipments}
               displayDeleteButton={mode==="individual"}
               onHoveredRectangleChange={setHoveredRectangle}
               onEquipmentSelect={(index, equipment) => {
@@ -714,32 +732,11 @@ export function ImageUploadWithRecognition({
                 
                 if (rect && rect.id !== undefined) {
                   const updatedRecognized = {
-                    ...recognizedEquipments,
-                    [rect.id]: [{ id: equipment.id, confidence: 100 }]
+                    ...finalEquipments,
+                    [rect.id]: equipment
                   };
                   
-                  setRecognizedEquipments(updatedRecognized);
-                  
-                  if (mode === "individual") {
-                    // 更新individual模式的缓存
-                    setModeData(prev => ({
-                      ...prev,
-                      individual: {
-                        ...prev.individual,
-                        recognizedEquipments: updatedRecognized
-                      }
-                    }));
-                  } else {
-                    // 更新mask模式的缓存
-                    setModeData(prev => ({
-                      ...prev,
-                      mask: {
-                        ...prev.mask
-                      }
-                    }));
-                  }
-                  
-                  onRecognitionResults?.(updatedRecognized);
+                  setFinalEquipments(updatedRecognized);
                 }
               }}
               onDeleteItem={handleDeleteRectangle}

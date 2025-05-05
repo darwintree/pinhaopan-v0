@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import type { EquipmentType, DetailedEquipmentData } from "@/lib/types"
+import type { EquipmentType, EquipmentData } from "@/lib/types"
 import { useMemo } from "react"
 import { EquipmentSelector } from "@/components/input/equipment-selector"
 
@@ -10,7 +10,8 @@ interface RecognitionResultsProps {
   hoveredRectangle: number | null
   activeRectangle: number | null
   onHoveredRectangleChange: (index: number | null) => void
-  onEquipmentSelect: (index: number, equipment: DetailedEquipmentData) => void
+  finalEquipments: Record<number, EquipmentData>
+  onEquipmentSelect: (index: number, equipment: EquipmentData) => void
   onDeleteItem?: (index: number) => void
   isRecognizing?: boolean
   displayDeleteButton?: boolean
@@ -24,6 +25,7 @@ export function RecognitionResults({
   hoveredRectangle,
   activeRectangle,
   onHoveredRectangleChange,
+  finalEquipments,
   onEquipmentSelect,
   displayDeleteButton = true,
   onDeleteItem,
@@ -58,8 +60,11 @@ export function RecognitionResults({
     return grouped
   }, [rectangles])
 
-  const getResultForRectangle = (rectangleId: number, recognizedEquipment: Record<number, {id: string, confidence: number}[]>) => {
-    return recognizedEquipment[rectangleId] || [];
+  const getResultForRectangle = (rectangleId: number, recognizedEquipment: Record<number, { id: string, confidence: number }[]>) => {
+    if (Array.isArray(recognizedEquipment[rectangleId])) {
+      return recognizedEquipment[rectangleId];
+    }
+    return [];
   }
 
   const renderItem = (index: number) => {
@@ -73,6 +78,7 @@ export function RecognitionResults({
         rectangle={rect}
         recognizedEquipments={results}
         type={type}
+        selectedEquipment={finalEquipments[rectId]}
         onEquipmentSelect={(equipment) => onEquipmentSelect(index, equipment)}
         isHovered={hoveredRectangle === index}
         isActive={activeRectangle === index}

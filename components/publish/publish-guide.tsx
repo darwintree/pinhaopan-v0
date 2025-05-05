@@ -6,7 +6,7 @@ import { useState, useReducer } from "react"
 import { Button } from "@/components/ui/button"
 import { QuestSelector } from "@/components/input/quest-selector"
 import { useQuestList } from "@/hooks/use-quest-list"
-import { GuidePostData, BoundingBox } from "@/lib/types"
+import { GuidePostData, BoundingBox, EquipmentData } from "@/lib/types"
 import { resizeImageWithAspectRatio, cropImage } from "@/lib/utils"
 import { UsersIcon } from "@/components/icon/users-icon"
 import { SwordIcon } from "@/components/icon/sword-icon"
@@ -37,9 +37,9 @@ export function PublishGuide() {
   const { questList } = useQuestList()
 
   // Recognition results states
-  const [charaResults, setCharaResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
-  const [weaponResults, setWeaponResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
-  const [summonResults, setSummonResults] = useState<Record<number, {id: string, confidence: number}[]>>({})
+  const [charaResults, setCharaResults] = useState<Record<number, EquipmentData>>({})
+  const [weaponResults, setWeaponResults] = useState<Record<number, EquipmentData>>({})
+  const [summonResults, setSummonResults] = useState<Record<number, EquipmentData>>({})
 
   // Bounding Box states
   const [charaBoundingBox, setCharaBoundingBox] = useState<BoundingBox | null>(null);
@@ -55,7 +55,7 @@ export function PublishGuide() {
       images: teamImages,
       setImages: setTeamImages,
       infoText: "上传一张包含所有角色的图片，系统将自动识别主体",
-      onRecognitionResults: setCharaResults,
+      onEquipmentsUpdate: setCharaResults,
       onBoundingBoxChange: setCharaBoundingBox
     },
     {
@@ -65,7 +65,7 @@ export function PublishGuide() {
       images: weaponImages,
       setImages: setWeaponImages,
       infoText: "上传一张包含所有武器的图片，系统将自动识别主体",
-      onRecognitionResults: setWeaponResults,
+      onEquipmentsUpdate: setWeaponResults,
       onBoundingBoxChange: setWeaponBoundingBox
     },
     {
@@ -75,7 +75,7 @@ export function PublishGuide() {
       images: summonImages,
       setImages: setSummonImages,
       infoText: "上传一张包含所有召唤石的图片，系统将自动识别主体",
-      onRecognitionResults: setSummonResults,
+      onEquipmentsUpdate: setSummonResults,
       onBoundingBoxChange: setSummonBoundingBox
     }
   ]
@@ -131,31 +131,13 @@ export function PublishGuide() {
       const resizedSummonsBase64 = await resizeImageWithAspectRatio(summonBase64ToResize)
 
       // Get recognized equipment IDs
-      const charas = Object.values(charaResults)
-        .map(results => results[0])
-        .filter(Boolean)
-        .map(result => ({
-          id: result.id,
-          type: "chara" as const
-        }))
+      const charas = Object.values(charaResults).filter(Boolean)
       const hasCharaSkin = charas.some((chara) => isSkin(normalizeEquipmentId(chara.id)))
       if (hasCharaSkin) {
         throw new Error("角色列表中存在皮肤，请手动选择对应角色")
       }
-      const weapons = Object.values(weaponResults)
-        .map(results => results[0])
-        .filter(Boolean)
-        .map(result => ({
-          id: result.id,
-          type: "weapon" as const
-        }))
-      const summons = Object.values(summonResults)
-        .map(results => results[0])
-        .filter(Boolean)
-        .map(result => ({
-          id: result.id,
-          type: "summon" as const
-        }))
+      const weapons = Object.values(weaponResults).filter(Boolean)
+      const summons = Object.values(summonResults).filter(Boolean)
 
       // Prepare the data
 

@@ -5,7 +5,7 @@ import { EquipmentSelectorModal } from "@/components/input/equipment-selector-mo
 import { getSameCrewNonSkinIdList, isSkin } from "@/hooks/use-crew-info"
 import { getEquipmentPhotoUrl } from "@/lib/asset-path"
 import { normalizeEquipmentId } from "@/lib/asset"
-import { EquipmentType, DetailedEquipmentData } from "@/lib/types"
+import { EquipmentType, EquipmentData } from "@/lib/types"
 import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -14,8 +14,9 @@ interface EquipmentSelectorProps {
   height?: number
   rectangle: { width: number; height: number }
   recognizedEquipments?: { id: string; confidence: number }[]
-  type: EquipmentType
-  onEquipmentSelect: (equipment: DetailedEquipmentData) => void
+  type: EquipmentType,
+  selectedEquipment?: EquipmentData,
+  onEquipmentSelect: (equipment: EquipmentData) => void
   isHovered: boolean
   isActive?: boolean
   displayDeleteButton?: boolean
@@ -30,6 +31,7 @@ export function EquipmentSelector({
   rectangle,
   recognizedEquipments,
   type,
+  selectedEquipment,
   onEquipmentSelect,
   isHovered,
   isActive = false,
@@ -40,21 +42,31 @@ export function EquipmentSelector({
 }: EquipmentSelectorProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleEquipmentSelect = (equipment: DetailedEquipmentData) => {
+  const handleEquipmentSelect = (equipment: EquipmentData) => {
     onEquipmentSelect(equipment)
   }
 
   const aspectRatio = rectangle.height / rectangle.width
   const calculatedHeight = height || width * aspectRatio
 
+
+
   let priorityIds = recognizedEquipments?.map(item => normalizeEquipmentId(item.id)) || []
   let equipmentIsSkin = false
-  if (type === "chara" && recognizedEquipments?.[0]?.id) {
-    const normalizedId = normalizeEquipmentId(recognizedEquipments[0].id)
-    priorityIds = priorityIds?.concat(
-      getSameCrewNonSkinIdList(normalizedId)
-    )
-    equipmentIsSkin = isSkin(normalizedId)
+  if (type === "chara") {
+    if (!selectedEquipment && recognizedEquipments?.[0]?.id) {
+      selectedEquipment = {
+        id: recognizedEquipments[0].id,
+        type: type,
+      };
+    }
+    if (selectedEquipment) {
+      const normalizedId = normalizeEquipmentId(selectedEquipment.id)
+      priorityIds = priorityIds?.concat(
+        getSameCrewNonSkinIdList(normalizedId)
+      )
+      equipmentIsSkin = isSkin(normalizedId)
+    }
   }
 
 

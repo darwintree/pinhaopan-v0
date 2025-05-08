@@ -67,10 +67,13 @@ export interface EquipmentData {
 }
 
 // 根据id和type可以取得的详细数据
+// 某个类别的装备数据
 export interface DetailedEquipmentData extends EquipmentData {
   name: string
   categories: string[]
   element: string
+  // 可能的觉醒
+  awaken?: string[]
 }
 
 export interface EquipmentFilterCondition extends EquipmentData {

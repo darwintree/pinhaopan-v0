@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react"
 import type { DateRange } from "react-day-picker"
-import type { EquipmentFilterCondition, DetailedEquipmentData, EquipmentType } from "@/lib/types"
+import type { EquipmentFilterCondition, EquipmentData, EquipmentType } from "@/lib/types"
 
 // Helper function (can be moved to a utils file later if needed)
 const getTimeScaleConfig = (scale: "small" | "medium" | "large"): { max: number, step: number } => {
@@ -54,7 +54,7 @@ export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
     // Since timeRange changes, the debounce effect will handle resetPage
   }, []) // No resetPage here directly, handled by debounce
 
-  const handleAddWeaponCondition = useCallback((equipment: DetailedEquipmentData) => {
+  const handleAddWeaponCondition = useCallback((equipment: EquipmentData) => {
     const newCondition: EquipmentFilterCondition = {
       type: "weapon",
       id: equipment.id,
@@ -82,7 +82,7 @@ export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
     resetPage()
   }, [resetPage])
 
-  const handleAddSummonCondition = useCallback((equipment: DetailedEquipmentData) => {
+  const handleAddSummonCondition = useCallback((equipment: EquipmentData) => {
     const newCondition: EquipmentFilterCondition = {
       type: "summon",
       id: equipment.id,
@@ -109,7 +109,7 @@ export function useGuideFilters({ resetPage }: UseGuideFiltersProps) {
     resetPage()
   }, [resetPage])
 
-  const handleAddCharaCondition = useCallback((equipment: DetailedEquipmentData) => {
+  const handleAddCharaCondition = useCallback((equipment: EquipmentData) => {
     const newCondition: EquipmentFilterCondition = {
       type: "chara",
       id: equipment.id,

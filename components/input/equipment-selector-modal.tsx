@@ -8,12 +8,12 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Search, Filter, X, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react"
 import { useEquipmentsList } from "@/hooks/use-equipments-list"
-import type { DetailedEquipmentData, EquipmentType } from "@/lib/types"
+import type { EquipmentData, EquipmentType } from "@/lib/types"
 import { getEquipmentPhotoUrl } from "@/lib/asset-path"
 
 interface EquipmentSelectorModalProps {
   type: EquipmentType
-  onSelect: (equipment: DetailedEquipmentData) => void
+  onSelect: (equipment: EquipmentData) => void
   priorityIds?: string[]
   open: boolean
   onOpenChange: (open: boolean) => void
@@ -132,7 +132,7 @@ export function EquipmentSelectorModal({
   }
 
   // Handle equipment selection
-  const handleSelect = (equipment: DetailedEquipmentData) => {
+  const handleSelect = (equipment: EquipmentData) => {
     onSelect(equipment)
     onOpenChange(false)
   }

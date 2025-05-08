@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/select";
 import { DateRangePicker } from "@/components/input/date-range-picker";
 import type { UseGuideFiltersReturn } from "@/hooks/use-guide-filters"; // Import the hook return type
-import type { EquipmentFilterCondition, DetailedEquipmentData, EquipmentType } from "@/lib/types"; // Keep this if needed by EquipmentSelector etc. Added DetailedEquipmentData, EquipmentType
+import type { EquipmentFilterCondition, EquipmentData, EquipmentType } from "@/lib/types"; // Keep this if needed by EquipmentSelector etc. Added DetailedEquipmentData, EquipmentType
 import { TagSelector } from "@/components/input/tag-selector";
 import { ToggleInput } from "@/components/ui/toggle-input";
 import { EquipmentConditionCard } from "@/components/browse/equipment-condition-card"; // Import the new card component
@@ -83,7 +83,7 @@ export function GuideFilterPanel({
   };
 
   // Function to handle selection from the modal and add the condition
-  const handleAddNewCondition = (equipment: DetailedEquipmentData) => {
+  const handleAddNewCondition = (equipment: EquipmentData) => {
     if (!addConditionModalType) return; // Should not happen, but safety check
 
     switch (addConditionModalType) {

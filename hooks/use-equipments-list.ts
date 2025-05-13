@@ -78,6 +78,7 @@ function parseListToDetailedEquipmentData(list: any): DetailedEquipmentData[] {
       name: item.name_chs,
       categories,
       element: normalizeElement(item.element),
+      awaken: item["awaken[]"] ? item["awaken[]"].split(";") : undefined,
     }
     return result
   })

@@ -8,6 +8,8 @@ import { normalizeEquipmentId } from "@/lib/asset"
 import { EquipmentType, EquipmentData } from "@/lib/types"
 import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useEquipmentsList } from "@/hooks/use-equipments-list";
 
 interface EquipmentSelectorProps {
   width?: number
@@ -42,14 +44,18 @@ export function EquipmentSelector({
 }: EquipmentSelectorProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+
   const handleEquipmentSelect = (equipment: EquipmentData) => {
     onEquipmentSelect(equipment)
   }
 
+  const { equipmentsList, loading, error } = useEquipmentsList();
+
   const aspectRatio = rectangle.height / rectangle.width
   const calculatedHeight = height || width * aspectRatio
-
-
+  const detailedEquipmentData = equipmentsList[type].find(
+    (item) => item.id === normalizeEquipmentId(selectedEquipment?.id || '0')
+  );
 
   let priorityIds = recognizedEquipments?.map(item => normalizeEquipmentId(item.id)) || []
   let equipmentIsSkin = false
@@ -69,28 +75,50 @@ export function EquipmentSelector({
     }
   }
 
+  const awakenOptions = detailedEquipmentData?.awaken;
+  const currentAwakenValue = selectedEquipment?.properties?.awaken;
+
+  const handleAwakenChange = (newAwakenValue: string) => {
+    if (!selectedEquipment) {
+      console.warn("No equipment selected, cannot set awaken level.");
+      return;
+    }
+    const updatedEquipment: EquipmentData = {
+      ...selectedEquipment,
+      properties: {
+        ...(selectedEquipment.properties || {}),
+        awaken: newAwakenValue === "" ? undefined : newAwakenValue,
+      },
+    };
+    onEquipmentSelect(updatedEquipment);
+  };
+
 
   return (
     <div
       className={`flex flex-col items-center ${
-        equipmentIsSkin ? "bg-red-100 dark:bg-red-900/30 rounded-lg p-1" :
-        isActive ? "bg-blue-100 dark:bg-blue-900/30 rounded-lg p-1" : 
-        isHovered ? "bg-green-100 dark:bg-green-900/20 rounded-lg p-1" : "p-1"
+        equipmentIsSkin
+          ? "bg-red-100 dark:bg-red-900/30 rounded-lg p-1"
+          : isActive
+          ? "bg-blue-100 dark:bg-blue-900/30 rounded-lg p-1"
+          : isHovered
+          ? "bg-green-100 dark:bg-green-900/20 rounded-lg p-1"
+          : "p-1"
       }`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div 
+      <div
         className="relative mb-1 overflow-hidden"
-        style={{ 
+        style={{
           width: `${width}px`,
-          height: `${calculatedHeight}px`
+          height: `${calculatedHeight}px`,
         }}
       >
-        {recognizedEquipments && recognizedEquipments.length > 0 ? (
+        {!!selectedEquipment ? (
           <img
-            src={getEquipmentPhotoUrl(recognizedEquipments[0]?.id, type)}
-            alt={recognizedEquipments[0]?.id}
+            src={getEquipmentPhotoUrl(selectedEquipment?.id || "", type)}
+            alt={selectedEquipment?.id || ""}
             className="absolute inset-0 w-full h-full object-contain"
           />
         ) : (
@@ -100,13 +128,13 @@ export function EquipmentSelector({
             className="absolute inset-0 w-full h-full object-contain"
           />
         )}
-        
+
         {displayDeleteButton && onDelete && (
           <button
             type="button"
             onClick={(e) => {
-              e.stopPropagation()
-              onDelete()
+              e.stopPropagation();
+              onDelete();
             }}
             className="absolute top-0 right-0 bg-red-500/90 text-white p-0.5 rounded-bl-md hover:bg-red-600"
             title="删除"
@@ -115,21 +143,37 @@ export function EquipmentSelector({
           </button>
         )}
       </div>
-      {/* <div className="flex items-center gap-1 mb-1">
-        <div className="flex justify-center items-center w-5 h-5 rounded-full bg-slate-200 dark:bg-slate-700 text-xs font-medium">
-          {index}
+      {/* Awaken Level Selector */}
+      {detailedEquipmentData && awakenOptions && awakenOptions.length > 0 && (
+        <div className="mb-2 w-full px-1">
+          <Select
+            value={currentAwakenValue || ""}
+            onValueChange={handleAwakenChange}
+          >
+            <SelectTrigger className="h-8 text-xs">
+              <SelectValue placeholder="选择觉醒" />
+            </SelectTrigger>
+            <SelectContent>
+              {awakenOptions.map((option) => (
+                <SelectItem key={option} value={option} className="text-xs">
+                  {option}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
-        <span className="text-xs text-muted-foreground">
-          {label}
-        </span>
-      </div> */}
-      <Button 
+      )}
+      <Button
         type="button"
-        variant={equipmentIsSkin ? "default" : "secondary"} 
+        variant={equipmentIsSkin ? "default" : "secondary"}
         size="xs"
         onClick={() => setIsModalOpen(true)}
       >
-        {equipmentIsSkin ? "必须重选" : recognizedEquipments?.length ? "手动选择" : "未识别"}
+        {equipmentIsSkin
+          ? "必须重选"
+          : recognizedEquipments?.length
+          ? "手动选择"
+          : "未识别"}
       </Button>
 
       <EquipmentSelectorModal
@@ -140,5 +184,5 @@ export function EquipmentSelector({
         priorityIds={priorityIds}
       />
     </div>
-  )
+  );
 }

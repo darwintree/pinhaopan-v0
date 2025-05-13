@@ -267,8 +267,8 @@ export async function getGuides(query: {
             }
             
             // 处理觉醒状态
-            if (condition.properties.awake) {
-              elementMatch["weapons.properties.awake"] = condition.properties.awake
+            if (condition.properties.awaken) {
+              elementMatch["weapons.properties.awaken"] = condition.properties.awaken
             }
           }
           
@@ -310,9 +310,9 @@ export async function getGuides(query: {
             }
             
             // 觉醒状态匹配
-            if (condition.properties.awake) {
+            if (condition.properties.awaken) {
               matchCondition.$and = matchCondition.$and || []
-              matchCondition.$and.push({ $eq: ["$$this.properties.awake", condition.properties.awake] })
+              matchCondition.$and.push({ $eq: ["$$this.properties.awaken", condition.properties.awaken] })
             }
           }
           
@@ -369,8 +369,8 @@ export async function getGuides(query: {
           if (condition.properties.luci3) {
             excludeMatch.$not.$elemMatch["properties.luci3"] = condition.properties.luci3
           }
-          if (condition.properties.awake) {
-            excludeMatch.$not.$elemMatch["properties.awake"] = condition.properties.awake
+          if (condition.properties.awaken) {
+            excludeMatch.$not.$elemMatch["properties.awaken"] = condition.properties.awaken
           }
         }
         
@@ -420,8 +420,8 @@ export async function getGuides(query: {
             }
             
             // 处理觉醒状态
-            if (condition.properties.awake) {
-              elementMatch["summons.properties.awake"] = condition.properties.awake
+            if (condition.properties.awaken) {
+              elementMatch["summons.properties.awaken"] = condition.properties.awaken
             }
           }
           
@@ -462,9 +462,9 @@ export async function getGuides(query: {
             }
             
             // 觉醒状态匹配
-            if (condition.properties.awake) {
+            if (condition.properties.awaken) {
               matchCondition.$and = matchCondition.$and || []
-              matchCondition.$and.push({ $eq: ["$$this.properties.awake", condition.properties.awake] })
+              matchCondition.$and.push({ $eq: ["$$this.properties.awaken", condition.properties.awaken] })
             }
           }
           
@@ -520,8 +520,8 @@ export async function getGuides(query: {
           if (condition.properties.luci3) {
             excludeMatch.$not.$elemMatch["properties.luci3"] = condition.properties.luci3
           }
-          if (condition.properties.awake) {
-            excludeMatch.$not.$elemMatch["properties.awake"] = condition.properties.awake
+          if (condition.properties.awaken) {
+            excludeMatch.$not.$elemMatch["properties.awaken"] = condition.properties.awaken
           }
         }
         
@@ -571,8 +571,8 @@ export async function getGuides(query: {
             }
             
             // 处理觉醒状态
-            if (condition.properties.awake) {
-              elementMatch["charas.properties.awake"] = condition.properties.awake
+            if (condition.properties.awaken) {
+              elementMatch["charas.properties.awaken"] = condition.properties.awaken
             }
           }
           
@@ -613,9 +613,9 @@ export async function getGuides(query: {
             }
             
             // 觉醒状态匹配
-            if (condition.properties.awake) {
+            if (condition.properties.awaken) {
               matchCondition.$and = matchCondition.$and || []
-              matchCondition.$and.push({ $eq: ["$$this.properties.awake", condition.properties.awake] })
+              matchCondition.$and.push({ $eq: ["$$this.properties.awaken", condition.properties.awaken] })
             }
           }
           
@@ -671,8 +671,8 @@ export async function getGuides(query: {
           if (condition.properties.luci3) {
             excludeMatch.$not.$elemMatch["properties.luci3"] = condition.properties.luci3
           }
-          if (condition.properties.awake) {
-            excludeMatch.$not.$elemMatch["properties.awake"] = condition.properties.awake
+          if (condition.properties.awaken) {
+            excludeMatch.$not.$elemMatch["properties.awaken"] = condition.properties.awaken
           }
         }
         

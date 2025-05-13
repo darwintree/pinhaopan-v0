@@ -57,7 +57,7 @@ interface EquipmentProperties {
   u1?: string
   u2?: string
   u3?: string
-  awake?: string
+  awaken?: string
 }
 
 export interface EquipmentData {

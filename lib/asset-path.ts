@@ -62,5 +62,23 @@ export function getEquipmentPhotoUrl(id: string, equipmentType?: EquipmentType) 
         return `${baseUrl}/assets/img/sp/assets/summon/party_sub/${normalizedId}.jpg`
     }
   }
-  return `${baseUrl}/placeholder.svg`
+  return `${process.env.NEXT_PUBLIC_ASSETS_BASE_URL}/placeholder.svg`
+}
+
+export function getAwakenIconUrl(awaken: string) {
+  const baseUrl = process.env.NEXT_PUBLIC_OFFICIAL_ASSETS_BASE_URL
+  const awakenToType = {
+    "攻击": 1,
+    "防御": 2,
+    "特殊": 3,
+    "奥义": 4,
+    "技伤": 5,
+    "回复": 6,
+    "连击": 7,
+  }
+  const type: number | undefined = awakenToType[awaken as keyof typeof awakenToType]
+  if (type) {
+    return `${baseUrl}/assets/img/sp/ui/icon/arousal_type/type_${type}.png`
+  }
+  return `${process.env.NEXT_PUBLIC_ASSETS_BASE_URL}/placeholder.svg`
 }

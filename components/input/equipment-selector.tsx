@@ -3,13 +3,14 @@
 import { useState } from "react";
 import { EquipmentSelectorModal } from "@/components/input/equipment-selector-modal"
 import { getSameCrewNonSkinIdList, isSkin } from "@/hooks/use-crew-info"
-import { getEquipmentPhotoUrl } from "@/lib/asset-path"
+import { getEquipmentPhotoUrl, getAwakenIconUrl } from "@/lib/asset-path"
 import { normalizeEquipmentId } from "@/lib/asset"
 import { EquipmentType, EquipmentData } from "@/lib/types"
 import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useEquipmentsList } from "@/hooks/use-equipments-list";
+import { imageSizes } from "@/lib/utils";
 
 interface EquipmentSelectorProps {
   width?: number
@@ -51,11 +52,23 @@ export function EquipmentSelector({
 
   const { equipmentsList, loading, error } = useEquipmentsList();
 
-  const aspectRatio = rectangle.height / rectangle.width
-  const calculatedHeight = height || width * aspectRatio
+  function getAspectRatio(type: EquipmentType) {
+    switch (type) {
+      case "chara":
+        return imageSizes["weapon/normal"][1] / imageSizes["weapon/normal"][0]
+      case "weapon":
+        return imageSizes["weapon/normal"][1] / imageSizes["weapon/normal"][0]
+      case "summon":
+        return imageSizes["summon/party_sub"][1] / imageSizes["summon/party_sub"][0]
+      default:
+        return 1
+    }
+  }
+  const calculatedHeight = height || width * getAspectRatio(type)
   const detailedEquipmentData = equipmentsList[type].find(
     (item) => item.id === normalizeEquipmentId(selectedEquipment?.id || '0')
   );
+  const currentAwakenValue = selectedEquipment?.properties?.awaken;
 
   let priorityIds = recognizedEquipments?.map(item => normalizeEquipmentId(item.id)) || []
   let equipmentIsSkin = false
@@ -76,7 +89,6 @@ export function EquipmentSelector({
   }
 
   const awakenOptions = detailedEquipmentData?.awaken;
-  const currentAwakenValue = selectedEquipment?.properties?.awaken;
 
   const handleAwakenChange = (newAwakenValue: string) => {
     if (!selectedEquipment) {
@@ -128,6 +140,14 @@ export function EquipmentSelector({
             className="absolute inset-0 w-full h-full object-contain"
           />
         )}
+        {selectedEquipment?.properties?.awaken && (
+          <img
+            src={getAwakenIconUrl(selectedEquipment.properties.awaken)}
+            alt={`Awaken: ${selectedEquipment.properties.awaken}`}
+            className="absolute top-0 left-0 w-5 h-5 z-10"
+            title={`Awaken: ${selectedEquipment.properties.awaken}`}
+          />
+        )}
 
         {displayDeleteButton && onDelete && (
           <button
@@ -151,7 +171,7 @@ export function EquipmentSelector({
             onValueChange={handleAwakenChange}
           >
             <SelectTrigger className="h-8 text-xs">
-              <SelectValue placeholder="选择觉醒" />
+              <SelectValue placeholder="觉醒" />
             </SelectTrigger>
             <SelectContent>
               {awakenOptions.map((option) => (

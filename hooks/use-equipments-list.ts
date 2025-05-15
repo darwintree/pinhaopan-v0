@@ -78,7 +78,7 @@ function parseListToDetailedEquipmentData(list: any): DetailedEquipmentData[] {
       name: item.name_chs,
       categories,
       element: normalizeElement(item.element),
-      awaken: item["awaken[]"] ? item["awaken[]"].split(";") : undefined,
+      awaken: item["awaken[]"] ? item["awaken[]"].split(";").filter((awaken: string) => !awaken.startsWith("EX")) : undefined,
     }
     return result
   })
@@ -103,6 +103,9 @@ export function useEquipmentsList() {
           weapon: parseListToDetailedEquipmentData(weapon),
           summon: parseListToDetailedEquipmentData(summon),
         }
+        data.chara.forEach((chara) => {
+          chara.awaken = ["攻击","防御","连击"]
+        })
         setEquipmentsList(data)
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Unknown error'))

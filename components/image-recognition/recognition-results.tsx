@@ -105,8 +105,13 @@ export function RecognitionResults({
     switch (type) {
       case "chara":
         return (
-          <div className="flex flex-row gap-2 overflow-x-auto pb-2">
-            {rectangles.map((_, index) => renderItem(index))}
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-row gap-2 overflow-x-auto pb-2">
+              {rectangles.slice(0, -2).map((_, index) => renderItem(index))}
+            </div>
+            <div className="flex flex-row gap-2 overflow-x-auto pb-2">
+              {rectangles.slice(-2).map((_, index) => renderItem(rectangles.length - 2 + index))}
+            </div>
           </div>
         )
       case "summon":

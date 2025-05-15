@@ -16,7 +16,7 @@ export interface RectangleDetectionResult {
   }
 }
 
-export const image_sizes: Record<DetectEquipmentType, [number, number]> = {
+export const imageSizes: Record<DetectEquipmentType, [number, number]> = {
   "weapon/main": [200, 420],
   "weapon/normal": [280, 160],
   "summon/party_main": [196, 340],

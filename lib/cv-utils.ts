@@ -1,7 +1,7 @@
 import cv from "@techstark/opencv-js";
 import { Box, detectChara, detectWeapon, detectSummon, getDesBase64 } from "./cv";
 import { DetectEquipmentType, EquipmentType, Rectangle } from "./types";
-import { image_sizes, RectangleDetectionResult } from "./utils";
+import { imageSizes, RectangleDetectionResult } from "./utils";
 
 
 // 模拟矩形检测过程
@@ -54,7 +54,7 @@ export const getImageDescriptorsFromImageAndRectangles = async (imageUrl: string
     for (const rectangle of rectangles) {
       const { x, y, width, height } = rectangle
       const subImage = img.roi(new cv.Rect(x, y, width, height))
-      const shouldSize = image_sizes[equipmentDetectType]
+      const shouldSize = imageSizes[equipmentDetectType]
       if (!shouldSize) {
         throw new Error(`Unknown equipment detect type: ${equipmentDetectType}`)
       }

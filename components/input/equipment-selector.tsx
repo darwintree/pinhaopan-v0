@@ -23,6 +23,7 @@ interface EquipmentSelectorProps {
   isHovered: boolean
   isActive?: boolean
   displayDeleteButton?: boolean
+  disabled?: boolean
   onMouseEnter: () => void
   onMouseLeave: () => void
   onDelete?: () => void
@@ -42,6 +43,7 @@ export function EquipmentSelector({
   onMouseEnter,
   onMouseLeave,
   onDelete,
+  disabled = false,
 }: EquipmentSelectorProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -149,7 +151,7 @@ export function EquipmentSelector({
           />
         )}
 
-        {displayDeleteButton && onDelete && (
+        {!disabled && displayDeleteButton && onDelete && (
           <button
             type="button"
             onClick={(e) => {
@@ -164,7 +166,7 @@ export function EquipmentSelector({
         )}
       </div>
       {/* Awaken Level Selector */}
-      {detailedEquipmentData && awakenOptions && awakenOptions.length > 0 && (
+      {!disabled && detailedEquipmentData && awakenOptions && awakenOptions.length > 0 && (
         <div className="mb-2 w-full px-1">
           <Select
             value={currentAwakenValue || ""}
@@ -183,18 +185,20 @@ export function EquipmentSelector({
           </Select>
         </div>
       )}
-      <Button
-        type="button"
-        variant={equipmentIsSkin ? "default" : "secondary"}
-        size="xs"
-        onClick={() => setIsModalOpen(true)}
-      >
-        {equipmentIsSkin
-          ? "必须重选"
-          : recognizedEquipments?.length
-          ? "手动选择"
-          : "未识别"}
-      </Button>
+      {!disabled && (
+        <Button
+          type="button"
+          variant={equipmentIsSkin ? "default" : "secondary"}
+          size="xs"
+          onClick={() => setIsModalOpen(true)}
+        >
+          {equipmentIsSkin
+            ? "必须重选"
+            : recognizedEquipments?.length
+            ? "手动选择"
+            : "未识别"}
+        </Button>)
+      }
 
       <EquipmentSelectorModal
         type={type}

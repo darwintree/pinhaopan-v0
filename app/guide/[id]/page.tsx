@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { ArrowLeft, Link } from "lucide-react"
+import { ArrowLeft, Link, ChevronDown, ChevronUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
@@ -21,6 +21,7 @@ import Giscus from "@giscus/react"
 import { getGuide } from "@/lib/remote-db"
 import Lightbox from "yet-another-react-lightbox"
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
+import { EquipmentSelector } from "@/components/input/equipment-selector"
 import "yet-another-react-lightbox/styles.css"
 import "yet-another-react-lightbox/plugins/thumbnails.css"
 
@@ -35,6 +36,9 @@ export default function GuidePage() {
   const { tagList, loading: tagsLoading } = useTagList()
   const { questList, loading: questLoading } = useQuestList()
   const [theme, setTheme] = useState<string>("light")
+  const [showCharasDetails, setShowCharasDetails] = useState(false);
+  const [showWeaponsDetails, setShowWeaponsDetails] = useState(false);
+  const [showSummonsDetails, setShowSummonsDetails] = useState(false);
 
   useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains("dark")
@@ -277,7 +281,13 @@ export default function GuidePage() {
 
               <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-6">
                 <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">队伍配置</h3>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-sm font-medium text-muted-foreground">队伍配置</h3>
+                    <Button variant="ghost" size="sm" onClick={() => setShowCharasDetails(!showCharasDetails)} className="text-xs">
+                      {showCharasDetails ? <ChevronUp className="h-3 w-3 mr-1" /> : <ChevronDown className="h-3 w-3 mr-1" />}
+                      {showCharasDetails ? "收起列表" : "展开列表"}
+                    </Button>
+                  </div>
                   <div 
                     className="cursor-zoom-in h-full"
                     onClick={() => openLightbox(0)}
@@ -287,11 +297,57 @@ export default function GuidePage() {
                       alt="Team composition"
                       className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
                     />
+                    {showCharasDetails && guide.charas && guide.charas.length > 0 && (
+                      <div className="mt-2 p-2 border-t border-dashed border-slate-200 dark:border-slate-700">
+                        <div className="flex flex-wrap gap-2 mb-2">
+                          {guide.charas.slice(0, 3).map((chara, index) => (
+                            <EquipmentSelector
+                              key={`chara-main-${index}`}
+                              type="chara"
+                              selectedEquipment={chara}
+                              onEquipmentSelect={() => {}} 
+                              isHovered={false} 
+                              disabled={true}
+                              displayDeleteButton={false}
+                              width={50} 
+                              rectangle={{ width: 48, height: 48}}
+                              onMouseEnter={() => {}} 
+                              onMouseLeave={() => {}}
+                            />
+                          ))}
+                        </div>
+                        {guide.charas.length > 3 && (
+                          <div className="flex flex-wrap gap-2">
+                            {guide.charas.slice(3).map((chara, index) => (
+                              <EquipmentSelector
+                                key={`chara-sub-${index}`}
+                                type="chara"
+                                selectedEquipment={chara}
+                                onEquipmentSelect={() => {}} 
+                                isHovered={false} 
+                                disabled={true}
+                                displayDeleteButton={false}
+                                width={50} 
+                                rectangle={{ width: 48, height: 48}} 
+                                onMouseEnter={() => {}} 
+                                onMouseLeave={() => {}}
+                              />
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
                 
                 <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">武器配置</h3>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-sm font-medium text-muted-foreground">武器配置</h3>
+                    <Button variant="ghost" size="sm" onClick={() => setShowWeaponsDetails(!showWeaponsDetails)} className="text-xs">
+                      {showWeaponsDetails ? <ChevronUp className="h-3 w-3 mr-1" /> : <ChevronDown className="h-3 w-3 mr-1" />}
+                      {showWeaponsDetails ? "收起列表" : "展开列表"}
+                    </Button>
+                  </div>
                   <div 
                     className="cursor-zoom-in h-full"
                     onClick={() => openLightbox(1)}
@@ -301,11 +357,57 @@ export default function GuidePage() {
                       alt="Weapons"
                       className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
                     />
+                    {showWeaponsDetails && guide.weapons && guide.weapons.length > 0 && (
+                      <div className="mt-2 p-2 border-t border-dashed border-slate-200 dark:border-slate-700 flex gap-4">
+                        {/* Left column for the first weapon */}
+                        <div>
+                          <EquipmentSelector
+                            key={`weapon-main-0`}
+                            type="weapon"
+                            selectedEquipment={guide.weapons[0]}
+                            onEquipmentSelect={() => {}} 
+                            isHovered={false} 
+                            disabled={true}
+                            displayDeleteButton={false}
+                            width={50}
+                            rectangle={{ width: 40, height: 40}}
+                            onMouseEnter={() => {}} 
+                            onMouseLeave={() => {}} 
+                          />
+                        </div>
+                        {/* Right column for the rest of the weapons */}
+                        {guide.weapons.length > 1 && (
+                          <div className="grid grid-cols-3 gap-2 flex-1">
+                            {guide.weapons.slice(1).map((weapon, index) => (
+                              <EquipmentSelector
+                                key={`weapon-sub-${index}`}
+                                type="weapon"
+                                selectedEquipment={weapon}
+                                onEquipmentSelect={() => {}} 
+                                isHovered={false} 
+                                disabled={true}
+                                displayDeleteButton={false}
+                                width={50}
+                                rectangle={{ width: 40, height: 40}} 
+                                onMouseEnter={() => {}} 
+                                onMouseLeave={() => {}} 
+                              />
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
                 
                 <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">召唤石配置</h3>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-sm font-medium text-muted-foreground">召唤石配置</h3>
+                    <Button variant="ghost" size="sm" onClick={() => setShowSummonsDetails(!showSummonsDetails)} className="text-xs">
+                      {showSummonsDetails ? <ChevronUp className="h-3 w-3 mr-1" /> : <ChevronDown className="h-3 w-3 mr-1" />}
+                      {showSummonsDetails ? "收起列表" : "展开列表"}
+                    </Button>
+                  </div>
                   <div 
                     className="cursor-zoom-in h-full"
                     onClick={() => openLightbox(2)}
@@ -315,6 +417,46 @@ export default function GuidePage() {
                       alt="Summons"
                       className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
                     />
+                  {showSummonsDetails && guide.summons && guide.summons.length > 0 && (
+                    <div className="mt-2 p-2 border-t border-dashed border-slate-200 dark:border-slate-700 flex gap-4">
+                      {/* Left column for the first summon */}
+                      <div>
+                        <EquipmentSelector
+                          key={`summon-main-0`}
+                          type="summon"
+                          selectedEquipment={guide.summons[0]}
+                          onEquipmentSelect={() => {}} 
+                          isHovered={false} 
+                          disabled={true}
+                          displayDeleteButton={false}
+                          width={50}
+                          rectangle={{ width: 48, height: 48}}
+                          onMouseEnter={() => {}} 
+                          onMouseLeave={() => {}} 
+                        />
+                      </div>
+                      {/* Right column for the rest of the summons */}
+                      {guide.summons.length > 1 && (
+                        <div className="grid grid-cols-2 gap-2 flex-1">
+                          {guide.summons.slice(1).map((summon, index) => (
+                            <EquipmentSelector
+                              key={`summon-sub-${index}`}
+                              type="summon"
+                              selectedEquipment={summon}
+                              onEquipmentSelect={() => {}} 
+                              isHovered={false} 
+                              disabled={true}
+                              displayDeleteButton={false}
+                              width={50}
+                              rectangle={{ width: 48, height: 48}} 
+                              onMouseEnter={() => {}} 
+                              onMouseLeave={() => {}} 
+                            />
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
                   </div>
                 </div>
               </div>

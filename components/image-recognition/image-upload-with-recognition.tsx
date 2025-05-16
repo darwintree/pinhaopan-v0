@@ -656,6 +656,7 @@ export function ImageUploadWithRecognition({
                     setImages([])
                     setRectangles([])
                     setRecognizedEquipments({})
+                    setFinalEquipments({})
                     // 重置模式数据
                     setModeData({
                       individual: {

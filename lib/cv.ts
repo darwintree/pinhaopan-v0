@@ -206,8 +206,13 @@ export function detectWeapon(image: cv.Mat): Box[] {
   }
   const mergedBoxes = currentBoxes;
 
+  // 过滤掉尺寸过小的框
+  const filteredBoxes = mergedBoxes.filter(box => {
+    return box.w > picWidth * 0.1 && box.h > picWidth * 0.05;
+  });
+
   // 对框进行排序
-  return mergedBoxes.sort(compareBox);
+  return filteredBoxes.sort(compareBox);
 }
 
 function filterContours(

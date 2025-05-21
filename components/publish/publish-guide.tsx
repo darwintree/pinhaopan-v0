@@ -249,11 +249,11 @@ export function PublishGuide() {
               </p>
               <p className="text-xs text-gray-500">{selectedFriendSummon.id}</p>
             </div>
-            <Button variant="outline" onClick={() => setSelectedFriendSummon(undefined)}>清除</Button>
-            <Button onClick={() => setIsFriendSummonModalOpen(true)}>更换</Button>
+            <Button type="button" variant="outline" onClick={() => setSelectedFriendSummon(undefined)}>清除</Button>
+            <Button type="button" onClick={() => setIsFriendSummonModalOpen(true)}>更换</Button>
           </div>
         ) : (
-          <Button variant="outline" onClick={() => setIsFriendSummonModalOpen(true)}>选择友召</Button>
+          <Button type="button" variant="outline" onClick={() => setIsFriendSummonModalOpen(true)}>选择友召</Button>
         )}
         <EquipmentSelectorModal
           type="summon"

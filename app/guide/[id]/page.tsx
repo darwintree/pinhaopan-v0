@@ -417,42 +417,74 @@ export default function GuidePage() {
                       alt="Summons"
                       className="w-full h-auto max-h-[350px] object-contain rounded border border-slate-200/50 dark:border-slate-700/50 transition-transform hover:scale-[1.02]"
                     />
-                  {showSummonsDetails && guide.summons && guide.summons.length > 0 && (
-                    <div className="mt-2 p-2 border-t border-dashed border-slate-200 dark:border-slate-700 flex gap-4">
-                      {/* Left column for the first summon */}
-                      <div>
-                        <EquipmentSelector
-                          key={`summon-main-0`}
-                          type="summon"
-                          selectedEquipment={guide.summons[0]}
-                          onEquipmentSelect={() => {}} 
-                          isHovered={false} 
-                          disabled={true}
-                          displayDeleteButton={false}
-                          width={50}
-                          rectangle={{ width: 48, height: 48}}
-                          onMouseEnter={() => {}} 
-                          onMouseLeave={() => {}} 
-                        />
-                      </div>
-                      {/* Right column for the rest of the summons */}
-                      {guide.summons.length > 1 && (
-                        <div className="grid grid-cols-2 gap-2 flex-1">
-                          {guide.summons.slice(1).map((summon, index) => (
-                            <EquipmentSelector
-                              key={`summon-sub-${index}`}
-                              type="summon"
-                              selectedEquipment={summon}
-                              onEquipmentSelect={() => {}} 
-                              isHovered={false} 
-                              disabled={true}
-                              displayDeleteButton={false}
-                              width={50}
-                              rectangle={{ width: 48, height: 48}} 
-                              onMouseEnter={() => {}} 
-                              onMouseLeave={() => {}} 
-                            />
-                          ))}
+                  {showSummonsDetails && (guide.summons || guide.friendSummon) && (
+                    <div className="mt-2 p-2 border-t border-dashed border-slate-200 dark:border-slate-700">
+                      {/* Friend Summon Display */}
+                      {guide.friendSummon && (
+                        <div className="mb-3 pb-3 border-b border-dotted border-slate-300 dark:border-slate-600">
+                          <h4 className="text-xs font-semibold text-muted-foreground mb-1">友召</h4>
+                          <EquipmentSelector
+                            key="friend-summon-display"
+                            type="summon"
+                            selectedEquipment={guide.friendSummon}
+                            onEquipmentSelect={() => {}}
+                            isHovered={false}
+                            disabled={true}
+                            displayDeleteButton={false}
+                            width={50}
+                            rectangle={{ width: 48, height: 48 }}
+                            onMouseEnter={() => {}}
+                            onMouseLeave={() => {}}
+                          />
+                        </div>
+                      )}
+
+                      {/* Regular Summons Display */}
+                      {guide.summons && guide.summons.length > 0 && (
+                        <div className="flex gap-4">
+                          {/* Left column for the first summon (Main Summon) */}
+                          {guide.summons[0] && (
+                            <div>
+                              <h4 className="text-xs font-semibold text-muted-foreground mb-1">主召</h4>
+                              <EquipmentSelector
+                                key={`summon-main-0`}
+                                type="summon"
+                                selectedEquipment={guide.summons[0]}
+                                onEquipmentSelect={() => {}}
+                                isHovered={false}
+                                disabled={true}
+                                displayDeleteButton={false}
+                                width={50}
+                                rectangle={{ width: 48, height: 48}}
+                                onMouseEnter={() => {}}
+                                onMouseLeave={() => {}}
+                              />
+                            </div>
+                          )}
+                          
+                          {/* Right column for the rest of the summons (Sub Summons) */}
+                          {guide.summons.length > 1 && (
+                            <div className="flex-1">
+                               <h4 className="text-xs font-semibold text-muted-foreground mb-1">其他召唤</h4>
+                              <div className="grid grid-cols-2 gap-2">
+                                {guide.summons.slice(1).map((summon, index) => (
+                                  <EquipmentSelector
+                                    key={`summon-sub-${index}`}
+                                    type="summon"
+                                    selectedEquipment={summon}
+                                    onEquipmentSelect={() => {}}
+                                    isHovered={false}
+                                    disabled={true}
+                                    displayDeleteButton={false}
+                                    width={50}
+                                    rectangle={{ width: 48, height: 48}}
+                                    onMouseEnter={() => {}}
+                                    onMouseLeave={() => {}}
+                                  />
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>

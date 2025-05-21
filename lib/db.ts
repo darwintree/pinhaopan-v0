@@ -67,6 +67,16 @@ function validateGuideData(data: GuidePostData): void {
       validateUrl(link)
     }
   }
+
+  // Validate friendSummon if it exists
+  if (data.friendSummon) {
+    if (!data.friendSummon.id || !data.friendSummon.type) {
+      throw new Error("Invalid friendSummon data: id and type are required.");
+    }
+    if (data.friendSummon.type !== "summon") {
+      throw new Error("Invalid friendSummon data: type must be 'summon'.");
+    }
+  }
 }
 
 // 保存图片
@@ -150,6 +160,12 @@ export async function saveGuide(data: GuidePostData): Promise<string> {
       charas: normalizeEquipments(data.charas),
       weapons: normalizeEquipments(data.weapons),
       summons: normalizeEquipments(data.summons),
+      ...(data.friendSummon && {
+        friendSummon: {
+          ...data.friendSummon,
+          id: normalizeEquipmentId(data.friendSummon.id)
+        }
+      }),
       tags: data.tags || [],
       description: data.description || "",
       links: data.links || [],

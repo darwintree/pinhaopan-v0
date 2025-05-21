@@ -26,6 +26,7 @@ export interface GuideData {
   charas: EquipmentData[]
   weapons: EquipmentData[]
   summons: EquipmentData[]
+  friendSummon?: EquipmentData // New field
   tags: string[]
   description: string
   links?: string[] // 相关链接(可选)
@@ -45,6 +46,7 @@ export interface GuidePostData {
   weaponsBase64: string  // 武器图片base64 宽度不超过600px 高度不超过600px, 否则按比例缩放
   summons: EquipmentData[]  // 召唤
   summonsBase64: string  // 召唤图片base64 宽度不超过600px 高度不超过600px, 否则按比例缩放
+  friendSummon?: EquipmentData // New field
   tags: string[]  // 检查是否在tagList内
   description: string  // 备注
   links?: string[] // 相关链接(可选)

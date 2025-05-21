@@ -2,15 +2,18 @@
 
 import type React from "react"
 
-import { useState, useReducer } from "react"
+import { useState, useReducer, useMemo } from "react" // Added useMemo
 import { Button } from "@/components/ui/button"
 import { QuestSelector } from "@/components/input/quest-selector"
 import { useQuestList } from "@/hooks/use-quest-list"
+import { useEquipmentsList } from "@/hooks/use-equipments-list" // Added
 import { GuidePostData, BoundingBox, EquipmentData } from "@/lib/types"
+import { getEquipmentPhotoUrl } from "@/lib/utils" // Added
 import { resizeImageWithAspectRatio, cropImage } from "@/lib/utils"
 import { UsersIcon } from "@/components/icon/users-icon"
 import { SwordIcon } from "@/components/icon/sword-icon"
-import { SparklesIcon } from "@/components/icon/sparkles-icon"
+import { SparklesIcon } from "@/components/icon/sparkles-icon" // Will be used for Friend Summon title
+import { EquipmentSelectorModal } from "@/components/input/equipment-selector-modal" // Added
 import { saveGuide } from "@/lib/remote-db"
 import { isSkin } from "@/hooks/use-crew-info"
 import { normalizeEquipmentId } from "@/lib/asset"
@@ -32,6 +35,10 @@ export function PublishGuide() {
 
   const [isPending, setIsPending] = useState(false)
 
+  // Friend Summon State
+  const [selectedFriendSummon, setSelectedFriendSummon] = useState<EquipmentData | undefined>(undefined);
+  const [isFriendSummonModalOpen, setIsFriendSummonModalOpen] = useState(false);
+
   const [selectedQuest, setSelectedQuest] = useState<string>("")
 
   const { questList } = useQuestList()
@@ -45,6 +52,18 @@ export function PublishGuide() {
   const [charaBoundingBox, setCharaBoundingBox] = useState<BoundingBox | null>(null);
   const [weaponBoundingBox, setWeaponBoundingBox] = useState<BoundingBox | null>(null);
   const [summonBoundingBox, setSummonBoundingBox] = useState<BoundingBox | null>(null);
+
+  // Fetch summons for friend summon selector
+  const { equipmentsList, loading: equipmentsLoading, error: equipmentsError } = useEquipmentsList();
+
+  const friendSummonIds = useMemo(() => {
+    if (equipmentsList && equipmentsList.summon) {
+      return equipmentsList.summon
+        .filter(s => s.tags && s.tags.includes("友召"))
+        .map(s => s.id);
+    }
+    return [];
+  }, [equipmentsList]);
 
   // Image upload configurations
   const uploadConfigs = [
@@ -158,6 +177,7 @@ export function PublishGuide() {
         weaponsBase64: resizedWeaponsBase64,
         summons,
         summonsBase64: resizedSummonsBase64,
+        ...(selectedFriendSummon && { friendSummon: selectedFriendSummon }), // Add friend summon
       }
 
       console.log(postData)
@@ -177,6 +197,7 @@ export function PublishGuide() {
       setCharaBoundingBox(null)
       setWeaponBoundingBox(null)
       setSummonBoundingBox(null)
+      setSelectedFriendSummon(undefined) // Reset friend summon
 
       // Show success message
       alert("配置发布成功！")
@@ -208,6 +229,45 @@ export function PublishGuide() {
         autoRecognize={autoRecognize}
         setAutoRecognize={setAutoRecognize}
       />
+
+      {/* Friend Summon Selector UI */}
+      <div className="space-y-4 p-4 border rounded-md">
+        <h3 className="text-lg font-medium flex items-center">
+          <SparklesIcon className="w-5 h-5 mr-2" />
+          选择友召（可选）
+        </h3>
+        {selectedFriendSummon ? (
+          <div className="flex items-center space-x-4 p-2 border rounded-md">
+            <img
+              src={getEquipmentPhotoUrl(selectedFriendSummon.id, "summon")}
+              alt={equipmentsList?.summon?.find(s => s.id === selectedFriendSummon.id)?.name || selectedFriendSummon.id}
+              className="w-16 h-16 object-contain border rounded"
+            />
+            <div className="flex-grow">
+              <p className="font-semibold">
+                {equipmentsList?.summon?.find(s => s.id === selectedFriendSummon.id)?.name || "未知召唤"}
+              </p>
+              <p className="text-xs text-gray-500">{selectedFriendSummon.id}</p>
+            </div>
+            <Button variant="outline" onClick={() => setSelectedFriendSummon(undefined)}>清除</Button>
+            <Button onClick={() => setIsFriendSummonModalOpen(true)}>更换</Button>
+          </div>
+        ) : (
+          <Button variant="outline" onClick={() => setIsFriendSummonModalOpen(true)}>选择友召</Button>
+        )}
+        <EquipmentSelectorModal
+          type="summon"
+          open={isFriendSummonModalOpen}
+          onOpenChange={setIsFriendSummonModalOpen}
+          onSelect={(equipment) => {
+            setSelectedFriendSummon(equipment);
+            // setIsFriendSummonModalOpen(false); // Modal usually closes itself
+          }}
+          priorityIds={friendSummonIds}
+        />
+        {equipmentsLoading && <p>加载召唤石列表中...</p>}
+        {equipmentsError && <p className="text-red-500">加载召唤石列表失败: {equipmentsError.message}</p>}
+      </div>
 
       <div className="flex justify-center mt-8">
         <Button type="submit" size="lg" className="px-8 relative group">

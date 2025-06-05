@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useEquipmentsList } from "@/hooks/use-equipments-list";
 import { imageSizes } from "@/lib/utils";
+import { NumberInput } from "@/components/input/number-input";
 
 interface EquipmentSelectorProps {
   width?: number
@@ -107,6 +108,23 @@ export function EquipmentSelector({
     onEquipmentSelect(updatedEquipment);
   };
 
+  const currentLvValue = selectedEquipment?.properties?.lv;
+
+  const handleLvChange = (newLvValue: number | null) => {
+    if (!selectedEquipment) {
+      console.warn("No equipment selected, cannot set level.");
+      return;
+    }
+    const updatedEquipment: EquipmentData = {
+      ...selectedEquipment,
+      properties: {
+        ...(selectedEquipment.properties || {}),
+        lv: newLvValue === null ? undefined : newLvValue,
+      },
+    };
+    onEquipmentSelect(updatedEquipment);
+  };
+
 
   return (
     <div
@@ -183,6 +201,21 @@ export function EquipmentSelector({
               ))}
             </SelectContent>
           </Select>
+        </div>
+      )}
+      {!disabled && (
+        <div className="mb-2 w-full px-1">
+          <NumberInput
+            id={`lv-${type}`}
+            value={currentLvValue ?? null}
+            onChange={handleLvChange}
+            placeholder="Lv"
+            min={1}
+            max={200}
+            inputClassName="text-center text-xs"
+            allowDecimal={false}
+            showStepButtons={false}
+          />
         </div>
       )}
       {!disabled && (

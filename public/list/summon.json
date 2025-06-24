@@ -1308,6 +1308,7 @@
     "ID": "2040073000",
     "name_chs": "[可爱骑士]琪拉莉",
     "name_jp": "[ラブリーナイト]きらり",
+    "series_name": "[コラボ]",
     "category": "联动",
     "element": "3",
     "rarity": "4"
@@ -2873,7 +2874,8 @@
     "ID": "2040364000",
     "name_chs": "黄金皮喵",
     "name_jp": "ゴールデンぴにゃこら太",
-    "category": "活动",
+    "series_name": "[コラボ]",
+    "category": "联动",
     "element": "5",
     "rarity": "4"
   },
@@ -3467,6 +3469,24 @@
     "series_name": "[コラボ]",
     "category": "联动",
     "element": "5",
+    "rarity": "4"
+  },
+  {
+    "ID": "2040435000",
+    "name_chs": "消波神",
+    "name_jp": "テトラゴッド",
+    "series_name": "[ロブルシリーズ]",
+    "category": "普通",
+    "element": "2",
+    "rarity": "4"
+  },
+  {
+    "ID": "2040436000",
+    "name_chs": "祈魂人",
+    "name_jp": "ソウルインヴォーカー",
+    "series_name": "[ロブルシリーズ]",
+    "category": "普通",
+    "element": "1",
     "rarity": "4"
   }
 ]

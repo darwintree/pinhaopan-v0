@@ -6435,7 +6435,6 @@
     "name_jp": "ルナール",
     "category[]": "普通",
     "element": "光",
-    "tag[]": "Another",
     "rarity": "SSR",
     "character_id": "1043"
   },
@@ -6454,7 +6453,6 @@
     "name_jp": "ベンジャミン",
     "category[]": "普通",
     "element": "土",
-    "tag[]": "Another",
     "rarity": "SSR",
     "character_id": "3054"
   },
@@ -8313,7 +8311,7 @@
     "ID": "3040571000",
     "name_chs": "蔻刻",
     "name_jp": "コク",
-    "category[]": "活动",
+    "category[]": "四圣",
     "element": "暗",
     "rarity": "SSR",
     "character_id": "3264"
@@ -8463,5 +8461,105 @@
     "element": "暗",
     "rarity": "SSR",
     "character_id": "4007"
+  },
+  {
+    "ID": "3040589000",
+    "name_chs": "淑库拉",
+    "name_jp": "シュクラ",
+    "category[]": "普通",
+    "element": "水",
+    "rarity": "SSR",
+    "character_id": "0"
+  },
+  {
+    "ID": "3040590000",
+    "name_chs": "谢琳",
+    "name_jp": "シェリーネ",
+    "category[]": "普通",
+    "element": "光",
+    "rarity": "SSR",
+    "character_id": "0"
+  },
+  {
+    "ID": "3040587000",
+    "name_chs": "啤酒",
+    "name_jp": "ピィジウ",
+    "category[]": "四圣",
+    "element": "光",
+    "rarity": "SSR",
+    "character_id": "0"
+  },
+  {
+    "ID": "3040591000",
+    "name_chs": "拉维利塔",
+    "name_jp": "ラヴィリタ",
+    "category[]": "普通",
+    "element": "火",
+    "rarity": "SSR",
+    "character_id": "0"
+  },
+  {
+    "ID": "3040592000",
+    "name_chs": "玛尔斯",
+    "name_jp": "マーズ",
+    "category[]": "普通",
+    "element": "光",
+    "rarity": "SSR",
+    "character_id": "0"
+  },
+  {
+    "ID": "3040593000",
+    "name_chs": "娇美可爱的师徒 卡莉奥斯特萝&克拉莉丝",
+    "name_jp": "可憐なる師弟 カリオストロ＆クラリス",
+    "category[]": "普通",
+    "element": "风",
+    "rarity": "SSR",
+    "character_id": "0"
+  },
+  {
+    "ID": "3040594000",
+    "name_chs": "蔻",
+    "name_jp": "コウ",
+    "category[]": "普通",
+    "element": "光",
+    "rarity": "SSR",
+    "character_id": "3146"
+  },
+  {
+    "ID": "3040595000",
+    "name_chs": "齐格飞",
+    "name_jp": "ジークフリート",
+    "category[]": "限定",
+    "element": "土",
+    "tag[]": "月底",
+    "rarity": "SSR",
+    "character_id": "3022"
+  },
+  {
+    "ID": "3040596000",
+    "name_chs": "诗寇蒂",
+    "name_jp": "スクルド",
+    "category[]": "普通",
+    "element": "风",
+    "rarity": "SSR",
+    "character_id": "0"
+  },
+  {
+    "ID": "3040597000",
+    "name_chs": "哈乌赫特",
+    "name_jp": "ハウへト",
+    "category[]": "普通",
+    "element": "火",
+    "rarity": "SSR",
+    "character_id": "0"
+  },
+  {
+    "ID": "3040598000",
+    "name_chs": "格里姆尼尔",
+    "name_jp": "グリームニル",
+    "category[]": "普通",
+    "element": "暗",
+    "rarity": "SSR",
+    "character_id": "3129"
   }
 ]
